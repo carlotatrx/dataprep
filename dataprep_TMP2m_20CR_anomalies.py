@@ -12,7 +12,7 @@ import numpy as np
 import xarray as xr
 
 #%% load dataset
-ds_20CR = xr.open_dataset('/scratch2/ccorbella/files/20CRv3_ensembles/TMP2m.Europe.allmems/TMP2m.Europe.allmems.allyears0.nc')
+ds_20CR = xr.open_dataset('/scratch2/ccorbella/files/20CRv3_ensembles/TMP2m.Europe.allmems/TMP2m.Europe.allmems.allyears.nc')
 lats = ds_20CR['lat'].values
 lons = ds_20CR['lon'].values
 t2m  = ds_20CR['TMP2m'].values
@@ -76,7 +76,7 @@ for ensmem in range(ds_20CR.dims['ensemble_member']): # loop over ensmems
     # Subtract seasonal cycle to get anomalies
     anomalies_ds["TMP2m"][ensmem, :, :, :] = t2m_mem - seasonal_fit
 
-anomalies_ds.to_netcdf('/scratch2/ccorbella/files/20CRv3_ensembles/TMP2m.Europe.allmems/TMP2m.Europe.allmems.deseasonalizedLinRegmethod.nc')
+anomalies_ds.to_netcdf('/scratch2/ccorbella/files/20CRv3_ensembles/TMP2m.Europe.allmems/TMP2m.Europe.allmems.anomalies.nc')
 
 # inspect
 # anomalies_ds.isel(ensemble_member=1, lat=1, lon=2)['TMP2m'].plot()
