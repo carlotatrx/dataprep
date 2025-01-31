@@ -20,14 +20,12 @@ import matplotlib.pyplot as plt
 import cartopy.crs as ccrs
 import cartopy.feature as cfeature
 
-VAR = 'TMP2m'
-
 ######################################################################################################################################
 ################ PART 1: extract station metadata from TSV files #####################################################################
 ######################################################################################################################################
 
 # Directory containing the files
-filepath = '/home/ccorbella/scratch2_symboliclink/files/1807_USBstick/validation/'
+filepath = '/home/ccorbella/scratch2_symboliclink/files/1807_USBstick/'
 
 # Initialize list to store extracted data
 data = []
@@ -100,23 +98,23 @@ pivot_table.to_csv(f'{filepath}t2m_obsvalidation_data.csv')
 ################ PART 2: calculate anomalies at each station #########################################################################
 ######################################################################################################################################
 
-df = pd.read_csv(f'{filepath}p_obsvalidation_data.csv', index_col='Date', parse_dates=True)
-# df = df.drop('NaT')
+df = pd.read_csv(f'{directory}p_obs_data.csv', index_col='Date', parse_dates=True)
+df = df.drop('NaT')
 df =  df.loc['1806-01-01':'1821-12-31']
 
 anomals = df - df.mean()
-anomals.to_csv(f'{filepath}p_obsvalidation_anomalies.csv')
+anomals.to_csv('p_obs_anomalies.csv')
 
 ######################################################################################################################################
 ################ PART 3: find cells in 20CR where stations are located ###############################################################
 ######################################################################################################################################
 
 # open downloaded dataset from 20CRv3
-ds_20CR = xr.open_dataset(f'/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/data/{VAR}.Europe.allmems.anomalies.nc')
+ds_20CR = xr.open_dataset('/home/ccorbella/scratch2_symboliclink/files/20CRv3_ensembles/PRMSL.Europe.allmems/PRMSL.Europe.allmems.allyears.nc')
 ds_lats = ds_20CR['lat'].values
 ds_lons = ds_20CR['lon'].values
 
-station_meta = pd.read_csv(f'/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/data/{VAR}_obsvalidation_metadata.csv')
+station_meta = pd.read_csv('/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/p_obs_metadata.csv')
 station_lats = np.array(station_meta['Lat']).astype(float)
 station_lons = np.array(station_meta['Lon']).astype(float)
 
@@ -140,8 +138,8 @@ for i in range(station_meta.shape[0]-1, -1, -1): # reverse order
     lon_index.append(station_index % len(ds_lons))
     station_name.append(station_meta['Name'][i])
 
-np.savetxt(f'/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/data/lat_validationindex_{VAR}.txt', lat_index)
-np.savetxt(f'/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/data/lon_validationindex_{VAR}.txt', lon_index)
+np.savetxt('/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/lat_index_p.txt', lat_index)
+np.savetxt('/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/lon_index_p.txt', lon_index)
 
 ######################################################################################################################################
 ################ PART 4: visualize stations ###############################################################
@@ -174,11 +172,11 @@ gl.xlabels_top = False
 gl.ylabels_right = False
 
 # Add the station points
-plt.scatter(station_lons, station_lats, color='red', label=f'{VAR} Stations', transform=ccrs.PlateCarree())
-plt.scatter(station_lons_20CR, station_lats_20CR, color='blue', marker='P', label='20CRv3 closest grid')
-plt.title(f'{VAR} Validation Stations and Their Closest 20CRv3 Points')
+plt.scatter(station_lons, station_lats, color='red', label='Pressure Stations', zorder=5, transform=ccrs.PlateCarree())
+plt.scatter(station_lons_20CR, station_lats_20CR, color='blue', label='20CRv3 closest grid')
+plt.title('Pressure Stations and Their Closest 20CRv3 Points')
 plt.legend()
 
 # Show the plot
-plt.savefig(f'/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/station_plot_validation_{VAR}.png')
+plt.savefig('/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/station_plot_p.png')
 plt.show()    

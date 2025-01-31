@@ -34,10 +34,14 @@ df_all = df_all[df_all['date'] <= '1821-12-31']
 df_all = df_all[df_all['date'] >= '1806-01-01']
 df_all.index -= df_all.index[0] # reset indices
 
+#%% if data pre-processed in Python start from here
+df_all = pd.read_csv('/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/data/TMP2m_obsvalidation_data.csv')
+
 #%% fit harmonics
 from sklearn.linear_model import LinearRegression
 
-doy = df_all['date'].dt.dayofyear
+df_all['Date'] = pd.to_datetime(df_all['Date'])
+doy = df_all['Date'].dt.dayofyear
 freq = 2 * np.pi / 365.25
 
 yobs_plain = df_all.iloc[:,1:].to_numpy()
@@ -93,20 +97,20 @@ for i in range(yobs_plain.shape[1]): # loop through stations
 
         
 #%% make plots
-station_index = 27  # Example station
 for i in range(yobs_plain.shape[1]):
     plt.figure(figsize=(12, 6))
-    plt.plot(df_all['date'], yobs_plain[:, i], label="Observations")
-    plt.plot(df_all['date'], seasonal_cycle[i], label="Seasonal Fit")
-    plt.plot(df_all['date'], yobs_anomaly[:, i], label="Anomalies", alpha=.8)
+    plt.plot(df_all['Date'], yobs_plain[:, i], label="Observations")
+    plt.plot(df_all['Date'], seasonal_cycle[i], label="Seasonal Fit")
+    plt.plot(df_all['Date'], yobs_anomaly[:, i], label="Anomalies", alpha=.8)
     plt.axhline(0, linestyle='dashed', color='k', alpha=.5)
     plt.legend(ncol=3)
     plt.title(f"{df_all.columns[i+1]} Station - Anomaly Adjustment (1806-1821)")
     plt.xlabel("Date")
     plt.ylabel(r"Temperature [$^{\circ}$C]")
-    plt.savefig(f'/scratch2/ccorbella/files/1807_USBstick/station_anomalies_plots/{df_all.columns[i+1]}_station_{i}_anomalyplot.png')
+    plt.savefig(f'/scratch2/ccorbella/files/1807_USBstick/station_anomalies_plots/validation/{df_all.columns[i+1]}_station_{i}_anomalyplot.png')
     plt.show()
 
 #%% save series
-np.savetxt('/scratch2/ccorbella/code/KF_assimilation/obs_anomalies_1806-1821.txt', yobs_anomaly)
+yobs_anomaly_df = pd.DataFrame(yobs_anomaly, index=df_all['Date'], columns=df_all.columns[1:])
+yobs_anomaly_df.to_csv('scratch2/ccorbella/code/KF_assimilation/data/TMP2m_obsvalidation_anomalies.csv')
 
