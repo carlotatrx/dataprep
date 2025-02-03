@@ -20,7 +20,7 @@ import matplotlib.pyplot as plt
 import cartopy.crs as ccrs
 import cartopy.feature as cfeature
 
-VAR = 'TMP2m'
+VAR = 'PRMSL'
 
 ######################################################################################################################################
 ################ PART 1: extract station metadata from TSV files #####################################################################
@@ -102,7 +102,7 @@ pivot_table.to_csv(f'{filepath}t2m_obsvalidation_data.csv')
 
 df = pd.read_csv(f'{filepath}p_obsvalidation_data.csv', index_col='Date', parse_dates=True)
 # df = df.drop('NaT')
-df =  df.loc['1806-01-01':'1821-12-31']
+df = df.loc['1806-01-01':'1821-12-31']
 
 anomals = df - df.mean()
 anomals.to_csv(f'{filepath}p_obsvalidation_anomalies.csv')
