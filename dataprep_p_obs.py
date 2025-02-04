@@ -20,14 +20,16 @@ import matplotlib.pyplot as plt
 import cartopy.crs as ccrs
 import cartopy.feature as cfeature
 
-VAR = 'PRMSL'
+var = 'PRMSL'
+validation = False
+val_string = 'validation' if validation else ''
 
 ######################################################################################################################################
 ################ PART 1: extract station metadata from TSV files #####################################################################
 ######################################################################################################################################
 
 # Directory containing the files
-filepath = '/home/ccorbella/scratch2_symboliclink/files/1807_USBstick/validation/'
+filepath = f'/home/ccorbella/scratch2_symboliclink/files/1807_USBstick/{val_string}'
 
 # Initialize list to store extracted data
 data = []
@@ -90,22 +92,22 @@ for filename in os.listdir(filepath):
 
 # save metadata to a CSV file
 df_output = pd.DataFrame(data)
-df_output.to_csv(f'{filepath}t2m_obsvalidation_metadata.csv', index=False)
+df_output.to_csv(f'{filepath}{var}_obs{val_string}_metadata.csv', index=False)
 
 # Pivot the combined data to make stations as columns
 pivot_table = combined_data.pivot(index='Date', columns='Station', values='Value')
-pivot_table.to_csv(f'{filepath}t2m_obsvalidation_data.csv')
+pivot_table.to_csv(f'{filepath}{var}_obs{val_string}_data.csv')
 
 ######################################################################################################################################
 ################ PART 2: calculate anomalies at each station #########################################################################
 ######################################################################################################################################
 
-df = pd.read_csv(f'{filepath}p_obsvalidation_data.csv', index_col='Date', parse_dates=True)
+df = pd.read_csv(f'{filepath}p_obs{val_string}_data.csv', index_col='Date', parse_dates=True)
 # df = df.drop('NaT')
 df = df.loc['1806-01-01':'1821-12-31']
 
 anomals = df - df.mean()
-anomals.to_csv(f'{filepath}p_obsvalidation_anomalies.csv')
+anomals.to_csv(f'{filepath}p_obs{val_string}_anomalies.csv')
 
 ######################################################################################################################################
 ################ PART 3: find cells in 20CR where stations are located ###############################################################

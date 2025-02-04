@@ -1,0 +1,6 @@
+Name,Lat,Lon,Alt,Vbl,Stat,Units,Min Date,Max Date
+BAS_ta,47.5411,7.5835,316,ta,daily,degrees Celsius,1807-01-01,1807-12-31
+5905_WIEN,48.216667,16.366667,175,ta,max,degrees Celsius,1807-01-01,1807-12-31
+BOL_ta,44.497,11.353,53,ta,daily,degrees Celsius,1807-01-01,1807-12-31
+Gdansk 'Excel sheet by Rajmund Przybylak,54.35,18.53,8,ta,point,degrees Celsius,1807-01-01,1807-12-31
+Zurich,47.37162,8.54398,418,ta,mean,C,1807-01-01,1827-12-31
