@@ -11,7 +11,9 @@
 
 All processed stations and extra files can be found in `/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/`.
 
-The preprocessing and controls or whatever is done with the `daily_means.ipynb` script.
+The preprocessing and controls or whatever is done with the `daily_means.ipynb` script. If for some station one of the variables is found in two pre-processed files (i.e. in USB_stick folder and in station_timeseries_preprocessed folder), it means that the data are the same (unless otherwise specified) and any can therefore be used.
+
+Descriptions and problems in OneDrive excel `stations_1806-1850`.
 
 ### València
 
@@ -39,3 +41,19 @@ This is most likely a typo in the writing of the year. I correct this directly i
 ### Cádiz
 
 We have 29244-13=29231 days with values in Peter's data from IMPROVE. Now let's count how many we have from the raw. We have no duplicates in dataset, and we have 29231 non-NaNs. Yay! it's the same. It looks like `CSF-TP801-819.txt` is just a small subset of `CSF-TP786-879.txt`. No changes made, simply stored the files of temperature and pressure separately.
+
+### Milan
+
+We already had temperature from `PALAEO-RA_IMPROVE_Milan_17630101-18621231_ta`, which is the same as the third column of the raw file, and now I add pressure.
+
+### Padova
+
+Ja teníem pressure i temperature fins a 1809, ara s'ha d'allargar i per no tenir 2 series de la mateixa station les concatenejo i en faig una de sola, que la utilitzaré per reemplaçar la de la carpeta USB stick Peter.
+
+### Stockholm,  Uppsala
+
+Same as Padova, without need for concatenating files.
+
+### Bologna
+
+Folder `ECA_non-blended_custom-1`, where metadata can also be found.
