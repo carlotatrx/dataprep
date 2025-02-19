@@ -56,4 +56,37 @@ Same as Padova, without need for concatenating files.
 
 ### Bologna
 
-Folder `ECA_non-blended_custom-1`, where metadata can also be found.
+Folder `ECA_non-blended_custom-1`, where metadata can also be found. These are specified as:
+
+```
+17-21 TG   : mean temperature in 0.1 °C
+
+23-27 Q_TG : Quality code for TG (0='valid'; 1='suspect'; 9='missing')
+```
+
+All cells with data have a quailty code of 0 (valid).
+
+### Prague
+
+Same as Bologna. Only the following has a suspect code:
+
+| 30641 | 1858-11-23 | -150.0 | 1 |
+| ----- | ---------- | ------ | - |
+
+### Paris
+
+The data from `Paris_p_daily.tsv` in Peter's USB is almost the same but not exactly to the data from `Paris_4_17850101-18720615_mslp.tsv`, downloaded from  (LDL)[[https://figshare.com/articles/dataset/Sub-daily_sea-level_pressure_series_for_London_GB_Paris_FR_and_De_Bilt_NL_/24242302/3?file=45614718]()]. This link has only pressure data.
+
+Moreover, the data in the column _T°C_ on the tab _Tjour_ in the file `paris_Daily_Updated_meteo_2024_127_33_supp.xlsx` (from Stefan) is different than the data from `Paris_ta_noon.tsv` from Peter's stick. If anything, it seems to be closer to the _TX_ column, even if not exactly the same.
+
+### London
+
+From the same link where I extracted Paris, I got London and to take the mean pressure I simply took the arithmetic average of the observations of the day (sometimes 2, sometimes 3). But! The values from `London_p_daily.tsv` are very similar, but not exactly the same, as simply taking the arithmetic daily means from `London_11_17870101-18221231_mslp.tsv`.
+
+### Zwanenburg
+
+Did arithmetic daily means of pressure, same issue as London and Paris above, as same source. How were the temperatures from KNMI extracted?
+
+### Torino
+
+If I use $t_{daily}=(t_{min}+t_{max})/2$ it's a bit different from the WeaR data `WeaR_TOR_17530101-18621231_ta_hom.tsv`, because of the homogenization component.
