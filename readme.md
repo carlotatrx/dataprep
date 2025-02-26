@@ -101,7 +101,7 @@ The pressure data are, presumably, in inches of mercury. I converted to hPa usin
 
 `🔴 To ask for: ` `Ylitornio_ta_daily.tsv` from Peter is very different from Stefan. This is how different they are: 
 
-
+![Yli_fig](https://github.com/carlotatrx/KF_assimilation/blob/main/dataprep/Yli_diff.png)
 
 ### Zwanenburg
 
