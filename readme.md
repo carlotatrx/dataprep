@@ -19,7 +19,7 @@ Descriptions and problems in OneDrive excel `stations_1806-1850`.
 
 ### Bologna
 
-Folder `ECA_non-blended_custom-1`, where metadata can also be found. These are specified as:
+File `TG_SOUID100862.txt` from folder `ECA_non-blended_custom-1`, where metadata can also be found. These are specified as:
 
 ```
 17-21 TG   : mean temperature in 0.1 °C
@@ -28,6 +28,15 @@ Folder `ECA_non-blended_custom-1`, where metadata can also be found. These are s
 ```
 
 All cells with data have a quailty code of 0 (valid). I converted the `TG` column to °C units by multiplying by 0.1.
+
+```
+diff
+- text in red
+```
+
+```
+
+```
 
 ### Cádiz
 
