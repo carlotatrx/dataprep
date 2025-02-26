@@ -29,7 +29,7 @@ File `TG_SOUID100862.txt` from folder `ECA_non-blended_custom-1`, where metadata
 
 All cells with data have a quailty code of 0 (valid). I converted the `TG` column to °C units by multiplying by 0.1.
 
-`🔴 To ask for`
+`🔴 To ask for: `Stefan's Bologna starts in 1814, it's from ECA&D but online website doesn't exist anymore. Peter's Bologna is from IMROVE and has only 1807. `Where are the rest from Peter/Noemi?
 
 ladsffds
 
@@ -53,7 +53,7 @@ Ja teníem pressure i temperature fins a 1809, ara s'ha d'allargar i per no teni
 
 The data from `Paris_p_daily.tsv` in Peter's USB is almost the same but not exactly to the data from `Paris_4_17850101-18720615_mslp.tsv`, downloaded from  (LDL)[[https://figshare.com/articles/dataset/Sub-daily_sea-level_pressure_series_for_London_GB_Paris_FR_and_De_Bilt_NL_/24242302/3?file=45614718]()]. This link has only pressure data. We use the LDL data, not Peter's data.
 
-Moreover, the data in the column _T°C_ on the tab _Tjour_ in the file `paris_Daily_Updated_meteo_2024_127_33_supp.xlsx` (from Stefan) is different than the data from `Paris_ta_noon.tsv` from Peter's stick. If anything, it seems to be closer to the _TX_ column, even if not exactly the same.
+Moreover, the data in the column _T°C_ on the tab _Tjour_ in the file `paris_Daily_Updated_meteo_2024_127_33_supp.xlsx` (from Stefan) is different than the data from `Paris_ta_noon.tsv` from Peter's stick. If anything, it seems to be closer to the _TX_ column, even if not exactly the same. I'll use Stefan's file. The _T°C_ is $(TX+TN)/2$ with 0.5 precision.
 
 ### Prague
 
@@ -62,7 +62,7 @@ Same as Bologna. Only the following has a suspect code:
 | 30641 | 1858-11-23 | -150.0 | 1 |
 | ----- | ---------- | ------ | - |
 
-Also converted to hPa through multiplication by 0.1. Then my data are the same as Peter's folder.
+Also converted to hPa through multiplication by 0.1. Then my data are the same as Peter's folder. I can then use Peter's folder.
 
 ### Stockholm,  Uppsala
 
