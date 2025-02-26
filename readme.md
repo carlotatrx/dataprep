@@ -29,14 +29,9 @@ File `TG_SOUID100862.txt` from folder `ECA_non-blended_custom-1`, where metadata
 
 All cells with data have a quailty code of 0 (valid). I converted the `TG` column to °C units by multiplying by 0.1.
 
-```
-diff
-- text in red
-```
+`🔴 To ask for`
 
-```
-
-```
+ladsffds
 
 ### Cádiz
 
