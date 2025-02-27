@@ -95,11 +95,11 @@ for filename in os.listdir(filepath):
 
 # save metadata to a CSV file
 df_output = pd.DataFrame(data)
-df_output.to_csv(f'{filepath}{var}_obs{val_string}_metadata.csv', index=False)
+df_output.to_csv(f'/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/data/{var}_obs{val_string}_metadata.csv', index=False)
 
 # Pivot the combined data to make stations as columns
 pivot_table = combined_data.pivot(index='Date', columns='Station', values='Value')
-pivot_table.to_csv(f'{filepath}{var}_obs{val_string}_data.csv')
+pivot_table.to_csv(f'/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/data/{var}_obs{val_string}_data.csv')
 
 ######################################################################################################################################
 ################ PART 2: calculate anomalies at each station #########################################################################
