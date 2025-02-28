@@ -1,9 +1,8 @@
 ## Description of the stations
 
-- _Barcelona_: From Stefan, he said original data and person of contact is Mariano Barriendos from Universitat de Barcelona
-- _vor1763_: folders with various stations from IMPROVE, whose records start before 1763 but may continue to 19th century
-- _supplementarydata_: we don't know where they are from
-- _Ylitornio, Valencia_: from Stefan
+* _Barcelona_: From Stefan, he said original data and person of contact is Mariano Barriendos from Universitat de Barcelona
+* _vor1763_: folders with various stations from IMPROVE, whose records start before 1763 but may continue to 19th century
+* _supplementarydata_: we don't know where they are from
 
 In the following it's described the changes applied to original files. The output files, saved in `station_timeseries_preprocessed` directory, all have the same format, `stationname_var.csv`, where `var` can be `PRMSL` for pressure or `TMP2m` for temperature. This doesn't mean necessarily that pressures have been reduced to mean sea level or that temperature is at 2m, but I'm using these abbreviations for consistency.
 
@@ -15,7 +14,7 @@ The preprocessing and controls or whatever is done with the `daily_means.ipynb` 
 
 Data in the subdirectory `station_timeseries_preprocessed/not_to_use/` are there because we already have an alternative (from WeaR, KNMI or whatever) and we choose to use that one, namely found in the `1807_USBstick` folder. Similarly, the directory `1807_USBstick/not_to_use/` contains timeseries where a newer or better timeseries exists, namely in the timeseries shared by Stefan or Yuri.
 
-Descriptions and problems in OneDrive excel `stations_1806-1850`.
+Descriptions and problems in OneDrive excel `stations_1806-1850`, including lat, lon, altitude, source of series from `station_timeseries_orig`.
 
 ### Bologna
 
@@ -29,13 +28,19 @@ File `TG_SOUID100862.txt` from folder `ECA_non-blended_custom-1`, where metadata
 
 All cells with data have a quailty code of 0 (valid). I converted the `TG` column to °C units by multiplying by 0.1.
 
-`🔴 To ask for: `Stefan's Bologna starts in 1814, it's from ECA&D but online website doesn't exist anymore. Peter's Bologna is from IMROVE and has only 1807. `Where are the rest from Peter/Noemi?
+`🔴 To ask for: `Stefan's Bologna starts in 1814, it's from ECA&D but online website doesn't exist anymore. Peter's Bologna is from IMROVE and has only 1807. Where are the rest from Peter/Noemi?
 
 ladsffds
 
 ### Cádiz
 
 We have 29244-13=29231 days with values in Peter's data from IMPROVE. Now let's count how many we have from the raw. We have no duplicates in dataset, and we have 29231 non-NaNs. Yay! it's the same. It looks like `CSF-TP801-819.txt` is just a small subset of `CSF-TP786-879.txt`, which we can check with `np.sum(cadiz2['TMP2m']!=cadiz1[:3323]['TMP2m'])`. As they are the same, we are only using the longer dataset. No changes made otherwise, simply stored the files of temperature and pressure separately. I'll consequently use the IMPROVE file from Cadiz TMP2m as it should be the same.
+
+`🔴 To ask for: `it's a bit strange that we have tempreature fro Cadiz before 1817, but not pressure. Are they anywhere I might be missing?
+
+### CET
+
+Extracted from the [website](https://www.metoffice.gov.uk/hadobs/hadcet/), data from there are the same as 1807 selected data from Peter.
 
 ### London
 
@@ -44,6 +49,8 @@ From the same link where I extracted Paris, I got London and to take the mean pr
 ### Milan
 
 We already had temperature from `PALAEO-RA_IMPROVE_Milan_17630101-18621231_ta`, which is the same as the third column of the raw file, and now I add pressure.
+
+`🔴 To ask for: `The pressure is from from Stefan's `1807raw_andmore/Final_Series_Improve/milan/`. No details about station location or data collection. Same as temperature (available from Peter)?
 
 ### Padova
 
@@ -68,6 +75,14 @@ Also converted to hPa through multiplication by 0.1. Then my data are the same a
 
 Same as Padova, without need for concatenating files.
 
+`🔴 To ask for: `what are the coordinates of Uppsala? Are they the same as in the temperature file from Peter?
+
+### Ukraine
+
+to prep for this data, file is `dataprep_ukraine.ipynb`.  Yuri says:
+
+> The Ukrainian data should also be in the folder `/scratch3/PALAEO-RA/DataRescue/Incoming/Ukraine`. The reason we didn't use them is that it is not clear which calendar is used. Russia adopted the Gregorian calendar very late (I think in 1917), and Ukraine has always been a bit of a hybrid between Russia and Western Europe… Therefore some stations used Julian calendar, others Gregorian, or a mixture of the two. There are 12 days of offset between Julian and Gregorian calendar  in the 19$^{th}$ century. It is certainly possible to figure out which calendar is used where, but it implies some work. If could use for example correlation, but the main  difficult is that a station  may have started using Julian and then switched to Gregorian at some unknown time (in that case you should see a gap of 12 days). I don't know if the opposite also happens, less likely but not impossible (then you would see duplicated dates).
+
 ### Torino
 
 If I use $t_{daily}=(t_{min}+t_{max})/2$ it's a bit different from the WeaR data `WeaR_TOR_17530101-18621231_ta_hom.tsv`, because of the homogenization component. Noemi suggests I use the original, not the homogenized. Stefan says I should use the homogenized. So I use the homogenized, `/home/ccorbella/scratch2_symboliclink/files/1807_USBstick/WeaR_TOR_17530101-18631231_ta_hom.tsv`.
@@ -80,7 +95,7 @@ Some values seem to be wrongly typed, e.g. rows 2192-2194, 3288-3290 of 1804-181
 
 Only 36 days have less than 3 measurements. This is 0.20% of the entire dataset so I decided not to compare with ERA-5 climatology. The days with fewer measurements are stored in the file `Valencia_orig_obsperday_lt3.csv` and they are removed from the dataset.
 
-The original dataset consists of the columns _Bar(p)_, _Bar(l_), _Hidro_. I don't know what _Hidro_ stands for. _Bar(p)_ and _Bar(l_) are the same and I assume they are inches of mercury, so I just transform them to hPa as in Ylitornio. WHICH IS INCORRECT.
+`🔴 To ask for: `The original dataset consists of the columns _Bar(p)_, _Bar(l_), _Hidro_. I don't know what _Hidro_ stands for. _Bar(p)_ and _Bar(l_) are the same and I assume they are inches of mercury, so I just transform them to hPa as in Ylitornio. WHICH IS INCORRECT.
 
 ### Ylitornio
 
@@ -99,10 +114,10 @@ This is most likely a typo in the writing of the year. I correct this directly i
 
 The pressure data are, presumably, in inches of mercury. I converted to hPa using $1013.25 * ( P_{inHg} / 29.92)$. It might not be the proper conversion (I couldn't find what the units were, but since I'll assimilate anomalies, it won't matter too much anyway).
 
-`🔴 To ask for: ` `Ylitornio_ta_daily.tsv` from Peter is very different from Stefan. This is how different they are: 
+`🔴 To ask for: ` `Ylitornio_ta_daily.tsv` from Peter is very different from Stefan. This is how different they are:
 
 ![Yli_fig](https://github.com/carlotatrx/KF_assimilation/blob/main/dataprep/Yli_diff.png)
-The only additional info we have is that in Peter's data it says "Stat: mean", and Stefan's data comes from the paper: 'Reference: Helama, S., Holopainen, J., Timonen, M., Ogurtsov, M. G., Lindholm, M., Meriläinen, J., Eronen, M. (2004). Comparison of living-tree and subfossil ringwidths with summer temperatures from 18th, 19th and 20th centuries in Northern Finland. Dendrochronologia 21/3, 147 - 154.' 
+The only additional info we have is that in Peter's data it says "Stat: mean", and Stefan's data comes from the paper: 'Reference: Helama, S., Holopainen, J., Timonen, M., Ogurtsov, M. G., Lindholm, M., Meriläinen, J., Eronen, M. (2004). Comparison of living-tree and subfossil ringwidths with summer temperatures from 18th, 19th and 20th centuries in Northern Finland. Dendrochronologia 21/3, 147 - 154.'
 They say they homogenize daily temperatures. "Homogenization was performed by method of Moberg and Bergström (1997). This approach accounts for changing measurement time of daily observations and is expected to produce much more homogeneous time series of monthly temperatures than a simple average of observations (Holopainen, Vesajoki 2001)."
 
 ### Zwanenburg

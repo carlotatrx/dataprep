@@ -20,7 +20,7 @@ import matplotlib.pyplot as plt
 import cartopy.crs as ccrs
 import cartopy.feature as cfeature
 
-var = 'PRMSL'
+vars = ['PRMSL', 'TMP2m']
 validation = False
 val_string = 'validation' if validation else ''
 
@@ -31,75 +31,81 @@ val_string = 'validation' if validation else ''
 # Directory containing the files
 filepath = f'/home/ccorbella/scratch2_symboliclink/files/1807_USBstick/{val_string}'
 
-# Initialize list to store extracted data
-data = []
-combined_data = pd.DataFrame()
+for var in vars:
 
-# Iterate through files in the directory
-for filename in os.listdir(filepath):
-    if '_ta' in filename and filename.endswith('.tsv'):
-        try:
-            with open(f'{filepath}{filename}', 'r') as file:
-                lines = file.readlines()
-                
-                # Extract metadata
-                metadata = {}
-                for line in lines:
-                    if line.startswith("SEF"):
-                        continue
-                    if line.startswith("Year"):
-                        break
-                    if '\t' in line:
-                        parts = line.strip().split('\t', 1)
-                        if len(parts) == 2:
-                            key, value = parts
-                            metadata[key] = value
+    # Initialize list to store extracted data
+    data = []
+    combined_data = pd.DataFrame()
 
-                # Extract station name
-                station_name = metadata.get('Name', 'Unknown')
+    var_infilename = '_ta' if var=='TMP2m' else '_p'
 
-                # Read data portion into a DataFrame
-                data_start_idx = next(i for i, line in enumerate(lines) if line.startswith("Year"))
-                df = pd.read_csv(f'{filepath}{filename}', sep='\t', skiprows=data_start_idx, na_values=['NA'])
-                
-                # Find smallest and largest dates
-                df['Date'] = pd.to_datetime(df[['Year', 'Month', 'Day']].dropna(how='any'), errors='coerce')
-                min_date = df['Date'].min()
-                max_date = df['Date'].max()
-                
-                # Append extracted data
-                data.append({
-                    'Name': metadata.get('Name', ''),
-                    'Lat': metadata.get('Lat', ''),
-                    'Lon': metadata.get('Lon', ''),
-                    'Alt': metadata.get('Alt', ''),
-                    'Vbl': metadata.get('Vbl', ''),
-                    'Stat': metadata.get('Stat', ''),
-                    'Units': metadata.get('Units', ''),
-                    'Min Date': min_date.strftime('%Y-%m-%d') if pd.notnull(min_date) else '',
-                    'Max Date': max_date.strftime('%Y-%m-%d') if pd.notnull(max_date) else ''
-                })
-                
-                # Select relevant columns
-                df['Station'] = station_name
-                df = df[['Date', 'Value', 'Station']]
-                df = df[df['Date'] >= '1806-01-01']
-                df = df[df['Date'] <= '1850-12-31']
-                df  = df.reset_index(drop=True)
+    # Iterate through files in the directory
+    for filename in os.listdir(filepath):
+        if var_infilename in filename and filename.endswith('.tsv'):
+            try:
+                with open(f'{filepath}{filename}', 'r') as file:
+                    lines = file.readlines()
+                    
+                    # Extract metadata
+                    metadata = {}
+                    for line in lines:
+                        if line.startswith("SEF"):
+                            continue
+                        if line.startswith("Year"):
+                            break
+                        if '\t' in line:
+                            parts = line.strip().split('\t', 1)
+                            if len(parts) == 2:
+                                key, value = parts
+                                metadata[key] = value
 
-                # Append to combined data
-                combined_data = pd.concat([combined_data, df], ignore_index=True)
+                    # Extract station name
+                    station_name = metadata.get('Name', 'Unknown')
 
-        except Exception as e:
-            print(f"Error processing file: {e}")
+                    # Read data portion into a DataFrame
+                    data_start_idx = next(i for i, line in enumerate(lines) if line.startswith("Year"))
+                    df = pd.read_csv(f'{filepath}{filename}', sep='\t', skiprows=data_start_idx, na_values=['NA'])
+                    
+                    # Find smallest and largest dates
+                    df['Date'] = pd.to_datetime(df[['Year', 'Month', 'Day']].dropna(how='any'), errors='coerce')
+                    min_date = df['Date'].min()
+                    max_date = df['Date'].max()
+                    
+                    # Append extracted data
+                    data.append({
+                        'Name': metadata.get('Name', ''),
+                        'Lat': metadata.get('Lat', ''),
+                        'Lon': metadata.get('Lon', ''),
+                        'Alt': metadata.get('Alt', ''),
+                        var: metadata.get('Vbl', ''),
+                        'source': metadata.get('Source', ''),
+                        'Stat': metadata.get('Stat', ''),
+                        'Units': metadata.get('Units', ''),
+                        'Meta': metadata.get('Meta', ''),
+                        'Min Date': min_date.strftime('%Y-%m-%d') if pd.notnull(min_date) else '',
+                        'Max Date': max_date.strftime('%Y-%m-%d') if pd.notnull(max_date) else ''
+                    })
+                    
+                    # Select relevant columns
+                    df['Station'] = station_name
+                    df = df[['Date', 'Value', 'Station']]
+                    df = df[df['Date'] >= '1806-01-01']
+                    df = df[df['Date'] <= '1850-12-31']
+                    df = df.reset_index(drop=True)
 
-# save metadata to a CSV file
-df_output = pd.DataFrame(data)
-df_output.to_csv(f'/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/data/{var}_obs{val_string}_metadata.csv', index=False)
+                    # Append to combined data
+                    combined_data = pd.concat([combined_data, df], ignore_index=True)
 
-# Pivot the combined data to make stations as columns
-pivot_table = combined_data.pivot(index='Date', columns='Station', values='Value')
-pivot_table.to_csv(f'/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/data/{var}_obs{val_string}_data.csv')
+            except Exception as e:
+                print(f"Error processing file: {e}")
+
+    # save metadata to a CSV file
+    df_output = pd.DataFrame(data)
+    df_output.to_csv(f'/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/data/{var}_obs{val_string}_metadata.csv', index=False)
+
+    # Pivot the combined data to make stations as columns
+    pivot_table = combined_data.pivot(index='Date', columns='Station', values='Value')
+    pivot_table.to_csv(f'/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/data/{var}_obs{val_string}_data.csv')
 
 ######################################################################################################################################
 ################ PART 2: calculate anomalies at each station #########################################################################
