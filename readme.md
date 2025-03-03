@@ -94,9 +94,20 @@ Celsius = Réaumur * 1.25
 
 No days with less than 3 observations. Daily means is weighted average.
 
+**Kherson**
+
+I'm only looking until 1825 because afterwards there are different measurements in various places.
+
+> Two values of air temperature during 1808-February 1825 were recorded every time of measurement, and both of them were digitized. These two values of temperature were marked in the paper source as ‘on S’ and ‘on N’, probably meaning ‘on South’ and ‘on
+> North’ walls. The differences between these two temperatures are very small. Such temperature time series seem to be something like ‘parallel’ measurements. However, no detailed information was found regarding these slightly different temperature values.
+
+I am therefore averaging the 'on S' and 'on N' measurements for a single T measurement.
+
 **Kyív**
 
-Out of 1128 days with measurements, 14 days (a 1.24%) had less than 3 observations. We simply discard these days.
+Out of 1128 days with measurements, 66 days (a 1.83%) had less than 3 observations. We simply discard these days.
+
+> two periods (1820–1822 and 1826–1836) are missing. During the whole period, observations were conducted three times per day, though the exact time of the day is reported only since 1837. In earlier records, only the fraction of the day (morning, midday and evening) was specified. During the period of 1812–1825, only temperature records were reported (in Reaumur degree).
 
 ### Torino
 
@@ -132,6 +143,8 @@ The pressure data are, presumably, in inches of mercury. I converted to hPa usin
 `🔴 To ask for: ` `Ylitornio_ta_daily.tsv` from Peter is very different from Stefan. This is how different they are:
 
 ![Yli_fig](https://github.com/carlotatrx/KF_assimilation/blob/main/dataprep/image/Yli_diff.png)
+
+
 The only additional info we have is that in Peter's data it says "Stat: mean", and Stefan's data comes from the paper: 'Reference: Helama, S., Holopainen, J., Timonen, M., Ogurtsov, M. G., Lindholm, M., Meriläinen, J., Eronen, M. (2004). Comparison of living-tree and subfossil ringwidths with summer temperatures from 18th, 19th and 20th centuries in Northern Finland. Dendrochronologia 21/3, 147 - 154.'
 They say they homogenize daily temperatures. "Homogenization was performed by method of Moberg and Bergström (1997). This approach accounts for changing measurement time of daily observations and is expected to produce much more homogeneous time series of monthly temperatures than a simple average of observations (Holopainen, Vesajoki 2001)."
 
