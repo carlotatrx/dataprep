@@ -83,6 +83,21 @@ to prep for this data, file is `dataprep_ukraine.ipynb`.  Yuri says:
 
 > The Ukrainian data should also be in the folder `/scratch3/PALAEO-RA/DataRescue/Incoming/Ukraine`. The reason we didn't use them is that it is not clear which calendar is used. Russia adopted the Gregorian calendar very late (I think in 1917), and Ukraine has always been a bit of a hybrid between Russia and Western Europe… Therefore some stations used Julian calendar, others Gregorian, or a mixture of the two. There are 12 days of offset between Julian and Gregorian calendar  in the 19$^{th}$ century. It is certainly possible to figure out which calendar is used where, but it implies some work. If could use for example correlation, but the main  difficult is that a station  may have started using Julian and then switched to Gregorian at some unknown time (in that case you should see a gap of 12 days). I don't know if the opposite also happens, less likely but not impossible (then you would see duplicated dates).
 
+Ukrainian data conversion of Russian semi lines (R.s.l.) to hPa:
+ 1 R.s.l. = 1.27 mm. That is, 1,000 hPa = 1,000 mbar = 750.06 mmHg = 590.60 R.s.l.
+
+Celsius = Réaumur * 1.25
+
+**Dnipro**
+
+> the measurements were performed at specified times three times per day. Air temperature was recorded in Reaumur degrees. Atmospheric pressure was firstly (1833–1838) recorded in inches, but later (1839–1842, 1850) R.s.l. were used as units for this.
+
+No days with less than 3 observations. Daily means is weighted average.
+
+**Kyív**
+
+Out of 1128 days with measurements, 14 days (a 1.24%) had less than 3 observations. We simply discard these days.
+
 ### Torino
 
 If I use $t_{daily}=(t_{min}+t_{max})/2$ it's a bit different from the WeaR data `WeaR_TOR_17530101-18621231_ta_hom.tsv`, because of the homogenization component. Noemi suggests I use the original, not the homogenized. Stefan says I should use the homogenized. So I use the homogenized, `/home/ccorbella/scratch2_symboliclink/files/1807_USBstick/WeaR_TOR_17530101-18631231_ta_hom.tsv`.
@@ -116,7 +131,7 @@ The pressure data are, presumably, in inches of mercury. I converted to hPa usin
 
 `🔴 To ask for: ` `Ylitornio_ta_daily.tsv` from Peter is very different from Stefan. This is how different they are:
 
-![Yli_fig](https://github.com/carlotatrx/KF_assimilation/blob/main/dataprep/Yli_diff.png)
+![Yli_fig](https://github.com/carlotatrx/KF_assimilation/blob/main/dataprep/image/Yli_diff.png)
 The only additional info we have is that in Peter's data it says "Stat: mean", and Stefan's data comes from the paper: 'Reference: Helama, S., Holopainen, J., Timonen, M., Ogurtsov, M. G., Lindholm, M., Meriläinen, J., Eronen, M. (2004). Comparison of living-tree and subfossil ringwidths with summer temperatures from 18th, 19th and 20th centuries in Northern Finland. Dendrochronologia 21/3, 147 - 154.'
 They say they homogenize daily temperatures. "Homogenization was performed by method of Moberg and Bergström (1997). This approach accounts for changing measurement time of daily observations and is expected to produce much more homogeneous time series of monthly temperatures than a simple average of observations (Holopainen, Vesajoki 2001)."
 
