@@ -42,16 +42,26 @@ colnames(df_T_on_S)[colnames(df_T_on_S)=="T_on_S"] <- "Value"
 # generate TSV for T_on_N
 meta[['Vbl']] <- 'ta'
 meta[['Units']] <- 'K'
+meta[['metaHead']] <- 'Hours correspond to original day periods morning, midday, evening'
 
-write_sef(Data=df_T_on_S, # df_T_on_N
+write_sef(Data=df_T_on_S,
           outpath=outdir,
           cod=meta[["ID"]],
           variable=meta[["Vbl"]],
           nam=meta[["Name"]],
           lat=meta[["Lat"]],
-          lon=meta[["Lon"]], alt=meta[["Alt"]], sou=meta[["Source"]],
+          lon=meta[["Lon"]], alt=meta[["Alt"]], sou=meta[["Source"]], metaHead = meta[['metaHead']],
           link=meta[["Link"]], units=meta[["Units"]], stat="point",
-          meta="orig_ta=Reaumur | T_on_S", keep_na = F) # meta="orig_ta=Reaumur | T_on_N"
+          meta="orig_ta=Reaumur | T_on_S", keep_na = F)
+write_sef(Data=df_T_on_N,
+          outpath=outdir,
+          cod=meta[["ID"]],
+          variable=meta[["Vbl"]],
+          nam=meta[["Name"]],
+          lat=meta[["Lat"]],
+          lon=meta[["Lon"]], alt=meta[["Alt"]], sou=meta[["Source"]], metaHead = meta[['metaHead']],
+          link=meta[["Link"]], units=meta[["Units"]], stat="point",
+          meta="orig_ta=Reaumur | T_on_N", keep_na = F)
 
 # create pressure file
 df_p <- df[, c("Year","Month","Day","Hour","Minute","P")]
@@ -67,7 +77,7 @@ write_sef(Data=df_p,
           variable=meta[["Vbl"]],
           nam=meta[["Name"]],
           lat=meta[["Lat"]],
-          lon=meta[["Lon"]], alt=meta[["Alt"]], sou=meta[["Source"]],
+          lon=meta[["Lon"]], alt=meta[["Alt"]], sou=meta[["Source"]], metaHead = meta[['metaHead']],
           link=meta[["Link"]], units=meta[["Units"]], stat="point",
           meta="orig_p=inches", keep_na = F)
 
@@ -100,6 +110,7 @@ for (line in meta_lines) {
 meta[['ID']] <- 'unknown_code'
 meta[['Vbl']] <- 'ta'
 meta[['Units']] <- 'K'
+meta[['metaHead']] <- 'Hours correspond to original day periods morning, midday, evening'
 
 final_df <- df[, c("Year","Month","Day","Hour","Minute","Value")]
 write_sef(Data=final_df,

@@ -14,7 +14,7 @@ library(tidyr)
 era5_t <- "../../reanalysis-era5-land_2m_temperature_daily_cycle_2001-2018.nc"
 era5_p <- "../../reanalysis-era5-land_surface_pressure_daily_cycle_2001-2018.nc"
 
-SEF_path <- "/home/ccorbella/scratch2_symboliclink/files/station_timeseries_orig/Ukraine"
+SEF_path <- "/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/Ukraine"
 outpath <- "/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/"
 
 
@@ -31,18 +31,12 @@ for (f in files) {
   #  x <- read.table(file = f, skip = 12, header = TRUE, fill = TRUE,
   #                  sep = "\t", stringsAsFactors = FALSE, quote = "")
   x <- read_sef(f, all=TRUE)
-  x[x == -999.9] <- NA              # replace all -999.9 to NA
   x <- x[which(!is.na(x$Value)), ]
   ko <- grep("qc", x$Meta)
   if (length(ko) > 0) x <- x[-ko, ] # Remove flagged values
   meta <- read_meta(f)
   
-  # convert time to decimal hours
-  x <- x %>%
-    mutate(Hour = as.character(Hour)) %>%  # in case it's not character already
-    separate(Hour, into = c("hour", "minute"), sep = ":", convert = TRUE) %>%
-    mutate(Time = hour + minute/60)
-  
+  x$Time <- x$Hour + x$Minute/60   # convert time to decimal hours
   # aggregate available times per day
   ntimes <- aggregate(x$Time, list(x$Year,x$Month,x$Day), function(x) sum(!is.na(x)))
   ntimes <- ntimes[order(ntimes[,1],ntimes[,2],ntimes[,3]), ]
@@ -70,23 +64,31 @@ for (f in files) {
     for (m in 1:12) dc[((m-1)*24+1):(m*24)] <- 
       dc[((m-1)*24+1):(m*24)] - mean(dc[((m-1)*24+1):(m*24)]) # indices corresponding to that month - monthly mean
     dc <- append(dc, dc[1]) # Add first value to end to ensure smooth interpolation in seasonal models
+    # now dc contains hourly ta anomalies for each month
     
     ## Calculate daily means
     xmean <- aggregate(x$Value, list(x$Year,x$Month,x$Day), mean, na.rm=TRUE)
     xmean <- xmean[order(xmean$Group.1, xmean$Group.2, xmean$Group.3), ]
+    # now xmean contains raw daily mean ta for each day
+    
     ## Apply correction for daily cycle
-    for (i_day in 1:nrow(xmean)) {
-      xtimes <- x$Time[which(x$Year==xmean$Group.1[i_day] & 
-                               x$Month==xmean$Group.2[i_day] & 
-                               x$Day==xmean$Group.3[i_day])]
+    for (i_day in 1:nrow(xmean)) {                            # for each day in xmean
+      xtimes <- x$Time[which(x$Year==xmean$Group.1[i_day] &   # identify obs times for each day
+                             x$Month==xmean$Group.2[i_day] & 
+                             x$Day==xmean$Group.3[i_day])]
       xtimes <- xtimes[!is.na(xtimes)]
-      if (length(xtimes) > 0) {
-        m <- as.integer(xmean$Group.2[i_day])
-        dc_day <- dc[((m-1)*24+1):(m*24)]
-        dc_day <- append(dc_day, dc_day[1])
-        corrections <- dc_day[as.integer(xtimes)+1] * (1-xtimes+as.integer(xtimes)) + 
-          dc_day[as.integer(xtimes)+2] * (xtimes-as.integer(xtimes))
+      if (length(xtimes) > 0) {                               # as long as there are obs
+        m <- as.integer(xmean$Group.2[i_day])                 # extract month number for current day
+        dc_day <- dc[((m-1)*24+1):(m*24)]                     # extract 24-hourly vals for month m
+        dc_day <- append(dc_day, dc_day[1])                   # append last value for circualrity
+        corrections <- dc_day[as.integer(xtimes)+1] * (1-xtimes+as.integer(xtimes)) + # contribution from lower hour
+                       dc_day[as.integer(xtimes)+2] * (xtimes-as.integer(xtimes))     # contribution from upper hour
+        
+        # this weighted average with (1-xtimes+as.integer(xtimes)) for the lower hour and (xtimes-as.integer(xtimes))
+        # is only relevant if our hours are not integers. Otherwise, the lower hour will always have 1 as the weight.
         out$Value[i_day] <- round(xmean$x[i_day] - mean(corrections), 1)
+        # finally, take raw daily mean (xmean$x[i_day]) for the day, subract the average of the interpolated
+        # daily corrections, and round result to 1 decimal place.
       }
     }
   }
