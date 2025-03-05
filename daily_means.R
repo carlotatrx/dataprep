@@ -53,6 +53,7 @@ for (f in files) {
                     Hour=rep(24, nrow(ntimes)),
                     Minute=rep(0, nrow(ntimes)),
                     Value=rep(NA, nrow(ntimes)))
+  
   if (max(ntimes$x) > 0) {    
     x$Value[which(is.na(x$Time))] <- NA
     ## Select closest grid point
@@ -61,12 +62,15 @@ for (f in files) {
     i_grid <- which.min(distGeo(c(xlon,xlat), coords))
     i_lon <- which(lons == coords$lon[i_grid])
     i_lat <- which(lats == coords$lat[i_grid])
+    
     ## Get daily cycle
     dc <- ncvar_get(nct, "t2m", c(i_lon, i_lat,1 ), c(1,1,-1))
+    
     ## Convert to anomalies from the daily mean
     for (m in 1:12) dc[((m-1)*24+1):(m*24)] <- 
-      dc[((m-1)*24+1):(m*24)] - mean(dc[((m-1)*24+1):(m*24)]) 
-    dc <- append(dc, dc[1])
+      dc[((m-1)*24+1):(m*24)] - mean(dc[((m-1)*24+1):(m*24)]) # indices corresponding to that month - monthly mean
+    dc <- append(dc, dc[1]) # Add first value to end to ensure smooth interpolation in seasonal models
+    
     ## Calculate daily means
     xmean <- aggregate(x$Value, list(x$Year,x$Month,x$Day), mean, na.rm=TRUE)
     xmean <- xmean[order(xmean$Group.1, xmean$Group.2, xmean$Group.3), ]
@@ -78,21 +82,22 @@ for (f in files) {
       xtimes <- xtimes[!is.na(xtimes)]
       if (length(xtimes) > 0) {
         m <- as.integer(xmean$Group.2[i_day])
-          dc_day <- dc[((m-1)*24+1):(m*24)]
-          dc_day <- append(dc_day, dc_day[1])
-          corrections <- dc_day[as.integer(xtimes)+1] * (1-xtimes+as.integer(xtimes)) + 
-            dc_day[as.integer(xtimes)+2] * (xtimes-as.integer(xtimes))
+        dc_day <- dc[((m-1)*24+1):(m*24)]
+        dc_day <- append(dc_day, dc_day[1])
+        corrections <- dc_day[as.integer(xtimes)+1] * (1-xtimes+as.integer(xtimes)) + 
+          dc_day[as.integer(xtimes)+2] * (xtimes-as.integer(xtimes))
         out$Value[i_day] <- round(xmean$x[i_day] - mean(corrections), 1)
       }
     }
   }
   # Write daily file
   #  out <- out[which(!is.na(out$Value)), ]
-   if (nrow(out) > 0) {
-  write_sef(out, outpath, meta["var"], meta["id"], meta["name"], 
-            meta["lat"], meta["lon"], meta["alt"], meta["source"], meta["link"], 
-            meta["units"], "mean", period="day", meta["meta"], note="daily", keep_na=TRUE)
-   }
+  if (nrow(out) > 0) {
+    write_sef(out, outpath, meta["var"], meta["id"], meta["name"], 
+              meta["lat"], meta["lon"], meta["alt"], meta["source"], meta["link"], 
+              meta["units"], "mean", period="day", meta["meta"], note="daily", keep_na=TRUE,
+              outfile=meta["name"])
+  }
 }
   
 
