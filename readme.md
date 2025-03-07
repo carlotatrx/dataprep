@@ -88,6 +88,8 @@ Ukrainian data conversion of Russian semi lines (R.s.l.) to hPa:
 
 Celsius = Réaumur * 1.25
 
+Station IDs were taken from the supplement of teh paper _Ukrainian early (pre-1850) historical weather observations_, last page.
+
 **Dnipro**
 
 > the measurements were performed at specified times three times per day. Air temperature was recorded in Reaumur degrees. Atmospheric pressure was firstly (1833–1838) recorded in inches, but later (1839–1842, 1850) R.s.l. were used as units for this.

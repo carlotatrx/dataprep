@@ -1,4 +1,6 @@
 ##
+library(dataresqc)
+
 indir <- '/home/ccorbella/scratch2_symboliclink/files/station_timeseries_orig/Ukraine/'
 outdir <- '/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/Ukraine/'
 
@@ -31,7 +33,6 @@ for (line in meta_lines) {
     meta[[line[1]]] <- NA
   }
 }
-meta[['ID']] <- 'unknown_code'
 
 # create two different files for T on N and T on S
 df_T_on_N <- df[, c("Year","Month","Day","Hour","Minute","T_on_N")]
@@ -88,11 +89,14 @@ df <- read.delim(paste0(indir, infile), header=T, sep='\t', stringsAsFactors = F
                  skip=12)
 
 # convert Reamur to Kelvin
-df$value <- ifelse(df$value == -999.9, NA, df$value * 1.25 + 273.13)
+df$Value <- ifelse(df$value == -999.9, NA, df$value * 1.25 + 273.13)
 
 # extract hour and minute
 df$Minute <- as.integer(sub(".*:","", df$Hour))
 df$Hour <- as.integer(sub(":.*", "", df$Hour))
+
+# rearrange columns
+df <- df[, c("Year","Month","Day","Hour","Minute","Value")]
 
 # read meta for SEF
 meta_lines <- strsplit(readLines(paste0(indir, infile), n=12), '\t')
@@ -107,13 +111,11 @@ for (line in meta_lines) {
     meta[[line[1]]] <- NA
   }
 }
-meta[['ID']] <- 'unknown_code'
 meta[['Vbl']] <- 'ta'
 meta[['Units']] <- 'K'
 meta[['metaHead']] <- 'Hours correspond to original day periods morning, midday, evening'
 
-final_df <- df[, c("Year","Month","Day","Hour","Minute","Value")]
-write_sef(Data=final_df,
+write_sef(Data=df,
           outpath=outdir,
           cod=meta[["ID"]],
           variable=meta[["Vbl"]],
