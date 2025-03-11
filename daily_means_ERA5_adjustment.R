@@ -11,8 +11,8 @@ library(ncdf4)
 library(dplyr)
 library(tidyr)
 
-era5_t <- "../../reanalysis-era5-land_2m_temperature_daily_cycle_2001-2018.nc"
-era5_p <- "../../reanalysis-era5-land_surface_pressure_daily_cycle_2001-2018.nc"
+era5_t <- "/home/ccorbella/scratch2_symboliclink/files/ERA5/ERA5_1950-1958_t2m.nc"
+era5_p <- "/home/ccorbella/scratch2_symboliclink/files/ERA5/ERA5_1950-1958_prmsl.nc"
 
 SEF_path <- "/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/Ukraine"
 outpath <- "/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/"
@@ -20,7 +20,7 @@ outpath <- "/home/ccorbella/scratch2_symboliclink/files/station_timeseries_prepr
 
 ## Temperature
 files <- list.files(SEF_path, pattern=".tsv", full.names=TRUE)
-nct <- nc_open("/home/ccorbella/scratch2_symboliclink/files/station_timeseries_orig/Ukraine/an_sfc_ERA5_1950-01-01.nc")
+nct <- nc_open(era5_t)
 lons <- ncvar_get(nct, "lon")
 lons[lons>180] <- lons[lons>180] - 360
 lats <- ncvar_get(nct, "lat")
@@ -97,13 +97,14 @@ for (f in files) {
   if (nrow(out) > 0) {
     write_sef(out, outpath, meta["var"], meta["id"], meta["name"], 
               meta["lat"], meta["lon"], meta["alt"], meta["source"], meta["link"], 
-              meta["units"], "mean", period="day", meta["meta"], note="daily", keep_na=TRUE,
-              outfile=meta["name"])
+              meta["units"], "mean", period="day", meta="orig_ta=Reaumur | daily_cycle=T", note="daily", keep_na=TRUE,
+              outfile=meta["name"], metaHead="daily means adjusted to ERA5 | T_on_N")
   }
 }
   
 
 # Temperature dailies
+## Here we assume daily means are already available and only apply corrections
 file <- list.files(SEF_path, pattern="ta_daily", full.names=TRUE)
 lons <- ncvar_get(nct, "longitude")
 lons[lons>180] <- lons[lons>180] - 360

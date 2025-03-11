@@ -89,7 +89,7 @@ df <- read.delim(paste0(indir, infile), header=T, sep='\t', stringsAsFactors = F
                  skip=12)
 
 # convert Reamur to Kelvin
-df$Value <- ifelse(df$value == -999.9, NA, df$value * 1.25 + 273.13)
+df$Value <- ifelse(df$Value == -999.9, NA, df$Value * 1.25 + 273.13)
 
 # extract hour and minute
 df$Minute <- as.integer(sub(".*:","", df$Hour))
