@@ -50,8 +50,6 @@ From the same link where I extracted Paris, I got London and to take the mean pr
 
 We already had temperature from `PALAEO-RA_IMPROVE_Milan_17630101-18621231_ta`, which is the same as the third column of the raw file, and now I add pressure.
 
-`🔴 To ask for: `The pressure is from from Stefan's `1807raw_andmore/Final_Series_Improve/milan/`. No details about station location or data collection. Same as temperature (available from Peter)?
-
 ### Padova
 
 Ja teníem pressure i temperature fins a 1809, ara s'ha d'allargar i per no tenir 2 series de la mateixa station les concatenejo i en faig una de sola, que la utilitzaré per reemplaçar la de la carpeta USB stick Peter.
@@ -74,8 +72,6 @@ Also converted to hPa through multiplication by 0.1. Then my data are the same a
 ### Stockholm,  Uppsala
 
 Same as Padova, without need for concatenating files.
-
-`🔴 To ask for: `what are the coordinates of Uppsala? Are they the same as in the temperature file from Peter?
 
 ### Ukraine
 
@@ -100,12 +96,9 @@ No days with less than 3 observations. Daily means is weighted average.
 
 I'm only looking until 1825 because afterwards there are different measurements in various places.
 
-> Two values of air temperature during 1808-February 1825 were recorded every time of measurement, and both of them were digitized. These two values of temperature were marked in the paper source as ‘on S’ and ‘on N’, probably meaning ‘on South’ and ‘on
-> North’ walls. The differences between these two temperatures are very small. Such temperature time series seem to be something like ‘parallel’ measurements. However, no detailed information was found regarding these slightly different temperature values.
+> Two values of air temperature during 1808-February 1825 were recorded every time of measurement, and both of them were digitized. These two values of temperature were marked in the paper source as ‘on S’ and ‘on N’, probably meaning ‘on South’ and ‘on North’ walls. The differences between these two temperatures are very small. Such temperature time series seem to be something like ‘parallel’ measurements. However, no detailed information was found regarding these slightly different temperature values.
 
-I am therefore averaging the 'on S' and 'on N' measurements for a single T measurement.
-
-`🔴 To ask for:` The problem is, there are many dates where one of the measurements is missing. e.g. one of the `T` is missing or evening is missing. What do we do in tese cases?
+Look at `dataprep_ukraine.ipynb` for explanations.
 
 **Kyív**
 
@@ -121,11 +114,17 @@ If I use $t_{daily}=(t_{min}+t_{max})/2$ it's a bit different from the WeaR data
 
 All changes are applied to `Valencia_concatenated.csv`, the original files are left untouched.
 
+The data are described in Domínguez Castro, Fernando, et al. "Early Spanish meteorological records (1780-1850)." (2014). Each daily observation includes five variables: air temperature (Reaumur scale), atmospheric pressure (in inches and lines), humidity (with a hygrometer made by the observer and expressed in 24 degrees of humidity), etc. Bar(p) are the inches, **Castillian** inch, which is 23.22mm. Bar(l) are **lines (1 line=1/12 of an inch = 1.935mm). We assume that the air temperature given is Reaumur scale and the pressure, in Castillian inches.**
+
+$$
+P_{hPa}=(in\;*23.22+line\;*1.935)*1.3322
+$$
+
 Some values seem to be wrongly typed, e.g. rows 2192-2194, 3288-3290 of 1804-1813.csv. I changed the month to 1 instead of 2. I changed the column "Date", which I have created myself on Excel, but not the original "Month" column. The dates which are changed are those that are duplicated, see file `Valencia_orig_obsperday_gt3.csv`. Usually the morning measurement, at 09:00h, was duplicated, so I erased it. At 1860 the dataset is quite meh so I just did until 1859. It is a weight average with $0.3*morning + 0.5*noon + 0.2*evening$
 
 Only 36 days have less than 3 measurements. This is 0.20% of the entire dataset so I decided not to compare with ERA-5 climatology. The days with fewer measurements are stored in the file `Valencia_orig_obsperday_lt3.csv` and they are removed from the dataset.
 
-`🔴 To ask for: `The original dataset consists of the columns _Bar(p)_, _Bar(l_), _Hidro_. I don't know what _Hidro_ stands for. _Bar(p)_ and _Bar(l_) are the same and I assume they are inches of mercury, so I just transform them to hPa as in Ylitornio. WHICH IS INCORRECT.
+`🔴 To do: `Bar(p) are the inches, **Castillian** inch, which is 23.22m. Bar(l) are **lines (1 line=1/12 of an inch). CASTILLIAN INCHES ARE NOT CORRECT!! VALUES OF PRESSURE ARE TOO LOW.**
 
 ### Ylitornio
 
