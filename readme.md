@@ -28,9 +28,11 @@ File `TG_SOUID100862.txt` from folder `ECA_non-blended_custom-1`, where metadata
 
 All cells with data have a quailty code of 0 (valid). I converted the `TG` column to °C units by multiplying by 0.1.
 
-`🔴 To ask for: `Stefan's Bologna starts in 1814, it's from ECA&D but online website doesn't exist anymore. Peter's Bologna is from IMROVE and has only 1807. Where are the rest from Peter/Noemi?
+`🔴 To ask for: `Stefan's Bologna starts in 1814, it's from ECA&D (`1807raw_andmore/ECA_non-blendd_custom-1/TG_SOUID100862`) but online website doesn't exist anymore. Peter's Bologna is from IMROVE and has only 1807. Where are the rest from Peter/Noemi?
 
-ladsffds
+Noemi has some Bologna data in `Noemi_scratch3/laki1783/data/01_stations/bologna/Camuffo_Camuffo_Bologna_17150101-18151231_ta.tsv` which is very different from Stefan's.
+
+In the history of 1796-1812: First observations at the Meteorological and Astronomical Observatory, later discarded as deemed of a too low quality
 
 ### Cádiz
 
@@ -56,9 +58,9 @@ Ja teníem pressure i temperature fins a 1809, ara s'ha d'allargar i per no teni
 
 ### Paris
 
-The data from `Paris_p_daily.tsv` in Peter's USB is almost the same but not exactly to the data from `Paris_4_17850101-18720615_mslp.tsv`, downloaded from  (LDL)[[https://figshare.com/articles/dataset/Sub-daily_sea-level_pressure_series_for_London_GB_Paris_FR_and_De_Bilt_NL_/24242302/3?file=45614718]()]. This link has only pressure data. We use the LDL data, not Peter's data.
+The data from `Paris_p_daily.tsv` in Peter's USB is almost the same but not exactly to the data from `Paris_4_17850101-1872061_mslp.tsv`, downloaded from  (LDL)[[https://figshare.com/articles/dataset/Sub-daily_sea-level_pressure_series_for_London_GB_Paris_FR_and_De_Bilt_NL_/24242302/3?file=45614718]()]. This link has only pressure data. We use the LDL data, not Peter's data.
 
-Moreover, the data in the column _T°C_ on the tab _Tjour_ in the file `paris_Daily_Updated_meteo_2024_127_33_supp.xlsx` (from Stefan) is different than the data from `Paris_ta_noon.tsv` from Peter's stick. If anything, it seems to be closer to the _TX_ column, even if not exactly the same. I'll use Stefan's file. The _T°C_ is $(TX+TN)/2$ with 0.5 precision.
+`🔴 To ask for:` Moreover, the data in the column _T°C_ on the tab _Tjour_ in the file `paris_Daily_Updated_meteo_2024_127_33_supp.xlsx` (from Stefan) is different than the data from `Paris_ta_noon.tsv` from Peter's stick. If anything, it seems to be closer to the _TX_ column, even if not exactly the same. I'll use Stefan's file. The _T°C_ is $(TX+TN)/2$ with 0.5 precision. WHAT ARE THE COORDINATES?
 
 ### Prague
 
