@@ -71,7 +71,11 @@ Same as Bologna. Only the following has a suspect code:
 
 Also converted to hPa through multiplication by 0.1. Then my data are the same as Peter's folder. I can then use Peter's folder.
 
-### Stockholm,  Uppsala
+### Stockholm
+
+ATTENTION!! There's another file with explanations, `stockholm_SLP_1756_2012_hPa_hom.txt`, from `1807raw_andmore/database-web-stockholm-historical-weather-observations-1.0/database-web-stockholm-historical-weather-observations-1.0/air_pressure/`.
+
+### Uppsala
 
 Same as Padova, without need for concatenating files.
 

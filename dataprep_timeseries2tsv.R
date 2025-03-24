@@ -1,5 +1,6 @@
 library(dataresqc)
 library(lubridate)
+library(dplyr)
 
 source("/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/write_sef_f.R")
 
@@ -130,20 +131,21 @@ for (field in meta_check_fields) {
 }
 
 combined_sef <- rbind(sef1, sef2)
+combined_sef$Var <- NULL # drop first col
 combined_sef <- combined_sef[order(combined_sef$Year, combined_sef$Month, combined_sef$Day,
                                    combined_sef$Hour, combined_sef$Minute), ]
 
 write_sef(combined_sef, 
           outpath = outdir, 
           outfile = "London_p_subdaily.tsv", 
-          variable = meta1["var"], 
+          variable = "p", 
           cod = "11_and_12",                         # combined ID
           nam = meta1["name"],                       # keep name from file 1
           lat = meta1["lat"], lon = meta1["lon"], alt = meta1["alt"], 
           sou = meta1["source"], link = meta1["link"], 
           units = meta1["units"], stat = "point", 
           period = "NA", 
-          metaHead = "altitude of 29.6 from 1823-01-01 to 1841-15-31",
+          metaHead = "altitude of 29.6 from 1823-01-01 to 1841-15-31 | var=mslp",
           meta = combined_sef$Meta,
           keep_na = F)
 
@@ -241,8 +243,117 @@ write_sef(df.ta.pad,
           units = "C",
           stat = "point", 
           metaHead = meta_ref["meta"],
-          meta = df$Meta,  # use per-row meta if df includes it
           keep_na = F)
+
+
+# Paris -------------------------------------------------------------------
+df <- read.csv('/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/Paris_TMP2m.csv')
+
+df <- data.frame(
+  Year= year(df$Date),
+  Month=month(df$Date),
+  Day=day(df$Date),
+  Hour='NA',
+  Minute='NA',
+  Value=df$TMP2m
+)
+
+meta <- list(
+  ID = "Paris",
+  Name = "Paris",
+  Lat = NA,
+  Lon = NA,
+  Alt = NA,
+  Vbl = "ta",
+  Units = "C",
+  Link = "paris_Daily_Updated_meteo_2024_127_33_supp.xlsx from Stefan",
+  Source = "Rousseau D., 2024. La série des températures journalières à Paris de 1658 à 2023"
+)
+
+write_sef_f(Data=df, outfile="Paris_ta.tsv",
+            outpath=outdir,
+            cod=meta[["ID"]],
+            variable=meta[['Vbl']],
+            nam=meta[["Name"]],
+            lat=meta[["Lat"]], link=meta[['link']],
+            lon=meta[["Lon"]], alt=meta[["Alt"]], sou=meta[["Source"]], 
+            units=meta['Units'], stat="point",keep_na = F
+)
+
+# Stockholm -----------------------------------------------------------------
+
+df <- read.delim('/home/ccorbella/scratch2_symboliclink/files/station_timeseries_orig/stockholm_SLP_1756_2012_hPa_hom.txt',
+                 header=FALSE, fill=T, sep="", col.names= c('Year','Month','Day','PRMSL','dunno','dunno2'))
+
+df.p.Sto <- data.frame(
+  Year= df$Year,
+  Month=df$Month,
+  Day=df$Day,
+  Hour='NA',
+  Minute='NA',
+  Value=df$PRMSL
+)
+
+# keep only data for period of homogenization and 3 obs/day
+df <- df %>% filter(Year>=1785, Year<=1860)
+
+meta <- list(
+  ID = "IMPROVE_Stockholm",
+  Name = "Stockholm Old Astronomical Observatory",
+  Lat = 59.35,
+  Lon = 18.05,
+  Alt = 44,
+  Source = "Moberg A, Bergström H, Ruiz Krigsman J, Svanered O. 2002: Daily air temperature and pressure series for Stockholm (1756-1998). Climatic Change 53: 171-212",
+  Link="http://people.su.se/~amobe/stockholm/stockholm-historical-weather-observations-ver-1.0"
+)
+
+write_sef_f(Data=df.p.Sto, outfile="Stockholm_p.tsv",
+            meta="hom.daymean | orig.obs=3",
+            outpath=outdir,
+            cod=meta[["ID"]],
+            variable="p",
+            nam=meta[["Name"]], link=meta[['Link']],
+            lat=meta[["Lat"]],
+            lon=meta[["Lon"]], alt=meta[["Alt"]], sou=meta[["Source"]],
+            metaHead = "Homogenized Sea Level Pressure 1756-2012, i.e. observed air pressure reduced to 0 degC, normal gravity and sea level. Additionally 	corrected for known and supposed biased barometers and also homogenized against reference stations",
+            units="hPa", stat="mean",keep_na = F
+)
+
+# TORINO -----------------------------------------------------------------
+
+df <- read.csv('/home/ccorbella/scratch2_symboliclink/files/station_timeseries_orig/TorinoPR792_953.csv',sep='\t')
+
+df.p.Tor <- data.frame(
+  Year=df$a,
+  Month=df$m,
+  Day=df$g,
+  Hour=df$ora,
+  Minute='NA',
+  Value=df$Pressione.ridotta.al.l.d.m...hPa.
+)
+
+df.p.Tor <- df.p.Tor %>% filter(Year>=1803,Year<=1866)
+
+meta <- list(
+  ID = "Torino",
+  Name = "Torino",
+  Lat = 45.06813258066838,
+  Lon = 7.68408326971596,
+  Alt = 254,
+  Source = "Yuri-stations-01/Turin/; Contatti: Società Meteorologica Italiana, info@nimbus.it",
+  Link="http://people.su.se/~amobe/stockholm/stockholm-historical-weather-observations-ver-1.0"
+)
+
+write_sef_f(Data=df.p.Sto, outfile="Torino_p.tsv",
+            outpath=outdir,
+            cod=meta[["ID"]],
+            variable="p",
+            nam=meta[["Name"]], link=meta[['Link']],
+            lat=meta[["Lat"]],
+            lon=meta[["Lon"]], alt=meta[["Alt"]], sou=meta[["Source"]], metaHead = "quota barometro (m)=280.90",
+            units="hPa", stat="point",keep_na = F
+)
+
 
 # UPPSALA -----------------------------------------------------------------
 
