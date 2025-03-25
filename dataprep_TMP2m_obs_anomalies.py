@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 Created on Thu Nov 28 12:22:27 2024
+Deseasonalization of temperature observation timeseries 
 
 @author: ccorbella@giub.local
 """
@@ -12,6 +13,25 @@ import matplotlib.pyplot as plt
 plt.rcParams.update({'font.size': 12})
 
 #%% Load CSV files generated from R
+df = pd.read_csv('/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/data/ta_obs.csv')
+
+# temporarily drop Yli.x
+df = df.drop(columns={'Ylitornio.x'})
+
+df['Date'] = pd.to_datetime(df[['Year', 'Month', 'Day']])
+df = df[df['Date'] <= '1849-12-31']
+df = df[df['Date'] >= '1806-01-01']
+df.index -= df.index[0] # reset indices
+
+doy = df['Date'].dt.dayofyear
+freq = 2 * np.pi / 365.25
+
+yobs_plain = df.iloc[:,3:-1].to_numpy()
+yobs_anomaly = yobs_plain.copy()
+seasonal_cycle = []
+########################################################################
+
+
 csv_filepath = '/home/ccorbella/scratch2_symboliclink/files/1807_USBstick/'
 df_all  = pd.read_csv(f'{csv_filepath}station_data.csv')
 metadata = pd.read_csv(f'{csv_filepath}station_metadata.csv', index_col=0)
@@ -99,18 +119,18 @@ for i in range(yobs_plain.shape[1]): # loop through stations
 #%% make plots
 for i in range(yobs_plain.shape[1]):
     plt.figure(figsize=(12, 6))
-    plt.plot(df_all['Date'], yobs_plain[:, i], label="Observations")
-    plt.plot(df_all['Date'], seasonal_cycle[i], label="Seasonal Fit")
-    plt.plot(df_all['Date'], yobs_anomaly[:, i], label="Anomalies", alpha=.8)
+    plt.plot(df['Date'], yobs_plain[:, i], label="Observations")
+    plt.plot(df['Date'], seasonal_cycle[i], label="Seasonal Fit")
+    plt.plot(df['Date'], yobs_anomaly[:, i], label="Anomalies", alpha=.8)
     plt.axhline(0, linestyle='dashed', color='k', alpha=.5)
     plt.legend(ncol=3)
-    plt.title(f"{df_all.columns[i+1]} Station - Anomaly Adjustment (1806-1821)")
+    plt.title(f"{df.columns[i+3]} Station - Anomaly Adjustment (1806-1821)")
     plt.xlabel("Date")
     plt.ylabel(r"Temperature [$^{\circ}$C]")
-    plt.savefig(f'/scratch2/ccorbella/files/1807_USBstick/station_anomalies_plots/validation/{df_all.columns[i+1]}_station_{i}_anomalyplot.png')
+    plt.savefig(f'/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/image/{df.columns[i+3]}_station_{i}_anomalyplot.png')
     plt.show()
 
 #%% save series
-yobs_anomaly_df = pd.DataFrame(yobs_anomaly, index=df_all['Date'], columns=df_all.columns[1:])
-yobs_anomaly_df.to_csv('scratch2/ccorbella/code/KF_assimilation/data/TMP2m_obsvalidation_anomalies.csv')
+yobs_anomaly_df = pd.DataFrame(yobs_anomaly, index=df['Date'], columns=df.columns[3:-1])
+yobs_anomaly_df.to_csv('/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/data/ta_obs_anomalies.csv')
 
