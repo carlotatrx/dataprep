@@ -468,11 +468,11 @@ df.p.Yli <- data.frame(
 meta <- list(
   ID = "Ylitornio",
   Name = "Ylitornio",
-  Lat = "unknown",
-  Lon = "unknown",
-  Alt = "unknown",
+  Lat = "66.319266",
+  Lon = "23.670970",
+  Alt = "55",
   Source = "Helama, S., Holopainen, J., Timonen, M., Ogurtsov, M. G., Lindholm, M., Meriläinen, J., Eronen, M. (2004). Comparison of living-tree and subfossil ringwidths with summer temperatures from 18th, 19th and 20th centuries in Northern Finland. Dendrochronologia 21/3, 147 - 154.",
-  meta = "observer=Johan Portin | orig_ta=C | orig_p=unknown(similar to Turku Academy measurements)"
+  meta = "observer=Johan Portin | orig_ta=C | orig_p=unknown(similar to Turku Academy measurements) | latlon extracted from Peter's Yli"
 )
 
 write_sef_f(Data=df.ta.Yli, outfile="Ylitornio_ta.tsv",

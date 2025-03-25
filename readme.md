@@ -62,7 +62,7 @@ Ja teníem pressure i temperature fins a 1809, ara s'ha d'allargar i per no teni
 
 The data from `Paris_p_daily.tsv` in Peter's USB is almost the same but not exactly to the data from `Paris_4_17850101-1872061_mslp.tsv`, downloaded from  (LDL)[[https://figshare.com/articles/dataset/Sub-daily_sea-level_pressure_series_for_London_GB_Paris_FR_and_De_Bilt_NL_/24242302/3?file=45614718]()]. This link has only pressure data. We use the LDL data, not Peter's data.
 
-`🔴 To ask for:` Moreover, the data in the column _T°C_ on the tab _Tjour_ in the file `paris_Daily_Updated_meteo_2024_127_33_supp.xlsx` (from Stefan) is different than the data from `Paris_ta_noon.tsv` from Peter's stick. If anything, it seems to be closer to the _TX_ column, even if not exactly the same. I'll use Stefan's file. The _T°C_ is $(TX+TN)/2$ with 0.5 precision. WHAT ARE THE COORDINATES?
+`🔴 To ask for:` Moreover, the data in the column _T°C_ on the tab _Tjour_ in the file `paris_Daily_Updated_meteo_2024_127_33_supp.xlsx` (from Stefan) is different than the data from `Paris_ta_noon.tsv` from Peter's stick. If anything, it seems to be closer to the _TX_ column, even if not exactly the same. I'll use Stefan's file. The _T°C_ is $(TX+TN)/2$ with 0.5 precision. **WHAT ARE THE COORDINATES?**
 
 ### Prague
 
@@ -151,14 +151,14 @@ This is most likely a typo in the writing of the year. I correct this directly i
 
 The pressure data are, presumably, in inches of mercury. I converted to hPa using $1013.25 * ( P_{inHg} / 29.92)$. It might not be the proper conversion (I couldn't find what the units were, but since I'll assimilate anomalies, it won't matter too much anyway).
 
-`🔴 To ask for: ` `Ylitornio_ta_daily.tsv` from Peter is very different from Stefan. This is how different they are:
+`🔴 To ask for: ` `Ylitornio_ta_daily.tsv` from Peter is very different from Stefan. WHAT ARE THE COORDS OF STEFAN'S YLI?? This is how different they are:
 
 ![Yli_fig](https://github.com/carlotatrx/KF_assimilation/blob/main/dataprep/image/Yli_diff.png)
 
 The only additional info we have is that in Peter's data it says "Stat: mean", and Stefan's data comes from the paper: 'Reference: Helama, S., Holopainen, J., Timonen, M., Ogurtsov, M. G., Lindholm, M., Meriläinen, J., Eronen, M. (2004). Comparison of living-tree and subfossil ringwidths with summer temperatures from 18th, 19th and 20th centuries in Northern Finland. Dendrochronologia 21/3, 147 - 154.'
 They say they homogenize daily temperatures. "Homogenization was performed by method of Moberg and Bergström (1997). This approach accounts for changing measurement time of daily observations and is expected to produce much more homogeneous time series of monthly temperatures than a simple average of observations (Holopainen, Vesajoki 2001)."
 
-I study how different they are in `dataprep_stations.ipynb`. 
+I study how different they are in `dataprep_stations.ipynb`.
 
 ### Zwanenburg
 
