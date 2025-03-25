@@ -1,3 +1,5 @@
+This README refers to the script `dataprep_stations.ipynb`.
+
 ## Description of the stations
 
 * _Barcelona_: From Stefan, he said original data and person of contact is Mariano Barriendos from Universitat de Barcelona
@@ -155,6 +157,8 @@ The pressure data are, presumably, in inches of mercury. I converted to hPa usin
 
 The only additional info we have is that in Peter's data it says "Stat: mean", and Stefan's data comes from the paper: 'Reference: Helama, S., Holopainen, J., Timonen, M., Ogurtsov, M. G., Lindholm, M., Meriläinen, J., Eronen, M. (2004). Comparison of living-tree and subfossil ringwidths with summer temperatures from 18th, 19th and 20th centuries in Northern Finland. Dendrochronologia 21/3, 147 - 154.'
 They say they homogenize daily temperatures. "Homogenization was performed by method of Moberg and Bergström (1997). This approach accounts for changing measurement time of daily observations and is expected to produce much more homogeneous time series of monthly temperatures than a simple average of observations (Holopainen, Vesajoki 2001)."
+
+I study how different they are in `dataprep_stations.ipynb`. 
 
 ### Zwanenburg
 
