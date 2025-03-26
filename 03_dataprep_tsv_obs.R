@@ -1,7 +1,6 @@
 library(dataresqc)
 library(dplyr)
 library(tidyr)
-library(purrr)
 
 # Define directories
 dirs <- c("/home/ccorbella/scratch2_symboliclink/files/1807_USBstick",

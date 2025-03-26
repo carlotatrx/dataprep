@@ -7,6 +7,7 @@ Deseasonalization of temperature observation timeseries
 @author: ccorbella@giub.local
 """
 
+#%%%
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -29,42 +30,14 @@ freq = 2 * np.pi / 365.25
 yobs_plain = df.iloc[:,3:-1].to_numpy()
 yobs_anomaly = yobs_plain.copy()
 seasonal_cycle = []
-########################################################################
-
-
-csv_filepath = '/home/ccorbella/scratch2_symboliclink/files/1807_USBstick/'
-df_all  = pd.read_csv(f'{csv_filepath}station_data.csv')
-metadata = pd.read_csv(f'{csv_filepath}station_metadata.csv', index_col=0)
-
-# station data might have repeated columns depending on the code in R
-for col in df_all.columns:
-    if col + ".y" in df_all.columns:
-        if df_all[col].equals(df_all[col + ".y"]):      # Check if all values are equal in both columns
-            df_all = df_all.drop(columns=[col + ".y"])  # Drop the ".y" column if they are equal
-
-# one time operation 
-if (df_all.columns[0]!='date'):
-    df_all = df_all.drop(df_all.columns[[0]],axis=1) # drop stupid first column
-    df_all = df_all.drop(columns=['IMPROVE_StPetersburg'])
-
-df_all['date'] = pd.to_datetime(df_all['date'])
-
-# crop the data
-df_all = df_all[df_all['date'] <= '1821-12-31']
-df_all = df_all[df_all['date'] >= '1806-01-01']
-df_all.index -= df_all.index[0] # reset indices
-
-#%% if data pre-processed in Python start from here
-df_all = pd.read_csv('/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/data/TMP2m_obsvalidation_data.csv')
 
 #%% fit harmonics
 from sklearn.linear_model import LinearRegression
 
-df_all['Date'] = pd.to_datetime(df_all['Date'])
-doy = df_all['Date'].dt.dayofyear
+doy = df['Date'].dt.dayofyear
 freq = 2 * np.pi / 365.25
 
-yobs_plain = df_all.iloc[:,1:].to_numpy()
+yobs_plain = df.iloc[:,3:-1].to_numpy()
 yobs_anomaly = yobs_plain.copy()
 seasonal_cycle = []
 
@@ -113,8 +86,6 @@ for i in range(yobs_plain.shape[1]): # loop through stations
         yobs_anomaly[:, i] = obs_col - sc
         print("four harmonics for station", i, lm_obs.coef_)
     seasonal_cycle.append(sc)
-
-
         
 #%% make plots
 for i in range(yobs_plain.shape[1]):

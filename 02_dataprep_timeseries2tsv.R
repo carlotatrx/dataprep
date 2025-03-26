@@ -9,7 +9,7 @@ outdir <- '/home/ccorbella/scratch2_symboliclink/files/station_timeseries_prepro
 
 # Bologna -----------------------------------------------------------------
 
-df <- read.csv('/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/Bologna_TMP2m.csv')
+df <- read.csv('/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/csvs/Bologna_TMP2m.csv')
 
 df.ta.bol <- data.frame(
   Year= year(df$Date),
@@ -44,7 +44,7 @@ write_sef_f(Data=df.ta.bol, outfile="Bologna_ta.tsv",
 
 # CADIZ -----------------------------------------------------------------
 
-df <- read.csv('/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/Cadiz_PRMSL.csv')
+df <- read.csv('/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/csvs/Cadiz_PRMSL.csv')
 
 df.p.cad <- data.frame(
   Year= year(df$Date),
@@ -78,7 +78,7 @@ write_sef_f(Data=df.ta.bol, outfile="Cadiz_p.tsv",
 
 # Central England Temperature (CET) -----------------------------------------------------------------
 
-df <- read.csv('/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/CET_TMP2m.csv')
+df <- read.csv('/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/csvs/CET_TMP2m.csv')
 
 df.ta.cet <- data.frame(
   Year= year(df$Date),
@@ -135,24 +135,24 @@ combined_sef$Var <- NULL # drop first col
 combined_sef <- combined_sef[order(combined_sef$Year, combined_sef$Month, combined_sef$Day,
                                    combined_sef$Hour, combined_sef$Minute), ]
 
-write_sef(combined_sef, 
-          outpath = outdir, 
-          outfile = "London_p_subdaily.tsv", 
-          variable = "p", 
-          cod = "11_and_12",                         # combined ID
-          nam = meta1["name"],                       # keep name from file 1
-          lat = meta1["lat"], lon = meta1["lon"], alt = meta1["alt"], 
-          sou = meta1["source"], link = meta1["link"], 
-          units = meta1["units"], stat = "point", 
-          period = "NA", 
-          metaHead = "altitude of 29.6 from 1823-01-01 to 1841-15-31 | var=mslp",
-          meta = combined_sef$Meta,
-          keep_na = F)
+write_sef_f(combined_sef, 
+            outpath = outdir, 
+            outfile = "London_p_subdaily.tsv", 
+            variable = "p", 
+            cod = "11_and_12",                         # combined ID
+            nam = meta1["name"],                       # keep name from file 1
+            lat = meta1["lat"], lon = meta1["lon"], alt = meta1["alt"], 
+            sou = meta1["source"], link = meta1["link"], 
+            units = meta1["units"], stat = "point", 
+            period = "NA", 
+            metaHead = "altitude of 29.6 from 1823-01-01 to 1841-15-31 | var=mslp",
+            meta = combined_sef$Meta,
+            keep_na = F)
 
 
 # Milan -------------------------------------------------------------------
 
-df <- read.csv('/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/Milan_PRMSL.csv')
+df <- read.csv('/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/csvs/Milan_PRMSL.csv')
 
 df.p.mil <- data.frame(
   Year= year(df$Date),
@@ -190,7 +190,7 @@ write_sef_f(Data=df.ta.bol, outfile="Milan_p.tsv",
 # Read metadata from the reference file
 meta_ref <- read_meta('/home/ccorbella/scratch2_symboliclink/files/1807_USBstick/not_to_use/Padova_p_daily.tsv')
 
-df <- read.csv('/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/Padova_PRMSL.csv')
+df <- read.csv('/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/csvs/Padova_PRMSL.csv')
 
 df.p.pad <- data.frame(
   Year= year(df$Date),
@@ -201,7 +201,7 @@ df.p.pad <- data.frame(
   Value=df$PRMSL
 )
 
-df <- read.csv('/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/Padova_TMP2m.csv')
+df <- read.csv('/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/csvs/Padova_TMP2m.csv')
 
 df.ta.pad <- data.frame(
   Year= year(df$Date),
@@ -213,41 +213,41 @@ df.ta.pad <- data.frame(
 )
 
 # Write df to SEF using metadata from reference file
-write_sef(df.p.pad,
-          outpath = outdir,
-          outfile = "Padova_p.tsv",
-          variable = "p",
-          cod = meta_ref["id"],
-          nam = meta_ref["name"],
-          lat = meta_ref["lat"],
-          lon = meta_ref["lon"],
-          alt = meta_ref["alt"],
-          sou = meta_ref["source"],
-          link = meta_ref["link"],
-          units = "hPa",
-          stat = "point",  # or "point" if relevant
-          metaHead = meta_ref["meta"],
-          keep_na = F)
+write_sef_f(df.p.pad,
+            outpath = outdir,
+            outfile = "Padova_p.tsv",
+            variable = "p",
+            cod = meta_ref["id"],
+            nam = meta_ref["name"],
+            lat = meta_ref["lat"],
+            lon = meta_ref["lon"],
+            alt = meta_ref["alt"],
+            sou = meta_ref["source"],
+            link = meta_ref["link"],
+            units = "hPa",
+            stat = "point",  # or "point" if relevant
+            metaHead = meta_ref["meta"],
+            keep_na = F)
 
-write_sef(df.ta.pad,
-          outpath = outdir,
-          outfile = "Padova_ta.tsv",
-          variable = "ta",
-          cod = meta_ref["id"],
-          nam = meta_ref["name"],
-          lat = meta_ref["lat"],
-          lon = meta_ref["lon"],
-          alt = meta_ref["alt"],
-          sou = meta_ref["source"],
-          link = meta_ref["link"],
-          units = "C",
-          stat = "point", 
-          metaHead = meta_ref["meta"],
-          keep_na = F)
+write_sef_f(df.ta.pad,
+            outpath = outdir,
+            outfile = "Padova_ta.tsv",
+            variable = "ta",
+            cod = meta_ref["id"],
+            nam = meta_ref["name"],
+            lat = meta_ref["lat"],
+            lon = meta_ref["lon"],
+            alt = meta_ref["alt"],
+            sou = meta_ref["source"],
+            link = meta_ref["link"],
+            units = "C",
+            stat = "point", 
+            metaHead = meta_ref["meta"],
+            keep_na = F)
 
 
 # Paris -------------------------------------------------------------------
-df <- read.csv('/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/Paris_TMP2m.csv')
+df <- read.csv('/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/csvs/Paris_TMP2m.csv')
 
 df <- data.frame(
   Year= year(df$Date),
@@ -261,9 +261,9 @@ df <- data.frame(
 meta <- list(
   ID = "Paris",
   Name = "Paris",
-  Lat = NA,
-  Lon = NA,
-  Alt = NA,
+  Lat = 48.86,
+  Lon = 2.34,
+  Alt = 42,
   Vbl = "ta",
   Units = "C",
   Link = "paris_Daily_Updated_meteo_2024_127_33_supp.xlsx from Stefan",
@@ -277,6 +277,7 @@ write_sef_f(Data=df, outfile="Paris_ta.tsv",
             nam=meta[["Name"]],
             lat=meta[["Lat"]], link=meta[['link']],
             lon=meta[["Lon"]], alt=meta[["Alt"]], sou=meta[["Source"]], 
+            metaHead = "latlon from Peter's Paris_ta_noon.tsv",
             units=meta['Units'], stat="point",keep_na = F
 )
 
@@ -357,7 +358,7 @@ write_sef_f(Data=df.p.Sto, outfile="Torino_p.tsv",
 
 # UPPSALA -----------------------------------------------------------------
 
-df <- read.csv('/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/Uppsala_PRMSL.csv')
+df <- read.csv('/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/csvs/Uppsala_PRMSL.csv')
 
 df.p.Upp <- data.frame(
   Year= year(df$Date),
@@ -444,7 +445,7 @@ write_sef_f(Data=df.p.Valencia,outfile="Valencia_p_subdaily.tsv",
 
 
 # Ylitornio ---------------------------------------------------------------
-df <- read.csv('/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/Ylitornio_all.csv',
+df <- read.csv('/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/csvs/Ylitornio_all.csv',
                header=T)
 
 df.ta.Yli <- data.frame(
@@ -495,4 +496,3 @@ write_sef_f(Data=df.p.Yli, outfile="Ylitornio_p.tsv",
             lon=meta[["Lon"]], alt=meta[["Alt"]], sou=meta[["Source"]], metaHead = meta[['meta']],
             units="unknown", stat="point", keep_na = F
 )
-
