@@ -336,7 +336,7 @@ df.p.Tor <- data.frame(
 df.p.Tor <- df.p.Tor %>% filter(Year>=1803,Year<=1866)
 
 meta <- list(
-  ID = "Torino",
+  ID = "TOR",
   Name = "Torino",
   Lat = 45.06813258066838,
   Lon = 7.68408326971596,
