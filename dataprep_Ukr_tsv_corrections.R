@@ -2,7 +2,7 @@ library(dataresqc)
 source('/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/write_sef_f.R')
 
 indir <- '/home/ccorbella/scratch2_symboliclink/files/station_timeseries_orig/Ukraine/'
-outdir <- '/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/Ukraine/'
+outdir <- '/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/'
 
 
 # Kherson -----------------------------------------------------------------
@@ -98,7 +98,7 @@ df <- read.delim(paste0(indir, infile), header=T, sep='\t', stringsAsFactors = F
                  skip=12)
 
 # convert Reamur to Kelvin
-df$Value <- ifelse(df$Value == -999.9, NA, df$Value * 1.25 + 273.13)
+df$Value <- ifelse(df$Value == -999.9, NA, df$Value * 1.25)
 
 # extract hour and minute
 df$Minute <- as.integer(sub(".*:","", df$Hour))
@@ -121,16 +121,16 @@ for (line in meta_lines) {
   }
 }
 meta[['Vbl']] <- 'ta'
-meta[['Units']] <- 'K'
+meta[['Units']] <- 'C'
 meta[['metaHead']] <- 'Hours correspond to original day periods morning, midday, evening'
 
-write_sef(Data=df,
-          outpath=outdir,
-          cod=meta[["ID"]],
-          variable=meta[["Vbl"]],
-          nam=meta[["Name"]],
-          lat=meta[["Lat"]],
-          lon=meta[["Lon"]], alt=meta[["Alt"]], sou=meta[["Source"]],
-          link=meta[["Link"]], units=meta[["Units"]], stat="point",
-          meta="orig_ta=Reaumur", keep_na = F)
+write_sef_f(Data=df,
+            outpath=outdir, outfile='Kyiv_ta_subdaily.tsv',
+            cod=meta[["ID"]],
+            variable=meta[["Vbl"]],
+            nam=meta[["Name"]],
+            lat=meta[["Lat"]],
+            lon=meta[["Lon"]], alt=meta[["Alt"]], sou=meta[["Source"]],
+            link=meta[["Link"]], units=meta[["Units"]], stat="point",
+            meta="orig_ta=Reaumur", keep_na = F)
  

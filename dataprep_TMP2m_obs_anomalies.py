@@ -11,13 +11,18 @@ Deseasonalization of temperature observation timeseries
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-plt.rcParams.update({'font.size': 12})
+plt.rcParams.update({
+    'font.size': 12,               # base font size
+    'axes.titlesize': 12,          # figure title
+    'axes.labelsize': 12,          # x and y labels
+    'xtick.labelsize': 12,         # x tick labels
+    'ytick.labelsize': 12,         # y tick labels
+    'legend.fontsize': 12,         # legend text
+    'figure.titlesize': 12         # overall figure title (suptitle)
+})
 
 #%% Load CSV files generated from R
 df = pd.read_csv('/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/data/ta_obs.csv')
-
-# temporarily drop Yli.x
-df = df.drop(columns={'Ylitornio.x'})
 
 df['Date'] = pd.to_datetime(df[['Year', 'Month', 'Day']])
 df = df[df['Date'] <= '1849-12-31']
@@ -86,7 +91,48 @@ for i in range(yobs_plain.shape[1]): # loop through stations
         yobs_anomaly[:, i] = obs_col - sc
         print("four harmonics for station", i, lm_obs.coef_)
     seasonal_cycle.append(sc)
-        
+
+#%% rename columns for plots
+# modify names for temperature:
+dict_rename = {
+    'AG01_Aarau_Zschogge': 'Aarau',
+    '00033902': 'Kherson',
+    '00033345': 'Kyiv',
+    '00033902_SUBs': 'Kherson_SUBs',
+    'BE01_Bern_Studer': 'Bern',
+    'Burg_Zitenice': 'Zitenice',
+    'Camuffo_Bologna': 'Bologna_Camuffo',
+    'GR04_Marschlins': 'Schloss Marschlins',
+    'JU01_Delemont': 'Delemont',
+    'SH01_Schaffhausen': 'Schaffhausen',
+    'VD01_Vevey': 'Vevey',
+    'DigiHom_Geneva': 'Geneva',
+    'KIT_Karlsruhe': 'Karlsruhe',
+    'Dom_Valencia_SUBs': 'Valencia_SUBs',
+    'KNMI-42_Zwanenburg': 'Zwanenburg',
+    'KNMI-44_Haarlem': 'Haarlem',
+    'KNMI-44_Haarlem_SUBs': 'Haarlem_SUBs',
+    'KNMI-45_Delfft2': 'Delfft',
+    'Europe_Rovereto_1': 'Rovereto',
+    'GCOS_Zurich_Feer': 'Zurich',
+    'IMPROVE_Cadiz': 'Cadiz',
+    'IMPROVE_Stockholm': 'Stockholm',
+    'IMPROVE_StPetersburg': 'StPetersburg_IMPROVE',
+    'Europe_StPetersburg': 'StPetersburg_Europe',
+    'IMPROVE_Uppsala': 'Uppsala',
+    'CRU_Paris': 'Paris',
+    'Dom_Valencia': 'Valencia',
+    'IMPROVE_Milan': 'Milan',
+    'HadCET': 'CET',
+    'Brug_Zitenice': 'Zitenice',
+    'HOH': 'Hohenpeisenberg',
+    'TOR': 'Torino',
+    'GVE': 'Geneva',
+    '169': 'Bologna_ECAD'
+}
+
+df  = df.rename(columns=dict_rename)
+
 #%% make plots
 for i in range(yobs_plain.shape[1]):
     plt.figure(figsize=(12, 6))
@@ -95,11 +141,11 @@ for i in range(yobs_plain.shape[1]):
     plt.plot(df['Date'], yobs_anomaly[:, i], label="Anomalies", alpha=.8)
     plt.axhline(0, linestyle='dashed', color='k', alpha=.5)
     plt.legend(ncol=3)
-    plt.title(f"{df.columns[i+3]} Station - Anomaly Adjustment (1806-1821)")
+    plt.title(f"{df.columns[i+3]} Temperature Series")
     plt.xlabel("Date")
     plt.ylabel(r"Temperature [$^{\circ}$C]")
     plt.savefig(f'/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/image/{df.columns[i+3]}_station_{i}_anomalyplot.png')
-    plt.show()
+    # plt.show()
 
 #%% save series
 yobs_anomaly_df = pd.DataFrame(yobs_anomaly, index=df['Date'], columns=df.columns[3:-1])

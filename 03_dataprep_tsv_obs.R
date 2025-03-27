@@ -139,4 +139,3 @@ head(p_df)
 
 write.csv(ta_df, "/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/data/ta_obs.csv", row.names=FALSE, quote=FALSE) 
 write.csv(p_df, "/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/data/p_obs.csv", row.names=FALSE, quote=FALSE) 
-
