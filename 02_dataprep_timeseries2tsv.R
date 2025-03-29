@@ -281,6 +281,10 @@ write_sef_f(Data=df, outfile="Paris_ta.tsv",
             units=meta['Units'], stat="point",keep_na = F
 )
 
+## for pressure, change the nameof the file so it can later be read
+file.rename('/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/Paris_mslp.tsv',
+            '/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/Paris_p.tsv')
+
 # Stockholm -----------------------------------------------------------------
 
 df <- read.delim('/home/ccorbella/scratch2_symboliclink/files/station_timeseries_orig/stockholm_SLP_1756_2012_hPa_hom.txt',
