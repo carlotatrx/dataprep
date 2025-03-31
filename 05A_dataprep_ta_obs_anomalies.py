@@ -92,46 +92,46 @@ for i in range(yobs_plain.shape[1]): # loop through stations
         print("four harmonics for station", i, lm_obs.coef_)
     seasonal_cycle.append(sc)
 
-#%% rename columns for plots
-# modify names for temperature:
-dict_rename = {
-    'AG01_Aarau_Zschogge': 'Aarau',
-    '00033902': 'Kherson',
-    '00033345': 'Kyiv',
-    '00033902_SUBs': 'Kherson_SUBs',
-    'BE01_Bern_Studer': 'Bern',
-    'Burg_Zitenice': 'Zitenice',
-    'Camuffo_Bologna': 'Bologna_Camuffo',
-    'GR04_Marschlins': 'Schloss Marschlins',
-    'JU01_Delemont': 'Delemont',
-    'SH01_Schaffhausen': 'Schaffhausen',
-    'VD01_Vevey': 'Vevey',
-    'DigiHom_Geneva': 'Geneva',
-    'KIT_Karlsruhe': 'Karlsruhe',
-    'Dom_Valencia_SUBs': 'Valencia_SUBs',
-    'KNMI-42_Zwanenburg': 'Zwanenburg',
-    'KNMI-44_Haarlem': 'Haarlem',
-    'KNMI-44_Haarlem_SUBs': 'Haarlem_SUBs',
-    'KNMI-45_Delfft2': 'Delfft',
-    'Europe_Rovereto_1': 'Rovereto',
-    'GCOS_Zurich_Feer': 'Zurich',
-    'IMPROVE_Cadiz': 'Cadiz',
-    'IMPROVE_Stockholm': 'Stockholm',
-    'IMPROVE_StPetersburg': 'StPetersburg_IMPROVE',
-    'Europe_StPetersburg': 'StPetersburg_Europe',
-    'IMPROVE_Uppsala': 'Uppsala',
-    'CRU_Paris': 'Paris',
-    'Dom_Valencia': 'Valencia',
-    'IMPROVE_Milan': 'Milan',
-    'HadCET': 'CET',
-    'Brug_Zitenice': 'Zitenice',
-    'HOH': 'Hohenpeisenberg',
-    'TOR': 'Torino',
-    'GVE': 'Geneva',
-    '169': 'Bologna_ECAD'
-}
+# #%% rename columns for plots
+# # modify names for temperature:
+# dict_rename = {
+#     'AG01_Aarau_Zschogge': 'Aarau',
+#     '00033902': 'Kherson',
+#     '00033345': 'Kyiv',
+#     '00033902_SUBs': 'Kherson_SUBs',
+#     'BE01_Bern_Studer': 'Bern',
+#     'Burg_Zitenice': 'Zitenice',
+#     'Camuffo_Bologna': 'Bologna_Camuffo',
+#     'GR04_Marschlins': 'Schloss Marschlins',
+#     'JU01_Delemont': 'Delemont',
+#     'SH01_Schaffhausen': 'Schaffhausen',
+#     'VD01_Vevey': 'Vevey',
+#     'DigiHom_Geneva': 'Geneva',
+#     'KIT_Karlsruhe': 'Karlsruhe',
+#     'Dom_Valencia_SUBs': 'Valencia_SUBs',
+#     'KNMI-42_Zwanenburg': 'Zwanenburg',
+#     'KNMI-44_Haarlem': 'Haarlem',
+#     'KNMI-44_Haarlem_SUBs': 'Haarlem_SUBs',
+#     'KNMI-45_Delfft2': 'Delfft',
+#     'Europe_Rovereto_1': 'Rovereto',
+#     'GCOS_Zurich_Feer': 'Zurich',
+#     'IMPROVE_Cadiz': 'Cadiz',
+#     'IMPROVE_Stockholm': 'Stockholm',
+#     'IMPROVE_StPetersburg': 'StPetersburg_IMPROVE',
+#     'Europe_StPetersburg': 'StPetersburg_Europe',
+#     'IMPROVE_Uppsala': 'Uppsala',
+#     'CRU_Paris': 'Paris',
+#     'Dom_Valencia': 'Valencia',
+#     'IMPROVE_Milan': 'Milan',
+#     'HadCET': 'CET',
+#     'Brug_Zitenice': 'Zitenice',
+#     'HOH': 'Hohenpeisenberg',
+#     'TOR': 'Torino',
+#     'GVE': 'Geneva',
+#     '169': 'Bologna_ECAD'
+# }
 
-df  = df.rename(columns=dict_rename)
+# df  = df.rename(columns=dict_rename)
 
 #%% make plots
 for i in range(yobs_plain.shape[1]):
@@ -144,10 +144,9 @@ for i in range(yobs_plain.shape[1]):
     plt.title(f"{df.columns[i+3]} Temperature Series")
     plt.xlabel("Date")
     plt.ylabel(r"Temperature [$^{\circ}$C]")
-    plt.savefig(f'/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/image/{df.columns[i+3]}_station_{i}_anomalyplot.png')
+    plt.savefig(f'/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/image/ta_{df.columns[i+3]}_anomalyplot.png')
     # plt.show()
 
 #%% save series
 yobs_anomaly_df = pd.DataFrame(yobs_anomaly, index=df['Date'], columns=df.columns[3:-1])
 yobs_anomaly_df.to_csv('/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/data/ta_obs_anomalies.csv')
-

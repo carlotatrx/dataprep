@@ -128,9 +128,11 @@ $$
 P_{hPa}=(in\;*23.22+line\;*1.935)*1.3322
 $$
 
-Some values seem to be wrongly typed, e.g. rows 2192-2194, 3288-3290 of 1804-1813.csv. I changed the month to 1 instead of 2. I changed the column "Date", which I have created myself on Excel, but not the original "Month" column. The dates which are changed are those that are duplicated, see file `Valencia_orig_obsperday_gt3.csv`. Usually the morning measurement, at 09:00h, was duplicated, so I erased it. At 1860 the dataset is quite meh so I just did until 1859. It is a weight average with $0.3*morning + 0.5*noon + 0.2*evening$
+Some values seem to be wrongly typed, e.g. rows 2192-2194, 3288-3290 of 1804-1813.csv. I changed the month to 1 instead of 2. 1806-03-25, 1830-09-07 and 1841-10-18 are also wrongly typed. 
 
-Only 36 days have less than 3 measurements. This is 0.20% of the entire dataset so I decided not to compare with ERA-5 climatology. The days with fewer measurements are stored in the file `Valencia_orig_obsperday_lt3.csv` and they are removed from the dataset.
+I changed the column "Date", which I have created myself on Excel, but not the original "Month" column. The dates which are changed are those that are duplicated, see file `Valencia_orig_obsperday_gt3.csv`. Usually the morning measurement, at 09:00h, was duplicated, so I erased it. At 1860 the dataset is quite meh so I just did until 1859.·Only 36 days have less than 3 measurements. This is 0.20% of the entire dataset. The days with fewer measurements are stored in the file `Valencia_orig_obsperday_lt3.csv` and they are removed from the dataset.
+
+Some València temperatures are a bit suspicious, 14°C difference between day and night in the summer (*e.g.* 1830-08-23).
 
 `🔴 To do: `Bar(p) are the inches, **Castillian** inch, which is 23.22m. Bar(l) are **lines (1 line=1/12 of an inch). CASTILLIAN INCHES ARE NOT CORRECT!! VALUES OF PRESSURE ARE TOO LOW.**
 

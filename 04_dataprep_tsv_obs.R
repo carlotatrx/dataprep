@@ -109,7 +109,7 @@ build_obs_df <- function(file_list) {
     }
     
     # Get column name
-    colname <- meta["id"]
+    colname <- meta["name"]
     if (is_subdaily) colname <- paste0(colname, "_SUBs")
     
     # Rename and store
