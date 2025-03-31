@@ -132,16 +132,16 @@ nc_close(nct)
 p_sub_files <- list.files('/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed',
                           pattern="p_subdaily.*\\.tsv$", full.names=T, recursive=F)
 ncp <- nc_open(era5_p)
-lons <- ncvar_get(ncp, "longitude")
+lons <- ncvar_get(ncp, "lon")
 lons[lons>180] <- lons[lons>180] - 360
-lats <- ncvar_get(ncp, "latitude")
+lats <- ncvar_get(ncp, "lat")
 coords <- data.frame(lon=rep(lons,each=length(lats)), lat=rep(lats,times=length(lons)))
 
 for (f in p_sub_files) {
-  x <- read_sef(f, all=TRUE)
+  x <- read_sef(f,all=T)
   x <- x[which(!is.na(x$Value)), ]
   ko <- grep("qc", x$Meta)
-  if (length(ko) > 0) x <- x[-ko, ] # Remove flagged values
+  # if (length(ko) > 0) x <- x[-ko, ] # Remove flagged values
   meta <- read_meta(f)
   
   x$Time <- x$Hour + x$Minute/60
@@ -173,8 +173,8 @@ for (f in p_sub_files) {
     ## Apply correction for daily cycle (if all times are known)
     for (i_day in 1:nrow(xmean)) {
       xtimes <- x$Time[which(x$Year==xmean$Group.1[i_day] & 
-                               x$Month==xmean$Group.2[i_day] & 
-                               x$Day==xmean$Group.3[i_day])]
+                             x$Month==xmean$Group.2[i_day] & 
+                             x$Day==xmean$Group.3[i_day])]
       if (sum(is.na(xtimes)) == 0) {
         m <- as.integer(xmean$Group.2[i_day])
         dc_day <- dc[((m-1)*24+1):(m*24)]

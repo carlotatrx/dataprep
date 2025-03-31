@@ -131,7 +131,8 @@ for (field in meta_check_fields) {
 }
 
 combined_sef <- rbind(sef1, sef2)
-combined_sef$Var <- NULL # drop first col
+combined_sef$Var <- NULL     # drop first col
+combined_sef$Period <- NULL  # the period col is written w the write_sef fnct
 combined_sef <- combined_sef[order(combined_sef$Year, combined_sef$Month, combined_sef$Day,
                                    combined_sef$Hour, combined_sef$Minute), ]
 
@@ -413,7 +414,7 @@ df.ta.Valencia <- data.frame(
   Month=df$Month,
   Day=df$Day,
   Hour=df$Hour,
-  Minute='NA',
+  Minute=0,
   Value=as.numeric(df$Term) * 1.25
 )
 
@@ -422,30 +423,30 @@ df.p.Valencia <- data.frame(
   Month=df$Month,
   Day=df$Day,
   Hour=df$Hour,
-  Minute='NA',
+  Minute=0,
   Value=(as.numeric(df$Bar.p.) * 23.22 + as.numeric(df$Bar.l.) * 1.935 ) * 1.3322
 )
 
 
 write_sef_f(Data=df.ta.Valencia,outfile="Valencia_ta_subdaily.tsv",
-          outpath=outdir,
-          cod=meta[["ID"]],
-          variable="ta",
-          nam=meta[["Name"]],
-          lat=meta[["Lat"]],
-          lon=meta[["Lon"]], alt=meta[["Alt"]], sou=meta[["Source"]], metaHead = "orig_ta=Reaumur",
-          link=meta[["Link"]], units="C", stat="point",
-          meta="orig_ta=Reaumur", keep_na = F)
+            outpath=outdir,
+            cod=meta[["ID"]],
+            variable="ta",
+            nam=meta[["Name"]],
+            lat=meta[["Lat"]],
+            lon=meta[["Lon"]], alt=meta[["Alt"]], sou=meta[["Source"]], metaHead = "orig_ta=Reaumur",
+            link=meta[["Link"]], units="C", stat="point",
+            meta="orig_ta=Reaumur", keep_na = F)
 
 write_sef_f(Data=df.p.Valencia,outfile="Valencia_p_subdaily.tsv",
-          outpath=outdir,
-          cod=meta[["ID"]],
-          variable="p",
-          nam=meta[["Name"]],
-          lat=meta[["Lat"]],
-          lon=meta[["Lon"]], alt=meta[["Alt"]], sou=meta[["Source"]], metaHead = "orig_p=Castillian_inch_&_lines",
-          link=meta[["Link"]], units="unknown", stat="point",
-          meta="orig_p=Castillian_inch_&_lines", keep_na = F)
+            outpath=outdir,
+            cod=meta[["ID"]],
+            variable="p",
+            nam=meta[["Name"]],
+            lat=meta[["Lat"]],
+            lon=meta[["Lon"]], alt=meta[["Alt"]], sou=meta[["Source"]], metaHead = "orig_p=Castillian_inch_&_lines",
+            link=meta[["Link"]], units="unknown", stat="point",
+            meta="orig_p=Castillian_inch_&_lines", keep_na = F)
 
 
 # Ylitornio ---------------------------------------------------------------
