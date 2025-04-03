@@ -40,8 +40,6 @@ In the history of 1796-1812: First observations at the Meteorological and Astron
 
 We have 29244-13=29231 days with values in Peter's data from IMPROVE. Now let's count how many we have from the raw. We have no duplicates in dataset, and we have 29231 non-NaNs. Yay! it's the same. It looks like `CSF-TP801-819.txt` is just a small subset of `CSF-TP786-879.txt`, which we can check with `np.sum(cadiz2['TMP2m']!=cadiz1[:3323]['TMP2m'])`. As they are the same, we are only using the longer dataset. No changes made otherwise, simply stored the files of temperature and pressure separately. I'll consequently use the IMPROVE file from Cadiz TMP2m as it should be the same.
 
-`🔴 To ask for: `it's a bit strange that we have tempreature fro Cadiz before 1817, but not pressure. Are they anywhere I might be missing?
-
 ### CET
 
 Extracted from the [website](https://www.metoffice.gov.uk/hadobs/hadcet/), data from there are the same as 1807 selected data from Peter.
@@ -108,6 +106,10 @@ I'm only looking until 1825 because afterwards there are different measurements 
 
 Look at `dataprep_ukraine.ipynb` for explanations.
 
+1809-02-14, for the three measurements, has values of 90 in (3000 hPa), so we discard this day. Since we can't trust the pressure, we discard temperature values as well. 1809-04-03, we assume a typo in the input of the pressure: it should be 29.82 instead of 39.82.
+
+Delete also all days where pressure is < 950hPa. According to Duncan, these are very low pressure values and he assumes that cyclones would already be quite weakened by the time they reach the Ukraine.
+
 **Kyív**
 
 Out of 1128 days with measurements, 66 days (a 1.83%) had less than 3 observations. We simply discard these days.
@@ -128,11 +130,13 @@ $$
 P_{hPa}=(in\;*23.22+line\;*1.935)*1.3322
 $$
 
-Some values seem to be wrongly typed, e.g. rows 2192-2194, 3288-3290 of 1804-1813.csv. I changed the month to 1 instead of 2. 1806-03-25, 1830-09-07 and 1841-10-18 are also wrongly typed. 
+Some values seem to be wrongly typed, e.g. rows 2192-2194, 3288-3290 of 1804-1813.csv. I changed the month to 1 instead of 2. 1806-03-25, 1830-09-07 and 1841-10-18 are also wrongly typed.
 
 I changed the column "Date", which I have created myself on Excel, but not the original "Month" column. The dates which are changed are those that are duplicated, see file `Valencia_orig_obsperday_gt3.csv`. Usually the morning measurement, at 09:00h, was duplicated, so I erased it. At 1860 the dataset is quite meh so I just did until 1859.·Only 36 days have less than 3 measurements. This is 0.20% of the entire dataset. The days with fewer measurements are stored in the file `Valencia_orig_obsperday_lt3.csv` and they are removed from the dataset.
 
 Some València temperatures are a bit suspicious, 14°C difference between day and night in the summer (*e.g.* 1830-08-23).
+
+I remove pressure values that are 5$\sigma$ away from the mean. This removes 13749 (23%) of the values in the period 1806-1850!!
 
 `🔴 To do: `Bar(p) are the inches, **Castillian** inch, which is 23.22m. Bar(l) are **lines (1 line=1/12 of an inch). CASTILLIAN INCHES ARE NOT CORRECT!! VALUES OF PRESSURE ARE TOO LOW.**
 

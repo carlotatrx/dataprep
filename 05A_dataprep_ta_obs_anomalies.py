@@ -18,6 +18,7 @@ plt.rcParams.update({
     'xtick.labelsize': 12,         # x tick labels
     'ytick.labelsize': 12,         # y tick labels
     'legend.fontsize': 12,         # legend text
+    'axes.xmargin': 0.01,            # x axis margin
     'figure.titlesize': 12         # overall figure title (suptitle)
 })
 
@@ -92,6 +93,9 @@ for i in range(yobs_plain.shape[1]): # loop through stations
         print("four harmonics for station", i, lm_obs.coef_)
     seasonal_cycle.append(sc)
 
+yobs_anomaly_df = pd.DataFrame(yobs_anomaly, index=df['Date'], columns=df.columns[3:-1])
+yobs_anomaly_df.to_csv('/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/data/ta_obs_anomalies.csv')
+
 # #%% rename columns for plots
 # # modify names for temperature:
 # dict_rename = {
@@ -147,6 +151,5 @@ for i in range(yobs_plain.shape[1]):
     plt.savefig(f'/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/image/ta_{df.columns[i+3]}_anomalyplot.png')
     # plt.show()
 
-#%% save series
-yobs_anomaly_df = pd.DataFrame(yobs_anomaly, index=df['Date'], columns=df.columns[3:-1])
-yobs_anomaly_df.to_csv('/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/data/ta_obs_anomalies.csv')
+
+# %%

@@ -33,8 +33,6 @@ print(ta_files)
 print(p_files)
 print(other_files)
 
-
-
 # extract lat lon from files ----------------------------------------------
 
 # Helper function to extract metadata
@@ -43,9 +41,31 @@ get_meta_table <- function(file_list) {
   for (f in file_list) {
     meta <- tryCatch(read_meta(f), error = function(e) NULL)
     if (!is.null(meta)) {
+      id <- meta["id"]
+      name <- meta["name"]
+      print(name)
+      print("start")
+      
+      # Custom rename logic for stupidly named stations
+      if (name == "Royal Society - Somerset House") {
+        id <- paste0(id, " | Royal Society - Somerset House")
+        name <- "London"
+      } else if (name == "Stockholm Old Astronomical Observatory") {
+        id <- paste0(id, " | Stockholm Old Astronomical Observatory")
+        name <- "Stockholm"
+      } else if (name == "Observatoire") {
+        id <- paste0(id, "| Observatoire")
+        name <- "Paris"
+      } else if (name=='Geneve') {
+        name <- 'Geneva'
+      }
+      
+      print(name)
+      print("end")
+      
       row <- data.frame(
-        ID = meta["id"],
-        Name = meta["name"],
+        ID = id,
+        Name = name,
         lat = as.numeric(meta["lat"]),
         lon = as.numeric(meta["lon"]),
         alt = as.numeric(meta["alt"]),
@@ -57,6 +77,26 @@ get_meta_table <- function(file_list) {
   }
   return(table)
 }
+
+# get_meta_table <- function(file_list) {
+#   table <- data.frame()
+#   for (f in file_list) {
+#     meta <- tryCatch(read_meta(f), error = function(e) NULL)
+#     if (!is.null(meta)) {
+#       row <- data.frame(
+#         ID = meta["id"],
+#         Name = meta["name"],
+#         lat = as.numeric(meta["lat"]),
+#         lon = as.numeric(meta["lon"]),
+#         alt = as.numeric(meta["alt"]),
+#         filepath = f,
+#         stringsAsFactors = FALSE
+#       )
+#       table <- rbind(table, row)
+#     }
+#   }
+#   return(table)
+# }
 
 ta_info <- get_meta_table(ta_files)
 p_info  <- get_meta_table(p_files)
@@ -84,7 +124,7 @@ build_obs_df <- function(file_list) {
     
     # Remove flagged values
     ko <- grep("qc", x$Meta)
-    if (length(ko) > 0) x <- x[-ko, ]
+    # if (length(ko) > 0) x <- x[-ko, ]
     
     # Add Time column and order just in case
     if (all(c("Hour", "Minute") %in% names(x))) {
@@ -110,6 +150,18 @@ build_obs_df <- function(file_list) {
     
     # Get column name
     colname <- meta["name"]
+
+    # Apply the same renaming logic as above for stupidly named stations
+    if (colname == "Royal Society - Somerset House") {
+      colname <- "London"
+    } else if (colname == "Stockholm Old Astronomical Observatory") {
+      colname <- "Stockholm"
+    } else if (colname == "Observatoire") {
+      colname <- "Paris"
+    } else if (colname=='Geneve') {
+      colname <- 'Geneva'
+    }
+    
     if (is_subdaily) colname <- paste0(colname, "_SUBs")
     
     # Rename and store

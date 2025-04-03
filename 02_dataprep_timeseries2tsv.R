@@ -50,8 +50,8 @@ df.p.cad <- data.frame(
   Year= year(df$Date),
   Month=month(df$Date),
   Day=day(df$Date),
-  Hour='NA',
-  Minute='NA',
+  Hour=0,
+  Minute=0,
   Value=df$PRMSL
 )
 
@@ -66,7 +66,7 @@ meta <- list(
   Source = "Final_Series_IMPROVE"
 )
 
-write_sef_f(Data=df.ta.bol, outfile="Cadiz_p.tsv",
+write_sef_f(Data=df.p.cad, outfile="Cadiz_p.tsv",
             outpath=outdir,
             cod=meta[["ID"]],
             variable=meta[['Vbl']],
@@ -175,7 +175,7 @@ meta <- list(
   Source = "PALAEO-RA"
 )
 
-write_sef_f(Data=df.ta.bol, outfile="Milan_p.tsv",
+write_sef_f(Data=df.p.mil, outfile="Milan_p.tsv",
             outpath=outdir,
             cod=meta[["ID"]],
             variable=meta[['Vbl']],
@@ -427,6 +427,12 @@ df.p.Valencia <- data.frame(
   Value=(as.numeric(df$Bar.p.) * 23.22 + as.numeric(df$Bar.l.) * 1.935 ) * 1.3322
 )
 
+# drop pressures beyond the 5 sigma range
+p.mean <- mean(df.p.Valencia$Value, na.rm = T)
+p.std  <- sd(df.p.Valencia$Value, na.rm = T)
+
+df.p.Valencia <- subset(df.p.Valencia, Value < p.mean + 5*p.std)
+df.p.Valencia <- subset(df.p.Valencia, Value > p.mean - 5*p.std)
 
 write_sef_f(Data=df.ta.Valencia,outfile="Valencia_ta_subdaily.tsv",
             outpath=outdir,
@@ -446,8 +452,99 @@ write_sef_f(Data=df.p.Valencia,outfile="Valencia_p_subdaily.tsv",
             lat=meta[["Lat"]],
             lon=meta[["Lon"]], alt=meta[["Alt"]], sou=meta[["Source"]], metaHead = "orig_p=Castillian_inch_&_lines",
             link=meta[["Link"]], units="unknown", stat="point",
-            meta="orig_p=Castillian_inch_&_lines", keep_na = F)
+            meta="orig_p=Castillian_inch_&_lines | qc=5sigma", keep_na = F)
 
+# Vienna ---------------------------------------------------------------
+df <- read.csv('/home/ccorbella/scratch2_symboliclink/files/station_timeseries_orig/Wien Sternwarte_5905_TAG_18150101_18171231.csv',
+               header=T, na.strings = c("", "NA"))
+df <- df %>% na.omit()
+
+## Anbei die Daten 1815 – 1817 der Station Wien Sternwarte, 3 mal tägliche Messungen Lufttemperatur und Luftdruck. 
+## Die Daten sind in den vorgesehenen Spalten von 7,14 und 19 Uhr, soweit es dokumentiert ist wurde aber
+## um um 8,15 und 22 Uhr gemessen.
+
+df$datum <- ymd(df$datum) # Convert date column
+
+# Reshape temperature values to long format (t7 = 7h, t14 = 14h, t19 = 19h)
+df.ta <- df %>%
+  select(datum, t7, t14, t19) %>%
+  pivot_longer(cols = starts_with("t"), names_to = "HourTag", values_to = "Value") %>%
+  mutate(
+    Year = year(datum),
+    Month = month(datum),
+    Day = day(datum),
+    Hour = case_when(
+      HourTag == "t7" ~ 8,
+      HourTag == "t14" ~ 15,
+      HourTag == "t19" ~ 22
+    ),
+    Value = as.numeric(Value)/10,
+  )
+
+df.ta <-data.frame(
+  Year=df.ta$Year,
+  Month=df.ta$Month,
+  Day=df.ta$Day,
+  Hour=df.ta$Hour,
+  Minute='0',
+  Value=df.ta$Value
+)
+
+meta <- list(
+  ID = "Wien Sternwarte_5905",
+  Name = "Vienna",
+  Lat = "48.20909573207442",
+  Lon = "16.37758981033942",
+  Alt = "198.5",
+  Source = "Yuri Brugnara",
+  meta = "observer=Tiesnecker & team | obs=in 32m tall tower, 171+32m"
+)
+  
+
+write_sef_f(Data=df.ta, outfile="Vienna_ta_subdaily.tsv",
+            outpath=outdir,
+            cod=meta[["ID"]],
+            variable="ta",
+            nam=meta[["Name"]],
+            lat=meta[["Lat"]],
+            lon=meta[["Lon"]], alt=meta[["Alt"]], sou=meta[["Source"]], metaHead = meta[['meta']],
+            units="C", stat="point", keep_na = F
+)
+
+
+df.p <- df %>%
+  select(datum, druck07, druck14, druck19) %>%
+  pivot_longer(cols = starts_with("druck"), names_to = "HourTag", values_to = "Value") %>%
+  mutate(
+    Year = year(datum),
+    Month = month(datum),
+    Day = day(datum),
+    Hour = case_when(
+      HourTag == "druck07" ~ 8,
+      HourTag == "druck14" ~ 15,
+      HourTag == "druck19" ~ 22
+    ),
+    Value = as.numeric(Value)/1000,
+  )
+
+df.p <-data.frame(
+  Year=df.p$Year,
+  Month=df.p$Month,
+  Day=df.p$Day,
+  Hour=df.p$Hour,
+  Minute='0',
+  Value=df.p$Value
+)
+
+write_sef_f(Data=df.ta, outfile="Vienna_p_subdaily.tsv",
+            outpath=outdir,
+            cod=meta[["ID"]],
+            variable="p",
+            nam=meta[["Name"]],
+            lat=meta[["Lat"]],
+            lon=meta[["Lon"]], alt=meta[["Alt"]], sou=meta[["Source"]], metaHead = meta[['meta']],
+            units="hPa", stat="point", keep_na = F
+)
 
 # Ylitornio ---------------------------------------------------------------
 df <- read.csv('/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/csvs/Ylitornio_all.csv',
@@ -482,14 +579,14 @@ meta <- list(
 )
 
 write_sef_f(Data=df.ta.Yli, outfile="Ylitornio_ta.tsv",
-          outpath=outdir,
-          cod=meta[["ID"]],
-          variable="ta",
-          nam=meta[["Name"]],
-          lat=meta[["Lat"]],
-          lon=meta[["Lon"]], alt=meta[["Alt"]], sou=meta[["Source"]], metaHead = meta[['meta']],
-          units="C", stat="point",
-          meta="orig_ta=C", keep_na = F
+            outpath=outdir,
+            cod=meta[["ID"]],
+            variable="ta",
+            nam=meta[["Name"]],
+            lat=meta[["Lat"]],
+            lon=meta[["Lon"]], alt=meta[["Alt"]], sou=meta[["Source"]], metaHead = meta[['meta']],
+            units="C", stat="point",
+            meta="orig_ta=C", keep_na = F
 )
 
 write_sef_f(Data=df.p.Yli, outfile="Ylitornio_p.tsv",

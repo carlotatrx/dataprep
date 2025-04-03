@@ -13,6 +13,7 @@ Date
 
 import pandas as pd
 import matplotlib.pyplot as plt
+import numpy as np
 
 plt.rcParams.update({
     'font.size': 12,               # base font size
@@ -21,7 +22,7 @@ plt.rcParams.update({
     'xtick.labelsize': 12,         # x tick labels
     'ytick.labelsize': 12,         # y tick labels
     'legend.fontsize': 12,         # legend text
-    'axes.xmargin': 0.01,            # x axis margin
+    'axes.xmargin': 0.01,          # x axis margin
     'figure.titlesize': 12         # overall figure title (suptitle)
 })
 
@@ -29,28 +30,38 @@ plt.rcParams.update({
 ################ PART 2: calculate anomalies at each station #########################################################################
 ######################################################################################################################################
 
+## Need to have the updated obs file!! created w 04_dataprep_tsv_obs.R 
+
 df = pd.read_csv('/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/data/p_obs.csv')
 # drop stupid 29th of february 1818
 df = df.drop(df[(df['Year'] == 1818) & (df['Month'] == 2) & (df['Day'] == 29)].index)
 
 df['Date'] = pd.to_datetime(df[['Year', 'Month', 'Day']])
+df = df.rename(columns={'Stockholm Old Astronomical Observatory': 'Stockholm',
+                        'Observatoire': 'Paris',
+                        'Royal Society - Somerset House': 'London'})
+df.index -= df.index[0] # reset indices
 
-anomals = df.copy()
-obsmean = anomals.iloc[:, 3:-1].mean()
+yobs_plain = df.iloc[:,3:-1].to_numpy()
+# yobs_anomaly = yobs_plain.copy()
+yobs_mean = np.nanmean(yobs_plain, axis=0)
 
 # Calculate anomalies
-anomals.iloc[:, 3:-1] = anomals.iloc[:, 3:-1] - obsmean[2:]
-anomals.to_csv('/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/data/p_obs_anomalies.csv', index=False)
+yobs_anomaly = yobs_plain - yobs_mean
 
+yobs_anomaly_df = pd.DataFrame(yobs_anomaly, index=df['Date'], columns=df.columns[3:-1])
+yobs_anomaly_df.to_csv('/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/data/p_obs_anomalies.csv')
 
 #%% make plots
-for i in range(3, anomals.shape[1]-1):
+# Plot anomalies
+for i in range(yobs_anomaly.shape[1]): # loop through stations
     plt.figure(figsize=(12, 6))
-    plt.plot(df['Date'], anomals.iloc[:, i], label="Anomalies", alpha=.8)
+    plt.plot(df['Date'], yobs_anomaly[:, i], label="Anomalies", alpha=.8)
     plt.axhline(0, linestyle='dashed', color='k', alpha=.5)
-    plt.title(f"{anomals.columns[i]} Pressure Series Anomalies")
+    plt.title(f"{df.columns[i+3]} Pressure Series Anomalies")
     plt.ylabel("Pressure [hPa]")
-    plt.savefig(f'/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/image/{df.columns[i]}_station_{i}_anomalyplot.png')
+    plt.tight_layout()
+    plt.savefig(f'/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/image/p_{df.columns[i+3]}_anomalyplot.png')
     # plt.show()
 
 # %%

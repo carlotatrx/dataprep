@@ -1,4 +1,5 @@
 library(dataresqc)
+library(dplyr)
 source('/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/write_sef_f.R')
 
 indir <- '/home/ccorbella/scratch2_symboliclink/files/station_timeseries_orig/Ukraine/'
@@ -15,6 +16,8 @@ df <- read.delim(paste0(indir, infile), header=T, sep='\t', stringsAsFactors = F
 df$T_on_N <- ifelse(df$T_on_N == -999.9, NA, df$T_on_N * 1.25)
 df$T_on_S <- ifelse(df$T_on_S == -999.9, NA, df$T_on_S * 1.25)
 df$P <-      ifelse(df$P == -999.9, NA, df$P * 33.8638)
+
+df <- df %>% filter(P < 3000, P > 950)
 
 # extract hour and minute
 df$Minute <- as.integer(sub(".*:","", df$Hour))

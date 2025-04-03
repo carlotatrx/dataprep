@@ -1,0 +1,9 @@
+## these are the names of the PRESSURE stations that have already been assimilated in 20CRv3 because they are in ISPDv4.
+Mullhouse
+Hohenpeissenberg
+Stockholm
+Geneva
+Armagh
+Ylitornio
+Torino
+Paris
