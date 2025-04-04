@@ -1,0 +1,29 @@
+Input Base Series: ~/scratch2_symboliclink/code/KF_assimilation/dataprep/homogenization//hom_input/Zwanenburg.dat 
+Input Ref Series: ~/scratch2_symboliclink/code/KF_assimilation/dataprep/homogenization//hom_input/ModERA_slp.dat 
+The adj-diff. autocor is: 0.2236 ( 0.1661 , 0.2795 p= 1 )
+PMT : c=  64; (Time   17680400); Type=    1; p=    1.0000(    1.0000-    1.0000); PTmax=    5.2029; CV95=    3.9731(    3.7568-    4.2087); Nseg= 297
+PMT : c= 297; (Time   17870900); Type=    1; p=    1.0000(    1.0000-    1.0000); PTmax=   24.9807; CV95=    4.0047(    3.7784-    4.2403); Nseg= 402
+PMT : c= 466; (Time   18020100); Type=    1; p=    1.0000(    1.0000-    1.0000); PTmax=    9.3802; CV95=    3.9568(    3.7400-    4.1919); Nseg= 255
+PMT : c= 552; (Time   18090400); Type=    1; p=    1.0000(    1.0000-    1.0000); PTmax=  166.5873; CV95=    3.9014(    3.6916-    4.1317); Nseg= 142
+PMT : c= 608; (Time   18131200); Type=    1; p=    1.0000(    1.0000-    1.0000); PTmax=    6.3572; CV95=    3.9142(    3.7028-    4.1437); Nseg= 162
+PMT : c= 714; (Time   18221000); Type=    1; p=    1.0000(    1.0000-    1.0000); PTmax=    4.6659; CV95=    3.8831(    3.6668-    4.1069); Nseg= 111
+PMT : c= 719; (Time   18230300); Type=    1; p=    1.0000(    1.0000-    1.0000); PTmax=    5.2754; CV95=    3.8348(    3.6280-    4.0599); Nseg=  60
+PMT : c= 774; (Time   18271000); Type=    1; p=    1.0000(    1.0000-    1.0000); PTmax=    4.6844; CV95=    3.8367(    3.6287-    4.0615); Nseg=  61
+PMT : c= 780; (Time   18280400); Type=    1; p=    1.0000(    1.0000-    1.0000); PTmax=    6.4865; CV95=    3.9149(    3.7032-    4.1442); Nseg= 163
+PMT : c= 937; (Time   18480400); Type=    1; p=    1.0000(    1.0000-    1.0000); PTmax=    5.9760; CV95=    3.9739(    3.7576-    4.2095); Nseg= 299
+PMT : c=1079; (Time   18600200); Type=    1; p=    1.0000(    1.0000-    1.0000); PTmax=   11.0908; CV95=    3.9064(    3.6988-    4.1390); Nseg= 152
+Ignore changepoints -> trend0 = -0.031981 ( -0.034899 , -0.029064 ) (p= 1 ); cor= 0.7264 ( 0.7 , 0.7509 )
+
+Step-sizes estimated from difference series:
+-0.8754 -2.8947 1.4461 -28.0288 -0.8815 -2.3772 2.8685 2.2315 -2.9261 0.6276 
+-3.7305
+
+ after such adjustments, the base series trend= 0.000414 ( -0.000257 , 0.001086 ) (p= 0.8868 ); cor= 0.094 ( 0.041 , 0.147 )
+
+Nseg_shortest = 5 ; Mq =  1 ; Ny4a =  0 
+
+ Adjust to segment 12 : from 1332 to 1341 
+Common trend TPR fit to the de-seasonalized Base series:
+#steps=  11 ; trend= 0.003805 (p= 1 ); cor= 0.0884 ( 0.0348 , 0.1414 )  p= 0.9993 
+-1.6019 -3.7357 1.0986 -28.4062 -1.1027 -4.307 4.7192 1.8054 -3.7375 0.7862 
+-6.5134

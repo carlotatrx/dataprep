@@ -598,3 +598,36 @@ write_sef_f(Data=df.p.Yli, outfile="Ylitornio_p.tsv",
             lon=meta[["Lon"]], alt=meta[["Alt"]], sou=meta[["Source"]], metaHead = meta[['meta']],
             units="unknown", stat="point", keep_na = F
 )
+
+
+# Zwanenburg --------------------------------------------------------------
+library(strucchange)
+
+f <- '/home/ccorbella/scratch2_symboliclink/files/1807_USBstick/KNMI_KNMI-42_Zwanenburg_17380101-18601231_p_daily.tsv'
+x <- read_sef(f, all=T)
+meta <- read_meta(f)
+
+x <- x[!is.na(x$Value), ]
+
+# Create a daily time series vector
+dates <- as.Date(paste(x$Year, x$Month, x$Day, sep = "-"))
+pressure <- x$Value
+
+# Combine into a data frame
+df <- data.frame(date = dates, pressure = pressure)
+
+# Run breakpoint detection (intercept-only model)
+bp_model <- breakpoints(pressure ~ 1, breaks=5)
+
+# View summary and breakpoints
+summary(bp_model)
+
+# Plot results
+plot(bp_model, main = "Breakpoints in Daily Pressure Time Series")
+lines(df$pressure, col = "blue")  # optional: actual series overlay
+
+# Optional: plot segmented regression fit
+plot(df$date, pressure, type = "l", col = "gray",
+     main = "Segmented Mean Pressure with Detected Breaks",
+     xlab = "Date", ylab = "Pressure")
+lines(fitted(bp_model, breaks = bp_model$breakpoints), col = "red", lwd = 2)

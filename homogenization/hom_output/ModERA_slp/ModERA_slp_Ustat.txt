@@ -1,0 +1,5 @@
+The nominal level of confidence (1-alpha)= 0.95 
+Input data filename: hom_input/ModERA_slp.dat N= 2952 
+ Ignore changepoints -> trend0 = 0.000107 ( -9.2e-05 , 0.000307 ) (p= 0.8541 ); cor= 0.054 ( 0.018 , 0.0899 )
+Common trend TPR fit to the de-seasonalized Base series:
+#steps=  0 ; trend= 0.000107 ( -9.2e-05 , 0.000307 ) (p= 0.8541 ); cor= 0.054 ( 0.018 , 0.0899 ) 0.9983 
