@@ -76,6 +76,56 @@ write_sef_f(Data=df.p.cad, outfile="Cadiz_p.tsv",
             sou=meta[["Source"]], units=meta[["Units"]], stat="point",keep_na = F
 )
 
+
+# CBT ---------------------------------------------------------------------
+
+map_wrongCBT <- list(
+  'gen-18' = 1801,
+  '43132' = 1802,
+  '43160' = 1803,
+  '43191' = 1804,
+  'mag-18' = 1805,
+  'giu-18' = 1806,
+  'lug-18' = 1807,
+  'ago-18' = 1808,
+  'set-18' = 1809,
+  'ott-18' = 1810,
+  '43405' = 1811,
+  'dic-18' = 1812
+)
+
+x <- read_sef('/home/ccorbella/scratch2_symboliclink/files/1807_USBstick/not_to_use/CBT_ta_daily.tsv')
+meta <- read_meta('/home/ccorbella/scratch2_symboliclink/files/1807_USBstick/not_to_use/CBT_ta_daily.tsv')
+
+# Convert the Year column to character (if not already)
+x$Year <- as.character(x$Year)
+
+# Replace the incorrect values using your custom mapping
+x$Year <- ifelse(x$Year %in% names(map_wrongCBT),
+                 unlist(map_wrongCBT[x$Year]),
+                 x$Year)
+
+# Convert back to integer
+x$Year <- as.integer(x$Year)
+
+df <- data.frame(x)
+df['Var'] <- NULL
+df['Hour'] <- NA
+df['Minute'] <- NA
+
+# change order of columns
+df <- df[,c(1,2,3,5,6,4)]
+
+write_sef_f(Data=df, outfile="CBT_ta.tsv",
+            outpath='/home/ccorbella/scratch2_symboliclink/files/1807_USBstick/',
+            cod=meta[["id"]],
+            variable=meta[['var']],
+            nam=meta[["name"]],
+            lat=meta[["lat"]],
+            lon=meta[["lon"]], alt=meta[["alt"]], link=meta[['link']], period='day',
+            sou=meta[["source"]], units=meta[["units"]], stat="day",keep_na = F
+            )
+
 # Central England Temperature (CET) -----------------------------------------------------------------
 
 df <- read.csv('/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/csvs/CET_TMP2m.csv')
@@ -101,7 +151,7 @@ meta <- list(
   Source = "Parker, D.E., T.P. Legg, and C.K. Folland. 1992. A new daily Central England Temperature Series, 1772-1991. Int. J. Clim., Vol 12, pp 317-342"
 )
 
-write_sef_f(Data=df.ta.bol, outfile="CET_ta.tsv",
+write_sef_f(Data=df.ta.cet, outfile="CET_ta.tsv",
             outpath=outdir,
             cod=meta[["ID"]],
             variable=meta[['Vbl']],
@@ -424,7 +474,7 @@ df.p.Valencia <- data.frame(
   Day=df$Day,
   Hour=df$Hour,
   Minute=0,
-  Value=(as.numeric(df$Bar.p.) * 23.22 + as.numeric(df$Bar.l.) * 1.935 ) * 1.3322
+  Value=(as.numeric(df$Bar.p.) + as.numeric(df$Bar.l.) /12 ) * 27.07 * 1.3332239
 )
 
 # drop pressures beyond the 5 sigma range
@@ -450,9 +500,9 @@ write_sef_f(Data=df.p.Valencia,outfile="Valencia_p_subdaily.tsv",
             variable="p",
             nam=meta[["Name"]],
             lat=meta[["Lat"]],
-            lon=meta[["Lon"]], alt=meta[["Alt"]], sou=meta[["Source"]], metaHead = "orig_p=Castillian_inch_&_lines",
+            lon=meta[["Lon"]], alt=meta[["Alt"]], sou=meta[["Source"]], metaHead = "orig_p=Paris inch",
             link=meta[["Link"]], units="unknown", stat="point",
-            meta="orig_p=Castillian_inch_&_lines | qc=5sigma", keep_na = F)
+            meta="orig_p=Paris inch | qc=±5σ", keep_na = F)
 
 # Vienna ---------------------------------------------------------------
 df <- read.csv('/home/ccorbella/scratch2_symboliclink/files/station_timeseries_orig/Wien Sternwarte_5905_TAG_18150101_18171231.csv',

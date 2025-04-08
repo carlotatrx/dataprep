@@ -32,16 +32,30 @@ plt.rcParams.update({
 
 ## Need to have the updated obs file!! created w 04_dataprep_tsv_obs.R 
 
-df = pd.read_csv('/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/data/p_obs.csv')
+df_obs = pd.read_csv('/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/data/p_obs.csv')
 # drop stupid 29th of february 1818
-df = df.drop(df[(df['Year'] == 1818) & (df['Month'] == 2) & (df['Day'] == 29)].index)
+df_obs = df_obs.drop(df_obs[(df_obs['Year'] == 1818) & (df_obs['Month'] == 2) & (df_obs['Day'] == 29)].index)
 
-df['Date'] = pd.to_datetime(df[['Year', 'Month', 'Day']])
-df = df.rename(columns={'Stockholm Old Astronomical Observatory': 'Stockholm',
-                        'Observatoire': 'Paris',
-                        'Royal Society - Somerset House': 'London'})
-df.index -= df.index[0] # reset indices
+df_obs['Date'] = pd.to_datetime(df_obs[['Year', 'Month', 'Day']])
+df_obs = df_obs.drop(columns=['Year', 'Month', 'Day'])
+df_obs = df_obs[['Date'] + [col for col in df_obs.columns if col != 'Date']]
+df_obs.index -= df_obs.index[0] # reset indices
 
+df_model = pd.read_csv('/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/data/p_20cr.csv')
+df_model = df_model.rename(columns={'Unnamed: 0':'Date'})
+df_model['Date'] = pd.to_datetime(df_model['Date'])
+df_model.index -= df_model.index[0] # reset indices
+df_model.iloc[:, 1:] = df_model.iloc[:, 1:]/100 # convert to hPa
+
+# Merge the two dataframes on the 'Date' column keeping only the common dates
+df_obs['Date'] = df_obs['Date'].dt.floor('D') # round down to the nearest day
+df_model['Date'] = df_model['Date'].dt.floor('D') # round down to the nearest day
+
+# keep only the common dates
+df_obs2 = df_obs[df_obs['Date'].isin(df_model['Date'])]
+
+
+#%%
 yobs_plain = df.iloc[:,3:-1].to_numpy()
 # yobs_anomaly = yobs_plain.copy()
 yobs_mean = np.nanmean(yobs_plain, axis=0)

@@ -110,7 +110,7 @@ write.csv(p_info, "/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/da
 
 build_obs_df <- function(file_list) {
   dfs <- list()
-  
+
   for (f in file_list) {
     meta <- tryCatch(read_meta(f), error = function(e) NULL)
     if (is.null(meta)) next
@@ -167,6 +167,13 @@ build_obs_df <- function(file_list) {
     # Rename and store
     df <- df_val %>%
       rename(!!colname := Value)
+    
+    # Check for duplicated (Y/M/D) combinations
+    dupes <- df %>% count(Year, Month, Day) %>% filter(n > 1)
+    if (nrow(dupes) > 0) {
+      cat("\n⚠️  Duplicates found in:", colname, "\n")
+      print(dupes)
+    }
     
     dfs[[length(dfs) + 1]] <- df
   }
