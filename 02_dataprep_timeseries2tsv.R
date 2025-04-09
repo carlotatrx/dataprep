@@ -574,7 +574,7 @@ df.p <- df %>%
       HourTag == "druck14" ~ 15,
       HourTag == "druck19" ~ 22
     ),
-    Value = as.numeric(Value)/1000,
+    Value = as.numeric(Value)/10,
   )
 
 df.p <-data.frame(
@@ -586,7 +586,7 @@ df.p <-data.frame(
   Value=df.p$Value
 )
 
-write_sef_f(Data=df.ta, outfile="Vienna_p_subdaily.tsv",
+write_sef_f(Data=df.p, outfile="Vienna_p_subdaily.tsv",
             outpath=outdir,
             cod=meta[["ID"]],
             variable="p",

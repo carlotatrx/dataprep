@@ -10,7 +10,7 @@ Date
 ...
 1807-12-30  1033.3  1004.523411   992.202052
 """
-
+#%%
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
@@ -53,7 +53,9 @@ df_model['Date'] = df_model['Date'].dt.floor('D') # round down to the nearest da
 
 # keep only the common dates
 df_obs2 = df_obs[df_obs['Date'].isin(df_model['Date'])]
-print(df_obs.shape, df_obs2.shape, df_model.shape)
+print("original obs set", df_obs.shape,
+      "\ncommon days set", df_obs2.shape,
+      "\n20CR set", df_model.shape)
 
 duplicate_dates = df_obs2['Date'].duplicated(keep=False)
 df_obs2_duplicates = df_obs2[duplicate_dates]
@@ -61,6 +63,26 @@ print(f"Number of duplicated dates: {df_obs2_duplicates.shape[0]}")
 
 unique_dates = df_obs2['Date'].nunique()
 print(f"Number of unique dates: {unique_dates}")
+
+#%%
+
+# Set date index
+df_obs2.set_index('Date', inplace=True)
+df_model.set_index('Date', inplace=True)
+
+# Calculate model - obs difference
+delta = df_model - df_obs2
+
+# Compute mean model–obs difference for each station
+delta_mean = delta.mean(axis=0, skipna=True)
+
+# Apply correction: for each time point, add the mean delta
+corrected_obs = df_obs2.add(delta_mean)
+
+#%%
+# Create final DataFrame with date columns again
+final_df = df_obs2[['Year', 'Month', 'Day']].copy()
+final_df[cols] = corrected_obs.values
 
 #%%
 yobs_plain = df.iloc[:,3:-1].to_numpy()

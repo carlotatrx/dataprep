@@ -185,26 +185,32 @@ def plot_station_timeseries(df_obs: pd.DataFrame, df_model: pd.DataFrame, var_sh
     print(df_model.shape, df_obs.shape)
 
 if __name__ == '__main__':
+    ###### Temperature ######
     find_closest_gridpoints(
         var_short='ta',
         var_long='TMP2m',
         plot=True
     )
-    find_closest_gridpoints(
-        var_short='p',
-        var_long='PRMSL'
-    )
+    
     df_ta_20cr = extract_20CR_atlocs(var_short='ta', var_long='TMP2m')
-    df_p_20cr = extract_20CR_atlocs(var_short='p', var_long='PRMSL')
     df_ta_20cr.to_csv('/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/data/ta_20cr.csv')
-    df_p_20cr.to_csv('/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/data/p_20cr.csv')
-    print("✅ 20CR data extracted and saved.")
-
+    print("✅ 20CR Temperature data extracted and saved.")
+    
     plot_station_timeseries(
         df_obs=pd.read_csv('/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/data/ta_obs.csv'),
         df_model=pd.read_csv('/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/data/ta_20cr.csv'),
         var_short='ta'
     )
+    
+    ###### Pressure ######
+    find_closest_gridpoints(
+        var_short='p',
+        var_long='PRMSL'
+    )
+    df_p_20cr = extract_20CR_atlocs(var_short='p', var_long='PRMSL')
+    df_p_20cr.to_csv('/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/data/p_20cr.csv')
+
+    print("✅ 20CR Pressure data extracted and saved.")
 
     plot_station_timeseries(
         df_obs=pd.read_csv('/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/data/p_obs.csv'),

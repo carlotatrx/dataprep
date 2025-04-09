@@ -43,8 +43,6 @@ get_meta_table <- function(file_list) {
     if (!is.null(meta)) {
       id <- meta["id"]
       name <- meta["name"]
-      print(name)
-      print("start")
       
       # Custom rename logic for stupidly named stations
       if (name == "Royal Society - Somerset House") {
@@ -59,9 +57,6 @@ get_meta_table <- function(file_list) {
       } else if (name=='Geneve') {
         name <- 'Geneva'
       }
-      
-      print(name)
-      print("end")
       
       row <- data.frame(
         ID = id,
@@ -78,33 +73,20 @@ get_meta_table <- function(file_list) {
   return(table)
 }
 
-# get_meta_table <- function(file_list) {
-#   table <- data.frame()
-#   for (f in file_list) {
-#     meta <- tryCatch(read_meta(f), error = function(e) NULL)
-#     if (!is.null(meta)) {
-#       row <- data.frame(
-#         ID = meta["id"],
-#         Name = meta["name"],
-#         lat = as.numeric(meta["lat"]),
-#         lon = as.numeric(meta["lon"]),
-#         alt = as.numeric(meta["alt"]),
-#         filepath = f,
-#         stringsAsFactors = FALSE
-#       )
-#       table <- rbind(table, row)
-#     }
-#   }
-#   return(table)
-# }
-
 ta_info <- get_meta_table(ta_files)
 p_info  <- get_meta_table(p_files)
+
+# sort on name col
+ta_info <- ta_info[order(ta_info$Name), ]
+p_info  <- p_info[order(p_info$Name), ]
 
 # save
 write.csv(ta_info, "/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/data/ta_latlon.csv", row.names=FALSE, quote=FALSE) 
 write.csv(p_info, "/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/data/p_latlon.csv", row.names=FALSE, quote=FALSE) 
 
+# reorder ta_files
+ta_files <- ta_info$filepath
+p_files  <- p_info$filepath
 
 # create df w values ------------------------------------------------------
 
@@ -125,6 +107,9 @@ build_obs_df <- function(file_list) {
     # Remove flagged values
     ko <- grep("qc", x$Meta)
     # if (length(ko) > 0) x <- x[-ko, ]
+    
+    # Get column name
+    colname <- meta["name"]
     
     # Add Time column and order just in case
     if (all(c("Hour", "Minute") %in% names(x))) {
@@ -161,12 +146,11 @@ build_obs_df <- function(file_list) {
       if (nrow(dropped_vals) > 0) {
         cat("\n🗑️  Dropping repeated values in:", colname, "\n")
         print(dropped_vals)
+        cat("  → File:", f, "\n")
+        
       }
       
     }
-    
-    # Get column name
-    colname <- meta["name"]
 
     # Apply the same renaming logic as above for stupidly named stations
     if (colname == "Royal Society - Somerset House") {
@@ -181,16 +165,16 @@ build_obs_df <- function(file_list) {
     
     if (is_subdaily) colname <- paste0(colname, "_SUBs")
     
-    dupes <- x %>%
-      mutate(row_num = row_number()) %>%
-      group_by(Year, Month, Day) %>%
-      filter(n() > 1) %>%
-      arrange(Year, Month, Day, row_num)
-    
-    if (nrow(dupes) > 0) {
-      cat("\n⚠️  Duplicates found in:", colname, "\n")
-      print(dupes %>% select(row_num, Year, Month, Day, Value, Meta))
-    }
+    # dupes <- x %>%
+    #   mutate(row_num = row_number()) %>%
+    #   group_by(Year, Month, Day) %>%
+    #   filter(n() > 1) %>%
+    #   arrange(Year, Month, Day, row_num)
+    # 
+    # if (nrow(dupes) > 0) {
+    #   cat("\n⚠️  Duplicates found in:", colname, "\n")
+    #   print(dupes %>% select(row_num, Year, Month, Day, Value, Meta))
+    # }
 
     # Rename and store
     df <- df_val %>%
