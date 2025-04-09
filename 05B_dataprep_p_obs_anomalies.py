@@ -53,7 +53,14 @@ df_model['Date'] = df_model['Date'].dt.floor('D') # round down to the nearest da
 
 # keep only the common dates
 df_obs2 = df_obs[df_obs['Date'].isin(df_model['Date'])]
+print(df_obs.shape, df_obs2.shape, df_model.shape)
 
+duplicate_dates = df_obs2['Date'].duplicated(keep=False)
+df_obs2_duplicates = df_obs2[duplicate_dates]
+print(f"Number of duplicated dates: {df_obs2_duplicates.shape[0]}")
+
+unique_dates = df_obs2['Date'].nunique()
+print(f"Number of unique dates: {unique_dates}")
 
 #%%
 yobs_plain = df.iloc[:,3:-1].to_numpy()

@@ -40,7 +40,8 @@ for (f in ta_sub_files) {
   ko <- grep("qc", x$Meta)
   if (length(ko) > 0) x <- x[-ko, ] # Remove flagged values
   meta <- read_meta(f)
-  
+
+  x$Minute[is.na(x$Minute)] <- 0
   x$Time <- x$Hour + x$Minute/60   # convert time to decimal hours
   # aggregate available times per day
   ntimes <- aggregate(x$Time, list(x$Year,x$Month,x$Day), function(x) sum(!is.na(x)))
@@ -144,7 +145,9 @@ for (f in p_sub_files) {
   # if (length(ko) > 0) x <- x[-ko, ] # Remove flagged values
   meta <- read_meta(f)
   
+  x$Minute[is.na(x$Minute)] <- 0
   x$Time <- x$Hour + x$Minute/60
+  
   ntimes <- aggregate(x$Time, list(x$Year,x$Month,x$Day), function(x) sum(!is.na(x)))
   ntimes <- ntimes[order(ntimes[,1],ntimes[,2],ntimes[,3]), ]
   out <- data.frame(Year=ntimes$Group.1,

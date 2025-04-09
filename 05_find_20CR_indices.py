@@ -201,15 +201,15 @@ if __name__ == '__main__':
     print("✅ 20CR data extracted and saved.")
 
     plot_station_timeseries(
-    df_obs=pd.read_csv('/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/data/ta_obs.csv'),
-    df_model=pd.read_csv('/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/data/ta_20cr.csv'),
-    var_short='ta'
+        df_obs=pd.read_csv('/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/data/ta_obs.csv'),
+        df_model=pd.read_csv('/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/data/ta_20cr.csv'),
+        var_short='ta'
     )
 
     plot_station_timeseries(
-    df_obs=pd.read_csv('/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/data/p_obs.csv'),
-    df_model=pd.read_csv('/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/data/p_20cr.csv'),
-    var_short='p'
+        df_obs=pd.read_csv('/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/data/p_obs.csv'),
+        df_model=pd.read_csv('/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/data/p_20cr.csv'),
+        var_short='p'
     )
 
 # #%%#####################################################################################################################################

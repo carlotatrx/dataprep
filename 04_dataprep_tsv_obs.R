@@ -145,7 +145,24 @@ build_obs_df <- function(file_list) {
         summarise(Value = first(Value), .groups = "drop")
     } else {
       # Assume already daily — just keep columns
-      df_val <- x[, c("Year", "Month", "Day", "Value")]
+      # df_val <- x[, c("Year", "Month", "Day", "Value")]
+      df_val <- x %>%
+        group_by(Year, Month, Day) %>%
+        mutate(n = n()) %>%
+        filter(row_number() == 1) %>%
+        ungroup() %>%
+        select(Year, Month, Day, Value)
+      
+      dropped_vals <- x %>%
+        group_by(Year, Month, Day) %>%
+        filter(n() > 1 & row_number() > 1) %>%
+        select(Year, Month, Day, Value)
+      
+      if (nrow(dropped_vals) > 0) {
+        cat("\n🗑️  Dropping repeated values in:", colname, "\n")
+        print(dropped_vals)
+      }
+      
     }
     
     # Get column name
@@ -164,16 +181,20 @@ build_obs_df <- function(file_list) {
     
     if (is_subdaily) colname <- paste0(colname, "_SUBs")
     
+    dupes <- x %>%
+      mutate(row_num = row_number()) %>%
+      group_by(Year, Month, Day) %>%
+      filter(n() > 1) %>%
+      arrange(Year, Month, Day, row_num)
+    
+    if (nrow(dupes) > 0) {
+      cat("\n⚠️  Duplicates found in:", colname, "\n")
+      print(dupes %>% select(row_num, Year, Month, Day, Value, Meta))
+    }
+
     # Rename and store
     df <- df_val %>%
       rename(!!colname := Value)
-    
-    # Check for duplicated (Y/M/D) combinations
-    dupes <- df %>% count(Year, Month, Day) %>% filter(n > 1)
-    if (nrow(dupes) > 0) {
-      cat("\n⚠️  Duplicates found in:", colname, "\n")
-      print(dupes)
-    }
     
     dfs[[length(dfs) + 1]] <- df
   }

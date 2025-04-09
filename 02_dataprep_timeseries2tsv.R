@@ -596,7 +596,83 @@ write_sef_f(Data=df.ta, outfile="Vienna_p_subdaily.tsv",
             units="hPa", stat="point", keep_na = F
 )
 
-# Ylitornio ---------------------------------------------------------------
+# Ylitornio_subdailies ---------------------------------------------------------------
+
+# Read skipping the first 6 lines
+df <- read_delim('/home/ccorbella/scratch2_symboliclink/files/station_timeseries_orig/CLIM_Data_Ylitornio_1800_1838.csv',
+                 skip = 6, delim=";", col_names=T, col_type='d',show_col_types = T)
+
+# Drop unnecessary 'EMPTY' columns
+df <- df[, !grepl("EMPTY", names(df))]
+df <- df[, c(1,2,3,5,6,7,11,12,13,17,18,19)]
+
+names(df) <- c("Year","Month","Day","Hour_A","pressure_A","Temperature_A","Hour_B","Pressure_B","Temperature_B",
+               "Hour_C","Pressure_C","Temperature_C")
+# Reshape to long format while preserving the linkage
+df_long <- df %>%
+  pivot_longer(
+    cols = ends_with(c("A", "B", "C")),
+    names_to = c(".value", "Obs"),
+    names_sep = "_"
+  ) %>%
+  mutate(Minute = NA)
+
+# SEF-style temperature
+df.ta <- df_long %>%
+  select(Year, Month, Day, Hour, Minute, Value = Temperature) %>%
+  filter(!is.na(Value) & !is.na(Hour))
+
+# SEF-style pressure
+df.p <- df_long %>%
+  select(Year, Month, Day, Hour, Minute, Value = Pressure) %>%
+  filter(!is.na(Value) & !is.na(Hour)) %>%
+  mutate(Value = Value * 27.07 * 1.3332239)  # convert to hPa
+
+
+# Create SEF-style temperature dataframe
+df.ta <- df_long %>%
+  select(Year, Month, Day, Hour, Minute, Value = Temperature) %>%
+  filter(!is.na(Value))
+
+# Create SEF-style pressure dataframe
+df.p <- df_long %>%
+  select(Year, Month, Day, Hour, Minute, Value = Pressure) %>%
+  filter(!is.na(Value))
+
+# conver to hPa
+df.p$Value <- df.p$Value * 27.07 * 1.3332239
+
+meta <- list(
+  ID = "Ylitornio",
+  Name = "Ylitornio",
+  Lat = "66.319266",
+  Lon = "23.670970",
+  Alt = "55",
+  Source = "Helama, S., Holopainen, J., Timonen, M., Ogurtsov, M. G., Lindholm, M., Meriläinen, J., Eronen, M. (2004). Comparison of living-tree and subfossil ringwidths with summer temperatures from 18th, 19th and 20th centuries in Northern Finland. Dendrochronologia 21/3, 147 - 154.")
+
+write_sef_f(Data=data.frame(df.ta), outfile="Ylitornio_ta_subdaily.tsv",
+            outpath=outdir,
+            cod=meta[["ID"]],
+            variable="ta",
+            nam=meta[["Name"]],
+            lat=meta[["Lat"]],
+            lon=meta[["Lon"]], alt=meta[["Alt"]], sou=meta[["Source"]],
+            metaHead = "observer=Johan Portin | orig_ta=C | latlon extracted from Peter's Yli",
+            units="C", stat="point", keep_na = F
+)
+
+write_sef_f(Data=data.frame(df.p), outfile="Ylitornio_p_subdaily.tsv",
+            outpath=outdir,
+            cod=meta[["ID"]],
+            variable="p",
+            nam=meta[["Name"]],
+            lat=meta[["Lat"]],
+            lon=meta[["Lon"]], alt=meta[["Alt"]], sou=meta[["Source"]], 
+            metaHead =  "observer=Johan Portin | orig_p=Paris inch(similar to Turku Academy measurements) | latlon extracted from Peter's Yli",
+            units="hPa", stat="point", keep_na = F
+)
+
+# Ylitornio NO ------------------------------------------------------------
 df <- read.csv('/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/csvs/Ylitornio_all.csv',
                header=T)
 

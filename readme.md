@@ -40,6 +40,47 @@ In the history of 1796-1812: First observations at the Meteorological and Astron
 
 We have 29244-13=29231 days with values in Peter's data from IMPROVE. Now let's count how many we have from the raw. We have no duplicates in dataset, and we have 29231 non-NaNs. Yay! it's the same. It looks like `CSF-TP801-819.txt` is just a small subset of `CSF-TP786-879.txt`, which we can check with `np.sum(cadiz2['TMP2m']!=cadiz1[:3323]['TMP2m'])`. As they are the same, we are only using the longer dataset. No changes made otherwise, simply stored the files of temperature and pressure separately. I'll consequently use the IMPROVE file from Cadiz TMP2m as it should be the same.
 
+### CBT
+
+`🔴` there are duplicate values I need to check for in the original file. For now, I am just dropping them in `04_dataprep_tsv_obs.R`. Fix them in the original file and remove the dropping of the second value, which is probably a typo of the year or the month improperly written.
+
+```
+⚠️  Duplicates found in: Central Belgium Temperature 
+# A tibble: 6 × 6
+# Groups:   Year, Month, Day [3]
+  row_num  Year Month   Day Value Meta 
+    <int><int><int><int><dbl><chr>
+13642  1804     2     8 -2""   
+23643  1804     2     8  2.27 ""   
+35103  1808     2     8  2.4  ""   
+45104  1808     2     8  1.7  ""   
+56564  1812     2     8  1.63 ""   
+66565  1812     2     8  6.37 ""   
+```
+
+Replace this 
+
+```
+      df_val <- x %>%
+        group_by(Year, Month, Day) %>%
+        mutate(n = n()) %>%
+        filter(row_number() == 1) %>%
+        ungroup() %>%
+        select(Year, Month, Day, Value)
+  
+      dropped_vals <- x %>%
+        group_by(Year, Month, Day) %>%
+        filter(n() > 1 & row_number() > 1) %>%
+        select(Year, Month, Day, Value)
+  
+      if (nrow(dropped_vals) > 0) {
+        cat("\n🗑️  Dropping repeated values in:", colname, "\n")
+        print(dropped_vals)
+      }
+```
+
+with just `df_val <- x[, c("Year", "Month", "Day", "Value")]`.
+
 ### CET
 
 Extracted from the [website](https://www.metoffice.gov.uk/hadobs/hadcet/), data from there are the same as 1807 selected data from Peter.
@@ -153,7 +194,11 @@ This is most likely a typo in the writing of the year. I correct this directly i
 
 The pressure data are, presumably, in inches of mercury. I converted to hPa using $1013.25 * ( P_{inHg} / 29.92)$. It might not be the proper conversion (I couldn't find what the units were, but since I'll assimilate anomalies, it won't matter too much anyway).
 
-`🔴 To ask for: ` `Ylitornio_ta_daily.tsv` from Peter is very different from Stefan. WHAT ARE THE COORDS OF STEFAN'S YLI?? This is how different they are:
+`🔴 To ask for: ` `Ylitornio_ta_daily.tsv` from Peter is very different from Stefan. 
+
+`🔴` Changing now pressure as if it were Paris inches, 1 Paris inch = 27.07mmHg. 1mmHg = 1.3332239hPa. But we'll need to compare w 20CR to see what an appropriate comparison would be.
+
+`🔴` WHAT ARE THE COORDS OF STEFAN'S YLI?? This is how different they are:
 
 ![Yli_fig](https://github.com/carlotatrx/KF_assimilation/blob/main/dataprep/image/Yli_diff.png)
 
