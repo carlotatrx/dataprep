@@ -67,8 +67,11 @@ print(f"Number of unique dates: {unique_dates}")
 #%%
 
 # Set date index
-df_obs2.set_index('Date', inplace=True)
-df_model.set_index('Date', inplace=True)
+try:
+    df_obs2.set_index('Date', inplace=True)
+    df_model.set_index('Date', inplace=True)
+except:
+    print("Date column already set as index")
 
 # Calculate model - obs difference
 delta = df_model - df_obs2
@@ -77,34 +80,26 @@ delta = df_model - df_obs2
 delta_mean = delta.mean(axis=0, skipna=True)
 
 # Apply correction: for each time point, add the mean delta
-corrected_obs = df_obs2.add(delta_mean)
-
-#%%
-# Create final DataFrame with date columns again
-final_df = df_obs2[['Year', 'Month', 'Day']].copy()
-final_df[cols] = corrected_obs.values
-
-#%%
-yobs_plain = df.iloc[:,3:-1].to_numpy()
-# yobs_anomaly = yobs_plain.copy()
-yobs_mean = np.nanmean(yobs_plain, axis=0)
-
-# Calculate anomalies
-yobs_anomaly = yobs_plain - yobs_mean
-
-yobs_anomaly_df = pd.DataFrame(yobs_anomaly, index=df['Date'], columns=df.columns[3:-1])
-yobs_anomaly_df.to_csv('/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/data/p_obs_anomalies.csv')
+df_corrected = df_obs2.add(delta_mean)
+df_corrected.to_csv('/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/data/p_obs_anomalies.csv')
 
 #%% make plots
 # Plot anomalies
-for i in range(yobs_anomaly.shape[1]): # loop through stations
-    plt.figure(figsize=(12, 6))
-    plt.plot(df['Date'], yobs_anomaly[:, i], label="Anomalies", alpha=.8)
-    plt.axhline(0, linestyle='dashed', color='k', alpha=.5)
-    plt.title(f"{df.columns[i+3]} Pressure Series Anomalies")
-    plt.ylabel("Pressure [hPa]")
+stations = df_obs2.columns
+
+for station in stations:
+    plt.figure(figsize=(12, 4))
+    plt.plot(df_obs2.index, df_obs2[station], label='Observation', color='dimgray', alpha=.5, linewidth=1)
+    plt.plot(df_model.index, df_model[station], label='20CRv3 Ensemble Mean', color='mediumvioletred', alpha=.5, linewidth=1)
+    plt.plot(df_corrected.index, df_corrected[station], label='Corrected', color='royalblue', alpha=.7, linewidth=1)
+    plt.title(f"Pressure at {station}, Observed vs 20CRv3")
+    plt.ylabel('pressure (hPa)')
+    plt.legend()
     plt.tight_layout()
-    plt.savefig(f'/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/image/p_{df.columns[i+3]}_anomalyplot.png')
-    # plt.show()
+
+    outfile = f"/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/image/p_{station}_anomalyplot.png"
+    plt.savefig(outfile)
+    plt.close()
+    print(f"📈 Saved: {station}")
 
 # %%
