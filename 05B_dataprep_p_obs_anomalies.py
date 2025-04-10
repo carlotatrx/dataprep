@@ -47,7 +47,6 @@ df_model['Date'] = pd.to_datetime(df_model['Date'])
 df_model.index -= df_model.index[0] # reset indices
 df_model.iloc[:, 1:] = df_model.iloc[:, 1:]/100 # convert to hPa
 
-# Merge the two dataframes on the 'Date' column keeping only the common dates
 df_obs['Date'] = df_obs['Date'].dt.floor('D') # round down to the nearest day
 df_model['Date'] = df_model['Date'].dt.floor('D') # round down to the nearest day
 
@@ -101,5 +100,3 @@ for station in stations:
     plt.savefig(outfile)
     plt.close()
     print(f"📈 Saved: {station}")
-
-# %%

@@ -22,134 +22,130 @@ plt.rcParams.update({
     'figure.titlesize': 12         # overall figure title (suptitle)
 })
 
-#%% Load CSV files generated from R
-df = pd.read_csv('/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/data/ta_obs.csv')
 
-df['Date'] = pd.to_datetime(df[['Year', 'Month', 'Day']])
-df = df[df['Date'] <= '1849-12-31']
-df = df[df['Date'] >= '1806-01-01']
-df.index -= df.index[0] # reset indices
+#%% Drop studid 29th February of inexisting years
+df_obs = pd.read_csv('/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/data/ta_obs.csv')
+# drop stupid 29th of february 1807 and 1811
+df_obs = df_obs.drop(df_obs[(df_obs['Year'] == 1807) & (df_obs['Month'] == 2) & (df_obs['Day'] == 29)].index)
+df_obs = df_obs.drop(df_obs[(df_obs['Year'] == 1811) & (df_obs['Month'] == 2) & (df_obs['Day'] == 29)].index)
 
-doy = df['Date'].dt.dayofyear
+df_obs['Date'] = pd.to_datetime(df_obs[['Year', 'Month', 'Day']])
+df_obs = df_obs.drop(columns=['Year', 'Month', 'Day'])
+df_obs = df_obs[['Date'] + [col for col in df_obs.columns if col != 'Date']] # reorganize columns
+df_obs.index -= df_obs.index[0] # reset indices
+
+df_model = pd.read_csv('/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/data/ta_20cr.csv')
+df_model = df_model.rename(columns={'Unnamed: 0':'Date'})
+df_model['Date'] = pd.to_datetime(df_model['Date'])
+df_model.index -= df_model.index[0] # reset indices
+df_model.iloc[:,1:] = df_model.iloc[:,1:] - 273.15 # convert to Celsius
+
+df_obs['Date'] = df_obs['Date'].dt.floor('D') # round down to the nearest day
+df_model['Date'] = df_model['Date'].dt.floor('D') # round down to the nearest day
+
+# keep only the common dates
+df_obs2 = df_obs[df_obs['Date'].isin(df_model['Date'])]
+print("original obs set", df_obs.shape,
+      "\ncommon days set", df_obs2.shape,
+      "\n20CR set", df_model.shape)
+
+duplicate_dates = df_obs2['Date'].duplicated(keep=False)
+df_obs2_duplicates = df_obs2[duplicate_dates]
+print(f"Number of duplicated dates: {df_obs2_duplicates.shape[0]}")
+
+unique_dates = df_obs2['Date'].nunique()
+print(f"Number of unique dates: {unique_dates}")
+
+# Set date index
+try:
+    df_obs2.set_index('Date', inplace=True)
+    df_model.set_index('Date', inplace=True)
+except:
+    print("Date column already set as index")
+
+#%% try linear regression
+import statsmodels.api as sm
+
+# Day-of-year and frequency
+doy = df_obs2.index.dayofyear.to_numpy()
 freq = 2 * np.pi / 365.25
 
-yobs_plain = df.iloc[:,3:-1].to_numpy()
-yobs_anomaly = yobs_plain.copy()
-seasonal_cycle = []
+# Container for corrected observations
+df_corrected = pd.DataFrame(index=df_obs2.index, columns=df_obs2.columns, dtype=float)
 
-#%% fit harmonics
-from sklearn.linear_model import LinearRegression
+for station in df_obs2.columns:
+    obs = df_obs2[station]
+    model = df_model[station]
 
-doy = df['Date'].dt.dayofyear
-freq = 2 * np.pi / 365.25
+    valid_obs = obs.notna()
+    valid_model = model.notna()
 
-yobs_plain = df.iloc[:,3:-1].to_numpy()
-yobs_anomaly = yobs_plain.copy()
-seasonal_cycle = []
-
-for i in range(yobs_plain.shape[1]): # loop through stations
-    obs_col = yobs_plain[:, i]
-    valid_mask = ~np.isnan(obs_col)
-    
-    if valid_mask.sum() == 0:  # No valid data for this station
-        yobs_anomaly[:, i] = np.nan
-        seasonal_cycle.append(np.full_like(obs_col, np.nan))  # Fill with NaNs for consistency
-        print("station ", i, " has too little data, no fitting")
+    if valid_obs.sum() < 365:
+        print(f"{station}: <1 year of obs data — skipped")
         continue
 
-    valid_years = round(valid_mask.sum() / 365.25)  # Estimate years of data
+    valid_years = round(valid_obs.sum() / 365.25)
 
-    if valid_years < 1:  # Too little data; exclude
-        yobs_anomaly[:, i] = np.nan
-        sc = np.full_like(obs_col, np.nan)
-        print("station ", i, " has too little data, no fitting")
-        
-    elif valid_years < 2:  # Use only 1st harmonic for stations with <2 years of data
-        s_simple = np.column_stack([
-            np.ones(doy.shape),
-            np.sin(freq * doy), np.cos(freq * doy)
+    # Select harmonic terms
+    if valid_years < 2:
+        harmonics = np.column_stack([
+            np.ones_like(doy),
+            np.sin(freq * doy),
+            np.cos(freq * doy)
         ])
-        lm_obs = LinearRegression().fit(s_simple[valid_mask], obs_col[valid_mask])
-        sc_full = lm_obs.predict(s_simple)
-        sc = np.full_like(obs_col, np.nan)  # Initialize as NaNs
-        sc[valid_mask] = sc_full[valid_mask]  # Constrain to valid dates
-        yobs_anomaly[:, i] = obs_col - sc
-        
-        print("only first harmonic fit for station", i, lm_obs.coef_)
-        
-    else:  # Use full harmonics for stations with sufficient data
-        s = np.column_stack([
-            np.ones(doy.shape),
+        print(f"{station}: using 1st harmonic")
+    else:
+        harmonics = np.column_stack([
+            np.ones_like(doy),
             np.sin(freq * doy), np.cos(freq * doy),
             np.sin(2 * freq * doy), np.cos(2 * freq * doy),
             np.sin(3 * freq * doy), np.cos(3 * freq * doy),
             np.sin(4 * freq * doy), np.cos(4 * freq * doy)
         ])
-        lm_obs = LinearRegression().fit(s[valid_mask], obs_col[valid_mask])
-        sc_full = lm_obs.predict(s)
-        sc = np.full_like(obs_col, np.nan)  # Initialize as NaNs
-        sc[valid_mask] = sc_full[valid_mask]  # Constrain to valid dates
-        yobs_anomaly[:, i] = obs_col - sc
-        print("four harmonics for station", i, lm_obs.coef_)
-    seasonal_cycle.append(sc)
+        print(f"{station}: using 4 harmonics")
 
-yobs_anomaly_df = pd.DataFrame(yobs_anomaly, index=df['Date'], columns=df.columns[3:-1])
-yobs_anomaly_df.to_csv('/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/data/ta_obs_anomalies.csv')
+    # Fit seasonal cycle to obs
+    X_obs = harmonics[valid_obs]
+    y_obs = obs[valid_obs].to_numpy()
+    beta_obs = sm.OLS(y_obs, X_obs).fit().params
+    seasonal_obs = harmonics @ beta_obs
 
-# #%% rename columns for plots
-# # modify names for temperature:
-# dict_rename = {
-#     'AG01_Aarau_Zschogge': 'Aarau',
-#     '00033902': 'Kherson',
-#     '00033345': 'Kyiv',
-#     '00033902_SUBs': 'Kherson_SUBs',
-#     'BE01_Bern_Studer': 'Bern',
-#     'Burg_Zitenice': 'Zitenice',
-#     'Camuffo_Bologna': 'Bologna_Camuffo',
-#     'GR04_Marschlins': 'Schloss Marschlins',
-#     'JU01_Delemont': 'Delemont',
-#     'SH01_Schaffhausen': 'Schaffhausen',
-#     'VD01_Vevey': 'Vevey',
-#     'DigiHom_Geneva': 'Geneva',
-#     'KIT_Karlsruhe': 'Karlsruhe',
-#     'Dom_Valencia_SUBs': 'Valencia_SUBs',
-#     'KNMI-42_Zwanenburg': 'Zwanenburg',
-#     'KNMI-44_Haarlem': 'Haarlem',
-#     'KNMI-44_Haarlem_SUBs': 'Haarlem_SUBs',
-#     'KNMI-45_Delfft2': 'Delfft',
-#     'Europe_Rovereto_1': 'Rovereto',
-#     'GCOS_Zurich_Feer': 'Zurich',
-#     'IMPROVE_Cadiz': 'Cadiz',
-#     'IMPROVE_Stockholm': 'Stockholm',
-#     'IMPROVE_StPetersburg': 'StPetersburg_IMPROVE',
-#     'Europe_StPetersburg': 'StPetersburg_Europe',
-#     'IMPROVE_Uppsala': 'Uppsala',
-#     'CRU_Paris': 'Paris',
-#     'Dom_Valencia': 'Valencia',
-#     'IMPROVE_Milan': 'Milan',
-#     'HadCET': 'CET',
-#     'Brug_Zitenice': 'Zitenice',
-#     'HOH': 'Hohenpeisenberg',
-#     'TOR': 'Torino',
-#     'GVE': 'Geneva',
-#     '169': 'Bologna_ECAD'
-# }
+    # Fit seasonal cycle to model (if sufficient data)
+    if valid_model.sum() >= 365:
+        X_model = harmonics[valid_model]
+        y_model = model[valid_model].to_numpy()
+        beta_model = sm.OLS(y_model, X_model).fit().params
+        seasonal_model = harmonics @ beta_model
+    else:
+        seasonal_model = seasonal_obs.copy()
+        print(f"{station}: insufficient model data, using obs seasonal cycle instead")
 
-# df  = df.rename(columns=dict_rename)
+    # Apply bias correction
+    corrected = obs.to_numpy() + (seasonal_model - seasonal_obs)
+
+    df_corrected[station] = corrected
+
+# save corrected obs
+df_corrected.to_csv('/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/data/ta_obs_anomalies.csv')
+
 
 #%% make plots
-for i in range(yobs_plain.shape[1]):
-    plt.figure(figsize=(12, 6))
-    plt.plot(df['Date'], yobs_plain[:, i], label="Observations")
-    plt.plot(df['Date'], seasonal_cycle[i], label="Seasonal Fit")
-    plt.plot(df['Date'], yobs_anomaly[:, i], label="Anomalies", alpha=.8)
-    plt.axhline(0, linestyle='dashed', color='k', alpha=.5)
-    plt.legend(ncol=3)
-    plt.title(f"{df.columns[i+3]} Temperature Series")
-    plt.xlabel("Date")
-    plt.ylabel(r"Temperature [$^{\circ}$C]")
-    plt.savefig(f'/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/image/ta_{df.columns[i+3]}_anomalyplot.png')
-    # plt.show()
 
+#%% make plots
+# Plot anomalies
+stations = df_obs2.columns
 
-# %%
+for station in stations:
+    plt.figure(figsize=(12, 4))
+    plt.plot(df_obs2.index, df_obs2[station], label='Observation', color='dimgray', alpha=.5, linewidth=1)
+    plt.plot(df_model.index, df_model[station], label='20CRv3 Ensemble Mean', color='mediumvioletred', alpha=.5, linewidth=1)
+    plt.plot(df_corrected.index, df_corrected[station], label='Corrected', color='orangered', alpha=.7, linewidth=1)
+    plt.title(f"Temperature at {station}, Observed vs 20CRv3")
+    plt.ylabel(r'Temperature [$^{\circ}$C]')
+    plt.legend()
+    plt.tight_layout()
+
+    outfile = f"/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/image/ta_{station}_anomalyplot.png"
+    plt.savefig(outfile)
+    plt.close()
+    print(f"📈 Saved: {station}")
