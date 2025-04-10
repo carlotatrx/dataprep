@@ -125,11 +125,10 @@ for station in df_obs2.columns:
 
     df_corrected[station] = corrected
 
+df_corrected_K = df_corrected.iloc[:, 1:] + 273.15 # convert to Kelvin
+
 # save corrected obs
-df_corrected.to_csv('/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/data/ta_obs_anomalies.csv')
-
-
-#%% make plots
+df_corrected_K.to_csv('/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/data/ta_obs_anomalies.csv')
 
 #%% make plots
 # Plot anomalies

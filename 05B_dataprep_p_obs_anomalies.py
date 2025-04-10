@@ -80,7 +80,10 @@ delta_mean = delta.mean(axis=0, skipna=True)
 
 # Apply correction: for each time point, add the mean delta
 df_corrected = df_obs2.add(delta_mean)
-df_corrected.to_csv('/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/data/p_obs_anomalies.csv')
+
+df_corrected_Pa = df_corrected * 100 # convert to Pa
+
+df_corrected_Pa.to_csv('/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/data/p_obs_anomalies.csv')
 
 #%% make plots
 # Plot anomalies
