@@ -86,7 +86,15 @@ p2 <- ggplot(x_final, aes(x = Date, y = Value)) +
 
 # Combine with global title
 zwa.plot <- (p1 / p2) + 
-  plot_annotation(title = "Pressure Observations at Zwanenburg", theme = theme(plot.title = element_text(hjust = 0.5, size=14)))
+  plot_annotation(
+    title = "Pressure Observations at Zwanenburg (Netherlands)",
+    theme = theme(
+      plot.title = element_text(hjust = 0.5, size = 14),
+      plot.margin = margin(t = 5, r = 10, b = 10, l = 10)  # t = top margin in pts
+    )
+  )
 
-ggsave("zwanenburg_hom_plot.png", zwa.plot, dpi = 600, width = 10, height = 6)
+#  plot_annotation(title = "Pressure Observations at Zwanenburg ", theme = theme(plot.title = element_text(hjust = 0.5, size=14)))
+
+ggsave("/scratch2/ccorbella/code/KF_assimilation/dataprep/homogenization/zwanenburg_hom_plot2.png", zwa.plot, dpi = 600, width = 10, height = 6)
 
