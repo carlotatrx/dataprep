@@ -117,6 +117,23 @@ def extract_20CR_atlocs(var_short: str, var_long: str) -> pd.DataFrame:
     time = ds_20CR['time'].values
     # station_names = index_df['station'].tolist()
     
+    ''' ## alternative that might work faster:
+    # Convert station indices to lists
+    lat_indices = index_df['lat'].astype(int).tolist()
+    lon_indices = index_df['lon'].astype(int).tolist()
+    station_names = index_df['station'].tolist()
+
+    # Use xarray advanced indexing to extract all stations in one go
+    data = ds_20CR[var_long].isel(lat=xr.DataArray(lat_indices, dims="points"),
+                                lon=xr.DataArray(lon_indices, dims="points"))
+
+    # Take the ensemble mean (now vectorized over all stations)
+    ens_mean = data.mean(dim="ensemble_member")
+
+    # Convert to DataFrame directly
+    df_model = pd.DataFrame(ens_mean.values, index=pd.to_datetime(time), columns=station_names)
+    '''
+    
     data_dict = {}
     
     for _, row in index_df.iterrows():
