@@ -1,10 +1,82 @@
 library(dataresqc)
 library(dplyr)
+library(tidyr)
+
 source('/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/write_sef_f.R')
 
 indir <- '/home/ccorbella/scratch2_symboliclink/files/station_timeseries_orig/Ukraine/'
 outdir <- '/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/'
 
+# Dnipro -----------------------------------------------------------------
+infile <- 'Dnipro.tsv'
+df <- read.delim(paste0(indir, infile), header=T, sep='\t', stringsAsFactors = F,
+                 skip=12)
+
+read_meta_nonofficial <- function (file = file.choose(), parameter = NULL) {
+  header <- read.table(file = file, quote = "", comment.char = "", 
+                       sep = "\t", nrows = 12, stringsAsFactors = FALSE, fill = TRUE)
+  pars <- c("version", "id", "name", "lat", "lon", "alt", "source", 
+            "link", "var", "stat", "units", "meta")
+  if (is.null(parameter)) {
+    out <- header[, 2]
+    names(out) <- pars
+  }
+  else {
+    out <- header[match(parameter, pars), 2]
+    names(out) <- parameter
+  }
+  return(out)
+}
+
+meta <- read_meta_nonofficial(paste0(indir,infile))
+
+# Helper: split time column into Hour and Minute
+split_hour_minute <- function(time_str) {
+  time_parts <- strsplit(time_str, ":")[[1]]
+  list(
+    hour = as.integer(time_parts[1]),
+    minute = as.integer(time_parts[2])
+  )
+}
+
+# Create temperature dataframe
+df.ta.Dnipro <- df %>%
+  separate(Hour, into = c("Hour", "Minute"), sep = ":", convert = TRUE) %>%
+  mutate(value = T * 1.25, Minute='NA') %>%
+  select(Year, Month, Day, Hour, Minute, value)
+
+df.p.Dnipro <- df %>%
+  separate(Hour, into = c("Hour", "Minute"), sep = ":", convert = TRUE) %>%
+  mutate(
+  value = case_when(
+      Year >= 1833 & Year <= 1838 ~ P * 33.8639,        # inches → hPa
+      Year %in% c(1839:1842, 1850) ~ P * 1.27/(750.06)*1000,       
+      # R.s.l. → hPa ccording to (Shostin, 1975;Lamb, 1986) this unit can be converted into millimetres
+      # based on the relation 1 R.s.l. = 1.27 mm. That is, 1,000 hPa  = 1,000 mbar = 750.06 mmHg = 590.60 R.s.l
+      TRUE ~ NA_real_                                   # fallback if unexpected year
+    )
+  ) %>%
+  select(Year, Month, Day, Hour, Minute, value)
+
+write_sef_f(Data=df.ta.Dnipro,
+            outpath=outdir, outfile="Dnipro_ta_subdaily.tsv",
+            cod=meta[["id"]],
+            variable='ta',
+            nam=meta[["name"]],
+            lat=meta[["lat"]],
+            lon=meta[["lon"]], alt=meta[["alt"]], sou=meta[["source"]], metaHead = 'orig_ta=Reaumur',
+            link=meta[["link"]], units='C', stat="point",
+            meta="", keep_na = F)
+
+write_sef_f(Data=df.p.Dnipro,
+            outpath=outdir, outfile="Dnipro_p_subdaily.tsv",
+            cod=meta[["id"]],
+            variable='ta',
+            nam=meta[["name"]],
+            lat=meta[["lat"]],
+            lon=meta[["lon"]], alt=meta[["alt"]], sou=meta[["source"]], metaHead = 'orig_p=in(1833-1838);R.s.l.(1839-1842,1850)',
+            link=meta[["link"]], units='hPa', stat="point",
+            meta="", keep_na = F)
 
 # Kherson -----------------------------------------------------------------
 

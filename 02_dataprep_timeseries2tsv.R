@@ -1,10 +1,64 @@
 library(dataresqc)
 library(lubridate)
 library(dplyr)
-
+library(readxl)
+library(tidyr)
+library(purrr)
 source("/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/write_sef_f.R")
 
 outdir <- '/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/'
+
+# Barcelona -----------------------------------------------------------------
+files <- c("/home/ccorbella/scratch2_symboliclink/files/station_timeseries_orig/barcelona-data-1800.XLS",
+           "/home/ccorbella/scratch2_symboliclink/files/station_timeseries_orig/barcelona-data-1801-1810.XLS",
+           "/home/ccorbella/scratch2_symboliclink/files/station_timeseries_orig/barcelona-data-1811-1820.XLS",
+           "/home/ccorbella/scratch2_symboliclink/files/station_timeseries_orig/barcelona-data-1821-1825.XLS")
+
+# Function to read and reshape each file
+reshape_to_sef <- function(file) {
+  df <- read_excel(file)
+  df <- df %>%
+    select(year, month, day, `Temp 0700`, `Temp 1400`, `Temp 2200`) %>%
+    pivot_longer(cols = starts_with("Temp"),
+                 names_to = "hour",
+                 values_to = "value") %>%
+    mutate(hour = case_when(
+      hour == "Temp 0700" ~ 7,
+      hour == "Temp 1400" ~ 14,
+      hour == "Temp 2200" ~ 22
+    )) %>%
+    select(year, month, day, hour, value)
+  return(df)
+}
+
+# Apply to all files and bind together
+df.ta.bcn <- map_dfr(files, reshape_to_sef)
+
+df.ta.bcn['minute'] <- 'NA'
+df.ta.bcn <- df.ta.bcn %>% relocate('minute', .after = 'hour')
+colnames(df.ta.bcn) <- c("Year","Month","Day","Hour","Minute","Value")
+df.ta.bcn <- as.data.frame(df.ta.bcn)
+meta <- list(
+  ID = "Barcelona",
+  Name = "Barcelona",
+  Lat = 41.390205,
+  Lon = 2.154007,
+  Alt = 12,
+  Vbl = "ta",
+  Units = "C",
+  Source = "?"
+)
+
+write_sef_f(Data=df.ta.bcn, outfile="Barcelona_ta_subdaily.tsv",
+            outpath=outdir,
+            cod=meta[["ID"]],
+            variable=meta[['Vbl']],
+            nam=meta[["Name"]],
+            lat=meta[["Lat"]],
+            lon=meta[["Lon"]], alt=meta[["Alt"]],
+            units=meta[["Units"]], stat="point",keep_na = F
+)
+
 
 
 # Bologna -----------------------------------------------------------------
