@@ -1,16 +1,13 @@
 library(dataresqc)
 library(dplyr)
 library(tidyr)
+library(readxl)
 
 source('/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/write_sef_f.R')
 
 indir <- '/home/ccorbella/scratch2_symboliclink/files/station_timeseries_orig/Ukraine/'
 outdir <- '/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/'
 
-# Dnipro -----------------------------------------------------------------
-infile <- 'Dnipro.tsv'
-df <- read.delim(paste0(indir, infile), header=T, sep='\t', stringsAsFactors = F,
-                 skip=12)
 
 read_meta_nonofficial <- function (file = file.choose(), parameter = NULL) {
   header <- read.table(file = file, quote = "", comment.char = "", 
@@ -28,16 +25,12 @@ read_meta_nonofficial <- function (file = file.choose(), parameter = NULL) {
   return(out)
 }
 
-meta <- read_meta_nonofficial(paste0(indir,infile))
+# Dnipro -----------------------------------------------------------------
+infile <- 'Dnipro.tsv'
+df <- read.delim(paste0(indir, infile), header=T, sep='\t', stringsAsFactors = F,
+                 skip=12)
 
-# Helper: split time column into Hour and Minute
-split_hour_minute <- function(time_str) {
-  time_parts <- strsplit(time_str, ":")[[1]]
-  list(
-    hour = as.integer(time_parts[1]),
-    minute = as.integer(time_parts[2])
-  )
-}
+meta <- read_meta_nonofficial(paste0(indir,infile))
 
 # Create temperature dataframe
 df.ta.Dnipro <- df %>%
@@ -77,6 +70,84 @@ write_sef_f(Data=df.p.Dnipro,
             lon=meta[["lon"]], alt=meta[["alt"]], sou=meta[["source"]], metaHead = 'orig_p=in(1833-1838);R.s.l.(1839-1842,1850)',
             link=meta[["link"]], units='hPa', stat="point",
             meta="", keep_na = F)
+
+# Kamyanets-Podilskyi -----------------------------------------------------------------
+infile <- 'Kamyanets-Podilskyi.tsv'
+df <- read.delim(paste0(indir, infile), header=T, sep='\t', stringsAsFactors = F,
+                 skip=12)
+
+meta <- read_meta_nonofficial(paste0(indir,infile))
+
+# Create temperature dataframe
+df.ta.Kamyanets <- df %>%
+  separate(Time, into = c("Hour", "Minute"), sep = ":", convert = TRUE) %>%
+  mutate(value = T * 1.25, Minute='NA') %>%
+  select(Year, Month, Day, Hour, Minute, value)
+
+df.p.Kamyanets <- df %>%
+  separate(Time, into = c("Hour", "Minute"), sep = ":", convert = TRUE) %>%
+  mutate(value = P * 33.8639) %>%     # inches → hPa
+  select(Year, Month, Day, Hour, Minute, value)
+
+write_sef_f(Data=df.ta.Kamyanets,
+            outpath=outdir, outfile="Kamyanets_ta_subdaily.tsv",
+            cod=meta[["id"]],
+            variable='ta',
+            nam=meta[["name"]],
+            lat=meta[["lat"]],
+            lon=meta[["lon"]], alt=meta[["alt"]], sou=meta[["source"]], metaHead = 'orig_ta=Reaumur',
+            link=meta[["link"]], units='C', stat="point",
+            meta="", keep_na = F)
+
+write_sef_f(Data=df.p.Kamyanets,
+            outpath=outdir, outfile="Kamyanets_p_subdaily.tsv",
+            cod=meta[["id"]],
+            variable='ta',
+            nam=meta[["name"]],
+            lat=meta[["lat"]],
+            lon=meta[["lon"]], alt=meta[["alt"]], sou=meta[["source"]], metaHead = 'orig_p=in',
+            link=meta[["link"]], units='hPa', stat="point",
+            meta="", keep_na = F)
+
+# Kharkiv_University -----------------------------------------------------------------
+infile <- 'Kharkiv_University.tsv'
+df <- read.delim(paste0(indir, infile), header=T, sep='\t', stringsAsFactors = F,
+                 skip=12)
+
+meta <- read_meta_nonofficial(paste0(indir,infile))
+
+# Create temperature dataframe
+df.ta.Kharkiv <- df %>%
+  separate(Hour, into = c("Hour", "Minute"), sep = ":", convert = TRUE) %>%
+  mutate(value = ifelse(T==-999.9, NA_real_,T * 1.25), Minute='NA') %>%
+  select(Year, Month, Day, Hour, Minute, value)
+
+df.p.Kharkiv <- df %>%
+  separate(Hour, into = c("Hour", "Minute"), sep = ":", convert = TRUE) %>%
+  mutate(value = ifelse(P==-999.9, NA_real_,P * 1.27/(750.06)*1000), Minute='NA') %>%     # R.s.l. → hPa
+  select(Year, Month, Day, Hour, Minute, value)
+
+write_sef_f(Data=df.ta.Kharkiv,
+            outpath=outdir, outfile="Kharkiv_ta_subdaily.tsv",
+            cod=meta[["id"]],
+            variable='ta',
+            nam=meta[["name"]],
+            lat=meta[["lat"]],
+            lon=meta[["lon"]], alt=meta[["alt"]], sou=meta[["source"]], metaHead = 'orig_ta=Reaumur',
+            link=meta[["link"]], units='C', stat="point",
+            meta="", keep_na = F)
+
+write_sef_f(Data=df.p.Kamyanets,
+            outpath=outdir, outfile="Kharkiv_p_subdaily.tsv",
+            cod=meta[["id"]],
+            variable='ta',
+            nam=meta[["name"]],
+            lat=meta[["lat"]],
+            lon=meta[["lon"]], alt=meta[["alt"]], sou=meta[["source"]], metaHead = 'orig_p=R.s.l.',
+            link=meta[["link"]], units='hPa', stat="point",
+            meta="", keep_na = F)
+
+
 
 # Kherson -----------------------------------------------------------------
 
@@ -209,3 +280,52 @@ write_sef_f(Data=df,
             link=meta[["Link"]], units=meta[["Units"]], stat="point",
             meta="orig_ta=Reaumur", keep_na = F)
  
+# Poltava --------------------------------------------------------------------
+sheets <- setdiff(excel_sheets(paste0(indir,'Poltava.xlsx')),"Meta")
+
+df <- bind_rows(
+  lapply(sheets, function(sheet) {
+    df <- read_excel(paste0(indir,'Poltava.xlsx'), sheet = sheet, range = cell_cols(1:6))
+    time_cols <- grep("^Time", names(df))
+    if (length(time_cols) > 1) {
+      # remove first "time" column (morning/midday/evening) if duplicated
+      df <- df[, -time_cols[1]]
+    }
+    df 
+  })
+)
+
+df <- df %>%
+  separate(Time, into = c("Hour", "Minute"), sep = ":", convert = TRUE) %>%
+  mutate(Minute=NA)
+  
+df.ta.Poltava <- df %>%
+  mutate(value = `T, R` * 1.25) %>%
+  select(Year, Month, Day, Hour, Minute, value)
+
+df.p.Poltava <- df %>%
+  # Check if there are any rows where both "P, in" and "P, R.s.l." are not NA (where we have obs in both units)
+  filter(!is.na(`P, in`) | !is.na(`P, R.s.l.`)) %>%
+  mutate(
+    value = case_when(
+      !is.na(`P, in`) ~ `P, in` * 33.8639,
+      !is.na(`P, R.s.l.`) ~ `P, R.s.l.` * 1.27 / 750.06 * 1000
+    ),
+    meta = case_when(
+      !is.na(`P, in`) ~ "orig_p=in",
+      !is.na(`P, R.s.l.`) ~ "orig_p=R.s.l."
+    )
+  ) %>%
+  select(Year, Month, Day, Hour, Minute, value, meta)
+
+
+write_sef_f(Data=df.ta.Poltava,
+            outpath=outdir, outfile='Poltava_ta_subdaily.tsv',
+            cod='Poltava',
+            variable='ta',
+            nam='Poltava',
+            lat=49.609444,
+            lon=34.544722, alt=160, sou="Ukrainian early (pre-1850) historical weather observations, Skrynk et al.",
+            link="https://doi.org/10.15407/ uhmi.report.01", units="C", stat="point",
+            meta="orig_ta=Reaumur", keep_na = F)
+
