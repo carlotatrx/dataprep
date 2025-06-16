@@ -38,19 +38,6 @@ df.ta.Dnipro <- df %>%
   mutate(value = T * 1.25, Minute='NA') %>%
   select(Year, Month, Day, Hour, Minute, value)
 
-# df.p.Dnipro <- df %>%
-#   separate(Hour, into = c("Hour", "Minute"), sep = ":", convert = TRUE) %>%
-#   mutate(
-#   value = case_when(
-#       Year >= 1833 & Year <= 1838 ~ P * 33.8639 ,        # inches → hPa
-#       Year %in% c(1839:1842, 1850) ~ P * 1.27/(750.06)*1000,       
-#       # R.s.l. → hPa ccording to (Shostin, 1975;Lamb, 1986) this unit can be converted into millimetres
-#       # based on the relation 1 R.s.l. = 1.27 mm. That is, 1,000 hPa  = 1,000 mbar = 750.06 mmHg = 590.60 R.s.l
-#       TRUE ~ NA_real_                                   # fallback if unexpected year
-#     )
-#   ) %>%
-#   select(Year, Month, Day, Hour, Minute, value)
-
 df.p.Dnipro <- df %>%
   separate(Hour, into = c("Hour", "Minute"), sep = ":", convert = TRUE) %>%
   mutate(
@@ -191,32 +178,116 @@ write_sef_f(Data=df.p.Kharkiv,
 
 # Kherson -----------------------------------------------------------------
 
-infile <- 'Kherson_pre1825.tsv'
-df <- read.delim(paste0(indir, infile), header=T, sep='\t', stringsAsFactors = F,
-                 skip=12)
+alt_Kherson=47
+lat_Kherson=46.73833
 
-# convert Reaumur to C, in to mmHg
-df$T_on_N <- ifelse(df$T_on_N == -999.9, NA, df$T_on_N * 1.25)
-df$T_on_S <- ifelse(df$T_on_S == -999.9, NA, df$T_on_S * 1.25)
-df$P <-      ifelse(df$P == -999.9, NA, df$P * 25.4)
+filepath <- paste0(indir, 'Kherson.xlsx')
+sheets <- setdiff(excel_sheets(paste0(indir,'Kherson.xlsx')),"Meta")
 
-# df <- df %>% filter(P < 3000, P > 950)
+df <- bind_rows(
+  lapply(sheets, function(sheet) {
+    df <- tryCatch(
+      {
+        suppressMessages(suppressWarnings(
+          read_excel(paste0(indir,'Kherson.xlsx'), sheet = sheet, range = cell_cols(1:8), .name_repair = "minimal")
+        ))
+      },
+      warning = function(w) {
+        message("⚠️  Warning in sheet: ", sheet, " → ", conditionMessage(w))
+        suppressMessages(suppressWarnings(read_excel(file_path, sheet = sheet, range = cell_cols(1:8), .name_repair = "minimal")))
+      }
+    )
+    time_cols <- grep("^Time", names(df))
+    if (length(time_cols) > 1) {
+      # remove first "time" column (morning/midday/evening) if duplicated
+      df <- df[, -time_cols[1]]
+    }
+    
+    # Ensure required columns exist
+    if (!"T, on N, R" %in% names(df)) {
+      df$`T, on N, R` <- NA_real_
+    }
+    if (!"T, on S, R" %in% names(df)) {
+      df$`T, on S, R` <- NA_real_
+    }
+    if (!"P, in" %in% names(df)) {
+      df$`P, in` <- NA_real_
+    }
+    if (!"T, R" %in% names(df)) {
+      df$`T, R` <- NA_real_
+    }
+    if (!"Tm/Tn, R" %in% names(df)) {
+      df$`Tm/Tn, R` <- NA_real_
+    }
+    df <- df[, intersect(names(df), c("Year", "Month", "Day", "Time", "T, on N, R", "T, on S, R", "T, R", "P, in", "Tm/Tn, R"))]
+    df <- df %>%
+      mutate(across(c("T, on N, R", "T, on S, R", "T, R", "P, in", "Tm/Tn, R"), ~na_if(., -999.9))) # -999.9 to NA
+    
+    df <- df %>%
+      mutate(
+        Hour = as.integer(sub(":.*", "", Time)),
+        Minute = ifelse(grepl(":", Time), as.integer(sub(".*:", "", Time)), NA_integer_)
+      )
+    # rearrange and drop time col
+    df <- df %>%
+      select(Year, Month, Day, Hour, Minute, everything(), -Time)
+    df
+  })
+)
 
-# extract hour and minute
-df$Minute <- as.integer(sub(".*:","", df$Hour))
-df$Hour <- as.integer(sub(":.*", "", df$Hour))
+df.ta.Kherson <- df %>%
+  
+  mutate(
+    ta_onN = `T, on N, R` * 1.25,
+    ta_onS = `T, on S, R` * 1.25,
+    ta     = `T, R` * 1.25,
+    value = case_when(
+      !is.na(ta) ~ ta,
+      !is.na(ta_onN) ~ ta_onN,
+      !is.na(ta_onS) ~ ta_onS,
+      TRUE ~ NA_real_
+    ),
+    meta_ta = case_when(
+      !is.na(ta_onN) ~ "orig_ta='T on N'",
+      !is.na(ta_onS) ~ "orig_ta='T on S'",
+      TRUE ~ ""
+    )
+  ) %>%
+  select(Year, Month, Day, Hour, Minute, value, meta_ta)
 
-### add 12 days to each date
-# df$date <- as.Date(sprintf("%04d-%02d-%02d", df$Year, df$Month, df$Day))
-# df$date <- df$date + 12 # add 12 days
+df.ta.Kherson <- as.data.frame(df.ta.Kherson)
 
-# Update the Year, Month, and Day columns based on the new date
-# df$Year <- as.integer(format(df$date, "%Y"))
-# df$Month <- as.integer(format(df$date, "%m"))
-# df$Day <- as.integer(format(df$date, "%d"))
+df.p.Kherson <- df %>%
+  mutate(
+    ta_onN = `T, on N, R` * 1.25,
+    ta_onS = `T, on S, R` * 1.25,
+    ta = `T, R` * 1.25,
+    ta_used = case_when(
+      !is.na(ta) ~ ta,
+      !is.na(ta_onN) ~ ta_onN,
+      !is.na(ta_onS) ~ ta_onS,
+    ),
+    meta_ta = case_when(    # prepare meta column
+      !is.na(ta) ~ paste0("orig_ta=", round(ta_used,1)),
+      !is.na(ta_onN) ~ paste0("orig_ta='TonN',", round(ta_used, 1)),
+      !is.na(ta_onS) ~ paste0("orig_ta='TonS',", round(ta_used, 1)),
+      TRUE ~ "orig_ta_unknown"
+    ),
+    
+    # corrected P in hPa
+    value = round(convert_pressure(p=`P, in` * 25.4, f=1, lat=lat_Kherson, alt=alt_Kherson, atb=ta_used),2),
+    
+    # difference in pressure:
+    p_diff = round(value - `P, in` * 25.4 * 1.33322368, 2),
 
-# read meta from lines
-meta_lines <- strsplit(readLines(paste0(indir, infile), n=12), '\t')
+    meta= paste(meta_ta, " | Δp=", p_diff,"hPa",sep="")
+  ) %>%
+  select(Year, Month, Day, Hour, Minute, value, meta)
+
+df.p.Kherson <- as.data.frame(df.p.Kherson)
+
+# read meta for SEF
+meta_lines <- strsplit(readLines(paste0(indir, 'Kherson_pre1825.tsv'), n=12), '\t')
 
 meta <- list()
 for (line in meta_lines) {
@@ -229,50 +300,27 @@ for (line in meta_lines) {
   }
 }
 
-# create two different files for T on N and T on S
-df_T_on_N <- df[, c("Year","Month","Day","Hour","Minute","T_on_N")]
-colnames(df_T_on_N)[colnames(df_T_on_N)=="T_on_N"] <- "Value"
-df_T_on_S <- df[, c("Year","Month","Day","Hour","Minute","T_on_S")]
-colnames(df_T_on_S)[colnames(df_T_on_S)=="T_on_S"] <- "Value"
+meta[['metaHead']] <- "Hours correspond to 'morning/midday/evening'"
 
-# generate TSV for T_on_N
-meta[['Vbl']] <- 'ta'
-meta[['Units']] <- 'C'
-
-write_sef_f(Data=df_T_on_S,
-            outpath=outdir, outfile="Kherson_ta_subdaily_TonS.tsv",
+write_sef_f(Data=df.ta.Kherson,
+            outpath=outdir, outfile='Kherson_ta_subdaily.tsv',
             cod=meta[["ID"]],
-            variable=meta[["Vbl"]],
+            variable='ta',
             nam=meta[["Name"]],
             lat=meta[["Lat"]],
             lon=meta[["Lon"]], alt=meta[["Alt"]], sou=meta[["Source"]],
-            metaHead = "T_on_N | orig_ta=Reaumur | Hours correspond to original day periods morning, midday, evening",
-            link=meta[["Link"]], units=meta[["Units"]], stat="point", keep_na = F)
-write_sef_f(Data=df_T_on_N,
-            outpath=outdir, outfile="Kherson_ta_subdaily_TonN.tsv",
-            cod=meta[["ID"]],
-            variable=meta[["Vbl"]],
-            nam=meta[["Name"]],
-            lat=meta[["Lat"]],
-            lon=meta[["Lon"]], alt=meta[["Alt"]], sou=meta[["Source"]], 
-            metaHead = "T_on_N | orig_ta=Reaumur | Hours correspond to original day periods morning, midday, evening",
-            link=meta[["Link"]], units=meta[["Units"]], stat="point", keep_na = F)
-
-# create pressure file
-df.p.Kherson <- df %>%
-  mutate(value = round(convert_pressure(p=P, f=1, lat=as.numeric(meta$Lat), alt=as.numeric(meta$Alt), atb=T_on_N), 2),
-         p_diff = round(value - P*1.3332239,2),
-         meta = paste("orig_p=in | orig_ta_onN=", round(T_on_N,2), " | Δp=", p_diff, "hPa", sep = "")
-  ) %>%     # R.s.l. → hPa
-  select(Year, Month, Day, Hour, Minute, value, meta)
+            metaHead = paste(meta[['metaHead']],"| orig_ta=Reaumur"),
+            meta = df.ta.Kherson$meta_ta,
+            link=meta[["Link"]], units='C', stat="point", keep_na = F)
 
 write_sef_f(Data=df.p.Kherson,
-            outpath=outdir, outfile="Kherson_p_subdaily",
+            outpath=outdir, outfile='Kherson_p_subdaily.tsv',
             cod=meta[["ID"]],
             variable='p',
             nam=meta[["Name"]],
             lat=meta[["Lat"]],
-            lon=meta[["Lon"]], alt=meta[["Alt"]], sou=meta[["Source"]], metaHead = "PGC=Y | PTC=Y",
+            lon=meta[["Lon"]], alt=meta[["Alt"]], sou=meta[["Source"]],
+            metaHead = paste0(meta[['metaHead']], " | orig_p=R.s.l. | PGC=Y | PTC=Y"),
             link=meta[["Link"]], units='hPa', stat="point",
             meta=df.p.Kherson$meta, keep_na = F)
 
@@ -365,7 +413,7 @@ for (line in meta_lines) {
  }
 }
 
-meta[['metaHead']] <- 'Hours correspond to original day periods morning, midday, evening'
+meta[['metaHead']] <- "Hours correspond to 'morning/midday/evening'"
 
 write_sef_f(Data=df.ta.Kyiv,
             outpath=outdir, outfile='Kyiv_ta_subdaily.tsv',
@@ -384,7 +432,7 @@ write_sef_f(Data=df.p.Kyiv,
             nam=meta[["Name"]],
             lat=meta[["Lat"]],
             lon=meta[["Lon"]], alt=meta[["Alt"]], sou=meta[["Source"]],
-            metaHead = "orig_ta=R.s.l. | PGC=Y | PTC=Y",
+            metaHead = paste(meta[['metaHead']],"| orig_p=R.s.l. | PGC=Y | PTC=Y"),
             link=meta[["Link"]], units='hPa', stat="point",
             meta=df.p.Kyiv$meta, keep_na = F)
 
@@ -494,7 +542,7 @@ write_sef_f(Data=df.ta.Lugansk,
             lat=lat_Lugansk,
             lon='39.2275', alt=alt_Lugansk, sou="Ukrainian early (pre-1850) historical weather observations, Skrynk et al.",
             link="https://doi.org/10.15407/uhmi.report.01", units="C", stat="point",
-            metaHead="relocation(1843) | orig_ta=Reaumur", keep_na = F)
+            metaHead="relocation(1843) | orig_ta=Reaumur | Hours correspond to 'morning/midday/evening'", keep_na = F)
 
 write_sef_f(Data=df.p.Lugansk,
             outpath=outdir, outfile='Lugansk_p_subdaily.tsv',
@@ -504,7 +552,7 @@ write_sef_f(Data=df.p.Lugansk,
             lat='48.565556',
             lon='39.2275', alt='59', sou="Ukrainian early (pre-1850) historical weather observations, Skrynk et al.",
             link="https://doi.org/10.15407/uhmi.report.01", units="hPa", stat="point",
-            metaHead="relocation(1843) | PGC=Y | PTC=Y | Hours correspond to original day periods morning, midday, evening",
+            metaHead="relocation(1843) | PGC=Y | PTC=Y | Hours correspond to 'morning/midday/evening'",
             meta=df.p.Lugansk$meta, keep_na = F)
 
 # Odesa --------------------------------------------------------------------
