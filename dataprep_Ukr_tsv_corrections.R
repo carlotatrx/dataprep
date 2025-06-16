@@ -278,47 +278,115 @@ write_sef_f(Data=df.p.Kherson,
 
 # Kyiv --------------------------------------------------------------------
 
-infile <- 'Kyiv_ta_pre1837.tsv'
-df <- read.delim(paste0(indir, infile), header=T, sep='\t', stringsAsFactors = F,
-                 skip=12)
+alt_Kyiv = 166
+lat_Kyiv = 50.39222
 
-# convert Reamur to Kelvin
-df$Value <- ifelse(df$Value == -999.9, NA, df$Value * 1.25)
+filepath <- paste0(indir, 'Kyiv.xlsx')
+sheets <- setdiff(excel_sheets(paste0(indir,'Kyiv.xlsx')),"Meta")
 
-# extract hour and minute
-df$Minute <- as.integer(sub(".*:","", df$Hour))
-df$Hour <- as.integer(sub(":.*", "", df$Hour))
+df <- bind_rows(
+  lapply(sheets, function(sheet) {
+    df <- tryCatch(
+      {
+        suppressMessages(suppressWarnings(
+          read_excel(paste0(indir,'Kyiv.xlsx'), sheet = sheet, range = cell_cols(1:7), .name_repair = "minimal")
+        ))
+      },
+      warning = function(w) {
+        message("⚠️  Warning in sheet: ", sheet, " → ", conditionMessage(w))
+        suppressMessages(suppressWarnings(read_excel(file_path, sheet = sheet, range = cell_cols(1:7), .name_repair = "minimal")))
+      }
+    )
+    time_cols <- grep("^Time", names(df))
+    if (length(time_cols) > 1) {
+      # remove first "time" column (morning/midday/evening) if duplicated
+      df <- df[, -time_cols[1]]
+    }
+    
+    if (!"P, R.s.l." %in% names(df)) { # if sheet doesn't have pressure, then leave it empty
+      df$`P, R.s.l.` <- NA_real_
+    }
 
-# rearrange columns
-df <- df[, c("Year","Month","Day","Hour","Minute","Value")]
+    df <- df[, intersect(names(df), c("Year", "Month", "Day", "Time", "T, R", "P, R.s.l."))]
+    df <- df %>%
+      mutate(across(c("T, R", "P, R.s.l."), ~na_if(., -999.9))) # -999.9 to NA
+    
+    df <- df %>%
+      mutate(
+        Hour = as.integer(sub(":.*", "", Time)),
+        Minute = ifelse(grepl(":", Time), as.integer(sub(".*:", "", Time)), NA_integer_)
+      )
+    # rearrange and drop time col
+    df <- df %>%
+      select(Year, Month, Day, Hour, Minute, everything(), -Time)
+    df
+  })
+)
+
+
+df.ta.Kyiv <- df %>%
+  mutate(value = `T, R` * 1.25) %>%
+  select(Year, Month, Day, Hour, Minute, value)
+
+df.ta.Kyiv <- as.data.frame(df.ta.Kyiv)
+
+df.p.Kyiv <- df %>%
+  mutate(
+    ta = `T, R`  * 1.25,    # outside temperature in C
+    meta_ta = if_else(!is.na(ta), paste0("orig_ta=", round(ta, 1)), "orig_ta=NA"),
+    
+    # original pressure in mmHg
+    Lmm = `P, R.s.l.` * 1.27, # R.s.l. -> mmHg ## / 750.06 * 1000) / 33.8639
+
+    # corrected P in hPa
+    value = round(convert_pressure(p=Lmm, f=1, lat=lat_Kyiv, alt=alt_Kyiv, atb=ta),2),
+    
+    # difference in pressure:
+    p_diff = round(value - Lmm * 1.33322368, 2),
+    
+
+    meta= paste(meta_ta, " | Δp=", p_diff,"hPa",sep="")
+  ) %>%
+  select(Year, Month, Day, Hour, Minute, value, meta)
+
+df.p.Kyiv <- as.data.frame(df.p.Kyiv)
 
 # read meta for SEF
-meta_lines <- strsplit(readLines(paste0(indir, infile), n=12), '\t')
+meta_lines <- strsplit(readLines(paste0(indir, 'Kyiv_all_post1837.tsv'), n=12), '\t')
 
 meta <- list()
 for (line in meta_lines) {
-  if (length(line) >= 2 ** nzchar(line[2])) {
-    key <- line[1]
-    value <- line[2]
-    meta[[key]] <- value
-  } else { # for lines wo a value (e.g. SEF, ID)
-    meta[[line[1]]] <- NA
-  }
+ if (length(line) >= 2 ** nzchar(line[2])) {
+   key <- line[1]
+   value <- line[2]
+   meta[[key]] <- value
+ } else { # for lines wo a value (e.g. SEF, ID)
+   meta[[line[1]]] <- NA
+ }
 }
-meta[['Vbl']] <- 'ta'
-meta[['Units']] <- 'C'
+
 meta[['metaHead']] <- 'Hours correspond to original day periods morning, midday, evening'
 
-write_sef_f(Data=df,
-            outpath=outdir, outfile='Kyiv_ta_subdailyNO.tsv',
+write_sef_f(Data=df.ta.Kyiv,
+            outpath=outdir, outfile='Kyiv_ta_subdaily.tsv',
             cod=meta[["ID"]],
-            variable=meta[["Vbl"]],
+            variable='ta',
             nam=meta[["Name"]],
             lat=meta[["Lat"]],
             lon=meta[["Lon"]], alt=meta[["Alt"]], sou=meta[["Source"]],
-            metaHead = meta[['metaHead']],
-            link=meta[["Link"]], units=meta[["Units"]], stat="point",
-            meta="orig_ta=Reaumur", keep_na = F)
+            metaHead = paste(meta[['metaHead']],"| orig_ta=Reaumur"),
+            link=meta[["Link"]], units='C', stat="point", keep_na = F)
+
+write_sef_f(Data=df.p.Kyiv,
+            outpath=outdir, outfile='Kyiv_p_subdaily.tsv',
+            cod=meta[["ID"]],
+            variable='p',
+            nam=meta[["Name"]],
+            lat=meta[["Lat"]],
+            lon=meta[["Lon"]], alt=meta[["Alt"]], sou=meta[["Source"]],
+            metaHead = "orig_ta=R.s.l. | PGC=Y | PTC=Y",
+            link=meta[["Link"]], units='hPa', stat="point",
+            meta=df.p.Kyiv$meta, keep_na = F)
 
 # Lugansk --------------------------------------------------------------------
 
@@ -391,7 +459,7 @@ df.p.Lugansk <- df %>%
     ),
     meta_ta = case_when(    # prepare meta column
       !is.na(ta_bar) ~ paste0("orig_ta_bar=", round(ta_bar,1)),
-      !is.na(ta_out) ~ paste0("orig_ta_outside=", round(ta_out, 1)),
+      !is.na(ta_out) ~ paste0("orig_ta_out=", round(ta_out, 1)),
       TRUE ~ "orig_ta_unknown"
     ),
     # gamma = 1.82e-4, # thermal expansion coeff of mercury at 0°C
@@ -399,15 +467,14 @@ df.p.Lugansk <- df %>%
     # original pressure in mmHg
     Lmm = case_when(
       !is.na(`P, in`) ~ `P, in` * 25.4, # convert inHg → mmHg
-      !is.na(`P, R.s.l.`) ~ (`P, R.s.l.` * 1.27 / 750.06 * 1000) / 33.8639
+      !is.na(`P, R.s.l.`) ~ (`P, R.s.l.` * 1.27) # R.s.l. -> mmHg ## / 750.06 * 1000) / 33.8639
     ),
     
     # corrected P in hPa
-    value = convert_pressure(p=Lmm, f=1, lat=lat_Lugansk, alt=alt_Lugansk, atb=ta_used),
-    uncorrected = convert_pressure(p = Lmm, f = 1, lat = 48.57, alt = 90, atb = rep(0, n())),  # temp = 0 for reference
+    value = round(convert_pressure(p=Lmm, f=1, lat=lat_Lugansk, alt=alt_Lugansk, atb=ta_used),2),
 
     # difference in pressure:
-    p_diff = round(value - uncorrected, 2),
+    p_diff = round(value - Lmm * 1.33322368, 2),
     
     meta_orig = case_when(
       !is.na(`P, in`) ~ "orig_p=in",
@@ -427,8 +494,7 @@ write_sef_f(Data=df.ta.Lugansk,
             lat=lat_Lugansk,
             lon='39.2275', alt=alt_Lugansk, sou="Ukrainian early (pre-1850) historical weather observations, Skrynk et al.",
             link="https://doi.org/10.15407/uhmi.report.01", units="C", stat="point",
-            metaHead="relocation(1843)",
-            meta="orig_ta=Reaumur", keep_na = F)
+            metaHead="relocation(1843) | orig_ta=Reaumur", keep_na = F)
 
 write_sef_f(Data=df.p.Lugansk,
             outpath=outdir, outfile='Lugansk_p_subdaily.tsv',
@@ -438,62 +504,55 @@ write_sef_f(Data=df.p.Lugansk,
             lat='48.565556',
             lon='39.2275', alt='59', sou="Ukrainian early (pre-1850) historical weather observations, Skrynk et al.",
             link="https://doi.org/10.15407/uhmi.report.01", units="hPa", stat="point",
-            metaHead="relocation(1843) | PGC=Y | PTC=Y",
+            metaHead="relocation(1843) | PGC=Y | PTC=Y | Hours correspond to original day periods morning, midday, evening",
             meta=df.p.Lugansk$meta, keep_na = F)
 
 # Odesa --------------------------------------------------------------------
-lat_Odesa <- NA
-lon_Odesa <- NA 
-alt_Odesa <- NA
+lat_Odesa <- 46.440833
+lon_Odesa <- 30.770278 
+alt_Odesa <- 42
 sheets <- setdiff(excel_sheets(paste0(indir,'Odesa.xlsx')),"Meta")
 
 df <- bind_rows(
   lapply(sheets, function(sheet) {
-    df <- read_excel(paste0(indir,'Odesa.xlsx'), sheet = sheet, range = cell_cols(1:6))
-    time_cols <- grep("^Time", names(df))
-    if (length(time_cols) > 1) {
-      # remove first "time" column (morning/midday/evening) if duplicated
-      df <- df[, -time_cols[1]]
-    }
-    df 
+    df <- read_excel(paste0(indir,'Odesa.xlsx'), 
+                     sheet = sheet,
+                     range = cell_cols(1:6),
+                     col_types = c("numeric", "numeric", "numeric", "text", "numeric", "numeric"))
   })
 )
+
+df <- df %>%
+  mutate(
+    Time = case_when(
+      Time == "0.625" ~ "15:00",
+      Time == "0.66666666666666663" ~ "16:00",
+      Time == "0.75" ~ "18:00",
+      TRUE ~ Time
+    )
+  )
 
 df <- df %>%
   separate(Time, into = c("Hour", "Minute"), sep = ":", convert = TRUE) %>%
   mutate(Minute=NA_integer_)
 
 df.ta.Odesa <- df %>%
-  mutate(value = `T, R` * 1.25) %>%
+  mutate(value = ifelse(`T, R`==-999.9, NA_real_, `T, R` * 1.25)) %>%
   select(Year, Month, Day, Hour, Minute, value)
 
 df.ta.Odesa <- as.data.frame(df.ta.Odesa)
 
 df.p.Odesa <- df %>%
-  # Check if there are any rows where both "P, in" and "P, R.s.l." are not NA (where we have obs in both units)
-  filter(!is.na(`P, in`) | !is.na(`P, R.s.l.`)) %>%
   mutate(
-    ta_out = `T, R` * 1.25, # outside temperature in °C
-    meta_ta = paste0("orig_ta_outside=", round(ta_out,1)),
+    ta_out = ifelse(`T, R`==-999.9, NA_real_, `T, R` * 1.25), # outside temperature in °C
+    meta_ta = paste0("orig_ta_out=", round(ta_out,1)),
     
-    Lmm = case_when(
-      !is.na(`P, in`) ~ `P, in`  * 25.4,                                    # inHg to mmHg
-      !is.na(`P, R.s.l.`) ~ (`P, R.s.l.` * 1.27 / 750.06 * 1000) / 33.8639  # hPa to mmHg
-    ),
-    
+    P = ifelse(`P, in`==-999.9, NA_real_, `P, in`*25.4),
     # Pressure corrected to 0°C + gravity → hPa
-    value = convert_pressure(p = Lmm, f = 1, lat = lat_Odesa, alt = alt_Odesa, atb = ta_out),
+    value = convert_pressure(p = P, f = 1, lat = lat_Odesa, alt = alt_Odesa, atb = ta_out),
+    p_diff = round(value - P, 2),
     
-    # Uncorrected pressure for delta_p (using atb = 0)
-    uncorrected = convert_pressure(p = Lmm, f = 1, lat = lat_Odesa, alt = alt_Odesa, atb = rep(0, n())),
-    p_diff = round(value - uncorrected, 2),
-    
-    meta_orig = case_when(
-      !is.na(`P, in`) ~ "orig_p=in",
-      !is.na(`P, R.s.l.`) ~ "orig_p=R.s.l."
-    ),
-    
-    meta = paste(meta_orig, " | ", meta_ta, " | Δp=", p_diff, "hPa", sep = "")
+    meta = paste(meta_ta, " | Δp=", p_diff, "hPa", sep = "")
   ) %>%
   select(Year, Month, Day, Hour, Minute, value, meta)
 
@@ -506,8 +565,8 @@ write_sef_f(Data=df.ta.Odesa,
             nam='Odesa',
             lat=lat_Odesa,
             lon=lon_Odesa, alt=alt_Odesa, sou="Ukrainian early (pre-1850) historical weather observations, Skrynk et al.",
-            link="https://doi.org/10.15407/ uhmi.report.01", units="C", stat="point",
-            meta="orig_ta=Reaumur", keep_na = F)
+            link="https://doi.org/10.15407/uhmi.report.01", units="C", stat="point",
+            metaHead="orig_ta=Reaumur", keep_na = F)
 
 write_sef_f(Data=df.p.Odesa,
             outpath=outdir, outfile='Odesa_p_subdaily.tsv',
@@ -516,8 +575,8 @@ write_sef_f(Data=df.p.Odesa,
             nam='Odesa',
             lat=lat_Odesa,
             lon=lon_Odesa, alt=alt_Odesa, sou="Ukrainian early (pre-1850) historical weather observations, Skrynk et al.",
-            link="https://doi.org/10.15407/ uhmi.report.01", units="hPa", stat="point",
-            metaHead="PGC=Y | PTC=Y",
+            link="https://doi.org/10.15407/uhmi.report.01", units="hPa", stat="point",
+            metaHead="orig_p=in | PGC=Y | PTC=Y",
             meta=df.p.Odesa$meta, keep_na = F)
 
 
@@ -553,20 +612,14 @@ df.p.Poltava <- df %>%
   filter(!is.na(`P, in`) | !is.na(`P, R.s.l.`)) %>%
   mutate(
     ta_out = `T, R` * 1.25, # outside temperature in °C
-    meta_ta = paste0("orig_ta_outside=", round(ta_out,1)),
+    meta_ta = paste0("orig_ta_out=", round(ta_out,1)),
     
-    Lmm = case_when(
-      !is.na(`P, in`) ~ `P, in`  * 25.4,                                    # inHg to mmHg
-      !is.na(`P, R.s.l.`) ~ (`P, R.s.l.` * 1.27 / 750.06 * 1000) / 33.8639  # hPa to mmHg
-    ),
+    Lmm = if_else(!is.na(`P, in`), `P, in` * 25.4, `P, R.s.l.` * 1.27), #  / 750.06 * 1000) / 33.8639  # hPa to mmHg
     
     # Pressure corrected to 0°C + gravity → hPa
-    value = convert_pressure(p = Lmm, f = 1, lat = lat_Poltava, alt = alt_Poltava, atb = ta_out),
-    
-    # Uncorrected pressure for delta_p (using atb = 0)
-    uncorrected = convert_pressure(p = Lmm, f = 1, lat = lat_Poltava, alt = alt_Poltava, atb = rep(0, n())),
-    p_diff = round(value - uncorrected, 2),
-    
+    value = round(convert_pressure(p = Lmm, f = 1, lat = lat_Poltava, alt = alt_Poltava, atb = ta_out),2),
+    p_diff = round(value - Lmm * 1.333, 2),
+
     meta_orig = case_when(
       !is.na(`P, in`) ~ "orig_p=in",
       !is.na(`P, R.s.l.`) ~ "orig_p=R.s.l."
@@ -585,16 +638,16 @@ write_sef_f(Data=df.ta.Poltava,
             nam='Poltava',
             lat=lat_Poltava,
             lon='34.544722', alt=alt_Poltava, sou="Ukrainian early (pre-1850) historical weather observations, Skrynk et al.",
-            link="https://doi.org/10.15407/ uhmi.report.01", units="C", stat="point",
-            meta="orig_ta=Reaumur", keep_na = F)
+            link="https://doi.org/10.15407/uhmi.report.01", units="C", stat="point",
+            metaHead="Hours correspond to 'at sunrise/midday/at sunset' | orig_ta=Reaumur", keep_na = F)
 
 write_sef_f(Data=df.p.Poltava,
             outpath=outdir, outfile='Poltava_p_subdaily.tsv',
             cod='Poltava',
             variable='p',
             nam='Poltava',
-            lat='49.609444',
+            lat=lat_Poltava,
             lon='34.544722', alt='160', sou="Ukrainian early (pre-1850) historical weather observations, Skrynk et al.",
-            link="https://doi.org/10.15407/ uhmi.report.01", units="hPa", stat="point",
-            metaHead="PGC=Y | PTC=Y",
+            link="https://doi.org/10.15407/uhmi.report.01", units="hPa", stat="point",
+            metaHead="Hours correspond to 'at sunrise/midday/at sunset' | PGC=Y | PTC=Y",
             meta=df.p.Poltava$meta, keep_na = F)
