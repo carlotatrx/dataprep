@@ -12,44 +12,12 @@ from scipy.spatial import KDTree
 def make_date_col(df):
     df['Date'] = pd.to_datetime(df[['Year', 'Month', 'Day']])
 
+def weighted_tod(hour, center=14, std=4):
+    return np.exp(-0.5 * ((hour - center) / std)**2)
+
 # -----------------------------------------------------------------------------
 # Core functions
 # -----------------------------------------------------------------------------
-
-def create_df_merged(lat_station, lon_station, ds_20CR, filename):
-    """
-    Loads station data, extracts the corresponding 20CR grid cell,
-    and merges the two into a single DataFrame.
-    """
-    df = pd.read_csv(filename, skiprows=12, sep='\t')
-    make_date_col(df)
-    df_short = df[['Date', 'Value']].copy()
-    df_short['Date'] = pd.to_datetime(df_short['Date']).dt.date
-
-    assert df_short['Date'].nunique() == df_short.shape[0], "repeated dates"
-
-    # Build KDTree to find nearest grid point
-    ds_lats = ds_20CR['lat'].values
-    ds_lons = ds_20CR['lon'].values
-    grid_lons, grid_lats = np.meshgrid(ds_lons, ds_lats)
-    grid_points = np.array([grid_lats.flatten(), grid_lons.flatten()]).T
-    tree = KDTree(grid_points)
-    _, station_index = tree.query(np.array([lat_station, lon_station]))
-
-    lat_index = station_index // len(ds_lons)
-    lon_index = station_index % len(ds_lons)
-
-    ds_ta = ds_20CR['TMP2m'][:, :, lat_index, lon_index].mean(dim='ensemble_member')
-    df_20CR = ds_ta.to_dataframe().reset_index()
-    df_20CR = df_20CR.rename(columns={'time': 'Date', 'TMP2m': 'Value'})
-    df_20CR = df_20CR.drop(columns=['lat', 'lon'])
-    df_20CR['Date'] = pd.to_datetime(df_20CR['Date']).dt.date
-
-    df_merged = pd.merge(df_20CR, df_short, on='Date', how='inner')
-    df_merged = df_merged.rename(columns={'Value_x': 'model', 'Value_y': 'obs'})
-    df_merged['model'] -= 273.15  # Convert from Kelvin to Celsius
-    return df_merged
-
 
 def create_df_merged(lat_station, lon_station, ds_20CR, filename):
     """
@@ -69,17 +37,23 @@ def create_df_merged(lat_station, lon_station, ds_20CR, filename):
     if subdaily:
         print("Subdaily data detected. Applying weighted daily mean.")
 
+        # Filter out invalid hours
+        df = df[df["Hour"].notna()]
 
-        # Apply weights (only keep times that exist in weights)
-        default_weights_ToD = {10: 0.3, 14:0.5, 22:0.2}
+        # Compute adaptive weights
+        df["weight"] = df["Hour"].apply(lambda hr: weighted_tod(hr))
+
+        # Normalize weights per day
+        df["norm_weight"] = df.groupby("Date")["weight"].transform(lambda w: w / w.sum())
 
         # Compute weighted daily means
-        df["weight"] = df["Hour"].map(default_weights_ToD)
-        df = df.groupby("Date").apply(
-            lambda group: np.average(group["Value"], weights=group["weight"]),
-            include_groups=False
-        ).reset_index(name="obs")
+        df_obs = df.groupby("Date").apply(
+            lambda g: np.average(g["Value"], weights=g["norm_weight"]),
+            include_groups=False # silence stupid warning
+        ).reset_index(name='obs')
+
     else:
+        df_obs = df[['Date', 'Value']]
         print(f"Daily data detected.")
         
     # Ensure unique dates
@@ -102,11 +76,13 @@ def create_df_merged(lat_station, lon_station, ds_20CR, filename):
     df_20CR = ds_ta.to_dataframe().reset_index()
     df_20CR = df_20CR.rename(columns={'time': 'Date', 'TMP2m': 'model'})
     df_20CR = df_20CR.drop(columns=['lat', 'lon'])
-    df_20CR["Date"] = pd.to_datetime(df_20CR["Date"]).dt.date
-
+    
+    # make datecols equal
+    df_20CR["Date"] = pd.to_datetime(df_20CR["Date"]).dt.normalize()
+    df_obs['Date'] = pd.to_datetime(df_obs['Date']).dt.normalize()
+    
     # Merge on date
-    df["Date"] = df["Date"].dt.date
-    df_merged = pd.merge(df_20CR, df, on="Date", how="inner")
+    df_merged = pd.merge(df_20CR, df_obs, on="Date", how="inner")
     df_merged['model'] -= 273.15  # Convert from Kelvin to Celsius
     return df_merged
 
@@ -128,10 +104,14 @@ def compute_lag_corr(df, max_lag=14):
     return lags, corrs
 
 
-def rolling_lag_corr(df, window_size=365*3, step_size=90, max_lag=14):
+def rolling_lag_corr(df, window_size=365*3, step_size=90, max_lag=20):
     """
     Computes Pearson correlation for rolling time windows at different lags.
     """
+    if len(df) < window_size:
+        print("Warning: dataset shorter than window. Reducing window size.")
+        window_size = len(df)
+
     lags = np.arange(-max_lag, max_lag + 1)
     results = []
 
@@ -158,7 +138,7 @@ def rolling_lag_corr(df, window_size=365*3, step_size=90, max_lag=14):
 
 
 def plot_lag_correlation(lags, corrs, station_name,
-                         file_savefig='/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/image'):
+                         file_savefig='/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/image/Ukraine_calendar_shifts'):
     plt.figure(figsize=(8, 5))
     ax = plt.gca()
     plt.plot(lags, corrs, marker="o", linestyle="-")
@@ -176,7 +156,7 @@ def plot_lag_correlation(lags, corrs, station_name,
 
 
 def plot_rolling_lag(df_result, station_name, expected_shift=None,
-                     file_savefig='/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/image'):
+                     file_savefig='/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/image/Ukraine_calendar_shifts'):
     plt.figure(figsize=(12, 6))
     plt.plot(df_result['Date'], df_result['Best_Lag'], marker='o', linestyle='-', label='Best Lag')
     if expected_shift is not None:
@@ -196,18 +176,19 @@ lat_Dnipro, lon_Dnipro   = 48.36000, 35.08500 # for Dnipro
 
 df_merged_Kyiv = create_df_merged(lat_station=lat_Kyiv, lon_station=lon_Kyiv,
                                   ds_20CR=ds_20CR,
-                                  filename='/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/Kyiv_ta_daily.tsv')
+                                  filename='/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/Kyiv_ta_subdaily.tsv')
 
 df_merged_Kherson = create_df_merged(lat_station=lat_Kherson, lon_station=lon_Kherson,
                                      ds_20CR=ds_20CR,
-                                     filename='/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/Kherson_ta_daily_TonS.tsv')
+                                     filename='/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/Kherson_ta_subdaily.tsv')
 
 df_merged_Dnipro = create_df_merged(lat_station=lat_Dnipro, lon_station=lon_Dnipro,
-                                     ds_20CR=ds_20CR,
-                                     filename='/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/Dnipro_ta_subdaily.tsv')
+                                    ds_20CR=ds_20CR,
+                                    filename='/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/Dnipro_ta_subdaily.tsv')
                              
 ######## KYÍV ##########
 # Compute correlation for lags from -14 to +14 days for Kyív
+print('analyzing Kyív station...')
 lags_Kyiv, corrs_Kyiv = compute_lag_corr(df_merged_Kyiv)
 plot_lag_correlation(lags_Kyiv, corrs_Kyiv, station_name='Kyív')
 # Compute rolling lag correlation for Kyív
@@ -215,6 +196,7 @@ rolling_Kyiv = rolling_lag_corr(df_merged_Kyiv)
 plot_rolling_lag(rolling_Kyiv, station_name='Kyív', expected_shift=0)
 
 ########## KHERSON ##########
+print('analyzing Kherson station...')
 lags_Kherson, corrs_Kherson = compute_lag_corr(df_merged_Kherson)
 plot_lag_correlation(lags_Kherson, corrs_Kherson, station_name='Kherson')
 # Compute rolling lag correlation for Kherson
@@ -222,7 +204,10 @@ rolling_Kherson = rolling_lag_corr(df_merged_Kherson)
 plot_rolling_lag(rolling_Kherson, station_name='Kherson', expected_shift=-12)
 
 ########## DNIPRO ##########
+print('analyzing Dnipro station...')
 lags_Dnipro, corrs_Dnipro = compute_lag_corr(df_merged_Dnipro, max_lag=16)
 plot_lag_correlation(lags_Dnipro, corrs_Dnipro, station_name='Dnipro')
-rolling_Dnipro = rolling_lag_corr(df_merged_Dnipro)
+
+# window size of 6 month and advance of 1 month at a time for this shorter series
+rolling_Dnipro = rolling_lag_corr(df_merged_Dnipro, window_size=180, step_size=30, max_lag=20)
 plot_rolling_lag(rolling_Dnipro, station_name='Dnipro', expected_shift=-13)
