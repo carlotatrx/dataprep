@@ -577,8 +577,10 @@ df <- df %>%
       Time == "0.66666666666666663" ~ "16:00",
       Time == "0.75" ~ "18:00",
       TRUE ~ Time
-    )
+    ),
+    Day = ifelse(Month == 6 & Day == 31, 30, Day)
   )
+
 
 df <- df %>%
   separate(Time, into = c("Hour", "Minute"), sep = ":", convert = TRUE) %>%
