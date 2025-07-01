@@ -191,12 +191,8 @@ plot_lag_correlation(lags_Dnipro, corrs_Dnipro, station_name='Dnipro')
 
 # window size of 6 month and advance of 2 month at a time for this shorter series
 rolling_Dnipro = rolling_lag_corr(df_merged_Dnipro, window_size=180, step_size=60, max_lag=20)
-plot_rolling_lag(rolling_Dnipro, station_name='Dnipro', expected_shift=-12)
+plot_rolling_lag(rolling_Dnipro, station_name='Dnipro', expected_shift=-13)
 
-arr = rolling_Dnipro.to_numpy()
-arr[:, 0] = [ts.strftime('%Y-%m-%d') for ts in arr[:, 0]]
-np.savetxt('/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/image/Ukraine_calendar_shifts/Dnipro_bestlag.txt', arr,
-           fmt='%s %d %.3f')
 ########## KAMYANETS ######################################################################
 df_merged_Kamyanets = create_df_merged(lat_station=lat_Kamyanets, lon_station=lon_Kamyanets,
                                        ds_20CR=ds_20CR,
