@@ -338,22 +338,20 @@ df.p.Kherson <- df %>%
       !is.na(ta_onN) ~ ta_onN,
       !is.na(ta_onS) ~ ta_onS,
     ),
-    meta_ta = case_when(    # prepare meta column
-      !is.na(ta) ~ paste0("orig_ta=", round(ta_used,1)),
-      !is.na(ta_onN) ~ paste0("orig_ta='TonN',", round(ta_used, 1)),
-      !is.na(ta_onS) ~ paste0("orig_ta='TonS',", round(ta_used, 1)),
-      TRUE ~ "orig_ta_unknown"
-    ),
-    
+    # meta_ta = case_when(    # prepare meta column
+    #   !is.na(ta) ~ paste0("orig_ta=", round(ta_used,1)),
+    #   !is.na(ta_onN) ~ paste0("orig_ta='TonN',", round(ta_used, 1)),
+    #   !is.na(ta_onS) ~ paste0("orig_ta='TonS',", round(ta_used, 1)),
+    #   TRUE ~ "orig_ta_unknown"
+    # ),
+    # 
     # corrected P in hPa
     value = round(convert_pressure(p=`P, in` * 25.4, f=1, lat=lat_Kherson, alt=alt_Kherson, atb=ta_used),2),
     
-    # difference in pressure:
-    p_diff = round(value - `P, in` * 25.4 * 1.33322368, 2),
 
-    meta= paste(meta_ta, " | Δp=", p_diff,"hPa",sep="")
+    meta_p= paste(meta, " | orig_p=",`P, in`,"in", sep="")
   ) %>%
-  select(Year, Month, Day, Hour, Minute, value, meta)
+  select(Year, Month, Day, Hour, Minute, value, meta_p)
 
 df.p.Kherson <- as.data.frame(df.p.Kherson)
 
@@ -388,7 +386,7 @@ write_sef_f(Data=df.p.Kherson,
             nam=meta[["Name"]],
             lat=meta[["Lat"]],
             lon=meta[["Lon"]], alt=meta[["Alt"]], sou=meta[["Source"]],
-            metaHead = paste0(meta[['metaHead']], " | orig_p=R.s.l. | PGC=Y | PTC=Y"),
+            metaHead = "PGC=Y | PTC=Y",
             link=meta[["Link"]], units='hPa', stat="point",
             meta=df.p.Kherson$meta, keep_na = F)
 
@@ -430,8 +428,15 @@ df <- bind_rows(
     df <- df %>%
       mutate(
         Hour = as.integer(sub(":.*", "", Time)),
-        Minute = ifelse(grepl(":", Time), as.integer(sub(".*:", "", Time)), NA_integer_)
-      )
+        Minute = ifelse(grepl(":", Time), as.integer(sub(".*:", "", Time)), NA_integer_),
+        meta = case_when(
+          Hour == 6 ~ "orig_time=morning",
+          Hour == 14 ~ "orig_time=midday",
+          Hour == 22 ~ "orig_time=evening",
+          Hour == 10 ~ "orig_time=morning"
+          )
+        )
+        
     # rearrange and drop time col
     df <- df %>%
       select(Year, Month, Day, Hour, Minute, everything(), -Time)
@@ -441,29 +446,24 @@ df <- bind_rows(
 
 
 df.ta.Kyiv <- df %>%
-  mutate(value = `T, R` * 1.25) %>%
-  select(Year, Month, Day, Hour, Minute, value)
+  mutate(value = `T, R` * 1.25, meta_ta=paste0(meta, " | orig_ta=", `T, R`,"R")) %>%
+  select(Year, Month, Day, Hour, Minute, value, meta_ta)
 
 df.ta.Kyiv <- as.data.frame(df.ta.Kyiv)
 
 df.p.Kyiv <- df %>%
   mutate(
     ta = `T, R`  * 1.25,    # outside temperature in C
-    meta_ta = if_else(!is.na(ta), paste0("orig_ta=", round(ta, 1)), "orig_ta=NA"),
     
     # original pressure in mmHg
     Lmm = `P, R.s.l.` * 1.27, # R.s.l. -> mmHg ## / 750.06 * 1000) / 33.8639
 
     # corrected P in hPa
     value = round(convert_pressure(p=Lmm, f=1, lat=lat_Kyiv, alt=alt_Kyiv, atb=ta),2),
-    
-    # difference in pressure:
-    p_diff = round(value - Lmm * 1.33322368, 2),
-    
 
-    meta= paste(meta_ta, " | Δp=", p_diff,"hPa",sep="")
+    meta_p= paste(meta, " | orig_p", `P, R.s.l.`,"R.s.l.",sep="")
   ) %>%
-  select(Year, Month, Day, Hour, Minute, value, meta)
+  select(Year, Month, Day, Hour, Minute, value, meta_p)
 
 df.p.Kyiv <- as.data.frame(df.p.Kyiv)
 
@@ -481,8 +481,6 @@ for (line in meta_lines) {
  }
 }
 
-meta[['metaHead']] <- "Hours correspond to 'morning/midday/evening'"
-
 write_sef_f(Data=df.ta.Kyiv,
             outpath=outdir, outfile='Kyiv_ta_subdaily.tsv',
             cod=meta[["ID"]],
@@ -490,7 +488,7 @@ write_sef_f(Data=df.ta.Kyiv,
             nam=meta[["Name"]],
             lat=meta[["Lat"]],
             lon=meta[["Lon"]], alt=meta[["Alt"]], sou=meta[["Source"]],
-            metaHead = paste(meta[['metaHead']],"| orig_ta=Reaumur"),
+            meta=df.ta.Kyiv$meta,
             link=meta[["Link"]], units='C', stat="point", keep_na = F)
 
 write_sef_f(Data=df.p.Kyiv,
@@ -500,7 +498,7 @@ write_sef_f(Data=df.p.Kyiv,
             nam=meta[["Name"]],
             lat=meta[["Lat"]],
             lon=meta[["Lon"]], alt=meta[["Alt"]], sou=meta[["Source"]],
-            metaHead = paste(meta[['metaHead']],"| orig_p=R.s.l. | PGC=Y | PTC=Y"),
+            metaHead = "PGC=Y | PTC=Y",
             link=meta[["Link"]], units='hPa', stat="point",
             meta=df.p.Kyiv$meta, keep_na = F)
 
@@ -509,15 +507,15 @@ write_sef_f(Data=df.p.Kyiv,
 alt_Lugansk=49
 lat_Lugansk=48.565556
 
-filepath <- paste0(indir, 'Lugansk.xlsx')
-sheets <- setdiff(excel_sheets(paste0(indir,'Lugansk.xlsx')),"Meta")
+filepath <- paste0(indir, 'Lugansk_forR.xlsx')
+sheets <- setdiff(excel_sheets(filepath),"Meta")
 
 df <- bind_rows(
   lapply(sheets, function(sheet) {
     df <- tryCatch(
         {
           suppressMessages(suppressWarnings(
-            read_excel(paste0(indir,'Lugansk.xlsx'), sheet = sheet, range = cell_cols(1:7), .name_repair = "minimal")
+            read_excel(filepath, sheet = sheet, range = cell_cols(1:7), .name_repair = "minimal")
           ))
         },
         warning = function(w) {
@@ -525,13 +523,11 @@ df <- bind_rows(
           suppressMessages(suppressWarnings(read_excel(file_path, sheet = sheet, range = cell_cols(1:7), .name_repair = "minimal")))
         }
     )
-    time_cols <- grep("^Time", names(df))
-    if (length(time_cols) > 1) {
-      # remove first "time" column (morning/midday/evening) if duplicated
-      df <- df[, -time_cols[1]]
-    }
     
     # Ensure required columns exist
+    if (!"TimeA" %in% names(df)) {
+      df$TimeA <- NA_character_
+    }
     if (!"P, in" %in% names(df)) {
       df$`P, in` <- NA_real_
     }
@@ -541,7 +537,7 @@ df <- bind_rows(
     if (!"Pt, R" %in% names(df)) {
       df$`Pt, R` <- NA_real_
     }
-    df <- df[, intersect(names(df), c("Year", "Month", "Day", "Time", "T, R", "P, in", "P, R.s.l.", "Pt, R"))]
+    df <- df[, intersect(names(df), c("Year", "Month", "Day", "TimeA", "Time", "T, R", "P, in", "P, R.s.l.", "Pt, R"))]
     df <- df %>%
       mutate(across(c("T, R", "P, in", "P, R.s.l.", "Pt, R"), ~na_if(., -999.9))) # -999.9 to NA
   
@@ -558,8 +554,13 @@ df <- bind_rows(
 )
 
 df.ta.Lugansk <- df %>%
-  mutate(value = `T, R` * 1.25) %>%
-  select(Year, Month, Day, Hour, Minute, value)
+  mutate(value = `T, R` * 1.25,
+         meta = if_else(
+           is.na(TimeA),
+           paste0('orig_ta=',`T, R`,"R"),
+           paste0('orig_time=', TimeA," | orig_ta=",`T, R`,"R")
+           )) %>%
+  select(Year, Month, Day, Hour, Minute, value, meta)
 
 df.ta.Lugansk <- as.data.frame(df.ta.Lugansk)
 
@@ -573,13 +574,7 @@ df.p.Lugansk <- df %>%
       !is.na(ta_bar) ~ ta_bar,
       TRUE ~ ta_out
     ),
-    meta_ta = case_when(    # prepare meta column
-      !is.na(ta_bar) ~ paste0("orig_ta_bar=", round(ta_bar,1)),
-      !is.na(ta_out) ~ paste0("orig_ta_out=", round(ta_out, 1)),
-      TRUE ~ "orig_ta_unknown"
-    ),
-    # gamma = 1.82e-4, # thermal expansion coeff of mercury at 0°C
-    
+
     # original pressure in mmHg
     Lmm = case_when(
       !is.na(`P, in`) ~ `P, in` * 25.4, # convert inHg → mmHg
@@ -588,15 +583,18 @@ df.p.Lugansk <- df %>%
     
     # corrected P in hPa
     value = round(convert_pressure(p=Lmm, f=1, lat=lat_Lugansk, alt=alt_Lugansk, atb=ta_used),2),
-
-    # difference in pressure:
-    p_diff = round(value - Lmm * 1.33322368, 2),
     
     meta_orig = case_when(
-      !is.na(`P, in`) ~ "orig_p=in",
-      !is.na(`P, R.s.l.`) ~ "orig_p=R.s.l."
+      !is.na(`P, in`) ~ paste0("orig_p=", `P, in`,"in"),
+      !is.na(`P, R.s.l.`) ~ paste0("orig_p=", `P, R.s.l.`, "R.s.l.")
     ),
-    meta= paste(meta_orig, " | ", meta_ta, " | Δp=", p_diff,"hPa",sep="")
+    
+    meta = if_else(
+      is.na(TimeA),
+      meta_orig,
+      paste0('orig_time=', TimeA," | ", meta_orig)
+    )
+    
   ) %>%
   select(Year, Month, Day, Hour, Minute, value, meta)
 
@@ -610,7 +608,8 @@ write_sef_f(Data=df.ta.Lugansk,
             lat=lat_Lugansk,
             lon='39.2275', alt=alt_Lugansk, sou="Ukrainian early (pre-1850) historical weather observations, Skrynk et al.",
             link="https://doi.org/10.15407/uhmi.report.01", units="C", stat="point",
-            metaHead="relocation(1843) | orig_ta=Reaumur | Hours correspond to 'morning/midday/evening'", keep_na = F)
+            meta=df.ta.Lugansk$meta,
+            metaHead="station relocation in 1843", keep_na = F)
 
 write_sef_f(Data=df.p.Lugansk,
             outpath=outdir, outfile='Lugansk_p_subdaily.tsv',
@@ -620,10 +619,10 @@ write_sef_f(Data=df.p.Lugansk,
             lat='48.565556',
             lon='39.2275', alt='59', sou="Ukrainian early (pre-1850) historical weather observations, Skrynk et al.",
             link="https://doi.org/10.15407/uhmi.report.01", units="hPa", stat="point",
-            metaHead="relocation(1843) | PGC=Y | PTC=Y | Hours correspond to 'morning/midday/evening'",
+            metaHead="station relocation in 1843 | PGC=Y | PTC=Y",
             meta=df.p.Lugansk$meta, keep_na = F)
 
-# Odesa --------------------------------------------------------------------
+# Odessa --------------------------------------------------------------------
 lat_Odesa <- 46.440833
 lon_Odesa <- 30.770278 
 alt_Odesa <- 42
@@ -649,28 +648,26 @@ df <- df %>%
     Day = ifelse(Month == 6 & Day == 31, 30, Day)
   )
 
-
 df <- df %>%
   separate(Time, into = c("Hour", "Minute"), sep = ":", convert = TRUE) %>%
   mutate(Minute=NA_integer_)
 
 df.ta.Odesa <- df %>%
-  mutate(value = ifelse(`T, R`==-999.9, NA_real_, `T, R` * 1.25)) %>%
-  select(Year, Month, Day, Hour, Minute, value)
+  mutate(value = ifelse(`T, R`==-999.9, NA_real_, `T, R` * 1.25),
+         meta = paste0("orig_ta=", `T, R`, "R")) %>%
+  select(Year, Month, Day, Hour, Minute, value, meta)
 
 df.ta.Odesa <- as.data.frame(df.ta.Odesa)
 
 df.p.Odesa <- df %>%
   mutate(
     ta_out = ifelse(`T, R`==-999.9, NA_real_, `T, R` * 1.25), # outside temperature in °C
-    meta_ta = paste0("orig_ta_out=", round(ta_out,1)),
-    
+
     P = ifelse(`P, in`==-999.9, NA_real_, `P, in`*25.4),
     # Pressure corrected to 0°C + gravity → hPa
-    value = convert_pressure(p = P, f = 1, lat = lat_Odesa, alt = alt_Odesa, atb = ta_out),
-    p_diff = round(value - P, 2),
-    
-    meta = paste(meta_ta, " | Δp=", p_diff, "hPa", sep = "")
+    value = round(convert_pressure(p = P, f = 1, lat = lat_Odesa, alt = alt_Odesa, atb = ta_out),2),
+
+    meta = paste("orig_p=", `P, in`, "in", sep = "")
   ) %>%
   select(Year, Month, Day, Hour, Minute, value, meta)
 
@@ -684,7 +681,7 @@ write_sef_f(Data=df.ta.Odesa,
             lat=lat_Odesa,
             lon=lon_Odesa, alt=alt_Odesa, sou="Ukrainian early (pre-1850) historical weather observations, Skrynk et al.",
             link="https://doi.org/10.15407/uhmi.report.01", units="C", stat="point",
-            metaHead="orig_ta=Reaumur", keep_na = F)
+            meta=df.ta.Odesa$meta, keep_na = F)
 
 write_sef_f(Data=df.p.Odesa,
             outpath=outdir, outfile='Odesa_p_subdaily.tsv',
@@ -694,33 +691,46 @@ write_sef_f(Data=df.p.Odesa,
             lat=lat_Odesa,
             lon=lon_Odesa, alt=alt_Odesa, sou="Ukrainian early (pre-1850) historical weather observations, Skrynk et al.",
             link="https://doi.org/10.15407/uhmi.report.01", units="hPa", stat="point",
-            metaHead="orig_p=in | PGC=Y | PTC=Y",
+            metaHead="PGC=Y | PTC=Y",
             meta=df.p.Odesa$meta, keep_na = F)
 
 
 # Poltava --------------------------------------------------------------------
 lat_Poltava <- 49.609444
 alt_Poltava <- 160
-sheets <- setdiff(excel_sheets(paste0(indir,'Poltava.xlsx')),"Meta")
+sheets <- setdiff(excel_sheets(paste0(indir,'Poltava_forR.xlsx')),"Meta")
 
 df <- bind_rows(
   lapply(sheets, function(sheet) {
-    df <- read_excel(paste0(indir,'Poltava.xlsx'), sheet = sheet, range = cell_cols(1:6))
-    time_cols <- grep("^Time", names(df))
-    if (length(time_cols) > 1) {
-      # remove first "time" column (morning/midday/evening) if duplicated
-      df <- df[, -time_cols[1]]
+    df <- read_excel(paste0(indir,'Poltava_forR.xlsx'), sheet = sheet, range = cell_cols(1:6))
+
+    # Ensure required columns exist
+    if (!"TimeA" %in% names(df)) {
+      df$TimeA <- NA_character_
     }
-    df 
+    if (!"P, in" %in% names(df)) {
+      df$`P, in` <- NA_real_
+    }
+    if (!"P, R.s.l." %in% names(df)) {
+      df$`P, R.s.l.` <- NA_real_
+    }
+    df <- df[, intersect(names(df), c("Year", "Month", "Day", "TimeA", "Time", "T, R", "P, in", "P, R.s.l."))]
+    df <- df %>%
+      mutate(across(c("T, R", "P, in", "P, R.s.l.", ), ~na_if(., -999.9))) # -999.9 to NA
+
   })
 )
 
 df <- df %>%
-  separate(Time, into = c("Hour", "Minute"), sep = ":", convert = TRUE) %>%
-  mutate(Minute=NA_integer_)
-  
+  separate(Time, into = c("Hour", "Minute"), sep = ":", convert = TRUE)
+
 df.ta.Poltava <- df %>%
-  mutate(value = `T, R` * 1.25) %>%
+  mutate(value = round(`T, R` * 1.25, 2),
+         meta = if_else(
+           is.na(TimeA),
+           paste0('orig_ta=',`T, R`,"R"),
+           paste0('orig_time=', TimeA," | orig_ta=",`T, R`,"R")
+         )) %>%
   select(Year, Month, Day, Hour, Minute, value)
 
 df.ta.Poltava <- as.data.frame(df.ta.Poltava)
@@ -730,20 +740,22 @@ df.p.Poltava <- df %>%
   filter(!is.na(`P, in`) | !is.na(`P, R.s.l.`)) %>%
   mutate(
     ta_out = `T, R` * 1.25, # outside temperature in °C
-    meta_ta = paste0("orig_ta_out=", round(ta_out,1)),
-    
+
     Lmm = if_else(!is.na(`P, in`), `P, in` * 25.4, `P, R.s.l.` * 1.27), #  / 750.06 * 1000) / 33.8639  # hPa to mmHg
     
     # Pressure corrected to 0°C + gravity → hPa
     value = round(convert_pressure(p = Lmm, f = 1, lat = lat_Poltava, alt = alt_Poltava, atb = ta_out),2),
-    p_diff = round(value - Lmm * 1.333, 2),
 
     meta_orig = case_when(
-      !is.na(`P, in`) ~ "orig_p=in",
-      !is.na(`P, R.s.l.`) ~ "orig_p=R.s.l."
+      !is.na(`P, in`) ~ paste0("orig_p=", `P, in`,"in"),
+      !is.na(`P, R.s.l.`) ~ paste0("orig_p=", `P, R.s.l.`, "R.s.l.")
     ),
     
-    meta = paste(meta_orig, " | ", meta_ta, " | Δp=", p_diff, "hPa", sep = "")
+    meta = if_else(
+      is.na(TimeA),
+      meta_orig,
+      paste0('orig_time=', TimeA," | ", meta_orig)
+    )
   ) %>%
   select(Year, Month, Day, Hour, Minute, value, meta)
 
