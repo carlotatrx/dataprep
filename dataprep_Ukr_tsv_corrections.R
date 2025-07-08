@@ -3,27 +3,12 @@ library(dplyr)
 library(tidyr)
 library(readxl)
 
-source('/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/write_sef_f.R')
+source('/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/helpfun.R')
 
 indir <- '/home/ccorbella/scratch2_symboliclink/files/station_timeseries_orig/Ukraine/'
 outdir <- '/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/'
 
 
-read_meta_nonofficial <- function (file = file.choose(), parameter = NULL) {
-  header <- read.table(file = file, quote = "", comment.char = "", 
-                       sep = "\t", nrows = 12, stringsAsFactors = FALSE, fill = TRUE)
-  pars <- c("version", "id", "name", "lat", "lon", "alt", "source", 
-            "link", "var", "stat", "units", "meta")
-  if (is.null(parameter)) {
-    out <- header[, 2]
-    names(out) <- pars
-  }
-  else {
-    out <- header[match(parameter, pars), 2]
-    names(out) <- parameter
-  }
-  return(out)
-}
 
 # Dnipro -----------------------------------------------------------------
 infile <- 'Dnipro.tsv'
@@ -731,7 +716,7 @@ df.ta.Poltava <- df %>%
            paste0('orig_ta=',`T, R`,"R"),
            paste0('orig_time=', TimeA," | orig_ta=",`T, R`,"R")
          )) %>%
-  select(Year, Month, Day, Hour, Minute, value)
+  select(Year, Month, Day, Hour, Minute, value, meta)
 
 df.ta.Poltava <- as.data.frame(df.ta.Poltava)
 
@@ -769,7 +754,7 @@ write_sef_f(Data=df.ta.Poltava,
             lat=lat_Poltava,
             lon='34.544722', alt=alt_Poltava, sou="Ukrainian early (pre-1850) historical weather observations, Skrynk et al.",
             link="https://doi.org/10.15407/uhmi.report.01", units="C", stat="point",
-            metaHead="Hours correspond to 'at sunrise/midday/at sunset' | orig_ta=Reaumur", keep_na = F)
+            meta=df.ta.Poltava$meta, keep_na = F)
 
 write_sef_f(Data=df.p.Poltava,
             outpath=outdir, outfile='Poltava_p_subdaily.tsv',
@@ -779,5 +764,5 @@ write_sef_f(Data=df.p.Poltava,
             lat=lat_Poltava,
             lon='34.544722', alt='160', sou="Ukrainian early (pre-1850) historical weather observations, Skrynk et al.",
             link="https://doi.org/10.15407/uhmi.report.01", units="hPa", stat="point",
-            metaHead="Hours correspond to 'at sunrise/midday/at sunset' | PGC=Y | PTC=Y",
+            metaHead="PGC=Y | PTC=Y",
             meta=df.p.Poltava$meta, keep_na = F)
