@@ -58,7 +58,7 @@ write_sef_f(Data=df.ta.Dnipro,
 write_sef_f(Data=df.p.Dnipro,
             outpath=outdir, outfile="Dnipro_p_subdaily.tsv",
             cod=meta[["id"]],
-            variable='ta',
+            variable='p',
             nam=meta[["name"]],
             lat=meta[["lat"]],
             lon=meta[["lon"]], alt=meta[["alt"]], sou=meta[["source"]], metaHead = 'PGC=Y | PTC=Y',
@@ -205,7 +205,7 @@ df.p.Kharkiv <- merge.Kharkiv(dfA.p.Kharkiv, dfB.p.Kharkiv, var='p')
 
 write_sef_f(Data=df.ta.Kharkiv,
             outpath=outdir, outfile="Kharkiv_ta_subdaily.tsv",
-            cod=meta[["id"]],
+            cod=ifelse(meta[['id']]=="", 'Kharkiv', meta[['id']]),
             variable='ta',
             nam=meta[["name"]],
             lat=meta[["lat"]],
@@ -215,8 +215,8 @@ write_sef_f(Data=df.ta.Kharkiv,
 
 write_sef_f(Data=df.p.Kharkiv,
             outpath=outdir, outfile="Kharkiv_p_subdaily.tsv",
-            cod=meta[["id"]],
-            variable='ta',
+            cod=ifelse(meta[['id']]=="", 'Kharkiv', meta[['id']]),
+            variable='p',
             nam=meta[["name"]],
             lat=meta[["lat"]],
             lon=meta[["lon"]], alt=meta[["alt"]], sou=meta[["source"]], metaHead = 'PGC=Y | PTC=Y',
@@ -683,11 +683,14 @@ write_sef_f(Data=df.p.Odesa,
 # Poltava --------------------------------------------------------------------
 lat_Poltava <- 49.609444
 alt_Poltava <- 160
+indir <- '/home/ccorbella/scratch2_symboliclink/files/station_timeseries_orig/Ukraine/'
+outdir <- '/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/'
+
 sheets <- setdiff(excel_sheets(paste0(indir,'Poltava_forR.xlsx')),"Meta")
 
 df <- bind_rows(
   lapply(sheets, function(sheet) {
-    df <- read_excel(paste0(indir,'Poltava_forR.xlsx'), sheet = sheet, range = cell_cols(1:6))
+    df <- read_excel(paste0(indir,'Poltava_forR.xlsx'), sheet = sheet)
 
     # Ensure required columns exist
     if (!"TimeA" %in% names(df)) {
@@ -702,14 +705,14 @@ df <- bind_rows(
     df <- df[, intersect(names(df), c("Year", "Month", "Day", "TimeA", "Time", "T, R", "P, in", "P, R.s.l."))]
     df <- df %>%
       mutate(across(c("T, R", "P, in", "P, R.s.l.", ), ~na_if(., -999.9))) # -999.9 to NA
-
+    
+    return(df)
   })
 )
 
-df <- df %>%
-  separate(Time, into = c("Hour", "Minute"), sep = ":", convert = TRUE)
-
 df.ta.Poltava <- df %>%
+  separate(Time, into = c("Hour", "Minute"), sep = ":", convert = TRUE) %>%
+
   mutate(value = round(`T, R` * 1.25, 2),
          meta = if_else(
            is.na(TimeA),
@@ -721,8 +724,10 @@ df.ta.Poltava <- df %>%
 df.ta.Poltava <- as.data.frame(df.ta.Poltava)
 
 df.p.Poltava <- df %>%
+  separate(Time, into = c("Hour", "Minute"), sep = ":", convert = TRUE) %>%
+
   # Check if there are any rows where both "P, in" and "P, R.s.l." are not NA (where we have obs in both units)
-  filter(!is.na(`P, in`) | !is.na(`P, R.s.l.`)) %>%
+  # filter(!is.na(`P, in`) | !is.na(`P, R.s.l.`)) %>%
   mutate(
     ta_out = `T, R` * 1.25, # outside temperature in °C
 
@@ -752,7 +757,7 @@ write_sef_f(Data=df.ta.Poltava,
             variable='ta',
             nam='Poltava',
             lat=lat_Poltava,
-            lon='34.544722', alt=alt_Poltava, sou="Ukrainian early (pre-1850) historical weather observations, Skrynk et al.",
+            lon='34.544722', alt=alt_Poltava,
             link="https://doi.org/10.15407/uhmi.report.01", units="C", stat="point",
             meta=df.ta.Poltava$meta, keep_na = F)
 

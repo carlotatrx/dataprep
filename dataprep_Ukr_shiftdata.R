@@ -7,54 +7,135 @@ source('/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/help
 
 indir <- '/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/'
 
-infile <- "Dnipro_ta_subdaily.tsv"
-output_file <- "Dnipro_ta_subdaily_corrected.tsv"
 
-# Read SEF file
-df <- read.delim(paste0(indir, infile), header=T, sep='\t', stringsAsFactors = F,
-                 skip=12)
+sef_calendar_correction <- function(infile,
+                                    outfile,
+                                    cutoff_date, ## format YYYY-MM-DD
+                                    skip_days,
+                                    indir='/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/') {
+  # Read SEF file
+  df <- read.delim(paste0(indir, infile), header=T, sep='\t', stringsAsFactors = F,
+                   skip=12)
 
-meta <- read_meta_nonofficial(paste0(indir,infile))
+  meta <- read_meta_nonofficial(paste0(indir,infile))
 
-# Ensure Meta column exists and is character
-if (!"Meta" %in% names(df)) {
-  df$meta <- NA_character_
+  # Ensure Meta column exists and is character
+  if (!"Meta" %in% names(df)) {
+    df$Meta <- NA_character_
+  }
+  
+  cutoff_date <- as.Date(cutoff_date)
+
+
+  # Create full date column
+  df$orig_date <- as.Date(with(df, sprintf("%04d-%02d-%02d", Year, Month, Day)))
+  df$apply_shift <- df$orig_date > cutoff_date
+
+  # Apply date shift where needed
+  df <- df %>%
+    mutate(
+      full_date = if_else(apply_shift, orig_date + skip_days, orig_date),
+      Meta = if_else(apply_shift,
+                     if_else(
+                       is.na(Meta) | Meta == "", paste0("orig_date=", orig_date), paste0(Meta, " | orig_date=", orig_date)
+                       ),
+                     Meta)
+    )
+
+  # Update Year, Month, Day
+  df$Year <- year(df$full_date)
+  df$Month <- month(df$full_date)
+  df$Day <- day(df$full_date)
+  
+  # Drop helper columns. Period col needs to be dropped too!
+  df <- df %>% select(-orig_date, -apply_shift, -full_date, -Period)
+  meta.head <- if_else(meta[['meta']] == "", "CC=Y", paste0(meta[['meta']]," | CC=Y"))
+
+  write_sef_f(Data=df,
+              outpath=indir, outfile=outfile,
+              cod=meta[["id"]],
+              variable=meta[['var']],
+              nam=meta[["name"]],
+              lat=meta[["lat"]],
+              lon=meta[["lon"]], alt=meta[["alt"]], sou=meta[["source"]], 
+              metaHead = meta.head,
+              link=meta[["link"]], units=meta[['units']], stat=meta[['stat']],
+              meta=df$Meta, keep_na = F)
 }
 
-# Define cutoff date
-cutoff_date <- as.Date("1838-12-15")
+# Dnipro
+sef_calendar_correction(
+  infile = "Dnipro_ta_subdaily.tsv",
+  outfile = "Dnipro_ta_subdaily_corrected.tsv",
+  cutoff_date = as.Date("1838-12-15"),
+  skip_days = 12
+)
 
-# Create full date column
-df$orig_date <- as.Date(with(df, sprintf("%04d-%02d-%02d", Year, Month, Day)))
-df$apply_shift <- df$orig_date > cutoff_date
+sef_calendar_correction(
+  infile = "Dnipro_p_subdaily.tsv",
+  outfile = "Dnipro_p_subdaily_corrected.tsv",
+  cutoff_date = as.Date("1838-12-15"),
+  skip_days = 12
+)
 
-# Apply date shift where needed
-df <- df %>%
-  mutate(
-    full_date = if_else(apply_shift, orig_date + 12, orig_date),
-    Meta = if_else(apply_shift,
-                   if_else(
-                     is.na(Meta) | Meta == "", paste0("orig_date=", orig_date), paste0(Meta, " | orig_date=", orig_date)
-                     ),
-                   Meta)
-  )
+# Kharkiv
+sef_calendar_correction(
+  infile = "Kharkiv_ta_subdaily.tsv",
+  outfile = "Kharkiv_ta_subdaily_corrected.tsv",
+  cutoff_date = as.Date("1845-05-15"),
+  skip_days = 12
+)
 
-# Update Year, Month, Day
-df$Year <- year(df$full_date)
-df$Month <- month(df$full_date)
-df$Day <- day(df$full_date)
+sef_calendar_correction(
+  infile = "Kharkiv_p_subdaily.tsv",
+  outfile = "Kharkiv_p_subdaily_corrected.tsv",
+  cutoff_date = as.Date("1845-05-15"),
+  skip_days = 12
+)
 
-# Drop helper columns
-df <- df %>% select(-orig_date, -apply_shift, -full_date)
+# Kherson
+sef_calendar_correction(
+  infile = "Kherson_ta_subdaily.tsv",
+  outfile = "Kherson_ta_subdaily_corrected.tsv",
+  cutoff_date = as.Date("2025-05-15"),
+  skip_days = 12
+)
 
-write_sef_f(Data=df,
-            outpath=indir, outfile="Dnipro_p_subdaily_dates.tsv",
-            cod=meta[["id"]],
-            variable=meta[['var']],
-            nam=meta[["name"]],
-            lat=meta[["lat"]],
-            lon=meta[["lon"]], alt=meta[["alt"]], sou=meta[["source"]], 
-            metaHead = if_else(meta[['meta']] == "", "CC=Y", paste0(meta[['meta']]," | CC=Y")),
-            link=meta[["link"]], units=meta[['units']], stat=meta[['stat']],
-            meta=df$Meta, keep_na = F)
+sef_calendar_correction(
+  infile = "Kherson_p_subdaily.tsv",
+  outfile = "Kherson_p_subdaily_corrected.tsv",
+  cutoff_date = as.Date("2025-05-15"),
+  skip_days = 12
+)
 
+# Lugansk
+sef_calendar_correction(
+  infile = "Lugansk_ta_subdaily.tsv",
+  outfile = "Lugansk_ta_subdaily_corrected.tsv",
+  cutoff_date = as.Date("1840-01-15"),
+  skip_days = 12
+)
+
+sef_calendar_correction(
+  infile = "Lugansk_p_subdaily.tsv",
+  outfile = "Lugansk_p_subdaily_corrected.tsv",
+  cutoff_date = as.Date("1840-01-15"),
+  skip_days = 12
+)
+
+# Poltava
+indir <- '/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/'
+
+sef_calendar_correction(
+  infile = "Poltava_ta_subdaily.tsv",
+  outfile = "Poltava_ta_subdaily_corrected.tsv",
+  cutoff_date = as.Date("1839-01-15"),
+  skip_days = 12
+)
+
+sef_calendar_correction(
+  infile = "Poltava_p_subdaily.tsv",
+  outfile = "Poltava_p_subdaily_corrected.tsv",
+  cutoff_date = as.Date("1839-01-15"),
+  skip_days = 12
+)
