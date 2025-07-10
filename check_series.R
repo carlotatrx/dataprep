@@ -1,5 +1,6 @@
 library(dataresqc)
 library(hclim)
+source('/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/helpfun.R')
 
 indir <- '/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/'
 outdir <- '/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/sef_tests/'
@@ -7,7 +8,7 @@ outdir <- '/home/ccorbella/scratch2_symboliclink/files/station_timeseries_prepro
 files <- list.files(indir, pattern = "_corrected\\.tsv$", full.names = TRUE)
 
 # Loop through files
-for (file in files[1:length(files)]) {
+for (file in files[5:6]) {
   # Get just the file name
   file.name <- basename(file)
   
@@ -40,6 +41,14 @@ plot_daily(infile, outfile=paste0(outdir,'Poltava_daily'))
 plot_decimals(infile, outfile=paste0(outdir,'Poltava_decimals'))
 plot_subdaily(infile, outfile=paste0(outdir,'Poltava_subdaily'))
 qc(infile, outpath=outdir)
+
+# flags for Kherson
+
+
+write_flags_f(infile='/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/Kherson_p_subdaily_corrected.tsv',
+              qcfile='/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/sef_tests/qc_00033902_p_subdaily.txt',
+              outpath='/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/',
+              match=F)
 
 # Find problematic rows
 df <- read.delim(infile, sep = "\t", skip=12, header = TRUE, stringsAsFactors = FALSE)

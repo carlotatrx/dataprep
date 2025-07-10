@@ -230,15 +230,15 @@ write_sef_f(Data=df.p.Kharkiv,
 alt_Kherson=47
 lat_Kherson=46.73833
 
-filepath <- paste0(indir, 'Kherson.xlsx')
-sheets <- setdiff(excel_sheets(paste0(indir,'Kherson.xlsx')),"Meta")
+filepath <- paste0(indir, 'Kherson_forR.xlsx')
+sheets <- setdiff(excel_sheets(filepath),"Meta")
 
 df <- bind_rows(
   lapply(sheets, function(sheet) {
     df <- tryCatch(
       {
         suppressMessages(suppressWarnings(
-          read_excel(paste0(indir,'Kherson.xlsx'), sheet = sheet, range = cell_cols(1:8), .name_repair = "minimal")
+          read_excel(filepath, sheet = sheet, range = cell_cols(1:8), .name_repair = "minimal")
         ))
       },
       warning = function(w) {
@@ -360,7 +360,7 @@ write_sef_f(Data=df.ta.Kherson,
             variable='ta',
             nam=meta[["Name"]],
             lat=meta[["Lat"]],
-            lon=meta[["Lon"]], alt=meta[["Alt"]], sou=meta[["Source"]],
+            lon=meta[["Lon"]], alt=meta[["Alt"]], sou='https://doi.org/10.15407/uhmi.report.01',
             meta = df.ta.Kherson$meta_ta,
             link=meta[["Link"]], units='C', stat="point", keep_na = F)
 
@@ -370,7 +370,7 @@ write_sef_f(Data=df.p.Kherson,
             variable='p',
             nam=meta[["Name"]],
             lat=meta[["Lat"]],
-            lon=meta[["Lon"]], alt=meta[["Alt"]], sou=meta[["Source"]],
+            lon=meta[["Lon"]], alt=meta[["Alt"]], sou='https://doi.org/10.15407/uhmi.report.01',
             metaHead = "PGC=Y | PTC=Y",
             link=meta[["Link"]], units='hPa', stat="point",
             meta=df.p.Kherson$meta, keep_na = F)

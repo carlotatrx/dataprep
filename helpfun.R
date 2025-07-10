@@ -129,3 +129,98 @@ write_sef_f <- function(Data, outpath, outfile, variable, cod, nam = "", lat = "
 }
 
 
+
+write_flags_f <- function (infile, qcfile, outpath, note = "", match = TRUE)
+{
+  library(dataresqc)
+  Data <- read_sef(infile, all = TRUE)
+  header <- read.table(file = infile, quote = "", comment.char = "", 
+                       sep = "\t", nrows = 12, stringsAsFactors = FALSE, fill = TRUE)
+  header[which(is.na(header[, 2]) & !header[, 1] %in% c("Lat", 
+                                                        "Lon", "Alt")), 2] <- ""
+  vbl <- read_meta(infile, "var")
+  uts <- read_meta(infile, "units")
+  Data$Value <- dataresqc:::check_units(Data$Value, vbl, uts)
+  if (vbl %in% c("ta", "tb", "td", "t_air", "t_wet", "t_dew", 
+                 "Tx", "Tn", "dep_dew", "ibt", "atb", "Txs", "TGs", "Tns", 
+                 "TGn", "t_snow", "Ts", "t_water")) {
+    uts <- "C"
+  }
+  else if (vbl %in% c("p", "mslp", "pppp")) {
+    uts <- "hPa"
+  }
+  else if (vbl %in% c("rr", "sw", "rrls")) {
+    uts <- "mm"
+  }
+  else if (vbl %in% c("sd", "fs")) {
+    uts <- "cm"
+  }
+  else if (vbl == "w") {
+    uts <- "m/s"
+  }
+  else if (vbl == "rh") {
+    uts <- "%"
+  }
+
+  flags <- read.table(qcfile, stringsAsFactors = FALSE, header = TRUE, sep = "\t")
+  colnames(flags) <- c("Var", "Year", "Month", "Day", "Hour", "Minute", "Value", "Test")
+  if (flags$Var[1] != Data$Var[1]) stop("Variable mismatch")
+  
+  if (match) {
+    dates <- paste(flags$Year, flags$Month, flags$Day, flags$Hour, flags$Minute, flags$Value)
+    i <- which(paste(Data$Year, Data$Month, Data$Day, Data$Hour, Data$Minute, Data$Value) %in% dates)
+  } else {
+    dates <- paste(flags$Year, flags$Month, flags$Day, flags$Hour, flags$Minute)
+    i <- which(paste(Data$Year, Data$Month, Data$Day, Data$Hour, Data$Minute) %in% dates)
+  }
+
+  if (length(i) > 0) {
+    if (length(i) < nrow(flags)) {
+      if (dim(flags)[2] == 6) {
+        if (match) {
+          k <- which(!dates %in% paste(Data$Year, Data$Month, 
+                                       Data$Day, Data$Value))
+        }
+        else {
+          k <- which(!dates %in% paste(Data$Year, Data$Month, 
+                                       Data$Day))
+        }
+      }
+      else if (dim(flags)[2] == 8) {
+        if (match) {
+          k <- which(!dates %in% paste(Data$Year, Data$Month, 
+                                       Data$Day, Data$Hour, Data$Minute, Data$Value))
+        }
+        else {
+          k <- which(!dates %in% paste(Data$Year, Data$Month, 
+                                       Data$Day, Data$Hour, Data$Minute))
+        }
+        warning("Flags for some observations could not be written.")
+        flags <- flags[-k, ]
+        flags <- flags[seq_len(nrow(flags)), , drop = FALSE]  # RESET ROW INDEXES
+      }
+    }
+    Data$Meta[i] <- paste0(Data$Meta[i], " | qc=", flags$Test)
+    Data$Meta <- gsub("^\\|", "", Data$Meta)
+    meta_string <- paste0("QC software=dataresqc v", packageVersion("dataresqc"))
+    if (header[12, 2] == "") {
+      header[12, 2] <- meta_string
+    }
+    else {
+      header[12, 2] <- paste(header[12, 2], meta_string, 
+                             sep = " | ")
+    }
+    filename <- paste0(sub("\\.tsv","",basename(infile)), "_qc")
+    if (note != "") {
+      filename <- paste0(tools::file_path_sans_ext(filename), "_", gsub(" ", "_", note), ".tsv")
+    }
+    
+    write_sef(Data = Data[, c("Year", "Month", "Day", "Hour", "Minute", "Period", "Value")], outpath = outpath, 
+              variable = vbl, cod = header[2, 2], nam = header[3, 2], lat = header[4, 2], lon = header[5, 2],
+              alt = header[6, 2], sou = header[7, 2], link = header[8, 2], 
+              stat = header[10, 2], units = uts, metaHead = header[12, 2],
+              meta = Data[, 9], period = Data[, 7], outfile = filename, 
+              keep_na = TRUE)
+  }
+  else warning("No matches found: possibly incorrect input files")
+}
