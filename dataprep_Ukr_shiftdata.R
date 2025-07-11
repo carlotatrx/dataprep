@@ -124,8 +124,6 @@ sef_calendar_correction(
 )
 
 # Poltava
-indir <- '/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/'
-
 sef_calendar_correction(
   infile = "Poltava_ta_subdaily.tsv",
   outfile = "Poltava_ta_subdaily_corrected.tsv",
@@ -139,3 +137,4 @@ sef_calendar_correction(
   cutoff_date = as.Date("1839-01-15"),
   skip_days = 12
 )
+

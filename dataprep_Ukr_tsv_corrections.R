@@ -20,12 +20,14 @@ meta <- read_meta_nonofficial(paste0(indir,infile))
 # Create temperature dataframe
 df.ta.Dnipro <- df %>%
   separate(Hour, into = c("Hour", "Minute"), sep = ":", convert = TRUE) %>%
-  mutate(value = T * 1.25, Minute='NA', meta = paste0('orig_ta=',T,"R | orig_time=",Time)) %>%
+  mutate(value = ifelse(T==-999.9, NA_real_,T * 1.25), meta = paste0('orig_ta=',T,"R | orig_time=",Time)) %>%
   select(Year, Month, Day, Hour, Minute, value, meta)
+
 
 df.p.Dnipro <- df %>%
   separate(Hour, into = c("Hour", "Minute"), sep = ":", convert = TRUE) %>%
   mutate(
+    P = ifelse(P==-999.9, NA_real_, P),
     Lmm = case_when(
       Year >= 1833 & Year <= 1838 ~ P * 25.399999704976,        # inches → mmHg
       Year %in% c(1839:1842, 1850) ~ P * 1.27,       
@@ -38,7 +40,7 @@ df.p.Dnipro <- df %>%
       Year %in% c(1839:1842, 1850) ~ "R.s.l.",
       TRUE ~ "unknown"
     ),
-    ta_out = T * 1.25,
+    ta_out = ifelse(T==-999.9, NA_real_, T * 1.25),
     value = round(convert_pressure(p=Lmm, f=1, lat=as.numeric(meta[['lat']]), alt=as.numeric(meta[['alt']]), atb=ta_out),2),
     p_diff = round(value - Lmm*1.3332239, 2),
     meta = paste0('orig_p=', P, unit_label, ' | orig_time=', Time)
@@ -52,7 +54,7 @@ write_sef_f(Data=df.ta.Dnipro,
             nam=meta[["name"]],
             lat=meta[["lat"]],
             lon=meta[["lon"]], alt=meta[["alt"]], sou=meta[["source"]],
-            link=meta[["link"]], units='C', stat="point",
+            link="https://doi.org/10.15407/uhmi.report.01", units='C', stat="point",
             meta=df.ta.Dnipro$meta, keep_na = F)
 
 write_sef_f(Data=df.p.Dnipro,
@@ -62,7 +64,7 @@ write_sef_f(Data=df.p.Dnipro,
             nam=meta[["name"]],
             lat=meta[["lat"]],
             lon=meta[["lon"]], alt=meta[["alt"]], sou=meta[["source"]], metaHead = 'PGC=Y | PTC=Y',
-            link=meta[["link"]], units='hPa', stat="point",
+            link="https://doi.org/10.15407/uhmi.report.01", units='hPa', stat="point",
             meta=df.p.Dnipro$meta, keep_na = F)
 
 # Kamyanets-Podilskyi -----------------------------------------------------------------
@@ -77,14 +79,15 @@ alt_Kamyanets <- as.numeric(meta[['alt']])
 
 # Create temperature dataframe
 df.ta.Kamyanets <- df %>%
-  mutate(value = T * 1.25, Minute='NA', meta=paste0('orig_ta=',T,'R')) %>%
+  mutate(value = ifelse(T==-999.9, NA_real_, T * 1.25), meta=paste0('orig_ta=',T,'R')) %>%
   separate(Time, into = c("Hour", "Minute"), sep = ":", convert = TRUE) %>%
   select(Year, Month, Day, Hour, Minute, value, meta)
 
 df.p.Kamyanets <- df %>%
   mutate(
-    ta_out = T * 1.25,
+    ta_out = ifelse(T==-999.9, NA_real_, T * 1.25),
     meta_ta = paste0("origa_ta_outside=", round(ta_out, 1)),
+    P = ifelse(P==-999.9, NA_real_, P),
     Lmm = P * 25.4,     # inHg → mmHg
     value = round(convert_pressure(p=Lmm, f=1, lat=lat_Kamyanets, alt=alt_Kamyanets, atb=ta_out),2),
     p_diff = round(value - Lmm*1.3332239, 2),
@@ -99,8 +102,8 @@ write_sef_f(Data=df.ta.Kamyanets,
             variable='ta',
             nam=meta[["name"]],
             lat=meta[["lat"]],
-            lon=meta[["lon"]], alt=meta[["alt"]], sou=meta[["source"]],
-            link=meta[["link"]], units='C', stat="point",
+            lon=meta[["lon"]], alt=meta[["alt"]], link="https://doi.org/10.15407/uhmi.report.01",
+            sou=meta[["source"]], units='C', stat="point",
             meta=df.ta.Kamyanets$meta, keep_na = F)
 
 write_sef_f(Data=df.p.Kamyanets,
@@ -109,8 +112,8 @@ write_sef_f(Data=df.p.Kamyanets,
             variable='p',
             nam=meta[["name"]],
             lat=meta[["lat"]],
-            lon=meta[["lon"]], alt=meta[["alt"]], sou=meta[["source"]], metaHead = 'PGC=Y | PTC=Y',
-            link=meta[["link"]], units='hPa', stat="point",
+            lon=meta[["lon"]], alt=meta[["alt"]], link="https://doi.org/10.15407/uhmi.report.01", metaHead = 'PGC=Y | PTC=Y',
+            sou=meta[["source"]], units='hPa', stat="point",
             meta=df.p.Kamyanets$meta, keep_na = F)
 
 # Kharkiv_University -----------------------------------------------------------------
@@ -360,7 +363,7 @@ write_sef_f(Data=df.ta.Kherson,
             variable='ta',
             nam=meta[["Name"]],
             lat=meta[["Lat"]],
-            lon=meta[["Lon"]], alt=meta[["Alt"]], sou='https://doi.org/10.15407/uhmi.report.01',
+            lon=meta[["Lon"]], alt=meta[["Alt"]], sou=meta[['Source']],
             meta = df.ta.Kherson$meta_ta,
             link=meta[["Link"]], units='C', stat="point", keep_na = F)
 
@@ -370,7 +373,7 @@ write_sef_f(Data=df.p.Kherson,
             variable='p',
             nam=meta[["Name"]],
             lat=meta[["Lat"]],
-            lon=meta[["Lon"]], alt=meta[["Alt"]], sou='https://doi.org/10.15407/uhmi.report.01',
+            lon=meta[["Lon"]], alt=meta[["Alt"]], sou=meta[['Source']],
             metaHead = "PGC=Y | PTC=Y",
             link=meta[["Link"]], units='hPa', stat="point",
             meta=df.p.Kherson$meta, keep_na = F)
@@ -446,7 +449,7 @@ df.p.Kyiv <- df %>%
     # corrected P in hPa
     value = round(convert_pressure(p=Lmm, f=1, lat=lat_Kyiv, alt=alt_Kyiv, atb=ta),2),
 
-    meta_p= paste(meta, " | orig_p", `P, R.s.l.`,"R.s.l.",sep="")
+    meta_p= paste(meta, " | orig_p=", `P, R.s.l.`,"R.s.l.",sep="")
   ) %>%
   select(Year, Month, Day, Hour, Minute, value, meta_p)
 
@@ -539,7 +542,7 @@ df <- bind_rows(
 )
 
 df.ta.Lugansk <- df %>%
-  mutate(value = `T, R` * 1.25,
+  mutate(value = ifelse(`T, R`==-999.9, NA_real_, `T, R` * 1.25),
          meta = if_else(
            is.na(TimeA),
            paste0('orig_ta=',`T, R`,"R"),
@@ -550,8 +553,14 @@ df.ta.Lugansk <- df %>%
 df.ta.Lugansk <- as.data.frame(df.ta.Lugansk)
 
 df.p.Lugansk <- df %>%
+  
+  # Flag special case: data from 1837-12-09 onwards are actually in inches
+  mutate(
+    is_inch_hack = (Year == 1837 & Month == 12 & Day >= 9)
+  ) %>%
+  
   # Check if there are any rows where both "P, in" and "P, R.s.l." are not NA (where we have obs in both units)
-  filter(!is.na(`P, in`) | !is.na(`P, R.s.l.`)) %>%
+  filter(!is.na(`P, in`) | !is.na(`P, R.s.l.`) | is_inch_hack) %>%
   mutate(
     ta_bar = `Pt, R` * 1.25, # barometer Temperature in C
     ta_out = `T, R`  * 1.25, # outside temperature in C
@@ -563,6 +572,7 @@ df.p.Lugansk <- df %>%
     # original pressure in mmHg
     Lmm = case_when(
       !is.na(`P, in`) ~ `P, in` * 25.4, # convert inHg → mmHg
+      is_inch_hack ~ `P, R.s.l.` * 25.4, # for the vals in 1837 that are recorded in inches
       !is.na(`P, R.s.l.`) ~ (`P, R.s.l.` * 1.27) # R.s.l. -> mmHg ## / 750.06 * 1000) / 33.8639
     ),
     
@@ -571,6 +581,7 @@ df.p.Lugansk <- df %>%
     
     meta_orig = case_when(
       !is.na(`P, in`) ~ paste0("orig_p=", `P, in`,"in"),
+      is_inch_hack ~ paste0("orig_p=", `P, in`, "in"),
       !is.na(`P, R.s.l.`) ~ paste0("orig_p=", `P, R.s.l.`, "R.s.l.")
     ),
     

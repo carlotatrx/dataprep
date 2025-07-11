@@ -2,20 +2,20 @@ library(dataresqc)
 library(hclim)
 source('/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/helpfun.R')
 
-indir <- '/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/'
+# bash script to change filenames
+# for file in *_corrected.tsv; do [ -e "$file" ] || continue; new_name="${file/_corrected.tsv/.tsv}"; mv "$file" "$new_name"; done
+
+indir <- '/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed'
 outdir <- '/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/sef_tests/'
 
-files <- list.files(indir, pattern = "_corrected\\.tsv$", full.names = TRUE)
+files <- list.files(indir, pattern = "_subdaily.tsv$", full.names = TRUE)
+files <- files[!grepl("Barcelona_ta_subdaily.tsv", files)] # Bcn we don't want now
 
 # Loop through files
-for (file in files[5:6]) {
+for (file in files[15:16]) {
   # Get just the file name
-  file.name <- basename(file)
-  
-  # Extract base name without _corrected.tsv
-  base <- sub("_subdaily_corrected\\.tsv$", "", file.name)
-  base <- sub("_corrected\\.tsv$", "", base)  # In case it's not subdaily
-  
+  file.name <- sub(".tsv$", "", basename(file))
+
   cat("\n=== Checking:", file.name, "===\n")
   
   # Run check_sef and print results
@@ -30,25 +30,79 @@ for (file in files[5:6]) {
 
 }
 
+###############################################################################################
+############################# write flags #####################################################
+###############################################################################################
+library(glue)
+dir <- '/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed'
+
+# Dnipro
+for (var in c('ta', 'p')) {
+  write_flags_f(infile=glue('{dir}/Dnipro_{var}_subdaily.tsv'),
+                qcfile=glue('{dir}/sef_tests/qc_00034504_{var}_subdaily.txt'),
+                outpath=dir,
+                match=F)
+}
+
+# Kamyantes-podilskyi
+for (var in c('ta', 'p')) {
+  write_flags_f(infile=glue('{dir}/Kamyanets_{var}_subdaily.tsv'),
+                qcfile=glue('{dir}/sef_tests/qc_00033548_{var}_subdaily.txt'),
+                outpath=dir,
+                match=F)
+}
+
+# Kharkiv
+for (var in c('ta', 'p')) {
+  write_flags_f(infile=glue('{dir}/Kharkiv_{var}_subdaily.tsv'),
+                qcfile=glue('{dir}/sef_tests/qc_Kharkiv_{var}_subdaily.txt'),
+                outpath=dir,
+                match=F)
+}
+
+
+# Kherson
+for (var in c('ta', 'p')) {
+  write_flags_f(infile=glue('{dir}/Kherson_{var}_subdaily.tsv'),
+                qcfile=glue('{dir}/sef_tests/qc_00033902_{var}_subdaily.txt'),
+                outpath=dir,
+                match=F)
+}
+
+# Kyiv
+for (var in c('ta', 'p')) {
+  write_flags_f(infile=glue('{dir}/Kyiv_{var}_subdaily.tsv'),
+                qcfile=glue('{dir}/sef_tests/qc_00033345_{var}_subdaily.txt'),
+                outpath=dir,
+                match=F)
+}
+
+# Lugansk
+for (var in c('ta', 'p')) {
+  write_flags_f(infile=glue('{dir}/Lugansk_{var}_subdaily.tsv'),
+                qcfile=glue('{dir}/sef_tests/qc_Lugansk_{var}_subdaily.txt'),
+                outpath=dir,
+                match=F)
+}
+
+# Odesa
+for (var in c('ta', 'p')) {
+  write_flags_f(infile=glue('{dir}/Odesa_{var}_subdaily.tsv'),
+                qcfile=glue('{dir}/sef_tests/qc_Odesa_{var}_subdaily.txt'),
+                outpath=dir,
+                match=F)
+}
+
 # Poltava
-infile <- paste0(indir, 'Poltava_ta_subdaily_corrected.tsv')
-
-check_sef(infile)
-climatic_outliers(infile, outpath=outdir)
-duplicate_columns(infile, outpath=outdir)
-duplicate_times(infile, outpath=outdir)
-plot_daily(infile, outfile=paste0(outdir,'Poltava_daily'))
-plot_decimals(infile, outfile=paste0(outdir,'Poltava_decimals'))
-plot_subdaily(infile, outfile=paste0(outdir,'Poltava_subdaily'))
-qc(infile, outpath=outdir)
-
-# flags for Kherson
+for (var in c('ta', 'p')) {
+  write_flags_f(infile=glue('{dir}/Poltava_{var}_subdaily.tsv'),
+                qcfile=glue('{dir}/sef_tests/qc_Poltava_{var}_subdaily.txt'),
+                outpath=dir,
+                match=F)
+}
 
 
-write_flags_f(infile='/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/Kherson_p_subdaily_corrected.tsv',
-              qcfile='/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/sef_tests/qc_00033902_p_subdaily.txt',
-              outpath='/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/',
-              match=F)
+###############################################################################################
 
 # Find problematic rows
 df <- read.delim(infile, sep = "\t", skip=12, header = TRUE, stringsAsFactors = FALSE)
