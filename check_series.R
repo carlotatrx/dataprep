@@ -12,7 +12,7 @@ files <- list.files(indir, pattern = "_subdaily.tsv$", full.names = TRUE)
 files <- files[!grepl("Barcelona_ta_subdaily.tsv", files)] # Bcn we don't want now
 
 # Loop through files
-for (file in files[15:16]) {
+for (file in files) {
   # Get just the file name
   file.name <- sub(".tsv$", "", basename(file))
 
@@ -26,6 +26,7 @@ for (file in files[15:16]) {
   qc(file, outpath=outdir)
 
   # Plot decimals and save as PNG
+  base <- gsub(".tsv", "", basename(file))
   plot_decimals(file, outfile = paste0(outdir, paste0(base, "_decimals")))
 
 }
@@ -39,7 +40,7 @@ dir <- '/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preproces
 # Dnipro
 for (var in c('ta', 'p')) {
   write_flags_f(infile=glue('{dir}/Dnipro_{var}_subdaily.tsv'),
-                qcfile=glue('{dir}/sef_tests/qc_00034504_{var}_subdaily.txt'),
+                qcfile=glue('{dir}/sef_tests/qc_Dnipro_{var}_subdaily.txt'), # station ID 00034504
                 outpath=dir,
                 match=F)
 }

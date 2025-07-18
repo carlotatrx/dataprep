@@ -30,17 +30,20 @@ sef_calendar_correction <- function(infile,
   # Create full date column
   df$orig_date <- as.Date(with(df, sprintf("%04d-%02d-%02d", Year, Month, Day)))
   df$apply_shift <- df$orig_date > cutoff_date
+  df$full_date <- df$orig_date
+  df$full_date[df$apply_shift] <- df$orig_date[df$apply_shift] + skip_days
 
+  # Sanity check: full_date should be orig_date + 12 where shifted
+  stopifnot(all(df$full_date[df$apply_shift] - df$orig_date[df$apply_shift] == skip_days))
+  
   # Apply date shift where needed
   df <- df %>%
-    mutate(
-      full_date = if_else(apply_shift, orig_date + skip_days, orig_date),
-      Meta = if_else(apply_shift,
-                     if_else(
-                       is.na(Meta) | Meta == "", paste0("orig_date=", orig_date), paste0(Meta, " | orig_date=", orig_date)
-                       ),
-                     Meta)
-    )
+    mutate(Meta = if_else(apply_shift,
+                          if_else(is.na(Meta) | Meta == "",
+                                  paste0("orig_date=", format(orig_date, "%Y-%m-%d")),
+                                  paste0(Meta, " | orig_date=", format(orig_date, "%Y-%m-%d"))),
+                          Meta))
+  
 
   # Update Year, Month, Day
   df$Year <- year(df$full_date)
