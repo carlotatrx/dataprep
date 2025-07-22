@@ -11,6 +11,8 @@ outdir <- '/home/ccorbella/scratch2_symboliclink/files/station_timeseries_prepro
 files <- list.files(indir, pattern = "_subdaily.tsv$", full.names = TRUE)
 files <- files[!grepl("Barcelona_ta_subdaily.tsv", files)] # Bcn we don't want now
 
+print(files)
+
 # Loop through files
 for (file in files) {
   # Get just the file name

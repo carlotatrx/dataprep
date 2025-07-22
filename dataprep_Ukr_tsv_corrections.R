@@ -23,7 +23,6 @@ df.ta.Dnipro <- df %>%
   mutate(value = ifelse(T==-999.9, NA_real_,T * 1.25), meta = paste0('orig_ta=',T,"R | orig_time=",Time)) %>%
   select(Year, Month, Day, Hour, Minute, value, meta)
 
-
 df.p.Dnipro <- df %>%
   separate(Hour, into = c("Hour", "Minute"), sep = ":", convert = TRUE) %>%
   mutate(
@@ -163,6 +162,7 @@ merge.Kharkiv <- function(dfA, dfB, var = c("ta", "p")) {
       meta = case_when(
         !is.na(value_A) & !is.na(value_B) ~ paste0(meta_A, " | altern_", meta_B),
         !is.na(value_A) ~ meta_A,
+        !is.na(value_B) ~ paste0("altern_", meta_B),
         TRUE ~ meta_B
       )
     ) %>%
@@ -183,10 +183,13 @@ dfB.ta.Kharkiv <- dfB %>%
 
 df.ta.Kharkiv <- merge.Kharkiv(dfA.ta.Kharkiv, dfB.ta.Kharkiv, var='ta')
 
+# sort df
+df.ta.Kharkiv <- df.ta.Kharkiv %>%
+  arrange(Year, Month, Day, Hour, Minute)
 
 dfA.p.Kharkiv <- dfA %>%
   mutate(Lmm = ifelse(P==-999.9, NA_real_,P * 1.27),
-         ta_out = T * 1.25,
+         ta_out = ifelse(T==-999.9, NA_real_, T * 1.25),
          value = round(convert_pressure(p=Lmm, f=1, lat=as.numeric(meta['lat']), alt=as.numeric(meta['alt']), atb=ta_out),
                        2),
          meta = paste0("orig_p=",P,"R.s.l.")
@@ -196,7 +199,7 @@ dfA.p.Kharkiv <- dfA %>%
 dfB.p.Kharkiv <- dfB %>%
   rename('T'='T, R', 'P'='P, R.s.l.') %>%
   mutate(Lmm = ifelse(P==-999.9, NA_real_,P * 1.27),
-         ta_out = T * 1.25,
+         ta_out = ifelse(T==-999.9, NA_real_, T * 1.25),
          value = round(convert_pressure(p=Lmm, f=1, lat=as.numeric(meta['lat']), alt=as.numeric(meta['alt']), atb=ta_out),
                        2),
          meta = paste0("orig_p=",P,"R.s.l.")
@@ -205,6 +208,8 @@ dfB.p.Kharkiv <- dfB %>%
 
 df.p.Kharkiv <- merge.Kharkiv(dfA.p.Kharkiv, dfB.p.Kharkiv, var='p')
 
+df.p.Kharkiv <- df.p.Kharkiv %>%
+  arrange(Year, Month, Day, Hour, Minute)
 
 write_sef_f(Data=df.ta.Kharkiv,
             outpath=outdir, outfile="Kharkiv_ta_subdaily.tsv",

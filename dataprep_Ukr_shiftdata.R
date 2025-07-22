@@ -100,14 +100,14 @@ sef_calendar_correction(
 sef_calendar_correction(
   infile = "Kherson_ta_subdaily.tsv",
   outfile = "Kherson_ta_subdaily_corrected.tsv",
-  cutoff_date = as.Date("2025-05-15"),
+  cutoff_date = as.Date("1700-01-01"), # since the start
   skip_days = 12
 )
 
 sef_calendar_correction(
   infile = "Kherson_p_subdaily.tsv",
   outfile = "Kherson_p_subdaily_corrected.tsv",
-  cutoff_date = as.Date("2025-05-15"),
+  cutoff_date = as.Date("1700-01-01"),
   skip_days = 12
 )
 
