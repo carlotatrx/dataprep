@@ -5,6 +5,8 @@ library(dplyr)
 library(glue)
 
 source('/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/helpfun.R')
+sef_test_path <- '/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/sef_tests/'
+outpath_preprocessed <- "/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed"
 
 ################################################################################
 linein2mmHg <- function(inch, l) {
@@ -175,8 +177,54 @@ for (var in c('ta','p')) {
                 match=F)
 }
 
-
+# Barcelona --------------------------------------------------------------
+filename <- '/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/Barcelona_ta_subdaily.tsv'
+check_sef(filename)
+qc(filename, outpath = sef_test_path)
+write_flags_f(infile=filename,
+                qcfile=paste0(sef_test_path, "qc_Barcelona_ta_subdaily.txt"),
+                outpath=outpath_preprocessed,
+                match=F)
 # Boehringen --------------------------------------------------------------
 
-# qc fir wubd direction
-df.dd <- read_sef('/scratch3/PALAEO-RA/DataRescue/Projects/Europe/5_QCed/Boehringen/PALAEO-RA_Europe_Boehringen_17630101-17820512_dd.tsv')
+# qc for wind direction
+
+for (var in c('dd', 'p', 'ta')) {
+  if (var == 'ta') {
+    filename <- glue('/scratch3/PALAEO-RA/DataRescue/Projects/Europe/5_QCed/Boehringen/PALAEO-RA_Europe_Boehringen_17700101-17820512_{var}.tsv')
+  } else {
+    filename <- glue('/scratch3/PALAEO-RA/DataRescue/Projects/Europe/5_QCed/Boehringen/PALAEO-RA_Europe_Boehringen_17630101-17820512_{var}.tsv')
+  }
+  check_sef(filename)
+  qc(filename, outpath=sef_test_path)
+  write_flags_f(infile=filename,
+                qcfile=paste0(sef_test_path, glue("/qc_Europe_Boehringen_{var}_subdaily.txt")),
+                outpath=outpath_preprocessed,
+                match=F)
+  
+}
+
+
+# CBT ---------------------------------------------------------------------
+
+filename.orig <- '/scratch2/ccorbella/files/1807_USBstick/CBT_ta.tsv'
+df <- read_sef(filename.orig, all=T)
+meta.df <- read_meta(filename.orig)
+
+df$Value <- round(df$Value, 2)
+df$Hour <- 0
+df$Minute <- 0
+df$Period <- NULL # drop it to be able to write well
+df$Date <- as.Date(with(df, paste(Year, Month, Day, sep = "-")), format = "%Y-%m-%d")
+df <- df[order(df$Date), ]
+df$Date<- NULL
+head(df)
+
+write_sef(df[, 2:ncol(df)], outpath=outpath_preprocessed, variable='ta', cod=meta.df[['id']],
+          nam=meta.df[['name']], lat=meta.df[['lat']], lon=meta.df[['lon']],
+          alt=meta.df[['alt']], link=meta.df[['link']], sou=meta.df[['source']],
+          stat='point', units=meta.df[['units']], outfile="CBT_ta_daily.tsv")
+
+filename <- '/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/CBT_ta_daily.tsv'
+check_sef(filename)
+qc(filename, outpath=sef_test_path)

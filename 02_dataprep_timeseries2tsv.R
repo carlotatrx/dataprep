@@ -34,7 +34,7 @@ reshape_to_sef <- function(file) {
 # Apply to all files and bind together
 df.ta.bcn <- map_dfr(files, reshape_to_sef)
 
-df.ta.bcn['minute'] <- 'NA'
+df.ta.bcn['minute'] <- 0
 df.ta.bcn <- df.ta.bcn %>% relocate('minute', .after = 'hour')
 colnames(df.ta.bcn) <- c("Year","Month","Day","Hour","Minute","Value")
 df.ta.bcn <- as.data.frame(df.ta.bcn)
@@ -46,7 +46,7 @@ meta <- list(
   Alt = 12,
   Vbl = "ta",
   Units = "C",
-  Source = "?"
+  Source = "Bolzern"
 )
 
 write_sef_f(Data=df.ta.bcn, outfile="Barcelona_ta_subdaily.tsv",
