@@ -217,14 +217,49 @@ df$Minute <- 0
 df$Period <- NULL # drop it to be able to write well
 df$Date <- as.Date(with(df, paste(Year, Month, Day, sep = "-")), format = "%Y-%m-%d")
 df <- df[order(df$Date), ]
-df$Date<- NULL
-head(df)
+df$orig_date <- df$Date
+
+# find leap years w duplicated 8th Feb
+leap.yrs.dup <- df %>%
+  filter(Month==2, Day==8) %>%
+  group_by(Year) %>%
+  filter(n() > 1) %>%
+  pull(Year) %>%
+  unique()
+
+for (yr in leap.yrs.dup) {
+  idx <- which(df$Year==yr & df$Month==2 & df$Day>=8)
+  idx <- idx[2:length(idx)]  # the first 8th Feb we want to keep
+  df$Date[idx] <- df$Date[idx] + 1
+}
+
+# Recalculate Year, Month, Day
+df$Year <- as.integer(format(df$Date, "%Y"))
+df$Month <- as.integer(format(df$Date, "%m"))
+df$Day <- as.integer(format(df$Date, "%d"))
+df$Meta <- ifelse(df$Date != df$orig_date,
+                  paste0("orig_date=",df$orig_date),
+                  "")
+df <- df[order(df$Date), ]
+
+# drop 29th of feb in wrong years
+df <- df %>%
+  drop_na(Date)
+
+df$Date <- NULL
+df$orig_date <- NULL
 
 write_sef(df[, 2:ncol(df)], outpath=outpath_preprocessed, variable='ta', cod=meta.df[['id']],
           nam=meta.df[['name']], lat=meta.df[['lat']], lon=meta.df[['lon']],
           alt=meta.df[['alt']], link=meta.df[['link']], sou=meta.df[['source']],
+          meta=df$Meta,
           stat='point', units=meta.df[['units']], outfile="CBT_ta_daily.tsv")
 
 filename <- '/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/CBT_ta_daily.tsv'
 check_sef(filename)
-qc(filename, outpath=sef_test_path)
+qc(filename, outpath=sef_test_path) # it doesn't output anything bc there are no errors
+
+
+# London ------------------------------------------------------------------
+
+
