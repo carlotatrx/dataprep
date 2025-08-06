@@ -21,7 +21,7 @@ out <- data.frame(year = rep(template[,2],each=3),
                   month = rep(template[,3],each=3), 
                   day = rep(template[,4],each=3), 
                   hour = rep(NA,3*nrow(template)), 
-                  minute = rep(NA,3*nrow(template)))
+                  minute = 0)
                   
 ## Temperature
 ta.C <- cbind(template$Temp_1stObs_Cels, template$Temp_2ndObs_Cels, template$Temp_3rdObs_Cels)
@@ -43,7 +43,7 @@ p.line.flatten <- c(t(p.line))
 
 
 temp <- cbind(template$Baro_1stObs_Zoll_Decimal, template$Baro_2ndObs_Zoll_Decimal, template$Baro_3rdObs_Zoll_Decimal)
-out$p <- convert_pressure(c(t(as.numeric(temp))), 27.07, lat, ele)
+out$p <- convert_pressure(c(t(temp)), 27.07, lat, ele)
 out$p <- round(out$p, 1)
 out$meta.p <- paste0("orig.time=", tod,
                      " | orig_p=", p.zoll.flatten, ".", p.line.flatten, "in")

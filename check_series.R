@@ -39,6 +39,14 @@ for (file in files) {
 library(glue)
 dir <- '/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed'
 
+# Delemont-Delsberg
+for (var in c('ta', 'p')) {
+  write_flags_f(infile=glue('{dir}/Delemont_{var}_subdaily.tsv'),
+                qcfile=glue('{dir}/sef_tests/qc_JU01_Delemont_{var}_subdaily.txt'), # station ID 00034504
+                outpath=dir,
+                match=F)
+}
+
 # Dnipro
 for (var in c('ta', 'p')) {
   write_flags_f(infile=glue('{dir}/Dnipro_{var}_subdaily.tsv'),
@@ -84,6 +92,14 @@ for (var in c('ta', 'p')) {
 for (var in c('ta', 'p')) {
   write_flags_f(infile=glue('{dir}/Lugansk_{var}_subdaily.tsv'),
                 qcfile=glue('{dir}/sef_tests/qc_Lugansk_{var}_subdaily.txt'),
+                outpath=dir,
+                match=F)
+}
+
+# Mulhouse
+for (var in c('ta', 'p')) {
+  write_flags_f(infile=glue('{dir}/Mulhouse_{var}_subdaily.tsv'),
+                qcfile=glue('{dir}/sef_tests/qc_Mulhouse_{var}_subdaily.txt'),
                 outpath=dir,
                 match=F)
 }
