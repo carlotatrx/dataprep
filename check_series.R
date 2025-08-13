@@ -9,7 +9,7 @@ indir <- '/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preproc
 outdir <- '/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/sef_tests/'
 
 files <- list.files(indir, pattern = "_subdaily.tsv$", full.names = TRUE)
-files <- files[!grepl("Barcelona_ta_subdaily.tsv", files)] # Bcn we don't want now
+files <- files[!grepl("Barcelona_ta_subdaily.tsv|Bologna_rr_subdaily.tsv", files)] # Bcn we don't want now
 
 print(files)
 
@@ -38,6 +38,15 @@ for (file in files) {
 ###############################################################################################
 library(glue)
 dir <- '/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed'
+
+# Bologna
+for (var in c('ta', 'p', 'dd')) {
+  write_flags_f(infile=glue('{dir}/Bologna_{var}_subdaily.tsv'),
+                qcfile=glue('{dir}/sef_tests/qc_Palatine-Society_Bologna_{var}_subdaily.txt'), # station ID 00034504
+                outpath=dir,
+                match=F)
+}
+
 
 # Delemont-Delsberg
 for (var in c('ta', 'p')) {
