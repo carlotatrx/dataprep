@@ -1,6 +1,7 @@
 library(dataresqc)
 library(hclim)
 source('/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/helpfun.R')
+library(glue)
 
 # bash script to change filenames
 # for file in *_corrected.tsv; do [ -e "$file" ] || continue; new_name="${file/_corrected.tsv/.tsv}"; mv "$file" "$new_name"; done
@@ -36,7 +37,7 @@ for (file in files) {
 ###############################################################################################
 ############################# write flags #####################################################
 ###############################################################################################
-library(glue)
+
 dir <- '/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed'
 
 # Bologna
@@ -96,6 +97,17 @@ for (var in c('ta', 'p')) {
                 outpath=dir,
                 match=F)
 }
+
+# London
+write_flags_f(infile=glue('{dir}/London_17870101-18221231_p_subdaily.tsv'),
+              qcfile=glue('{dir}/sef_tests/qc_london-11_p_subdaily.txt'),
+              outpath=dir,
+              match=F)
+
+write_flags_f(infile=glue('{dir}/London_18230101-18411231_p_subdaily.tsv'),
+              qcfile=glue('{dir}/sef_tests/qc_london-12_p_subdaily.txt'),
+              outpath=dir,
+              match=F)
 
 # Lugansk
 for (var in c('ta', 'p')) {
