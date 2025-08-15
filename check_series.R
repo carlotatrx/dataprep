@@ -12,6 +12,7 @@ outdir <- '/home/ccorbella/scratch2_symboliclink/files/station_timeseries_prepro
 files <- list.files(indir, pattern = "_subdaily.tsv$", full.names = TRUE)
 files <- files[!grepl("Barcelona_ta_subdaily.tsv|Bologna_rr_subdaily.tsv", files)] # Bcn we don't want now
 
+files <- '/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/Piacenza_ta_daily.tsv'
 print(files)
 
 # Loop through files
@@ -132,6 +133,12 @@ for (var in c('ta', 'p')) {
                 outpath=dir,
                 match=F)
 }
+
+# Piacenza
+write_flags_f(infile=glue('{dir}/Piacenza_ta_daily.tsv'),
+              qcfile=glue('{dir}/sef_tests/qc_Piacenza_ta_daily.txt'),
+              outpath=dir,
+              match=F)
 
 # Poltava
 for (var in c('ta', 'p')) {
