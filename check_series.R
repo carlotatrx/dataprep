@@ -8,11 +8,13 @@ library(glue)
 
 indir <- '/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed'
 outdir <- '/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/sef_tests/'
+dir <- '/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed'
 
-files <- list.files(indir, pattern = "_subdaily.tsv$", full.names = TRUE)
+files <- list.files(indir, pattern = "_daily.tsv$", full.names = TRUE)
 files <- files[!grepl("Barcelona_ta_subdaily.tsv|Bologna_rr_subdaily.tsv", files)] # Bcn we don't want now
 
-files <- '/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/Piacenza_ta_daily.tsv'
+files <- c('/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/Florence_17850101-17881226_p.tsv',
+          '/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/Florence_17850105-17881230_ta.tsv')
 print(files)
 
 # Loop through files
@@ -25,12 +27,13 @@ for (file in files) {
   # Run check_sef and print results
   check_result <- check_sef(file)
   print(check_result)
+
+  # Plot decimals and save as PNG
+  base <- sub("\\.tsv$", "", basename(file))
   
   # Run qc and save results
   qc(file, outpath=outdir)
-
-  # Plot decimals and save as PNG
-  base <- gsub(".tsv", "", basename(file))
+  
   plot_decimals(file, outfile = paste0(outdir, paste0(base, "_decimals")))
 
 }
@@ -38,8 +41,6 @@ for (file in files) {
 ###############################################################################################
 ############################# write flags #####################################################
 ###############################################################################################
-
-dir <- '/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed'
 
 # Bologna
 for (var in c('ta', 'p', 'dd')) {
@@ -58,6 +59,12 @@ for (var in c('ta', 'p')) {
                 match=F)
 }
 
+# Domodossola
+write_flags_f(infile=glue('{dir}/Domodossola_ta_daily.tsv'),
+              qcfile=glue('{dir}/sef_tests/qc_Domodossola_ta_daily.txt'), 
+              outpath=dir,
+              match=F)
+
 # Dnipro
 for (var in c('ta', 'p')) {
   write_flags_f(infile=glue('{dir}/Dnipro_{var}_subdaily.tsv'),
@@ -65,6 +72,15 @@ for (var in c('ta', 'p')) {
                 outpath=dir,
                 match=F)
 }
+
+# Florence
+for (var in c('ta', 'p')) {
+  write_flags_f(infile=glue('{dir}/Dnipro_{var}_subdaily.tsv'),
+                qcfile=glue('{dir}/sef_tests/qc_Dnipro_{var}_subdaily.txt'), # station ID 00034504
+                outpath=dir,
+                match=F)
+}
+
 
 # Kamyantes-podilskyi
 for (var in c('ta', 'p')) {
@@ -135,10 +151,12 @@ for (var in c('ta', 'p')) {
 }
 
 # Piacenza
-write_flags_f(infile=glue('{dir}/Piacenza_ta_daily.tsv'),
-              qcfile=glue('{dir}/sef_tests/qc_Piacenza_ta_daily.txt'),
-              outpath=dir,
-              match=F)
+for (var in c('ta','rr')) {
+  write_flags_f(infile=glue('{dir}/Piacenza_{var}_daily.tsv'),
+                qcfile=glue('{dir}/sef_tests/qc_Piacenza_{var}_daily.txt'),
+                outpath=dir,
+                match=F)
+}
 
 # Poltava
 for (var in c('ta', 'p')) {
@@ -147,7 +165,6 @@ for (var in c('ta', 'p')) {
                 outpath=dir,
                 match=F)
 }
-
 
 ###############################################################################################
 

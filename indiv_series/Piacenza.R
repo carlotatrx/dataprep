@@ -20,17 +20,30 @@ df <- df %>% mutate(across(c(year, month, day), as.integer))
 
 df <- df %>%
   mutate(ta=(as.numeric(Tmin) + as.numeric(Tmax))/2,
-         hour=NA_integer_,
-         minute=NA_integer_)
+         hour=24,
+         minute=0,
+         precip=round(precip,2),
+         meta=paste0('orig.ta.min=',Tmin, 'C | orig.ta.max=',Tmax, "C")
+         )
 
 head(df)
 
-write_sef_f(Data = df[, c('year','month','day', 'hour','minute', 'ta')],
+write_sef_f(Data = as.data.frame(df[, c('year','month','day', 'hour','minute', 'ta')]),
             outfile="Piacenza_ta_daily.tsv",
             outpath='/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/',
             cod="Piacenza",
             variable="ta",
             nam="Piacenza",
-            lat=lat, lon=lon, alt=ele, stat='mean',
+            lat=lat, lon=lon, alt=ele, stat='mean', period='day', meta=df$meta,
             sou="Collegio Alberoni --  Società Meteorologica Italiana", units="C", keep_na = F
+            )
+
+write_sef_f(Data = as.data.frame(df[, c('year','month','day', 'hour','minute', 'precip')]),
+            outfile="Piacenza_rr_daily.tsv",
+            outpath='/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/',
+            cod="Piacenza",
+            variable="rr",
+            nam="Piacenza",
+            lat=lat, lon=lon, alt=ele, period='day', stat='mean',
+            sou="Collegio Alberoni --  Società Meteorologica Italiana", units="mm", keep_na = F
             )

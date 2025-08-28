@@ -218,3 +218,59 @@ write_flags_f <- function (infile, qcfile, outpath, note = "", match = TRUE) {
   }
   else warning("No matches found: possibly incorrect input files")
 }
+
+
+# time_offset -------------------------------------------------------------
+
+
+write_sef_time_offset <- function(infile, outdir, outfile=NULL) {
+  
+  df <- read.delim(infile, header = T, sep='\t',
+                  stringsAsFactors=F, skip=12)
+  meta <- read_meta_nonofficial(infile)
+  
+  lon <- suppressWarnings(as.numeric(meta[['lon']]))
+  if (is.na(lon)) stop("Longitued in header is not numeric: ", meta[['lon']])
+  
+  time_offset_hrs <- lon/15
+  
+  colnames <- c("Year","Month","Day","Hour","Minute","Period","Value","Meta")
+  
+  if (!all(colnames %in% names(df))) {
+    stop('input file missing required columns for SEF')
+  }
+  
+  # new meta header
+  meta.head.TC <- trimws(paste0(meta[['meta']], " | TC=", round(time_offset_hrs,2), "h"))
+
+  if (is.null(outfile)) {
+    base <- sub("\\.tsv", "", basename(infile), ignore.case=T)
+    outfile <- paste0(base, "_utc.tsv")
+  }
+  
+  write_sef_f(
+    Data     = df[, c("Year","Month","Day","Hour","Minute","Value")],
+    outpath  = outdir,
+    outfile  = outfile,
+    variable = meta[["var"]],
+    cod      = meta[["id"]],
+    nam      = meta[["name"]],
+    lat      = meta[["lat"]],
+    lon      = meta[["lon"]],
+    alt      = meta[["alt"]],
+    sou      = meta[["source"]],
+    link     = meta[["link"]],
+    units    = meta[["units"]],
+    stat     = meta[["stat"]],
+    metaHead = meta.head.TC,
+    meta     = df$Meta,
+    # period left blank; write_sef_f will coerce to "0" for stat == "point"
+    time_offset = time_offset_hrs,
+    keep_na  = FALSE
+  )
+  
+  invisible(list(
+    time_offset_hours = time_offset_hrs,
+    outfile = file.path(outdir, outfile)
+  ))
+}
