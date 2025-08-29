@@ -13,8 +13,9 @@ dir <- '/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preproces
 files <- list.files(indir, pattern = "_daily.tsv$", full.names = TRUE)
 files <- files[!grepl("Barcelona_ta_subdaily.tsv|Bologna_rr_subdaily.tsv", files)] # Bcn we don't want now
 
-files <- c('/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/Florence_17850101-17881226_p.tsv',
-          '/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/Florence_17850105-17881230_ta.tsv')
+files <- c('/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/Frankfurt_dd_subdaily.tsv',
+           '/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/Frankfurt_p_subdaily.tsv',
+           '/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/Frankfurt_ta_subdaily.tsv')
 print(files)
 
 # Loop through files
@@ -76,11 +77,21 @@ for (var in c('ta', 'p')) {
 # Florence
 for (var in c('ta', 'p')) {
   write_flags_f(infile=glue('{dir}/Dnipro_{var}_subdaily.tsv'),
-                qcfile=glue('{dir}/sef_tests/qc_Dnipro_{var}_subdaily.txt'), # station ID 00034504
+                qcfile=glue('{dir}/sef_tests/qc_Dnipro_{var}_subdaily.txt'),
                 outpath=dir,
                 match=F)
 }
 
+# Frankfurt
+# molt trist, només sabem les unitats de la direcció del vent
+for (var in c('dd','p', 'ta')) {
+  write_flags_f(
+    infile=glue('{dir}/Frankfurt_{var}_subdaily.tsv'),
+    qcfile=glue('{dir}/sef_tests/qc_Frankfurt_{var}_subdaily.txt'),
+    outpath=dir,
+    match=F
+  )
+}
 
 # Kamyantes-podilskyi
 for (var in c('ta', 'p')) {
