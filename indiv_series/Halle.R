@@ -208,7 +208,7 @@ write_sef_f(
 
 # dd
 write_sef_f(
-  Data=as.data.frame(df.all[, c("Year", "Month", "Day", "Hour24", "Minute", "dd.clean")]),
+  Data=as.data.frame(df.all[, c("Year", "Month", "Day", "Hour24", "Minute", "dd")]),
   outfile="Halle_dd_subdaily.tsv",
   outpath="/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/",
   cod="Halle",
