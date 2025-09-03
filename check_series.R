@@ -14,7 +14,7 @@ files <- list.files(indir, pattern = "_daily.tsv$", full.names = TRUE)
 files <- files[!grepl("Barcelona_ta_subdaily.tsv|Bologna_rr_subdaily.tsv", files)] # Bcn we don't want now
 
 files <- c(#'/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/Montpellier_dd_subdaily.tsv',
-           '/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/Montpellier_p_subdaily.tsv',
+           #'/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/Montpellier_p_subdaily.tsv',
            '/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/Montpellier_ta_subdaily.tsv')
 print(files)
 
@@ -141,6 +141,14 @@ write_flags_f(infile=glue('{dir}/London_18230101-18411231_p_subdaily.tsv'),
 for (var in c('ta', 'p')) {
   write_flags_f(infile=glue('{dir}/Lugansk_{var}_subdaily.tsv'),
                 qcfile=glue('{dir}/sef_tests/qc_Lugansk_{var}_subdaily.txt'),
+                outpath=dir,
+                match=F)
+}
+
+# Montpellier
+for (var in c('ta', 'p', 'dd')) {
+  write_flags_f(infile=glue('{dir}/Montpellier_{var}_subdaily.tsv'),
+                qcfile=glue('{dir}/sef_tests/qc_Montpellier_{var}_subdaily.txt'),
                 outpath=dir,
                 match=F)
 }
