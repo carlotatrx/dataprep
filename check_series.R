@@ -13,9 +13,10 @@ dir <- '/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preproces
 files <- list.files(indir, pattern = "_daily.tsv$", full.names = TRUE)
 files <- files[!grepl("Barcelona_ta_subdaily.tsv|Bologna_rr_subdaily.tsv", files)] # Bcn we don't want now
 
-files <- c(#'/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/Montpellier_dd_subdaily.tsv',
-           #'/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/Montpellier_p_subdaily.tsv',
-           '/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/Montpellier_ta_subdaily.tsv')
+name <- Trondheim
+files <- c(paste0('/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/',name,'_dd_subdaily.tsv'),
+           paste0('/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/',name,'_p_subdaily.tsv'),
+           paste0('/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/',name,'_ta_subdaily.tsv'))
 print(files)
 
 # Loop through files
