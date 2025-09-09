@@ -22,7 +22,7 @@ time.offset <- as.numeric(lon)*12/180
 
 # Keep only the first 10 columns and rename
 df <- raw %>%
-  select(c(1:4,7) %>%
+  select(c(1:4,7)) %>%
   rename(
     Year = 1, Month = 2, Day = 3, Hour = 4, p.zoll = 4, p.in = 5, ta.R = 6, dd.orig = 7
   ) %>%
