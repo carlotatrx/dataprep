@@ -15,7 +15,6 @@ name <- "Warsaw"
 metaHead <- "Observer=Erndtel"
 
 
-# pressure conversion
 time.offset <- as.numeric(lon)*12/180
 
 ###### Wind direction ########
