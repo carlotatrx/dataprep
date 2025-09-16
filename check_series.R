@@ -13,10 +13,11 @@ dir <- '/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preproces
 files <- list.files(indir, pattern = "_daily.tsv$", full.names = TRUE)
 files <- files[!grepl("Barcelona_ta_subdaily.tsv|Bologna_rr_subdaily.tsv", files)] # Bcn we don't want now
 
-name <- Trondheim
+name <- "CET"
 files <- c(paste0('/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/',name,'_dd_subdaily.tsv'),
            paste0('/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/',name,'_p_subdaily.tsv'),
            paste0('/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/',name,'_ta_subdaily.tsv'))
+files <- paste0('/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/',name,'_ta_daily.tsv')
 print(files)
 
 # Loop through files
@@ -47,16 +48,23 @@ for (file in files) {
 # Bologna
 for (var in c('ta', 'p', 'dd')) {
   write_flags_f(infile=glue('{dir}/Bologna_{var}_subdaily.tsv'),
-                qcfile=glue('{dir}/sef_tests/qc_Palatine-Society_Bologna_{var}_subdaily.txt'), # station ID 00034504
+                qcfile=glue('{dir}/sef_tests/qc_Palatine-Society_Bologna_{var}_subdaily.txt'), 
                 outpath=dir,
                 match=F)
 }
 
+# CET
+var<- 'ta'
+name <- 'CET'
+write_flags_f(infile=glue('{dir}/{name}_{var}_daily.tsv'),
+              qcfile=glue('{dir}/sef_tests/qc_Had{name}_{var}_daily.txt'), # station ID HadCET
+              outpath=dir,
+              match=F)
 
 # Delemont-Delsberg
 for (var in c('ta', 'p')) {
   write_flags_f(infile=glue('{dir}/Delemont_{var}_subdaily.tsv'),
-                qcfile=glue('{dir}/sef_tests/qc_JU01_Delemont_{var}_subdaily.txt'), # station ID 00034504
+                qcfile=glue('{dir}/sef_tests/qc_JU01_Delemont_{var}_subdaily.txt'), 
                 outpath=dir,
                 match=F)
 }

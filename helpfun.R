@@ -14,6 +14,20 @@ read_meta_nonofficial <- function (file = file.choose(), parameter = NULL) {
   return(out)
 }
 
+
+# get_date_range ----------------------------------------------------------
+
+get_date_range <- function(df) {
+  start.date <- paste0(df$Year[1],
+                       sprintf("%02d", df$Month[1]),
+                       sprintf("%02d", df$Day[1]))
+  n <- nrow(df)
+  end.date   <- paste0(df$Year[n],
+                       sprintf("%02d", df$Month[n]),
+                       sprintf("%02d", df$Day[n]))
+  paste0(start.date, "-", end.date)
+}
+
 #' Write Data in SEF Format
 #'
 #' This function writes meteorological or climate data in the `SEF` (Structured Environmental Format) version 1.0.0.
