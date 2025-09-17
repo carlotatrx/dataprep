@@ -178,7 +178,14 @@ write_flags_f <- function (infile, qcfile, outpath, note = "", match = TRUE) {
   
   # load QC flags
   flags <- read.table(qcfile, stringsAsFactors = FALSE, header = TRUE, sep = "\t")
-  colnames(flags) <- c("Var", "Year", "Month", "Day", "Hour", "Minute", "Value", "Test")
+  
+  if (ncol(flags) == 8) {         # for subdaily data
+    colnames(flags) <- c("Var", "Year", "Month", "Day", "Hour", "Minute", "Value", "Test")
+  } else if (ncol(flags) == 6) {  # for daily data
+    colnames(flags) <- c("Var", "Year", "Month", "Day", "Value", "Test")
+  } else {
+    stop(paste("Unexpected number of columns in qcfile:", ncol(flags)))
+  }
   if (flags$Var[1] != Data$Var[1]) stop("Variable mismatch")
   
   

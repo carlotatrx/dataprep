@@ -13,11 +13,11 @@ dir <- '/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preproces
 files <- list.files(indir, pattern = "_daily.tsv$", full.names = TRUE)
 files <- files[!grepl("Barcelona_ta_subdaily.tsv|Bologna_rr_subdaily.tsv", files)] # Bcn we don't want now
 
-name <- "CET"
+name <- "Padua"
 files <- c(paste0('/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/',name,'_dd_subdaily.tsv'),
            paste0('/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/',name,'_p_subdaily.tsv'),
            paste0('/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/',name,'_ta_subdaily.tsv'))
-files <- paste0('/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/',name,'_ta_daily.tsv')
+files <- paste0('/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/',name,'_17250112-17731231_ta_daily.tsv')
 print(files)
 
 # Loop through files
@@ -177,6 +177,14 @@ for (var in c('ta', 'p')) {
                 outpath=dir,
                 match=F)
 }
+
+# Padua
+var<- 'ta'
+name <- 'Padua'
+write_flags_f(infile=glue('{dir}/{name}_17250112-17731231_ta_daily.tsv'),
+              qcfile=glue('{dir}/sef_tests/qc_{name}_{var}_daily.txt'),
+              outpath=dir,
+              match=F)
 
 # Piacenza
 for (var in c('ta','rr')) {
