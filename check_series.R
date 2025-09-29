@@ -1,3 +1,4 @@
+rm(list=ls())
 library(dataresqc)
 library(hclim)
 source('/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/helpfun.R')
@@ -14,10 +15,9 @@ files <- list.files(indir, pattern = "_daily.tsv$", full.names = TRUE)
 files <- files[!grepl("Barcelona_ta_subdaily.tsv|Bologna_rr_subdaily.tsv", files)] # Bcn we don't want now
 
 name <- "Padua"
-files <- c(paste0('/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/',name,'_dd_subdaily.tsv'),
-           paste0('/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/',name,'_p_subdaily.tsv'),
-           paste0('/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/',name,'_ta_subdaily.tsv'))
-files <- paste0('/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/',name,'_17250112-17731231_ta_daily.tsv')
+files <- c(paste0('/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/',name,'_17250112-19971130_p_daily.tsv'),
+           paste0('/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/',name,'_17250112-19970531_ta_daily.tsv'))
+files <- paste0('/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/Delft_Rijnsburg_17060101-17341231_ta_subdaily.tsv')
 print(files)
 
 # Loop through files
@@ -68,6 +68,12 @@ for (var in c('ta', 'p')) {
                 outpath=dir,
                 match=F)
 }
+
+# Delft
+write_flags_f(infile=glue('{dir}/Delft_Rijnsburg_17060101-17341231_ta_subdaily.tsv'),
+              qcfile=glue('{dir}/sef_tests/qc_KNMI-49_Delfft_Rijnsburg_ta_subdaily.txt'), 
+              outpath=dir,
+              match=F)
 
 # Domodossola
 write_flags_f(infile=glue('{dir}/Domodossola_ta_daily.tsv'),
@@ -185,6 +191,17 @@ write_flags_f(infile=glue('{dir}/{name}_17250112-17731231_ta_daily.tsv'),
               qcfile=glue('{dir}/sef_tests/qc_{name}_{var}_daily.txt'),
               outpath=dir,
               match=F)
+
+write_flags_f(infile=glue('{dir}/{name}_17250112-19970531_ta_daily.tsv'),
+              qcfile=glue('{dir}/sef_tests/qc_IMPROVE_{name}_ta_daily.txt'),
+              outpath=dir,
+              match=F)
+
+write_flags_f(infile=glue('{dir}/{name}_17250112-19971130_p_daily.tsv'),
+              qcfile=glue('{dir}/sef_tests/qc_IMPROVE_{name}_p_daily.txt'),
+              outpath=dir,
+              match=F)
+
 
 # Piacenza
 for (var in c('ta','rr')) {
