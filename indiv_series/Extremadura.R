@@ -46,14 +46,23 @@ dd_normalize <- function(x) {
               "NNO"  = "NNW",   # 'O' (Oeste) -> W
               "SWS"  = "SSW",
               "ES"   = "SE",
+              "SES"  = "SE",
+              "NSW"  = "SSW",
+              "C"    = "calm",
               .default = y,
               .missing = NA_character_
               )
-  ifelse(y %in% directions, y, NA_character_)
+  ifelse(y %in% c(directions, "calm"), y, NA_character_)
 }
 dd2deg <- function(x) {
-  ifelse(is.na(x), NA_real_, 22.5 * (match(toupper(x), directions) - 1))
+  deg <- rep(NA_character_, length(x))
+  i_dir <- !is.na(x) & x %in% directions
+  i_calm <- !is.na(x) & x == "calm"
+  deg[i_dir] <- as.character(22.5 * (match(x[i_dir], directions) - 1))
+  deg[i_calm] <- "calm"
+  deg
 }
+
 map2dd <- function(x) {
   x2 <- x %>% trimws()
   x2[x2==""] <- NA_character_
@@ -64,6 +73,247 @@ map2dd <- function(x) {
   toupper(out)
 }
 
+
+# PTCAMP4 -----------------------------------------------------------------
+code <- "PTCAMP4"
+lat  <- 39.015688 # 31.033333
+lon  <- -7.065832 # -6.983333
+name <- "Portugal-Campo_Maior"
+alt  <- 288
+f <- files[grepl(code, files)] # select file from list
+
+raw <- suppressWarnings(read_tsv(
+  file      = f,
+  skip      = 52,
+  col_types = cols(.default = col_guess()),
+  trim_ws   = T,
+  guess_max = 100000
+)) %>% rename(
+  Date = 1,
+  p1 = 2,
+  p2 = 3,
+  p3 = 4,
+  pmax  = 5,
+  pmin  = 6,
+  pmean = 7,
+  ta1 = 8,
+  ta2 = 9,
+  ta3 = 10,
+  tmean = 11,
+  tmax = 12,
+  tmin = 13,
+  rh1 = 18,
+  rh2 = 19,
+  rh3 = 20,
+  rhmean = 21,
+  dd1 = 24,
+  dd2 = 26,
+  dd3 = 28,
+  ddmean = 30,
+  rr = 41
+)
+
+head(raw)
+
+df <- raw %>%
+  mutate( # coerce to numeric
+    suppressWarnings(
+    across(c(p1:p3, ta1:ta3, rh1:rh3),
+           as.numeric))
+  ) %>%
+  pivot_longer(
+    cols = c(p1, p2, p3, ta1, ta2, ta3, rh1, rh2, rh3, dd1, dd2, dd3),
+    names_to = c(".value", "tod"),
+    names_pattern = "^([a-z]+)([123])$",
+  ) %>%
+  mutate(
+    Year = year(Date),
+    Month = month(Date),
+    Day = day(Date),
+    Hour = case_when(
+      tod==1 ~ 9,
+      tod==2 ~ 15,
+      tod==3 ~ 21
+    ),
+    Minute = 0L,
+    p.correc = convert_pressure(p, lat=lat, alt=alt, atb=ta),
+    dd.norm  = dd_normalize(dd),
+    dd.correc = dd2deg(dd.norm),
+    meta.dd = paste0("orig.dd=", dd, " | orig.time=", sprintf("%02d", Hour), ":", sprintf("%02d", Minute)),
+    meta.p  = paste0("orig.p=", p, " | atb=", ta, " | orig.time=", sprintf("%02d", Hour), ":", sprintf("%02d", Minute)),
+    meta.ta = paste0(" orig.time=", sprintf("%02d", Hour), ":", sprintf("%02d", Minute)),
+  ) %>%
+  select(Year, Month, Day, Hour, Minute, p=p.correc, ta, dd=dd.correc, meta.p, meta.ta, meta.dd)
+  
+head(df)
+  
+base_cols <- df[c("Year","Month","Day","Hour","Minute")]
+meta.list <- list(dd=df$meta.dd, p=df$meta.p, ta=df$meta.ta)
+
+for (var in c("p", "ta", "dd")) {
+  dat   <- cbind(base_cols, setNames(df[var], var))
+  write_sef_f(
+    dat,
+    outfile = outfile.name(name, var, dat, TRUE),
+    outpath = '/scratch3/PALAEO-RA/daily_data/final/Extremadura',
+    cod     = code,
+    lat     = lat,
+    lon     = lon,
+    alt     = alt,
+    sou     = source,
+    link    = link,
+    nam     = name,
+    var     = var,
+    stat    = "point",
+    units   = units(var),
+    meta    = meta.list[[var]],
+    metaHead = ifelse(var=="p", "PTC=Y | PGC=Y | orig.coords=[39.033333, -6.983333]",
+                      "orig.coords=[39.033333, -6.983333]"),
+    time_offset = time.offset(lon),
+    keep_na = FALSE
+  )
+}
+
+
+
+# CCMONT1 -----------------------------------------------------------------
+code <- "CCMONT1"
+lat  <- 40.320155
+lon  <- -5.857607
+name <- "Extremadura-Baños_de_Montemayor"
+f <- files[grepl(code, files)] # select file from list
+
+raw <- suppressWarnings(read_tsv(
+  file      = f,
+  skip      = 17,
+  col_types = cols(.default = col_guess()),
+  trim_ws   = T,
+  guess_max = 100000
+)) %>%
+  rename(
+    Date = 1,
+    ta1 = 2,
+    ta2 = 3,
+    ta3 = 4,
+    w.orig = 5
+  ) %>% mutate(
+    Year   = year(Date),
+    Month  = month(Date),
+    Day    = day(Date)
+  )
+
+head(raw)
+
+df.ta <- raw %>%
+  pivot_longer(
+    cols = c(ta1,ta2,ta3),
+    names_to = "tod",
+    values_to = "ta"
+  ) %>%
+  mutate(
+    Hour = case_when(
+      tod=="ta1" ~ 6,
+      tod=="ta2" ~ 13,
+      tod=="ta3" ~ 18
+    ),
+    Minute = 0L,
+    meta = paste0("orig.time=", sprintf("%02d", Hour), ":", sprintf("%02d", Minute))
+  ) %>%
+  select(Year, Month, Day, Hour, Minute, Value=ta, meta)
+head(df.ta)
+
+var <- "ta"
+write_sef_f(
+  as.data.frame(df.ta),
+  outfile = outfile.name(name, var, df.ta, TRUE),
+  outpath = '/scratch3/PALAEO-RA/daily_data/final/Extremadura',
+  cod     = code,
+  lat     = lat,
+  lon     = lon,
+  alt     = NA,
+  sou     = source,
+  link    = link,
+  nam     = name,
+  var     = var,
+  stat    = "point",
+  units   = units(var),
+  meta    = df.ta$meta,
+  time_offset = time.offset(lon),
+  keep_na = FALSE
+)
+
+# CCCACE2 -----------------------------------------------------------------
+code <- "CCCACE2"
+lat  <- 39.473056
+lon  <- -6.370000
+name <- "Extremadura-Caceres"
+f <- files[grepl(code, files)] # select file from list
+
+raw <- suppressWarnings(read_tsv(
+  file      = f,
+  skip      = 15,
+  col_types = cols(.default = col_guess()),
+  trim_ws   = T,
+  guess_max = 100000
+)) %>%
+  rename(
+    Date = 1,
+    p.orig = 2,
+    ta = 3,
+    dd.orig = 4,
+    w.orig = 5
+  ) %>% mutate(
+    Year   = year(Date),
+    Month  = month(Date),
+    Day    = day(Date),
+    Hour = NA_integer_,
+    Minute = NA_integer_
+  )
+head(raw)
+
+df.ta <- raw %>%
+  select(Year, Month, Day, Hour, Minute, Value=ta)
+
+df.p <- raw %>%
+  mutate(
+    p = convert_pressure(as.numeric(p.orig), lat=lat, atb=as.numeric(ta)),
+    meta.p = paste0("orig.p=", p.orig, " | atb=", ta)
+  ) %>%
+  select(Year, Month, Day, Hour, Minute, Value=p, meta=meta.p)
+
+df.dd <- raw %>%
+  mutate(
+    dd = dd2deg(dd.orig),
+    meta.dd = paste0("orig.dd=", dd.orig, " | force=", w.orig)
+  ) %>%
+  select(Year, Month, Day, Hour, Minute, Value=dd, meta=meta.dd)
+
+# save dd & p & ta
+df.list   <- list(dd=df.dd, p=df.p, ta=df.ta)
+meta.list <- list(dd=df.dd$meta, p=df.p$meta, ta="")
+
+for (var in c("dd", "p", "ta")){
+  dat  <- df.list[[var]]
+  meta <- meta.list[[var]]
+  write_sef_f(
+    as.data.frame(dat),
+    outfile = outfile.name(name, var, dat, FALSE),
+    outpath = '/scratch3/PALAEO-RA/daily_data/final/Extremadura',
+    cod     = code,
+    lat     = lat,
+    lon     = lon,
+    alt     = NA,
+    sou     = source,
+    link    = link,
+    nam     = name,
+    var     = var,
+    stat    = "point",
+    units   = units(var),
+    meta    = meta,
+    metaHead = ifelse(var=="p", "PTC=Y | PGC=N", ""),
+    keep_na = FALSE
+  )
+}
 
 
 # BAZAFR1 -----------------------------------------------------------------
