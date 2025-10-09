@@ -6,8 +6,6 @@ library(tidyr)
 library(dataresqc)
 source("/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/helpfun.R")
 
-files <- list.files("/scratch3/PALAEO-RA/daily_data/original/Utrecht", full.names = TRUE)
-
 source <- "KNMI"
 link   <- "https://www.knmi.nl/nederland-nu/klimatologie/daggegevens/antieke-waarnemingen"
 
@@ -115,9 +113,412 @@ norm_dutch_token <- function(tok) {
 dd_normalize_nl <- function(x) vapply(x, norm_dutch_token, character(1))
 
 
+#############################################################################
+# Bergen -------------------------------------------------------------------
+#############################################################################
+
+name <- "Bergen"
+code <- paste0("KNMI-", name)
+lat	 <- 52.67
+lon	 <- 4.72
+alt	 <- 1
+files <- list.files(paste0("/scratch3/PALAEO-RA/daily_data/original/", name), full.names = TRUE)
+
+raw <- read.csv(
+  file      = files,
+  skip      = 51,
+  header = TRUE,
+  fill = TRUE,
+  strip.white = TRUE,
+  stringsAsFactors = FALSE
+) %>% rename(
+  station = 1,
+  Date = 2,
+  obsnum = 3,
+  porig  = 4,
+  taorig = 5,
+  ddorig = 6,
+  fh     = 7,
+  ww     = 8,
+  rrorig = 9,
+  w2     = 10
+)
+
+stopifnot(all(raw$Date==sort(raw$Date)))
+
+df <- raw %>% mutate(
+  Date = ymd(Date),
+  Year = year(Date),
+  Month = month(Date),
+  Day = day(Date),
+  Hour = case_when(
+    obsnum==1 ~ 8L,
+    obsnum==2 ~ 13L,
+    obsnum==3 ~ 22L
+  ),
+  Minute = 0L,
+  meta.time = paste0("obs.num=", obsnum),
+
+  # wind
+  # check that all wind directions are okay
+  dd_norm = dd_normalize_nl(ddorig),
+  stopifnot(all(dd_norm[!is.na(dd_norm)] %in% c(directions, "calm"))),
+  dd  = dd2deg(dd_norm),
+  
+  ta  = round((taorig/10-32)*(5/9),1),
+
+  rr  = round(rrorig*.22, 1),
+  
+  meta.ta = paste0(meta.time, " | orig.ta=", taorig/10, "F"),
+  meta.dd = paste0(meta.time, " | orig.dd=", ddorig),
+  meta.rr = paste0(meta.time, " | orig.rr=", rrorig, "l"),
+
+) %>% select(Year, Month, Day, Hour, Minute, ta, dd, rr, meta.rr, meta.dd, meta.ta)
+
+head(df)
+
+base_cols <- df[c("Year","Month","Day","Hour","Minute")]
+meta.list <- list(dd=df$meta.dd,
+                  rr=df$meta.rr, ta=df$meta.ta)
+vars <- c("dd", "ta", "rr")
+
+for (var in vars) {
+  dat <- cbind(base_cols, setNames(df[var], var))
+  write_sef_f(
+    dat,
+    outfile = outfile.name(name, var, dat, TRUE),
+    outpath = paste0('/scratch3/PALAEO-RA/daily_data/final/', name),
+    cod     = code,
+    lat     = lat,
+    lon     = lon,
+    alt     = alt,
+    sou     = source,
+    link    = link,
+    nam     = name,
+    var     = var,
+    stat    = "point",
+    units   = units(var),
+    meta    = meta.list[[var]],
+    metaHead = ifelse(var=="p", "PTC=Y | PGC=Y", ""),
+    keep_na = FALSE
+  )
+}
+
+#############################################################################
+# Alkmaar -------------------------------------------------------------------
+#############################################################################
+
+name <- "Alkmaar"
+code <- paste0("KNMI-", name)
+lat	 <- 52.63
+lon	 <- 4.75
+alt	 <- 1
+files <- list.files(paste0("/scratch3/PALAEO-RA/daily_data/original/", name), full.names = TRUE)
+
+raw <- read.csv(
+  file      = files,
+  skip      = 51,
+  header = TRUE,
+  fill = TRUE,
+  strip.white = TRUE,
+  stringsAsFactors = FALSE
+) %>% rename(
+  station = 1,
+  Date = 2,
+  obsnum = 3,
+  porig  = 4,
+  taorig = 5,
+  ddorig = 6,
+  fh     = 7,
+  ww     = 8,
+  rrorig = 9,
+  w2     = 10
+)
+
+head(raw)
+
+stopifnot(all(raw$Date==sort(raw$Date)))
+
+df <- raw %>% mutate(
+  Date = ymd(Date),
+  Year = year(Date),
+  Month = month(Date),
+  Day = day(Date),
+  Hour = case_when(
+    obsnum==1 ~ 8L,
+    obsnum==2 ~ 13L,
+    obsnum==3 ~ 22L
+  ),
+  Minute = 0L,
+  meta.time = paste0("obs.num=", obsnum),
+  
+  # no pressure available
+  # wind
+  # check that all wind directions are okay
+  dd_norm = dd_normalize_nl(ddorig),
+  stopifnot(all(dd_norm[!is.na(dd_norm)] %in% c(directions, "calm"))),
+  dd  = dd2deg(dd_norm),
+  
+  ta  = round((taorig/10-32)*(5/9),1),
+  
+  rr  = round(rrorig*.22,1),
+  
+  meta.ta = paste0(meta.time, " | orig.ta=", taorig/10, "F"),
+  meta.dd = paste0(meta.time, " | orig.dd=", ddorig),
+  meta.rr = paste0(meta.time, " | orig.rr=", rrorig, "l"),
+
+) %>% select(Year, Month, Day, Hour, Minute, ta, dd, rr, meta.rr, meta.dd, meta.ta)
+
+head(df)
+
+base_cols <- df[c("Year","Month","Day","Hour","Minute")]
+meta.list <- list(dd=df$meta.dd,
+                  rr=df$meta.rr, ta=df$meta.ta)
+vars <- c("dd", "ta", "rr")
+
+for (var in vars) {
+  dat <- cbind(base_cols, setNames(df[var], var))
+  write_sef_f(
+    dat,
+    outfile = outfile.name(name, var, dat, TRUE),
+    outpath = paste0('/scratch3/PALAEO-RA/daily_data/final/', name),
+    cod     = code,
+    lat     = lat,
+    lon     = lon,
+    alt     = alt,
+    sou     = source,
+    link    = link,
+    nam     = name,
+    var     = var,
+    stat    = "point",
+    units   = units(var),
+    meta    = meta.list[[var]],
+    keep_na = FALSE
+  )
+}
 
 
+#############################################################################
+# Leiden -------------------------------------------------------------------
+#############################################################################
+
+name <- "Leiden"
+code <- paste0("KNMI-", name)
+lat	 <- 52.16
+lon	 <- 4.5
+alt	 <- 2
+files <- list.files(paste0("/scratch3/PALAEO-RA/daily_data/original/", name), full.names = TRUE)
+
+raw_list <- lapply(files, function(f)
+  read.csv(
+    file      = f,
+    skip      = 51,
+    header = TRUE,
+    fill = TRUE,
+    strip.white = TRUE,
+    stringsAsFactors = FALSE
+  ) %>% rename(
+    station = 1,
+    Date = 2,
+    obsnum = 3,
+    porig  = 4,
+    taorig = 5,
+    ddorig = 6,
+    fh     = 7,
+    ww     = 8,
+    rrorig = 9,
+    w2     = 10
+  )
+)
+
+raw <- bind_rows(raw_list)
+head(raw)
+
+stopifnot(all(raw$Date==sort(raw$Date)))
+
+df <- raw %>% mutate(
+  Date = ymd(Date),
+  Year = year(Date),
+  Month = month(Date),
+  Day = day(Date),
+  Hour = case_when(
+    obsnum==1 ~ 8L,
+    obsnum==2 ~ 13L,
+    obsnum==3 ~ 22L
+  ),
+  Minute = 0L,
+  meta.time = paste0("obs.num=", obsnum)
+)
+
+# test before not passed
+df <- df[order(df$Date), ]
+
+# check again
+stopifnot(all(df$Date==sort(df$Date)))
+
+df <- df %>% mutate(
+  # wind
+  # check that all wind directions are okay
+  dd_norm = dd_normalize_nl(ddorig),
+  stopifnot(all(dd_norm[!is.na(dd_norm)] %in% c(directions, "calm"))),
+  dd  = dd2deg(dd_norm),
+  
+  s   = sprintf("%05d", as.integer(porig)),
+  ii  = as.numeric(substr(s, 1, 2)),
+  ll  = as.numeric(substr(s, 3, 4)),
+  q   = as.numeric(substr(s, 5, 5)),
+  pinch = ii + ll/12 + q/48,
+  ta  = round((taorig/10-32)*(5/9),1),
+  
+  p   = round(convert_pressure(pinch, f=26.2, lat=lat, alt=alt, atb=ta),1),
+  rr  = round(rrorig*.22,1),
+  
+  meta.ta = paste0(meta.time, " | orig.ta=", taorig/10, "F"),
+  meta.dd = paste0(meta.time, " | orig.dd=", ddorig),
+  meta.rr = paste0(meta.time, " | orig.rr=", rrorig, "l"),
+  meta.p  = paste0(meta.time, " | orig.p=", ii, ".", ll, ".", q, " Rijnlandse_inch.line.quarter | atb=", ta, "C")
+  
+) %>% select(Year, Month, Day, Hour, Minute, p, ta, dd, rr, meta.rr, meta.p, meta.dd, meta.ta)
+
+head(df)
+
+base_cols <- df[c("Year","Month","Day","Hour","Minute")]
+meta.list <- list(dd=df$meta.dd,
+                  rr=df$meta.rr, ta=df$meta.ta,
+                  p=df$meta.p)
+vars <- c("dd", "p", "ta", "rr")
+
+for (var in vars) {
+  dat <- cbind(base_cols, setNames(df[var], var))
+  write_sef_f(
+    dat,
+    outfile = outfile.name(name, var, dat, TRUE),
+    outpath = paste0('/scratch3/PALAEO-RA/daily_data/final/', name),
+    cod     = code,
+    lat     = lat,
+    lon     = lon,
+    alt     = alt,
+    sou     = source,
+    link    = link,
+    nam     = name,
+    var     = var,
+    stat    = "point",
+    units   = units(var),
+    meta    = meta.list[[var]],
+    metaHead = ifelse(var=="p", "PTC=Y | PGC=Y", ""),
+    keep_na = FALSE
+  )
+}
+
+#############################################################################
+# Zwanenburg -------------------------------------------------------------------
+#############################################################################
+
+name <- "Zwanenburg"
+code <- paste0("KNMI-", name)
+lat	 <- 52.32
+lon	 <- 4.74
+alt	 <- 1
+files <- list.files(paste0("/scratch3/PALAEO-RA/daily_data/original/", name), full.names = TRUE)
+
+raw_list <- lapply(files, function(f)
+  read.csv(
+    file      = f,
+    skip      = 51,
+    header = TRUE,
+    fill = TRUE,
+    strip.white = TRUE,
+    stringsAsFactors = FALSE
+  ) %>% rename(
+    station = 1,
+    Date = 2,
+    obsnum = 3,
+    porig  = 4,
+    taorig = 5,
+    ddorig = 6,
+    fh     = 7,
+    ww     = 8,
+    rrorig = 9,
+    w2     = 10
+  )
+)
+
+raw <- bind_rows(raw_list)
+head(raw)
+
+stopifnot(all(df$Date==sort(df$Date)))
+
+df <- raw %>% mutate(
+  Date = ymd(Date),
+  Year = year(Date),
+  Month = month(Date),
+  Day = day(Date),
+  Hour = case_when(
+    obsnum==1 ~ 8L,
+    obsnum==2 ~ 13L,
+    obsnum==3 ~ 22L
+  ),
+  Minute = 0L,
+  meta.time = paste0("obs.num=", obsnum),
+  
+  # wind
+  # check that all wind directions are okay
+  dd_norm = dd_normalize_nl(ddorig),
+  stopifnot(all(dd_norm[!is.na(dd_norm)] %in% c(directions, "calm"))),
+  dd  = dd2deg(dd_norm),
+  
+  s   = sprintf("%05d", as.integer(porig)),
+  ii  = as.numeric(substr(s, 1, 2)),
+  ll  = as.numeric(substr(s, 3, 4)),
+  q   = as.numeric(substr(s, 5, 5)),
+  pinch = ii + ll/12 + q/48,
+  ta  = round((taorig/10-32)*(5/9),1),
+  
+  p   = round(convert_pressure(pinch, f=26.2, lat=lat, alt=alt, atb=ta),1),
+  rr  = rrorig/10,
+  
+  meta.ta = paste0(meta.time, " | orig.ta=", taorig/10, "F"),
+  meta.dd = paste0(meta.time, " | orig.dd=", ddorig),
+  meta.rr = paste0(meta.time, " | orig.rr=", rrorig, "l"),
+  meta.p  = paste0(meta.time, " | orig.p=", ii, ".", ll, ".", q, " Rijnlandse_inch.line.quarter | atb=", ta, "C")
+  
+) %>% select(Year, Month, Day, Hour, Minute, p, ta, dd, rr, meta.rr, meta.p, meta.dd, meta.ta)
+
+head(df)
+
+base_cols <- df[c("Year","Month","Day","Hour","Minute")]
+meta.list <- list(dd=df$meta.dd,
+                  rr=df$meta.rr, ta=df$meta.ta,
+                  p=df$meta.p)
+vars <- c("dd", "p", "ta", "rr")
+
+for (var in vars) {
+  dat <- cbind(base_cols, setNames(df[var], var))
+  write_sef_f(
+    dat,
+    outfile = outfile.name(name, var, dat, TRUE),
+    outpath = paste0('/scratch3/PALAEO-RA/daily_data/final/', name),
+    cod     = code,
+    lat     = lat,
+    lon     = lon,
+    alt     = alt,
+    sou     = source,
+    link    = link,
+    nam     = name,
+    var     = var,
+    stat    = "point",
+    units   = units(var),
+    meta    = meta.list[[var]],
+    metaHead = ifelse(var=="p", "PTC=Y | PGC=Y", ""),
+    keep_na = FALSE
+  )
+}
+
+
+#############################################################################
 # Haarlem -------------------------------------------------------------------
+#############################################################################
+
 files <- list.files("/scratch3/PALAEO-RA/daily_data/original/Haarlem", full.names = TRUE)
 files <- files[c(4, 1, 2, 3)] # rearrange so first one is year 1735
 code <- "KNMI-Haarlem"
@@ -152,6 +553,8 @@ raw_list <- lapply(files, function(f)
 raw <- bind_rows(raw_list)
 head(raw)
 
+stopifnot(all(raw$Date==sort(raw$Date)))
+
 df <- raw %>% mutate(
   Date= ymd(Date),
   Year = year(Date),
@@ -177,21 +580,22 @@ df <- raw %>% mutate(
   q   = as.numeric(substr(s, 5, 5)),
   pinch = ii + ll/12 + q/48,
   ta  = round((taorig/10-32)*(5/9),1),
-  p   = round(convert_pressure(pinch, f=26.2, lat=lat, alt=alt, atb=ta),2),
-  rr  = rrorig/10,
+  p   = round(convert_pressure(pinch, f=26.2, lat=lat, alt=alt, atb=ta),1),
+  rr  = round(rrorig*.22, 1),
   
-  meta.ta = paste0("orig.ta=", taorig, "F | ", meta.time),
-  meta.dd = paste0("orig.dd=", ddorig, " | ", meta.time),
-  meta.p  = paste0("orig.p=", ii, ".", ll, ".", q, "Rijnlandse inch.line.quarter | atb=", ta, "C | ", meta.time)
+  meta.ta = paste0(meta.time, " | orig.ta=", taorig/10, "F"),
+  meta.dd = paste0(meta.time, " | orig.dd=", ddorig),
+  meta.rr = paste0(meta.time, " | orig.rr=", rrorig, "l"),
+  meta.p  = paste0(meta.time, " | orig.p=", ii, ".", ll, ".", q, " Rijnlandse inch.line.quarter | atb=", ta, "C")
   
-) %>% select(Year, Month, Day, Hour, Minute, p, ta, dd, rr, meta.time, meta.p, meta.dd, meta.ta)
+) %>% select(Year, Month, Day, Hour, Minute, p, ta, dd, rr, meta.rr, meta.p, meta.dd, meta.ta)
 
 head(df)
 
 base_cols <- df[c("Year","Month","Day","Hour","Minute")]
-meta.list <- list(dd=df$meta.dd,
-                  rr=df$meta.time, ta=df$meta.ta,
-                  p=df$meta.p)
+meta.list <- list(dd=df$meta.dd, p=df$meta.p,
+                  rr=df$meta.rr, ta=df$meta.ta)
+
 vars <- c("dd", "p", "ta", "rr")
 
 for (var in vars) {
@@ -217,11 +621,13 @@ for (var in vars) {
 }
 
 
-
+#############################################################################
 # Utrecht -------------------------------------------------------------------
+#############################################################################
+
 files <- list.files("/scratch3/PALAEO-RA/daily_data/original/Utrecht", full.names = TRUE)
 
-f <- files[5]
+f <- "/scratch3/PALAEO-RA/daily_data/original/Utrecht/his_43.dat"
 code <- "KNMI-43_Utrecht"
 lat	<- 52.09
 lon	<- 5.12
@@ -245,7 +651,6 @@ raw <- read.csv(
   rrorig = 9
 )
 
-
 df <- raw %>% mutate(
   Date= ymd(Date),
   Year = year(Date),
@@ -256,30 +661,53 @@ df <- raw %>% mutate(
     obsnum==2 ~ 13L,
     obsnum==3 ~ 22L
   ),
-  Minute = 0L,
+  Minute = 0L
+)
   
+df <- df[order(df$Date), ]
+
+df <- df %>% mutate(
   # wind
   # check that all wind directions are okay
   dd_norm = dd_normalize_nl(ddorig),
   stopifnot(all(dd_norm[!is.na(dd_norm)] %in% c(directions, "calm"))),
   dd  = dd2deg(dd_norm),
-  meta.dd = paste0("orig.dd=", ddorig),
+  
+  # ta
+  ta = round((taorig/10 - 32) * 5/9, 1),
+  
+  # p
+  s   = sprintf("%05d", as.integer(porig)),
+  ii  = as.numeric(substr(s, 1, 2)),
+  ll  = as.numeric(substr(s, 3, 4)),
+  q   = as.numeric(substr(s, 5, 5)),
+  pinch = ii + ll/12 + q/48,
+  p   = round(convert_pressure(pinch, f=26.2, lat=lat, alt=alt, atb=ta),1),
   
   # precip
-  rr = round(as.numeric(rrorig)/12,1),
-  meta.rr = paste0("orig.rr=", rrorig, "l")
-) %>% select(Year, Month, Day, Hour, Minute, dd,  meta.dd, rr, meta.rr)
+  rr = round(as.numeric(rrorig)*.22, 1),
+  
+  meta.time = paste0("obs.num=", obsnum),
+  
+  meta.p  = paste0(meta.time, " | orig.p=", ii, ".", ll, ".", q, "Rijnlandse inch.line.quarter | atb=", ta, "C"),
+  meta.ta = paste0(meta.time, " | orig.ta=", taorig/10, "F"),
+  meta.dd = paste0(meta.time, " | orig.dd=", ddorig),
+  meta.rr = paste0(meta.time, " | orig.rr=", rrorig, "l")
+  
+) %>% select(Year, Month, Day, Hour, Minute, dd, p, ta, rr, meta.dd, meta.rr, meta.p, meta.ta)
 
 base_cols <- df[c("Year","Month","Day","Hour","Minute")]
-meta.list <- list(dd=df$meta.dd, rr=df$meta.rr)
+meta.list <- list(dd=df$meta.dd, rr=df$meta.rr,
+                  ta=df$meta.ta, p=df$meta.p)
+vars <- c("dd", "p", "ta", "rr")
 
-for (var in c("dd", "rr")){
+for (var in vars){
   
   dat   <- cbind(base_cols, setNames(df[var], var))
   write_sef_f(
     dat,
     outfile = outfile.name(name, var, dat, TRUE),
-    outpath = '/scratch3/PALAEO-RA/daily_data/final/Utrecht',
+    outpath = paste0("/scratch3/PALAEO-RA/daily_data/final/", name),
     cod     = code,
     lat     = lat,
     lon     = lon,
@@ -295,7 +723,9 @@ for (var in c("dd", "rr")){
   )
 }
 
-f <- files[6]
+#############################################################################
+
+f <- "/scratch3/PALAEO-RA/daily_data/original/Utrecht/Utrecht_1836-1846.txt"
 raw <- read.csv(
   file      = f,
   skip      = 18,
@@ -317,35 +747,70 @@ df <- raw %>% mutate(
   Month = month(Date),
   Day = day(Date),
   Hour = as.numeric(hh)/100,
-  Minute = 0L,
+  Minute = 0L
+)
+
+df <- df[order(df$Date), ]
+
+df <- df %>% mutate(
+  
+  ta = case_when(
+    Year == 1836                ~ round((taorig/10 - 32) * 5/9, 1),
+    Year >= 1837 & Year <= 1846 ~ taorig/10,
+    TRUE                        ~ NA_real_   # outside documented range
+  ),
+  
+  porig = as.numeric(porig),
+  p   = round(convert_pressure(porig/10, lat=lat, alt=alt, atb=ta),1),
   
   # wind
   # check that all wind directions are okay
   dd_norm = dd_normalize_nl(ddorig),
   stopifnot(all(dd_norm[!is.na(dd_norm)] %in% c(directions, "calm"))),
   dd  = dd2deg(dd_norm),
-  meta.dd = paste0("orig.dd=", ddorig),
   
-) %>% select(Year, Month, Day, Hour, Minute, dd,  meta.dd)
+  meta.time = paste0("orig.time=", sprintf("%02d", Hour), ":", sprintf("%02d", Minute)),
+  meta.ta  = case_when(
+    Year == 1836                ~ paste0(meta.time, " | orig.ta=", taorig/10, "F"),
+    Year >= 1837 & Year <= 1846 ~ paste0(meta.time, " | orig.ta=", taorig/10, "C"),
+    TRUE                        ~ "orig.ta=unknown_scale"
+  ),
+  meta.dd = paste0(meta.time, " | orig.dd=", ddorig),
+  meta.p  = paste0(meta.time, " | orig.p=", porig/10, "mmHg | atb=", ta, "C")
+  
+) %>% select(Year, Month, Day, Hour, Minute, dd, p, ta, meta.dd, meta.p, meta.ta)
 
-var <- "dd"
-write_sef_f(
-  df,
-  outfile = outfile.name(name, var, df, TRUE),
-  outpath = '/scratch3/PALAEO-RA/daily_data/final/Utrecht',
-  cod     = code,
-  lat     = lat,
-  lon     = lon,
-  alt     = alt,
-  sou     = source,
-  link    = link,
-  nam     = name,
-  var     = var,
-  stat    = "point",
-  units   = units(var),
-  meta    = df$meta.dd,
-  keep_na = FALSE
-)
+head(df)
+
+vars <- c("dd", "p", "ta")
+base_cols <- df[c("Year","Month","Day","Hour","Minute")]
+meta.list <- list(dd=df$meta.dd, p=df$meta.p, ta=df$meta.ta)
+
+for (var in vars){
+  
+  dat   <- cbind(base_cols, setNames(df[var], var))
+  write_sef_f(
+    dat,
+    outfile = outfile.name(name, var, dat, TRUE),
+    outpath = paste0('/scratch3/PALAEO-RA/daily_data/final/', name),
+    cod     = code,
+    lat     = lat,
+    lon     = lon,
+    alt     = alt,
+    sou     = source,
+    link    = link,
+    nam     = name,
+    var     = var,
+    stat    = "point",
+    units   = units(var),
+    meta    = meta.list[[var]],
+    time_offset = time.offset(lon),
+    metaHead = ifelse(var=="p", "PTC=Y | PGC=Y | Observer=Prof. PJI de Fremery", "Observer=Prof. PJI de Fremery"),
+    keep_na = FALSE
+  )
+}
+
+#############################################################################
 
 code <- "KNMI-155_Utrecht"
 
@@ -380,8 +845,12 @@ df <- raw %>% mutate(
   Month = month(Date),
   Day = day(Date),
   Hour = as.numeric(hhmm)/100,
-  Minute = 0L,
+  Minute = 0L
+)
+
+df <- df[order(df$Date), ]
   
+df <- df %>% mutate(
   # wind
   # check that all wind directions are okay
   dd_norm = dd_normalize_nl(ddorig),
@@ -389,7 +858,7 @@ df <- raw %>% mutate(
   dd  = dd2deg(dd_norm),
   
   ta  = taorig/10,
-  p   = round(convert_pressure(porig/100, lat=lat, alt=alt, atb=ta),2),
+  p   = round(convert_pressure(porig/100, lat=lat, alt=alt, atb=ta),1),
   rr  = rrorig/10,
   meta.time = paste0("orig.time=", sprintf("%02d", Hour), ":00"),
   
@@ -411,7 +880,7 @@ for (var in vars) {
   write_sef_f(
     dat,
     outfile = outfile.name(name, var, dat, TRUE),
-    outpath = '/scratch3/PALAEO-RA/daily_data/final/Utrecht',
+    outpath = paste0('/scratch3/PALAEO-RA/daily_data/final/', name),
     cod     = code,
     lat     = lat,
     lon     = lon,
@@ -454,4 +923,165 @@ for (var in c("tmax", "tmin")) {
     alt     = alt,
     sou     = source,
     link    = link,
-    nam    
+    nam     = name,
+    var     = var,
+    period  = "day",
+    stat    = substr(var, 2, 4),
+    units   = "C",
+    keep_na = FALSE
+  )
+}
+
+#############################################################################
+# Breda -------------------------------------------------------------------
+#############################################################################
+
+f <- "/scratch3/PALAEO-RA/daily_data/original/Breda/Breda_1726-1740.txt"
+lat <- 51.57
+lon <- 4.77
+alt <- 3
+code <- "KNMI-56_Breda"
+name <- "Breda"
+
+raw <- read.csv(
+  file      = f,
+  skip      = 55,
+  header = FALSE,
+  fill = TRUE,
+  strip.white = TRUE,
+  stringsAsFactors = FALSE
+) %>% rename(
+  station = 1,
+  Date = 2,
+  obsnum = 3,
+  porig = 4,
+  taorig = 5,
+  ddorig = 6,
+  rhorig = 9
+)
+
+df <- raw %>% mutate(
+  Date= ymd(Date),
+  Year = year(Date),
+  Month = month(Date),
+  Day = day(Date),
+  Hour = case_when(
+    obsnum==1 ~ 8L,
+    obsnum==2 ~ 13L,
+    obsnum==3 ~ 22L
+  ),
+  Minute = 0L,
+  ta = round((taorig/10-32)/1.8,1),
+  p = round(convert_pressure(as.numeric(porig)/12, f=26.2, lat=lat, alt=alt, atb=ta),1),
+  ddnorm = dd_normalize_nl(ddorig),
+  dd  = dd2deg(ddnorm),
+  meta.p = paste0("orig.p=",porig/10, "inch(duim)", porig %%10, "l | atb=", ta,"C"),
+  meta.dd = paste0("orig.dd=", ddorig)
+) %>% select(Year, Month, Day, Hour, Minute, dd, ta, p, meta.p, meta.dd)
+
+
+base_cols <- df[c("Year","Month","Day","Hour","Minute")]
+meta.list <- list(dd=df$meta.dd, p=df$meta.p)
+
+for (var in c("dd", "p")){
+  
+  dat   <- cbind(base_cols, setNames(df[var], var))
+  write_sef_f(
+    dat,
+    outfile = outfile.name(name, var, dat, TRUE),
+    outpath = '/scratch3/PALAEO-RA/daily_data/final/Breda',
+    cod     = code,
+    lat     = lat,
+    lon     = lon,
+    alt     = alt,
+    sou     = source,
+    link    = link,
+    nam     = name,
+    var     = var,
+    stat    = "point",
+    units   = units(var),
+    meta    = meta.list[[var]],
+    metaHead = ifelse(var=="p", "PTC=Y | PGC=Y", ""),
+    keep_na = FALSE
+  )
+}
+
+#############################################################################
+# Breda2 -------------------------------------------------------------------
+#############################################################################
+
+f <- "/scratch3/PALAEO-RA/daily_data/original/Breda/Breda2_1778-1781.txt"
+
+raw <- read.csv(
+  file      = f,
+  skip      = 55,
+  header = FALSE,
+  fill = TRUE,
+  strip.white = TRUE,
+  stringsAsFactors = FALSE
+) %>% rename(
+  station = 1,
+  Date = 2,
+  obsnum = 3,
+  porig = 4,
+  taorig = 5,
+  ddorig = 6,
+  rrorig = 9
+)
+
+# order check
+stopifnot(all(raw$Date==sort(raw$Date)))
+
+df <- raw %>% mutate(
+  Date= ymd(Date),
+  Year = year(Date),
+  Month = month(Date),
+  Day = day(Date),
+  Hour = case_when(
+    obsnum==1 ~ 8L,
+    obsnum==2 ~ 13L,
+    obsnum==3 ~ 22L
+  ),
+  Minute = 0L,
+  
+  # wind
+  ddnorm = dd_normalize_nl(ddorig),
+  stopifnot(all(ddnorm[!is.na(ddnorm)] %in% c(directions, "calm"))), # safety check
+  dd  = dd2deg(ddnorm),
+  
+  # precip
+  rr = round(rrorig*.22,1),
+  
+  meta.time = paste0("obs.num=", obsnum),
+  meta.dd = paste0(meta.time, " | orig.dd=", ddorig),
+  meta.rr = paste0(meta.time, " | orig.rr=", rrorig, "l")
+) %>% select(Year, Month, Day, Hour, Minute, dd,  meta.dd, rr, meta.rr)
+
+head(df)
+
+base_cols <- df[c("Year","Month","Day","Hour","Minute")]
+meta.list <- list(dd=df$meta.dd, rr=df$meta.rr)
+
+vars <- c("dd", "rr")
+for (var in vars) {
+  write_sef_f(
+    dat <- cbind(base_cols, setNames(df[var], var)),
+    outfile = outfile.name(name, var, dat, TRUE),
+    outpath = '/scratch3/PALAEO-RA/daily_data/final/Breda',
+    cod     = code,
+    lat     = lat,
+    lon     = lon,
+    alt     = alt,
+    sou     = source,
+    link    = link,
+    nam     = name,
+    var     = var,
+    stat    = "point",
+    units   = units(var),
+    meta    = meta.list[[var]],
+    keep_na = FALSE
+  )
+}
+
+
+
