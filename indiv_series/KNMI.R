@@ -4,6 +4,7 @@ library(dplyr)
 library(readr)
 library(tidyr)
 library(dataresqc)
+library(purrr)
 source("/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/helpfun.R")
 
 source <- "KNMI"
@@ -112,6 +113,8 @@ norm_dutch_token <- function(tok) {
 # Vectorized normalizer
 dd_normalize_nl <- function(x) vapply(x, norm_dutch_token, character(1))
 
+# check that array is sorted by date
+date_sorted_check <- function(x, nm = "Date") stopifnot(all(x[[nm]] == sort(x[[nm]])))
 
 #############################################################################
 # Bergen -------------------------------------------------------------------
