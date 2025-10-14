@@ -194,72 +194,88 @@ read_knmi_files <- function(files, skip, name_repair = TRUE) {
     
     if (nrow(df) == 0) return(df)
     
-    # # ---- Standardize column names ----
-    # names(df) <- trimws(names(df))
-    # 
-    # rename_map <- c(
-    #   "YYYYMMDD" = "Date",
-    #   "DATE"     = "Date",
-    #   "DATUM"    = "Date",
-    #   "M"        = "obsnum",
-    #   "ObsNum"   = "obsnum",
-    #   "HH"       = "hh",
-    #   "hh"       = "hh",
-    #   "HHMM"     = "hhmm",
-    #   "hhmm"     = "hhmm",
-    #   "P"        = "porig",
-    #   "p"        = "porig",
-    #   "TA"       = "taorig",
-    #   "T"        = "taorig",
-    #   "t"        = "taorig",
-    #   "DD"       = "ddorig",
-    #   "dd"       = "ddorig",
-    #   "RR"       = "rrorig",
-    #   "rr"       = "rrorig",
-    #   "RH"       = "rh",
-    #   "rh"       = "rh",
-    #   "W2"       = "w2",
-    #   "w2"       = "w2"
-    # )
+    orig_names <- names(df) # keep just in case
+    
+    up <- toupper(names(df))
+    rename_map <- c(
+      "STN"     = "station",
+      "YYYYMMDD"= "Date", "DATE"="Date", "DATUM"="Date",
+      
+      # time columns
+      "M"       = "obsnum",
+      "HH"      = "hh",
+      "HHMM"    = "hhmm",
+      
+      # core variables
+      "P"       = "porig",
+      "T"       = "taorig",
+      "DD"      = "ddorig",
+      "R"       = "rrorig",
+      "U"       = "rh",
+      "RH"      = "rh",
+      "W2"      = "w2",
+      "WW"      = "ww",
+      "FH"      = "fh",
+      
+      # present in long format only
+      "TN"      = "tmin",
+      "TX"      = "tmax",
+      "N"       = "n",
+      "FD"      = "fd",
+      "FK"      = "fk",
+      "FX"      = "fx"
+    )
+    
+    # map original column names to new standard
+    new_names <- names(df)
+    for (i in seq_along(up)) {
+      key <- up[i]
+      if (key %in% names(rename_map)) new_names[i] <- rename_map[[key]]
+    }
+    names(df) <- new_names
+    
+    # make sure's there's obs time col
+    for (nm in c("obsnum","hh","hhmm")) if (!nm %in% names(df)) df[[nm]] <- NA
+    
     # 
     # matched <- intersect(names(df), names(rename_map))
     # names(df)[match(matched, names(df))] <- rename_map[matched]
     
     # alternative 
     # Standardize column names by position and common aliases
-    n <- ncol(df)
-    if (n >= 2) names(df)[1:2] <- c("station", "Date")
-    if (n >= 3) {
-      # Try to detect if column 3 is obsnum, hh, or hhmm
-      if (any(grepl("^(M|ObsNum)$", names(df)[3], ignore.case = TRUE))) {
-        names(df)[3] <- "obsnum"
-      } else if (any(grepl("^HH$", names(df)[3], ignore.case = TRUE))) {
-        names(df)[3] <- "hh"
-      } else if (any(grepl("^HHMM$", names(df)[3], ignore.case = TRUE))) {
-        names(df)[3] <- "hhmm"
-      } else {
-        names(df)[3] <- "obsnum"  # default assumption
-      }
-    }
-    if (n >= 4) names(df)[4] <- "porig"
-    if (n >= 5) names(df)[5] <- "taorig"
-    if (n >= 6) names(df)[6] <- "ddorig"
-    if (n >= 7) names(df)[7] <- "fh"
-    if (n >= 8) names(df)[8] <- "ww"
-    if (n >= 9) names(df)[9] <- "rrorig"
-    if (n >= 10) names(df)[10] <- "w2"
-    if (n >= 11) names(df)[11] <- "tmin"
-    if (n >= 12) names(df)[12] <- "tmax"
-    if (n >= 14) names(df)[14] <- "rh"
+    # n <- ncol(df)
+    # if (n >= 2) names(df)[1:2] <- c("station", "Date")
+    # if (n >= 3) {
+    #   # Try to detect if column 3 is obsnum, hh, or hhmm
+    #   if (any(grepl("^(M|ObsNum)$", names(df)[3], ignore.case = TRUE))) {
+    #     names(df)[3] <- "obsnum"
+    #   } else if (any(grepl("^HH$", names(df)[3], ignore.case = TRUE))) {
+    #     names(df)[3] <- "hh"
+    #   } else if (any(grepl("^HHMM$", names(df)[3], ignore.case = TRUE))) {
+    #     names(df)[3] <- "hhmm"
+    #   } else {
+    #     names(df)[3] <- "obsnum"  # default assumption
+    #   }
+    # }
+    # if (n >= 4) names(df)[4] <- "porig"
+    # if (n >= 5) names(df)[5] <- "taorig"
+    # if (n >= 6) names(df)[6] <- "ddorig"
+    # if (n >= 7) names(df)[7] <- "fh"
+    # if (n >= 8) names(df)[8] <- "ww"
+    # if (n >= 9) names(df)[9] <- "rrorig"
+    # if (n >= 10) names(df)[10] <- "w2"
+    # if (n >= 11) names(df)[11] <- "tmin"
+    # if (n >= 12) names(df)[12] <- "tmax"
+    # if (n >= 14) names(df)[14] <- "rh"
 
-    cat("      → standardized names:", paste(names(df), collapse = ", "), "\n")
-    cat("      rows:", nrow(df), " cols:", ncol(df), "\n")
+    # cat("      → standardized names:", paste(names(df), collapse = ", "), "\n")
+    # cat("      rows:", nrow(df), " cols:", ncol(df), "\n")
     
     df
   }
   
   out <- purrr::map(files, read_one) %>% list_rbind()
-  cat("  → Combined rows:", nrow(out), " cols:", ncol(out), "\n")
+  # cat("  → Combined rows:", nrow(out), " cols:", ncol(out), "\n")
   out
 }
 
@@ -326,6 +342,9 @@ compute_vars <- function(df, lat, lon, alt,
   # precipitation
   rr <- if (!is.na(rr_factor) && "rrorig" %in% names(df)) round(as.numeric(df$rrorig) * rr_factor, 1) else NULL
   
+  # relative humidity
+  rh <- if ("rh" %in% names(df)) as.numeric(df$rh) else NULL
+  
   # pressure
   p <- NULL; meta.p <- NULL
   if (!is.na(p_mode) && "porig" %in% names(df)) {
@@ -357,10 +376,20 @@ compute_vars <- function(df, lat, lon, alt,
     }
   }
   
+  # debug for wrong data
+  if (!is.null(p)) {
+    print(df[!is.na(p) & p < 900, c("Year", "Month", "Day")])
+  } else {
+    print("No pressure recorded in this station.")
+  }
+  
+  rr_origunit <- ifelse(!is.na(rr_factor) & rr_factor == 0.1, "mm", "l")
+  
   tibble(
     Year = df$Year, Month = df$Month, Day = df$Day, Hour = df$Hour, Minute = df$Minute,
-    dd = dd, ta = ta, p = p, rr = rr,
+    dd = dd, ta = ta, p = p, rr = rr, rh = rh,
     meta.dd = paste0(df$meta.time, " | orig.dd=", df$ddorig),
+    meta.rh = df$meta.time,
     meta.ta = paste0(df$meta.time, " | orig.ta=",
                      dplyr::case_when(
                        ta_scale == "F10" ~ as.numeric(df$taorig)/10,
@@ -370,7 +399,7 @@ compute_vars <- function(df, lat, lon, alt,
                        TRUE ~ as.numeric(df$taorig)/10
                      ),
                      ifelse(ta_scale == "F10" | (ta_scale == "MIX_1836F10_else_C10" & df$Year == 1836), "F", "C")),
-    meta.rr = if (!is.null(rr)) paste0(df$meta.time, " | orig.rr=", df$rrorig, "l") else NA_character_,
+    meta.rr = if (!is.null(rr)) paste0(df$meta.time, " | orig.rr=", df$rrorig/10, rr_origunit) else NA_character_,
     meta.p  = meta.p
   )
 }
@@ -455,14 +484,19 @@ stations <- tibble::tribble(
   # "Leiden",        "KNMI-Leiden",       52.16,   4.50,   2,  "/scratch3/PALAEO-RA/daily_data/original/Leiden",       51,   NULL,                 NULL,       "F10",                      "rijnlandse_5digits",    0.22,       "PTC=Y | PGC=Y",                       "",
   # "Zwanenburg",    "KNMI-Zwanenburg",   52.32,   4.74,   1,  "/scratch3/PALAEO-RA/daily_data/original/Zwanenburg",   51,   NULL,                 NULL,       "F10",                      "rijnlandse_5digits",    0.10,       "PTC=Y | PGC=Y",                       "",
   # "Haarlem",       "KNMI-Haarlem",      52.38,   4.64,   5,  "/scratch3/PALAEO-RA/daily_data/original/Haarlem",      54,   NULL,                 c(4,1,2,3), "F10",                      "rijnlandse_5digits",    0.22,       "PTC=Y | PGC=Y",                       "alt.1735-1742=2m",
-  # # "Utrecht43",     "KNMI-43_Utrecht",   52.09,   5.12,   5,  "/scratch3/PALAEO-RA/daily_data/original/Utrecht",      51,   "his_43.dat",         NULL,       "F10",                      "rijnlandse_5digits",    0.22,       "",                                    "",
+  # "Utrecht43",     "KNMI-43_Utrecht",   52.09,   5.12,   5,  "/scratch3/PALAEO-RA/daily_data/original/Utrecht",      51,   "his_43.dat",         NULL,       "F10",                      "rijnlandse_5digits",    0.22,       "",                                    "",
   # "Utrecht1836_46","KNMI-43_Utrecht",   52.09,   5.12,   5,  "/scratch3/PALAEO-RA/daily_data/original/Utrecht",      18,   "Utrecht_1836-1846",  NULL,       "MIX_1836F10_else_C10",     "mmHg10",                NA,         "PTC=Y | PGC=Y",                       "Observer=Prof. PJI de Fremery",
   # "Utrecht155",    "KNMI-155_Utrecht",  52.09,   5.12,   5,  "/scratch3/PALAEO-RA/daily_data/original/Utrecht",      25,   NULL,                 2:4,        "C10",                      "mmHg100",               0.10,       "PTC=Y | PGC=Y",                       "",
   # "Breda",         "KNMI-56_Breda",     51.57,   4.77,   3,  "/scratch3/PALAEO-RA/daily_data/original/Breda",        54,   "Breda_1726-1740",    NULL,       "F10",                      "rijnlandse_mixeddigits",    NA,         "PTC=Y | PGC=Y",                       "",
   # "Breda2",        "KNMI-56_Breda",     51.57,   4.77,   3,  "/scratch3/PALAEO-RA/daily_data/original/Breda",        51,   "Breda2_1778-1781",   NULL,       "F10",                         NA,                      0.22,       "",                                    "",
-  "Vlissingen",    "KNMI-54_Vlissingen",  51.4536672, 3.5709125, 1, "/scratch3/PALAEO-RA/daily_data/original/Vlissingen",    51,      NULL,              NULL,       "F10",                      "rijnlandse_5digits",       0.22,       "PTC=Y | PGC=Y",                       ""
+  "Vlissingen",    "KNMI-54_Vlissingen",  51.4536672, 3.5709125, 1, "/scratch3/PALAEO-RA/daily_data/original/Vlissingen",    51,      "his_54-1768.dat",              NULL,       "F10",                      "rijnlandse_5digits",       0.22,       "PTC=Y | PGC=Y",                       "",
+  "Vlissingen2",    "KNMI-54_Vlissingen",  51.4536672, 3.5709125, 1, "/scratch3/PALAEO-RA/daily_data/original/Vlissingen",    51,      NULL,              c(2,1),       "F10",                      "rijnlandse_5digits",       0.22,       "PTC=Y | PGC=Y",                       ""
+  
 )
-OUTDIR <- "/scratch3/PALAEO-RA/daily_data/final/KNMI2"
+
+
+stations2 <- read_csv("/scratch3/PALAEO-RA/daily_data/original/knmi-inventory.csv")
+OUTDIR <- "/scratch3/PALAEO-RA/daily_data/tmp/KNMI2"
 
 
 # ---- 6) One driver to process a station row ---------------------------------
