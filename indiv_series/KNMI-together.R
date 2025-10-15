@@ -58,7 +58,7 @@
 #
 ###############################################################################
 
-# rm(list = ls())
+rm(list = ls())
 library(lubridate)
 library(dplyr)
 library(readr)
@@ -151,8 +151,9 @@ norm_dutch_token <- function(tok) {
   # direct map first
   if (y %in% names(dutch_map)) return(dutch_map[[y]])
   # if contains 'T' (range like "ZWTZ" = SW to S, "NOTN" = NE to N)
-  if (grepl("T", y)) {
-    parts <- strsplit(y, "T", fixed = TRUE)[[1]]
+  # or also lower case (e.g. den Helder, "ZWtZ")
+  if (grepl("T", y, ignore.case = TRUE)) {
+    parts <- strsplit(toupper(y), "T", fixed = TRUE)[[1]]
     if (length(parts) != 2) return(NA_character_)
     left  <- dutch_map[toupper(parts[1])]
     right <- dutch_map[toupper(parts[2])]
@@ -236,41 +237,7 @@ read_knmi_files <- function(files, skip, name_repair = TRUE) {
     
     # make sure's there's obs time col
     for (nm in c("obsnum","hh","hhmm")) if (!nm %in% names(df)) df[[nm]] <- NA
-    
-    # 
-    # matched <- intersect(names(df), names(rename_map))
-    # names(df)[match(matched, names(df))] <- rename_map[matched]
-    
-    # alternative 
-    # Standardize column names by position and common aliases
-    # n <- ncol(df)
-    # if (n >= 2) names(df)[1:2] <- c("station", "Date")
-    # if (n >= 3) {
-    #   # Try to detect if column 3 is obsnum, hh, or hhmm
-    #   if (any(grepl("^(M|ObsNum)$", names(df)[3], ignore.case = TRUE))) {
-    #     names(df)[3] <- "obsnum"
-    #   } else if (any(grepl("^HH$", names(df)[3], ignore.case = TRUE))) {
-    #     names(df)[3] <- "hh"
-    #   } else if (any(grepl("^HHMM$", names(df)[3], ignore.case = TRUE))) {
-    #     names(df)[3] <- "hhmm"
-    #   } else {
-    #     names(df)[3] <- "obsnum"  # default assumption
-    #   }
-    # }
-    # if (n >= 4) names(df)[4] <- "porig"
-    # if (n >= 5) names(df)[5] <- "taorig"
-    # if (n >= 6) names(df)[6] <- "ddorig"
-    # if (n >= 7) names(df)[7] <- "fh"
-    # if (n >= 8) names(df)[8] <- "ww"
-    # if (n >= 9) names(df)[9] <- "rrorig"
-    # if (n >= 10) names(df)[10] <- "w2"
-    # if (n >= 11) names(df)[11] <- "tmin"
-    # if (n >= 12) names(df)[12] <- "tmax"
-    # if (n >= 14) names(df)[14] <- "rh"
 
-    # cat("      → standardized names:", paste(names(df), collapse = ", "), "\n")
-    # cat("      rows:", nrow(df), " cols:", ncol(df), "\n")
-    
     df
   }
   
@@ -326,6 +293,7 @@ compute_vars <- function(df, lat, lon, alt,
   # temperature
   ta <- case_when(
     ta_scale == "F10" ~ round((as.numeric(df$taorig)/10 - 32) * 5/9, 1),
+    ta_scale == "F1"  ~ round((as.numeric(df$taorig) - 32) * 5/9, 1),
     ta_scale == "C10" ~ round(as.numeric(df$taorig)/10, 1),
     ta_scale == "C1"  ~ round(as.numeric(df$taorig), 1),
     ta_scale == "MIX_1836F10_else_C10" ~ round(if_else(df$Year == 1836,
@@ -359,11 +327,12 @@ compute_vars <- function(df, lat, lon, alt,
       p  <- round(convert_pressure(pinch, f = 26.2, lat = lat, alt = alt, atb = ta), 1)
       meta.p <- paste0(df$meta.time, " | orig.p=", ii, ".", ll, ".", q,
                        " Rijnlandse_inch.line.quarter | atb=", ta, "C")
-    } else if (p_mode == "rijnlandse_mixeddigits") {  # e.g. Breda
+    } else if (p_mode == "rijnlandse_3digits") {  # e.g. Breda
       s  <- sprintf("%03d", as.integer(df$porig))
       ii <- as.numeric(substr(s, 1, 2))
       ll <- as.numeric(substr(s, 3, 3))
       pinch <- ii + ll/12
+      pinch[pinch == 0] <- NA # only for Breda, there's 0 here and there
       p  <- round(convert_pressure(pinch, f = 25.73, lat = lat, alt = alt, atb = ta), 1)
       meta.p <- paste0(df$meta.time, " | orig.p=", ii, ".", ll, 
                        " Rijnlandse_inch.line | atb=", ta, "C")
@@ -393,12 +362,14 @@ compute_vars <- function(df, lat, lon, alt,
     meta.ta = paste0(df$meta.time, " | orig.ta=",
                      dplyr::case_when(
                        ta_scale == "F10" ~ as.numeric(df$taorig)/10,
+                       ta_scale == "F1"  ~ as.numeric(df$taorig),
                        ta_scale == "C10" ~ as.numeric(df$taorig)/10,
                        ta_scale == "C1"  ~ df$taorig,
                        ta_scale == "MIX_1836F10_else_C10" & df$Year == 1836 ~ as.numeric(df$taorig)/10,
                        TRUE ~ as.numeric(df$taorig)/10
                      ),
-                     ifelse(ta_scale == "F10" | (ta_scale == "MIX_1836F10_else_C10" & df$Year == 1836), "F", "C")),
+                     ifelse(ta_scale == "F10" | ta_scale =="F1" | (ta_scale == "MIX_1836F10_else_C10" & df$Year == 1836),
+                            "F", "C")),
     meta.rr = if (!is.null(rr)) paste0(df$meta.time, " | orig.rr=", df$rrorig/10, rr_origunit) else NA_character_,
     meta.p  = meta.p
   )
@@ -437,8 +408,8 @@ write_sef_all_vars <- function(df_vars, name, code, lat, lon, alt, outdir,
     
     # join metaHeads if more than one
     metaheads <- c(
-      if (nzchar(meta_head_all)) meta_head_all else NULL,
-      if (var=="p" && nzchar(meta_head_p)) meta_head_p else NULL
+      if (!is.na(meta_head_all) && nzchar(meta_head_all)) meta_head_all else NULL,
+      if (var=="p" && !is.na(meta_head_p) && nzchar(meta_head_p)) meta_head_p else NULL
     )
     metaHead <- if (length(metaheads)) paste(metaheads, collapse = " | ") else ""
     
@@ -466,6 +437,7 @@ write_sef_all_vars <- function(df_vars, name, code, lat, lon, alt, outdir,
       nam      = name,
       var      = var,
       stat     = "point",
+      period   = 0L,
       units    = units(var),
       meta     = metavec,
       metaHead = metaHead,
@@ -477,25 +449,36 @@ write_sef_all_vars <- function(df_vars, name, code, lat, lon, alt, outdir,
 
 
 # ---- 5) Station registry -------------------------------------------
-stations <- tibble::tribble(
-  ~name,           ~code,               ~lat,   ~lon,  ~alt, ~dir,                                             ~skip, ~file_pattern,       ~file_order, ~ta_scale,                  ~p_mode,                 ~rr_factor, ~meta_head_p,                         ~meta_head_all,
-  # "Bergen",        "KNMI-Bergen",       52.67,   4.72,   1,  "/scratch3/PALAEO-RA/daily_data/original/Bergen",       51,   NULL,                 NULL,       "F10",                      NA,                      0.22,       "",                                    "",
-  # "Alkmaar",       "KNMI-Alkmaar",      52.63,   4.75,   1,  "/scratch3/PALAEO-RA/daily_data/original/Alkmaar",      51,   NULL,                 NULL,       "F10",                      NA,                      0.22,       "",                                    "",
-  # "Leiden",        "KNMI-Leiden",       52.16,   4.50,   2,  "/scratch3/PALAEO-RA/daily_data/original/Leiden",       51,   NULL,                 NULL,       "F10",                      "rijnlandse_5digits",    0.22,       "PTC=Y | PGC=Y",                       "",
-  # "Zwanenburg",    "KNMI-Zwanenburg",   52.32,   4.74,   1,  "/scratch3/PALAEO-RA/daily_data/original/Zwanenburg",   51,   NULL,                 NULL,       "F10",                      "rijnlandse_5digits",    0.10,       "PTC=Y | PGC=Y",                       "",
-  # "Haarlem",       "KNMI-Haarlem",      52.38,   4.64,   5,  "/scratch3/PALAEO-RA/daily_data/original/Haarlem",      54,   NULL,                 c(4,1,2,3), "F10",                      "rijnlandse_5digits",    0.22,       "PTC=Y | PGC=Y",                       "alt.1735-1742=2m",
-  # "Utrecht43",     "KNMI-43_Utrecht",   52.09,   5.12,   5,  "/scratch3/PALAEO-RA/daily_data/original/Utrecht",      51,   "his_43.dat",         NULL,       "F10",                      "rijnlandse_5digits",    0.22,       "",                                    "",
-  # "Utrecht1836_46","KNMI-43_Utrecht",   52.09,   5.12,   5,  "/scratch3/PALAEO-RA/daily_data/original/Utrecht",      18,   "Utrecht_1836-1846",  NULL,       "MIX_1836F10_else_C10",     "mmHg10",                NA,         "PTC=Y | PGC=Y",                       "Observer=Prof. PJI de Fremery",
-  # "Utrecht155",    "KNMI-155_Utrecht",  52.09,   5.12,   5,  "/scratch3/PALAEO-RA/daily_data/original/Utrecht",      25,   NULL,                 2:4,        "C10",                      "mmHg100",               0.10,       "PTC=Y | PGC=Y",                       "",
-  # "Breda",         "KNMI-56_Breda",     51.57,   4.77,   3,  "/scratch3/PALAEO-RA/daily_data/original/Breda",        54,   "Breda_1726-1740",    NULL,       "F10",                      "rijnlandse_mixeddigits",    NA,         "PTC=Y | PGC=Y",                       "",
-  # "Breda2",        "KNMI-56_Breda",     51.57,   4.77,   3,  "/scratch3/PALAEO-RA/daily_data/original/Breda",        51,   "Breda2_1778-1781",   NULL,       "F10",                         NA,                      0.22,       "",                                    "",
-  "Vlissingen",    "KNMI-54_Vlissingen",  51.4536672, 3.5709125, 1, "/scratch3/PALAEO-RA/daily_data/original/Vlissingen",    51,      "his_54-1768.dat",              NULL,       "F10",                      "rijnlandse_5digits",       0.22,       "PTC=Y | PGC=Y",                       "",
-  "Vlissingen2",    "KNMI-54_Vlissingen",  51.4536672, 3.5709125, 1, "/scratch3/PALAEO-RA/daily_data/original/Vlissingen",    51,      NULL,              c(2,1),       "F10",                      "rijnlandse_5digits",       0.22,       "PTC=Y | PGC=Y",                       ""
-  
-)
+# stations <- tibble::tribble(
+#   ~name,           ~code,               ~lat,   ~lon,  ~alt, ~dir,                                             ~skip, ~file_pattern,       ~file_order, ~ta_scale,                  ~p_mode,                 ~rr_factor, ~meta_head_p,                         ~meta_head_all,
+#   "Bergen",        "KNMI-Bergen",       52.67,   4.72,   1,  "/scratch3/PALAEO-RA/daily_data/original/Bergen",       51,   NULL,                 NULL,       "F10",                      NA,                      0.22,       "",                                    "",
+#   "Alkmaar",       "KNMI-Alkmaar",      52.63,   4.75,   1,  "/scratch3/PALAEO-RA/daily_data/original/Alkmaar",      51,   NULL,                 NULL,       "F10",                      NA,                      0.22,       "",                                    "",
+#   "Leiden",        "KNMI-Leiden",       52.16,   4.50,   2,  "/scratch3/PALAEO-RA/daily_data/original/Leiden",       51,   NULL,                 NULL,       "F10",                      "rijnlandse_5digits",    0.22,       "PTC=Y | PGC=Y",                       "",
+#   "Zwanenburg",    "KNMI-Zwanenburg",   52.32,   4.74,   1,  "/scratch3/PALAEO-RA/daily_data/original/Zwanenburg",   51,   NULL,                 NULL,       "F10",                      "rijnlandse_5digits",    0.10,       "PTC=Y | PGC=Y",                       "",
+#   "Haarlem",       "KNMI-Haarlem",      52.38,   4.64,   5,  "/scratch3/PALAEO-RA/daily_data/original/Haarlem",      54,   NULL,                 c(4,1,2,3), "F10",                      "rijnlandse_5digits",    0.22,       "PTC=Y | PGC=Y",                       "alt.1735-1742=2m",
+#   "Utrecht43",     "KNMI-43_Utrecht",   52.09,   5.12,   5,  "/scratch3/PALAEO-RA/daily_data/original/Utrecht",      51,   "his_43.dat",         NULL,       "F10",                      "rijnlandse_5digits",    0.22,       "",                                    "",
+#   "Utrecht1836_46","KNMI-43_Utrecht",   52.09,   5.12,   5,  "/scratch3/PALAEO-RA/daily_data/original/Utrecht",      18,   "Utrecht_1836-1846",  NULL,       "MIX_1836F10_else_C10",     "mmHg10",                NA,         "PTC=Y | PGC=Y",                       "Observer=Prof. PJI de Fremery",
+#   "Utrecht155",    "KNMI-155_Utrecht",  52.09,   5.12,   5,  "/scratch3/PALAEO-RA/daily_data/original/Utrecht",      25,   NULL,                 2:4,        "C10",                      "mmHg100",               0.10,       "PTC=Y | PGC=Y",                       "",
+#   "Breda",         "KNMI-56_Breda",     51.57,   4.77,   3,  "/scratch3/PALAEO-RA/daily_data/original/Breda",        54,   "Breda_1726-1740",    NULL,       "F10",                      "rijnlandse_3digits",    NA,         "PTC=Y | PGC=Y",                       "",
+#   "Breda2",        "KNMI-56_Breda",     51.57,   4.77,   3,  "/scratch3/PALAEO-RA/daily_data/original/Breda",        51,   "Breda2_1778-1781",   NULL,       "F10",                         NA,                      0.22,       "",                                    "",
+#   "Vlissingen",    "KNMI-54_Vlissingen",  51.4536672, 3.5709125, 1, "/scratch3/PALAEO-RA/daily_data/original/Vlissingen",    51,      "his_54-1768.dat",              NULL,       "F10",                      "rijnlandse_5digits",       0.22,       "PTC=Y | PGC=Y",                       "",
+#   "Vlissingen2",    "KNMI-54_Vlissingen",  51.4536672, 3.5709125, 1, "/scratch3/PALAEO-RA/daily_data/original/Vlissingen",    51,      NULL,              c(2,1),       "F10",                      "rijnlandse_5digits",       0.22,       "PTC=Y | PGC=Y",                       ""
+#   
+# )
 
 
-stations2 <- read_csv("/scratch3/PALAEO-RA/daily_data/original/knmi-inventory.csv")
+stations <- read_csv("/scratch3/PALAEO-RA/daily_data/original/knmi-inventory.csv")
+
+# convert column of file order:
+stations$file_order <- lapply(stations$file_order, function(x) {
+  if (is.null(x) || is.na(x)) return(NULL)
+  as.numeric(unlist(strsplit(gsub(" ", "", x), ",")))
+})
+
+# filter stations to use now
+stations <- stations[grepl("Groningen", stations$name), ]
+print(stations)
+
 OUTDIR <- "/scratch3/PALAEO-RA/daily_data/tmp/KNMI2"
 
 
@@ -506,7 +489,7 @@ process_station <- function(st_row) {
   all_files <- list.files(st_row$dir, full.names = TRUE)
 
   # Filter by pattern if specified
-  if (!is.null(st_row$file_pattern[[1]])) {
+  if (!is.na(st_row$file_pattern[[1]])) {
     all_files <- all_files[grepl(st_row$file_pattern[[1]], basename(all_files))]
   }
   
