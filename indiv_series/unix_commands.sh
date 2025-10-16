@@ -19,8 +19,8 @@ NR <= 13 {
   # add link to metadata
 }     
 {
-  if ($4 == "NA") $4 = 24;   # Hour column
-  if ($5 == "NA") $5 = 0;    # Minute column
+  if ($4 == "23") $4 = 24;   # Hour column
+  if ($5 == "37") $5 = 0;    # Minute column
   print
 }
 ' "$1" > "$2"

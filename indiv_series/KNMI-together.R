@@ -70,6 +70,9 @@ source("/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/help
 source <- "KNMI"
 link   <- "https://www.knmi.nl/nederland-nu/klimatologie/daggegevens/antieke-waarnemingen"
 
+STATION_NAME <- "Maastricht" # in case you only want to process 1 station
+OUTDIR <- "/scratch3/PALAEO-RA/daily_data/final/"
+
 time.offset <- function(lon) {as.numeric(lon)*12/180}
 
 outfile.name <- function(name, var, df, subdaily=TRUE) {
@@ -449,24 +452,6 @@ write_sef_all_vars <- function(df_vars, name, code, lat, lon, alt, outdir,
 
 
 # ---- 5) Station registry -------------------------------------------
-# stations <- tibble::tribble(
-#   ~name,           ~code,               ~lat,   ~lon,  ~alt, ~dir,                                             ~skip, ~file_pattern,       ~file_order, ~ta_scale,                  ~p_mode,                 ~rr_factor, ~meta_head_p,                         ~meta_head_all,
-#   "Bergen",        "KNMI-Bergen",       52.67,   4.72,   1,  "/scratch3/PALAEO-RA/daily_data/original/Bergen",       51,   NULL,                 NULL,       "F10",                      NA,                      0.22,       "",                                    "",
-#   "Alkmaar",       "KNMI-Alkmaar",      52.63,   4.75,   1,  "/scratch3/PALAEO-RA/daily_data/original/Alkmaar",      51,   NULL,                 NULL,       "F10",                      NA,                      0.22,       "",                                    "",
-#   "Leiden",        "KNMI-Leiden",       52.16,   4.50,   2,  "/scratch3/PALAEO-RA/daily_data/original/Leiden",       51,   NULL,                 NULL,       "F10",                      "rijnlandse_5digits",    0.22,       "PTC=Y | PGC=Y",                       "",
-#   "Zwanenburg",    "KNMI-Zwanenburg",   52.32,   4.74,   1,  "/scratch3/PALAEO-RA/daily_data/original/Zwanenburg",   51,   NULL,                 NULL,       "F10",                      "rijnlandse_5digits",    0.10,       "PTC=Y | PGC=Y",                       "",
-#   "Haarlem",       "KNMI-Haarlem",      52.38,   4.64,   5,  "/scratch3/PALAEO-RA/daily_data/original/Haarlem",      54,   NULL,                 c(4,1,2,3), "F10",                      "rijnlandse_5digits",    0.22,       "PTC=Y | PGC=Y",                       "alt.1735-1742=2m",
-#   "Utrecht43",     "KNMI-43_Utrecht",   52.09,   5.12,   5,  "/scratch3/PALAEO-RA/daily_data/original/Utrecht",      51,   "his_43.dat",         NULL,       "F10",                      "rijnlandse_5digits",    0.22,       "",                                    "",
-#   "Utrecht1836_46","KNMI-43_Utrecht",   52.09,   5.12,   5,  "/scratch3/PALAEO-RA/daily_data/original/Utrecht",      18,   "Utrecht_1836-1846",  NULL,       "MIX_1836F10_else_C10",     "mmHg10",                NA,         "PTC=Y | PGC=Y",                       "Observer=Prof. PJI de Fremery",
-#   "Utrecht155",    "KNMI-155_Utrecht",  52.09,   5.12,   5,  "/scratch3/PALAEO-RA/daily_data/original/Utrecht",      25,   NULL,                 2:4,        "C10",                      "mmHg100",               0.10,       "PTC=Y | PGC=Y",                       "",
-#   "Breda",         "KNMI-56_Breda",     51.57,   4.77,   3,  "/scratch3/PALAEO-RA/daily_data/original/Breda",        54,   "Breda_1726-1740",    NULL,       "F10",                      "rijnlandse_3digits",    NA,         "PTC=Y | PGC=Y",                       "",
-#   "Breda2",        "KNMI-56_Breda",     51.57,   4.77,   3,  "/scratch3/PALAEO-RA/daily_data/original/Breda",        51,   "Breda2_1778-1781",   NULL,       "F10",                         NA,                      0.22,       "",                                    "",
-#   "Vlissingen",    "KNMI-54_Vlissingen",  51.4536672, 3.5709125, 1, "/scratch3/PALAEO-RA/daily_data/original/Vlissingen",    51,      "his_54-1768.dat",              NULL,       "F10",                      "rijnlandse_5digits",       0.22,       "PTC=Y | PGC=Y",                       "",
-#   "Vlissingen2",    "KNMI-54_Vlissingen",  51.4536672, 3.5709125, 1, "/scratch3/PALAEO-RA/daily_data/original/Vlissingen",    51,      NULL,              c(2,1),       "F10",                      "rijnlandse_5digits",       0.22,       "PTC=Y | PGC=Y",                       ""
-#   
-# )
-
-
 stations <- read_csv("/scratch3/PALAEO-RA/daily_data/original/knmi-inventory.csv")
 
 # convert column of file order:
@@ -476,11 +461,10 @@ stations$file_order <- lapply(stations$file_order, function(x) {
 })
 
 # filter stations to use now
-stations <- stations[grepl("Groningen", stations$name), ]
+if (!is.na(STATION_NAME)) {
+  stations <- stations[grepl("Maastricht", stations$name), ]
+}
 print(stations)
-
-OUTDIR <- "/scratch3/PALAEO-RA/daily_data/tmp/KNMI2"
-
 
 # ---- 6) One driver to process a station row ---------------------------------
 process_station <- function(st_row) {
