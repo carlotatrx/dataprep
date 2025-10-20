@@ -116,6 +116,118 @@ dd_normalize_nl <- function(x) vapply(x, norm_dutch_token, character(1))
 # check that array is sorted by date
 date_sorted_check <- function(x, nm = "Date") stopifnot(all(x[[nm]] == sort(x[[nm]])))
 
+
+
+#############################################################################
+# Senguerdius (Leiden) ------------------------------------------------------
+#############################################################################
+
+name <- "Leiden"
+observer <- "Observer=Wolferd Senguerd"
+lat <- 52.1601144
+lon <- 4.49700970
+code <- paste0("KNMI-", name)
+
+files <- "/scratch3/PALAEO-RA/daily_data/original/Leiden/senguerdius.dat"
+
+raw <- read.csv(
+  file      = files,
+  skip      = 33,
+  header    = FALSE,
+  fill = TRUE,
+  strip.white = TRUE,
+  stringsAsFactors = FALSE
+) %>% rename(
+  station = 1,
+  Date = 2,
+  porigA  = 3,
+  porigB  = 4,
+  taorigA = 5,
+  taorigB = 6,
+  taorigC = 7,
+  taorigD = 8,
+  ddorig  = 9,
+  worig   = 10,
+  # pA = 12,
+  # pB = 13,
+  taC = 14,
+  taB = 15,
+  pA  = 16,
+  pB  = 17,
+  p   = 20
+)
+  
+  
+head(raw)
+
+raw <- raw[!duplicated(raw), ]
+raw <- raw[!is.na(raw$Date), ]
+raw <- raw[order(raw$Date), ]
+stopifnot(all(raw$Date==sort(raw$Date)))
+
+df <- raw %>% mutate(
+  # fix non-existing 29th Feb 1697
+  feb29 = Date==16970229,
+  Date = if_else(feb29, 16970228, Date),
+  Date = ymd(Date),
+  Year = year(Date),
+  Month = month(Date),
+  Day = day(Date),
+  Hour = NA_integer_,
+  Minute = NA_integer_,
+  
+  # wind
+  # check that all wind directions are okay
+  dd_norm = dd_normalize_nl(ddorig),
+  stopifnot(all(dd_norm[!is.na(dd_norm)] %in% c(directions, "calm"))),
+  dd  = dd2deg(dd_norm),
+  
+  ta  = taC/10,
+  p = p/10,
+
+  meta.dd = paste0("orig.dd=", ddorig, " | force=", worig),
+  meta.p  = paste0("orig.p=", porigA/100, "in", porigA%%100, "l Rijnlandse | atb=", taB/10, "C"),
+  
+  meta.ta = if_else(feb29, "orig.date=1697-02-29", ""),
+  meta.dd = if_else(feb29, paste0(meta.dd, " | orig.date=1697-02-29"), meta.dd),
+  meta.p  = if_else(feb29, paste0(meta.p,  " | orig.date=1697-02-29"), meta.p)
+) %>% select(Year, Month, Day, Hour, Minute, ta, dd, p, meta.p, meta.dd, meta.ta)
+
+head(df)
+
+
+base_cols <- df[c("Year","Month","Day","Hour","Minute")]
+meta.list <- list(dd=df$meta.dd,
+                  p=df$meta.p, ta=df$meta.ta)
+metaHead <- list(dd=observer,
+                 p=paste0(observer, " | PTC=Y | PGC=Y"),
+                 ta=paste0(observer, " | Instrument=liquid thermometer"))
+vars <- c("dd", "ta", "p")
+
+for (var in vars) {
+  dat <- cbind(base_cols, setNames(df[var], var))
+  write_sef_f(
+    dat,
+    outfile = outfile.name(name, var, dat, FALSE),
+    outpath = paste0('/scratch3/PALAEO-RA/daily_data/final/', name),
+    cod     = code,
+    lat     = lat,
+    lon     = lon,
+    alt     = NA,
+    sou     = source,
+    link    = link,
+    nam     = name,
+    var     = var,
+    stat    = "point",
+    period  = "day",
+    units   = units(var),
+    meta    = meta.list[[var]],
+    metaHead = metaHead[[var]],
+    keep_na = FALSE
+  )
+}
+
+
 #############################################################################
 # Bergen -------------------------------------------------------------------
 #############################################################################
@@ -136,7 +248,7 @@ raw <- read.csv(
   stringsAsFactors = FALSE
 ) %>% rename(
   station = 1,
-  Date = 2,
+  Date    = 2,
   obsnum = 3,
   porig  = 4,
   taorig = 5,

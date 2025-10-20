@@ -4,7 +4,7 @@ library(dplyr)
 library(readxl)
 library(tidyr)
 library(purrr)
-source("/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/write_sef_f.R")
+source("/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/helpfun.R")
 
 outdir <- '/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/'
 
@@ -188,8 +188,8 @@ df.ta.cet <- data.frame(
   Year= year(df$Date),
   Month=month(df$Date),
   Day=day(df$Date),
-  Hour='NA',
-  Minute='NA',
+  Hour=24L,
+  Minute=0L,
   Value=df$TMP2m
 )
 
@@ -263,8 +263,8 @@ df.p.mil <- data.frame(
   Year= year(df$Date),
   Month=month(df$Date),
   Day=day(df$Date),
-  Hour='NA',
-  Minute='NA',
+  Hour=24L,
+  Minute=0L,
   Value=df$PRMSL
 )
 
@@ -275,8 +275,9 @@ meta <- list(
   Lon = 9.19,
   Alt = 150,
   Vbl = "p",
-  Units = "unknown",
-  Source = "PALAEO-RA"
+  Units = "hPa",
+  Source = "IMPROVE",
+  Link = "https://link.springer.com/book/10.1007/978-94-010-0371-1"
 )
 
 write_sef_f(Data=df.p.mil, outfile="Milan_p.tsv",
@@ -286,7 +287,8 @@ write_sef_f(Data=df.p.mil, outfile="Milan_p.tsv",
             nam=meta[["Name"]],
             lat=meta[["Lat"]],
             lon=meta[["Lon"]], alt=meta[["Alt"]],
-            sou=meta[["Source"]], units=meta[["Units"]], stat="point",keep_na = F
+            link=meta[["Link"]],
+            sou=meta[["Source"]], units=meta[["Units"]], stat="mean",keep_na = F
 )
 
 

@@ -70,7 +70,7 @@ source("/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/help
 source <- "KNMI"
 link   <- "https://www.knmi.nl/nederland-nu/klimatologie/daggegevens/antieke-waarnemingen"
 
-STATION_NAME <- "Maastricht" # in case you only want to process 1 station
+STATION_NAME <- "Amsterdam" # in case you only want to process 1 station
 OUTDIR <- "/scratch3/PALAEO-RA/daily_data/final/"
 
 time.offset <- function(lon) {as.numeric(lon)*12/180}
@@ -426,6 +426,12 @@ write_sef_all_vars <- function(df_vars, name, code, lat, lon, alt, outdir,
     
     dat <- bind_cols(base_cols, setNames(df_vars[var], var))
     
+    # skip variables with no valid data
+    if (all(is.na(dat[[var]]))) {
+      cat("  → Skipping", var, "(no non-NA values)\n")
+      next
+    }
+    
     cat("  → Writing", var, "rows:", sum(!is.na(dat[[var]])), "/", nrow(dat), "\n")
     write_sef_f(
       as.data.frame(dat),
@@ -462,7 +468,7 @@ stations$file_order <- lapply(stations$file_order, function(x) {
 
 # filter stations to use now
 if (!is.na(STATION_NAME)) {
-  stations <- stations[grepl("Maastricht", stations$name), ]
+  stations <- stations[grepl(STATION_NAME, stations$name), ]
 }
 print(stations)
 
