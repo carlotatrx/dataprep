@@ -28,6 +28,74 @@ get_date_range <- function(df) {
   paste0(start.date, "-", end.date)
 }
 
+
+# time.offset ----------------------------------------------------------
+
+time.offset <- function(lon) {as.numeric(lon)*12/180}
+
+# outfile.name ----------------------------------------------------------
+
+outfile.name <- function(name, var, df, subdaily=T) {
+  subdaily.str <- ifelse(subdaily, "subdaily", "daily")
+  paste0(name,"_",get_date_range(df), "_", var,"_", subdaily.str)
+}
+
+units <- function(var) {
+  case_when(
+    var == "ta" ~ "C",
+    var == "p"  ~ "hPa",
+    var == "dd" ~ "deg",
+    var == "rr" ~ "mm",
+    T ~ "unknown"
+  )
+}
+
+# wind conversion ----------------------------------------------------------
+# implement as:
+# df %>% mutate(
+#  dd.norm  = dd_normalize(dd),
+#  dd.correc = dd2deg(dd.norm),
+# )
+
+directions <- c("N", "NNE", "NE", "ENE", "E", "ESE", "SE", "SSE",
+                "S", "SSW", "SW", "WSW", "W", "WNW", "NW", "NNW")
+
+dd_normalize <- function(x) {
+  y <- toupper(trimws(x))
+  y <- recode(y,
+              "NWE"  = "WNW",
+              "NWW"  = "WNW",
+              "SWW"  = "WSW",
+              "WENW" = "WNW",
+              "ENW"  = "ENE",
+              "NEE"  = "ENE",
+              "NN0"  = "NNW",
+              "NNO"  = "NNW",
+              "SWS"  = "SSW",
+              "ES"   = "SE",
+              "SES"  = "SE",
+              "NSW"  = "SSW",
+              "O"    = "W",
+              "SO"   = "SW",
+              "OSO"  = "WSW",
+              "ONO"  = "WNW",
+              "SSO"  = "SSW",
+              "OOS"  = "WSW",
+              "NA"   = NA_character_,   # interpret "NA" as true NA
+              "C"    = "calm",
+              .default = y,
+              .missing = NA_character_
+  )
+  ifelse(y %in% c(directions, "calm"), y, NA_character_)
+}
+
+dd2deg <- function(x) {
+  deg <- rep(NA_character_, length(x))
+  i_dir <- !is.na(x) & x %in% directions
+  deg[i_dir] <- as.character(22.5 * (match(x[i_dir], directions) - 1))
+  deg
+}
+
 #' Write Data in SEF Format
 #'
 #' This function writes meteorological or climate data in the `SEF` (Structured Environmental Format) version 1.0.0.
