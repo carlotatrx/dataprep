@@ -30,6 +30,11 @@ get_date_range <- function(df) {
 
 
 # time.offset ----------------------------------------------------------
+meta_time <- function(Hour, Minute) {
+  ifelse(is.na(Hour) & is.na(Minute),
+         paste0("orig.time=", NA_character_),
+         paste0("orig.time=", sprintf("%02d", Hour), ":", sprintf("%02d", Minute)))
+}
 
 time.offset <- function(lon) {as.numeric(lon)*12/180}
 
