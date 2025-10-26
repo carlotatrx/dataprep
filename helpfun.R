@@ -51,6 +51,7 @@ units <- function(var) {
     var == "p"  ~ "hPa",
     var == "dd" ~ "deg",
     var == "rr" ~ "mm",
+    var == "rh" ~ "perc",
     T ~ "unknown"
   )
 }
@@ -86,6 +87,7 @@ dd_normalize <- function(x) {
               "ONO"  = "WNW",
               "SSO"  = "SSW",
               "OOS"  = "WSW",
+              "NO"   = "NW",
               "NA"   = NA_character_,   # interpret "NA" as true NA
               "C"    = "calm",
               .default = y,

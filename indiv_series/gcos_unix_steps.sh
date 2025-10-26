@@ -25,16 +25,22 @@ sed -i 's/NAmmHg/NA/g' *
 
 sed -i 's/|/ | /g' *           # add spaces like I like
 sed -i 's/  |  / | /g' *       # clean metaHead double spaces
+sed -i 's/ | orig.time=NA//g' *
+sed -i 's/orig.time=NA | //g' *
 sed -i 's/minimum/min/g' *     # shorten minimum to min
 sed -i 's/maximum/max/g' *     # shorten maximum to max
+
+# rename files to daily for Tn, Tx, rr
+rename 's/\.tsv/_daily.tsv/' *{Tn,Tx,rr}.tsv
+# rename files to subdaily except for those that are already daily
+rename 's/\.tsv$/_subdaily.tsv/' !(*_daily).tsv
 
 mkdir old
 
 # move all files that are not subdaily to a subdir
 find . -maxdepth 1 -type f ! -name "*_subdaily.tsv" -exec mv {} subdir/ \;
 
-# rename subdaily files to daily for Tn, Tx, rr
-rename 's/_subdaily\.tsv/_daily.tsv/' *{Tn,Tx,rr}_subdaily.tsv
-
 # other useful commands
+
+# rename all files to subdaily
 rename 's/\.tsv$/_subdaily.tsv/' *
