@@ -119,97 +119,98 @@ write_sef_f(df.all,
 # -- Padua Pressure ----------------------------------------------------------------------
 # ----------------------------------------------------------------------------------------
 
-code <- "IMPROVE_Padova"
+code <- "Padua"
+name <- "Padua"
 source <- "IMPROVE"
+lat  <-	45.4
+lon	 <- 11.87
+alt	 <- 18
 
 read_padua <- function(file) {
-  df <- read_table(file, col_names=F, na="-999.0")
-  ncol_df <- ncol(df)
+  # Read with minimal guessing; everything as character first
+  df_raw <- read_table(file, col_names = FALSE, col_types = cols(.default = "c"), na = "-999.0")
+  ncol_df <- ncol(df_raw)
   
   if (ncol_df == 3) {
-    # oldest file with no temperature data
-    df <- df %>%
+    message("3-column file: ", file)
+    df <- df_raw %>%
       transmute(
-        Date = dmy(X1),
-        tmin = NA_real_,
-        tmax = NA_real_,
-        tmean = X2,
-        p = X3
+        Date = as.Date(X1, format = "%d/%m/%Y"),
+        Year = year(Date),
+        Month = month(Date),
+        Day = day(Date),
+        Hour = NA_integer_,
+        Minute = NA_integer_,
+        Tn = NA_real_,
+        Tx = NA_real_,
+        ta = as.numeric(X2),
+        p  = as.numeric(X3)
+      )
+  } else if (ncol_df >= 5) {
+    message("5-column file: ", file)
+    df <- df_raw %>%
+      transmute(
+        Date   = as.Date(X1, format = "%d/%m/%Y"),
+        Year   = year(Date),
+        Month  = month(Date),
+        Day    = day(Date),
+        Hour   = NA_integer_,
+        Minute = NA_integer_,
+        Tn = as.numeric(X2),
+        Tx = as.numeric(X3),
+        ta = as.numeric(X4),
+        p  = as.numeric(X5)
       )
   } else {
-    # other files have 4 columns
-    df <- df %>%
-      transmute(
-        Date = dmy(X1),
-        tmin = X2,
-        tmax = X3,
-        tmean = X4,
-        p = X5
-      )
+    warning("Unexpected column count in file: ", file)
+    return(NULL)
   }
-  return (df)
+  
+  return(df)
 }
 
+
+
 indir <- '/scratch3/PALAEO-RA/daily_data/original/Padua'
+outdir <- '/scratch3/PALAEO-RA/daily_data/final'
 files <- list.files(indir, pattern="^PD_PT.*\\.txt$", full.names=T)
 files  
 
-df.all <- bind_rows(lapply(files, read_padua))
+df <- bind_rows(lapply(files, read_padua))
+
+
+head(df)
+
+vars <- c("Tn", "Tx", "ta", "p")
+
+for (var in vars) {
+  dat <- df[, c("Year", "Month", "Day", "Hour", "Minute", var)]
   
-df.ta <- df.all %>%
-  filter(!is.na(tmean)) %>%
-  transmute(           
-    # works like mutate but only keeps new vars
-    Year   = year(Date),
-    Month  = month(Date),
-    Day    = day(Date),
-    Hour   = NA_integer_,
-    Minute = NA_integer_,
-    Value  = tmean,
-    meta   = ifelse(!is.na(tmin) & !is.na(tmax),
-                    paste0("orig.tmin=", tmin, " | orig.tmax=", tmax),
-                    NA_character_)
+  # has diffferent dates and we have to remove NA rows before
+  dat <- dat %>% drop_na(var)
+  
+  
+  write_sef_f(
+    as.data.frame(dat),
+    outfile  = outfile.name(code, var, dat, FALSE),
+    outpath  = file.path(outdir, code),
+    cod      = code,
+    lat      = lat,
+    lon      = lon,
+    alt      = alt,
+    sou      = source,
+    link     = link,
+    nam      = name,
+    var      = var,
+    stat     = case_when(
+      var=="ta" ~ "mean",
+      var=="Tn" ~ "min",
+      var=="Tx" ~ "max",
+      var=="p"  ~ "mean"
+    ),
+    period   = "day",
+    metaHead = metahead,
+    units    = ifelse(var=="p", "hPa", "C"),
+    keep_na  = FALSE
   )
-
-head(df.ta)  
-
-df.p <- df.all %>%
-  filter(!is.na(p)) %>%
-  transmute(
-    Year   = year(Date),
-    Month  = month(Date),
-    Day    = day(Date),
-    Hour   = NA_integer_,
-    Minute = NA_integer_,
-    Value  = p
-  )
-
-head(df.p)  
-
-# Write SEF files
-write_sef_f(
-  Data = as.data.frame(df.ta),
-  outpath = "/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/",
-  outfile = paste0("Padua_", get_date_range(df.ta), "_ta_daily.tsv"),
-  cod = code,
-  lat = lat, lon = lon, alt = alt,
-  variable = "ta",
-  nam = name,
-  meta = df.ta$meta,
-  units = "C", sou = source, stat = "mean", period="day",
-  keep_na = FALSE
-)
-
-write_sef_f(
-  Data = as.data.frame(df.p),
-  outpath = "/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/",
-  outfile = paste0("Padua_", get_date_range(df.p), "_p_daily.tsv"),
-  cod = code,
-  lat = lat, lon = lon, alt = alt,
-  variable = "p",
-  nam = name,
-  units = "hPa", sou = source, stat = "mean", period="day",
-  keep_na = FALSE
-)
-  
-  
+}
