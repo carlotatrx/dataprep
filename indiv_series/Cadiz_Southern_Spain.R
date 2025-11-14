@@ -382,6 +382,198 @@ write_sef_f(
 )
 
 
+# Cadiz_PerezLasso --------------------------------------------------------
+
+raw <- read_excel(file, sheet=7, skip=8)
+name <- "Cadiz"
+lat <- 36 + 31/60
+lon <- -(6 + 17/60)
+alt <- 13
+code <- "Ca1820-1822"
+metaHead <- "Obsever=Francisco Javier Pérez Lasso | obs.time=midday"
+source <- "Pérez-Laso, FJ. (ed.), 1820-1822, 1824. Periódico de la Sociedad Médico-Quirúrgica de Cádiz. Biblioteca Universidad Complutense BH Rev 63-1, 63-2, 63-3, 63-4 (http://www.books.google.com)"
+
+df <- raw %>%
+  rename(
+    pin = `p(FI/EI)`,
+    pl  = `p(l)`,
+    rrin = `R(inch)`,
+    rrl  = `R(line)`,
+    ta.orig = `T(ºR)`
+  ) %>%
+  mutate(
+    Hour = 12,
+    Minute = 0,
+    
+    ta = round(ta.orig*1.25, 1),
+    rr = round((as.numeric(rrin) + as.numeric(rrl)/12)*.22, 1),
+    
+    p_in_total = case_when(
+      Year < 1821 ~ as.numeric(pin) + as.numeric(pl)/12,
+      Year == 1821 & Month < 10 ~ as.numeric(pin) + as.numeric(pl)/12,
+      Year > 1821 | (Year == 1821 & Month >= 10) ~ as.numeric(pin),
+      TRUE ~ NA_real_
+    ),
+    p_mmHg = case_when(
+      Year < 1821 ~ p_in_total * 27.07,   # French inches
+      Year == 1821 & Month < 10 ~ p_in_total * 27.07,
+      Year > 1821 | (Year == 1821 & Month >= 10) ~ p_in_total * 25.4,  # English inches
+      TRUE ~ NA_real_
+    ),
+    p_mmHg = case_when(
+      Year < 1821 ~ p_in_total * 27.07,   # French inches
+      Year == 1821 & Month < 10 ~ p_in_total * 27.07,
+      Year > 1821 | (Year == 1821 & Month >= 10) ~ p_in_total * 25.4,  # English inches
+      TRUE ~ NA_real_
+    ),
+    
+    p = round(convert_pressure(p_mmHg, lat=lat, alt=alt, atb=ta),1),
+    
+    meta.ta = paste0("orig.ta=", ta.orig, "R"),
+    meta.rr = paste0("orig.rr=", ifelse(is.na(rr), paste0(as.numeric(rrl), "l"), paste0(rrin, "in",rrl,"l"))),
+    meta.p  = case_when(
+      Year < 1821 ~ paste0("orig.p=", pin,"French inch", pl, "l | atb=", ta, "C"),   # French inches
+      Year == 1821 & Month < 10 ~ paste0("orig.p=", pin," French inch", pl, "l | atb=", ta, "C"),
+      Year > 1821 | (Year == 1821 & Month >= 10) ~ paste0("orig.p=", pin,"English in | atb=", ta, "C"),  # English inches
+      TRUE ~ NA_character_
+    ),
+  )
+
+head(df)
+
+base_cols <- df[c("Year","Month","Day","Hour","Minute")]
+meta_map  <- list(ta = df$meta.ta, p = df$meta.p, rr = df$meta.rr)
+
+vars <- c("ta", "rr", "p")
+
+for (var in vars) {
+  meta  <- meta_map[[var]]
+  dat   <- cbind(base_cols, setNames(df[var], var))
+  write_sef_f(
+    dat,
+    outfile = outfile.name(name, var, dat, TRUE, obs_name="_PerezLasso_"),
+    outpath = '/scratch3/PALAEO-RA/daily_data/final/Cadiz',
+    cod     = code,
+    lat     = lat,
+    lon     = lon,
+    alt     = alt,
+    sou     = source,
+    link    = link,
+    nam     = name,
+    var     = var,
+    stat    = "point",
+    units   = units(var),
+    metaHead = ifelse(var=="p", paste0(metaHead, " | PTC=Y | PGC=Y"), metaHead),
+    meta    = meta,
+    keep_na = F
+  )
+}
 
 
+df.dd <- df %>%
+  pivot_longer(
+    cols = c(Wmorning,Wafternoon, Wnight),
+    names_to = "tod",
+    values_to = "dd.orig"
+  ) %>% mutate(
+    meta.time = case_when(
+      tod=="Wmorning" ~ "morning",
+      tod=="Wafternoon" ~ "afternoon",
+      tod=="Wnight" ~ "night"
+    ),
+    
+    Hour = case_when(
+      tod=="Wmorning" ~ 8L,
+      tod=="Wafternoon" ~ 15L,
+      tod=="Wnight" ~ 21L
+    ),
+    Minute = 0L,
+    
+    
+    dd.norm = dd_normalize(dd.orig),
+    dd = dd2deg(dd.norm),
+    
+    meta   = paste0("obs.time=", meta.time, " | orig.dd=", dd.orig)
+  ) %>% select(Year, Month, Day, Hour, Minute, Value=dd, meta)
+
+
+head(df.dd)
+
+var <- "dd"
+
+write_sef_f(
+  as.data.frame(df.dd),
+  outfile = outfile.name(name, var, df.dd, TRUE, obs_name="_PerezLasso_"),
+  outpath = '/scratch3/PALAEO-RA/daily_data/final/Cadiz',
+  cod     = code,
+  lat     = lat,
+  lon     = lon,
+  alt     = alt,
+  sou     = source,
+  link    = link,
+  nam     = name,
+  var     = var,
+  stat    = "point",
+  units   = units(var),
+  metaHead = metaHead,
+  meta    = df.dd$meta,
+  keep_na = F
+)
+
+
+# Cadiz_Diario-1816-1830 --------------------------------------------------
+
+raw <- read_excel(file, sheet=9, skip=8)
+name <- "Cadiz"
+lat <- 36 + 31/60
+lon <- -(6 + 17/60)
+alt <- 13
+code <- "Ca1816-1830"
+source <- "Diario Comercial de Cádiz (1802-1830), Cádiz Library, sgn: FL-PP-Est.59. http://www.bibliotecavirtualdeandalucia.es"
+
+df <- raw %>%
+  rename(
+    ta.orig = `T(ºF)`
+  ) %>%
+  mutate(
+    Minute = 0,
+    ta = round((ta.orig-32)/1.8, 1),
+    
+    dd.norm = dd_normalize(W),
+    dd = dd2deg(dd.norm),
+    
+    meta.time = paste0("orig.time=", Hour),
+    meta.ta = paste0(meta.time, " | orig.ta=", ta.orig, "F"),
+    meta.dd = paste0(meta.time, " | orig.dd=", W)
+  ) %>%
+  select(Year, Month, Day, Hour, Minute, ta, dd, meta.ta, meta.dd)
+
+head(df)
+
+meta_map  <- list(ta = df$meta.ta, dd = df$meta.dd)
+base_cols <- df[c("Year","Month","Day","Hour","Minute")]
+vars <- c("ta", "dd")
+
+for (var in vars) {
+  meta  <- meta_map[[var]]
+  dat   <- cbind(base_cols, setNames(df[var], var))
+  write_sef_f(
+    dat,
+    outfile = outfile.name(name, var, df, TRUE),
+    outpath = '/scratch3/PALAEO-RA/daily_data/final/Cadiz',
+    cod     = code,
+    lat     = lat,
+    lon     = lon,
+    alt     = alt,
+    sou     = source,
+    link    = link,
+    nam     = name,
+    var     = var,
+    stat    = "point",
+    units   = units(var),
+    meta    = meta,
+    time_offset = time.offset(lon),
+    keep_na = F
+  )
+}
 
