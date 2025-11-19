@@ -40,18 +40,45 @@ time.offset <- function(lon) {as.numeric(lon)*12/180}
 
 # outfile.name ----------------------------------------------------------
 
-outfile.name <- function(name, var, df, subdaily=T) {
-  subdaily.str <- ifelse(subdaily, "subdaily", "daily")
-  paste0(name,"_",get_date_range(df), "_", var,"_", subdaily.str)
+#' Create standardized output filenames for observation data
+#'
+#' @param name Character. Base name of the dataset or station (e.g. "Sevilla").
+#' @param var Character. Variable identifier to include (e.g. "ta", "p", "dd").
+#' @param df Data frame. Must include a date column so that `get_date_range(df)` works.
+#' @param subdaily Logical or character. 
+#'   - If TRUE → adds "subdaily"  
+#'   - If FALSE → adds "daily"  
+#'   - If a character (e.g. "noon", "hourly") → that value is used directly.
+#' @param obs_name Character. Optional additional label (default "_").
+#'
+#' @return A character string with the constructed filename, e.g.  
+#'   `"Sevilla_1806-1834_ta_subdaily"`
+#'
+#' @examples
+#' outfile.name("Sevilla", "ta", df, TRUE, obs_name="_JMChacon_")
+#' outfile.name("Sevilla", "ta", df, FALSE)
+#' outfile.name("Sevilla", "ta", df, subdaily = "noon")
+
+outfile.name <- function(name, var, df, subdaily=TRUE, obs_name = "_") {
+  if (is.logical(subdaily)) {
+    subdaily.str <- if (subdaily) "subdaily" else "daily"
+  } else if (is.character(subdaily)) {
+    subdaily.str <- subdaily
+  } else {
+    subdaily.str <- "unknown"
+  }
+  paste0(name,obs_name, get_date_range(df), "_", var,"_", subdaily.str)
 }
 
 units <- function(var) {
   case_when(
     var == "ta" ~ "C",
     var == "p"  ~ "hPa",
-    var == "dd" ~ "deg",
+    var == "dd" ~ "degree",
     var == "rr" ~ "mm",
-    var == "rh" ~ "perc",
+    var == "rh" ~ "%",
+    var == "Tx" ~ "C",
+    var == "Tn" ~ "C",
     T ~ "unknown"
   )
 }
