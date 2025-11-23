@@ -6,14 +6,18 @@ How the qualityf control files in this directory fit together and the order to r
 
 1. `qc_find_files.py`: Normalises filenames based on whether QC metadata in the SEF header. → Run this first to ensure header ↔ filename consistency.
 2. `qc_check.py`: Checks headers of all SEFs, and produces three lists:
- - files needing QC
+ - files needing QC → The important output for the next step is files_no_qc.txt.
  - files already QC’d
  - files with unit or variable name problems
-    → The important output for the next step is files_no_qc.txt.
-3. `qc_files.R`: Runs dataresqc QC on all files listed in files_no_qc.txt, writes QC results, and applies the flags.
-4. `qc_empty_files_list.py` After QC, lists which QC output files are empty vs non-empty.
 
-**TO-DO**: run the qcs on step 3 and do a step 5 so that the files with emtpy qc count as qc'd.
+3. `qc_create_files.R`: Runs dataresqc QC on all files listed in files_no_qc.txt, writes QC results, and applies the flags.
+If the qc file is empty, it still executes the writing flag operation, which is equivalent to saying that it updates the header
+to mark it as qc without adding any flag.
+4. `qc_list_empty_files.py` After QC, lists which QC output files are empty vs non-empty.
+5. `qc_replace_files.R`. Now the code is finding whether the QC'd files match the origs (except for the QC part).
+The next step will be 
+
+**TO-DO**: Replace normal files with QC'd files.
 
 ## Description of the stations
 

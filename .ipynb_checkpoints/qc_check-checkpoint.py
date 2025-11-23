@@ -63,10 +63,11 @@ for subdir, _, files in os.walk(root):
                 files_units_problems.append(f"{os.path.relpath(path, root)}\t{units}")
                 print(f"Units problem in file: {os.path.relpath(path, root)} with units: {units}")
             else:
-                if "qc" in meta.lower():
+                if "qc" in meta.lower(): 
                     files_yes_qc.append(os.path.relpath(path, root))
                 else:
-                    files_no_qc.append(os.path.relpath(path, root))
+                    if vbl not in {"w", "eee"}: # we don't want vbls that can't be qc'd.
+                        files_no_qc.append(os.path.relpath(path, root))
         else:
             print(os.path.relpath(path, root), " unvalid variable: ", vbl)
 
@@ -75,10 +76,10 @@ for subdir, _, files in os.walk(root):
 #     print(f)
 
 with open('/scratch3/PALAEO-RA/daily_data/tmp/files_no_qc.txt', 'w') as f:
-    f.write("\n".join(files_no_qc))
+    f.write("\n".join(files_no_qc) + "\n")
 
 with open('/scratch3/PALAEO-RA/daily_data/tmp/files_yes_qc.txt', 'w') as f:
-    f.write("\n".join(files_yes_qc))
+    f.write("\n".join(files_yes_qc) + "\n")
 
 with open('/scratch3/PALAEO-RA/daily_data/tmp/files_units_problems.txt', 'w') as f:
-    f.write("\n".join(files_units_problems))
+    f.write("\n".join(files_units_problems) + "\n")

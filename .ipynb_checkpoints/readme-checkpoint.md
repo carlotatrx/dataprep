@@ -6,10 +6,10 @@ How the qualityf control files in this directory fit together and the order to r
 
 1. `qc_find_files.py`: Normalises filenames based on whether QC metadata in the SEF header. → Run this first to ensure header ↔ filename consistency.
 2. `qc_check.py`: Checks headers of all SEFs, and produces three lists:
- - files needing QC
+ - files needing QC → The important output for the next step is files_no_qc.txt.
  - files already QC’d
  - files with unit or variable name problems
-    → The important output for the next step is files_no_qc.txt.
+
 3. `qc_files.R`: Runs dataresqc QC on all files listed in files_no_qc.txt, writes QC results, and applies the flags.
 4. `qc_empty_files_list.py` After QC, lists which QC output files are empty vs non-empty.
 
