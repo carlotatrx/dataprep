@@ -18,7 +18,7 @@ sink(log_conn, type = "output")
 sink(log_conn, type = "message")
 
 # Loop over all files
-for (f in files[441:length(files)]) {
+for (f in files[1:length(files)]) {
   infile <- glue("{indir}/{f}")
   basename_noext <- tools::file_path_sans_ext(basename(infile))
   qcfile <- glue("{outdir}/qc_{basename_noext}.txt")
