@@ -228,7 +228,7 @@ for (i in seq_len(nrow(df))) {
   backup_path <- file.path(non_qcd_dir, orig_fname)
   new_path    <- file.path(orig_dir, qc_fname)
   
-  log_message(glue::glue("Processing {fname}"))
+  log_message(glue::glue("Processing {orig_fname}"))
   
   # Safety check: original exists
   if (!file.exists(orig_file)) {

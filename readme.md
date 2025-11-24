@@ -15,9 +15,6 @@ If the qc file is empty, it still executes the writing flag operation, which is 
 to mark it as qc without adding any flag.
 4. `qc_list_empty_files.py` After QC, lists which QC output files are empty vs non-empty.
 5. `qc_replace_files.R`. Now the code is finding whether the QC'd files match the origs (except for the QC part).
-The next step will be 
-
-**TO-DO**: Replace normal files with QC'd files.
 
 ## Description of the stations
 
