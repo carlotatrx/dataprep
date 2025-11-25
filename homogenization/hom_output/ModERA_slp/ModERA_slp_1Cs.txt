@@ -1,1 +1,0 @@
-0 changepoints in Series hom_input/ModERA_slp.dat sample:(1 YifD  19000101) 
