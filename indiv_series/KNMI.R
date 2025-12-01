@@ -282,7 +282,7 @@ df <- raw %>% mutate(
   
   ta  = round((taorig/10-32)*(5/9),1),
 
-  rr  = round(rrorig*.22, 1),
+  rr  = round(rrorig*2.2, 1),
   
   meta.ta = paste0(meta.time, " | orig.ta=", taorig/10, "F"),
   meta.dd = paste0(meta.time, " | orig.dd=", ddorig),
@@ -376,7 +376,7 @@ df <- raw %>% mutate(
   
   ta  = round((taorig/10-32)*(5/9),1),
   
-  rr  = round(rrorig*.22,1),
+  rr  = round(rrorig*2.2,1),
   
   meta.ta = paste0(meta.time, " | orig.ta=", taorig/10, "F"),
   meta.dd = paste0(meta.time, " | orig.dd=", ddorig),
@@ -486,7 +486,7 @@ df <- df %>% mutate(
   ta  = round((taorig/10-32)*(5/9),1),
   
   p   = round(convert_pressure(pinch, f=26.2, lat=lat, alt=alt, atb=ta),1),
-  rr  = round(rrorig*.22,1),
+  rr  = round(rrorig*2.2,1),
   
   meta.ta = paste0(meta.time, " | orig.ta=", taorig/10, "F"),
   meta.dd = paste0(meta.time, " | orig.dd=", ddorig),
@@ -696,7 +696,7 @@ df <- raw %>% mutate(
   pinch = ii + ll/12 + q/48,
   ta  = round((taorig/10-32)*(5/9),1),
   p   = round(convert_pressure(pinch, f=26.2, lat=lat, alt=alt, atb=ta),1),
-  rr  = round(rrorig*.22, 1),
+  rr  = round(rrorig*2.2, 1),
   
   meta.ta = paste0(meta.time, " | orig.ta=", taorig/10, "F"),
   meta.dd = paste0(meta.time, " | orig.dd=", ddorig),
@@ -800,7 +800,7 @@ df <- df %>% mutate(
   p   = round(convert_pressure(pinch, f=26.2, lat=lat, alt=alt, atb=ta),1),
   
   # precip
-  rr = round(as.numeric(rrorig)*.22, 1),
+  rr = round(as.numeric(rrorig)*2.2, 1),
   
   meta.time = paste0("obs.num=", obsnum),
   
@@ -1165,7 +1165,7 @@ df <- raw %>% mutate(
   dd  = dd2deg(ddnorm),
   
   # precip
-  rr = round(rrorig*.22,1),
+  rr = round(rrorig*2.2,1),
   
   meta.time = paste0("obs.num=", obsnum),
   meta.dd = paste0(meta.time, " | orig.dd=", ddorig),
