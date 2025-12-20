@@ -18,13 +18,14 @@ read_meta_nonofficial <- function (file = file.choose(), parameter = NULL) {
 # get_date_range ----------------------------------------------------------
 
 get_date_range <- function(df) {
-  start.date <- paste0(df$Year[1],
-                       sprintf("%02d", df$Month[1]),
-                       sprintf("%02d", df$Day[1]))
+  names(df) <- tolower(names(df))
+  start.date <- paste0(df$year[1],
+                       sprintf("%02d", df$month[1]),
+                       sprintf("%02d", df$day[1]))
   n <- nrow(df)
-  end.date   <- paste0(df$Year[n],
-                       sprintf("%02d", df$Month[n]),
-                       sprintf("%02d", df$Day[n]))
+  end.date   <- paste0(df$year[n],
+                       sprintf("%02d", df$month[n]),
+                       sprintf("%02d", df$day[n]))
   paste0(start.date, "-", end.date)
 }
 

@@ -65,12 +65,12 @@ library(readr)
 library(tidyr)
 library(dataresqc)
 library(purrr)
-source("/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/helpfun.R")
+source("/home/ccorbella/scratch2_symboliclink/code/dataprep/helpfun.R")
 
 source <- "KNMI"
 link   <- "https://www.knmi.nl/nederland-nu/klimatologie/daggegevens/antieke-waarnemingen"
 
-STATION_NAME <- "Amsterdam" # in case you only want to process 1 station
+STATION_NAME <- "DenHelder" # in case you only want to process 1 station
 OUTDIR <- "/scratch3/PALAEO-RA/daily_data/final/"
 
 time.offset <- function(lon) {as.numeric(lon)*12/180}
@@ -216,7 +216,7 @@ read_knmi_files <- function(files, skip, name_repair = TRUE) {
       "DD"      = "ddorig",
       "R"       = "rrorig",
       "U"       = "rh",
-      "RH"      = "rh",
+      "RH"      = "rrorig",
       "W2"      = "w2",
       "WW"      = "ww",
       "FH"      = "fh",
@@ -512,13 +512,13 @@ process_station <- function(st_row) {
   summarise_station(st_row$name, OUTDIR, df_vars)
   
   write_sef_all_vars(
-    df_vars, 
-    name = st_row$name, 
+    df_vars,
+    name = st_row$name,
     code = st_row$code,
-    lat = st_row$lat, 
-    lon = st_row$lon, 
+    lat = st_row$lat,
+    lon = st_row$lon,
     alt = st_row$alt,
-    outdir = OUTDIR, 
+    outdir = OUTDIR,
     meta_head_p   = st_row$meta_head_p,
     meta_head_all = st_row$meta_head_all,
     time_offset_bool = has_hour
@@ -558,5 +558,3 @@ for (i in seq_len(nrow(stations))) {
   st_row <- stations[i, ]
   process_station(st_row)
 }
-
-

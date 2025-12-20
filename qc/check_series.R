@@ -1,13 +1,28 @@
 rm(list=ls())
 library(dataresqc)
 library(hclim)
-source('/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/helpfun.R')
+source('/home/ccorbella/scratch2_symboliclink/code/dataprep/helpfun.R')
 library(glue)
 
 # bash script to change filenames
 # for file in *_corrected.tsv; do [ -e "$file" ] || continue; new_name="${file/_corrected.tsv/.tsv}"; mv "$file" "$new_name"; done
 
-indir <- '/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed'
+indir <- '/scratch3/PALAEO-RA/daily_data/final/'
+
+### quick one
+dirname <- "Gurzelen/"
+filename <- "Gurzelen_17710101-17841231_dd_subdaily.tsv"
+
+qc(glue(indir,dirname,filename), outpath=glue(indir, dirname))
+
+qcfilename <- "qc_GCOS_Gurzelen_dd_subdaily.txt"
+write_flags_f(infile=glue(indir,dirname,filename),
+              qcfile=glue(indir,dirname, qcfilename),
+              outpath=glue(indir,dirname),
+              match=FALSE)
+
+###
+
 outdir <- '/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/sef_tests/'
 dir <- '/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed'
 

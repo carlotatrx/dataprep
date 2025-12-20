@@ -6,7 +6,48 @@ library(lubridate)
 library(tidyr)
 library(purrr)
 library(stringr)
-source('/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/helpfun.R')
+source('/home/ccorbella/scratch2_symboliclink/code/dataprep/helpfun.R')
+
+
+# Pressure_Cornes ---------------------------------------------------------
+
+file <- '/scratch3/PALAEO-RA/daily_data/original/Paris/paris_MSLP_1670_2007.txt'
+
+raw <- suppressWarnings(read.table(
+  file = file,
+  skip = 16,
+  #col_types = cols(.default = col_guess()),
+  col.names = c("Year", "Month", "Day", "p.orig", "p.hom", "diff", "code"),
+  header = FALSE,
+  na.strings = NA
+))
+
+head(raw)
+
+df <- raw %>%
+  mutate(
+    Hour = NA_integer_,
+    Minute = NA_integer_,
+  ) %>% select(Year, Month, Day, Hour, Minute, p.orig)
+
+write_sef_f(as.data.frame(df),
+            outfile=paste0('Paris_Cornes_', get_date_range(df), "_p_daily.tsv"),
+            outpath="/scratch3/PALAEO-RA/daily_data/final/Paris/",
+            variable = "p",
+            cod = "Paris_Morin",
+            nam = "Paris",
+            lat = 48.86,
+            lon = 2.337,
+            alt = 67,
+            sou = "Cornes, R. C., Jones, P. D., Briffa, K. R. and Osborn, T. J. (2012) A daily series of mean sea-level pressure for Paris, 1670-2007. International Journal of Climatology 32, 1135-1150. doi: 10.1002/joc.2349",
+            link = "https://crudata.uea.ac.uk/cru/data/parislondon/",
+            units = "hPa",
+            period = "day",
+            stat = "mean",
+            metaHead = "PTC=Y | PGC=Y | a homogenized version exists, see `raw` file",
+            keep_na = FALSE)
+
+# Precipitation_Pliemon ---------------------------------------------------
 
 file <- '/scratch3/PALAEO-RA/daily_data/original/Paris/Supplement_dataset_Pliemon_etal_CP_2023.txt'
 
