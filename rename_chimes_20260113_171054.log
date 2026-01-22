@@ -1,0 +1,175 @@
+Root: /scratch3/PALAEO-RA/daily_data/final/
+Log:  rename_chimes_20260113_171054.log
+
+RENAMED:
+  /scratch3/PALAEO-RA/daily_data/final/Winterthur/CHIMES_ZH03_Winterthur_Unknown_18080701-18160430_ta_subdaily_qc.tsv
+  -> /scratch3/PALAEO-RA/daily_data/final/Winterthur/CHIMES_Winterthur_Unknown_18080701-18160430_ta_subdaily_qc.tsv
+RENAMED:
+  /scratch3/PALAEO-RA/daily_data/final/Winterthur/CHIMES_ZH03_Winterthur_Furrer_18571101-18670228_p_subdaily_qc.tsv
+  -> /scratch3/PALAEO-RA/daily_data/final/Winterthur/CHIMES_Winterthur_Furrer_18571101-18670228_p_subdaily_qc.tsv
+RENAMED:
+  /scratch3/PALAEO-RA/daily_data/final/Winterthur/CHIMES_ZH03_Winterthur_Furrer_18610101-18640103_Tx_daily_qc.tsv
+  -> /scratch3/PALAEO-RA/daily_data/final/Winterthur/CHIMES_Winterthur_Furrer_18610101-18640103_Tx_daily_qc.tsv
+RENAMED:
+  /scratch3/PALAEO-RA/daily_data/final/Winterthur/CHIMES_ZH03_Winterthur_Furrer_18610101-18640225_Tn_daily_qc.tsv
+  -> /scratch3/PALAEO-RA/daily_data/final/Winterthur/CHIMES_Winterthur_Furrer_18610101-18640225_Tn_daily_qc.tsv
+RENAMED:
+  /scratch3/PALAEO-RA/daily_data/final/Winterthur/CHIMES_ZH03_Winterthur_Unknown_18080701-18160430_p_subdaily_qc.tsv
+  -> /scratch3/PALAEO-RA/daily_data/final/Winterthur/CHIMES_Winterthur_Unknown_18080701-18160430_p_subdaily_qc.tsv
+RENAMED:
+  /scratch3/PALAEO-RA/daily_data/final/Marschlins/CHIMES_GR04_Marschlins_18440201-18710731_p_bis_subdaily_qc.tsv
+  -> /scratch3/PALAEO-RA/daily_data/final/Marschlins/CHIMES_Marschlins_18440201-18710731_p_bis_subdaily_qc.tsv
+RENAMED:
+  /scratch3/PALAEO-RA/daily_data/final/Marschlins/CHIMES_GR04_Marschlins_18640201-18710731_ta_bis_subdaily_qc.tsv
+  -> /scratch3/PALAEO-RA/daily_data/final/Marschlins/CHIMES_Marschlins_18640201-18710731_ta_bis_subdaily_qc.tsv
+RENAMED:
+  /scratch3/PALAEO-RA/daily_data/final/Marschlins/CHIMES_GR04_Marschlins_17820101-18631130_ta_subdaily_qc.tsv
+  -> /scratch3/PALAEO-RA/daily_data/final/Marschlins/CHIMES_Marschlins_17820101-18631130_ta_subdaily_qc.tsv
+RENAMED:
+  /scratch3/PALAEO-RA/daily_data/final/Marschlins/CHIMES_GR04_Marschlins_18640201-18710731_ta_ter_subdaily_qc.tsv
+  -> /scratch3/PALAEO-RA/daily_data/final/Marschlins/CHIMES_Marschlins_18640201-18710731_ta_ter_subdaily_qc.tsv
+RENAMED:
+  /scratch3/PALAEO-RA/daily_data/final/Marschlins/CHIMES_GR04_Marschlins_17820101-18651021_p_subdaily_qc.tsv
+  -> /scratch3/PALAEO-RA/daily_data/final/Marschlins/CHIMES_Marschlins_17820101-18651021_p_subdaily_qc.tsv
+RENAMED:
+  /scratch3/PALAEO-RA/daily_data/final/Vevey/CHIMES_VD01_Vevey_18051201-18400815_p_subdaily_qc.tsv
+  -> /scratch3/PALAEO-RA/daily_data/final/Vevey/CHIMES_Vevey_18051201-18400815_p_subdaily_qc.tsv
+RENAMED:
+  /scratch3/PALAEO-RA/daily_data/final/Vevey/CHIMES_VD01_Vevey_18051201-18400815_ta_subdaily_qc.tsv
+  -> /scratch3/PALAEO-RA/daily_data/final/Vevey/CHIMES_Vevey_18051201-18400815_ta_subdaily_qc.tsv
+RENAMED:
+  /scratch3/PALAEO-RA/daily_data/final/Schaffhausen/CHIMES_SH01_Schaffhausen_17940101-18450903_ta_subdaily_qc.tsv
+  -> /scratch3/PALAEO-RA/daily_data/final/Schaffhausen/CHIMES_Schaffhausen_17940101-18450903_ta_subdaily_qc.tsv
+RENAMED:
+  /scratch3/PALAEO-RA/daily_data/final/Schaffhausen/CHIMES_SH01_Schaffhausen_17940101-18451028_p_subdaily_qc.tsv
+  -> /scratch3/PALAEO-RA/daily_data/final/Schaffhausen/CHIMES_Schaffhausen_17940101-18451028_p_subdaily_qc.tsv
+RENAMED:
+  /scratch3/PALAEO-RA/daily_data/final/Schaffhausen/CHIMES_SH01_Schaffhausen_18280705-18451028_ta_bis_subdaily_qc.tsv
+  -> /scratch3/PALAEO-RA/daily_data/final/Schaffhausen/CHIMES_Schaffhausen_18280705-18451028_ta_bis_subdaily_qc.tsv
+RENAMED:
+  /scratch3/PALAEO-RA/daily_data/final/Morges/CHIMES_VD04_Morges_18491101-18541130_rr_daily_qc.tsv
+  -> /scratch3/PALAEO-RA/daily_data/final/Morges/CHIMES_Morges_18491101-18541130_rr_daily_qc.tsv
+RENAMED:
+  /scratch3/PALAEO-RA/daily_data/final/Morges/CHIMES_VD04_Morges_18491101-18541130_Tx_daily_qc.tsv
+  -> /scratch3/PALAEO-RA/daily_data/final/Morges/CHIMES_Morges_18491101-18541130_Tx_daily_qc.tsv
+RENAMED:
+  /scratch3/PALAEO-RA/daily_data/final/Morges/CHIMES_VD04_Morges_18491101-18541130_p_subdaily_qc.tsv
+  -> /scratch3/PALAEO-RA/daily_data/final/Morges/CHIMES_Morges_18491101-18541130_p_subdaily_qc.tsv
+RENAMED:
+  /scratch3/PALAEO-RA/daily_data/final/Morges/CHIMES_VD04_Morges_18491101-18541130_ta_subdaily_qc.tsv
+  -> /scratch3/PALAEO-RA/daily_data/final/Morges/CHIMES_Morges_18491101-18541130_ta_subdaily_qc.tsv
+RENAMED:
+  /scratch3/PALAEO-RA/daily_data/final/Morges/CHIMES_VD04_Morges_18491101-18541130_Tn_daily_qc.tsv
+  -> /scratch3/PALAEO-RA/daily_data/final/Morges/CHIMES_Morges_18491101-18541130_Tn_daily_qc.tsv
+RENAMED:
+  /scratch3/PALAEO-RA/daily_data/final/Herisau/CHIMES_AR01_Herisau_Nef_18220101-18440127_p_subdaily_qc.tsv
+  -> /scratch3/PALAEO-RA/daily_data/final/Herisau/CHIMES_Herisau_Nef_18220101-18440127_p_subdaily_qc.tsv
+RENAMED:
+  /scratch3/PALAEO-RA/daily_data/final/Herisau/CHIMES_AR01_Herisau_Merz_18270207-18280514_Tn_daily_qc.tsv
+  -> /scratch3/PALAEO-RA/daily_data/final/Herisau/CHIMES_Herisau_Merz_18270207-18280514_Tn_daily_qc.tsv
+RENAMED:
+  /scratch3/PALAEO-RA/daily_data/final/Herisau/CHIMES_AR01_Herisau_Nef_18330101-18440127_Tn_daily_qc.tsv
+  -> /scratch3/PALAEO-RA/daily_data/final/Herisau/CHIMES_Herisau_Nef_18330101-18440127_Tn_daily_qc.tsv
+RENAMED:
+  /scratch3/PALAEO-RA/daily_data/final/Herisau/CHIMES_AR01_Herisau_Merz_18211001-18310630_p_subdaily_qc.tsv
+  -> /scratch3/PALAEO-RA/daily_data/final/Herisau/CHIMES_Herisau_Merz_18211001-18310630_p_subdaily_qc.tsv
+RENAMED:
+  /scratch3/PALAEO-RA/daily_data/final/Herisau/CHIMES_AR01_Herisau_Merz_18211001-18310630_ta_subdaily_qc.tsv
+  -> /scratch3/PALAEO-RA/daily_data/final/Herisau/CHIMES_Herisau_Merz_18211001-18310630_ta_subdaily_qc.tsv
+RENAMED:
+  /scratch3/PALAEO-RA/daily_data/final/Herisau/CHIMES_AR01_Herisau_Nef_18220101-18440110_ta_subdaily_qc.tsv
+  -> /scratch3/PALAEO-RA/daily_data/final/Herisau/CHIMES_Herisau_Nef_18220101-18440110_ta_subdaily_qc.tsv
+RENAMED:
+  /scratch3/PALAEO-RA/daily_data/final/Solothurn/CHIMES_SO01_Solothurn_18260311-18310430_p_subdaily_qc.tsv
+  -> /scratch3/PALAEO-RA/daily_data/final/Solothurn/CHIMES_Solothurn_18260311-18310430_p_subdaily_qc.tsv
+RENAMED:
+  /scratch3/PALAEO-RA/daily_data/final/Solothurn/CHIMES_SO01_Solothurn_18260311-18310430_ta_subdaily_qc.tsv
+  -> /scratch3/PALAEO-RA/daily_data/final/Solothurn/CHIMES_Solothurn_18260311-18310430_ta_subdaily_qc.tsv
+RENAMED:
+  /scratch3/PALAEO-RA/daily_data/final/Nufenen/CHIMES_GR11_Nufenen_18341206-18460730_ta_subdaily_qc.tsv
+  -> /scratch3/PALAEO-RA/daily_data/final/Nufenen/CHIMES_Nufenen_18341206-18460730_ta_subdaily_qc.tsv
+RENAMED:
+  /scratch3/PALAEO-RA/daily_data/final/Nufenen/CHIMES_GR11_Nufenen_18341206-18410728_p_subdaily_qc.tsv
+  -> /scratch3/PALAEO-RA/daily_data/final/Nufenen/CHIMES_Nufenen_18341206-18410728_p_subdaily_qc.tsv
+RENAMED:
+  /scratch3/PALAEO-RA/daily_data/final/Gottstatt/CHIMES_BE09_Gottstatt_18410101-18470228_ta_subdaily_qc.tsv
+  -> /scratch3/PALAEO-RA/daily_data/final/Gottstatt/CHIMES_Gottstatt_18410101-18470228_ta_subdaily_qc.tsv
+RENAMED:
+  /scratch3/PALAEO-RA/daily_data/final/Gottstatt/CHIMES_BE09_Gottstatt_18410101-18461201_p_subdaily_qc.tsv
+  -> /scratch3/PALAEO-RA/daily_data/final/Gottstatt/CHIMES_Gottstatt_18410101-18461201_p_subdaily_qc.tsv
+RENAMED:
+  /scratch3/PALAEO-RA/daily_data/final/Weissenstein/CHIMES_SO02_Weissenstein_18280901-18310430_ta_subdaily_qc.tsv
+  -> /scratch3/PALAEO-RA/daily_data/final/Weissenstein/CHIMES_Weissenstein_18280901-18310430_ta_subdaily_qc.tsv
+RENAMED:
+  /scratch3/PALAEO-RA/daily_data/final/Weissenstein/CHIMES_SO02_Weissenstein_18280901-18310430_p_subdaily_qc.tsv
+  -> /scratch3/PALAEO-RA/daily_data/final/Weissenstein/CHIMES_Weissenstein_18280901-18310430_p_subdaily_qc.tsv
+RENAMED:
+  /scratch3/PALAEO-RA/daily_data/final/Tegerfelden/CHIMES_AG02_Tegerfelden_18430101-18531231_ta_subdaily_qc.tsv
+  -> /scratch3/PALAEO-RA/daily_data/final/Tegerfelden/CHIMES_Tegerfelden_18430101-18531231_ta_subdaily_qc.tsv
+RENAMED:
+  /scratch3/PALAEO-RA/daily_data/final/Kuesnacht/CHIMES_ZH08_Kuesnacht_18520111-18561011_p_subdaily_qc.tsv
+  -> /scratch3/PALAEO-RA/daily_data/final/Kuesnacht/CHIMES_Kuesnacht_18520111-18561011_p_subdaily_qc.tsv
+RENAMED:
+  /scratch3/PALAEO-RA/daily_data/final/Uetliberg/CHIMES_ZH04_Uetliberg_18631001-18631130_rr_daily_qc.tsv
+  -> /scratch3/PALAEO-RA/daily_data/final/Uetliberg/CHIMES_Uetliberg_18631001-18631130_rr_daily_qc.tsv
+RENAMED:
+  /scratch3/PALAEO-RA/daily_data/final/Uetliberg/CHIMES_ZH04_Uetliberg_18520201-18630930_Tn_daily_qc.tsv
+  -> /scratch3/PALAEO-RA/daily_data/final/Uetliberg/CHIMES_Uetliberg_18520201-18630930_Tn_daily_qc.tsv
+RENAMED:
+  /scratch3/PALAEO-RA/daily_data/final/Uetliberg/CHIMES_ZH04_Uetliberg_18410801-18631130_p_subdaily_qc.tsv
+  -> /scratch3/PALAEO-RA/daily_data/final/Uetliberg/CHIMES_Uetliberg_18410801-18631130_p_subdaily_qc.tsv
+RENAMED:
+  /scratch3/PALAEO-RA/daily_data/final/Uetliberg/CHIMES_ZH04_Uetliberg_18410801-18631130_ta_subdaily_qc.tsv
+  -> /scratch3/PALAEO-RA/daily_data/final/Uetliberg/CHIMES_Uetliberg_18410801-18631130_ta_subdaily_qc.tsv
+RENAMED:
+  /scratch3/PALAEO-RA/daily_data/final/Saanen/CHIMES_BE07_Saanen_18600901-18620228_p_subdaily_qc.tsv
+  -> /scratch3/PALAEO-RA/daily_data/final/Saanen/CHIMES_Saanen_18600901-18620228_p_subdaily_qc.tsv
+RENAMED:
+  /scratch3/PALAEO-RA/daily_data/final/Saanen/CHIMES_BE07_Saanen_18600901-18620228_ta_subdaily_qc.tsv
+  -> /scratch3/PALAEO-RA/daily_data/final/Saanen/CHIMES_Saanen_18600901-18620228_ta_subdaily_qc.tsv
+RENAMED:
+  /scratch3/PALAEO-RA/daily_data/final/Luzern/CHIMES_LU01_Luzern_Schwytzer_18440101-18641231_p_subdaily_qc.tsv
+  -> /scratch3/PALAEO-RA/daily_data/final/Luzern/CHIMES_Luzern_Schwytzer_18440101-18641231_p_subdaily_qc.tsv
+RENAMED:
+  /scratch3/PALAEO-RA/daily_data/final/Luzern/CHIMES_LU01_Luzern_Ineichen_18260401-18320430_p_subdaily_qc.tsv
+  -> /scratch3/PALAEO-RA/daily_data/final/Luzern/CHIMES_Luzern_Ineichen_18260401-18320430_p_subdaily_qc.tsv
+RENAMED:
+  /scratch3/PALAEO-RA/daily_data/final/Luzern/CHIMES_LU01_Luzern_Schwytzer_18440101-18641231_ta_subdaily_qc.tsv
+  -> /scratch3/PALAEO-RA/daily_data/final/Luzern/CHIMES_Luzern_Schwytzer_18440101-18641231_ta_subdaily_qc.tsv
+RENAMED:
+  /scratch3/PALAEO-RA/daily_data/final/Luzern/CHIMES_LU01_Luzern_Ineichen_18260401-18320430_ta_subdaily_qc.tsv
+  -> /scratch3/PALAEO-RA/daily_data/final/Luzern/CHIMES_Luzern_Ineichen_18260401-18320430_ta_subdaily_qc.tsv
+RENAMED:
+  /scratch3/PALAEO-RA/daily_data/final/Zug/CHIMES_ZG01_Zug_18430601-18731231_ta_subdaily_qc.tsv
+  -> /scratch3/PALAEO-RA/daily_data/final/Zug/CHIMES_Zug_18430601-18731231_ta_subdaily_qc.tsv
+RENAMED:
+  /scratch3/PALAEO-RA/daily_data/final/Neuchatel/CHIMES_NE01_Neuchatel_17530101-17821222_ta_subdaily_qc.tsv
+  -> /scratch3/PALAEO-RA/daily_data/final/Neuchatel/CHIMES_Neuchatel_17530101-17821222_ta_subdaily_qc.tsv
+RENAMED:
+  /scratch3/PALAEO-RA/daily_data/final/Neuchatel/CHIMES_NE01_Neuchatel_17530101-17821222_p_subdaily_qc.tsv
+  -> /scratch3/PALAEO-RA/daily_data/final/Neuchatel/CHIMES_Neuchatel_17530101-17821222_p_subdaily_qc.tsv
+RENAMED:
+  /scratch3/PALAEO-RA/daily_data/final/Lausanne/CHIMES_VD02_Lausanne_Verdeil_17830123-17831231_ta_subdaily_qc.tsv
+  -> /scratch3/PALAEO-RA/daily_data/final/Lausanne/CHIMES_Lausanne_Verdeil_17830123-17831231_ta_subdaily_qc.tsv
+RENAMED:
+  /scratch3/PALAEO-RA/daily_data/final/Lausanne/CHIMES_VD02_Lausanne_Verdeil_17830123-17831231_p_subdaily_qc.tsv
+  -> /scratch3/PALAEO-RA/daily_data/final/Lausanne/CHIMES_Lausanne_Verdeil_17830123-17831231_p_subdaily_qc.tsv
+RENAMED:
+  /scratch3/PALAEO-RA/daily_data/final/Lausanne/CHIMES_VD02_Lausanne_Unknown_18080201-18091231_ta_subdaily_qc.tsv
+  -> /scratch3/PALAEO-RA/daily_data/final/Lausanne/CHIMES_Lausanne_Unknown_18080201-18091231_ta_subdaily_qc.tsv
+RENAMED:
+  /scratch3/PALAEO-RA/daily_data/final/Utzenstorf/CHIMES_BE08_Utzenstorf_18340101-18401231_ta_subdaily_qc.tsv
+  -> /scratch3/PALAEO-RA/daily_data/final/Utzenstorf/CHIMES_Utzenstorf_18340101-18401231_ta_subdaily_qc.tsv
+RENAMED:
+  /scratch3/PALAEO-RA/daily_data/final/Utzenstorf/CHIMES_BE08_Utzenstorf_18340101-18401231_p_subdaily_qc.tsv
+  -> /scratch3/PALAEO-RA/daily_data/final/Utzenstorf/CHIMES_Utzenstorf_18340101-18401231_p_subdaily_qc.tsv
+RENAMED:
+  /scratch3/PALAEO-RA/daily_data/final/StGallen/CHIMES_SG01_StGallen_18130101-18530607_ta_subdaily_qc.tsv
+  -> /scratch3/PALAEO-RA/daily_data/final/StGallen/CHIMES_StGallen_18130101-18530607_ta_subdaily_qc.tsv
+RENAMED:
+  /scratch3/PALAEO-RA/daily_data/final/StGallen/CHIMES_SG01_StGallen_18130101-18530607_p_subdaily_qc.tsv
+  -> /scratch3/PALAEO-RA/daily_data/final/StGallen/CHIMES_StGallen_18130101-18530607_p_subdaily_qc.tsv
+RENAMED:
+  /scratch3/PALAEO-RA/daily_data/final/Gotthard/CHIMES_TI01_Gotthard_17290101-17921231_p_subdaily_qc.tsv
+  -> /scratch3/PALAEO-RA/daily_data/final/Gotthard/CHIMES_Gotthard_17290101-17921231_p_subdaily_qc.tsv
+

@@ -40,18 +40,19 @@ df <- df %>%
     Hour=NA_integer_,
     Minute=NA_integer_,
     
-    ta = case_when(
+    ta.orig = case_when(
       !is.na(ta0) ~ 0,
       !is.na(ta_plus) ~ as.numeric(ta_plus),
       !is.na(ta_minus) ~ -as.numeric(ta_minus),
       TRUE ~ NA
     ),
-    
+    ta = round((ta.orig-12)/4,1),
     p = round(convert_pressure(p=(pzoll+plinien/12), f=27.07, lat = lat, alt = alt), 1),
     
     meta.time = paste0("obs.num=", obs.num),
+    meta.ta = paste0(meta.time, " | orig.ta=",ta.orig,"MdC"),
     meta.p = paste0(meta.time, " | orig.p=", pzoll, "in", plinien, "l")
-  ) %>% select(Year, Month, Day, Hour, Minute, ta, p, meta.time, meta.p)
+  ) %>% select(Year, Month, Day, Hour, Minute, ta, p,meta.ta, meta.p)
 
 head(df)
 
@@ -73,9 +74,9 @@ write_sef_f(
   nam     = name,
   var     = var,
   stat    = "point",
-  units   = "unknown",
-  meta    = df$meta.time,
-  metaHead = paste0(metaHead, " | Instrument=Thermometer MdC"),
+  units   = "C",
+  meta    = df$meta.ta,
+  metaHead = paste0(metaHead, " | Instrument=Micheli du Crest thermometer | conversion=(orig.ta-12)/4"),
   keep_na = TRUE
 )
 

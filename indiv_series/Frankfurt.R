@@ -140,7 +140,7 @@ df.all <- df.all %>%
     p.together = if_else(
       is.na(p.in),
       NA_real_,
-      round(convert_pressure(p.zoll + 4 + p.in/100, f=27.07, lat=lat, atb=ta.C, alt=ele),1)  # consider the offset for realistic values
+      round(convert_pressure(p.zoll + p.in/100, f=27.07, lat=lat, atb=ta.C, alt=ele),1)  # consider the offset for realistic values
     ),
     
     meta.dd = if_else(

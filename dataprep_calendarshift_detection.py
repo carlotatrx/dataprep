@@ -206,7 +206,7 @@ def evaluate_shift_correlation(df, cutoffs, shift):
     return cutoffs, corrs
 
 def plot_combined_shift_sensitivity(station_name, cutoffs, shift, corrs_ta, corrs_p,
-                                    file_savedir='/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/image/Ukraine_calendar_shifts'):
+                                    file_savedir='/home/ccorbella/scratch2_symboliclink/code/dataprep/image/Ukraine_calendar_shifts'):
     """
     Plot temperature and pressure correlation vs. shift cutoff on the same figure.
     """
@@ -225,7 +225,7 @@ def plot_combined_shift_sensitivity(station_name, cutoffs, shift, corrs_ta, corr
 
 
 def plot_lag_correlation(lags, corrs, station_name, var,
-                         file_savedir='/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/image/Ukraine_calendar_shifts'):
+                         file_savedir='/home/ccorbella/scratch2_symboliclink/code/dataprep/image/Ukraine_calendar_shifts'):
     plt.figure(figsize=(8, 5))
     ax = plt.gca()
     plt.plot(lags, corrs, marker="o", linestyle="-")
@@ -243,7 +243,7 @@ def plot_lag_correlation(lags, corrs, station_name, var,
 
 
 def plot_rolling_lag(df_result, station_name, var, expected_shift=None,
-                     file_savedir='/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/image/Ukraine_calendar_shifts'):
+                     file_savedir='/home/ccorbella/scratch2_symboliclink/code/dataprep/image/Ukraine_calendar_shifts'):
     plt.figure(figsize=(12, 6))
     plt.plot(df_result['Date'], df_result['Best_Lag'], marker='o', linestyle='-', label='Best Lag')
     if expected_shift is not None:
@@ -272,7 +272,7 @@ lat_Lugansk, lon_Lugansk     = 48.565556, 39.2275    # for Lugansk
 ########## DNIPRO ######################################################################
 df_merged_Dnipro = create_df_merged(lat_station=lat_Dnipro, lon_station=lon_Dnipro,
                                     ds_20CR=ds_20CR_ta,
-                                    filename='/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/Dnipro_ta_subdaily.tsv')
+                                    filename='/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/Dnipro_ta_subdaily_qc_utc.tsv')
                              
 print('analyzing Dnipro station...')
 lags_Dnipro, corrs_Dnipro = compute_lag_corr(df_merged_Dnipro, max_lag=16)
@@ -284,12 +284,12 @@ plot_rolling_lag(rolling_Dnipro, station_name='Dnipro', var='ta', expected_shift
 
 arr = rolling_Dnipro.to_numpy()
 arr[:, 0] = [ts.strftime('%Y-%m-%d') for ts in arr[:, 0]]
-np.savetxt('/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/image/Ukraine_calendar_shifts/Dnipro_bestlag_ta.txt', arr,
+np.savetxt('/home/ccorbella/scratch2_symboliclink/code/dataprep/image/Ukraine_calendar_shifts/Dnipro_bestlag_ta.txt', arr,
            fmt='%s %d %.3f')
 ########## KAMYANETS ######################################################################
 df_merged_Kamyanets = create_df_merged(lat_station=lat_Kamyanets, lon_station=lon_Kamyanets,
                                        ds_20CR=ds_20CR_ta,
-                                       filename='/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/Kamyanets_ta_subdaily.tsv')
+                                       filename='/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/Kamyanets_ta_subdaily_qc_utc.tsv')
 print('analyzing Kamyanets station...')
 lags_Kamyanets, corrs_Kamyanets = compute_lag_corr(df_merged_Kamyanets)
 plot_lag_correlation(lags_Kamyanets, corrs_Kamyanets, var='ta', station_name='Kamyanets')
@@ -300,7 +300,7 @@ plot_rolling_lag(rolling_Kamyanets, station_name='Kamyanets', var='ta', expected
 ########## KHARKIV ######################################################################
 df_merged_Kharkiv = create_df_merged(lat_station=lat_Kharkiv, lon_station=lon_Kharkiv,
                                      ds_20CR=ds_20CR_ta,
-                                     filename='/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/Kharkiv_ta_subdaily.tsv')
+                                     filename='/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/Kharkiv_ta_subdaily_qc_utc.tsv')
 print('analyzing Kharkiv station...')
 lags_Kharkiv, corrs_Kharkiv = compute_lag_corr(df_merged_Kharkiv)
 plot_lag_correlation(lags_Kharkiv, corrs_Kharkiv, var='ta', station_name='Kharkiv')
@@ -311,7 +311,7 @@ plot_rolling_lag(rolling_Kharkiv, station_name='Kharkiv', var='ta', expected_shi
 ########## KHERSON ######################################################################
 df_merged_Kherson = create_df_merged(lat_station=lat_Kherson, lon_station=lon_Kherson,
                                      ds_20CR=ds_20CR_ta,
-                                     filename='/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/Kherson_ta_subdaily.tsv')
+                                     filename='/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/Kherson_ta_subdaily_qc_utc.tsv')
 print('analyzing Kherson station...')
 lags_Kherson, corrs_Kherson = compute_lag_corr(df_merged_Kherson)
 plot_lag_correlation(lags_Kherson, corrs_Kherson, var='ta', station_name='Kherson')
@@ -322,7 +322,7 @@ plot_rolling_lag(rolling_Kherson, station_name='Kherson', var='ta', expected_shi
 ######## KYÍV #############################################################################
 df_merged_Kyiv = create_df_merged(lat_station=lat_Kyiv, lon_station=lon_Kyiv,
                                   ds_20CR=ds_20CR_ta,
-                                  filename='/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/Kyiv_ta_subdaily.tsv')
+                                  filename='/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/Kyiv_ta_subdaily_qc_utc.tsv')
 # Compute correlation for lags from -14 to +14 days for Kyív
 print('analyzing Kyív station...')
 lags_Kyiv, corrs_Kyiv = compute_lag_corr(df_merged_Kyiv)
@@ -334,7 +334,7 @@ plot_rolling_lag(rolling_Kyiv, station_name='Kyív', var='ta', expected_shift=0)
 ######## LUGANSK #############################################################################
 df_merged_Lugansk = create_df_merged(lat_station=lat_Lugansk, lon_station=lon_Lugansk,
                                    ds_20CR=ds_20CR_ta,
-                                   filename='/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/Lugansk_ta_subdaily.tsv')
+                                   filename='/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/Lugansk_ta_subdaily_qc_utc.tsv')
 # Compute correlation for lags from -14 to +14 days for Kyív
 print('analyzing Lugansk station...')
 lags_Lugansk, corrs_Lugansk = compute_lag_corr(df_merged_Lugansk)
@@ -346,7 +346,7 @@ plot_rolling_lag(rolling_Lugansk, station_name='Lugansk', var='ta', expected_shi
 ######## ODESA #############################################################################
 df_merged_Odesa = create_df_merged(lat_station=lat_Odesa, lon_station=lon_Odesa,
                                    ds_20CR=ds_20CR_ta,
-                                   filename='/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/Odesa_ta_subdaily.tsv')
+                                   filename='/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/Odesa_ta_subdaily_qc_utc.tsv')
 # Compute correlation for lags from -14 to +14 days for Kyív
 print('analyzing Odesa station...')
 lags_Odesa, corrs_Odesa = compute_lag_corr(df_merged_Odesa)
@@ -359,7 +359,7 @@ plot_rolling_lag(rolling_Odesa, station_name='Odesa', var='ta', expected_shift=0
 ######## POLTAVA #############################################################################
 df_merged_Poltava = create_df_merged(lat_station=lat_Poltava, lon_station=lon_Poltava,
                                   ds_20CR=ds_20CR_ta,
-                                  filename='/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/Poltava_ta_subdaily.tsv')
+                                  filename='/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/Poltava_ta_subdaily_qc_utc.tsv')
 # Compute correlation for lags from -14 to +14 days for Kyív
 print('analyzing Poltava station...')
 lags_Poltava, corrs_Poltava = compute_lag_corr(df_merged_Poltava)
@@ -375,7 +375,7 @@ plot_rolling_lag(rolling_Poltava, station_name='Poltava', var='ta', expected_shi
 ########## DNIPRO ######################################################################
 df_merged_Dnipro_p = create_df_merged_pressure(lat_station=lat_Dnipro, lon_station=lon_Dnipro,
                                     ds_20CR=ds_20CR_p,
-                                    filename='/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/Dnipro_p_subdaily.tsv')
+                                    filename='/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/Dnipro_p_subdaily_qc_utc.tsv')
                              
 print('analyzing Dnipro station...')
 lags_Dnipro, corrs_Dnipro = compute_lag_corr(df_merged_Dnipro_p, max_lag=16)
@@ -387,13 +387,13 @@ plot_rolling_lag(rolling_Dnipro, station_name='Dnipro', var='p', expected_shift=
 
 arr = rolling_Dnipro.to_numpy()
 arr[:, 0] = [ts.strftime('%Y-%m-%d') for ts in arr[:, 0]]
-np.savetxt('/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/image/Ukraine_calendar_shifts/Dnipro_bestlag_p.txt', arr,
+np.savetxt('/home/ccorbella/scratch2_symboliclink/code/dataprep/image/Ukraine_calendar_shifts/Dnipro_bestlag_p.txt', arr,
            fmt='%s %d %.3f')
 
 ########## KAMYANETS ######################################################################
 df_merged_Kamyanets_p = create_df_merged_pressure(lat_station=lat_Kamyanets, lon_station=lon_Kamyanets,
                                        ds_20CR=ds_20CR_p,
-                                       filename='/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/Kamyanets_p_subdaily.tsv')
+                                       filename='/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/Kamyanets_p_subdaily_qc_utc.tsv')
 print('analyzing Kamyanets station...')
 lags_Kamyanets, corrs_Kamyanets = compute_lag_corr(df_merged_Kamyanets_p)
 plot_lag_correlation(lags_Kamyanets, corrs_Kamyanets, var='p', station_name='Kamyanets')
@@ -404,7 +404,7 @@ plot_rolling_lag(rolling_Kamyanets, station_name='Kamyanets', var='p', expected_
 ########## KHARKIV ######################################################################
 df_merged_Kharkiv_p = create_df_merged_pressure(lat_station=lat_Kharkiv, lon_station=lon_Kharkiv,
                                      ds_20CR=ds_20CR_p,
-                                     filename='/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/Kharkiv_p_subdaily.tsv')
+                                     filename='/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/Kharkiv_p_subdaily_qc_utc.tsv')
 print('analyzing Kharkiv station...')
 lags_Kharkiv, corrs_Kharkiv = compute_lag_corr(df_merged_Kharkiv_p)
 plot_lag_correlation(lags_Kharkiv, corrs_Kharkiv, var='p', station_name='Kharkiv')
@@ -415,7 +415,7 @@ plot_rolling_lag(rolling_Kharkiv, station_name='Kharkiv', var='p', expected_shif
 ########## KHERSON ######################################################################
 df_merged_Kherson_p = create_df_merged_pressure(lat_station=lat_Kherson, lon_station=lon_Kherson,
                                      ds_20CR=ds_20CR_p,
-                                     filename='/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/Kherson_p_subdaily.tsv')
+                                     filename='/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/Kherson_p_subdaily_qc_utc.tsv')
 print('analyzing Kherson station...')
 lags_Kherson, corrs_Kherson = compute_lag_corr(df_merged_Kherson_p)
 plot_lag_correlation(lags_Kherson, corrs_Kherson, var='p', station_name='Kherson')
@@ -426,7 +426,7 @@ plot_rolling_lag(rolling_Kherson, station_name='Kherson', var='p', expected_shif
 ######## KYÍV #############################################################################
 df_merged_Kyiv_p = create_df_merged_pressure(lat_station=lat_Kyiv, lon_station=lon_Kyiv,
                                   ds_20CR=ds_20CR_p,
-                                  filename='/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/Kyiv_p_subdaily.tsv')
+                                  filename='/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/Kyiv_p_subdaily_qc_utc.tsv')
 # Compute correlation for lags from -14 to +14 days for Kyív
 print('analyzing Kyív station...')
 lags_Kyiv, corrs_Kyiv = compute_lag_corr(df_merged_Kyiv_p)
@@ -438,7 +438,7 @@ plot_rolling_lag(rolling_Kyiv, station_name='Kyív', var='p', expected_shift=0)
 ######## LUGANSK #############################################################################
 df_merged_Lugansk_p = create_df_merged_pressure(lat_station=lat_Lugansk, lon_station=lon_Lugansk,
                                    ds_20CR=ds_20CR_p,
-                                   filename='/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/Lugansk_p_subdaily.tsv')
+                                   filename='/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/Lugansk_p_subdaily_qc_utc.tsv')
 # Compute correlation for lags from -14 to +14 days for Kyív
 print('analyzing Lugansk station...')
 lags_Lugansk, corrs_Lugansk = compute_lag_corr(df_merged_Lugansk_p)
@@ -450,7 +450,7 @@ plot_rolling_lag(rolling_Lugansk, station_name='Lugansk', var='p', expected_shif
 ######## ODESA #############################################################################
 df_merged_Odesa_p = create_df_merged_pressure(lat_station=lat_Odesa, lon_station=lon_Odesa,
                                    ds_20CR=ds_20CR_p,
-                                   filename='/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/Odesa_p_subdaily.tsv')
+                                   filename='/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/Odesa_p_subdaily_qc_utc.tsv')
 # Compute correlation for lags from -14 to +14 days for Kyív
 print('analyzing Odesa station...')
 lags_Odesa, corrs_Odesa = compute_lag_corr(df_merged_Odesa_p)
@@ -463,7 +463,7 @@ plot_rolling_lag(rolling_Odesa, station_name='Odesa', var='p', expected_shift=0)
 ######## POLTAVA #############################################################################
 df_merged_Poltava_p = create_df_merged_pressure(lat_station=lat_Poltava, lon_station=lon_Poltava,
                                   ds_20CR=ds_20CR_p,
-                                  filename='/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/Poltava_p_subdaily.tsv')
+                                  filename='/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/Poltava_p_subdaily_qc_utc.tsv')
 # Compute correlation for lags from -14 to +14 days for Kyív
 print('analyzing Poltava station...')
 lags_Poltava, corrs_Poltava = compute_lag_corr(df_merged_Poltava_p)

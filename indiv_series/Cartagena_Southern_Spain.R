@@ -13,7 +13,7 @@ lat	<- round(37+36/60,4)
 lon	<- round(-(0+58/60),4)
 alt	<- 67
 source <- "Diario de Cartagena. 1804-1807. Archivo Municipal de Murcia, 1-G-13/14, (http://archivodemurcia.es)."
-link   <- "http://hdl.handle.net/10835/6248"
+link   <- "https://repositorio.ual.es/handle/10835/6806"
 
 file <- list.files("/scratch3/PALAEO-RA/daily_data/original/Southern_Spain", full.names=TRUE)
 raw1 <- read_excel(file, sheet="Car1804-1806", skip=8)

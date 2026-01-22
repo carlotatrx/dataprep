@@ -112,6 +112,8 @@ dd_normalize <- function(x) {
               "O"    = "W",
               "SO"   = "SW",
               "OSO"  = "WSW",
+              "WWS"  = "WSW",
+              "WS"   = "SW",
               "ONO"  = "WNW",
               "SSO"  = "SSW",
               "OOS"  = "WSW",

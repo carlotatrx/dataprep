@@ -11,8 +11,8 @@ source('/scratch2/ccorbella/code/dataprep/helpfun.R')
 outdir <- "/scratch3/PALAEO-RA/daily_data/final/Loebau"
 name <- "Lausitz"
 code <- "Loebau"
-lat	<- 51.08333333
-lon	<- 14.66666667
+lat	<- 51.083
+lon	<- 14.667
 alt	<- 260
 source <- "PALAEO-RA"
 link   <- ""
@@ -96,27 +96,111 @@ raw2 <- read_excel("/scratch3/PALAEO-RA/daily_data/original/Loebau/Kanold_T3_DE_
 head(raw)
 head(raw2)
 
-df <- raw %>%
-  mutate(
-    Hour =NA_integer_,
-    Minute=NA_integer_,
-    dd = dd2deg(dd_normalize_Loebau(dd.orig)),
-    ta = ifelse(!is.na(ta_string), paste0(ta, ta_string), ta),
-    meta.dd = paste0("orig.dd=",dd.orig),
-  ) %>% select(Year, Month, Day, Hour, Minute,ta,dd, meta.dd)
+library(dplyr)
+library(stringr)
 
-df2 <- raw2 %>%
-  mutate(
-    Hour =NA_integer_,
-    Minute=NA_integer_,
-    dd = dd2deg(dd_normalize_Loebau(dd.orig)),
-    ta = ifelse(!is.na(ta_string), paste0(ta, ta_string), ta),
-    meta.dd = paste0("orig.dd=",dd.orig),
-  ) %>% select(Year, Month, Day, Hour, Minute,ta,dd, meta.dd)
+prep_Loebau <- function(x) {
+  has_notes3 <- "notes3" %in% names(x)
+  has_notes2 <- "notes2" %in% names(x)
+  
+  x %>%
+    mutate(
+      Hour   = NA_integer_,
+      Minute = NA_integer_,
+      dd     = dd2deg(dd_normalize_Loebau(dd.orig)),
+      
+      # ta as string without ever producing "NA"
+      ta_out = ifelse(!is.na(ta_string), paste0(ta, ta_string), ta),
+      
+      # orig for dd
+      meta.dd = paste0("orig.dd=", dd.orig),
+      
+      # notes (combine only what exists and is non-missing)
+      meta.notes = {
+        n1 <- if ("notes"  %in% names(x)) notes  else NA_character_
+        n2 <- if ("notes2" %in% names(x)) notes2 else NA_character_
+        n3 <- if ("notes3" %in% names(x)) notes3 else NA_character_
+        
+        joined <- ifelse(
+          !is.na(n1) & !is.na(n2) & !is.na(n3), paste0(n1, "/", n2, "/", n3),
+          ifelse(
+            !is.na(n1) & !is.na(n2), paste0(n1, "/", n2),
+            ifelse(
+              !is.na(n1) & !is.na(n3), paste0(n1, "/", n3),
+              ifelse(
+                !is.na(n2) & !is.na(n3), paste0(n2, "/", n3),
+                ifelse(
+                  !is.na(n1), n1,
+                  ifelse(!is.na(n2), n2,
+                         ifelse(!is.na(n3), n3, NA_character_))
+                )
+              )
+            )
+          )
+        )
+        
+        ifelse(is.na(joined), NA_character_, paste0("notes=", joined))
+      },
+      
+      #meta.notes =
+        # case_when(
+      #   has_notes2 & (!is.na(notes2) || !is.na(notes)) ~ paste0("notes=",notes,"/",notes2,"/", notes3),
+      #   !is.na(notes) ~ paste0("notes=", notes)
+      # ),
+      # 
+      # meta for ta: add notes only when present
+      meta.ta = case_when(
+        is.na(ta_out) ~ NA_character_,
+        is.na(meta.notes) ~ paste0("orig=", ta_out),
+        TRUE ~ paste0("orig=", ta_out, " | ", meta.notes)
+      ),
+      
+      ta = ta_out
+    ) %>%
+    select(Year, Month, Day, Hour, Minute, ta, dd, meta.dd, meta.ta)
+}
+
+df    <- prep_Loebau(raw)
+df2   <- prep_Loebau(raw2)
+
 head(df)
 head(df2)
-
 df_all <- bind_rows(df, df2)
+
+
+# df <- raw %>%
+#   mutate(
+#     Hour =NA_integer_,
+#     Minute=NA_integer_,
+#     dd = dd2deg(dd_normalize_Loebau(dd.orig)),
+#     ta = ifelse(!is.na(ta_string), paste0(ta, ta_string), ta),
+#     meta.dd = paste0("orig=",dd.orig),
+#     meta.notes = case_when(
+#       !is.na(notes) & !is.na(notes2) ~ paste0("notes=", notes, "/", notes2),
+#       !is.na(notes) ~ paste0("notes=", notes),
+#       !is.na(notes2) ~ paste0("notes=", notes2),
+#       TRUE ~ NA_character_
+#     ),
+#     meta.ta = ifelse(!is.na(meta.notes), 
+#                      paste0("orig=",ta,ta_string, " | ", meta.notes),
+#                      paste0("orig=",ta,ta_string)),
+#   ) %>% select(Year, Month, Day, Hour, Minute,ta,dd, meta.dd, meta.ta)
+# 
+# df2 <- raw2 %>%
+#   mutate(
+#     Hour =NA_integer_,
+#     Minute=NA_integer_,
+#     dd = dd2deg(dd_normalize_Loebau(dd.orig)),
+#     ta = ifelse(!is.na(ta_string), paste0(ta, ta_string), ta),
+#     meta.dd = paste0("orig.dd=",dd.orig),
+#     meta.notes = ifelse(!is.na(notes), paste0("notes=", notes), NA_character_),
+#     meta.ta = ifelse(!is.na(meta.notes), 
+#                      paste0("orig=",ta,ta_string, " | ", meta.notes),
+#                      paste0("orig=",ta,ta_string)),
+#   ) %>% select(Year, Month, Day, Hour, Minute,ta,dd, meta.dd, meta.ta)
+# head(df)
+# head(df2)
+
 
 base_cols <- df_all[c("Year","Month","Day","Hour","Minute")]
 
@@ -125,7 +209,7 @@ var <-"dd"
 dat <- cbind(base_cols, setNames(df_all[var], var))
 write_sef_f(
   dat,
-  outfile = outfile.name(name, var, dat, subdaily=TRUE),
+  outfile = outfile.name(name, var, dat, subdaily=FALSE),
   outpath = outdir,
   cod     = code,
   lat     = lat,
@@ -147,7 +231,7 @@ var <-"ta"
 dat <- cbind(base_cols, setNames(df_all[var], var))
 write_sef_f(
   dat,
-  outfile = outfile.name(name, var, dat, subdaily=TRUE),
+  outfile = outfile.name(name, var, dat, subdaily=FALSE),
   outpath = outdir,
   cod     = code,
   lat     = lat,
