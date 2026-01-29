@@ -4,7 +4,7 @@ library(dplyr)
 library(readr)
 library(tidyr)
 library(dataresqc)
-source("/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/helpfun.R")
+source("/scratch2/ccorbella/code/dataprep/helpfun.R")
 
 files <- list.files("/scratch3/PALAEO-RA/daily_data/original/Extremadura",
                     pattern = ".tab$", full.names = TRUE)
@@ -72,6 +72,8 @@ map2dd <- function(x) {
   out[!is.na(x2.low) & x2.low=="solano"]  <- "W"    # solano: Viento que sopla de donde nace el sol.(RAE)
   toupper(out)
 }
+
+
 
 
 # PTCAMP4 -----------------------------------------------------------------
@@ -600,6 +602,7 @@ for (var in c("ta", "p", "dd")) {
 code <- "BACVAC1"
 lat  <- 38.086667
 lon  <- -6.421111
+alt  <- 658
 name <- "Extremadura-Cabeza_la_Vaca"
 
 f <- files[grepl(code, files)] # select file from list
@@ -653,26 +656,29 @@ head(df.p)
 
 df.ta <- raw %>%
   mutate(
+    Hour   = NA_integer_,
+    Minute = NA_integer_,
+    
     tmax2_is = !is.na(tmax2),
     tmax1_is = !is.na(tmax1),
-    tmax2_C  = ifelse(tmax2_is, tmax2 * 1.25, NA_real_),  # convert R to C for ta other
+    # tmax2_C  = ifelse(tmax2_is, tmax2 * 1.25, NA_real_),  # convert R to C for ta other
     
-    tmax = coalesce(tmax1, tmax2_C),  # prefer the first one TxTxTx
+    tmaxC = round(coalesce(tmax1, tmax2)*1.25,2),  # prefer the first one TxTxTx
+    tminC = round(tmin*1.25,2),
     
     meta.max = case_when(
-      tmax1_is & tmax2_is ~ paste0("alternative.orig.ta=", tmax2, "R"),
-      !tmax1_is & tmax2_is ~ paste0("orig.ta=", tmax2, "R"),
+      tmax1_is & tmax2_is ~ paste0("orig=", tmax1, " | additional.obs=", tmax2, "R"),
+      !tmax1_is & tmax2_is ~ paste0("orig=", tmax2, "R"),
+      tmax1_is & !tmax2_is ~ paste0("orig=", tmax1, "R"),
       TRUE ~ ""
     ),
-    
-    Hour   = 24L,
-    Minute = 0L,
+    meta.min = paste0("orig=", tmin, "R"),
     
     # qc: flaig if Tmax <= Tmin
-    flag = !is.na(tmax2) & !is.na(tmin) & (tmax <= tmin),
+    flag = !is.na(tmax2) & !is.na(tmin) & (tmaxC <= tminC),
     meta.max = ifelse(flag, paste0(meta.max, " | qc= Tmax<=Tmin"), meta.max),
-    meta.min = paste0("qc= Tmax<=Tmin")
-  ) %>% select(Year, Month, Day, Hour, Minute, tmax, tmin, meta.max, meta.min)
+    meta.min = ifelse(flag, paste0(meta.min, " | qc= Tmax<=Tmin"), meta.min),
+  ) %>% select(Year, Month, Day, Hour, Minute, tmaxC, tminC, meta.max, meta.min)
 
 head(df.ta)
 
@@ -766,40 +772,40 @@ write_sef_f(
 )
 
 # save tmax and tmin
-var <- "tmax"
+var <- "Tx"
 write_sef_f(
-  as.data.frame(df.ta[, c("Year", "Month", "Day", "Hour", "Minute", "tmax")]),
+  as.data.frame(df.ta[, c("Year", "Month", "Day", "Hour", "Minute", "tmaxC")]),
   outfile = outfile.name(name, var, df.ta, FALSE),
   outpath = '/scratch3/PALAEO-RA/daily_data/final/Extremadura',
   cod     = code,
   lat     = lat,
   lon     = lon,
-  alt     = NA,
+  alt     = alt,
   sou     = source,
   link    = link,
   nam     = name,
   var     = var,
-  stat    = "max",
+  stat    = "maximum",
   period  = "day",
   units   = "C",
   meta    = df.ta$meta.max,
   keep_na = FALSE
 )
 
-var <- "tmin"
+var <- "Tn"
 write_sef_f(
-  as.data.frame(df.ta[, c("Year", "Month", "Day", "Hour", "Minute", "tmin")]),
+  as.data.frame(df.ta[, c("Year", "Month", "Day", "Hour", "Minute", "tminC")]),
   outfile = outfile.name(name, var, df.ta, FALSE),
   outpath = '/scratch3/PALAEO-RA/daily_data/final/Extremadura',
   cod     = code,
   lat     = lat,
   lon     = lon,
-  alt     = NA,
+  alt     = alt,
   sou     = source,
   link    = link,
   nam     = name,
   var     = var,
-  stat    = "min",
+  stat    = "minimum",
   period  = "day",
   units   = "C",
   meta    = df.ta$meta.min,
