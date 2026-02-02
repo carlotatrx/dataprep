@@ -1,73 +1,44 @@
-ELE=46 # elevation for the files
-SITE=Nottingham # to rename the files
+ELE=21 # elevation for the files
+SITE=York # to rename the files
 
-for f in *Tn*.tsv *Tx*.tsv *rr*.tsv; do 
-
+for f in DWR*Tn*.tsv DWR*Tx*.tsv DWR*rr*.tsv; do 
   [ -f "$f" ] || continue 
-
   awk -F'\t' 'BEGIN{OFS="\t"; indata=0} 
-
   /^Year\tMonth\tDay\tHour\tMinute\tPeriod\tValue\tMeta/ {indata=1; print; next} 
-
   !indata {print; next} 
-
   { 
-
     $4="NA"; $5="NA" 
-
     print 
-
   }' "$f" > "$f.tmp" && mv "$f.tmp" "$f" 
-
 done
  
 
 # Add the source to all the files in the current dir. 
 
-for f in *.tsv; do 
-
+for f in DWR*.tsv; do 
   [ -f "$f" ] || continue 
-
   awk -F'\t' 'BEGIN{OFS="\t"; done=0} 
-
     /^Link(\t|$)/ && !done { 
-
       done=1 
-
       if (NF==1 || $2=="" ) $2="DOI 10.5281/zenodo.5940391" 
-
       print 
-
       next 
-
     } 
-
     {print} 
-
   ' "$f" > "${f}.tmp" && mv "${f}.tmp" "$f" 
-
 done 
 
 # Add elevation to all the files in cd 
 
-for f in *.tsv; do 
-
+for f in DWR*.tsv; do 
   [ -f "$f" ] || continue 
-
   awk -F'\t' -v ele="$ELE" 'BEGIN{OFS="\t"; done=0}
-
     /^Alt(\t|$)/ && !done { 
-
       done=1 
-
       if (NF==1 || $2=="" ) $2=ele 
-
       print 
-
       next 
-
     } 
-
     {print} 
 
   ' "$f" > "${f}.tmp" && mv "${f}.tmp" "$f" 
