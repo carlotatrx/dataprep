@@ -501,37 +501,41 @@ write_sef_f(Data=df.p.Upp, outfile="Uppsala_p.tsv",
 
 
 # VALÈNCIA ----------------------------------------------------------------
+source('/scratch2/ccorbella/code/dataprep/helpfun.R')
+
+outdir <- '/scratch3/PALAEO-RA/daily_data/final/Valencia/'
+
+  
 df <- read.csv('/home/ccorbella/scratch2_symboliclink/files/station_timeseries_orig/Valencia/Valencia_concatenated.csv',
                header=T)
 
 # Create a list (equivalent to a dictionary in R)
 meta <- list(
-  ID = "Dom_Valencia",
-  Name = "Valencia",
-  Lat = 39.47,
-  Lon = -0.38,
-  Alt = 25,
+  ID = "Valencia",
+  Name = "DominguezCastro_Valencia",
+  lat = 39.47,
+  lon = -0.38,
+  alt = 25,
   Source = "Dominguez_Castro_2014",
   Link = "https://docta.ucm.es/entities/publication/b26dac98-5ffe-482c-9419-2f94168cc7eb"
 )
 
-df.ta.Valencia <- data.frame(
-  Year=df$Year,
-  Month=df$Month,
-  Day=df$Day,
-  Hour=df$Hour,
+df.ta.Valencia <- df %>%
+  mutate(
   Minute=0,
-  Value=as.numeric(df$Term) * 1.25
-)
+  Value=round(as.numeric(Term) * 1.25,2),
+  meta=paste0(meta_time(Hour, Minute), " | orig=", Term, "R")
+) %>% select(Year, Month, Day, Hour, Minute, Value, meta)
 
-df.p.Valencia <- data.frame(
-  Year=df$Year,
-  Month=df$Month,
-  Day=df$Day,
-  Hour=df$Hour,
-  Minute=0,
-  Value=(as.numeric(df$Bar.p.) + as.numeric(df$Bar.l.) /12 ) * 27.07 * 1.3332239
-)
+df.p.Valencia <- df %>%
+  mutate(
+    Minute=0,
+    ta=as.numeric(Term) * 1.25,
+    
+    Value = round(convert_pressure(as.numeric(Bar.p.) + as.numeric(Bar.l.) /12, f=27.07, lat=meta[["lat"]], alt=meta[["alt"]],
+                             atb=ta),2),
+    meta=paste0(meta_time(Hour, Minute), " | orig=", Bar.p., "in", Bar.l., "l | atb=", Term, "R")
+  ) %>% select(Year, Month, Day, Hour, Minute, Value, meta)
 
 # drop pressures beyond the 5 sigma range
 p.mean <- mean(df.p.Valencia$Value, na.rm = T)
@@ -540,25 +544,33 @@ p.std  <- sd(df.p.Valencia$Value, na.rm = T)
 df.p.Valencia <- subset(df.p.Valencia, Value < p.mean + 5*p.std)
 df.p.Valencia <- subset(df.p.Valencia, Value > p.mean - 5*p.std)
 
-write_sef_f(Data=df.ta.Valencia,outfile="Valencia_ta_subdaily.tsv",
+# ta
+var <- "ta"
+write_sef_f(Data=as.data.frame(df.ta.Valencia),
+            outfile=outfile.name(meta[["Name"]], var, df.ta.Valencia, subdaily=TRUE),
             outpath=outdir,
             cod=meta[["ID"]],
-            variable="ta",
+            variable=var,
             nam=meta[["Name"]],
-            lat=meta[["Lat"]],
-            lon=meta[["Lon"]], alt=meta[["Alt"]], sou=meta[["Source"]], metaHead = "orig_ta=Reaumur",
-            link=meta[["Link"]], units="C", stat="point",
-            meta="orig_ta=Reaumur", keep_na = F)
+            lat=meta[["lat"]],
+            lon=meta[["lon"]], alt=meta[["alt"]], sou=meta[["Source"]],
+            
+            link=meta[["Link"]], units=units(var), stat="point",
+            meta=df.ta.Valencia$meta, keep_na = T)
 
-write_sef_f(Data=df.p.Valencia,outfile="Valencia_p_subdaily.tsv",
+# p
+var<-"p"
+write_sef_f(Data=as.data.frame(df.p.Valencia),
+            outfile=outfile.name(meta[["Name"]], var, df.p.Valencia, subdaily=TRUE),
             outpath=outdir,
             cod=meta[["ID"]],
-            variable="p",
+            variable=var,
             nam=meta[["Name"]],
-            lat=meta[["Lat"]],
-            lon=meta[["Lon"]], alt=meta[["Alt"]], sou=meta[["Source"]], metaHead = "orig_p=Paris inch",
-            link=meta[["Link"]], units="unknown", stat="point",
-            meta="orig_p=Paris inch | qc=±5σ", keep_na = F)
+            lat=meta[["lat"]],
+            lon=meta[["lon"]], alt=meta[["alt"]], sou=meta[["Source"]],
+            units=units(var),
+            link=meta[["Link"]], stat="point",
+            meta=df.p.Valencia$meta, keep_na =TRUE)
 
 # Vienna ---------------------------------------------------------------
 df <- read.csv('/home/ccorbella/scratch2_symboliclink/files/station_timeseries_orig/Wien Sternwarte_5905_TAG_18150101_18171231.csv',

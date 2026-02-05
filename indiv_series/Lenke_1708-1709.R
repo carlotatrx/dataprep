@@ -19,8 +19,20 @@ suppressPackageStartupMessages({
   library(readxl)
 })
 
+
+# Excel from /scratch3/PALAEO-RA/DataRescue/Projects/Europe/2_Digi --------
+
+raw <- read_xls("/scratch3/PALAEO-RA/DataRescue/Projects/Europe/2_Digitized/Lenke/Lenke_1709.xls", skip=5)
+
+df.Koenigsberg <- raw %>% filter(trimws(Station) == "Königsberg")
+# KÖNIGSBERG IS KALININGRAD!!
+df.Koenigsberg
+
+# Excel from /scratch3/PALAEO-RA/daily_data/original/Berlin/Lenke_ --------
+
 x <- read_xlsx("/scratch3/PALAEO-RA/daily_data/original/Berlin/Lenke_Tab3_1708_1709.xlsx",
                skip=3, col_names=FALSE)
+
 
 # Month mapping (German)
 month_map <- c(
