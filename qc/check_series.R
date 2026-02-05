@@ -10,12 +10,12 @@ library(glue)
 indir <- '/scratch3/PALAEO-RA/daily_data/final/'
 
 ### quick one
-dirname <- "Dover/"
-filename <- "WRDv2.2_Dover_18610301-18750331_ta_barometer_subdaily.tsv"
+dirname <- "Valencia/"
+filename <- "DominguezCastro_Valencia_17900629-18601231_ta_subdaily.tsv"
 
 qc(glue(indir,dirname,filename), outpath=glue(indir, dirname))
 
-qcfilename <- "qc_DWRUK_CAPGRISNEZ_rr_subdaily.txt"
+qcfilename <- "qc_Valencia_ta_subdaily.txt"
 write_flags_f(infile=glue(indir,dirname,filename),
               qcfile=glue(indir,dirname, qcfilename),
               outpath=glue(indir,dirname),
@@ -40,7 +40,20 @@ qc_files
 
 files
 
-###
+
+# Valencia ----------------------------------------------------------------
+for (var in c("ta", "dd", "p")) {
+  filename <- paste0("DominguezCastro_Valencia_17900629-18611231_", var,"_subdaily.tsv")
+  
+
+  qcfilename <- paste0("qc_Valencia_", var, "_subdaily.txt")
+  write_flags_f(infile=glue(indir,dirname,filename),
+                qcfile=glue(indir,dirname, qcfilename),
+                outpath=glue(indir,dirname),
+                match=FALSE)
+}
+
+# others ------------------------------------------------------------------
 
 outdir <- '/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/sef_tests/'
 dir <- '/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed'

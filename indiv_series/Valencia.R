@@ -74,6 +74,45 @@ read_one <- function(f) {
 
 all_df <- map_dfr(files, read_one)
 
+# check for duplicate dates
+df_datescheck <- all_df %>%
+  group_by(file) %>%
+  mutate(row_in_file = row_number()) %>%
+  ungroup()
+
+# Find duplicated timestamps (within the whole dataset)
+dups <- df_datescheck %>%
+  filter(!is.na(Year), !is.na(Month), !is.na(Day), !is.na(Hour)) %>%
+  add_count(Year, Month, Day, Hour, name = "n_time") %>%
+  filter(n_time > 1)
+
+# Show context rows above and below (per file)
+context <- dups %>%
+  select(file, row_in_file, Year, Month, Day, Hour) %>%
+  distinct() %>%
+  left_join(
+    df_datescheck,
+    by = "file"
+  ) %>%
+  filter(abs(row_in_file.y - row_in_file.x) <= 3) %>%
+  mutate(
+    flag_dup_time = paste(Year.y, Month.y, Day.y, Hour.y) %in%
+      paste(Year.x, Month.x, Day.x, Hour.x)
+  ) %>%
+  select(
+    file,
+    row_in_file = row_in_file.y,
+    Year = Year.y, Month = Month.y, Day = Day.y, Hour = Hour.y,
+    Term, Bar_p, Bar_l, orig_dd, orig_w, Sky,
+    flag_dup_time
+  )
+
+dups %>%
+  count(Year, Month, name = "n_rows_in_duplicates") %>%
+  arrange(desc(n_rows_in_duplicates))
+
+
+
 # drop when everything is NA
 all_df <- all_df %>%
   filter(!(is.na(Year) & is.na(Month) & is.na(Day)))
