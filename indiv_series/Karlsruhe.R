@@ -6,17 +6,18 @@ library(tidyr)
 library(lubridate)
 source('/scratch2/ccorbella/code/dataprep/helpfun.R')
 
-outdir <- "/scratch3/PALAEO-RA/daily_data/final/DeBilt"
+name <- "Karlsruhe"
+code <-"KAR"
 
-raw <- read.csv("/scratch3/PALAEO-RA/daily_data/original/DeBilt/DBL_SFP.csv", na=c("","NA"))
+outdir <- paste0("/scratch3/PALAEO-RA/daily_data/final/", name)
+
+raw <- read.csv(paste0("/scratch3/PALAEO-RA/daily_data/original/", name, "/", code,"_SFP.csv"), na=c("","NA"))
 
 head(raw)
 
-name <-	"Pfister_DeBilt"
-code<-"DeBilt"
-lat <- 52.100
-lon <- 5.180
-alt <- 1
+lat <- 49.039
+lon <- 8.365
+alt <- 112
 
 df <- raw %>%
   mutate(
@@ -35,7 +36,7 @@ head(df)
 var<-"p"
 write_sef_f(
   as.data.frame(df[c("year","month", "day", "Hour", "minute","SFP")]),
-  outfile = outfile.name(name, var, df, FALSE),
+  outfile = outfile.name(paste0("Pfister_",name), var, df, FALSE),
   outpath = outdir,
   cod     = code,
   lat     = lat,
@@ -48,5 +49,5 @@ write_sef_f(
   stat    = "mean",
   period    = "day",
   units   = units(var),
-  metaHead = "PTC=Y | PGC=N | merged from Zwanenburg, Haarlem, Den Helder, Delft | homogenized | QC=Y",
+  metaHead = "PTC=Y | PGC=N | homogenized | QC=Y",
 )

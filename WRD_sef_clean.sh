@@ -44,6 +44,7 @@ sed -i 's/mslp/p/' *_p*.tsv
 
 
 # for Weather Rescue Data project ----------
+# put NAs if the Hour and Minute column of the indicated files
 
 for f in DWR*Tn*.tsv DWR*Tx*.tsv DWR*rr*.tsv; do 
   [ -f "$f" ] || continue 
@@ -59,12 +60,12 @@ done
 
 # Add the source to all the files in the current dir. 
 
-for f in DWR*.tsv; do 
+for f in GCOS*.tsv; do 
   [ -f "$f" ] || continue 
   awk -F'\t' 'BEGIN{OFS="\t"; done=0} 
     /^Link(\t|$)/ && !done { 
       done=1 
-      if (NF==1 || $2=="" ) $2="DOI 10.5281/zenodo.5940391" 
+      if (NF==1 || $2=="" ) $2="https://doi.pangaea.de/10.1594/PANGAEA.948258" 
       print 
       next 
     } 

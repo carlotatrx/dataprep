@@ -1,22 +1,24 @@
 rm(list=ls())
-library(dplyr)
-library(readxl)
-library(purrr)
-library(tidyr)
+library(dataresqc)
 library(lubridate)
-source('/scratch2/ccorbella/code/dataprep/helpfun.R')
+library(dplyr)
 
-outdir <- "/scratch3/PALAEO-RA/daily_data/final/DeBilt"
+source('/home/ccorbella/scratch2_symboliclink/code/dataprep/helpfun.R')
+outdir <- "/scratch3/PALAEO-RA/daily_data/final/Geneva"
 
-raw <- read.csv("/scratch3/PALAEO-RA/daily_data/original/DeBilt/DBL_SFP.csv", na=c("","NA"))
+
+# Cadiz from Lucas --------------------------------------------------------
+
+
+raw <- read.csv("/scratch3/PALAEO-RA/daily_data/original/Geneva/GVA_SFP.csv", na=c("","NA"))
 
 head(raw)
 
-name <-	"Pfister_DeBilt"
-code<-"DeBilt"
-lat <- 52.100
-lon <- 5.180
-alt <- 1
+name <-	"Pfister_Geneva"
+code<-"Geneva"
+lat <- 46.248
+lon <- 6.128
+alt <- 410
 
 df <- raw %>%
   mutate(
@@ -48,5 +50,6 @@ write_sef_f(
   stat    = "mean",
   period    = "day",
   units   = units(var),
-  metaHead = "PTC=Y | PGC=N | merged from Zwanenburg, Haarlem, Den Helder, Delft | homogenized | QC=Y",
+  metaHead = "PTC=Y | PGC=N | merged from various observers/sources in Geneva | homogenized | QC=Y",
 )
+
