@@ -10,12 +10,12 @@ library(glue)
 indir <- '/scratch3/PALAEO-RA/daily_data/final/'
 
 ### quick one
-dirname <- "GrandStBernard/"
-filename <- "GCOS_GrandStBernard_18170914-18251231_p_subdaily.tsv"
+dirname <- "Dublin/"
+filename <- "ILMMT_Dublin-BotanicGardens_18340101-19581231_Tn_daily.tsv"
 
 qc(glue(indir,dirname,filename), outpath=glue(indir, dirname))
 
-qcfilename <- "qc_GCOS_GrandStBernard_p_subdaily.txt"
+qcfilename <- "qc_ILMMT-Dublin-BotanicGardens_Tn_daily.txt"
 write_flags_f(infile=glue(indir,dirname,filename),
               qcfile=glue(indir,dirname, qcfilename),
               outpath=glue(indir,dirname),

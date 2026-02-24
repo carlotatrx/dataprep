@@ -1,0 +1,371 @@
+rm(list=ls())
+library(dataresqc)
+library(readxl)
+library(tidyr)
+library(dplyr)
+
+source('/scratch2/ccorbella/code/dataprep/helpfun.R')
+
+indir <- "/scratch3/PALAEO-RA/daily_data/original/"
+name <- "Dublin"
+
+outdir <- paste0("/scratch3/PALAEO-RA/daily_data/final/",name)
+
+source <- "Mateus, C., Potito, A., & Curley, M. (2020). Reconstruction of a long‐term historical daily maximum and minimum air temperature network dataset for Ireland (1831‐1968). Geoscience Data Journal, 7(2), 102-115."
+link   <- "https://www.edepositireland.ie/entities/publication/7271837d-dbe6-463f-b103-422f42a15446"
+
+
+# Dublin Trinity College --------------------------------------------------
+lat <- 53.344
+lon <- -6.258
+alt <- 8
+
+metaHead <- paste0(
+  "Observer=Humphrey Lloyd (1840-1851), Dr. Erasmus Dixon (1904-1920) | ",
+  "Instrument=Magnetical Observatory (early), Stevenson screen (late) | ",
+  "Location=Magnetical Observatory, Fellows' Garden (1840-1851), School of Physic Garden (1904-1920); Precision shift from 0.1F to whole degrees in 1915."
+)
+
+raw <- read.csv(paste0(indir, name, "/Trinity College Dublin_1840-1959.csv"),
+                col.names=c("year", "month", "day", "maxF", "minF", "maxC", "minC"))
+
+head(raw)
+tail(raw)
+
+df <- raw %>%
+  mutate(
+    hour=NA,
+    minute=NA,
+    meta.Tx=paste0("orig=",maxF, "F | obs.time=9a.m."),
+    meta.Tn=paste0("orig=",minF, "F | obs.time=9a.m."),
+  ) %>% select(year, month, day, hour, minute, Tx=maxC, Tn=minC, meta.Tx, meta.Tn)
+
+head(df)
+tail(df)
+
+var <- "Tn"
+write_sef_f(
+  as.data.frame(df[c("year","month", "day", "hour", "minute","Tn")]),
+  outfile = outfile.name(paste0("ILMMT_",name, "-TrinityCollege"), var, df, FALSE),
+  outpath = outdir,
+  cod     = paste0("ILMMT-",name, "-TrinityCollege"),
+  lat     = lat,
+  lon     = lon,
+  alt     = alt,
+  sou     = source,
+  link    = link,
+  nam     = name,
+  var     = var,
+  stat    = "minimum",
+  period    = "day",
+  units   = units(var),
+  metaHead = metaHead,
+  meta = df$meta.Tn,
+  keep_na=FALSE
+)
+
+var <- "Tx"
+write_sef_f(
+  as.data.frame(df[c("year","month", "day", "hour", "minute",var)]),
+  outfile = outfile.name(paste0("ILMMT_",name, "-TrinityCollege"), var, df, FALSE),
+  outpath = outdir,
+  cod     = paste0("ILMMT-",name, "-TrinityCollege"),
+  lat     = lat,
+  lon     = lon,
+  alt     = alt,
+  sou     = source,
+  link    = link,
+  nam     = name,
+  var     = var,
+  stat    = "maximum",
+  period    = "day",
+  units   = units(var),
+  metaHead = metaHead,
+  meta=df$meta.Tx,
+  keep_na=FALSE
+)
+
+# Dublin botanic Gardens --------------------------------------------------
+lat <- 53.372
+lon <- -6.721
+alt <- 18
+
+raw <- read.csv(paste0(indir, name, "/Botanic Gardens Dublin_1834-1958.csv"),
+                col.names=c("year", "month", "day", "maxF", "minF", "maxC", "minC"))
+head(raw)
+
+df <- raw %>%
+  mutate(
+    hour=NA,
+    minute=NA,
+    meta.Tx=ifelse(year>=1911, paste0("orig=",maxF, "F | obs.time=9p.m."),paste0("orig=",maxF, "F")),
+    meta.Tn=ifelse(year>=1911, paste0("orig=",minF, "F | obs.time=9p.m."),paste0("orig=",minF, "F")),
+  ) %>% select(year, month, day, hour, minute, Tx=maxC, Tn=minC, meta.Tx, meta.Tn)
+
+head(df)
+tail(df)
+
+var <- "Tn"
+write_sef_f(
+  as.data.frame(df[c("year","month", "day", "hour", "minute","Tn")]),
+  outfile = outfile.name(paste0("ILMMT_",name), var, df, FALSE),
+  outpath = outdir,
+  cod     = paste0("ILMMT-",name, "-BotanicGardens"),
+  lat     = lat,
+  lon     = lon,
+  alt     = alt,
+  sou     = source,
+  link    = link,
+  nam     = name,
+  var     = var,
+  stat    = "minimum",
+  period    = "day",
+  units   = units(var),
+
+  meta = df$meta.Tn
+)
+
+
+var <- "Tx"
+write_sef_f(
+  as.data.frame(df[c("year","month", "day", "hour", "minute",var)]),
+  outfile = outfile.name(paste0("ILMMT_",name), var, df, FALSE),
+  outpath = outdir,
+  cod     = paste0("ILMMT-",name, "-BotanicGardens"),
+  lat     = lat,
+  lon     = lon,
+  alt     = alt,
+  sou     = source,
+  link    = link,
+  nam     = name,
+  var     = var,
+  stat    = "maximum",
+  period    = "day",
+  units   = units(var),
+  metaHead = paste0(
+    "Observer=John Underwood (1819-1830s), David Moore (1848-1879), Frederick Moore (1879-1920), ",
+    "David M'Ardle (1884) | Instrument=Barometer by James Lynch (1813), Stevenson Screen (verified 1880s)"
+  ),
+  meta=df$meta.Tx
+)
+
+
+# Dublin NLI series -------------------------------------------------------
+
+raw <- read.csv(paste0(indir, name, "/Botanic Gardens Dublin NLI series_1882-1952.csv"),
+                col.names=c("year", "month", "day", "maxF", "minF", "maxC", "minC"))
+head(raw)
+
+df <- raw %>%
+  mutate(
+    hour=NA,
+    minute=NA,
+    meta.Tx=paste0("orig=",maxF, "F | obs.time=9-10a.m."),
+    meta.Tn=paste0("orig=",minF, "F | obs.time=9-10a.m."),
+  ) %>% select(year, month, day, hour, minute, Tx=maxC, Tn=minC, meta.Tx, meta.Tn) %>% drop_na(Tx)
+
+head(df)
+
+tail(df)
+
+var <- "Tn"
+write_sef_f(
+  as.data.frame(df[c("year","month", "day", "hour", "minute","Tn")]),
+  outfile = outfile.name(paste0("ILMMT_",name,"-BotanicGardens_NLI"), var, df, FALSE),
+  outpath = outdir,
+  cod     = paste0("ILMMT-",name, "-BotanicGardens_NLI"),
+  lat     = lat,
+  lon     = lon,
+  alt     = alt,
+  sou     = source,
+  link    = link,
+  nam     = name,
+  var     = var,
+  stat    = "minimum",
+  period    = "day",
+  units   = units(var),
+  meta = df$meta.Tn,
+  metaHead=metaHead <- paste0(
+    "Observer=John Underwood (1819-1830s), David Moore (1848-1879), Frederick Moore (1879-1920), ",
+    "David M'Ardle (1884) | Instrument=Max and Min thermometers (NLI series 1882-1920). | Note=Weekly manuscripts recorded at 9 or 10 a.m."
+  ),
+  keep_na=FALSE
+)
+
+
+var <- "Tx"
+write_sef_f(
+  as.data.frame(df[c("year","month", "day", "hour", "minute",var)]),
+  outfile = outfile.name(paste0("ILMMT_",name,"-BotanicGardens_NLI"), var, df, FALSE),
+  outpath = outdir,
+  cod     = paste0("ILMMT-",name, "-BotanicGardens_NLI"),
+  lat     = lat,
+  lon     = lon,
+  alt     = alt,
+  sou     = source,
+  link    = link,
+  nam     = name,
+  var     = var,
+  stat    = "maximum",
+  period    = "day",
+  units   = units(var),
+  metaHead=metaHead <- paste0(
+    "Observer=John Underwood (1819-1830s), David Moore (1848-1879), Frederick Moore (1879-1920), ",
+    "David M'Ardle (1884) | Instrument=Max and Min thermometers (NLI series 1882-1920). | Note=Weekly manuscripts recorded at 9 or 10 a.m."
+  ),
+  meta=df$meta.Tx,
+  keep_na=FALSE
+)
+
+
+# Dublin 1880 botanic gardens ---------------------------------------------
+
+raw <- read.csv(paste0(indir, name, "/Botanic Gardens Dublin_1880 .csv"),
+                col.names=c("year", "month", "day", "9maxF", "9minF", "9maxC", "9minC", "21maxF", "21minF", "21maxC", "21minC"))
+
+head(raw)
+
+df <- raw %>%
+  pivot_longer(cols=starts_with("X"),
+               names_to = "name",
+               values_drop_na = TRUE
+  ) %>%
+  # 1. Extract the Hour and the Metric into two columns
+  # This regex looks for the digits (Hour) and the remaining letters (Metric)
+  extract(name, 
+          into = c("hour", "Metric"), 
+          regex = "X?(\\d+)(.*)") %>%
+  # 2. Pivot the Metric back out so maxF, maxC, etc. are columns
+  pivot_wider(
+    names_from = Metric, 
+    values_from = value
+  ) %>% mutate(
+    hour=as.integer(hour),
+    minute=0L,
+    meta.Tx=paste0("orig=",maxF, "F"),
+    meta.Tn=paste0("orig=",minF, "F")
+  ) %>% select(year, month, day, hour, minute, Tx=maxC, Tn=minC, meta.Tx, meta.Tn)
+
+head(df)
+
+
+
+metaHead_1880 <- paste0(
+  "Observer=Frederick Moore (1880) | Instrument=Stevenson Screen, ",
+  "verified Max/Min thermometers | Note=Transition year from RDS abstracts ",
+  "to daily handwritten registers; screen location at Glasnevin."
+)
+
+var <- "Tn"
+write_sef_f(
+  as.data.frame(df[c("year","month", "day", "hour", "minute","Tn")]),
+  outfile = outfile.name(paste0("ILMMT_",name,"-BotanicGardens"), var, df, TRUE),
+  outpath = outdir,
+  cod     = paste0("ILMMT-",name, "-BotanicGardens_NLI"),
+  lat     = lat,
+  lon     = lon,
+  alt     = alt,
+  sou     = source,
+  link    = link,
+  nam     = name,
+  var     = var,
+  stat    = "minimum",
+  period    = "point",
+  units   = units(var),
+  meta = df$meta.Tn,
+  metaHead=metaHead_1880,
+  keep_na=FALSE
+)
+
+
+var <- "Tx"
+write_sef_f(
+  as.data.frame(df[c("year","month", "day", "hour", "minute",var)]),
+  outfile = outfile.name(paste0("ILMMT_",name,"-BotanicGardens"), var, df, TRUE),
+  outpath = outdir,
+  cod     = paste0("ILMMT-",name, "-BotanicGardens"),
+  lat     = lat,
+  lon     = lon,
+  alt     = alt,
+  sou     = source,
+  link    = link,
+  nam     = name,
+  var     = var,
+  stat    = "maximum",
+  period    = "point",
+  units   = units(var),
+  metaHead=metaHead_1880,
+  meta=df$meta.Tx,
+  keep_na=FALSE
+)
+
+
+# Dublin Fitzwilliam Square ---------------------------------------------
+raw <- read.csv(paste0(indir, name, "/Fitzwilliam Square Dublin_1871-1937.csv"),
+                col.names=c("year", "month", "day", "maxF", "minF", "maxC", "minC"))
+head(raw)
+
+lat <- 53.336
+lon <- -6.252
+alt <- 15.8
+
+df <- raw %>%
+  mutate(
+    hour=NA,
+    minute=NA,
+    meta.Tx=paste0("orig=",maxF, "F | obs.time=9p.m."),
+    meta.Tn=paste0("orig=",minF, "F | obs.time=9a.m."),
+  ) %>% select(year, month, day, hour, minute, Tx=maxC, Tn=minC, meta.Tx, meta.Tn) %>% drop_na(Tx)
+
+head(df)
+
+tail(df)
+
+metaHead <- paste0(
+  "Observer=Sir John William Moore (1871-1920) | Instrument=Stevenson screen, ",
+  "Casella Max/Min thermometers",
+  "Location=40 Fitzwilliam Square West."
+)
+
+var <- "Tn"
+write_sef_f(
+  as.data.frame(df[c("year","month", "day", "hour", "minute","Tn")]),
+  outfile = outfile.name(paste0("ILMMT_",name,"-FitzwilliamSquare_Moore"), var, df, FALSE),
+  outpath = outdir,
+  cod     = paste0("ILMMT-",name, "-FitzwilliamSquare"),
+  lat     = lat,
+  lon     = lon,
+  alt     = alt,
+  sou     = source,
+  link    = link,
+  nam     = name,
+  var     = var,
+  stat    = "minimum",
+  period    = "day",
+  units   = units(var),
+  meta = df$meta.Tn,
+  metaHead=metaHead,
+  keep_na=FALSE
+)
+
+
+var <- "Tx"
+write_sef_f(
+  as.data.frame(df[c("year","month", "day", "hour", "minute",var)]),
+  outfile = outfile.name(paste0("ILMMT_",name,"-FitzwilliamSquare_Moore"), var, df, FALSE),
+  outpath = outdir,
+  cod     = paste0("ILMMT-",name, "-FitzwilliamSquare"),
+  lat     = lat,
+  lon     = lon,
+  alt     = alt,
+  sou     = source,
+  link    = link,
+  nam     = name,
+  var     = var,
+  stat    = "maximum",
+  period    = "day",
+  units   = units(var),
+  metaHead=metaHead,
+  meta=df$meta.Tx,
+  keep_na=FALSE
+)
