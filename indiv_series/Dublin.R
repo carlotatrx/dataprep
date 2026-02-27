@@ -15,6 +15,183 @@ source <- "Mateus, C., Potito, A., & Curley, M. (2020). Reconstruction of a long
 link   <- "https://www.edepositireland.ie/entities/publication/7271837d-dbe6-463f-b103-422f42a15446"
 
 
+
+# RDO Dunsink Dublin ------------------------------------------------------
+
+
+lat <- 53.387
+lon <- -6.338
+alt <- 64 # m (210 ft)
+
+metaHead <- paste0(
+  "Observer=Observatory Staff | Instrument=Max/Min thermometers | ",
+  "Location=Royal Dublin Observatory, Dunsink; Hilltop rural exposure northwest of city | ",
+  "Notes=0.1F precision"
+)
+
+metaHead
+
+
+raw <- read.csv(paste0(indir, name, "/RDO Dunsink_1851.csv"), header=FALSE,
+                skip=1,fileEncoding = "latin1",
+                col.names=c("year", "month", "day", "maxF", "minF", "maxC", "minC", "extra"))
+
+head(raw)
+tail(raw)
+
+df <- raw %>%
+  mutate(
+    hour = NA,
+    minute = NA,
+    obs_time_label = "9a.m.",
+    meta.Tx = case_when(
+      !is.na(maxF) ~ paste0("orig=", maxF, "F | obs.time=", obs_time_label),
+      is.na(maxF)  ~ ""
+    ),
+    meta.Tn = case_when(
+      !is.na(minF) ~ paste0("orig=", minF, "F | obs.time=", obs_time_label),
+      is.na(minF)  ~ ""
+    )
+  ) %>% 
+  select(year, month, day, hour, minute, Tx = maxC, Tn = minC, meta.Tx, meta.Tn) %>%
+  filter(!is.na(Tx) | !is.na(Tn))
+
+head(df)
+tail(df)
+
+var <- "Tx"
+df.Tx <- df[c("year","month", "day", "hour", "minute","Tx", "meta.Tx")] %>% filter(!is.na(Tx))
+write_sef_f(
+  as.data.frame(df.Tx),
+  outfile = outfile.name(paste0("ILMMT_",name, "-RDO-Dunsink"), var, df.Tx, FALSE),
+  outpath = outdir,
+  cod     = paste0("ILMMT-",name, "-RDO-Dunsink"),
+  lat     = lat,
+  lon     = lon,
+  alt     = alt,
+  sou     = source,
+  link    = link,
+  nam     = name,
+  var     = var,
+  stat    = "minimum",
+  period    = "day",
+  units   = units(var),
+  meta = df.Tx$meta.Tx,
+  metaHead=metaHead,
+  keep_na=TRUE
+)
+
+
+var <- "Tn"
+df.Tn <- df[c("year","month", "day", "hour", "minute","Tn", "meta.Tn")] %>% filter(!is.na(Tn))
+write_sef_f(
+  as.data.frame(df.Tn),
+  outfile = outfile.name(paste0("ILMMT_",name, "-RDO-Dunsink"), var, df.Tn, FALSE),
+  outpath = outdir,
+  cod     = paste0("ILMMT-",name,"-RDO-Dunsink"),
+  lat     = lat,
+  lon     = lon,
+  alt     = alt,
+  sou     = source,
+  link    = link,
+  nam     = name,
+  var     = var,
+  stat    = "minimum",
+  period    = "day",
+  units   = units(var),
+  meta = df.Tn$meta.Tn,
+  metaHead=metaHead,
+  keep_na=TRUE
+)
+
+
+# RCS Dublin --------------------------------------------------------------
+
+lat <- 53.339
+lon <- -6.261
+alt <- 11 # m (approximate elevation of St. Stephen's Green)
+
+metaHead <- paste0(
+  "Observer=John Evans, supervised by Prof. James Apjohn | ",
+  "Instrument=Max/Min thermometers | Location=Courtyard of Royal College of Surgeons, ",
+  "Dublin | DataSource=Dublin Medical Press | Notes=whole degree precision"
+)
+
+metaHead
+
+
+raw <- read.csv(paste0(indir, name, "/RCS Dublin_1841-1857.csv"), header=FALSE,
+                skip=1,fileEncoding = "latin1",
+                col.names=c("year", "month", "day", "maxF", "minF", "maxC", "minC", "extra"))
+
+head(raw)
+tail(raw)
+
+df <- raw %>%
+  mutate(
+    hour = NA,
+    minute = NA,
+    obs_time_label = "9a.m.",
+    meta.Tx = case_when(
+      !is.na(maxF) ~ paste0("orig=", maxF, "F"),
+      is.na(maxF)  ~ ""
+    ),
+    meta.Tn = case_when(
+      !is.na(minF) ~ paste0("orig=", minF, "F"),
+      is.na(minF)  ~ ""
+    )
+  ) %>% 
+  select(year, month, day, hour, minute, Tx = maxC, Tn = minC, meta.Tx, meta.Tn) %>%
+  filter(!is.na(Tx) | !is.na(Tn))
+
+head(df)
+tail(df)
+
+var <- "Tx"
+df.Tx <- df[c("year","month", "day", "hour", "minute","Tx", "meta.Tx")] %>% filter(!is.na(Tx))
+write_sef_f(
+  as.data.frame(df.Tx),
+  outfile = outfile.name(paste0("ILMMT_",name, "-RCS"), var, df.Tx, FALSE),
+  outpath = outdir,
+  cod     = paste0("ILMMT-",name, "-RCS"),
+  lat     = lat,
+  lon     = lon,
+  alt     = alt,
+  sou     = source,
+  link    = link,
+  nam     = name,
+  var     = var,
+  stat    = "minimum",
+  period    = "day",
+  units   = units(var),
+  meta = df.Tx$meta.Tx,
+  metaHead=metaHead,
+  keep_na=TRUE
+)
+
+
+var <- "Tn"
+df.Tn <- df[c("year","month", "day", "hour", "minute","Tn", "meta.Tn")] %>% filter(!is.na(Tn))
+write_sef_f(
+  as.data.frame(df.Tn),
+  outfile = outfile.name(paste0("ILMMT_",name, "-RCS"), var, df.Tn, FALSE),
+  outpath = outdir,
+  cod     = paste0("ILMMT-",name,"-RCS"),
+  lat     = lat,
+  lon     = lon,
+  alt     = alt,
+  sou     = source,
+  link    = link,
+  nam     = name,
+  var     = var,
+  stat    = "minimum",
+  period    = "day",
+  units   = units(var),
+  meta = df.Tn$meta.Tn,
+  metaHead=metaHead,
+  keep_na=TRUE
+)
+
 # Grafton Street Dublin ---------------------------------------------------
 
 lat <- 53.342
