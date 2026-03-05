@@ -12,7 +12,7 @@ Example:
   gap between end and next start > max_gap_days  => new series (new row)
 
 Usage:
-  python sef_series_length_v2.py /scratch3/PALAEO-RA/daily_data/final -o sef_series_summary_v2.csv --max-gap-days 30
+  python sef_series_length_v2.py /scratch3/PALAEO-RA/daily_data/final -o sef_series_summary_v2.csv --max-gap-days 366
 """
 
 from __future__ import annotations
@@ -145,6 +145,7 @@ def main() -> None:
         fn = os.path.basename(path)
         parsed = parse_sef_filename(fn)
         if not parsed:
+            print(f"DEBUG: Skipping unparseable file -> {path}")
             skipped += 1
             continue
 

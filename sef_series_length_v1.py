@@ -18,7 +18,7 @@ Outputs:
 - (optional) file_list
 
 Usage:
-    python sef_series_lengths.py /scratch3/PALAEO-RA/daily_data/final \
+    python sef_series_length.py /scratch3/PALAEO-RA/daily_data/final \
   -o sef_series_summary.csv --gap 1 --include-folder --write-file-list
 
 """
@@ -164,6 +164,7 @@ def main() -> None:
         fn = os.path.basename(path)
         parsed = parse_sef_filename(fn)
         if not parsed:
+            print(f"DEBUG: Skipping unparseable file -> {path}")
             skipped += 1
             continue
 
