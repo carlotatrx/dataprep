@@ -1,0 +1,77 @@
+
+======================================================================
+PORTSMOUTH
+======================================================================
+Run: 2026-04-02 14:25:48
+
+MERGE: Portsmouth | p_subdaily
+  Merged 2 files:
+    WRDv2-2_Portsmouth_18610301-18701130_p_subdaily.tsv
+    WRDv2-2_Portsmouth_18701201-18731231_p_subdaily.tsv
+  Output: /scratch3/PALAEO-RA/daily_data/final/Portsmouth/WRDv2-2_Portsmouth_18610301-18731231_p_subdaily.tsv
+  New Meta: PTC=Y | PGC=N | Alias=The Hard (18610301-18701130); unknown (18701201-18731231) | Coords=(50.79840,-1.10657,28m,18610301-18701130); (50.80017,-1.10543,28m,18701201-18731231)
+
+MERGE: Portsmouth | rr_daily
+  Merged 2 files:
+    WRDv2-2_Portsmouth_18620124-18701130_rr_daily.tsv
+    WRDv2-2_Portsmouth_18701201-18731231_rr_daily.tsv
+  Output: /scratch3/PALAEO-RA/daily_data/final/Portsmouth/WRDv2-2_Portsmouth_18620124-18731231_rr_daily.tsv
+  New Meta: Alias=The Hard (18620124-18701130); unknown (18701201-18731231) | Coords=(50.79840,-1.10657,28m,18620124-18701130); (50.80017,-1.10543,28m,18701201-18731231)
+
+MERGE: Portsmouth | ta_subdaily
+  Merged 2 files:
+    WRDv2-2_Portsmouth_18610301-18701030_ta_subdaily.tsv
+    WRDv2-2_Portsmouth_18701201-18731231_ta_subdaily.tsv
+  Output: /scratch3/PALAEO-RA/daily_data/final/Portsmouth/WRDv2-2_Portsmouth_18610301-18731231_ta_subdaily.tsv
+  New Meta: Alias=The Hard (18610301-18701030); unknown (18701201-18731231) | Coords=(50.79840,-1.10657,28m,18610301-18701030); (50.80017,-1.10543,28m,18701201-18731231)
+
+
+
+======================================================================
+WICK
+======================================================================
+Run: 2026-04-02 14:51:52
+
+MERGE: Wick | Tn_daily
+  Merged 2 files:
+    WRDv2-2_Wick_18720114-18720626_Tn_daily.tsv
+    WRDv2-2_Wick_18720627-18750331_Tn_daily.tsv
+  Output: /scratch3/PALAEO-RA/daily_data/final/Wick/WRDv2-2_Wick_18720114-18750331_Tn_daily.tsv
+  New Meta: Coords=(58.442,-3.094,33m,18720114-18720626); (58.442519,-3.090779,33m,18720627-18750331)
+
+MERGE: Wick | Tx_daily
+  Merged 2 files:
+    WRDv2-2_Wick_18720114-18720626_Tx_daily.tsv
+    WRDv2-2_Wick_18720627-18750331_Tx_daily.tsv
+  Output: /scratch3/PALAEO-RA/daily_data/final/Wick/WRDv2-2_Wick_18720114-18750331_Tx_daily.tsv
+  New Meta: Coords=(58.442,-3.094,33m,18720114-18720626); (58.442519,-3.090779,33m,18720627-18750331)
+
+MERGE: Wick | p_subdaily
+  Merged 2 files:
+    WRDv2-2_Wick_18700101-18720608_p_subdaily.tsv
+    WRDv2-2_Wick_18720627-18750331_p_subdaily.tsv
+  Output: /scratch3/PALAEO-RA/daily_data/final/Wick/WRDv2-2_Wick_18700101-18750331_p_subdaily.tsv
+  New Meta: PTC=Y | PGC=N | Coords=(58.442,-3.094,33m,18700101-18720608); (58.442519,-3.090779,8.2m,18720627-18750331)
+
+MERGE: Wick | rr_daily
+  Merged 2 files:
+    WRDv2-2_Wick_18700101-18720626_rr_daily.tsv
+    WRDv2-2_Wick_18720627-18750331_rr_daily.tsv
+  Output: /scratch3/PALAEO-RA/daily_data/final/Wick/WRDv2-2_Wick_18700101-18750331_rr_daily.tsv
+  New Meta: Coords=(58.442,-3.094,33m,18700101-18720626); (58.442519,-3.090779,24.4m,18720627-18750331)
+
+MERGE: Wick | ta_barometer_subdaily
+  Merged 2 files:
+    WRDv2-2_Wick_18720104-18720626_ta_barometer_subdaily.tsv
+    WRDv2-2_Wick_18720627-18750331_ta_barometer_subdaily.tsv
+  Output: /scratch3/PALAEO-RA/daily_data/final/Wick/WRDv2-2_Wick_18720104-18750331_ta_barometer_subdaily.tsv
+  New Meta: Coords=(58.442,-3.094,33m,18720104-18720626); (58.442519,-3.090779,33m,18720627-18750331)
+
+MERGE: Wick | ta_subdaily
+  Merged 2 files:
+    WRDv2-2_Wick_18700101-18720626_ta_subdaily.tsv
+    WRDv2-2_Wick_18720627-18750331_ta_subdaily.tsv
+  Output: /scratch3/PALAEO-RA/daily_data/final/Wick/WRDv2-2_Wick_18700101-18750331_ta_subdaily.tsv
+  New Meta: Coords=(58.442,-3.094,33m,18700101-18720626); (58.442519,-3.090779,33m,18720627-18750331)
+
+

@@ -18,7 +18,7 @@ Outputs:
 - (optional) file_list
 
 Usage:
-    python sef_series_length.py /scratch3/PALAEO-RA/daily_data/final \
+    python sef_series_length_v1.py /scratch3/PALAEO-RA/daily_data/final \
   -o sef_series_summary.csv --gap 1 --include-folder --write-file-list
 
 """

@@ -1,0 +1,304 @@
+SCILLY
+======================================================================
+MERGE: Scilly | p_subdaily
+  Files to merge (2):
+    WRDv2-2_Scilly_18710104-18750331_p_subdaily.tsv
+    WRDv2-2_Scilly_18750201-19091231_p_subdaily.tsv
+  New filename: WRDv2-2_Scilly_18710104-19091231_p_subdaily.tsv
+
+  OVERLAP WARNINGS:
+    Files 1 and 2 overlap by 58 days (1875-03-31 to 1875-02-01)
+    -> Rows from the later file in this period will be DROPPED
+
+  mv commands:
+    mv WRDv2-2_Scilly_18710104-18750331_p_subdaily.tsv WRDv2-2_Scilly_18710104-19091231_p_subdaily.tsv
+    mv WRDv2-2_Scilly_18750201-19091231_p_subdaily.tsv 2.tsv
+
+  New metahead (for manual update):
+  ---------------------------------
+    SEF 1.0.0
+    ID  DWRUK_SCILLY
+    Name        St. Mary's Signal Station
+    Lat 49.910000
+    Lon -6.320000
+    Alt 6.1
+    Source      DWR_UKMO
+    Link        DOI 10.5281/zenodo.5940391
+    Vbl p
+    Stat        point
+    Units       hPa
+    Meta        PTC=Y | PGC=N | Coords=(49.912044,-6.322629,19.8m,18710104-18750331); (49.910000,-6.320000,6.1m,18750201-19091231)
+
+  Deduplication applied:
+    OVERLAP 1875-02-01 to 1875-03-31: 177 rows dropped from the later file (kept earlier file's data for this period)
+
+  [DONE] Renamed and data merged into WRDv2-2_Scilly_18710104-19091231_p_subdaily.tsv
+  [DONE] Renamed WRDv2-2_Scilly_18750201-19091231_p_subdaily.tsv -> 2.tsv
+
+======================================================================
+HOLYHEAD
+======================================================================
+MERGE: Holyhead | p_subdaily
+  Files to merge (2):
+    WRDv2-2_Holyhead_18620701-18720629_p_subdaily.tsv
+    WRDv2-2_Holyhead_18720701-18750331_p_subdaily.tsv
+  New filename: WRDv2-2_Holyhead_18620701-18750331_p_subdaily.tsv
+
+  mv commands:
+    mv /scratch3/PALAEO-RA/daily_data/final/Holyhead/WRDv2-2_Holyhead_18620701-18720629_p_subdaily.tsv /scratch3/PALAEO-RA/daily_data/final/Holyhead/WRDv2-2_Holyhead_18620701-18750331_p_subdaily.tsv
+    mv /scratch3/PALAEO-RA/daily_data/final/Holyhead/WRDv2-2_Holyhead_18720701-18750331_p_subdaily.tsv /scratch3/PALAEO-RA/daily_data/final/Holyhead/2-p_subdaily.tsv
+
+  New metahead (for manual update):
+  ---------------------------------
+    SEF 1.0.0
+    ID  DWRUK_HOLYHEAD
+    Name        Holyhead
+    Lat 53.32
+    Lon -4.62
+    Alt 220
+    Source      DWR_UKMO
+    Link        DOI 10.5281/zenodo.5940391
+    Vbl p
+    Stat        point
+    Units       hPa
+    Meta        PTC=Y | PGC=N | Coords=(53.32,-4.62,220m,18620701-18720629); (53.315922,-4.634486,220m,18720701-18750331)
+
+  [DONE] Renamed and data merged into WRDv2-2_Holyhead_18620701-18750331_p_subdaily.tsv
+  [DONE] Renamed WRDv2-2_Holyhead_18720701-18750331_p_subdaily.tsv -> 2.tsv
+
+======================================================================
+MERGE: Holyhead | ta_barometer_subdaily
+  Files to merge (2):
+    WRDv2-2_Holyhead_18620701-18720629_ta_barometer_subdaily.tsv
+    WRDv2-2_Holyhead_18720701-18750331_ta_barometer_subdaily.tsv
+  New filename: WRDv2-2_Holyhead_18620701-18750331_ta_barometer_subdaily.tsv
+
+  mv commands:
+    mv /scratch3/PALAEO-RA/daily_data/final/Holyhead/WRDv2-2_Holyhead_18620701-18720629_ta_barometer_subdaily.tsv /scratch3/PALAEO-RA/daily_data/final/Holyhead/WRDv2-2_Holyhead_18620701-18750331_ta_barometer_subdaily.tsv
+    mv /scratch3/PALAEO-RA/daily_data/final/Holyhead/WRDv2-2_Holyhead_18720701-18750331_ta_barometer_subdaily.tsv /scratch3/PALAEO-RA/daily_data/final/Holyhead/2-ta_barometer_subdaily.tsv
+
+  New metahead (for manual update):
+  ---------------------------------
+    SEF 1.0.0
+    ID  DWRUK_HOLYHEAD
+    Name        Holyhead
+    Lat 53.315922
+    Lon -4.634486
+    Alt 220
+    Source      DWR_UKMO
+    Link        DOI 10.5281/zenodo.5940391
+    Vbl ta
+    Stat        point
+    Units       C
+    Meta        Coords=(53.32,-4.62,220m,18620701-18720629); (53.315922,-4.634486,220m,18720701-18750331)
+
+  [DONE] Renamed and data merged into WRDv2-2_Holyhead_18620701-18750331_ta_barometer_subdaily.tsv
+  [DONE] Renamed WRDv2-2_Holyhead_18720701-18750331_ta_barometer_subdaily.tsv -> 2.tsv
+
+======================================================================
+MERGE: Holyhead | ta_subdaily
+  Files to merge (2):
+    WRDv2-2_Holyhead_18620701-18720629_ta_subdaily.tsv
+    WRDv2-2_Holyhead_18720701-18750331_ta_subdaily.tsv
+  New filename: WRDv2-2_Holyhead_18620701-18750331_ta_subdaily.tsv
+
+  mv commands:
+    mv /scratch3/PALAEO-RA/daily_data/final/Holyhead/WRDv2-2_Holyhead_18620701-18720629_ta_subdaily.tsv /scratch3/PALAEO-RA/daily_data/final/Holyhead/WRDv2-2_Holyhead_18620701-18750331_ta_subdaily.tsv
+    mv /scratch3/PALAEO-RA/daily_data/final/Holyhead/WRDv2-2_Holyhead_18720701-18750331_ta_subdaily.tsv /scratch3/PALAEO-RA/daily_data/final/Holyhead/2-ta_subdaily.tsv
+
+  New metahead (for manual update):
+  ---------------------------------
+    SEF 1.0.0
+    ID  DWRUK_HOLYHEAD
+    Name        Holyhead
+    Lat 53.32
+    Lon -4.62
+    Alt 220
+    Source      DWR_UKMO
+    Link        DOI 10.5281/zenodo.5940391
+    Vbl ta
+    Stat        point
+    Units       C
+    Meta        Coords=(53.32,-4.62,220m,18620701-18720629); (53.315922,-4.634486,220m,18720701-18750331)
+
+  [DONE] Renamed and data merged into WRDv2-2_Holyhead_18620701-18750331_ta_subdaily.tsv
+  [DONE] Renamed WRDv2-2_Holyhead_18720701-18750331_ta_subdaily.tsv -> 2.tsv
+
+======================================================================
+MERGE: Holyhead | Tn_daily
+  Files to merge (2):
+    WRDv2-2_Holyhead_18720115-18720629_Tn_daily.tsv
+    WRDv2-2_Holyhead_18720701-18750331_Tn_daily.tsv
+  New filename: WRDv2-2_Holyhead_18720115-18750331_Tn_daily.tsv
+
+  mv commands:
+    mv /scratch3/PALAEO-RA/daily_data/final/Holyhead/WRDv2-2_Holyhead_18720115-18720629_Tn_daily.tsv /scratch3/PALAEO-RA/daily_data/final/Holyhead/WRDv2-2_Holyhead_18720115-18750331_Tn_daily.tsv
+    mv /scratch3/PALAEO-RA/daily_data/final/Holyhead/WRDv2-2_Holyhead_18720701-18750331_Tn_daily.tsv /scratch3/PALAEO-RA/daily_data/final/Holyhead/2.tsv
+
+  New metahead (for manual update):
+  ---------------------------------
+    SEF 1.0.0
+    ID  DWRUK_HOLYHEAD
+    Name        Holyhead
+    Lat 53.315922
+    Lon -4.634486
+    Alt 220
+    Source      DWR_UKMO
+    Link        DOI 10.5281/zenodo.5940391
+    Vbl Tn
+    Stat        minimum
+    Units       C
+    Meta        Coords=(53.32,-4.62,220m,18720115-18720629); (53.315922,-4.634486,220m,18720701-18750331)
+
+  [DONE] Renamed and data merged into WRDv2-2_Holyhead_18720115-18750331_Tn_daily.tsv
+  [DONE] Renamed WRDv2-2_Holyhead_18720701-18750331_Tn_daily.tsv -> 2.tsv
+
+======================================================================
+MERGE: Holyhead | Tx_daily
+  Files to merge (2):
+    WRDv2-2_Holyhead_18720115-18720629_Tx_daily.tsv
+    WRDv2-2_Holyhead_18720701-18750331_Tx_daily.tsv
+  New filename: WRDv2-2_Holyhead_18720115-18750331_Tx_daily.tsv
+
+  mv commands:
+    mv /scratch3/PALAEO-RA/daily_data/final/Holyhead/WRDv2-2_Holyhead_18720115-18720629_Tx_daily.tsv /scratch3/PALAEO-RA/daily_data/final/Holyhead/WRDv2-2_Holyhead_18720115-18750331_Tx_daily.tsv
+    mv /scratch3/PALAEO-RA/daily_data/final/Holyhead/WRDv2-2_Holyhead_18720701-18750331_Tx_daily.tsv /scratch3/PALAEO-RA/daily_data/final/Holyhead/2.tsv
+
+  New metahead (for manual update):
+  ---------------------------------
+    SEF 1.0.0
+    ID  DWRUK_HOLYHEAD
+    Name        Holyhead
+    Lat 53.315922
+    Lon -4.634486
+    Alt 220
+    Source      DWR_UKMO
+    Link        DOI 10.5281/zenodo.5940391
+    Vbl Tx
+    Stat        maximum
+    Units       C
+    Meta        Coords=(53.32,-4.62,220m,18720115-18720629); (53.315922,-4.634486,220m,18720701-18750331)
+
+  [DONE] Renamed and data merged into WRDv2-2_Holyhead_18720115-18750331_Tx_daily.tsv
+  [DONE] Renamed WRDv2-2_Holyhead_18720701-18750331_Tx_daily.tsv -> 2.tsv
+
+======================================================================
+MERGE: Holyhead | rr_daily
+  Files to merge (2):
+    WRDv2-2_Holyhead_18620701-18720629_rr_daily.tsv
+    WRDv2-2_Holyhead_18720701-18750331_rr_daily.tsv
+  New filename: WRDv2-2_Holyhead_18620701-18750331_rr_daily.tsv
+
+  mv commands:
+    mv /scratch3/PALAEO-RA/daily_data/final/Holyhead/WRDv2-2_Holyhead_18620701-18720629_rr_daily.tsv /scratch3/PALAEO-RA/daily_data/final/Holyhead/WRDv2-2_Holyhead_18620701-18750331_rr_daily.tsv
+    mv /scratch3/PALAEO-RA/daily_data/final/Holyhead/WRDv2-2_Holyhead_18720701-18750331_rr_daily.tsv /scratch3/PALAEO-RA/daily_data/final/Holyhead/2.tsv
+
+  New metahead (for manual update):
+  ---------------------------------
+    SEF 1.0.0
+    ID  DWRUK_HOLYHEAD
+    Name        Holyhead
+    Lat 53.32
+    Lon -4.62
+    Alt 220
+    Source      DWR_UKMO
+    Link        DOI 10.5281/zenodo.5940391
+    Vbl rr
+    Stat        sum
+    Units       mm
+    Meta        Coords=(53.32,-4.62,220m,18620701-18720629); (53.315922,-4.634486,220m,18720701-18750331)
+
+  [DONE] Renamed and data merged into WRDv2-2_Holyhead_18620701-18750331_rr_daily.tsv
+  [DONE] Renamed WRDv2-2_Holyhead_18720701-18750331_rr_daily.tsv -> 2.tsv
+
+======================================================================
+PLYMOUTH
+======================================================================
+MERGE: Plymouth | p_subdaily
+  Files to merge (2):
+    WRDv2-2_Plymouth_18610301-18700801_p_subdaily.tsv
+    WRDv2-2_Plymouth_18700803-18750331_p_subdaily.tsv
+  New filename: WRDv2-2_Plymouth_18610301-18750331_p_subdaily.tsv
+
+  mv commands:
+    mv /scratch3/PALAEO-RA/daily_data/final/Plymouth/WRDv2-2_Plymouth_18610301-18700801_p_subdaily.tsv /scratch3/PALAEO-RA/daily_data/final/Plymouth/WRDv2-2_Plymouth_18610301-18750331_p_subdaily.tsv
+    mv /scratch3/PALAEO-RA/daily_data/final/Plymouth/WRDv2-2_Plymouth_18700803-18750331_p_subdaily.tsv /scratch3/PALAEO-RA/daily_data/final/Plymouth/2.tsv
+
+  New metahead (for manual update):
+  ---------------------------------
+    SEF 1.0.0
+    ID  DWRUK_PLYMOUTH
+    Name        Plymouth
+    Lat 50.36974
+    Lon -4.13916
+    Alt 53
+    Source      DWR_UKMO
+    Link        DOI 10.5281/zenodo.5940391
+    Vbl p
+    Stat        point
+    Units       hPa
+    Meta        PTC=Y | PGC=N | Alias=unknown (18610301-18700801); Plymouth Navigation School (18700803-18750331) | Coords=(50.36974,-4.13916,53m,18610301-18700801); (50.37322,-4.1319,20.9m,18700803-18750331)
+
+  [DONE] Renamed and data merged into WRDv2-2_Plymouth_18610301-18750331_p_subdaily.tsv
+  [DONE] Renamed WRDv2-2_Plymouth_18700803-18750331_p_subdaily.tsv -> 2.tsv
+
+======================================================================
+MERGE: Plymouth | rr_daily
+  Files to merge (2):
+    WRDv2-2_Plymouth_18620211-18700801_rr_daily.tsv
+    WRDv2-2_Plymouth_18700802-18750331_rr_daily.tsv
+  New filename: WRDv2-2_Plymouth_18620211-18750331_rr_daily.tsv
+
+  mv commands:
+    mv /scratch3/PALAEO-RA/daily_data/final/Plymouth/WRDv2-2_Plymouth_18620211-18700801_rr_daily.tsv /scratch3/PALAEO-RA/daily_data/final/Plymouth/WRDv2-2_Plymouth_18620211-18750331_rr_daily.tsv
+    mv /scratch3/PALAEO-RA/daily_data/final/Plymouth/WRDv2-2_Plymouth_18700802-18750331_rr_daily.tsv /scratch3/PALAEO-RA/daily_data/final/Plymouth/2.tsv
+
+  New metahead (for manual update):
+  ---------------------------------
+    SEF 1.0.0
+    ID  DWRUK_PLYMOUTH
+    Name        Plymouth
+    Lat 50.36974
+    Lon -4.13916
+    Alt 53
+    Source      DWR_UKMO
+    Link        DOI 10.5281/zenodo.5940391
+    Vbl rr
+    Stat        sum
+    Units       mm
+    Meta        Alias=unknown (18620211-18700801); Plymouth Navigation School (18700802-18750331) | Coords=(50.36974,-4.13916,53m,18620211-18700801); (50.37322,-4.1319,22.9m,18700802-18750331)
+
+  [DONE] Renamed and data merged into WRDv2-2_Plymouth_18620211-18750331_rr_daily.tsv
+  [DONE] Renamed WRDv2-2_Plymouth_18700802-18750331_rr_daily.tsv -> 2.tsv
+
+======================================================================
+MERGE: Plymouth | ta_subdaily
+  Files to merge (2):
+    WRDv2-2_Plymouth_18610301-18700709_ta_subdaily.tsv
+    WRDv2-2_Plymouth_18700802-18750331_ta_subdaily.tsv
+  New filename: WRDv2-2_Plymouth_18610301-18750331_ta_subdaily.tsv
+
+  mv commands:
+    mv /scratch3/PALAEO-RA/daily_data/final/Plymouth/WRDv2-2_Plymouth_18610301-18700709_ta_subdaily.tsv /scratch3/PALAEO-RA/daily_data/final/Plymouth/WRDv2-2_Plymouth_18610301-18750331_ta_subdaily.tsv
+    mv /scratch3/PALAEO-RA/daily_data/final/Plymouth/WRDv2-2_Plymouth_18700802-18750331_ta_subdaily.tsv /scratch3/PALAEO-RA/daily_data/final/Plymouth/2.tsv
+
+  New metahead (for manual update):
+  ---------------------------------
+    SEF 1.0.0
+    ID  DWRUK_PLYMOUTH
+    Name        Plymouth
+    Lat 50.36974
+    Lon -4.13916
+    Alt 53
+    Source      DWR_UKMO
+    Link        DOI 10.5281/zenodo.5940391
+    Vbl ta
+    Stat        point
+    Units       C
+    Meta        Alias=unknown (18610301-18700709); Plymouth Navigation School (18700802-18750331) | Coords=(50.36974,-4.13916,53m,18610301-18700709); (50.37322,-4.1319,53m,18700802-18750331)
+
+  [DONE] Renamed and data merged into WRDv2-2_Plymouth_18610301-18750331_ta_subdaily.tsv
+  [DONE] Renamed WRDv2-2_Plymouth_18700802-18750331_ta_subdaily.tsv -> 2.tsv
+
+======================================================================
+

@@ -1,3 +1,22 @@
+import pandas as pd
+
+v1 = pd.read_csv("sef_series_summary_v1.csv")
+v2 = pd.read_csv("sef_series_summary_v2.csv")
+
+# Count series per (station_source, variable) in v2
+v2_counts = v2.groupby(["station_source", "variable"]).size().reset_index(name="n_series")
+
+# Keep only those split into more than 1 series
+candidates = v2_counts[v2_counts["n_series"] > 1].sort_values("n_series", ascending=False)
+
+# Enrich with the actual series details so you can inspect the gaps
+candidates_full = v2.merge(candidates[["station_source", "variable"]], on=["station_source", "variable"])
+candidates_full = candidates_full.sort_values(["station_source", "variable", "start"])
+
+candidates_full.to_csv("grouping_candidates.csv", index=False)
+print(f"Unique (station, variable) pairs to review: {len(candidates)}")
+print(f"Total series rows involved: {len(candidates_full)}")
+
 #!/usr/bin/env python3
 """
 Unified SEF Series Processor

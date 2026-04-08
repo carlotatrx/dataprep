@@ -12,7 +12,7 @@ Example:
   gap between end and next start > max_gap_days  => new series (new row)
 
 Usage:
-  python sef_series_lengths_v2.py /scratch3/PALAEO-RA/daily_data/final -o summary.csv --max-gap-days 30
+  python sef_series_length_v2.py /scratch3/PALAEO-RA/daily_data/final -o sef_series_summary_v2.csv --max-gap-days 367
 """
 
 from __future__ import annotations
@@ -72,11 +72,21 @@ def parse_sef_filename(filename: str) -> Optional[Tuple[str, date, date, str]]:
     if not station_source or not right:
         return None
 
-    var = right.split("_", 1)[0]
+    tokens = right.split("_")
+    # Strip trailing resolution/QC suffixes that are not part of the instrument/variable identity
+    IGNORE_SUFFIXES = {"subdaily", "daily", "qc"}
+    while tokens and tokens[-1].lower() in IGNORE_SUFFIXES:
+        tokens.pop()
+    var = "_".join(tokens)
     if not var:
         return None
 
     return station_source, start_dt, end_dt, var
+    # var = right.split("_", 1)[0]
+    # if not var:
+    #     return None
+
+    # return station_source, start_dt, end_dt, var
 
 
 def iter_tsv_files(root: str) -> Iterable[str]:
@@ -124,7 +134,52 @@ def cluster_into_series(segments: List[Segment], max_gap_days: int = 30) -> List
     out.append((cur_start, cur_end, cur_list))
     return out
 
+def read_sef_stat(filepath: str) -> Optional[str]:
+    """Read the 'Stat' field from a SEF file metaheader."""
+    try:
+        with open(filepath, encoding="utf-8", errors="replace") as f:
+            for line in f:
+                line = line.rstrip("\n")
+                if line.startswith("Stat\t"):
+                    return line.split("\t", 1)[1].strip()
+                # Stop after the data header line
+                if line.startswith("Year\t"):
+                    break
+    except OSError:
+        pass
+    return None
 
+def read_active_years(filepath: str) -> set:
+    active = set()
+    in_data = False
+    MISSING = {"-999", "-9999", "NA", "", "na", "nan", "-", "missing"}
+
+    with open(filepath, encoding="utf-8", errors="replace") as f:
+        for line in f:
+            line = line.rstrip("\n")
+            if line.startswith("Year\t"):
+                in_data = True
+                continue
+            if not in_data:
+                continue
+            parts = line.split("\t")
+            if len(parts) < 7:
+                continue
+            val = parts[6].strip().lower()
+            if val in MISSING:
+                continue
+            try:
+                fval = float(val)
+                if fval in (-999.0, -9999.0):
+                    continue
+            except ValueError:
+                continue
+            try:
+                active.add(int(parts[0]))
+            except ValueError:
+                continue
+    return active
+    
 def main() -> None:
     ap = argparse.ArgumentParser(description="Summarize SEF record lengths by parsing filenames.")
     ap.add_argument("root", help="Root directory containing station folders and SEF .tsv files")
@@ -135,28 +190,43 @@ def main() -> None:
                     help="Include the immediate parent folder name as a column (useful if folder=station).")
     ap.add_argument("--write-file-list", action="store_true",
                     help="Include a 'file_list' column (can be very large).")
+    ap.add_argument("--active-years-output", default="sef_active_years.csv", help="Output CSV for active years.")
     args = ap.parse_args()
 
     # Group raw segments by base key (station_source, variable) + optional folder
     groups: Dict[Tuple[str, str, Optional[str]], List[Segment]] = {}
+    active_years_rows: List[Dict] = []
     skipped = 0
 
     for path in iter_tsv_files(args.root):
         fn = os.path.basename(path)
         parsed = parse_sef_filename(fn)
         if not parsed:
+            print(f"DEBUG: Skipping unparseable file -> {path}")
             skipped += 1
             continue
 
         station_source, start_dt, end_dt, var = parsed
         folder = os.path.basename(os.path.dirname(path)) if args.include_folder else None
 
-        key = (station_source, var, folder)
+        # AFTER
+        stat = read_sef_stat(path)  # e.g. "point", "day", "mean", etc.
+        key = (station_source, var, stat, folder)
         groups.setdefault(key, []).append(Segment(start_dt, end_dt, path))
+        # key = (station_source, var, folder)
+        # groups.setdefault(key, []).append(Segment(start_dt, end_dt, path))
+        for yr in read_active_years(path):
+            active_years_rows.append({
+                "station_source": station_source,
+                "variable": var,
+                "year": yr
+            })
+
 
     fieldnames = [
         "station_source",
         "variable",
+        "stat",
         "folder" if args.include_folder else None,
         "series_index",
         "start",
@@ -169,14 +239,14 @@ def main() -> None:
         "file_list" if args.write_file_list else None,
     ]
     fieldnames = [f for f in fieldnames if f is not None]
-
+    
     with open(args.output, "w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=fieldnames)
         w.writeheader()
 
-        for (station_source, var, folder), segs in sorted(
+        for (station_source, var, stat, folder), segs in sorted(
             groups.items(),
-            key=lambda x: (x[0][0], x[0][1], x[0][2] or "")
+            key=lambda x: (x[0][0], x[0][1], x[0][2] or "", x[0][3] or "")
         ):
             # split into separate series using max-gap-days
             series_list = cluster_into_series(segs, max_gap_days=args.max_gap_days)
@@ -201,6 +271,7 @@ def main() -> None:
                 row = {
                     "station_source": station_source,
                     "variable": var,
+                    "stat": stat or "",   # key is (station_source, var, stat, folder)
                     "series_index": idx,
                     "start": s_start.isoformat(),
                     "end": s_end.isoformat(),
@@ -217,7 +288,22 @@ def main() -> None:
 
                 w.writerow(row)
 
-    print(f"Wrote: {args.output}")
+ # Write active years CSV (deduplicated: one (station_source, variable, year) per row)
+    seen = set()
+    deduped_rows = []
+    for row in active_years_rows:
+        key = (row["station_source"], row["variable"], row["year"])
+        if key not in seen:
+            seen.add(key)
+            deduped_rows.append(row)
+
+    with open(args.active_years_output, "w", newline="", encoding="utf-8") as f:
+        w = csv.DictWriter(f, fieldnames=["station_source", "variable", "year"])
+        w.writeheader()
+        w.writerows(sorted(deduped_rows, key=lambda r: (r["station_source"], r["variable"], r["year"])))
+
+    print(f"Wrote series summary:  {args.output}")
+    print(f"Wrote active years:    {args.active_years_output}")
     if skipped:
         print(f"Skipped (unparseable) files: {skipped}")
     print(f"Base groups (station_source+variable): {len(groups)}")
