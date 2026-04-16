@@ -1,0 +1,1137 @@
+window,event,folder,ID,Name,Vbl,Source,Link,year_start,year_end,Lat,Lon
+1860s spike,START,Aalesund,Ålesund,Ålesund,p,frost.met.no,DOI 10.5281/zenodo.5940391,1864,1866,62.4755,6.1508
+1860s spike,END,Aalesund,Ålesund,Ålesund,p,frost.met.no,DOI 10.5281/zenodo.5940391,1864,1866,62.4755,6.1508
+1860s spike,END,Aarau,AG01_Aarau_Zschogge,Aarau,p,CHIMES,https://doi.org/10.5194/cp-15-1345-2019,1807,1865,47.393,8.043
+1860s spike,END,Aarau,AG01_Aarau_Zschogge,Aarau,ta,CHIMES,https://doi.org/10.5194/cp-15-1345-2019,1807,1865,47.393,8.043
+1860s spike,START,Aarau,AG01_Aarau_Zschogge,Aarau,rr,CHIMES,https://doi.org/10.5194/cp-15-1345-2019,1857,1865,47.393,8.043
+1860s spike,END,Aarau,AG01_Aarau_Zschogge,Aarau,rr,CHIMES,https://doi.org/10.5194/cp-15-1345-2019,1857,1865,47.393,8.043
+1860s spike,START,Aberdeen,WMO-3091,Aberdeen,p,CRU,https://sites.uea.ac.uk/cru/,1861,1995,57.16,-2.1
+1860s spike,START,Aberdeen,ABERDEEN,ABERDEEN,p,EMULATE,DOI 10.5281/zenodo.5940391,1861,1877,57.2000,-2.2000
+1860s spike,START,Aberdeen,DWRUK_ABERDEEN,Aberdeen Observatory,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,57.164128,-2.100822
+1860s spike,START,Aberdeen,DWRUK_ABERDEEN,Aberdeen Observatory,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,57.16413,-2.10082
+1860s spike,START,Aberdeen,DWRUK_ABERDEEN,Aberdeen Observatory,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,57.164128,-2.100822
+1860s spike,START,Aberdeen,DWRUK_ABERDEEN,Aberdeen Observatory,rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,57.164128,-2.100822
+1860s spike,START,Alange,BAALAN1,Extremadura-Alange,p,"Vaquero, José Manuel; Bravo-Paredes, Nieves; Obregón, María Angeles; Sánchez-Carrasco, Víctor Manuel; Valente, Maria Antónia; Trigo, Ricardo M; Domínguez-Castro, Fernando; Montero-Martín, Javier; Vaquero-Martínez, Javier; Antón, Manuel; García, José Agustín; Gallego, María Cruz (2020): Early meteorological records from BAALAN1 (1866). PANGAEA.",https://doi.pangaea.de/10.1594/PANGAEA.925805,1866,1866,38.784444,-6.243611
+1860s spike,END,Alange,BAALAN1,Extremadura-Alange,p,"Vaquero, José Manuel; Bravo-Paredes, Nieves; Obregón, María Angeles; Sánchez-Carrasco, Víctor Manuel; Valente, Maria Antónia; Trigo, Ricardo M; Domínguez-Castro, Fernando; Montero-Martín, Javier; Vaquero-Martínez, Javier; Antón, Manuel; García, José Agustín; Gallego, María Cruz (2020): Early meteorological records from BAALAN1 (1866). PANGAEA.",https://doi.pangaea.de/10.1594/PANGAEA.925805,1866,1866,38.784444,-6.243611
+1860s spike,START,Alange,BAALAN1,Extremadura-Alange,rh,"Vaquero, José Manuel; Bravo-Paredes, Nieves; Obregón, María Angeles; Sánchez-Carrasco, Víctor Manuel; Valente, Maria Antónia; Trigo, Ricardo M; Domínguez-Castro, Fernando; Montero-Martín, Javier; Vaquero-Martínez, Javier; Antón, Manuel; García, José Agustín; Gallego, María Cruz (2020): Early meteorological records from BAALAN1 (1866). PANGAEA.",https://doi.pangaea.de/10.1594/PANGAEA.925805,1866,1866,38.784444,-6.243611
+1860s spike,END,Alange,BAALAN1,Extremadura-Alange,rh,"Vaquero, José Manuel; Bravo-Paredes, Nieves; Obregón, María Angeles; Sánchez-Carrasco, Víctor Manuel; Valente, Maria Antónia; Trigo, Ricardo M; Domínguez-Castro, Fernando; Montero-Martín, Javier; Vaquero-Martínez, Javier; Antón, Manuel; García, José Agustín; Gallego, María Cruz (2020): Early meteorological records from BAALAN1 (1866). PANGAEA.",https://doi.pangaea.de/10.1594/PANGAEA.925805,1866,1866,38.784444,-6.243611
+1860s spike,START,Alange,BAALAN1,Extremadura-Alange,ta,"Vaquero, José Manuel; Bravo-Paredes, Nieves; Obregón, María Angeles; Sánchez-Carrasco, Víctor Manuel; Valente, Maria Antónia; Trigo, Ricardo M; Domínguez-Castro, Fernando; Montero-Martín, Javier; Vaquero-Martínez, Javier; Antón, Manuel; García, José Agustín; Gallego, María Cruz (2020): Early meteorological records from BAALAN1 (1866). PANGAEA.",https://doi.pangaea.de/10.1594/PANGAEA.925805,1866,1866,38.784444,-6.243611
+1860s spike,END,Alange,BAALAN1,Extremadura-Alange,ta,"Vaquero, José Manuel; Bravo-Paredes, Nieves; Obregón, María Angeles; Sánchez-Carrasco, Víctor Manuel; Valente, Maria Antónia; Trigo, Ricardo M; Domínguez-Castro, Fernando; Montero-Martín, Javier; Vaquero-Martínez, Javier; Antón, Manuel; García, José Agustín; Gallego, María Cruz (2020): Early meteorological records from BAALAN1 (1866). PANGAEA.",https://doi.pangaea.de/10.1594/PANGAEA.925805,1866,1866,38.784444,-6.243611
+1860s spike,START,Alange,BAALAN2,Extremadura-Alange,p,"Vaquero, José Manuel; Bravo-Paredes, Nieves; Obregón, María Angeles; Sánchez-Carrasco, Víctor Manuel; Valente, Maria Antónia; Trigo, Ricardo M; Domínguez-Castro, Fernando; Montero-Martín, Javier; Vaquero-Martínez, Javier; Antón, Manuel; García, José Agustín; Gallego, María Cruz (2020): Early meteorological records from BAALAN1 (1866). PANGAEA.",https://doi.pangaea.de/10.1594/PANGAEA.925805,1868,1868,38.784444,-6.243611
+1860s spike,END,Alange,BAALAN2,Extremadura-Alange,p,"Vaquero, José Manuel; Bravo-Paredes, Nieves; Obregón, María Angeles; Sánchez-Carrasco, Víctor Manuel; Valente, Maria Antónia; Trigo, Ricardo M; Domínguez-Castro, Fernando; Montero-Martín, Javier; Vaquero-Martínez, Javier; Antón, Manuel; García, José Agustín; Gallego, María Cruz (2020): Early meteorological records from BAALAN1 (1866). PANGAEA.",https://doi.pangaea.de/10.1594/PANGAEA.925805,1868,1868,38.784444,-6.243611
+1860s spike,START,Alange,BAALAN2,Extremadura-Alange,rh,"Vaquero, José Manuel; Bravo-Paredes, Nieves; Obregón, María Angeles; Sánchez-Carrasco, Víctor Manuel; Valente, Maria Antónia; Trigo, Ricardo M; Domínguez-Castro, Fernando; Montero-Martín, Javier; Vaquero-Martínez, Javier; Antón, Manuel; García, José Agustín; Gallego, María Cruz (2020): Early meteorological records from BAALAN1 (1866). PANGAEA.",https://doi.pangaea.de/10.1594/PANGAEA.925805,1868,1868,38.784444,-6.243611
+1860s spike,END,Alange,BAALAN2,Extremadura-Alange,rh,"Vaquero, José Manuel; Bravo-Paredes, Nieves; Obregón, María Angeles; Sánchez-Carrasco, Víctor Manuel; Valente, Maria Antónia; Trigo, Ricardo M; Domínguez-Castro, Fernando; Montero-Martín, Javier; Vaquero-Martínez, Javier; Antón, Manuel; García, José Agustín; Gallego, María Cruz (2020): Early meteorological records from BAALAN1 (1866). PANGAEA.",https://doi.pangaea.de/10.1594/PANGAEA.925805,1868,1868,38.784444,-6.243611
+1860s spike,START,Alange,BAALAN2,Extremadura-Alange,ta,"Vaquero, José Manuel; Bravo-Paredes, Nieves; Obregón, María Angeles; Sánchez-Carrasco, Víctor Manuel; Valente, Maria Antónia; Trigo, Ricardo M; Domínguez-Castro, Fernando; Montero-Martín, Javier; Vaquero-Martínez, Javier; Antón, Manuel; García, José Agustín; Gallego, María Cruz (2020): Early meteorological records from BAALAN1 (1866). PANGAEA.",https://doi.pangaea.de/10.1594/PANGAEA.925805,1868,1868,38.784444,-6.243611
+1860s spike,END,Alange,BAALAN2,Extremadura-Alange,ta,"Vaquero, José Manuel; Bravo-Paredes, Nieves; Obregón, María Angeles; Sánchez-Carrasco, Víctor Manuel; Valente, Maria Antónia; Trigo, Ricardo M; Domínguez-Castro, Fernando; Montero-Martín, Javier; Vaquero-Martínez, Javier; Antón, Manuel; García, José Agustín; Gallego, María Cruz (2020): Early meteorological records from BAALAN1 (1866). PANGAEA.",https://doi.pangaea.de/10.1594/PANGAEA.925805,1868,1868,38.784444,-6.243611
+1860s spike,START,Andenes,TG_SOUID_157206,Andenes,ta,ECA&D,knmi-ecad-assets-prd.s3.amazonaws.com/download/ECA_nonblend_tg.zip,1867,1972,69.323333,16.12
+1860s spike,START,Ardrossan,DWRUK_ARDROSSAN,Ardrossan,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,55.64029,-4.81653
+1860s spike,START,Ardrossan,DWRUK_ARDROSSAN,Ardrossan,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,55.64029,-4.81653
+1860s spike,START,Ardrossan,DWRUK_ARDROSSAN,Ardrossan,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,55.64029,-4.81653
+1860s spike,START,Ardrossan,DWRUK_ARDROSSAN,Ardrossan,rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,55.64029,-4.81653
+1860s spike,START,Baghdad,BAGHDAD,BAGHDAD,p,EMULATE,DOI 10.5281/zenodo.5940391,1869,1876,33.3100,44.3600
+1860s spike,START,Basel,Basel_Kaufmann,Basel,p,GCOS,https://doi.pangaea.de/10.1594/PANGAEA.948258,1862,1863,47.5576,7.59025
+1860s spike,END,Basel,Basel_Kaufmann,Basel,p,GCOS,https://doi.pangaea.de/10.1594/PANGAEA.948258,1862,1863,47.5576,7.59025
+1860s spike,START,Basel,Basel_Kaufmann,Basel,ta,GCOS,https://doi.pangaea.de/10.1594/PANGAEA.948258,1862,1863,47.5576,7.59025
+1860s spike,END,Basel,Basel_Kaufmann,Basel,ta,GCOS,https://doi.pangaea.de/10.1594/PANGAEA.948258,1862,1863,47.5576,7.59025
+1860s spike,END,Basel,Basel_Merian,Basel,p,GCOS,https://doi.pangaea.de/10.1594/PANGAEA.948258,1828,1863,47.56267,7.58445
+1860s spike,END,Basel,Basel_Merian,Basel,ta,GCOS,https://doi.pangaea.de/10.1594/PANGAEA.948258,1828,1863,47.56267,7.58445
+1860s spike,END,Basel,Basel_Merian,Basel,Tx,GCOS,https://doi.pangaea.de/10.1594/PANGAEA.948258,1828,1863,47.56267,7.58445
+1860s spike,END,Basel,Basel_Merian,Basel,Tn,GCOS,https://doi.pangaea.de/10.1594/PANGAEA.948258,1828,1863,47.56267,7.58445
+1860s spike,START,Bassora,BASRA,BASRA,p,EMULATE,DOI 10.5281/zenodo.5940391,1869,1879,30.5100,47.7800
+1860s spike,START,Bayonne,DWRUK_BAYONNE,Bayonne,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1863,43.530000,-1.520000
+1860s spike,END,Bayonne,DWRUK_BAYONNE,Bayonne,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1863,43.530000,-1.520000
+1860s spike,START,Bayonne,DWRUK_BAYONNE,Bayonne,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1863,43.530000,-1.520000
+1860s spike,END,Bayonne,DWRUK_BAYONNE,Bayonne,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1863,43.530000,-1.520000
+1860s spike,START,Beatenberg,BE04_Beatenberg,Beatenberg,p,CHIMES,https://doi.org/10.5194/cp-15-1345-2019,1860,1863,46.698,7.794
+1860s spike,END,Beatenberg,BE04_Beatenberg,Beatenberg,p,CHIMES,https://doi.org/10.5194/cp-15-1345-2019,1860,1863,46.698,7.794
+1860s spike,START,Beatenberg,BE04_Beatenberg,Beatenberg,ta,CHIMES,https://doi.org/10.5194/cp-15-1345-2019,1860,1863,46.698,7.794
+1860s spike,END,Beatenberg,BE04_Beatenberg,Beatenberg,ta,CHIMES,https://doi.org/10.5194/cp-15-1345-2019,1860,1863,46.698,7.794
+1860s spike,START,Beirut,WMO-40100,Beirut,p,CRU,https://sites.uea.ac.uk/cru/,1869,1881,33.82,35.48
+1860s spike,START,Beirut,BEIRUT,BEIRUT,p,EMULATE,DOI 10.5281/zenodo.5940391,1869,1876,33.8900,35.5000
+1860s spike,START,Bern,Bern_Observatory,Bern,rr,GCOS,https://doi.pangaea.de/10.1594/PANGAEA.948258,1861,1863,46.951229,7.439075
+1860s spike,END,Bern,Bern_Observatory,Bern,rr,GCOS,https://doi.pangaea.de/10.1594/PANGAEA.948258,1861,1863,46.951229,7.439075
+1860s spike,START,Bern,Bern_Koch,Bern,p,GCOS,https://doi.pangaea.de/10.1594/PANGAEA.948258,1855,1860,46.947314,7.446542
+1860s spike,END,Bern,Bern_Koch,Bern,p,GCOS,https://doi.pangaea.de/10.1594/PANGAEA.948258,1855,1860,46.947314,7.446542
+1860s spike,START,Bern,Bern_Koch,Bern,ta,GCOS,https://doi.pangaea.de/10.1594/PANGAEA.948258,1855,1858,46.947314,7.446542
+1860s spike,END,Bern,Bern_Koch,Bern,ta,GCOS,https://doi.pangaea.de/10.1594/PANGAEA.948258,1855,1858,46.947314,7.446542
+1860s spike,START,Bern,Bern_Reinhard,Bern,p,GCOS,https://doi.pangaea.de/10.1594/PANGAEA.948258,1860,1863,46.947219,7.451096
+1860s spike,END,Bern,Bern_Reinhard,Bern,p,GCOS,https://doi.pangaea.de/10.1594/PANGAEA.948258,1860,1863,46.947219,7.451096
+1860s spike,START,Bern,Bern_Reinhard,Bern,ta,GCOS,https://doi.pangaea.de/10.1594/PANGAEA.948258,1860,1863,46.947219,7.451096
+1860s spike,END,Bern,Bern_Reinhard,Bern,ta,GCOS,https://doi.pangaea.de/10.1594/PANGAEA.948258,1860,1863,46.947219,7.451096
+1860s spike,START,Bern,Bern_Simler,Bern,Tn,GCOS,https://doi.pangaea.de/10.1594/PANGAEA.948258,1863,1863,46.951229,7.439075
+1860s spike,END,Bern,Bern_Simler,Bern,Tn,GCOS,https://doi.pangaea.de/10.1594/PANGAEA.948258,1863,1863,46.951229,7.439075
+1860s spike,START,Bern,Bern_Simler,Bern,Tx,GCOS,https://doi.pangaea.de/10.1594/PANGAEA.948258,1863,1863,46.951229,7.439075
+1860s spike,END,Bern,Bern_Simler,Bern,Tx,GCOS,https://doi.pangaea.de/10.1594/PANGAEA.948258,1863,1863,46.951229,7.439075
+1860s spike,START,Bern,Bern_Simler,Bern,p,GCOS,https://doi.pangaea.de/10.1594/PANGAEA.948258,1863,1863,46.951229,7.439075
+1860s spike,END,Bern,Bern_Simler,Bern,p,GCOS,https://doi.pangaea.de/10.1594/PANGAEA.948258,1863,1863,46.951229,7.439075
+1860s spike,START,Bern,Bern_Simler,Bern,ta,GCOS,https://doi.pangaea.de/10.1594/PANGAEA.948258,1863,1863,46.951229,7.439075
+1860s spike,END,Bern,Bern_Simler,Bern,ta,GCOS,https://doi.pangaea.de/10.1594/PANGAEA.948258,1863,1863,46.951229,7.439075
+1860s spike,START,Bern,BE01_Bern_Simmler,Bern,rr,CHIMES,https://doi.org/10.5194/cp-15-1345-2019,1863,1863,46.951229,7.439075
+1860s spike,END,Bern,BE01_Bern_Simmler,Bern,rr,CHIMES,https://doi.org/10.5194/cp-15-1345-2019,1863,1863,46.951229,7.439075
+1860s spike,END,Bern,Bern_Wolf,Bern,p,GCOS,https://doi.pangaea.de/10.1594/PANGAEA.948258,1851,1855,46.950936,7.440383
+1860s spike,END,Bern,Bern_Wolf,Bern,ta,GCOS,https://doi.pangaea.de/10.1594/PANGAEA.948258,1851,1855,46.950936,7.440383
+1860s spike,START,Berwick,DWRUK_BERWICK,Berwick,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1862,55.76,-2.00
+1860s spike,END,Berwick,DWRUK_BERWICK,Berwick,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1862,55.76,-2.00
+1860s spike,START,Berwick,DWRUK_BERWICK,Berwick,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1862,55.76,-2.00
+1860s spike,END,Berwick,DWRUK_BERWICK,Berwick,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1862,55.76,-2.00
+1860s spike,START,Berwick,DWRUK_BERWICK,Berwick,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1862,55.76,-2.00
+1860s spike,END,Berwick,DWRUK_BERWICK,Berwick,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1862,55.76,-2.00
+1860s spike,START,Berwick,DWRUK_BERWICK,Berwick,rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1862,1862,55.76,-2.00
+1860s spike,END,Berwick,DWRUK_BERWICK,Berwick,rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1862,1862,55.76,-2.00
+1860s spike,START,Bevers,GR02_Bevers_Kraettli,Bever,p,CHIMES,https://doi.org/10.5194/cp-15-1345-2019,1857,1858,46.55,9.886
+1860s spike,END,Bevers,GR02_Bevers_Kraettli,Bever,p,CHIMES,https://doi.org/10.5194/cp-15-1345-2019,1857,1858,46.55,9.886
+1860s spike,START,Bevers,GR02_Bevers_Kraettli,Bever,ta,CHIMES,https://doi.org/10.5194/cp-15-1345-2019,1857,1858,46.55,9.886
+1860s spike,END,Bevers,GR02_Bevers_Kraettli,Bever,ta,CHIMES,https://doi.org/10.5194/cp-15-1345-2019,1857,1858,46.55,9.886
+1860s spike,START,Biarritz,WMO-7602,Biarritz,p,CRU,https://sites.uea.ac.uk/cru/,1860,1880,43.46,-1.53
+1860s spike,START,Biarritz,DWRUK_BIARRITZ,Biarritz,rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1868,1875,43.483484,-1.567955
+1860s spike,START,Biarritz,DWRUK_BIARRITZ,Biarritz,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1868,1875,43.483484,-1.567955
+1860s spike,START,Biarritz,DWRUK_BIARRITZ,Biarritz,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1868,1875,43.483484,-1.567955
+1860s spike,START,Bodoe,WMO-1152,Bodo,p,CRU,https://sites.uea.ac.uk/cru/,1868,1994,67.26,14.43
+1860s spike,START,Brest,BREST,BREST,p,EMULATE,DOI 10.5281/zenodo.5940391,1861,1881,48.3900,-4.4900
+1860s spike,START,Brest,DWRUK_BREST,Brest (St. Mathieu),p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,48.329859,-4.770851
+1860s spike,START,Brest,DWRUK_BREST,Brest (St. Mathieu),ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,48.329859,-4.770851
+1860s spike,START,Brest,DWRUK_BREST,Brest (St. Mathieu),ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1862,1875,48.329859,-4.770851
+1860s spike,START,Brest,DWRUK_BREST,Brest (St. Mathieu),rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1862,1875,48.329859,-4.770851
+1860s spike,START,Brussels,DWRUK_BRUSSELS,Brussels,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1868,1875,50.800000,4.400000
+1860s spike,START,Brussels,DWRUK_BRUSSELS,Brussels,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1868,1875,50.800000,4.400000
+1860s spike,END,Burgdorf,Burgdorf,Burgdorf,ta,GCOS,https://doi.pangaea.de/10.1594/PANGAEA.948258,1851,1864,47.05686,7.62793
+1860s spike,START,Burgdorf,Burgdorf,Burgdorf,p,GCOS,https://doi.pangaea.de/10.1594/PANGAEA.948258,1857,1864,47.05686,7.62793
+1860s spike,END,Burgdorf,Burgdorf,Burgdorf,p,GCOS,https://doi.pangaea.de/10.1594/PANGAEA.948258,1857,1864,47.05686,7.62793
+1860s spike,START,CapGrisNez,DWRUK_CAPGRISNEZ,Cap Gris Nez,rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1868,1875,50.87087,1.585211
+1860s spike,START,CapGrisNez,DWRUK_CAPGRISNEZ,Cap Gris Nez,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1868,1875,50.870870,1.585211
+1860s spike,START,CapGrisNez,DWRUK_CAPGRISNEZ,Cap Gris Nez,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1868,1875,50.870870,1.585211
+1860s spike,START,CapeClear,DWRUK_CAPECLEAR,Cape Clear,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1863,1863,51.43487,-9.49956
+1860s spike,END,CapeClear,DWRUK_CAPECLEAR,Cape Clear,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1863,1863,51.43487,-9.49956
+1860s spike,START,CapeClear,DWRUK_CAPECLEAR,Cape Clear,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1863,1870,51.43487,-9.49956
+1860s spike,END,CapeClear,DWRUK_CAPECLEAR,Cape Clear,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1863,1870,51.43487,-9.49956
+1860s spike,START,CapeClear,DWRUK_CAPECLEAR,Cape Clear,rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1863,1870,51.43487,-9.49956
+1860s spike,END,CapeClear,DWRUK_CAPECLEAR,Cape Clear,rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1863,1870,51.43487,-9.49956
+1860s spike,START,CapeClear,DWRUK_CAPECLEAR,Cape Clear,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1863,1870,51.43487,-9.49956
+1860s spike,END,CapeClear,DWRUK_CAPECLEAR,Cape Clear,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1863,1870,51.43487,-9.49956
+1860s spike,START,ChannelIslands,JERSEY-CHANNEL-ISLAND-LANGLOIS,JERSEY-CHANNEL-ISLAND-LANGLOIS,p,"PUBLISHED IN JERSEY TIMES, TRANSCRIBED BY FRANK LE BLANCQ",https://doi.org/10.5281/zenodo.11001125,1865,1875,49.1986,-2.1331
+1860s spike,START,ChannelIslands,JERSEY-CHANNEL-ISLAND,JERSEY-CHANNEL-ISLAND,p,"PUBLISHED IN JERSEY TIMES, TRANSCRIBED BY FRANK LE BLANCQ",https://doi.org/10.5281/zenodo.11001125,1864,1864,49.2000,-2.1300
+1860s spike,END,ChannelIslands,JERSEY-CHANNEL-ISLAND,JERSEY-CHANNEL-ISLAND,p,"PUBLISHED IN JERSEY TIMES, TRANSCRIBED BY FRANK LE BLANCQ",https://doi.org/10.5281/zenodo.11001125,1864,1864,49.2000,-2.1300
+1860s spike,END,Chur,GR01_Chur_Buol,Chur,p,CHIMES,https://doi.org/10.5194/cp-15-1345-2019,1852,1865,46.84899,9.53237
+1860s spike,START,Chur,GR01_Chur_Buol,Chur,ta,CHIMES,https://doi.org/10.5194/cp-15-1345-2019,1860,1865,46.84899,9.53237
+1860s spike,END,Chur,GR01_Chur_Buol,Chur,ta,CHIMES,https://doi.org/10.5194/cp-15-1345-2019,1860,1865,46.84899,9.53237
+1860s spike,END,Chur,GR01_Chur_Herold,Chur,ta,CHIMES,https://doi.org/10.5194/cp-15-1345-2019,1849,1857,46.84899,9.53237
+1860s spike,START,Chur,GR01_Chur_Killias,Chur,p,CHIMES,https://doi.org/10.5194/cp-15-1345-2019,1862,1864,46.84899,9.53237
+1860s spike,END,Chur,GR01_Chur_Killias,Chur,p,CHIMES,https://doi.org/10.5194/cp-15-1345-2019,1862,1864,46.84899,9.53237
+1860s spike,START,Chur,GR01_Chur_Killias,Chur,rr,CHIMES,https://doi.org/10.5194/cp-15-1345-2019,1862,1864,46.84899,9.53237
+1860s spike,END,Chur,GR01_Chur_Killias,Chur,rr,CHIMES,https://doi.org/10.5194/cp-15-1345-2019,1862,1864,46.84899,9.53237
+1860s spike,START,Chur,GR01_Chur_Killias,Chur,ta,CHIMES,https://doi.org/10.5194/cp-15-1345-2019,1862,1864,46.84899,9.53237
+1860s spike,END,Chur,GR01_Chur_Killias,Chur,ta,CHIMES,https://doi.org/10.5194/cp-15-1345-2019,1862,1864,46.84899,9.53237
+1860s spike,END,Chur,GR01_Chur_Unknown,Chur,p,CHIMES,https://doi.org/10.5194/cp-15-1345-2019,1854,1858,46.84899,9.53237
+1860s spike,END,Chur,GR01_Chur_Unknown,Chur,ta,CHIMES,https://doi.org/10.5194/cp-15-1345-2019,1854,1858,46.84899,9.53237
+1860s spike,START,Chur,GR01_Chur_Wehrli,Chur,p,CHIMES,https://doi.org/10.5194/cp-15-1345-2019,1858,1861,46.85,9.53
+1860s spike,END,Chur,GR01_Chur_Wehrli,Chur,p,CHIMES,https://doi.org/10.5194/cp-15-1345-2019,1858,1861,46.85,9.53
+1860s spike,START,Chur,GR01_Chur_Wehrli,Chur,ta,CHIMES,https://doi.org/10.5194/cp-15-1345-2019,1858,1861,46.85,9.53
+1860s spike,END,Chur,GR01_Chur_Wehrli,Chur,ta,CHIMES,https://doi.org/10.5194/cp-15-1345-2019,1858,1861,46.85,9.53
+1860s spike,START,Cobh,DWRUK_QUEENSTOWN,Queenstown,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1863,51.85,-8.29
+1860s spike,END,Cobh,DWRUK_QUEENSTOWN,Queenstown,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1863,51.85,-8.29
+1860s spike,START,Cobh,DWRUK_QUEENSTOWN,Queenstown,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1864,51.85,-8.29
+1860s spike,END,Cobh,DWRUK_QUEENSTOWN,Queenstown,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1864,51.85,-8.29
+1860s spike,START,Cobh,DWRUK_QUEENSTOWN,Queenstown,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1864,51.85,-8.29
+1860s spike,END,Cobh,DWRUK_QUEENSTOWN,Queenstown,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1864,51.85,-8.29
+1860s spike,START,Cobh,DWRUK_QUEENSTOWN,Queenstown,rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1862,1864,51.85,-8.29
+1860s spike,END,Cobh,DWRUK_QUEENSTOWN,Queenstown,rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1862,1864,51.85,-8.29
+1860s spike,START,Copenhagen,DWRUK_COPENHAGEN,Copenhagen,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1863,55.680770,12.541550
+1860s spike,END,Copenhagen,DWRUK_COPENHAGEN,Copenhagen,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1863,55.680770,12.541550
+1860s spike,START,Copenhagen,DWRUK_COPENHAGEN,Copenhagen,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1863,55.680770,12.541550
+1860s spike,END,Copenhagen,DWRUK_COPENHAGEN,Copenhagen,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1863,55.680770,12.541550
+1860s spike,START,DenHelder,DWRUK_THEHELDER,The Helder,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,52.956971,4.763870
+1860s spike,START,DenHelder,DWRUK_THEHELDER,The Helder,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,52.956971,4.763870
+1860s spike,START,Disentis,GR05_Disentis_Carigiet,Disentis,p,CHIMES,https://doi.org/10.5194/cp-15-1345-2019,1858,1859,46.70682,8.85599
+1860s spike,END,Disentis,GR05_Disentis_Carigiet,Disentis,p,CHIMES,https://doi.org/10.5194/cp-15-1345-2019,1858,1859,46.70682,8.85599
+1860s spike,START,Disentis,GR05_Disentis_Carigiet,Disentis,ta,CHIMES,https://doi.org/10.5194/cp-15-1345-2019,1858,1859,46.70682,8.85599
+1860s spike,END,Disentis,GR05_Disentis_Carigiet,Disentis,ta,CHIMES,https://doi.org/10.5194/cp-15-1345-2019,1858,1859,46.70682,8.85599
+1860s spike,START,Diyarbakir,DIYARBAKIR,DIYARBAKIR,p,EMULATE,DOI 10.5281/zenodo.5940391,1869,1874,37.9300,40.2100
+1860s spike,START,Dnipro,Dnipro,Dnipro,ta,UA-UHMI,https://doi.org/10.15407/uhmi.report.01,1855,1855,48.45,35.05
+1860s spike,END,Dnipro,Dnipro,Dnipro,ta,UA-UHMI,https://doi.org/10.15407/uhmi.report.01,1855,1855,48.45,35.05
+1860s spike,START,Dnipro,Dnipro,Dnipro,p,UA-UHMI,https://doi.org/10.15407/uhmi.report.01,1865,1865,48.45,35.05
+1860s spike,END,Dnipro,Dnipro,Dnipro,p,UA-UHMI,https://doi.org/10.15407/uhmi.report.01,1865,1865,48.45,35.05
+1860s spike,START,Dnipro,Dnipro,Dnipro,ta,UA-UHMI,https://doi.org/10.15407/uhmi.report.01,1865,1865,48.45,35.05
+1860s spike,END,Dnipro,Dnipro,Dnipro,ta,UA-UHMI,https://doi.org/10.15407/uhmi.report.01,1865,1865,48.45,35.05
+1860s spike,START,Dover,DWRUK_DOVER,Dover,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,51.11587,1.31076
+1860s spike,START,Dover,DWRUK_DOVER,Dover,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,51.11587,1.31076
+1860s spike,START,Dover,DWRUK_DOVER,Dover,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,51.11587,1.31076
+1860s spike,START,Dover,DWRUK_DOVER,Dover,rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,51.11587,1.31076
+1860s spike,START,Dublin,EI000003969,DUBLIN PHOENIX PARK,rr,GHCN-D,,1867,2019,53.3639,-6.3192
+1860s spike,END,Dublin,ILMMT-Dublin-DameStreet,Dublin,Tn,"Mateus, C., Potito, A., & Curley, M. (2020). Reconstruction of a long‐term historical daily maximum and minimum air temperature network dataset for Ireland (1831‐1968). Geoscience Data Journal, 7(2), 102-115.",https://www.edepositireland.ie/entities/publication/7271837d-dbe6-463f-b103-422f42a15446,1849,1858,53.344,-6.263
+1860s spike,END,Dublin,ILMMT-Dublin-DameStreet,Dublin,Tx,"Mateus, C., Potito, A., & Curley, M. (2020). Reconstruction of a long‐term historical daily maximum and minimum air temperature network dataset for Ireland (1831‐1968). Geoscience Data Journal, 7(2), 102-115.",https://www.edepositireland.ie/entities/publication/7271837d-dbe6-463f-b103-422f42a15446,1849,1858,53.344,-6.263
+1860s spike,END,Dublin,ILMMT-Dublin-RCS,Dublin,Tn,"Mateus, C., Potito, A., & Curley, M. (2020). Reconstruction of a long‐term historical daily maximum and minimum air temperature network dataset for Ireland (1831‐1968). Geoscience Data Journal, 7(2), 102-115.",https://www.edepositireland.ie/entities/publication/7271837d-dbe6-463f-b103-422f42a15446,1841,1857,53.339,-6.261
+1860s spike,END,Dublin,ILMMT-Dublin-RCS,Dublin,Tx,"Mateus, C., Potito, A., & Curley, M. (2020). Reconstruction of a long‐term historical daily maximum and minimum air temperature network dataset for Ireland (1831‐1968). Geoscience Data Journal, 7(2), 102-115.",https://www.edepositireland.ie/entities/publication/7271837d-dbe6-463f-b103-422f42a15446,1841,1857,53.339,-6.261
+1860s spike,END,Einsiedeln,SZ01_Einsiedeln,Einsiedeln,ta,CHIMES,https://doi.org/10.5194/cp-15-1345-2019,1818,1864,47.12671,8.75194
+1860s spike,END,Einsiedeln,SZ01_Einsiedeln,Einsiedeln,p,CHIMES,https://doi.org/10.5194/cp-15-1345-2019,1840,1864,47.12671,8.75194
+1860s spike,START,Einsiedeln,SZ01_Einsiedeln,Einsiedeln,Tn,CHIMES,https://doi.org/10.5194/cp-15-1345-2019,1857,1857,47.12671,8.75194
+1860s spike,END,Einsiedeln,SZ01_Einsiedeln,Einsiedeln,Tn,CHIMES,https://doi.org/10.5194/cp-15-1345-2019,1857,1857,47.12671,8.75194
+1860s spike,START,Einsiedeln,SZ01_Einsiedeln,Einsiedeln,Tx,CHIMES,https://doi.org/10.5194/cp-15-1345-2019,1857,1857,47.12671,8.75194
+1860s spike,END,Einsiedeln,SZ01_Einsiedeln,Einsiedeln,Tx,CHIMES,https://doi.org/10.5194/cp-15-1345-2019,1857,1857,47.12671,8.75194
+1860s spike,START,Einsiedeln,SZ01_Einsiedeln,Einsiedeln,rr,CHIMES,https://doi.org/10.5194/cp-15-1345-2019,1864,1864,47.12671,8.75194
+1860s spike,END,Einsiedeln,SZ01_Einsiedeln,Einsiedeln,rr,CHIMES,https://doi.org/10.5194/cp-15-1345-2019,1864,1864,47.12671,8.75194
+1860s spike,START,Falun,TG_SOUID_136437,Falun,ta,ECA&D,knmi-ecad-assets-prd.s3.amazonaws.com/download/ECA_nonblend_tg.zip,1860,2024,60.616667,15.616667
+1860s spike,START,Falun,SW000010537,FALUN,rr,GHCN-D,NA,1860,2019,60.6167,15.6167
+1860s spike,END,Fontaines,NE02_Fontaines,Fontaines,p,CHIMES,https://doi.org/10.5194/cp-15-1345-2019,1843,1862,47.04398,6.90086
+1860s spike,END,Fontaines,NE02_Fontaines,Fontaines,ta,CHIMES,https://doi.org/10.5194/cp-15-1345-2019,1843,1862,47.04398,6.90086
+1860s spike,START,Frankfurt,GME00122374,FRANKFURT/MAIN (FELDBERGSTR.),rr,GHCN-D,NA,1870,1961,50.1225,8.6608
+1860s spike,START,Gais,AR02_Gais,Gais,Tn,CHIMES,https://doi.org/10.5194/cp-15-1345-2019,1861,1864,47.363,9.454
+1860s spike,END,Gais,AR02_Gais,Gais,Tn,CHIMES,https://doi.org/10.5194/cp-15-1345-2019,1861,1864,47.363,9.454
+1860s spike,START,Gais,AR02_Gais,Gais,Tx,CHIMES,https://doi.org/10.5194/cp-15-1345-2019,1861,1864,47.363,9.454
+1860s spike,END,Gais,AR02_Gais,Gais,Tx,CHIMES,https://doi.org/10.5194/cp-15-1345-2019,1861,1864,47.363,9.454
+1860s spike,START,Gais,AR02_Gais,Gais,ta,CHIMES,https://doi.org/10.5194/cp-15-1345-2019,1861,1865,47.363,9.454
+1860s spike,END,Gais,AR02_Gais,Gais,ta,CHIMES,https://doi.org/10.5194/cp-15-1345-2019,1861,1865,47.363,9.454
+1860s spike,START,Galway,GALWAY,GALWAY,p,EMULATE,DOI 10.5281/zenodo.5940391,1861,1864,53.2700,-9.0600
+1860s spike,END,Galway,GALWAY,GALWAY,p,EMULATE,DOI 10.5281/zenodo.5940391,1861,1864,53.2700,-9.0600
+1860s spike,START,Galway,EIE00101859,GALWAY,rr,GHCN-D,,1861,2002,53.28,-9.02
+1860s spike,START,Galway,DWRUK_GALWAY,Galway,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1863,53.28,-9.06
+1860s spike,END,Galway,DWRUK_GALWAY,Galway,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1863,53.28,-9.06
+1860s spike,START,Galway,DWRUK_GALWAY,Galway,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1864,53.27866,-9.06126
+1860s spike,END,Galway,DWRUK_GALWAY,Galway,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1864,53.27866,-9.06126
+1860s spike,START,Galway,DWRUK_GALWAY,Galway,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1864,53.27866,-9.06126
+1860s spike,END,Galway,DWRUK_GALWAY,Galway,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1864,53.27866,-9.06126
+1860s spike,START,Galway,DWRUK_GALWAY,Galway,rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1862,1864,53.27866,-9.06126
+1860s spike,END,Galway,DWRUK_GALWAY,Galway,rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1862,1864,53.27866,-9.06126
+1860s spike,END,Geneva,Genf,Genf,ta,DigiHom,"Journal de Geneve, M. Paul: Impr. Bonnant, 1787-1794 | ""Bibliotheque britannique"", Marc August Pictet (1798-1815) | ""Bibliotheque universelle des sciences, belles-lettres, et arts"" (1816-..)",1798,1860,46.202,6.147
+1860s spike,START,Glendooen,ILMMT-Glendooen,Glendooen,Tn,"Mateus, C., Potito, A., & Curley, M. (2020). Reconstruction of a long‐term historical daily maximum and minimum air temperature network dataset for Ireland (1831‐1968). Geoscience Data Journal, 7(2), 102-115.",https://www.edepositireland.ie/entities/publication/7271837d-dbe6-463f-b103-422f42a15446,1865,1870,54.95,-7.733
+1860s spike,END,Glendooen,ILMMT-Glendooen,Glendooen,Tn,"Mateus, C., Potito, A., & Curley, M. (2020). Reconstruction of a long‐term historical daily maximum and minimum air temperature network dataset for Ireland (1831‐1968). Geoscience Data Journal, 7(2), 102-115.",https://www.edepositireland.ie/entities/publication/7271837d-dbe6-463f-b103-422f42a15446,1865,1870,54.95,-7.733
+1860s spike,START,Gothenburg,WMO-2526,Goteborg,p,CRU,https://sites.uea.ac.uk/cru/,1860,2002,55.7,11.98
+1860s spike,END,GrandStBernard,GrandStBernard,Grand St. Bernard,rr,DIGIHOM,,1819,1863,45.869,7.17068
+1860s spike,END,GrandStBernard,GrandStBernard,Grand St. Bernard,Tn,DIGIHOM,,1825,1863,45.869,7.17068
+1860s spike,END,GrandStBernard,GrandStBernard,Grand St. Bernard,Tx,DIGIHOM,,1826,1863,45.869,7.17068
+1860s spike,START,GrandStBernard,GrandStBernard,Grand St. Bernard,p,DIGIHOM,,1862,1863,45.869,7.17068
+1860s spike,END,GrandStBernard,GrandStBernard,Grand St. Bernard,p,DIGIHOM,,1862,1863,45.869,7.17068
+1860s spike,START,GrandStBernard,GrandStBernard,Grand St. Bernard,ta,DIGIHOM,NA,1862,1863,45.869,7.17068
+1860s spike,END,GrandStBernard,GrandStBernard,Grand St. Bernard,ta,DIGIHOM,NA,1862,1863,45.869,7.17068
+1860s spike,END,GrandStBernard,GCOS_GrandStBernard,Grand St. Bernard,rh,DIGIHOM; PALAEO-RA,https://doi.pangaea.de/10.1594/PANGAEA.948258,1817,1856,45.869,7.17068
+1860s spike,END,GrandStBernard,GCOS_GrandStBernard,Grand St. Bernard,ta,DIGIHOM; PALAEO-RA,https://doi.pangaea.de/10.1594/PANGAEA.948258,1817,1861,45.869,7.17068
+1860s spike,START,Greencastle,GREENCASTLE,GREENCASTLE,p,EMULATE,DOI 10.5281/zenodo.5940391,1863,1875,55.2000,-6.9900
+1860s spike,START,Greencastle,DWRUK_GREENCASTLE,Greencastle,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1863,1863,55.20603,-6.96734
+1860s spike,END,Greencastle,DWRUK_GREENCASTLE,Greencastle,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1863,1863,55.20603,-6.96734
+1860s spike,START,Greencastle,DWRUK_GREENCASTLE,Greencastle,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1863,1870,55.20603,-6.96734
+1860s spike,END,Greencastle,DWRUK_GREENCASTLE,Greencastle,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1863,1870,55.20603,-6.96734
+1860s spike,START,Greencastle,DWRUK_GREENCASTLE,Greencastle,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1863,1870,55.20603,-6.96734
+1860s spike,END,Greencastle,DWRUK_GREENCASTLE,Greencastle,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1863,1870,55.20603,-6.96734
+1860s spike,START,Greencastle,DWRUK_GREENCASTLE,Greencastle,rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1863,1870,55.20603,-6.96734
+1860s spike,END,Greencastle,DWRUK_GREENCASTLE,Greencastle,rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1863,1870,55.20603,-6.96734
+1860s spike,START,Haparanda,WMO-2196,Haparanda,p,CRU,https://sites.uea.ac.uk/cru/,1860,2002,65.82,24.13
+1860s spike,START,Haparanda,TG_SOUID_137214,Haparanda,ta,ECA&D,knmi-ecad-assets-prd.s3.amazonaws.com/download/ECA_nonblend_tg.zip,1859,2012,65.826944,24.143889
+1860s spike,START,HeartsContent,DWRUK_HEARTSCONTENT,Heart's Content,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1868,1870,47.87,-53.37
+1860s spike,END,HeartsContent,DWRUK_HEARTSCONTENT,Heart's Content,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1868,1870,47.87,-53.37
+1860s spike,START,HeartsContent,DWRUK_HEARTSCONTENT,Heart's Content,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1868,1870,47.87,-53.37
+1860s spike,END,HeartsContent,DWRUK_HEARTSCONTENT,Heart's Content,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1868,1870,47.87,-53.37
+1860s spike,START,HeartsContent,DWRUK_HEARTSCONTENT,Heart's Content,rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1868,1870,47.87,-53.37
+1860s spike,END,HeartsContent,DWRUK_HEARTSCONTENT,Heart's Content,rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1868,1870,47.87,-53.37
+1860s spike,START,Heligoland,DWRUK_HELIGOLAND,Heligoland,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1862,1863,54.18,7.89
+1860s spike,END,Heligoland,DWRUK_HELIGOLAND,Heligoland,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1862,1863,54.18,7.89
+1860s spike,START,Heligoland,DWRUK_HELIGOLAND,Heligoland,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1862,1867,54.18,7.89
+1860s spike,END,Heligoland,DWRUK_HELIGOLAND,Heligoland,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1862,1867,54.18,7.89
+1860s spike,START,Heligoland,DWRUK_HELIGOLAND,Heligoland,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1862,1867,54.18,7.89
+1860s spike,END,Heligoland,DWRUK_HELIGOLAND,Heligoland,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1862,1867,54.18,7.89
+1860s spike,START,Heligoland,DWRUK_HELIGOLAND,Heligoland,rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1862,1867,54.18,7.89
+1860s spike,END,Heligoland,DWRUK_HELIGOLAND,Heligoland,rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1862,1867,54.18,7.89
+1860s spike,START,Helmond,NLE00102079,HELMOND,rr,GHCN-D,NA,1869,2019,51.4831,5.6167
+1860s spike,START,Hernosand,TG_SOUID_136698,Harnosand,ta,ECA&D,knmi-ecad-assets-prd.s3.amazonaws.com/download/ECA_nonblend_tg.zip,1858,2024,62.633056,17.933056
+1860s spike,START,Holyhead,HOLYHEAD,HOLYHEAD,p,EMULATE,DOI 10.5281/zenodo.5940391,1868,1871,53.3100,-4.6300
+1860s spike,START,Holyhead,DWRUK_HOLYHEAD,Holyhead,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1862,1875,53.32,-4.62
+1860s spike,START,Holyhead,DWRUK_HOLYHEAD,Holyhead,rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1862,1875,53.32,-4.62
+1860s spike,START,Holyhead,DWRUK_HOLYHEAD,Holyhead,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1862,1875,53.315922,-4.634486
+1860s spike,START,Holyhead,DWRUK_HOLYHEAD,Holyhead,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1862,1875,53.32,-4.62
+1860s spike,START,Hoofddorp,NLE00100503,HOOFDDORP,rr,GHCN-D,NA,1867,2019,52.3167,4.7
+1860s spike,START,Hull,DWRUK_HULL,Hull,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1861,53.74,-0.34
+1860s spike,END,Hull,DWRUK_HULL,Hull,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1861,53.74,-0.34
+1860s spike,START,Hull,DWRUK_HULL,Hull,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1861,53.74,-0.34
+1860s spike,END,Hull,DWRUK_HULL,Hull,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1861,53.74,-0.34
+1860s spike,START,Hull,DWRUK_HULL,Hull,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1861,53.74,-0.34
+1860s spike,END,Hull,DWRUK_HULL,Hull,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1861,53.74,-0.34
+1860s spike,START,Hvar,HRE00105189,HVAR,rr,GHCN-D,NA,1858,2018,43.1667,16.45
+1860s spike,START,Ile-d-Aix,ROCHEFORT,ROCHEFORT,p,EMULATE,DOI 10.5281/zenodo.5940391,1861,1881,45.9400,-0.9600
+1860s spike,START,Ile-d-Aix,DWRUK_ROCHEFORT,Rochefort (Ile de Aix),rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1862,1875,46.020193,-1.172830
+1860s spike,START,Ile-d-Aix,DWRUK_ROCHEFORT,Rochefort (Ile de Aix),p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1862,1875,46.020193,-1.172830
+1860s spike,START,Ile-d-Aix,DWRUK_ROCHEFORT,Rochefort (Ile de Aix),ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1862,1875,46.020193,-1.172830
+1860s spike,START,Ile-d-Aix,DWRUK_ROCHEFORT,Rochefort (Ile de Aix),ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1862,1875,46.020193,-1.172830
+1860s spike,START,Istanbul,WMO-17062,Scutari,p,CRU,https://sites.uea.ac.uk/cru/,1866,1880,41,29.05
+1860s spike,START,Jersey,DWRUK_JERSEY,Jersey,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1863,49.20,-2.13
+1860s spike,END,Jersey,DWRUK_JERSEY,Jersey,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1863,49.20,-2.13
+1860s spike,START,Jersey,DWRUK_JERSEY,Jersey,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1863,49.20,-2.13
+1860s spike,END,Jersey,DWRUK_JERSEY,Jersey,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1863,49.20,-2.13
+1860s spike,START,Jersey,DWRUK_JERSEY,Jersey,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1863,49.20,-2.13
+1860s spike,END,Jersey,DWRUK_JERSEY,Jersey,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1863,49.20,-2.13
+1860s spike,START,Jersey,DWRUK_JERSEY,Jersey,rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1862,1863,49.20,-2.13
+1860s spike,END,Jersey,DWRUK_JERSEY,Jersey,rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1862,1863,49.20,-2.13
+1860s spike,START,Jokkmokk,TG_SOUID_137307,Jokkmokk,ta,ECA&D,knmi-ecad-assets-prd.s3.amazonaws.com/download/ECA_nonblend_tg.zip,1860,2018,66.629722,19.64
+1860s spike,START,Kamianets,Kamianets_Podilskyi,Kamianets-Podilskyi,p,UA-UHMI,https://doi.org/10.15407/uhmi.report.01,1865,1866,48.666700,26.583300
+1860s spike,END,Kamianets,Kamianets_Podilskyi,Kamianets-Podilskyi,p,UA-UHMI,https://doi.org/10.15407/uhmi.report.01,1865,1866,48.666700,26.583300
+1860s spike,START,Kamianets,Kamianets_Podilskyi,Kamianets-Podilskyi,ta,UA-UHMI,https://doi.org/10.15407/uhmi.report.01,1865,1866,48.666700,26.583300
+1860s spike,END,Kamianets,Kamianets_Podilskyi,Kamianets-Podilskyi,ta,UA-UHMI,https://doi.org/10.15407/uhmi.report.01,1865,1866,48.666700,26.583300
+1860s spike,START,Kamianets,Kamianets_Podilskyi,Kamianets-Podilskyi,p,UA-UHMI,https://doi.org/10.15407/uhmi.report.01,1867,1868,48.666700,26.583300
+1860s spike,END,Kamianets,Kamianets_Podilskyi,Kamianets-Podilskyi,p,UA-UHMI,https://doi.org/10.15407/uhmi.report.01,1867,1868,48.666700,26.583300
+1860s spike,START,Kamianets,Kamianets_Podilskyi,Kamianets-Podilskyi,ta,UA-UHMI,https://doi.org/10.15407/uhmi.report.01,1867,1868,48.666700,26.583300
+1860s spike,END,Kamianets,Kamianets_Podilskyi,Kamianets-Podilskyi,ta,UA-UHMI,https://doi.org/10.15407/uhmi.report.01,1867,1868,48.666700,26.583300
+1860s spike,END,Karlsruhe,KIT_Karlsruhe,Karlsruhe,p,KIT,,1778,1868,49.008,8.404121
+1860s spike,START,Karlstad,TG_SOUID_136152,Karlstad,ta,ECA&D,knmi-ecad-assets-prd.s3.amazonaws.com/download/ECA_nonblend_tg.zip,1858,2008,59.35,13.466667
+1860s spike,START,Kem,WMO-22522,Kem,p,CRU,https://sites.uea.ac.uk/cru/,1866,1880,64.95,34.65
+1860s spike,START,Kew,DWRUK_KEW,Kew,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1863,1863,51.46892,-0.31465
+1860s spike,END,Kew,DWRUK_KEW,Kew,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1863,1863,51.46892,-0.31465
+1860s spike,START,Kew,DWRUK_KEW,Kew,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1863,1863,51.46892,-0.31465
+1860s spike,END,Kew,DWRUK_KEW,Kew,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1863,1863,51.46892,-0.31465
+1860s spike,START,Kew,DWRUK_KEW,Kew,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1863,1863,51.46892,-0.31465
+1860s spike,END,Kew,DWRUK_KEW,Kew,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1863,1863,51.46892,-0.31465
+1860s spike,START,Kiev,Kyiv,Kyiv,p,UA-UHMI,https://doi.org/10.15407/uhmi.report.01,1856,1869,50.450000,30.503100
+1860s spike,END,Kiev,Kyiv,Kyiv,p,UA-UHMI,https://doi.org/10.15407/uhmi.report.01,1856,1869,50.450000,30.503100
+1860s spike,START,Kiev,Kyiv,Kyiv,ta,UA-UHMI,https://doi.org/10.15407/uhmi.report.01,1856,1869,50.450000,30.503100
+1860s spike,END,Kiev,Kyiv,Kyiv,ta,UA-UHMI,https://doi.org/10.15407/uhmi.report.01,1856,1869,50.450000,30.503100
+1860s spike,START,Kiev,Kyiv,Kyiv,p,UA-UHMI,https://doi.org/10.15407/uhmi.report.01,1870,1880,50.450000,30.503100
+1860s spike,START,Kiev,Kyiv,Kyiv,ta,UA-UHMI,https://doi.org/10.15407/uhmi.report.01,1870,1880,50.450000,30.503100
+1860s spike,START,Kiev,Kyiv_arboretum,"Kyiv, arboretum",ta,UA-UHMI,https://doi.org/10.15407/uhmi.report.01,1858,1862,50.430000,30.430000
+1860s spike,END,Kiev,Kyiv_arboretum,"Kyiv, arboretum",ta,UA-UHMI,https://doi.org/10.15407/uhmi.report.01,1858,1862,50.430000,30.430000
+1860s spike,START,Kiev,Kyiv_arboretum,"Kyiv, arboretum",p,UA-UHMI,https://doi.org/10.15407/uhmi.report.01,1861,1862,50.430000,30.430000
+1860s spike,END,Kiev,Kyiv_arboretum,"Kyiv, arboretum",p,UA-UHMI,https://doi.org/10.15407/uhmi.report.01,1861,1862,50.430000,30.430000
+1860s spike,START,Kilkenny,ILMMT-Kilkenny,Kilkenny,Tn,"Mateus, C., Potito, A., & Curley, M. (2020). Reconstruction of a long‐term historical daily maximum and minimum air temperature network dataset for Ireland (1831‐1968). Geoscience Data Journal, 7(2), 102-115.",https://www.edepositireland.ie/entities/publication/7271837d-dbe6-463f-b103-422f42a15446,1862,1864,52.654,-7.245
+1860s spike,END,Kilkenny,ILMMT-Kilkenny,Kilkenny,Tn,"Mateus, C., Potito, A., & Curley, M. (2020). Reconstruction of a long‐term historical daily maximum and minimum air temperature network dataset for Ireland (1831‐1968). Geoscience Data Journal, 7(2), 102-115.",https://www.edepositireland.ie/entities/publication/7271837d-dbe6-463f-b103-422f42a15446,1862,1864,52.654,-7.245
+1860s spike,START,Kilkenny,ILMMT-Kilkenny,Kilkenny,Tx,"Mateus, C., Potito, A., & Curley, M. (2020). Reconstruction of a long‐term historical daily maximum and minimum air temperature network dataset for Ireland (1831‐1968). Geoscience Data Journal, 7(2), 102-115.",https://www.edepositireland.ie/entities/publication/7271837d-dbe6-463f-b103-422f42a15446,1862,1864,52.654,-7.245
+1860s spike,END,Kilkenny,ILMMT-Kilkenny,Kilkenny,Tx,"Mateus, C., Potito, A., & Curley, M. (2020). Reconstruction of a long‐term historical daily maximum and minimum air temperature network dataset for Ireland (1831‐1968). Geoscience Data Journal, 7(2), 102-115.",https://www.edepositireland.ie/entities/publication/7271837d-dbe6-463f-b103-422f42a15446,1862,1864,52.654,-7.245
+1860s spike,START,Kristiansund,DWRUK_CHRISTIANS,Christiansund,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1870,1875,63.11,7.73
+1860s spike,START,Kristiansund,DWRUK_CHRISTIANS,Christiansund,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1870,1875,63.11,7.73
+1860s spike,END,Kuesnacht,ZH08_Kuesnacht,Küsnacht,p,CHIMES,https://doi.org/10.5194/cp-15-1345-2019,1852,1856,47.31701,8.58323
+1860s spike,END,Kuesnacht,Küsnacht,Küsnacht,dd,CHIMES,https://doi.pangaea.de/10.1594/PANGAEA.948258,1852,1856,47.31701,8.58323
+1860s spike,END,Kuesnacht,Küsnacht,Küsnacht,rh,CHIMES,https://doi.pangaea.de/10.1594/PANGAEA.948258,1852,1856,47.31701,8.58323
+1860s spike,END,Kuesnacht,Kuesnacht,Küsnacht,Tn,GCOS,https://doi.pangaea.de/10.1594/PANGAEA.948258,1852,1856,47.31701,8.58323
+1860s spike,END,Kuesnacht,Kuesnacht,Küsnacht,Tx,GCOS,https://doi.pangaea.de/10.1594/PANGAEA.948258,1852,1856,47.31701,8.58323
+1860s spike,END,Kuesnacht,Kuesnacht,Küsnacht,ta,GCOS,https://doi.pangaea.de/10.1594/PANGAEA.948258,1852,1856,47.31701,8.58323
+1860s spike,START,LaCorunna,WMO-8001,Lacoruna,p,CRU,https://sites.uea.ac.uk/cru/,1865,2002,43.16,-8.5
+1860s spike,START,LaCorunna,DWRUK_CORUNNA,Corunna,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1866,1875,43.35,-8.4
+1860s spike,START,LaCorunna,DWRUK_CORUNNA,Corunna,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1866,1875,43.35,-8.4
+1860s spike,START,Leipzig,GME00125218,LEIPZIG-HOLZHAUSEN,rr,GHCN-D,NA,1863,2019,51.3164,12.4475
+1860s spike,START,Leith,DWRUK_LEITH,Leith Post Office,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,55.974339,-3.167152
+1860s spike,START,Leith,DWRUK_LEITH,Leith Links,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,55.97082,-3.16255
+1860s spike,START,Leith,DWRUK_LEITH,Leith Links,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,55.97082,-3.16255
+1860s spike,START,Leith,DWRUK_LEITH,Leith Links,rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1863,1875,55.97082,-3.16255
+1860s spike,START,Lesina,WMO-13333,Lesina,p,CRU,https://sites.uea.ac.uk/cru/,1869,1881,43.53,16.3
+1860s spike,START,Lisbon,LISBON,LISBON,p,EMULATE,DOI 10.5281/zenodo.5940391,1869,1881,38.7200,-9.1400
+1860s spike,START,Lisbon,DWRUK_LISBON,Lisbon Observatory,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1863,38.71084,-9.187467
+1860s spike,END,Lisbon,DWRUK_LISBON,Lisbon Observatory,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1863,38.71084,-9.187467
+1860s spike,START,Lisbon,DWRUK_LISBON,Lisbon Observatory,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1863,38.71084,-9.187467
+1860s spike,END,Lisbon,DWRUK_LISBON,Lisbon Observatory,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1863,38.71084,-9.187467
+1860s spike,START,Liverpool,LIVERPOOL,LIVERPOOL,p,EMULATE,DOI 10.5281/zenodo.5940391,1868,1871,53.4000,-3.0800
+1860s spike,START,Liverpool,DWRUK_LIVERPOOL,Bidston Observatory,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,53.400735,-3.074226
+1860s spike,START,Liverpool,DWRUK_LIVERPOOL,Bidston Observatory,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,53.400735,-3.074226
+1860s spike,START,Liverpool,DWRUK_LIVERPOOL,Bidston Observatory,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,53.400735,-3.074226
+1860s spike,START,Liverpool,DWRUK_LIVERPOOL,Bidston Observatory,rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,53.400735,-3.074226
+1860s spike,START,London,29,DWR,p,Cornes,doi: 10.6084/m9.figshare.24242302.v1,1861,1902,51.502,-0.126
+1860s spike,END,London,31,The Gentleman's Magazine (Cary et al.),p,Cornes,doi: 10.6084/m9.figshare.24242302.v1,1824,1865,51.51,-0.11
+1860s spike,START,London,32,Royal Observatory Greenwich - Upper magnet room (Missing Fill),p,Cornes,doi: 10.6084/m9.figshare.24242302.v1,1857,1906,51.48,0
+1860s spike,START,London,DWRUK_LONDON,London (Westminster),ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1863,51.50133,-0.12583
+1860s spike,END,London,DWRUK_LONDON,London (Westminster),ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1863,51.50133,-0.12583
+1860s spike,START,London,DWRUK_LONDON,London (Westminster),p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,51.50133,-0.12583
+1860s spike,START,London,DWRUK_LONDON,London (Westminster),ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,51.50133,-0.12583
+1860s spike,START,London,DWRUK_LONDON,London (Westminster),rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1862,1875,51.50133,-0.12583
+1860s spike,START,Lorient,DWRUK_LORIENT,Lorient (Grognon),p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1862,1875,47.652361,-3.502169
+1860s spike,START,Lorient,DWRUK_LORIENT,Lorient (Grognon),rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1862,1875,47.652361,-3.502169
+1860s spike,START,Lorient,DWRUK_LORIENT,Lorient (Grognon),ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1862,1875,47.652361,-3.502169
+1860s spike,START,Lorient,DWRUK_LORIENT,Lorient (Grognon),ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1862,1875,47.652361,-3.502169
+1860s spike,START,Lugano,LUG,Lugano,p,"Pfister, L., Wilhelm, L., Brugnara, Y., Imfeld, N., & Brönnimann, S. (2024). Weather type reconstruction using machine learning approaches. EGUsphere, 2024, 1-33.",https://doi.org/10.5194/wcd-6-571-2025,1864,2020,46,8.97
+1860s spike,END,Luhansk,Luhansk,Luhansk,p,UA-UHMI,https://doi.org/10.15407/uhmi.report.01,1840,1869,48.566700,39.250000
+1860s spike,END,Luhansk,Luhansk,Luhansk,ta,UA-UHMI,https://doi.org/10.15407/uhmi.report.01,1840,1869,48.566700,39.250000
+1860s spike,START,Luhansk,Luhansk,Luhansk,p,UA-UHMI,https://doi.org/10.15407/uhmi.report.01,1870,1880,48.566700,39.250000
+1860s spike,START,Luhansk,Luhansk,Luhansk,ta,UA-UHMI,https://doi.org/10.15407/uhmi.report.01,1870,1880,48.566700,39.250000
+1860s spike,END,Luzern,LU01_Luzern_Schwytzer,Luzern,p,CHIMES,https://doi.org/10.5194/cp-15-1345-2019,1844,1864,47.05242,8.30593
+1860s spike,END,Luzern,LU01_Luzern_Schwytzer,Luzern,ta,CHIMES,https://doi.org/10.5194/cp-15-1345-2019,1844,1864,47.05242,8.30593
+1860s spike,START,Lyon,LYONS,LYONS,p,EMULATE,DOI 10.5281/zenodo.5940391,1869,1881,45.7600,4.8400
+1860s spike,START,Lyon,DWRUK_LYONS,Lyon (St. Genis-Laval),p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1868,1873,45.693951,4.782808
+1860s spike,START,Lyon,DWRUK_LYONS,Lyon (St. Genis-Laval),ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1868,1875,45.693951,4.782808
+1860s spike,START,Maastricht,KNMI-007_Maastricht,Maastricht,p,KNMI,https://www.knmi.nl/nederland-nu/klimatologie/daggegevens/antieke-waarnemingen,1865,1904,50.851368,5.690972
+1860s spike,END,Marschlins,GR04_Marschlins,Schloss Marschlins,p,CHIMES,https://doi.org/10.5194/cp-15-1345-2019,1782,1865,46.96,9.58
+1860s spike,START,Marschlins,GR04_Marschlins,Schloss Marschlins,ta,CHIMES,https://doi.org/10.5194/cp-15-1345-2019,1864,1871,46.96,9.58
+1860s spike,START,Milan,ITE00100554,MILAN,rr,GHCN-D,NA,1858,2008,45.4717,9.1892
+1860s spike,END,Milan,IMPROVE_Milan,Milan,p,IMPROVE,https://link.springer.com/book/10.1007/978-94-010-0371-1,1763,1862,45.47,9.19
+1860s spike,END,Milan,IMPROVE_Milan,Milan,ta,IMPROVE,https://link.springer.com/book/10.1007/978-94-010-0371-1,1763,1862,45.47,9.19
+1860s spike,START,MilfordHaven,DWRUK_MILFORD,Milford Haven,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1862,1862,51.71,-5.04
+1860s spike,END,MilfordHaven,DWRUK_MILFORD,Milford Haven,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1862,1862,51.71,-5.04
+1860s spike,START,MilfordHaven,DWRUK_MILFORD,Milford Haven,rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1862,1862,51.71,-5.04
+1860s spike,END,MilfordHaven,DWRUK_MILFORD,Milford Haven,rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1862,1862,51.71,-5.04
+1860s spike,START,MilfordHaven,DWRUK_MILFORD,Milford Haven,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1862,1862,51.71,-5.04
+1860s spike,END,MilfordHaven,DWRUK_MILFORD,Milford Haven,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1862,1862,51.71,-5.04
+1860s spike,START,MilfordHaven,DWRUK_MILFORD,Milford Haven,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1862,1862,51.71,-5.04
+1860s spike,END,MilfordHaven,DWRUK_MILFORD,Milford Haven,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1862,1862,51.71,-5.04
+1860s spike,START,Nairn,NAIRN,NAIRN,p,EMULATE,DOI 10.5281/zenodo.5940391,1868,1871,57.5900,-3.8700
+1860s spike,START,Nairn,DWRUK_NAIRN,Nairn,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,57.577607,-3.895321
+1860s spike,START,Nairn,DWRUK_NAIRN,Nairn,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,57.577607,-3.895321
+1860s spike,START,Nairn,DWRUK_NAIRN,Nairn,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,57.577607,-3.895321
+1860s spike,START,Nairn,DWRUK_NAIRN,Nairn,rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,57.577607,-3.895321
+1860s spike,START,Odesa,Odesa,Odesa,p,UA-UHMI,https://doi.org/10.15407/uhmi.report.01,1859,1869,46.433300,30.766700
+1860s spike,END,Odesa,Odesa,Odesa,p,UA-UHMI,https://doi.org/10.15407/uhmi.report.01,1859,1869,46.433300,30.766700
+1860s spike,START,Odesa,Odesa,Odesa,ta,UA-UHMI,https://doi.org/10.15407/uhmi.report.01,1859,1869,46.433300,30.766700
+1860s spike,END,Odesa,Odesa,Odesa,ta,UA-UHMI,https://doi.org/10.15407/uhmi.report.01,1859,1869,46.433300,30.766700
+1860s spike,START,Odesa,Odesa,Odesa,ta,UA-UHMI,https://doi.org/10.15407/uhmi.report.01,1870,1880,46.433300,30.766700
+1860s spike,START,Odesa,Odesa_horticulture,"Odesa, horticulture",p,UA-UHMI,https://doi.org/10.15407/uhmi.report.01,1856,1856,46.460000,30.680000
+1860s spike,END,Odesa,Odesa_horticulture,"Odesa, horticulture",p,UA-UHMI,https://doi.org/10.15407/uhmi.report.01,1856,1856,46.460000,30.680000
+1860s spike,START,Odesa,Odesa_horticulture,"Odesa, horticulture",ta,UA-UHMI,https://doi.org/10.15407/uhmi.report.01,1856,1856,46.460000,30.680000
+1860s spike,END,Odesa,Odesa_horticulture,"Odesa, horticulture",ta,UA-UHMI,https://doi.org/10.15407/uhmi.report.01,1856,1856,46.460000,30.680000
+1860s spike,START,Odesa,Odesa_horticulture,"Odesa, horticulture",p,UA-UHMI,https://doi.org/10.15407/uhmi.report.01,1856,1859,46.460000,30.680000
+1860s spike,END,Odesa,Odesa_horticulture,"Odesa, horticulture",p,UA-UHMI,https://doi.org/10.15407/uhmi.report.01,1856,1859,46.460000,30.680000
+1860s spike,START,Odesa,Odesa_horticulture,"Odesa, horticulture",ta,UA-UHMI,https://doi.org/10.15407/uhmi.report.01,1856,1859,46.460000,30.680000
+1860s spike,END,Odesa,Odesa_horticulture,"Odesa, horticulture",ta,UA-UHMI,https://doi.org/10.15407/uhmi.report.01,1856,1859,46.460000,30.680000
+1860s spike,START,Odesa,Odesa_lighthouse,"Odesa, lighthouse",ta,UA-UHMI,https://doi.org/10.15407/uhmi.report.01,1865,1871,46.400000,30.750000
+1860s spike,START,Odesa,Odesa_lighthouse,"Odesa, lighthouse",p,UA-UHMI,https://doi.org/10.15407/uhmi.report.01,1867,1871,46.400000,30.750000
+1860s spike,START,Oksoy,WMO-1448,Oksoy_Fyr,p,CRU,https://sites.uea.ac.uk/cru/,1870,2002,58.07,8.05
+1860s spike,START,Oksoy,DWRUK_OXO,Oxo,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1870,1875,58.073,8.053
+1860s spike,START,Oksoy,DWRUK_OXO,Oxo,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1870,1875,58.073,8.053
+1860s spike,START,Osijek,TG_SOUID_105201,Osijek,ta,ECA&D,knmi-ecad-assets-prd.s3.amazonaws.com/download/ECA_nonblend_tg.zip,1858,2021,45.533056,18.633056
+1860s spike,START,Paris,DWRUK_PARIS,Paris (Montsouris),ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1868,1875,48.821700,2.337810
+1860s spike,START,Pembrokeshire,PEMBROKE,PEMBROKE,p,EMULATE,DOI 10.5281/zenodo.5940391,1869,1871,51.6800,-5.1800
+1860s spike,START,Pembrokeshire,DWRUK_PEMBROKE,St. Ann's Head,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1862,1875,51.682,-5.176
+1860s spike,START,Pembrokeshire,DWRUK_PEMBROKE,St. Ann's Head,rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1862,1875,51.682,-5.176
+1860s spike,START,Pembrokeshire,DWRUK_PEMBROKE,St. Ann's Head,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1862,1875,51.682,-5.176
+1860s spike,START,Pembrokeshire,DWRUK_PEMBROKE,St. Ann's Head,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1862,1875,51.682,-5.176
+1860s spike,START,Penzance,PENZANCE,PENZANCE,p,EMULATE,DOI 10.5281/zenodo.5940391,1868,1871,50.1200,-5.5400
+1860s spike,START,Penzance,DWRUK_PENZANCE,Penzance,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1863,50.11788,-5.53601
+1860s spike,END,Penzance,DWRUK_PENZANCE,Penzance,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1863,50.11788,-5.53601
+1860s spike,START,Penzance,DWRUK_PENZANCE,Penzance,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1871,50.11788,-5.53601
+1860s spike,START,Penzance,DWRUK_PENZANCE,Penzance,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1871,50.11788,-5.53601
+1860s spike,START,Penzance,DWRUK_PENZANCE,Penzance,rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1871,50.11788,-5.53601
+1860s spike,START,Pitea,TG_SOUID_137112,Pitea,ta,ECA&D,knmi-ecad-assets-prd.s3.amazonaws.com/download/ECA_nonblend_tg.zip,1859,2024,65.319722,21.49
+1860s spike,START,Plymouth,PLYMOUTH,PLYMOUTH,p,EMULATE,DOI 10.5281/zenodo.5940391,1861,1881,50.3800,-4.1400
+1860s spike,START,Plymouth,DWRUK_PLYMOUTH,Plymouth,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1863,50.36974,-4.13916
+1860s spike,END,Plymouth,DWRUK_PLYMOUTH,Plymouth,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1863,50.36974,-4.13916
+1860s spike,START,Plymouth,DWRUK_PLYMOUTH,Plymouth,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,50.36974,-4.13916
+1860s spike,START,Plymouth,DWRUK_PLYMOUTH,Plymouth,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,50.36974,-4.13916
+1860s spike,START,Plymouth,DWRUK_PLYMOUTH,Plymouth,rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1862,1875,50.36974,-4.13916
+1860s spike,END,Poltava,Poltava,Poltava,p,UA-UHMI,https://doi.org/10.15407/uhmi.report.01,1847,1865,49.600000,34.550000
+1860s spike,END,Poltava,Poltava,Poltava,ta,UA-UHMI,https://doi.org/10.15407/uhmi.report.01,1847,1865,49.600000,34.550000
+1860s spike,END,Portarlington,ILMMT-Portarlington,Portarlington,Tn,"Mateus, C., Potito, A., & Curley, M. (2020). Reconstruction of a long‐term historical daily maximum and minimum air temperature network dataset for Ireland (1831‐1968). Geoscience Data Journal, 7(2), 102-115.",https://www.edepositireland.ie/entities/publication/7271837d-dbe6-463f-b103-422f42a15446,1845,1864,53.15,-7.2
+1860s spike,END,Portarlington,ILMMT-Portarlington,Portarlington,Tx,"Mateus, C., Potito, A., & Curley, M. (2020). Reconstruction of a long‐term historical daily maximum and minimum air temperature network dataset for Ireland (1831‐1968). Geoscience Data Journal, 7(2), 102-115.",https://www.edepositireland.ie/entities/publication/7271837d-dbe6-463f-b103-422f42a15446,1845,1864,53.15,-7.2
+1860s spike,START,Portland,DWRUK_PORTLAND,Portland Bill,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1862,50.522280,-2.456419
+1860s spike,END,Portland,DWRUK_PORTLAND,Portland Bill,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1862,50.522280,-2.456419
+1860s spike,START,Portland,DWRUK_PORTLAND,Portland Bill,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1862,50.522280,-2.456419
+1860s spike,END,Portland,DWRUK_PORTLAND,Portland Bill,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1862,50.522280,-2.456419
+1860s spike,START,Portland,DWRUK_PORTLAND,Portland Bill,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1862,50.522280,-2.456419
+1860s spike,END,Portland,DWRUK_PORTLAND,Portland Bill,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1862,50.522280,-2.456419
+1860s spike,START,Portland,DWRUK_PORTLAND,Portland Bill,rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1862,50.522280,-2.456419
+1860s spike,END,Portland,DWRUK_PORTLAND,Portland Bill,rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1862,50.522280,-2.456419
+1860s spike,START,Portrush,DWRUK_PORTRUSH,Portrush,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1863,55.21,-6.65
+1860s spike,END,Portrush,DWRUK_PORTRUSH,Portrush,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1863,55.21,-6.65
+1860s spike,START,Portrush,DWRUK_PORTRUSH,Portrush,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1863,55.21,-6.65
+1860s spike,END,Portrush,DWRUK_PORTRUSH,Portrush,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1863,55.21,-6.65
+1860s spike,START,Portrush,DWRUK_PORTRUSH,Portrush,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1863,55.21,-6.65
+1860s spike,END,Portrush,DWRUK_PORTRUSH,Portrush,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1863,55.21,-6.65
+1860s spike,START,Portrush,DWRUK_PORTRUSH,Portrush,rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1862,1863,55.21,-6.65
+1860s spike,END,Portrush,DWRUK_PORTRUSH,Portrush,rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1862,1863,55.21,-6.65
+1860s spike,START,Portsmouth,PORTSMOUTH,PORTSMOUTH,p,EMULATE,DOI 10.5281/zenodo.5940391,1868,1871,50.8200,-1.0900
+1860s spike,START,Portsmouth,DWRUK_PORTSMOUTH,Portsmouth,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1863,50.79840,-1.10657
+1860s spike,END,Portsmouth,DWRUK_PORTSMOUTH,Portsmouth,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1863,50.79840,-1.10657
+1860s spike,START,Portsmouth,DWRUK_PORTSMOUTH,Portsmouth,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1873,50.79840,-1.10657
+1860s spike,START,Portsmouth,DWRUK_PORTSMOUTH,Portsmouth,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1873,50.79840,-1.10657
+1860s spike,START,Portsmouth,DWRUK_PORTSMOUTH,Portsmouth,rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1862,1873,50.79840,-1.10657
+1860s spike,START,Putten,NLE00101991,PUTTEN (GLD),rr,GHCN-D,NA,1867,2019,52.25,5.6167
+1860s spike,START,RochesPoint,DWRUK_ROCHESPOINT,Roches Point,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1868,1875,51.793124,-8.254541
+1860s spike,START,RochesPoint,DWRUK_ROCHESPOINT,Roches Point,rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1868,1875,51.793124,-8.254541
+1860s spike,START,RochesPoint,DWRUK_ROCHESPOINT,Roches Point,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1868,1875,51.793124,-8.254541
+1860s spike,START,Roermond,NLE00100510,ROERMOND,rr,GHCN-D,NA,1869,2019,51.1831,5.9667
+1860s spike,START,Rome,ROME,ROME,p,EMULATE,DOI 10.5281/zenodo.5940391,1869,1881,41.9000,12.5000
+1860s spike,START,Rovereto,Europe_Rovereto_3,Rovereto,p,PALAEO-RA,,1860,1868,45.9,11.05
+1860s spike,END,Rovereto,Europe_Rovereto_3,Rovereto,p,PALAEO-RA,,1860,1868,45.9,11.05
+1860s spike,START,Rovereto,Europe_Rovereto_3,Rovereto,ta,PALAEO-RA,,1860,1868,45.9,11.05
+1860s spike,END,Rovereto,Europe_Rovereto_3,Rovereto,ta,PALAEO-RA,,1860,1868,45.9,11.05
+1860s spike,START,Saanen,BE07_Saanen,Saanen,p,CHIMES,https://doi.org/10.5194/cp-15-1345-2019,1860,1862,46.49,7.26
+1860s spike,END,Saanen,BE07_Saanen,Saanen,p,CHIMES,https://doi.org/10.5194/cp-15-1345-2019,1860,1862,46.49,7.26
+1860s spike,START,Saanen,BE07_Saanen,Saanen,ta,CHIMES,https://doi.org/10.5194/cp-15-1345-2019,1860,1862,46.49,7.26
+1860s spike,END,Saanen,BE07_Saanen,Saanen,ta,CHIMES,https://doi.org/10.5194/cp-15-1345-2019,1860,1862,46.49,7.26
+1860s spike,START,Scarborough,SCARBOROUGH,SCARBOROUGH,p,EMULATE,DOI 10.5281/zenodo.5940391,1868,1871,54.2800,-0.4000
+1860s spike,START,Scarborough,DWRUK_SCARBOROUGH,Scarborough,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,54.28091,-0.39832
+1860s spike,START,Scarborough,DWRUK_SCARBOROUGH,Scarborough,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,54.28091,-0.39832
+1860s spike,START,Scarborough,DWRUK_SCARBOROUGH,Scarborough,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,54.28091,-0.39832
+1860s spike,START,Scarborough,DWRUK_SCARBOROUGH,Scarborough,rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,54.28091,-0.39832
+1860s spike,START,Shields,DWRUK_SHIELDS,North Shields,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,55.01,-1.45
+1860s spike,START,Shields,DWRUK_SHIELDS,North Shields,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,55.01,-1.45
+1860s spike,START,Shields,DWRUK_SHIELDS,North Shields,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,55.01,-1.45
+1860s spike,START,Shields,DWRUK_SHIELDS,North Shields,rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1862,1875,55.01,-1.45
+1860s spike,START,Skudenes,DWRUK_SKUDESNAES,Skudesnaes,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1866,1875,59.15,5.25
+1860s spike,START,Skudenes,DWRUK_SKUDESNAES,Skudesnaes,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1866,1875,59.15,5.25
+1860s spike,START,Stensele,TG_SOUID_137076,Stensele,ta,ECA&D,knmi-ecad-assets-prd.s3.amazonaws.com/download/ECA_nonblend_tg.zip,1860,2004,65.066667,17.166389
+1860s spike,START,Strasbourg,DWRUK_STRASBOURG,Strasbourg,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1868,1870,48.58,7.77
+1860s spike,END,Strasbourg,DWRUK_STRASBOURG,Strasbourg,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1868,1870,48.58,7.77
+1860s spike,START,Strasbourg,DWRUK_STRASBOURG,Strasbourg,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1869,1870,48.58,7.77
+1860s spike,END,Strasbourg,DWRUK_STRASBOURG,Strasbourg,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1869,1870,48.58,7.77
+1860s spike,START,Tallinn,ENE00175051,TALLINN,rr,GHCN-D,NA,1870,2015,59.3981,24.6028
+1860s spike,START,Tartu,ENE00175063,TARTU,rr,GHCN-D,NA,1865,1996,58.3,26.7331
+1860s spike,START,Tenerife,TENERIFE,TENERIFE,p,EMULATE,DOI 10.5281/zenodo.5940391,1856,1857,28.2900,-16.6300
+1860s spike,END,Tenerife,TENERIFE,TENERIFE,p,EMULATE,DOI 10.5281/zenodo.5940391,1856,1857,28.2900,-16.6300
+1860s spike,START,Thurso,DWRUK_THURSO,Thurso,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1870,1875,58.59,-3.52
+1860s spike,START,Thurso,DWRUK_THURSO,Thurso,rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1870,1875,58.59,-3.52
+1860s spike,START,Thurso,DWRUK_THURSO,Thurso,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1870,1875,58.59,-3.52
+1860s spike,START,Toulon,TOULON,TOULON,p,EMULATE,DOI 10.5281/zenodo.5940391,1868,1881,43.1200,5.9300
+1860s spike,START,Toulon,DWRUK_TOULON,Toulon,rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1868,1875,43.05253,5.85574
+1860s spike,START,Toulon,DWRUK_TOULON,Toulon,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1868,1875,43.05240,5.85483
+1860s spike,START,Toulon,DWRUK_TOULON,Toulon,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1868,1875,43.05240,5.85483
+1860s spike,START,Trondheim,Trondheim,Trondheim,p,frost.met.no,DOI 10.5281/zenodo.5940391,1870,1927,63.4319,10.4146
+1860s spike,END,Turin,Turin,Turin,ta,SMI,NA,1753,1865,45.068,7.684
+1860s spike,START,Turin,Turin,Turin,Tn,SMI,NA,1857,2009,45.071,7.686
+1860s spike,START,Turin,Turin,Turin,Tx,SMI,NA,1857,2009,45.071,7.686
+1860s spike,END,Uetliberg,ZH04_Uetliberg,Uetliberg,p,CHIMES,https://doi.org/10.5194/cp-15-1345-2019,1841,1863,47.34974,8.49077
+1860s spike,END,Uetliberg,ZH04_Uetliberg,Uetliberg,ta,CHIMES,https://doi.org/10.5194/cp-15-1345-2019,1841,1863,47.34974,8.49077
+1860s spike,END,Uetliberg,ZH04_Uetliberg,Uetliberg,Tn,CHIMES,https://doi.org/10.5194/cp-15-1345-2019,1852,1863,47.34974,8.49077
+1860s spike,START,Uetliberg,ZH04_Uetliberg,Uetliberg,rr,CHIMES,https://doi.org/10.5194/cp-15-1345-2019,1863,1863,47.34974,8.49077
+1860s spike,END,Uetliberg,ZH04_Uetliberg,Uetliberg,rr,CHIMES,https://doi.org/10.5194/cp-15-1345-2019,1863,1863,47.34974,8.49077
+1860s spike,START,Umea,TG_SOUID_136902,Umea,ta,ECA&D,knmi-ecad-assets-prd.s3.amazonaws.com/download/ECA_nonblend_tg.zip,1858,1979,63.83,20.28
+1860s spike,END,Uppsala,IMPROVE_Uppsala,Uppsala,p,IMPROVE,https://link.springer.com/book/10.1007/978-94-010-0371-1,1722,1870,59.8605,17.6407
+1860s spike,END,Uppsala,IMPROVE_Uppsala,Uppsala,ta,IMPROVE,https://link.springer.com/book/10.1007/978-94-010-0371-1,1722,1870,59.8605,17.6407
+1860s spike,START,Vaexjoe,SWE00100003,VAEXJOE,rr,GHCN-D,NA,1860,2019,56.8667,14.8
+1860s spike,END,Valencia,Valencia,DominguezCastro_Valencia,dd,Dominguez_Castro_2014,https://docta.ucm.es/entities/publication/b26dac98-5ffe-482c-9419-2f94168cc7eb,1790,1861,39.47,-0.38
+1860s spike,END,Valencia,Valencia,DominguezCastro_Valencia,p,Dominguez_Castro_2014,https://docta.ucm.es/entities/publication/b26dac98-5ffe-482c-9419-2f94168cc7eb,1790,1861,39.47,-0.38
+1860s spike,END,Valencia,Valencia,DominguezCastro_Valencia,ta,Dominguez_Castro_2014,https://docta.ucm.es/entities/publication/b26dac98-5ffe-482c-9419-2f94168cc7eb,1790,1861,39.47,-0.38
+1860s spike,START,Valentia,WMO-3953,Valentia,p,CRU,https://sites.uea.ac.uk/cru/,1861,1892,51.93,-10.25
+1860s spike,START,Valentia,DWRUK_VALENTIA,Valentia Observatory,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,51.938331,-10.241007
+1860s spike,START,Valentia,DWRUK_VALENTIA,Valentia Observatory,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,51.938331,-10.241007
+1860s spike,START,Valentia,DWRUK_VALENTIA,Valentia Observatory,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,51.938331,-10.241007
+1860s spike,START,Valentia,DWRUK_VALENTIA,Valentia Observatory,rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1862,1875,51.938331,-10.241007
+1860s spike,START,Vardo,Vardø radio,Vardø radio,p,frost.met.no,DOI 10.5281/zenodo.5940391,1867,1966,70.370700,31.096200
+1860s spike,END,Vendome,VENDOME_BG1,VENDOME_BG1,p,Meteo-France,DOI 10.5281/zenodo.5940391,1851,1859,47.7933,1.0667
+1860s spike,START,Vendome,VENDOME,VENDOME,p,Meteo-France,DOI 10.5281/zenodo.5940391,1856,1876,47.8267,1.0543
+1860s spike,START,Verdun,VERDUN,VERDUN,p,Meteo-France,DOI 10.5281/zenodo.5940391,1864,1869,49.1633,5.3917
+1860s spike,END,Verdun,VERDUN,VERDUN,p,Meteo-France,DOI 10.5281/zenodo.5940391,1864,1869,49.1633,5.3917
+1860s spike,START,Versailles,VERSAILLES_EN,VERSAILLES_EN,p,Meteo-France,DOI 10.5281/zenodo.5940391,1865,1933,48.8057,2.1465
+1860s spike,START,Vienna,TG_SOUID_235424,WienHoheWarte,ta,ECA&D,knmi-ecad-assets-prd.s3.amazonaws.com/download/ECA_nonblend_tg.zip,1855,2024,48.248056,16.355833
+1860s spike,START,Visby,WMO-2591,Visby,p,CRU,https://sites.uea.ac.uk/cru/,1860,2002,57.63,18.28
+1860s spike,START,Vlissingen,KNMI-54_Vlissingen,Vlissingen2,rr,KNMI,https://www.knmi.nl/nederland-nu/klimatologie/daggegevens/antieke-waarnemingen,1855,1905,52.453667,4.570913
+1860s spike,START,Wertheim,Wertheim-Eichel,Wertheim-Eichel,p,DWD,DOI 10.5281/zenodo.5940391,1868,1964,49.7606,9.5125
+1860s spike,START,Weymouth,DWRUK_WEYMOUTH,Weymouth,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1862,1863,50.61,-2.45
+1860s spike,END,Weymouth,DWRUK_WEYMOUTH,Weymouth,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1862,1863,50.61,-2.45
+1860s spike,START,Weymouth,DWRUK_WEYMOUTH,Weymouth,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1862,1868,50.61,-2.45
+1860s spike,END,Weymouth,DWRUK_WEYMOUTH,Weymouth,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1862,1868,50.61,-2.45
+1860s spike,START,Weymouth,DWRUK_WEYMOUTH,Weymouth,rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1862,1868,50.61,-2.45
+1860s spike,END,Weymouth,DWRUK_WEYMOUTH,Weymouth,rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1862,1868,50.61,-2.45
+1860s spike,START,Weymouth,DWRUK_WEYMOUTH,Weymouth,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1862,1868,50.61,-2.45
+1860s spike,END,Weymouth,DWRUK_WEYMOUTH,Weymouth,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1862,1868,50.61,-2.45
+1860s spike,START,Wick,DWRUK_WICK,Wick,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1870,1875,58.442519,-3.090779
+1860s spike,START,Wick,DWRUK_WICK,Wick,rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1870,1875,58.442519,-3.090779
+1860s spike,START,Wick,DWRUK_WICK,Wick,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1870,1875,58.442519,-3.090779
+1860s spike,START,Winterthur,ZH03_Winterthur_Furrer,Winterthur,p,CHIMES,https://doi.org/10.5194/cp-15-1345-2019,1857,1867,47.49922,8.72897
+1860s spike,END,Winterthur,ZH03_Winterthur_Furrer,Winterthur,p,CHIMES,https://doi.org/10.5194/cp-15-1345-2019,1857,1867,47.49922,8.72897
+1860s spike,START,Winterthur,ZH03_Winterthur_Furrer,Winterthur,Tx,CHIMES,https://doi.org/10.5194/cp-15-1345-2019,1861,1864,47.49922,8.72897
+1860s spike,END,Winterthur,ZH03_Winterthur_Furrer,Winterthur,Tx,CHIMES,https://doi.org/10.5194/cp-15-1345-2019,1861,1864,47.49922,8.72897
+1860s spike,START,Winterthur,ZH03_Winterthur_Furrer,Winterthur,Tn,CHIMES,https://doi.org/10.5194/cp-15-1345-2019,1861,1864,47.49922,8.72897
+1860s spike,END,Winterthur,ZH03_Winterthur_Furrer,Winterthur,Tn,CHIMES,https://doi.org/10.5194/cp-15-1345-2019,1861,1864,47.49922,8.72897
+1860s spike,START,Winterthur,Winterthur,Winterthur,dd,GCOS,https://doi.pangaea.de/10.1594/PANGAEA.948258,1857,1866,47.49922,8.72897
+1860s spike,END,Winterthur,Winterthur,Winterthur,dd,GCOS,https://doi.pangaea.de/10.1594/PANGAEA.948258,1857,1866,47.49922,8.72897
+1860s spike,START,Winterthur,Winterthur,Winterthur,ta,GCOS,https://doi.pangaea.de/10.1594/PANGAEA.948258,1857,1867,47.49922,8.72897
+1860s spike,END,Winterthur,Winterthur,Winterthur,ta,GCOS,https://doi.pangaea.de/10.1594/PANGAEA.948258,1857,1867,47.49922,8.72897
+1860s spike,START,Yarmouth,DWRUK_YARMOUTH,Yarmouth,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,52.603617,1.736098
+1860s spike,START,Yarmouth,DWRUK_YARMOUTH,Yarmouth,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,52.603617,1.736098
+1860s spike,START,Yarmouth,DWRUK_YARMOUTH,Yarmouth,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,52.603617,1.736098
+1860s spike,START,Yarmouth,DWRUK_YARMOUTH,Yarmouth,rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,52.603617,1.736098
+1860s spike,START,Zagreb,TG_SOUID_100060,ZagrebGric,ta,ECA&D,knmi-ecad-assets-prd.s3.amazonaws.com/download/ECA_nonblend_tg.zip,1861,2021,45.816667,15.978056
+1860s spike,START,Zagreb,HR000142360,ZAGREB-GRIC,rr,GHCN-D,NA,1861,2019,45.8167,15.9781
+1860s spike,START,Zagreb,ZAG,Zagreb,p,"Pfister, L., Wilhelm, L., Brugnara, Y., Imfeld, N., & Brönnimann, S. (2024). Weather type reconstruction using machine learning approaches. EGUsphere, 2024, 1-33.",https://doi.org/10.5194/wcd-6-571-2025,1861,2021,45.82,15.98
+1860s spike,START,Zurich,ZH01_Zurich_Bruegger,Zürich,p,CHIMES,https://doi.org/10.5194/cp-15-1345-2019,1860,1863,47.371000,8.534000
+1860s spike,END,Zurich,ZH01_Zurich_Bruegger,Zürich,p,CHIMES,https://doi.org/10.5194/cp-15-1345-2019,1860,1863,47.371000,8.534000
+1860s spike,START,Zurich,Zurich_Bruegger,Zürich,Tn,GCOS,https://doi.org/10.1594/PANGAEA.948258,1860,1861,47.371011,8.533664
+1860s spike,END,Zurich,Zurich_Bruegger,Zürich,Tn,GCOS,https://doi.org/10.1594/PANGAEA.948258,1860,1861,47.371011,8.533664
+1860s spike,START,Zurich,Zurich_Bruegger,Zürich,Tx,GCOS,https://doi.org/10.1594/PANGAEA.948258,1860,1861,47.371011,8.533664
+1860s spike,END,Zurich,Zurich_Bruegger,Zürich,Tx,GCOS,https://doi.org/10.1594/PANGAEA.948258,1860,1861,47.371011,8.533664
+1860s spike,START,Zurich,Zurich_Bruegger,Zürich,ta,GCOS,https://doi.org/10.1594/PANGAEA.948258,1860,1866,47.371011,8.533664
+1860s spike,END,Zurich,Zurich_Bruegger,Zürich,ta,GCOS,https://doi.org/10.1594/PANGAEA.948258,1860,1866,47.371011,8.533664
+1860s spike,END,Zwanenburg,KNMI-Zwanenburg,Zwanenburg,dd,KNMI,https://www.knmi.nl/nederland-nu/klimatologie/daggegevens/antieke-waarnemingen,1738,1860,52.32,4.74
+1860s spike,END,Zwanenburg,KNMI-Zwanenburg,Zwanenburg,p,KNMI,https://www.knmi.nl/nederland-nu/klimatologie/daggegevens/antieke-waarnemingen,1738,1860,52.32,4.74
+1860s spike,END,Zwanenburg,KNMI-Zwanenburg,Zwanenburg,ta,KNMI,https://www.knmi.nl/nederland-nu/klimatologie/daggegevens/antieke-waarnemingen,1738,1860,52.32,4.74
+1860s spike,END,Zwanenburg,KNMI-Zwanenburg,Zwanenburg,rr,KNMI,https://www.knmi.nl/nederland-nu/klimatologie/daggegevens/antieke-waarnemingen,1738,1860,52.32,4.74
+1880s spike,START,Aachen,TG_SOUID_102318,Aachen,ta,ECA&D,knmi-ecad-assets-prd.s3.amazonaws.com/download/ECA_nonblend_tg.zip,1891,2011,50.783889,6.095
+1880s spike,START,Aas,Ås (NMBU),Ås (NMBU),p,frost.met.no,DOI 10.5281/zenodo.5940391,1885,1966,59.6605,10.7818
+1880s spike,END,Aberdeen,ABERDEEN,ABERDEEN,p,EMULATE,DOI 10.5281/zenodo.5940391,1861,1877,57.2000,-2.2000
+1880s spike,END,Aberdeen,DWRUK_ABERDEEN,Aberdeen Observatory,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,57.164128,-2.100822
+1880s spike,END,Aberdeen,DWRUK_ABERDEEN,Aberdeen Observatory,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,57.16413,-2.10082
+1880s spike,END,Aberdeen,DWRUK_ABERDEEN,Aberdeen Observatory,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,57.164128,-2.100822
+1880s spike,END,Aberdeen,DWRUK_ABERDEEN,Aberdeen Observatory,rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,57.164128,-2.100822
+1880s spike,END,Aberdeen,DWRUK_ABERDEEN,Aberdeen Observatory,Tn,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,57.16413,-2.10082
+1880s spike,END,Aberdeen,DWRUK_ABERDEEN,Aberdeen Observatory,Tx,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,57.16413,-2.10082
+1880s spike,END,Aberdeen,ABERDEEN,Aberdeen,p,UK-HOURLY-BOOKS,https://github.com/ed-hawkins/weather-rescue-data/tree/master/hourly_uk,1874,1886,57.1667,-2.10
+1880s spike,START,AiPetri,TG_SOUID_105523,AiPetri,ta,ECA&D,knmi-ecad-assets-prd.s3.amazonaws.com/download/ECA_nonblend_tg.zip,1895,2012,44.47,34.07
+1880s spike,START,Alange,BAALAN3,Extremadura-Alange,ta,"Vaquero, José Manuel; Bravo-Paredes, Nieves; Obregón, María Angeles; Sánchez-Carrasco, Víctor Manuel; Valente, Maria Antónia; Trigo, Ricardo M; Domínguez-Castro, Fernando; Montero-Martín, Javier; Vaquero-Martínez, Javier; Antón, Manuel; García, José Agustín; Gallego, María Cruz (2020): Early meteorological records from BAALAN1 (1866). PANGAEA.",https://doi.pangaea.de/10.1594/PANGAEA.925805,1877,1877,38.784444,-6.243611
+1880s spike,END,Alange,BAALAN3,Extremadura-Alange,ta,"Vaquero, José Manuel; Bravo-Paredes, Nieves; Obregón, María Angeles; Sánchez-Carrasco, Víctor Manuel; Valente, Maria Antónia; Trigo, Ricardo M; Domínguez-Castro, Fernando; Montero-Martín, Javier; Vaquero-Martínez, Javier; Antón, Manuel; García, José Agustín; Gallego, María Cruz (2020): Early meteorological records from BAALAN1 (1866). PANGAEA.",https://doi.pangaea.de/10.1594/PANGAEA.925805,1877,1877,38.784444,-6.243611
+1880s spike,START,Alange,BAALAN4,Extremadura-Alange,dd,"Vaquero, José Manuel; Bravo-Paredes, Nieves; Obregón, María Angeles; Sánchez-Carrasco, Víctor Manuel; Valente, Maria Antónia; Trigo, Ricardo M; Domínguez-Castro, Fernando; Montero-Martín, Javier; Vaquero-Martínez, Javier; Antón, Manuel; García, José Agustín; Gallego, María Cruz (2020): Early meteorological records from BAALAN1 (1866). PANGAEA.",https://doi.pangaea.de/10.1594/PANGAEA.925805,1882,1884,38.784444,-6.243611
+1880s spike,END,Alange,BAALAN4,Extremadura-Alange,dd,"Vaquero, José Manuel; Bravo-Paredes, Nieves; Obregón, María Angeles; Sánchez-Carrasco, Víctor Manuel; Valente, Maria Antónia; Trigo, Ricardo M; Domínguez-Castro, Fernando; Montero-Martín, Javier; Vaquero-Martínez, Javier; Antón, Manuel; García, José Agustín; Gallego, María Cruz (2020): Early meteorological records from BAALAN1 (1866). PANGAEA.",https://doi.pangaea.de/10.1594/PANGAEA.925805,1882,1884,38.784444,-6.243611
+1880s spike,START,Alange,BAALAN4,Extremadura-Alange,p,"Vaquero, José Manuel; Bravo-Paredes, Nieves; Obregón, María Angeles; Sánchez-Carrasco, Víctor Manuel; Valente, Maria Antónia; Trigo, Ricardo M; Domínguez-Castro, Fernando; Montero-Martín, Javier; Vaquero-Martínez, Javier; Antón, Manuel; García, José Agustín; Gallego, María Cruz (2020): Early meteorological records from BAALAN1 (1866). PANGAEA.",https://doi.pangaea.de/10.1594/PANGAEA.925805,1889,1893,38.784444,-6.243611
+1880s spike,END,Alange,BAALAN4,Extremadura-Alange,p,"Vaquero, José Manuel; Bravo-Paredes, Nieves; Obregón, María Angeles; Sánchez-Carrasco, Víctor Manuel; Valente, Maria Antónia; Trigo, Ricardo M; Domínguez-Castro, Fernando; Montero-Martín, Javier; Vaquero-Martínez, Javier; Antón, Manuel; García, José Agustín; Gallego, María Cruz (2020): Early meteorological records from BAALAN1 (1866). PANGAEA.",https://doi.pangaea.de/10.1594/PANGAEA.925805,1889,1893,38.784444,-6.243611
+1880s spike,START,Alange,BAALAN4,Extremadura-Alange,ta,"Vaquero, José Manuel; Bravo-Paredes, Nieves; Obregón, María Angeles; Sánchez-Carrasco, Víctor Manuel; Valente, Maria Antónia; Trigo, Ricardo M; Domínguez-Castro, Fernando; Montero-Martín, Javier; Vaquero-Martínez, Javier; Antón, Manuel; García, José Agustín; Gallego, María Cruz (2020): Early meteorological records from BAALAN1 (1866). PANGAEA.",https://doi.pangaea.de/10.1594/PANGAEA.925805,1882,1893,38.784444,-6.243611
+1880s spike,END,Alange,BAALAN4,Extremadura-Alange,ta,"Vaquero, José Manuel; Bravo-Paredes, Nieves; Obregón, María Angeles; Sánchez-Carrasco, Víctor Manuel; Valente, Maria Antónia; Trigo, Ricardo M; Domínguez-Castro, Fernando; Montero-Martín, Javier; Vaquero-Martínez, Javier; Antón, Manuel; García, José Agustín; Gallego, María Cruz (2020): Early meteorological records from BAALAN1 (1866). PANGAEA.",https://doi.pangaea.de/10.1594/PANGAEA.925805,1882,1893,38.784444,-6.243611
+1880s spike,START,Alange,BAALAN4,Extremadura-Alange,dd,"Vaquero, José Manuel; Bravo-Paredes, Nieves; Obregón, María Angeles; Sánchez-Carrasco, Víctor Manuel; Valente, Maria Antónia; Trigo, Ricardo M; Domínguez-Castro, Fernando; Montero-Martín, Javier; Vaquero-Martínez, Javier; Antón, Manuel; García, José Agustín; Gallego, María Cruz (2020): Early meteorological records from BAALAN1 (1866). PANGAEA.",https://doi.pangaea.de/10.1594/PANGAEA.925805,1885,1893,38.784444,-6.243611
+1880s spike,END,Alange,BAALAN4,Extremadura-Alange,dd,"Vaquero, José Manuel; Bravo-Paredes, Nieves; Obregón, María Angeles; Sánchez-Carrasco, Víctor Manuel; Valente, Maria Antónia; Trigo, Ricardo M; Domínguez-Castro, Fernando; Montero-Martín, Javier; Vaquero-Martínez, Javier; Antón, Manuel; García, José Agustín; Gallego, María Cruz (2020): Early meteorological records from BAALAN1 (1866). PANGAEA.",https://doi.pangaea.de/10.1594/PANGAEA.925805,1885,1893,38.784444,-6.243611
+1880s spike,START,Alexandria,ALEXANDRIA,ALEXANDRIA,p,EMULATE,DOI 10.5281/zenodo.5940391,1876,1881,31.2000,29.9100
+1880s spike,END,Alexandria,ALEXANDRIA,ALEXANDRIA,p,EMULATE,DOI 10.5281/zenodo.5940391,1876,1881,31.2000,29.9100
+1880s spike,END,Algiers,ALGIERS,ALGIERS,p,EMULATE,DOI 10.5281/zenodo.5940391,1872,1881,36.7500,3.0600
+1880s spike,START,Algiers,60374,Algiers-Cap_Caxine,rr,Medare,https://www.idare-portal.org/data/medare,1878,1879,36.8,3.04
+1880s spike,END,Algiers,60374,Algiers-Cap_Caxine,rr,Medare,https://www.idare-portal.org/data/medare,1878,1879,36.8,3.04
+1880s spike,START,Algiers,60369,Algiers-Ville-Universite,rr,Medare,https://www.idare-portal.org/data/medare,1877,1938,36.78,3.07
+1880s spike,START,Algiers,60369,Algiers-Ville-Universite,p,Medare,https://www.idare-portal.org/data/medare,1877,1938,36.78,3.07
+1880s spike,END,Angra,ANGRA,ANGRA,p,EMULATE,DOI 10.5281/zenodo.5940391,1871,1878,38.6600,-27.2300
+1880s spike,START,Arad,ROE00100829,ARAD,rr,GHCN-D,NA,1880,2016,46.1331,21.35
+1880s spike,END,Ardrossan,DWRUK_ARDROSSAN,Ardrossan,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,55.64029,-4.81653
+1880s spike,END,Ardrossan,DWRUK_ARDROSSAN,Ardrossan,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,55.64029,-4.81653
+1880s spike,END,Ardrossan,DWRUK_ARDROSSAN,Ardrossan,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,55.64029,-4.81653
+1880s spike,END,Ardrossan,DWRUK_ARDROSSAN,Ardrossan,rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,55.64029,-4.81653
+1880s spike,END,Ardrossan,DWRUK_ARDROSSAN,Ardrossan,Tn,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,55.64029,-4.81653
+1880s spike,END,Ardrossan,DWRUK_ARDROSSAN,Ardrossan,Tx,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,55.64029,-4.81653
+1880s spike,START,Arkhangelsk,RSM00022550,ARHANGELSK,rr,GHCN-D,NA,1881,2018,64.5,40.7331
+1880s spike,END,Armagh,ARMAGH,Armagh,p,UK-HOURLY-BOOKS,https://github.com/ed-hawkins/weather-rescue-data/tree/master/hourly_uk,1874,1883,54.35,-6.65
+1880s spike,START,Astana,KZ000035188,ASTANA,rr,GHCN-D,NA,1881,2005,51.1331,71.3667
+1880s spike,START,Astrakan,RSM00034880,ASTRAKAN,rr,GHCN-D,NA,1881,2017,46.2831,48.05
+1880s spike,END,Athens,WMO-16717,Athens,p,CRU,https://sites.uea.ac.uk/cru/,1853,1882,37.96,23.72
+1880s spike,START,Atyrau,KZ000035700,ATYRAU,rr,GHCN-D,NA,1881,2005,47.1167,51.9167
+1880s spike,START,BadMuskau,GME00126358,BAD MUSKAU,rr,GHCN-D,NA,1887,2019,51.5675,14.7006
+1880s spike,START,Badajoz,BABADA2,Extremadura-Badajoz,dd,"Vaquero, José Manuel; Bravo-Paredes, Nieves; Obregón, María Angeles; Sánchez-Carrasco, Víctor Manuel; Valente, Maria Antónia; Trigo, Ricardo M; Domínguez-Castro, Fernando; Montero-Martín, Javier; Vaquero-Martínez, Javier; Antón, Manuel; García, José Agustín; Gallego, María Cruz (2020): Early meteorological records from BAALAN1 (1866). PANGAEA.",https://doi.pangaea.de/10.1594/PANGAEA.925805,1880,1889,38.9,-6.9625
+1880s spike,END,Badajoz,BABADA2,Extremadura-Badajoz,dd,"Vaquero, José Manuel; Bravo-Paredes, Nieves; Obregón, María Angeles; Sánchez-Carrasco, Víctor Manuel; Valente, Maria Antónia; Trigo, Ricardo M; Domínguez-Castro, Fernando; Montero-Martín, Javier; Vaquero-Martínez, Javier; Antón, Manuel; García, José Agustín; Gallego, María Cruz (2020): Early meteorological records from BAALAN1 (1866). PANGAEA.",https://doi.pangaea.de/10.1594/PANGAEA.925805,1880,1889,38.9,-6.9625
+1880s spike,START,Badajoz,BABADA2,Extremadura-Badajoz,p,"Vaquero, José Manuel; Bravo-Paredes, Nieves; Obregón, María Angeles; Sánchez-Carrasco, Víctor Manuel; Valente, Maria Antónia; Trigo, Ricardo M; Domínguez-Castro, Fernando; Montero-Martín, Javier; Vaquero-Martínez, Javier; Antón, Manuel; García, José Agustín; Gallego, María Cruz (2020): Early meteorological records from BAALAN1 (1866). PANGAEA.",https://doi.pangaea.de/10.1594/PANGAEA.925805,1880,1889,38.9,-6.9625
+1880s spike,END,Badajoz,BABADA2,Extremadura-Badajoz,p,"Vaquero, José Manuel; Bravo-Paredes, Nieves; Obregón, María Angeles; Sánchez-Carrasco, Víctor Manuel; Valente, Maria Antónia; Trigo, Ricardo M; Domínguez-Castro, Fernando; Montero-Martín, Javier; Vaquero-Martínez, Javier; Antón, Manuel; García, José Agustín; Gallego, María Cruz (2020): Early meteorological records from BAALAN1 (1866). PANGAEA.",https://doi.pangaea.de/10.1594/PANGAEA.925805,1880,1889,38.9,-6.9625
+1880s spike,START,Badajoz,BABADA2,Extremadura-Badajoz,ta,"Vaquero, José Manuel; Bravo-Paredes, Nieves; Obregón, María Angeles; Sánchez-Carrasco, Víctor Manuel; Valente, Maria Antónia; Trigo, Ricardo M; Domínguez-Castro, Fernando; Montero-Martín, Javier; Vaquero-Martínez, Javier; Antón, Manuel; García, José Agustín; Gallego, María Cruz (2020): Early meteorological records from BAALAN1 (1866). PANGAEA.",https://doi.pangaea.de/10.1594/PANGAEA.925805,1880,1889,38.9,-6.9625
+1880s spike,END,Badajoz,BABADA2,Extremadura-Badajoz,ta,"Vaquero, José Manuel; Bravo-Paredes, Nieves; Obregón, María Angeles; Sánchez-Carrasco, Víctor Manuel; Valente, Maria Antónia; Trigo, Ricardo M; Domínguez-Castro, Fernando; Montero-Martín, Javier; Vaquero-Martínez, Javier; Antón, Manuel; García, José Agustín; Gallego, María Cruz (2020): Early meteorological records from BAALAN1 (1866). PANGAEA.",https://doi.pangaea.de/10.1594/PANGAEA.925805,1880,1889,38.9,-6.9625
+1880s spike,END,Baghdad,BAGHDAD,BAGHDAD,p,EMULATE,DOI 10.5281/zenodo.5940391,1869,1876,33.3100,44.3600
+1880s spike,START,Bajramaly,TX000038895,BAJRAMALY,rr,GHCN-D,NA,1891,1998,37.6,62.1831
+1880s spike,START,Baku,AJ000037850,BAKU,rr,GHCN-D,NA,1881,1992,40.4,49.8
+1880s spike,START,Bamberg,GME00125014,BAMBERG (STERNWARTE),rr,GHCN-D,NA,1879,1958,49.8856,10.8894
+1880s spike,START,Bamberg,GM000004063,BAMBERG,rr,GHCN-D,NA,1879,2019,49.8753,10.9217
+1880s spike,START,BannosDeMontemayor,CCMONT1,Extremadura-Baños_de_Montemayor,ta,"Vaquero, José Manuel; Bravo-Paredes, Nieves; Obregón, María Angeles; Sánchez-Carrasco, Víctor Manuel; Valente, Maria Antónia; Trigo, Ricardo M; Domínguez-Castro, Fernando; Montero-Martín, Javier; Vaquero-Martínez, Javier; Antón, Manuel; García, José Agustín; Gallego, María Cruz (2020): Early meteorological records from BAALAN1 (1866). PANGAEA.",https://doi.pangaea.de/10.1594/PANGAEA.925805,1883,1887,40.320155,-5.857607
+1880s spike,END,BannosDeMontemayor,CCMONT1,Extremadura-Baños_de_Montemayor,ta,"Vaquero, José Manuel; Bravo-Paredes, Nieves; Obregón, María Angeles; Sánchez-Carrasco, Víctor Manuel; Valente, Maria Antónia; Trigo, Ricardo M; Domínguez-Castro, Fernando; Montero-Martín, Javier; Vaquero-Martínez, Javier; Antón, Manuel; García, José Agustín; Gallego, María Cruz (2020): Early meteorological records from BAALAN1 (1866). PANGAEA.",https://doi.pangaea.de/10.1594/PANGAEA.925805,1883,1887,40.320155,-5.857607
+1880s spike,END,Bassora,BASRA,BASRA,p,EMULATE,DOI 10.5281/zenodo.5940391,1869,1879,30.5100,47.7800
+1880s spike,END,Beirut,WMO-40100,Beirut,p,CRU,https://sites.uea.ac.uk/cru/,1869,1881,33.82,35.48
+1880s spike,END,Beirut,BEIRUT,BEIRUT,p,EMULATE,DOI 10.5281/zenodo.5940391,1869,1876,33.8900,35.5000
+1880s spike,START,Belmullet,ILMMT-Belmullet,Belmullet,Tn,"Mateus, C., Potito, A., & Curley, M. (2020). Reconstruction of a long‐term historical daily maximum and minimum air temperature network dataset for Ireland (1831‐1968). Geoscience Data Journal, 7(2), 102-115.",https://www.edepositireland.ie/entities/publication/7271837d-dbe6-463f-b103-422f42a15446,1884,1920,54.223,-9.988
+1880s spike,START,Belmullet,ILMMT-Belmullet,Belmullet,Tx,"Mateus, C., Potito, A., & Curley, M. (2020). Reconstruction of a long‐term historical daily maximum and minimum air temperature network dataset for Ireland (1831‐1968). Geoscience Data Journal, 7(2), 102-115.",https://www.edepositireland.ie/entities/publication/7271837d-dbe6-463f-b103-422f42a15446,1884,1920,54.223,-9.988
+1880s spike,START,BenNevis,BEN NEVIS SUMMIT OBSERVATORY,Weather-Rescue-Data-v2-2_Ben-Nevis,Tn,Ed Hawkins. (2024). ed-hawkins/weather-rescue-data: Weather Rescue Data v2.2 (v2.2). Zenodo.,https://doi.org/10.5281/zenodo.11001125,1883,1904,56.8,-5
+1880s spike,START,BenNevis,BEN NEVIS SUMMIT OBSERVATORY,Weather-Rescue-Data-v2-2_Ben-Nevis,Tx,Ed Hawkins. (2024). ed-hawkins/weather-rescue-data: Weather Rescue Data v2.2 (v2.2). Zenodo.,https://doi.org/10.5281/zenodo.11001125,1883,1904,56.8,-5
+1880s spike,START,BenNevis,BEN NEVIS SUMMIT OBSERVATORY,Weather-Rescue-Data-v2-2_Ben-Nevis,p,Ed Hawkins. (2024). ed-hawkins/weather-rescue-data: Weather Rescue Data v2.2 (v2.2). Zenodo.,https://doi.org/10.5281/zenodo.11001125,1883,1904,56.8,-5
+1880s spike,START,BenNevis,BEN NEVIS SUMMIT OBSERVATORY,Weather-Rescue-Data-v2-2_Ben-Nevis,ta,Ed Hawkins. (2024). ed-hawkins/weather-rescue-data: Weather Rescue Data v2.2 (v2.2). Zenodo.,https://doi.org/10.5281/zenodo.11001125,1883,1904,56.8,-5
+1880s spike,START,BenNevis,BEN NEVIS SUMMIT OBSERVATORY,Weather-Rescue-Data-v2-2_Ben-Nevis,rh,Ed Hawkins. (2024). ed-hawkins/weather-rescue-data: Weather Rescue Data v2.2 (v2.2). Zenodo.,https://doi.org/10.5281/zenodo.11001125,1883,1904,56.8,-5
+1880s spike,START,BenNevis,BEN NEVIS SUMMIT OBSERVATORY,Weather-Rescue-Data-v2-2_Ben-Nevis,rr,Ed Hawkins. (2024). ed-hawkins/weather-rescue-data: Weather Rescue Data v2.2 (v2.2). Zenodo.,https://doi.org/10.5281/zenodo.11001125,1884,1904,56.8,-5
+1880s spike,START,BenNevis,BEN NEVIS SUMMIT OBSERVATORY,Weather-Rescue-Data-v2-2_Ben-Nevis,rr,Ed Hawkins. (2024). ed-hawkins/weather-rescue-data: Weather Rescue Data v2.2 (v2.2). Zenodo.,https://doi.org/10.5281/zenodo.11001125,1884,1904,56.8,-5
+1880s spike,START,BenNevis,BEN NEVIS SUMMIT OBSERVATORY,Weather-Rescue-Data-v2-2_Ben-Nevis,w,Ed Hawkins. (2024). ed-hawkins/weather-rescue-data: Weather Rescue Data v2.2 (v2.2). Zenodo.,https://doi.org/10.5281/zenodo.11001125,1884,1904,56.8,-5
+1880s spike,START,Berlin,GME00127486,BERLIN-DAHLEM (LFAG),rr,GHCN-D,NA,1876,1962,52.4578,13.3014
+1880s spike,END,Biarritz,WMO-7602,Biarritz,p,CRU,https://sites.uea.ac.uk/cru/,1860,1880,43.46,-1.53
+1880s spike,END,Biarritz,DWRUK_BIARRITZ,Biarritz,rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1868,1875,43.483484,-1.567955
+1880s spike,END,Biarritz,DWRUK_BIARRITZ,Biarritz,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1868,1875,43.483484,-1.567955
+1880s spike,END,Biarritz,DWRUK_BIARRITZ,Biarritz,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1868,1875,43.483484,-1.567955
+1880s spike,END,Biarritz,DWRUK_BIARRITZ,Biarritz,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,43.483484,-1.567955
+1880s spike,END,Biarritz,DWRUK_BIARRITZ,Biarritz,Tn,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,43.483484,-1.567955
+1880s spike,END,Biarritz,DWRUK_BIARRITZ,Biarritz,Tx,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,43.483484,-1.567955
+1880s spike,START,BirrCastle,ILMMT-BirrCastle,BirrCastle,Tn,"Mateus, C., Potito, A., & Curley, M. (2020). Reconstruction of a long‐term historical daily maximum and minimum air temperature network dataset for Ireland (1831‐1968). Geoscience Data Journal, 7(2), 102-115.",https://www.edepositireland.ie/entities/publication/7271837d-dbe6-463f-b103-422f42a15446,1880,1920,53.095,-7.922
+1880s spike,START,BirrCastle,ILMMT-BirrCastle,BirrCastle,Tx,"Mateus, C., Potito, A., & Curley, M. (2020). Reconstruction of a long‐term historical daily maximum and minimum air temperature network dataset for Ireland (1831‐1968). Geoscience Data Journal, 7(2), 102-115.",https://www.edepositireland.ie/entities/publication/7271837d-dbe6-463f-b103-422f42a15446,1880,1920,53.095,-7.922
+1880s spike,START,Biser,RSM00028138,BISER,rr,GHCN-D,NA,1888,2018,58.5167,58.85
+1880s spike,START,Biskra,BISKRA,BISKRA,p,EMULATE,DOI 10.5281/zenodo.5940391,1878,1881,34.8400,5.7500
+1880s spike,END,Biskra,BISKRA,BISKRA,p,EMULATE,DOI 10.5281/zenodo.5940391,1878,1881,34.8400,5.7500
+1880s spike,START,Biskra,60525,Biskra,p,Medare,https://www.idare-portal.org/data/medare,1884,1938,34.85,5.72
+1880s spike,START,Biskra,60525,Biskra,rr,Medare,https://www.idare-portal.org/data/medare,1880,1938,34.850000,5.720000
+1880s spike,START,Bjornholt,NOE00109903,BJORNHOLT,rr,GHCN-D,NA,1883,2019,60.0508,10.6864
+1880s spike,START,Bjuraker,TG_SOUID_136602,Bjuraker,ta,ECA&D,knmi-ecad-assets-prd.s3.amazonaws.com/download/ECA_nonblend_tg.zip,1879,1966,61.85,16.579722
+1880s spike,START,Bjuroklubb,TG_SOUID_136983,Bjuroklubb,ta,ECA&D,knmi-ecad-assets-prd.s3.amazonaws.com/download/ECA_nonblend_tg.zip,1879,1997,64.48,21.58
+1880s spike,START,Blackrock,ILMMT-Blackrock,Blackrock,Tn,"Mateus, C., Potito, A., & Curley, M. (2020). Reconstruction of a long‐term historical daily maximum and minimum air temperature network dataset for Ireland (1831‐1968). Geoscience Data Journal, 7(2), 102-115.",https://www.edepositireland.ie/entities/publication/7271837d-dbe6-463f-b103-422f42a15446,1881,1890,51.9,-8.4
+1880s spike,END,Blackrock,ILMMT-Blackrock,Blackrock,Tn,"Mateus, C., Potito, A., & Curley, M. (2020). Reconstruction of a long‐term historical daily maximum and minimum air temperature network dataset for Ireland (1831‐1968). Geoscience Data Journal, 7(2), 102-115.",https://www.edepositireland.ie/entities/publication/7271837d-dbe6-463f-b103-422f42a15446,1881,1890,51.9,-8.4
+1880s spike,START,Blackrock,ILMMT-Blackrock,Blackrock,Tx,"Mateus, C., Potito, A., & Curley, M. (2020). Reconstruction of a long‐term historical daily maximum and minimum air temperature network dataset for Ireland (1831‐1968). Geoscience Data Journal, 7(2), 102-115.",https://www.edepositireland.ie/entities/publication/7271837d-dbe6-463f-b103-422f42a15446,1881,1890,51.9,-8.4
+1880s spike,END,Blackrock,ILMMT-Blackrock,Blackrock,Tx,"Mateus, C., Potito, A., & Curley, M. (2020). Reconstruction of a long‐term historical daily maximum and minimum air temperature network dataset for Ireland (1831‐1968). Geoscience Data Journal, 7(2), 102-115.",https://www.edepositireland.ie/entities/publication/7271837d-dbe6-463f-b103-422f42a15446,1881,1890,51.9,-8.4
+1880s spike,START,Bogoroditsk,RSM00034110,BOGORODITSKOYE-FENINO,rr,GHCN-D,NA,1889,2019,51.17,37.35
+1880s spike,START,Bremen,TG_SOUID_100138,Bremen,ta,ECA&D,knmi-ecad-assets-prd.s3.amazonaws.com/download/ECA_nonblend_tg.zip,1890,2024,53.046389,8.799167
+1880s spike,END,Brest,BREST,BREST,p,EMULATE,DOI 10.5281/zenodo.5940391,1861,1881,48.3900,-4.4900
+1880s spike,END,Brest,DWRUK_BREST,Brest (St. Mathieu),p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,48.329859,-4.770851
+1880s spike,END,Brest,DWRUK_BREST,Brest (St. Mathieu),ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,48.329859,-4.770851
+1880s spike,END,Brest,DWRUK_BREST,Brest (St. Mathieu),ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1862,1875,48.329859,-4.770851
+1880s spike,END,Brest,DWRUK_BREST,Brest (St. Mathieu),rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1862,1875,48.329859,-4.770851
+1880s spike,END,Brest,DWRUK_BREST,Brest (St. Mathieu),Tn,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,48.329859,-4.770851
+1880s spike,END,Brest,DWRUK_BREST,Brest (St. Mathieu),Tx,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,48.329859,-4.770851
+1880s spike,END,Brussels,DWRUK_BRUSSELS,Brussels,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1868,1875,50.800000,4.400000
+1880s spike,END,Brussels,DWRUK_BRUSSELS,Brussels,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1868,1875,50.800000,4.400000
+1880s spike,START,Buxton,TG_SOUID_107043,Buxton,ta,ECA&D,knmi-ecad-assets-prd.s3.amazonaws.com/download/ECA_nonblend_tg.zip,1875,2024,53.2575,-1.911944
+1880s spike,START,Buxton,UKE00105905,BUXTON,rr,GHCN-D,NA,1875,2017,53.2567,-1.9131
+1880s spike,START,CabezaLaVaca,BACVAC1,Extremadura-Cabeza_la_Vaca,Tn,"Vaquero, José Manuel; Bravo-Paredes, Nieves; Obregón, María Angeles; Sánchez-Carrasco, Víctor Manuel; Valente, Maria Antónia; Trigo, Ricardo M; Domínguez-Castro, Fernando; Montero-Martín, Javier; Vaquero-Martínez, Javier; Antón, Manuel; García, José Agustín; Gallego, María Cruz (2020): Early meteorological records from BAALAN1 (1866). PANGAEA.",https://doi.pangaea.de/10.1594/PANGAEA.925805,1882,1883,38.086667,-6.421111
+1880s spike,END,CabezaLaVaca,BACVAC1,Extremadura-Cabeza_la_Vaca,Tn,"Vaquero, José Manuel; Bravo-Paredes, Nieves; Obregón, María Angeles; Sánchez-Carrasco, Víctor Manuel; Valente, Maria Antónia; Trigo, Ricardo M; Domínguez-Castro, Fernando; Montero-Martín, Javier; Vaquero-Martínez, Javier; Antón, Manuel; García, José Agustín; Gallego, María Cruz (2020): Early meteorological records from BAALAN1 (1866). PANGAEA.",https://doi.pangaea.de/10.1594/PANGAEA.925805,1882,1883,38.086667,-6.421111
+1880s spike,START,CabezaLaVaca,BACVAC1,Extremadura-Cabeza_la_Vaca,Tx,"Vaquero, José Manuel; Bravo-Paredes, Nieves; Obregón, María Angeles; Sánchez-Carrasco, Víctor Manuel; Valente, Maria Antónia; Trigo, Ricardo M; Domínguez-Castro, Fernando; Montero-Martín, Javier; Vaquero-Martínez, Javier; Antón, Manuel; García, José Agustín; Gallego, María Cruz (2020): Early meteorological records from BAALAN1 (1866). PANGAEA.",https://doi.pangaea.de/10.1594/PANGAEA.925805,1882,1883,38.086667,-6.421111
+1880s spike,END,CabezaLaVaca,BACVAC1,Extremadura-Cabeza_la_Vaca,Tx,"Vaquero, José Manuel; Bravo-Paredes, Nieves; Obregón, María Angeles; Sánchez-Carrasco, Víctor Manuel; Valente, Maria Antónia; Trigo, Ricardo M; Domínguez-Castro, Fernando; Montero-Martín, Javier; Vaquero-Martínez, Javier; Antón, Manuel; García, José Agustín; Gallego, María Cruz (2020): Early meteorological records from BAALAN1 (1866). PANGAEA.",https://doi.pangaea.de/10.1594/PANGAEA.925805,1882,1883,38.086667,-6.421111
+1880s spike,START,CabezaLaVaca,BACVAC1,Extremadura-Cabeza_la_Vaca,dd,"Vaquero, José Manuel; Bravo-Paredes, Nieves; Obregón, María Angeles; Sánchez-Carrasco, Víctor Manuel; Valente, Maria Antónia; Trigo, Ricardo M; Domínguez-Castro, Fernando; Montero-Martín, Javier; Vaquero-Martínez, Javier; Antón, Manuel; García, José Agustín; Gallego, María Cruz (2020): Early meteorological records from BAALAN1 (1866). PANGAEA.",https://doi.pangaea.de/10.1594/PANGAEA.925805,1882,1883,38.086667,-6.421111
+1880s spike,END,CabezaLaVaca,BACVAC1,Extremadura-Cabeza_la_Vaca,dd,"Vaquero, José Manuel; Bravo-Paredes, Nieves; Obregón, María Angeles; Sánchez-Carrasco, Víctor Manuel; Valente, Maria Antónia; Trigo, Ricardo M; Domínguez-Castro, Fernando; Montero-Martín, Javier; Vaquero-Martínez, Javier; Antón, Manuel; García, José Agustín; Gallego, María Cruz (2020): Early meteorological records from BAALAN1 (1866). PANGAEA.",https://doi.pangaea.de/10.1594/PANGAEA.925805,1882,1883,38.086667,-6.421111
+1880s spike,START,CabezaLaVaca,BACVAC1,Extremadura-Cabeza_la_Vaca,p,"Vaquero, José Manuel; Bravo-Paredes, Nieves; Obregón, María Angeles; Sánchez-Carrasco, Víctor Manuel; Valente, Maria Antónia; Trigo, Ricardo M; Domínguez-Castro, Fernando; Montero-Martín, Javier; Vaquero-Martínez, Javier; Antón, Manuel; García, José Agustín; Gallego, María Cruz (2020): Early meteorological records from BAALAN1 (1866). PANGAEA.",https://doi.pangaea.de/10.1594/PANGAEA.925805,1882,1883,38.086667,-6.421111
+1880s spike,END,CabezaLaVaca,BACVAC1,Extremadura-Cabeza_la_Vaca,p,"Vaquero, José Manuel; Bravo-Paredes, Nieves; Obregón, María Angeles; Sánchez-Carrasco, Víctor Manuel; Valente, Maria Antónia; Trigo, Ricardo M; Domínguez-Castro, Fernando; Montero-Martín, Javier; Vaquero-Martínez, Javier; Antón, Manuel; García, José Agustín; Gallego, María Cruz (2020): Early meteorological records from BAALAN1 (1866). PANGAEA.",https://doi.pangaea.de/10.1594/PANGAEA.925805,1882,1883,38.086667,-6.421111
+1880s spike,START,CabezaLaVaca,BACVAC1,Extremadura-Cabeza_la_Vaca,rr,"Vaquero, José Manuel; Bravo-Paredes, Nieves; Obregón, María Angeles; Sánchez-Carrasco, Víctor Manuel; Valente, Maria Antónia; Trigo, Ricardo M; Domínguez-Castro, Fernando; Montero-Martín, Javier; Vaquero-Martínez, Javier; Antón, Manuel; García, José Agustín; Gallego, María Cruz (2020): Early meteorological records from BAALAN1 (1866). PANGAEA.",https://doi.pangaea.de/10.1594/PANGAEA.925805,1882,1883,38.086667,-6.421111
+1880s spike,END,CabezaLaVaca,BACVAC1,Extremadura-Cabeza_la_Vaca,rr,"Vaquero, José Manuel; Bravo-Paredes, Nieves; Obregón, María Angeles; Sánchez-Carrasco, Víctor Manuel; Valente, Maria Antónia; Trigo, Ricardo M; Domínguez-Castro, Fernando; Montero-Martín, Javier; Vaquero-Martínez, Javier; Antón, Manuel; García, José Agustín; Gallego, María Cruz (2020): Early meteorological records from BAALAN1 (1866). PANGAEA.",https://doi.pangaea.de/10.1594/PANGAEA.925805,1882,1883,38.086667,-6.421111
+1880s spike,START,Caceres,CCCACE2,Extremadura-Caceres,dd,"Vaquero, José Manuel; Bravo-Paredes, Nieves; Obregón, María Angeles; Sánchez-Carrasco, Víctor Manuel; Valente, Maria Antónia; Trigo, Ricardo M; Domínguez-Castro, Fernando; Montero-Martín, Javier; Vaquero-Martínez, Javier; Antón, Manuel; García, José Agustín; Gallego, María Cruz (2020): Early meteorological records from BAALAN1 (1866). PANGAEA.",https://doi.pangaea.de/10.1594/PANGAEA.925805,1880,1889,39.473056,-6.37
+1880s spike,END,Caceres,CCCACE2,Extremadura-Caceres,dd,"Vaquero, José Manuel; Bravo-Paredes, Nieves; Obregón, María Angeles; Sánchez-Carrasco, Víctor Manuel; Valente, Maria Antónia; Trigo, Ricardo M; Domínguez-Castro, Fernando; Montero-Martín, Javier; Vaquero-Martínez, Javier; Antón, Manuel; García, José Agustín; Gallego, María Cruz (2020): Early meteorological records from BAALAN1 (1866). PANGAEA.",https://doi.pangaea.de/10.1594/PANGAEA.925805,1880,1889,39.473056,-6.37
+1880s spike,START,Caceres,CCCACE2,Extremadura-Caceres,p,"Vaquero, José Manuel; Bravo-Paredes, Nieves; Obregón, María Angeles; Sánchez-Carrasco, Víctor Manuel; Valente, Maria Antónia; Trigo, Ricardo M; Domínguez-Castro, Fernando; Montero-Martín, Javier; Vaquero-Martínez, Javier; Antón, Manuel; García, José Agustín; Gallego, María Cruz (2020): Early meteorological records from BAALAN1 (1866). PANGAEA.",https://doi.pangaea.de/10.1594/PANGAEA.925805,1880,1889,39.473056,-6.37
+1880s spike,END,Caceres,CCCACE2,Extremadura-Caceres,p,"Vaquero, José Manuel; Bravo-Paredes, Nieves; Obregón, María Angeles; Sánchez-Carrasco, Víctor Manuel; Valente, Maria Antónia; Trigo, Ricardo M; Domínguez-Castro, Fernando; Montero-Martín, Javier; Vaquero-Martínez, Javier; Antón, Manuel; García, José Agustín; Gallego, María Cruz (2020): Early meteorological records from BAALAN1 (1866). PANGAEA.",https://doi.pangaea.de/10.1594/PANGAEA.925805,1880,1889,39.473056,-6.37
+1880s spike,START,Caceres,CCCACE2,Extremadura-Caceres,ta,"Vaquero, José Manuel; Bravo-Paredes, Nieves; Obregón, María Angeles; Sánchez-Carrasco, Víctor Manuel; Valente, Maria Antónia; Trigo, Ricardo M; Domínguez-Castro, Fernando; Montero-Martín, Javier; Vaquero-Martínez, Javier; Antón, Manuel; García, José Agustín; Gallego, María Cruz (2020): Early meteorological records from BAALAN1 (1866). PANGAEA.",https://doi.pangaea.de/10.1594/PANGAEA.925805,1880,1889,39.473056,-6.37
+1880s spike,END,Caceres,CCCACE2,Extremadura-Caceres,ta,"Vaquero, José Manuel; Bravo-Paredes, Nieves; Obregón, María Angeles; Sánchez-Carrasco, Víctor Manuel; Valente, Maria Antónia; Trigo, Ricardo M; Domínguez-Castro, Fernando; Montero-Martín, Javier; Vaquero-Martínez, Javier; Antón, Manuel; García, José Agustín; Gallego, María Cruz (2020): Early meteorological records from BAALAN1 (1866). PANGAEA.",https://doi.pangaea.de/10.1594/PANGAEA.925805,1880,1889,39.473056,-6.37
+1880s spike,END,Cambridge,DWRUK_CAMBRIDGE,Cambridge Observatory,Tn,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,52.21687,0.09513
+1880s spike,END,Cambridge,DWRUK_CAMBRIDGE,Cambridge Observatory,Tx,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,52.21687,0.09513
+1880s spike,END,Cambridge,DWRUK_CAMBRIDGE,Cambridge Observatory,rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,52.21687,0.09513
+1880s spike,END,Cambridge,DWRUK_CAMBRIDGE,Cambridge Observatory,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,52.21687,0.09513
+1880s spike,END,Cambridge,DWRUK_CAMBRIDGE,Cambridge Observatory,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,52.216870,0.095130
+1880s spike,END,Cambridge,DWRUK_CAMBRIDGE,Cambridge Observatory,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,52.21687,0.09513
+1880s spike,END,CapGrisNez,DWRUK_CAPGRISNEZ,Cap Gris Nez,rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1868,1875,50.87087,1.585211
+1880s spike,END,CapGrisNez,DWRUK_CAPGRISNEZ,Cap Gris Nez,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1868,1875,50.870870,1.585211
+1880s spike,END,CapGrisNez,DWRUK_CAPGRISNEZ,Cap Gris Nez,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1868,1875,50.870870,1.585211
+1880s spike,END,CapGrisNez,DWRUK_CAPGRISNEZ,Cap Gris Nez,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,50.870870,1.585211
+1880s spike,END,CapGrisNez,DWRUK_CAPGRISNEZ,Cap Gris Nez,Tn,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,50.87087,1.585211
+1880s spike,END,CapGrisNez,DWRUK_CAPGRISNEZ,Cap Gris Nez,Tx,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,50.87087,1.585211
+1880s spike,END,ChannelIslands,JERSEY-CHANNEL-ISLAND-LANGLOIS,JERSEY-CHANNEL-ISLAND-LANGLOIS,p,"PUBLISHED IN JERSEY TIMES, TRANSCRIBED BY FRANK LE BLANCQ",https://doi.org/10.5281/zenodo.11001125,1865,1875,49.1986,-2.1331
+1880s spike,START,ChannelIslands,JERSEY-CHANNEL-ISLAND-VIBERT,JERSEY-CHANNEL-ISLAND-VIBERT,p,"PUBLISHED IN JERSEY TIMES, TRANSCRIBED BY FRANK LE BLANCQ",https://doi.org/10.5281/zenodo.11001125,1876,1886,49.1889,-2.1619
+1880s spike,END,ChannelIslands,JERSEY-CHANNEL-ISLAND-VIBERT,JERSEY-CHANNEL-ISLAND-VIBERT,p,"PUBLISHED IN JERSEY TIMES, TRANSCRIBED BY FRANK LE BLANCQ",https://doi.org/10.5281/zenodo.11001125,1876,1886,49.1889,-2.1619
+1880s spike,END,Charleville,DWRUK_CHARLEVILLE,Charleville,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,49.77,4.72
+1880s spike,END,Charleville,DWRUK_CHARLEVILLE,Charleville,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,49.77,4.72
+1880s spike,START,Chassiron,FRE00171623,PTE DE CHASSIRON,rr,GHCN-D,NA,1884,2019,46.0467,-1.4117
+1880s spike,START,Chemnitz,GME00132538,CHEMNITZ,rr,GHCN-D,NA,1882,2019,50.7925,12.8733
+1880s spike,START,Cherdyn,RSM00023914,CHERDYN',rr,GHCN-D,NA,1888,2018,60.4,56.52
+1880s spike,START,Chlef,AGE00147712,ORLEANSVILLE (CHLEF),rr,GHCN-D,NA,1879,1938,36.17,1.34
+1880s spike,START,Chlef,60425,Orleansville_Chlef,rr,Medare,https://www.idare-portal.org/data/medare,1879,1938,36.170000,1.340000
+1880s spike,START,Chlef,60425,Orleansville_Chlef,p,Medare,https://www.idare-portal.org/data/medare,1879,1938,36.17,1.34
+1880s spike,START,Constantine,60419,Constantine,p,Medare,https://www.idare-portal.org/data/medare,1880,1938,36.37,6.62
+1880s spike,START,Constantine,60419,Constantine,rr,Medare,https://www.idare-portal.org/data/medare,1880,1938,36.370000,6.620000
+1880s spike,START,Copenhagen,DA000030210,KOEBENHAVN - METEOROLOGISK INS,rr,GHCN-D,NA,1875,1984,55.7167,12.5667
+1880s spike,END,Corfu,WMO-16641,Corfu,p,CRU,https://sites.uea.ac.uk/cru/,1852,1880,39.61,19.91
+1880s spike,START,Cottbus,GME00121258,COTTBUS,rr,GHCN-D,NA,1887,2019,51.7775,14.3183
+1880s spike,END,Cuxhaven,DWRUK_CUXHAVEN,Cuxhaven,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,53.859,8.688
+1880s spike,END,Cuxhaven,DWRUK_CUXHAVEN,Cuxhaven,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,53.859,8.688
+1880s spike,END,Cuxhaven,DWRUK_CUXHAVEN,Cuxhaven,rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,53.859,8.688
+1880s spike,END,Cuxhaven,DWRUK_CUXHAVEN,Cuxhaven,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,53.859,8.688
+1880s spike,START,Delsbo,TG_SOUID_136590,Delsbo,ta,ECA&D,knmi-ecad-assets-prd.s3.amazonaws.com/download/ECA_nonblend_tg.zip,1878,1995,61.79,16.55
+1880s spike,START,DenHaag,NLE00101965,SCHEVENINGEN,rr,GHCN-D,NA,1877,2015,52.1167,4.3
+1880s spike,END,DenHelder,DWRUK_THEHELDER,The Helder,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,52.956971,4.763870
+1880s spike,END,DenHelder,DWRUK_THEHELDER,The Helder,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,52.956971,4.763870
+1880s spike,END,Donaghadee,DWRUK_DONAGHADEE,Donaghadee,Tn,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,54.64,-5.53
+1880s spike,END,Donaghadee,DWRUK_DONAGHADEE,Donaghadee,Tx,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,54.64,-5.53
+1880s spike,END,Donaghadee,DWRUK_DONAGHADEE,Donaghadee,rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,54.64,-5.53
+1880s spike,END,Donaghadee,DWRUK_DONAGHADEE,Donaghadee,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,54.64,-5.53
+1880s spike,END,Donaghadee,DWRUK_DONAGHADEE,Donaghadee,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,54.64,-5.53
+1880s spike,END,Donaghadee,DWRUK_DONAGHADEE,Donaghadee,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,54.64,-5.53
+1880s spike,END,Dover,DWRUK_DOVER,Dover,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,51.11587,1.31076
+1880s spike,END,Dover,DWRUK_DOVER,Dover,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,51.11587,1.31076
+1880s spike,END,Dover,DWRUK_DOVER,Dover,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,51.11587,1.31076
+1880s spike,END,Dover,DWRUK_DOVER,Dover,rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,51.11587,1.31076
+1880s spike,END,Dover,DWRUK_DOVER,Dover,Tn,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,51.11587,1.31076
+1880s spike,END,Dover,DWRUK_DOVER,Dover,Tx,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,51.11587,1.31076
+1880s spike,START,Dublin,ILMMT-Dublin-BotanicGardens_Moore,Dublin,Tn,"Mateus, C., Potito, A., & Curley, M. (2020). Reconstruction of a long‐term historical daily maximum and minimum air temperature network dataset for Ireland (1831‐1968). Geoscience Data Journal, 7(2), 102-115.",https://www.edepositireland.ie/entities/publication/7271837d-dbe6-463f-b103-422f42a15446,1880,1880,53.372,-6.721
+1880s spike,END,Dublin,ILMMT-Dublin-BotanicGardens_Moore,Dublin,Tn,"Mateus, C., Potito, A., & Curley, M. (2020). Reconstruction of a long‐term historical daily maximum and minimum air temperature network dataset for Ireland (1831‐1968). Geoscience Data Journal, 7(2), 102-115.",https://www.edepositireland.ie/entities/publication/7271837d-dbe6-463f-b103-422f42a15446,1880,1880,53.372,-6.721
+1880s spike,START,Dublin,ILMMT-Dublin-BotanicGardens_Moore,Dublin,Tx,"Mateus, C., Potito, A., & Curley, M. (2020). Reconstruction of a long‐term historical daily maximum and minimum air temperature network dataset for Ireland (1831‐1968). Geoscience Data Journal, 7(2), 102-115.",https://www.edepositireland.ie/entities/publication/7271837d-dbe6-463f-b103-422f42a15446,1880,1880,53.372,-6.721
+1880s spike,END,Dublin,ILMMT-Dublin-BotanicGardens_Moore,Dublin,Tx,"Mateus, C., Potito, A., & Curley, M. (2020). Reconstruction of a long‐term historical daily maximum and minimum air temperature network dataset for Ireland (1831‐1968). Geoscience Data Journal, 7(2), 102-115.",https://www.edepositireland.ie/entities/publication/7271837d-dbe6-463f-b103-422f42a15446,1880,1880,53.372,-6.721
+1880s spike,START,Dublin,ILMMT-Dublin-BotanicGardens_NLI,Dublin,Tn,"Mateus, C., Potito, A., & Curley, M. (2020). Reconstruction of a long‐term historical daily maximum and minimum air temperature network dataset for Ireland (1831‐1968). Geoscience Data Journal, 7(2), 102-115.",https://www.edepositireland.ie/entities/publication/7271837d-dbe6-463f-b103-422f42a15446,1882,1952,53.372,-6.721
+1880s spike,START,Dublin,ILMMT-Dublin-BotanicGardens_NLI,Dublin,Tx,"Mateus, C., Potito, A., & Curley, M. (2020). Reconstruction of a long‐term historical daily maximum and minimum air temperature network dataset for Ireland (1831‐1968). Geoscience Data Journal, 7(2), 102-115.",https://www.edepositireland.ie/entities/publication/7271837d-dbe6-463f-b103-422f42a15446,1882,1952,53.372,-6.721
+1880s spike,START,Durham,UKE00156852,DURHAM,rr,GHCN-D,NA,1880,2017,54.7678,-1.5842
+1880s spike,START,Eastbourne,EASTBOURNE,EASTBOURNE,p,UKMO MIDAS,DOI 10.5281/zenodo.5940391,1887,1910,50.7590,0.2830
+1880s spike,START,ElBayadh,60550,Geryville_El-Bayadh,rr,Medare,https://www.idare-portal.org/data/medare,1888,1938,33.680000,1.000000
+1880s spike,START,ElKala,ALG0060367,ElKala,ta,Ashcroft,doi.org/10.5194/essd-10-1613-2018-supplement,1877,1922,36.9,8.44
+1880s spike,START,ElKala,60367,La_Calle_El_Kala,p,Medare,https://www.idare-portal.org/data/medare,1877,1938,36.9,8.44
+1880s spike,START,Embrun,FRE00104112,EMBRUN,rr,GHCN-D,NA,1877,2019,44.5656,6.5019
+1880s spike,END,Essaouira,MOGADOR,MOGADOR,p,EMULATE,DOI 10.5281/zenodo.5940391,1873,1879,31.5100,-9.7600
+1880s spike,END,Falmouth,FALMOUTH,Falmouth,p,C3S-DRS,https://github.com/ed-hawkins/weather-rescue-data/tree/master/hourly_uk,1874,1886,50.15,-5.0667
+1880s spike,END,Fano,DWRUK_FANO,Fano,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,55.441365,8.398862
+1880s spike,END,Fano,DWRUK_FANO,Fano,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,55.441365,8.398862
+1880s spike,END,Fano,DWRUK_FANO,Fano,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,55.441365,8.398862
+1880s spike,START,Feodosia,UPM00033976,FEODOSIIA,rr,GHCN-D,NA,1881,2005,45.0331,35.3831
+1880s spike,START,Fergana,UZM00038618,FERGANA,rr,GHCN-D,NA,1881,2006,40.3667,71.75
+1880s spike,START,Ferrara,ITE00100551,FERRARA,rr,GHCN-D,NA,1879,2007,44.8325,11.6208
+1880s spike,START,Fichtelberg,TG_SOUID_102350,Fichtelberg,ta,ECA&D,knmi-ecad-assets-prd.s3.amazonaws.com/download/ECA_nonblend_tg.zip,1890,2024,50.429167,12.955278
+1880s spike,START,FortNational,AGE00147709,FORT NATIONAL,rr,GHCN-D,NA,1879,1938,36.63,4.2
+1880s spike,START,FortNational,60395-1,Fort_National,p,Medare,https://www.idare-portal.org/data/medare,1887,1938,36.63,4.2
+1880s spike,START,FortNational,60395-1,Fort_National,rr,Medare,https://www.idare-portal.org/data/medare,1884,1938,36.63,4.2
+1880s spike,END,Funchal,FUNCHAL,FUNCHAL,p,EMULATE,DOI 10.5281/zenodo.5940391,1871,1881,32.6700,-16.9200
+1880s spike,START,Gabes,60765,Gabes,rr,Medare,https://www.idare-portal.org/data/medare,1887,1957,33.890000,10.110000
+1880s spike,START,Gallivare,TG_SOUID_137361,Gallivare,ta,ECA&D,knmi-ecad-assets-prd.s3.amazonaws.com/download/ECA_nonblend_tg.zip,1888,2024,67.14,20.65
+1880s spike,START,Ganja,AJ000037735,GANCA,rr,GHCN-D,NA,1882,2018,40.7167,46.4167
+1880s spike,START,Geisenheim,TG_SOUID_122700,Geisenheim,ta,ECA&D,knmi-ecad-assets-prd.s3.amazonaws.com/download/ECA_nonblend_tg.zip,1884,2024,49.985,7.954444
+1880s spike,START,Geisenheim,GME00122698,GEISENHEIM,rr,GHCN-D,NA,1884,2019,49.985,7.9544
+1880s spike,START,Ghazaouet,60517,Nemours_Ghazaouet,p,Medare,https://www.idare-portal.org/data/medare,1887,1938,35.1,-1.85
+1880s spike,START,Ghazaouet,60517,Nemours_Ghazaouet,rr,Medare,https://www.idare-portal.org/data/medare,1878,1938,35.100000,-1.850000
+1880s spike,END,Glasgow,GLASGOW,Glasgow,p,UK-HOURLY-BOOKS,https://github.com/ed-hawkins/weather-rescue-data/tree/master/hourly_uk,1874,1883,55.8833,-4.3
+1880s spike,START,Godegard,TG_SOUID_135960,Godegard,ta,ECA&D,knmi-ecad-assets-prd.s3.amazonaws.com/download/ECA_nonblend_tg.zip,1878,1988,58.79,15.17
+1880s spike,START,Gogland,RSM00022907,GOGLAND,rr,GHCN-D,NA,1881,1994,60.08,26.97
+1880s spike,START,Gorki,BOM00026774,GORKI,rr,GHCN-D,NA,1881,2009,54.3,30.933
+1880s spike,END,Greencastle,GREENCASTLE,GREENCASTLE,p,EMULATE,DOI 10.5281/zenodo.5940391,1863,1875,55.2000,-6.9900
+1880s spike,START,Groningen,KNMI-006_Groningen,Groningen,Tn,KNMI,https://www.knmi.nl/nederland-nu/klimatologie/daggegevens/antieke-waarnemingen,1892,1905,53.18,6.6
+1880s spike,START,Groningen,KNMI-006_Groningen,Groningen,Tx,KNMI,https://www.knmi.nl/nederland-nu/klimatologie/daggegevens/antieke-waarnemingen,1892,1905,53.18,6.6
+1880s spike,START,Gudauri,GG000037423,GUDAURI,rr,GHCN-D,NA,1887,1977,42.47,44.48
+1880s spike,START,Gumri,AM000037686,Gumri,ta,GHCNd,ncei.noaa.gov/products/land-based-station/global-historical-climatology-network-daily,1895,1992,40.78,43.83
+1880s spike,START,Gyzylarbat,TX000038763,GYZYLARBAT,rr,GHCN-D,NA,1885,1998,38.98,56.28
+1880s spike,START,Halden,NOE00100575,HALDEN,rr,GHCN-D,NA,1882,2019,59.1225,11.3883
+1880s spike,END,Haparanda,DWRUK_HAPARANDA,Haparanda,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1873,1875,65.816709,24.133329
+1880s spike,END,Haparanda,DWRUK_HAPARANDA,Haparanda,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1873,1875,65.816709,24.133329
+1880s spike,END,Haparanda,DWRUK_HAPARANDA,Haparanda,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1873,1875,65.816709,24.133329
+1880s spike,START,Henichesk,UPM00033910,HENICHESK,rr,GHCN-D,NA,1883,2005,46.1667,34.8167
+1880s spike,START,Henichesk,UPM00033910,Henichesk,ta,GHCNd,ncei.noaa.gov/products/land-based-station/global-historical-climatology-network-daily,1883,2022,46.1667,34.8167
+1880s spike,END,Hernosand,DWRUK_HERNOSAND,Hernosand,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1873,1875,62.61667,17.933332
+1880s spike,END,Hernosand,DWRUK_HERNOSAND,Hernosand,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1873,1875,62.61667,17.933332
+1880s spike,END,Hernosand,DWRUK_HERNOSAND,Hernosand,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1873,1875,62.61667,17.933332
+1880s spike,START,Hochobir,TG_SOUID_230276,Hochobir,ta,ECA&D,knmi-ecad-assets-prd.s3.amazonaws.com/download/ECA_nonblend_tg.zip,1881,1944,46.5,14.483056
+1880s spike,START,Holmogadd,SW000002288,HOLMOGADD A,rr,GHCN-D,NA,1879,2003,63.59,20.76
+1880s spike,END,Holyhead,DWRUK_HOLYHEAD,Holyhead,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1862,1875,53.32,-4.62
+1880s spike,END,Holyhead,DWRUK_HOLYHEAD,Holyhead,rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1862,1875,53.32,-4.62
+1880s spike,END,Holyhead,DWRUK_HOLYHEAD,Holyhead,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1862,1875,53.315922,-4.634486
+1880s spike,END,Holyhead,DWRUK_HOLYHEAD,Holyhead,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1862,1875,53.32,-4.62
+1880s spike,END,Holyhead,DWRUK_HOLYHEAD,Holyhead,Tn,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,53.315922,-4.634486
+1880s spike,END,Holyhead,DWRUK_HOLYHEAD,Holyhead,Tx,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,53.315922,-4.634486
+1880s spike,START,Hoorn,NLE00100501,HOORN,rr,GHCN-D,NA,1883,2019,52.65,5.0667
+1880s spike,END,HurstCastle,DWRUK_HURSTCASTLE,Hurst Castle,Tn,DWR_UKMO,DOI 10.5281/zenodo.5940391,1874,1875,50.70666,-1.55117
+1880s spike,END,HurstCastle,DWRUK_HURSTCASTLE,Hurst Castle,Tx,DWR_UKMO,DOI 10.5281/zenodo.5940391,1874,1875,50.70666,-1.55117
+1880s spike,END,HurstCastle,DWRUK_HURSTCASTLE,Hurst Castle,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1874,1875,50.70666,-1.55117
+1880s spike,END,HurstCastle,DWRUK_HURSTCASTLE,Hurst Castle,rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1874,1875,50.70666,-1.55117
+1880s spike,END,HurstCastle,DWRUK_HURSTCASTLE,Hurst Castle,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1874,1875,50.70666,-1.55117
+1880s spike,END,HurstCastle,DWRUK_HURSTCASTLE,Hurst Castle,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1874,1875,50.70666,-1.55117
+1880s spike,END,Ile-d-Aix,ROCHEFORT,ROCHEFORT,p,EMULATE,DOI 10.5281/zenodo.5940391,1861,1881,45.9400,-0.9600
+1880s spike,END,Ile-d-Aix,DWRUK_ROCHEFORT,Rochefort (Ile de Aix),rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1862,1875,46.020193,-1.172830
+1880s spike,END,Ile-d-Aix,DWRUK_ROCHEFORT,Rochefort (Ile de Aix),p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1862,1875,46.020193,-1.172830
+1880s spike,END,Ile-d-Aix,DWRUK_ROCHEFORT,Rochefort (Ile de Aix),ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1862,1875,46.020193,-1.172830
+1880s spike,END,Ile-d-Aix,DWRUK_ROCHEFORT,Rochefort (Ile de Aix),ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1862,1875,46.020193,-1.172830
+1880s spike,END,Ile-d-Aix,DWRUK_ROCHEFORT,Rochefort (Ile de Aix),Tn,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,46.020193,-1.172830
+1880s spike,END,Ile-d-Aix,DWRUK_ROCHEFORT,Rochefort (Ile de Aix),Tx,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,46.020193,-1.172830
+1880s spike,START,Ismailia,62441,Ismailia,p,Medare,https://www.idare-portal.org/data/medare,1884,1956,30.6,32.23
+1880s spike,START,Ismailia,62441,Ismailia,rr,Medare,https://www.idare-portal.org/data/medare,1884,1956,30.600000,32.230000
+1880s spike,END,Istanbul,WMO-17062,Scutari,p,CRU,https://sites.uea.ac.uk/cru/,1866,1880,41,29.05
+1880s spike,START,Izmail,UPM00033889,IZMAIL,rr,GHCN-D,NA,1886,2005,45.3667,28.85
+1880s spike,START,Izmail,UPM00033889,Izmail,ta,GHCNd,ncei.noaa.gov/products/land-based-station/global-historical-climatology-network-daily,1886,2022,45.3667,28.85
+1880s spike,START,Jelgava,TG_SOUID_218862,Jelgava,ta,ECA&D,knmi-ecad-assets-prd.s3.amazonaws.com/download/ECA_nonblend_tg.zip,1889,2024,56.556667,23.964167
+1880s spike,START,Kaisersbach,GME00124330,KAISERSBACH-CRONHUTTE,rr,GHCN-D,NA,1887,2019,48.9181,9.6881
+1880s spike,START,Karakol,KG000036948,PRZHEVALSK,rr,GHCN-D,NA,1881,1991,42.5,78.43
+1880s spike,START,Karesuando,TG_SOUID_137475,Karesuando,ta,ECA&D,knmi-ecad-assets-prd.s3.amazonaws.com/download/ECA_nonblend_tg.zip,1878,2012,68.441944,22.450278
+1880s spike,START,Kargopol,RSM00022845,KARGOPOL,rr,GHCN-D,NA,1883,2017,61.5,38.93
+1880s spike,START,Karlsruhe,TG_SOUID_100182,Karlsruhe,ta,ECA&D,knmi-ecad-assets-prd.s3.amazonaws.com/download/ECA_nonblend_tg.zip,1876,2008,49.039167,8.365
+1880s spike,START,Karlsruhe,GM000002698,KARLSRUHE,rr,GHCN-D,NA,1876,2008,49.0392,8.365
+1880s spike,START,Kazaly,KZ000035849,KAZALINSK,rr,GHCN-D,NA,1881,1991,45.767,62.117
+1880s spike,START,Kazan,RSM00027595,KAZAN,rr,GHCN-D,NA,1881,2017,55.7331,49.2
+1880s spike,END,Kem,WMO-22522,Kem,p,CRU,https://sites.uea.ac.uk/cru/,1866,1880,64.95,34.65
+1880s spike,START,Kerkwerve,NLE00100506,KERKWERVE,rr,GHCN-D,NA,1878,2019,51.6831,3.8667
+1880s spike,END,Kew,KEW,Kew Observatory,p,UK-HOURLY-BOOKS,https://github.com/ed-hawkins/weather-rescue-data/tree/master/hourly_uk,1874,1886,51.4667,-0.3167
+1880s spike,START,Kharkiv,Kharkiv_university,"Kharkiv, university",p,UA-UHMI,https://doi.org/10.15407/uhmi.report.01,1877,1880,50.000000,36.233300
+1880s spike,END,Kharkiv,Kharkiv_university,"Kharkiv, university",p,UA-UHMI,https://doi.org/10.15407/uhmi.report.01,1877,1880,50.000000,36.233300
+1880s spike,START,Kharkiv,Kharkiv_university,"Kharkiv, university",ta,UA-UHMI,https://doi.org/10.15407/uhmi.report.01,1877,1880,50,36.2333
+1880s spike,END,Kharkiv,Kharkiv_university,"Kharkiv, university",ta,UA-UHMI,https://doi.org/10.15407/uhmi.report.01,1877,1880,50,36.2333
+1880s spike,START,Kherson,UPM00033902,KHERSON,rr,GHCN-D,NA,1885,1993,46.633,32.567
+1880s spike,START,Kiev,UPM00033345,KIEV,rr,GHCN-D,NA,1881,2005,50.4,30.5331
+1880s spike,END,Kiev,Kyiv,Kyiv,p,UA-UHMI,https://doi.org/10.15407/uhmi.report.01,1870,1880,50.450000,30.503100
+1880s spike,END,Kiev,Kyiv,Kyiv,ta,UA-UHMI,https://doi.org/10.15407/uhmi.report.01,1870,1880,50.450000,30.503100
+1880s spike,START,Killarney,ILMMT-Killarney,Killarney,Tn,"Mateus, C., Potito, A., & Curley, M. (2020). Reconstruction of a long‐term historical daily maximum and minimum air temperature network dataset for Ireland (1831‐1968). Geoscience Data Journal, 7(2), 102-115.",https://www.edepositireland.ie/entities/publication/7271837d-dbe6-463f-b103-422f42a15446,1881,1933,52.062,-9.507
+1880s spike,START,Killarney,ILMMT-Killarney,Killarney,Tx,"Mateus, C., Potito, A., & Curley, M. (2020). Reconstruction of a long‐term historical daily maximum and minimum air temperature network dataset for Ireland (1831‐1968). Geoscience Data Journal, 7(2), 102-115.",https://www.edepositireland.ie/entities/publication/7271837d-dbe6-463f-b103-422f42a15446,1881,1932,52.062,-9.507
+1880s spike,END,Kingstown,DWRUK_KINGSTOWN,Kingstown,Tn,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,53.29650,-6.13423
+1880s spike,END,Kingstown,DWRUK_KINGSTOWN,Kingstown,Tx,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,53.29650,-6.13423
+1880s spike,END,Kingstown,DWRUK_KINGSTOWN,Kingstown,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,53.29650,-6.13423
+1880s spike,END,Kingstown,DWRUK_KINGSTOWN,Kingstown,rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,53.29650,-6.13423
+1880s spike,END,Kingstown,DWRUK_KINGSTOWN,Kingstown,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,53.29650,-6.13423
+1880s spike,END,Kingstown,DWRUK_KINGSTOWN,Kingstown,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,53.29650,-6.13423
+1880s spike,START,Kirov,RSM00027199,KIROV,rr,GHCN-D,NA,1881,2019,58.6,49.6331
+1880s spike,START,Kisinev,MD000033815,KISINEV,rr,GHCN-D,NA,1886,2003,47.02,28.87
+1880s spike,START,Kisinev,MD000033815,Kisinev,ta,GHCNd,ncei.noaa.gov/products/land-based-station/global-historical-climatology-network-daily,1886,2024,47.02,28.87
+1880s spike,START,Kislovodsk,TG_SOUID_152343,Kislovodsk,ta,ECA&D,knmi-ecad-assets-prd.s3.amazonaws.com/download/ECA_nonblend_tg.zip,1886,2019,43.9,42.716667
+1880s spike,START,Kislovodsk,RSM00037123,KISLOVODSK,rr,GHCN-D,NA,1886,2013,43.9,42.72
+1880s spike,START,Kola,RSM00022112,KOLA-IN-MURMAN,rr,GHCN-D,NA,1881,1983,68.883,33.017
+1880s spike,START,KonKolodez,TG_SOUID_151753,KonKolodez,ta,ECA&D,knmi-ecad-assets-prd.s3.amazonaws.com/download/ECA_nonblend_tg.zip,1893,2019,52.15,39.15
+1880s spike,END,Kostroma,WMO-27333,Kostroma,p,CRU,https://sites.uea.ac.uk/cru/,1850,1880,57.73,40.78
+1880s spike,START,Kremsmuenster,AU000005010,KREMSMUENSTER,rr,GHCN-D,NA,1876,2017,48.05,14.1331
+1880s spike,END,Kristiansund,DWRUK_CHRISTIANS,Christiansund,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1870,1875,63.11,7.73
+1880s spike,END,Kristiansund,DWRUK_CHRISTIANS,Christiansund,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1870,1875,63.11,7.73
+1880s spike,END,Kristiansund,DWRUK_CHRISTIANS,Christiansund,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,63.11,7.73
+1880s spike,START,Kunzelsau,GME00124858,KUNZELSAU,rr,GHCN-D,NA,1887,1980,49.2806,9.6933
+1880s spike,START,Kursk,TG_SOUID_100309,Kursk,ta,ECA&D,knmi-ecad-assets-prd.s3.amazonaws.com/download/ECA_nonblend_tg.zip,1891,2019,51.766667,36.166667
+1880s spike,START,KvikkjokkArrenjarka,TG_SOUID_137346,KvikkjokkArrenjarka,ta,ECA&D,knmi-ecad-assets-prd.s3.amazonaws.com/download/ECA_nonblend_tg.zip,1887,2013,66.959722,17.73
+1880s spike,END,LaCorunna,DWRUK_CORUNNA,Corunna,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1866,1875,43.35,-8.4
+1880s spike,END,LaCorunna,DWRUK_CORUNNA,Corunna,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1866,1875,43.35,-8.4
+1880s spike,START,LaHague,FRE00104937,PTE DE LA HAGUE,rr,GHCN-D,NA,1880,2019,49.7253,-1.9394
+1880s spike,START,Laghouat,60545,Laghouat,rr,Medare,https://www.idare-portal.org/data/medare,1888,1938,33.800000,2.890000
+1880s spike,END,Leith,DWRUK_LEITH,Leith Post Office,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,55.974339,-3.167152
+1880s spike,END,Leith,DWRUK_LEITH,Leith Links,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,55.97082,-3.16255
+1880s spike,END,Leith,DWRUK_LEITH,Leith Links,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,55.97082,-3.16255
+1880s spike,END,Leith,DWRUK_LEITH,Leith Links,rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1863,1875,55.97082,-3.16255
+1880s spike,END,Leith,DWRUK_LEITH,Leith Links,Tn,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,55.97082,-3.16255
+1880s spike,END,Leith,DWRUK_LEITH,Leith Links,Tx,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,55.97082,-3.16255
+1880s spike,END,Lesina,WMO-13333,Lesina,p,CRU,https://sites.uea.ac.uk/cru/,1869,1881,43.53,16.3
+1880s spike,START,Liepaja,LG000026406,LIEPAJA,rr,GHCN-D,NA,1881,1999,56.4831,21.0167
+1880s spike,END,Lisbon,LISBON,LISBON,p,EMULATE,DOI 10.5281/zenodo.5940391,1869,1881,38.7200,-9.1400
+1880s spike,END,Liverpool,DWRUK_LIVERPOOL,Bidston Observatory,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,53.400735,-3.074226
+1880s spike,END,Liverpool,DWRUK_LIVERPOOL,Bidston Observatory,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,53.400735,-3.074226
+1880s spike,END,Liverpool,DWRUK_LIVERPOOL,Bidston Observatory,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,53.400735,-3.074226
+1880s spike,END,Liverpool,DWRUK_LIVERPOOL,Bidston Observatory,rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,53.400735,-3.074226
+1880s spike,END,Liverpool,DWRUK_LIVERPOOL,Bidston Observatory,Tn,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,53.400735,-3.074226
+1880s spike,END,Liverpool,DWRUK_LIVERPOOL,Bidston Observatory,Tx,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,53.400735,-3.074226
+1880s spike,END,London,DWRUK_LONDON,London (Westminster),p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,51.50133,-0.12583
+1880s spike,END,London,DWRUK_LONDON,London (Westminster),ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,51.50133,-0.12583
+1880s spike,END,London,DWRUK_LONDON,London (Westminster),rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1862,1875,51.50133,-0.12583
+1880s spike,END,London,DWRUK_LONDON,London (Westminster),ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,51.497665,-0.134093
+1880s spike,END,London,DWRUK_LONDON,London (Westminster),Tn,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,51.497665,-0.134093
+1880s spike,END,London,DWRUK_LONDON,London (Westminster),Tx,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,51.497665,-0.134093
+1880s spike,END,Lorient,DWRUK_LORIENT,Lorient (Grognon),p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1862,1875,47.652361,-3.502169
+1880s spike,END,Lorient,DWRUK_LORIENT,Lorient (Grognon),rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1862,1875,47.652361,-3.502169
+1880s spike,END,Lorient,DWRUK_LORIENT,Lorient (Grognon),ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1862,1875,47.652361,-3.502169
+1880s spike,END,Lorient,DWRUK_LORIENT,Lorient (Grognon),ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1862,1875,47.652361,-3.502169
+1880s spike,START,Lowestoft,UKE00105899,LOWESTOFT,rr,GHCN-D,NA,1889,2004,52.4889,1.75
+1880s spike,END,Luhansk,WMO-34523,Lugansk,p,CRU,https://sites.uea.ac.uk/cru/,1850,1880,48.6,39.3
+1880s spike,START,Luhansk,UPM00034523,LUGANSK,rr,GHCN-D,NA,1881,2012,48.5667,39.25
+1880s spike,END,Luhansk,Luhansk,Luhansk,p,UA-UHMI,https://doi.org/10.15407/uhmi.report.01,1870,1880,48.566700,39.250000
+1880s spike,END,Luhansk,Luhansk,Luhansk,ta,UA-UHMI,https://doi.org/10.15407/uhmi.report.01,1870,1880,48.566700,39.250000
+1880s spike,END,Lyon,LYONS,LYONS,p,EMULATE,DOI 10.5281/zenodo.5940391,1869,1881,45.7600,4.8400
+1880s spike,END,Lyon,DWRUK_LYONS,Lyon (St. Genis-Laval),ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1868,1875,45.693951,4.782808
+1880s spike,START,Magdeburg,GME00102252,MAGDEBURG,rr,GHCN-D,NA,1881,2019,52.1031,11.5842
+1880s spike,START,Mahackala,RSM00037472,MAHACKALA,rr,GHCN-D,NA,1882,2019,42.9667,47.55
+1880s spike,START,MalinHead,EI000003980,MALIN HEAD,rr,GHCN-D,,1885,2019,55.3717,-7.34
+1880s spike,START,MalinHead,ILMMT-MalinHead,MalinHead,Tn,"Mateus, C., Potito, A., & Curley, M. (2020). Reconstruction of a long‐term historical daily maximum and minimum air temperature network dataset for Ireland (1831‐1968). Geoscience Data Journal, 7(2), 102-115.",https://www.edepositireland.ie/entities/publication/7271837d-dbe6-463f-b103-422f42a15446,1885,1920,55.381,-7.373
+1880s spike,START,MalinHead,ILMMT-MalinHead,MalinHead,Tx,"Mateus, C., Potito, A., & Curley, M. (2020). Reconstruction of a long‐term historical daily maximum and minimum air temperature network dataset for Ireland (1831‐1968). Geoscience Data Journal, 7(2), 102-115.",https://www.edepositireland.ie/entities/publication/7271837d-dbe6-463f-b103-422f42a15446,1885,1920,55.381,-7.373
+1880s spike,END,Malta,WMO-16597,Malta,p,CRU,https://sites.uea.ac.uk/cru/,1852,1880,35.83,14
+1880s spike,START,MalyUzen,RSM00034288,MALY UZEN',rr,GHCN-D,NA,1882,1964,50.52,47.67
+1880s spike,START,Marseille,FR013055001,MARSEILLE OBS. PALAIS-LONCHAMP,rr,GHCN-D,NA,1881,2004,43.305,5.3967
+1880s spike,START,Metten,GME00126010,METTEN,rr,GHCN-D,NA,1879,2019,48.8556,12.9203
+1880s spike,START,Michurinsk,RSM00027935,MICURINSK,rr,GHCN-D,NA,1881,2019,52.883,40.483
+1880s spike,START,Minsk,BOM00026850,Minsk,ta,GHCNd,ncei.noaa.gov/products/land-based-station/global-historical-climatology-network-daily,1891,2024,53.87,27.53
+1880s spike,END,Moville,DWRUK_MOVILLE,Moville,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1871,1875,55.19165,-7.04260
+1880s spike,END,Moville,DWRUK_MOVILLE,Moville,rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1871,1875,55.19165,-7.04260
+1880s spike,END,Moville,DWRUK_MOVILLE,Moville,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1871,1875,55.19165,-7.04260
+1880s spike,END,Moville,DWRUK_MOVILLE,Moville,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,55.19165,-7.04260
+1880s spike,END,Moville,DWRUK_MOVILLE,Moville,Tn,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,55.19165,-7.04260
+1880s spike,END,Moville,DWRUK_MOVILLE,Moville,Tx,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,55.19165,-7.04260
+1880s spike,START,Munich,GM000004199,MUNCHEN-NYMPHENBURG,rr,GHCN-D,NA,1879,2019,48.1667,11.5025
+1880s spike,END,Nairn,DWRUK_NAIRN,Nairn,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,57.577607,-3.895321
+1880s spike,END,Nairn,DWRUK_NAIRN,Nairn,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,57.577607,-3.895321
+1880s spike,END,Nairn,DWRUK_NAIRN,Nairn,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,57.577607,-3.895321
+1880s spike,END,Nairn,DWRUK_NAIRN,Nairn,rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,57.577607,-3.895321
+1880s spike,END,Nairn,DWRUK_NAIRN,Nairn,Tn,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,57.577607,-3.895321
+1880s spike,END,Nairn,DWRUK_NAIRN,Nairn,Tx,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,57.577607,-3.895321
+1880s spike,START,Nicosia,17607,Nicosia,p,Medare,https://www.idare-portal.org/data/medare,1881,1922,35.19,33.37
+1880s spike,START,Nicosia,17607,Nicosia,rr,Medare,https://www.idare-portal.org/data/medare,1881,1922,35.19,33.37
+1880s spike,START,Nicosia,CYP0017606,Nicosia,ta,Ashcroft,doi.org/10.5194/essd-10-1613-2018-supplement,1881,1922,35.190000,33.370000
+1880s spike,END,Nikolaev,WMO-33846,Nikolaef,p,CRU,https://sites.uea.ac.uk/cru/,1850,1880,46.58,31.95
+1880s spike,START,Nikolaev,UPM00033846,NIKOLAEV,rr,GHCN-D,NA,1881,2012,46.9667,31.9831
+1880s spike,START,NizhnyNovgorod,RSM00027459,NIZNIJ NOVGOROD,rr,GHCN-D,NA,1881,2019,56.2667,44
+1880s spike,END,Nottingham,DWRUK_NOTTINGHAM,Nottingham,Tn,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,52.93741,-1.19700
+1880s spike,END,Nottingham,DWRUK_NOTTINGHAM,Nottingham,Tx,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,52.93741,-1.19700
+1880s spike,END,Nottingham,DWRUK_NOTTINGHAM,Nottingham,rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,52.93741,-1.19700
+1880s spike,END,Nottingham,DWRUK_NOTTINGHAM,Nottingham,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,52.93741,-1.19700
+1880s spike,END,Nottingham,DWRUK_NOTTINGHAM,Nottingham,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,52.93741,-1.19700
+1880s spike,END,Nottingham,DWRUK_NOTTINGHAM,Nottingham,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,52.93741,-1.19700
+1880s spike,START,Novorossijsk,RSM00037000,NOVOROSSIJSK,rr,GHCN-D,NA,1881,1996,44.717,37.767
+1880s spike,START,Nuernberg,TG_SOUID_102382,Nurnberg,ta,ECA&D,knmi-ecad-assets-prd.s3.amazonaws.com/download/ECA_nonblend_tg.zip,1879,2024,49.504167,11.056667
+1880s spike,START,Nuuk,WMO-4250,Godt_Haab,p,CRU,https://sites.uea.ac.uk/cru/,1875,1880,64.16,-51.75
+1880s spike,END,Nuuk,WMO-4250,Godt_Haab,p,CRU,https://sites.uea.ac.uk/cru/,1875,1880,64.16,-51.75
+1880s spike,START,Odesa,UPM00033837,Odesa,ta,GHCNd,ncei.noaa.gov/products/land-based-station/global-historical-climatology-network-daily,1894,2024,46.48,30.63
+1880s spike,END,Odesa,Odesa,Odesa,ta,UA-UHMI,https://doi.org/10.15407/uhmi.report.01,1870,1880,46.433300,30.766700
+1880s spike,END,Odesa,Odesa,Odesa,p,UA-UHMI,https://doi.org/10.15407/uhmi.report.01,1871,1880,46.433300,30.766700
+1880s spike,END,Odesa,Odesa_Vorontsov_lighthouse,"Odesa, Vorontsov lighthouse",p,UA-UHMI,https://doi.org/10.15407/uhmi.report.01,1874,1880,46.500000,30.770000
+1880s spike,END,Odesa,Odesa_Vorontsov_lighthouse,"Odesa, Vorontsov lighthouse",ta,UA-UHMI,https://doi.org/10.15407/uhmi.report.01,1874,1880,46.500000,30.770000
+1880s spike,END,Odesa,Odesa_lighthouse,"Odesa, lighthouse",p,UA-UHMI,https://doi.org/10.15407/uhmi.report.01,1872,1881,46.400000,30.750000
+1880s spike,END,Odesa,Odesa_lighthouse,"Odesa, lighthouse",ta,UA-UHMI,https://doi.org/10.15407/uhmi.report.01,1872,1881,46.400000,30.750000
+1880s spike,START,Ohringen,GME00121126,OHRINGEN,rr,GHCN-D,NA,1889,2019,49.2081,9.5183
+1880s spike,START,Oksoy,NOE00105483,OKSOEY FYR,rr,GHCN-D,NA,1875,2014,58.0667,8.0506
+1880s spike,END,Oksoy,DWRUK_OXO,Oxo,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1870,1875,58.073,8.053
+1880s spike,END,Oksoy,DWRUK_OXO,Oxo,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1870,1875,58.073,8.053
+1880s spike,END,Oksoy,DWRUK_OXO,Oxo,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,58.073,8.053
+1880s spike,START,Oktyabrskiy,RSM00034163,OKTJABRSKIJ-GORODOK,rr,GHCN-D,NA,1881,2019,51.63,45.45
+1880s spike,END,Orenburg,WMO-35121,Orenburg,p,CRU,https://sites.uea.ac.uk/cru/,1850,1876,51.75,55.1
+1880s spike,START,Orenburg,RSM00035121,ORENBURG,rr,GHCN-D,NA,1886,2019,51.6831,55.1
+1880s spike,START,Oudenbosch,NLE00100509,OUDENBOSCH,rr,GHCN-D,NA,1888,2019,51.5667,4.5331
+1880s spike,END,Oxford,DWRUK_OXFORD,Oxford,Tx,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,51.7612,-1.26399
+1880s spike,END,Oxford,DWRUK_OXFORD,Oxford,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,51.7612,-1.26399
+1880s spike,END,Oxford,DWRUK_OXFORD,Oxford,rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,51.7612,-1.26399
+1880s spike,END,Oxford,DWRUK_OXFORD,Oxford,Tn,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,51.7612,-1.26399
+1880s spike,END,Oxford,DWRUK_OXFORD,Oxford,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,51.7612,-1.26399
+1880s spike,END,Oxford,DWRUK_OXFORD,Oxford,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,51.7612,-1.26399
+1880s spike,START,Pakri,ENE00175039,PAKRI,rr,GHCN-D,NA,1886,2015,59.3892,24.04
+1880s spike,END,Palermo,WMO-16405,Palermo,p,CRU,https://sites.uea.ac.uk/cru/,1852,1880,38.13,13.33
+1880s spike,END,Paris,DWRUK_PARIS,Paris (Montsouris),ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1868,1875,48.821700,2.337810
+1880s spike,END,Paris,DWRUK_PARIS,Paris (Montsouris),Tx,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,48.821700,2.337810
+1880s spike,END,Paris,DWRUK_PARIS,Paris (Montsouris),Tn,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,48.821700,2.337810
+1880s spike,END,Paris,DWRUK_PARIS,Paris,rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,48.82170,2.33781
+1880s spike,START,Parnu,ENE00175035,PARNU,rr,GHCN-D,NA,1878,2015,58.4194,24.4694
+1880s spike,START,Passau,GME00127186,PASSAU-MAIERHOF,rr,GHCN-D,NA,1879,2019,48.5817,13.4167
+1880s spike,END,Pembrokeshire,DWRUK_PEMBROKE,St. Ann's Head,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1862,1875,51.682,-5.176
+1880s spike,END,Pembrokeshire,DWRUK_PEMBROKE,St. Ann's Head,rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1862,1875,51.682,-5.176
+1880s spike,END,Pembrokeshire,DWRUK_PEMBROKE,St. Ann's Head,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1862,1875,51.682,-5.176
+1880s spike,END,Pembrokeshire,DWRUK_PEMBROKE,St. Ann's Head,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1862,1875,51.682,-5.176
+1880s spike,END,Pembrokeshire,DWRUK_PEMBROKE,St. Ann's Head,Tn,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,51.682,-5.176
+1880s spike,END,Pembrokeshire,DWRUK_PEMBROKE,St. Ann's Head,Tx,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,51.682,-5.176
+1880s spike,START,Perm,RSM00028224,PERM,rr,GHCN-D,NA,1882,2019,58.0167,56.3
+1880s spike,START,Pinsk,BOM00033019,PINSK,rr,GHCN-D,NA,1875,2009,52.117,26.117
+1880s spike,START,Plauen,GME00127354,PLAUEN,rr,GHCN-D,NA,1882,2019,50.4831,12.1317
+1880s spike,END,Plymouth,PLYMOUTH,PLYMOUTH,p,EMULATE,DOI 10.5281/zenodo.5940391,1861,1881,50.3800,-4.1400
+1880s spike,END,Plymouth,DWRUK_PLYMOUTH,Plymouth,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,50.36974,-4.13916
+1880s spike,END,Plymouth,DWRUK_PLYMOUTH,Plymouth,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,50.36974,-4.13916
+1880s spike,END,Plymouth,DWRUK_PLYMOUTH,Plymouth,rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1862,1875,50.36974,-4.13916
+1880s spike,END,Plymouth,DWRUK_PLYMOUTH,Plymouth,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,50.37322,-4.1319
+1880s spike,END,Plymouth,DWRUK_PLYMOUTH,Plymouth,Tn,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,50.37322,-4.1319
+1880s spike,END,Plymouth,DWRUK_PLYMOUTH,Plymouth,Tx,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,50.37322,-4.1319
+1880s spike,START,PortSaid,62333,Port_Said,p,Medare,https://www.idare-portal.org/data/medare,1884,1957,31.28,32.23
+1880s spike,START,PortSaid,62333,Port_Said,rr,Medare,https://www.idare-portal.org/data/medare,1884,1957,31.280000,32.230000
+1880s spike,END,Portishead,DWRUK_PORTISHEAD,Portishead,Tn,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,51.488,-2.764
+1880s spike,END,Portishead,DWRUK_PORTISHEAD,Portishead,Tx,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,51.488,-2.764
+1880s spike,END,Portishead,DWRUK_PORTISHEAD,Portishead,rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,51.488,-2.764
+1880s spike,END,Portishead,DWRUK_PORTISHEAD,Portishead,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,51.488,-2.764
+1880s spike,END,Portishead,DWRUK_PORTISHEAD,Portishead,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,51.488,-2.764
+1880s spike,END,Portishead,DWRUK_PORTISHEAD,Portishead,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,51.488,-2.764
+1880s spike,END,Prague,WMO-11520,Prague,p,CRU,https://sites.uea.ac.uk/cru/,1850,1880,50.08,14.42
+1880s spike,END,Raciborz,Raciborz,Przybylak_Raciborz,ta,"Programm der Königlichen Gymnasien zu Ratibor für die Zeit von Ostern 1879 bis dahin 1880, Ratibor 1880; Die meteorologischen Verhältnisse von Ratibor, auf Grund der Monatstabellen der meteorologischen",,1848,1879,50.3667,18.1833
+1880s spike,END,RochesPoint,DWRUK_ROCHESPOINT,Roches Point,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1868,1875,51.793124,-8.254541
+1880s spike,END,RochesPoint,DWRUK_ROCHESPOINT,Roches Point,rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1868,1875,51.793124,-8.254541
+1880s spike,END,RochesPoint,DWRUK_ROCHESPOINT,Roches Point,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1868,1875,51.793124,-8.254541
+1880s spike,END,RochesPoint,DWRUK_ROCHESPOINT,Roches Point,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,51.793124,-8.254541
+1880s spike,END,RochesPoint,DWRUK_ROCHESPOINT,Roches Point,Tn,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,51.793124,-8.254541
+1880s spike,END,RochesPoint,DWRUK_ROCHESPOINT,Roches Point,Tx,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,51.793124,-8.254541
+1880s spike,END,Rome,ROME,ROME,p,EMULATE,DOI 10.5281/zenodo.5940391,1869,1881,41.9000,12.5000
+1880s spike,START,Salekhard,RSM00023330,SALEKHARD,rr,GHCN-D,NA,1882,2019,66.5294,66.5294
+1880s spike,END,Scarborough,DWRUK_SCARBOROUGH,Scarborough,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,54.28091,-0.39832
+1880s spike,END,Scarborough,DWRUK_SCARBOROUGH,Scarborough,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,54.28091,-0.39832
+1880s spike,END,Scarborough,DWRUK_SCARBOROUGH,Scarborough,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,54.28091,-0.39832
+1880s spike,END,Scarborough,DWRUK_SCARBOROUGH,Scarborough,rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,54.28091,-0.39832
+1880s spike,END,Scarborough,DWRUK_SCARBOROUGH,Scarborough,Tn,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,54.28091,-0.39832
+1880s spike,END,Scarborough,DWRUK_SCARBOROUGH,Scarborough,Tx,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,54.28091,-0.39832
+1880s spike,END,Scilly,DWRUK_SCILLY,St. Mary's Signal Station,rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1871,1875,49.912044,-6.322629
+1880s spike,END,Scilly,DWRUK_SCILLY,St. Mary's Signal Station,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1871,1875,49.912044,-6.322629
+1880s spike,END,Scilly,DWRUK_SCILLY,St. Mary's Signal Station,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,49.912044,-6.322629
+1880s spike,END,Scilly,DWRUK_SCILLY,St. Mary's Signal Station,Tn,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,49.912044,-6.322629
+1880s spike,END,Scilly,DWRUK_SCILLY,St. Mary's Signal Station,Tx,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,49.912044,-6.322629
+1880s spike,START,Setif,60445,Setif,p,Medare,https://www.idare-portal.org/data/medare,1885,1938,36.18,5.4
+1880s spike,START,Setif,60445,Setif,rr,Medare,https://www.idare-portal.org/data/medare,1878,1938,36.180000,5.400000
+1880s spike,START,Sevastopol,UPM00033991,"SEVASTOPOL',MGS",rr,GHCN-D,NA,1881,1990,44.62,33.53
+1880s spike,START,Sfax,60750,Sfax,rr,Medare,https://www.idare-portal.org/data/medare,1886,1957,34.720000,10.720000
+1880s spike,START,Sfax,60750,Sfax,p,Medare,https://www.idare-portal.org/data/medare,1887,1957,34.72,10.72
+1880s spike,START,Sheffield,TG_SOUID_107042,Sheffield,ta,ECA&D,knmi-ecad-assets-prd.s3.amazonaws.com/download/ECA_nonblend_tg.zip,1883,2024,53.380556,-1.489444
+1880s spike,START,Sheffield,UKE00105904,SHEFFIELD,rr,GHCN-D,NA,1883,2017,53.3808,-1.49
+1880s spike,START,Sheffield,SHEFFIELD,SHEFFIELD,p,UKMO MIDAS,DOI 10.5281/zenodo.5940391,1882,1918,53.3810,-1.4910
+1880s spike,START,Sheffield,SHEFFIELD,SHEFFIELD,p,UKMO MIDAS,DOI 10.5281/zenodo.5940391,1882,1935,53.3810,-1.4910
+1880s spike,START,Shenkursk,RSM00022768,SHENKURSK,rr,GHCN-D,NA,1884,2018,62.1,42.9
+1880s spike,END,Shields,DWRUK_SHIELDS,North Shields,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,55.01,-1.45
+1880s spike,END,Shields,DWRUK_SHIELDS,North Shields,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,55.01,-1.45
+1880s spike,END,Shields,DWRUK_SHIELDS,North Shields,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,55.01,-1.45
+1880s spike,END,Shields,DWRUK_SHIELDS,North Shields,rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1862,1875,55.01,-1.45
+1880s spike,END,Shields,DWRUK_SHIELDS,North Shields,Tn,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,55.01,-1.45
+1880s spike,END,Shields,DWRUK_SHIELDS,North Shields,Tx,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,55.01,-1.45
+1880s spike,START,Sibiu,SIBIU,SIBIU,p,EMULATE,DOI 10.5281/zenodo.5940391,1878,1881,45.8000,24.1300
+1880s spike,END,Sibiu,SIBIU,SIBIU,p,EMULATE,DOI 10.5281/zenodo.5940391,1878,1881,45.8000,24.1300
+1880s spike,START,SidiBelAbbes,60520,Sidi-Bel-Abbes,rr,Medare,https://www.idare-portal.org/data/medare,1880,1938,35.200000,-0.630000
+1880s spike,START,Simferopol,UPM00033946,Simferopol,ta,GHCNd,ncei.noaa.gov/products/land-based-station/global-historical-climatology-network-daily,1886,2024,44.7,34.1331
+1880s spike,START,Simferopol,UPM00033946,SIMFEROPOL,rr,GHCN-D,NA,1886,2019,44.7,34.1331
+1880s spike,END,Skagen,DWRUK_SKAGEN,Skagen,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1873,1875,57.74,10.63
+1880s spike,END,Skagen,DWRUK_SKAGEN,Skagen,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1873,1875,57.74,10.63
+1880s spike,END,Skagen,DWRUK_SKAGEN,Skagen,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1873,1875,57.74,10.63
+1880s spike,END,Skudenes,DWRUK_SKUDESNAES,Skudesnaes,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1866,1875,59.15,5.25
+1880s spike,END,Skudenes,DWRUK_SKUDESNAES,Skudesnaes,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1866,1875,59.15,5.25
+1880s spike,END,Skudenes,DWRUK_SKUDESNAES,Skudesnaes,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,59.15,5.25
+1880s spike,START,Sonnblick,TG_SOUID_236607,Sonnblick,ta,ECA&D,knmi-ecad-assets-prd.s3.amazonaws.com/download/ECA_nonblend_tg.zip,1886,2024,47.053889,12.9575
+1880s spike,START,Sorve,ENE00175055,SORVE,rr,GHCN-D,NA,1886,2015,57.9133,22.0578
+1880s spike,START,StPetersburg,RSM00026063,ST. PETERSBURG,rr,GHCN-D,NA,1881,2019,59.9667,30.3
+1880s spike,START,StPetersburg,RSM00026063,StPetersburg,ta,GHCNd,ncei.noaa.gov/products/land-based-station/global-historical-climatology-network-daily,1881,2024,59.9667,30.3
+1880s spike,END,StPetersburg,IMPROVE_StPetersburg,St Petersburg,ta,IMPROVE,https://www.prlib.ru/en/item/903296,1743,1879,59.9667,30.3
+1880s spike,END,Stockholm,IMPROVE_Stockholm,Stockholm,p,IMPROVE,https://link.springer.com/book/10.1007/978-94-010-0371-1,1756,1880,59.35,18.05
+1880s spike,END,Stockholm,IMPROVE_Stockholm,Stockholm,ta,IMPROVE,https://link.springer.com/book/10.1007/978-94-010-0371-1,1756,1880,59.35,18.05
+1880s spike,END,Stockholm,DWRUK_STOCKHOLM,Stockholm Observatory,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1873,1875,59.341704,18.054890
+1880s spike,END,Stockholm,DWRUK_STOCKHOLM,Stockholm Observatory,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1873,1875,59.341704,18.054890
+1880s spike,END,Stockholm,DWRUK_STOCKHOLM,Stockholm Observatory,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1873,1875,59.341704,18.054890
+1880s spike,START,Stonyhurst,STONYHURST,STONYHURST,p,UKMO MIDAS,DOI 10.5281/zenodo.5940391,1884,1958,53.8450,-2.4700
+1880s spike,END,Stonyhurst,STONYHURST,Stonyhurst Observatory,p,UK-HOURLY-BOOKS,https://github.com/ed-hawkins/weather-rescue-data/tree/master/hourly_uk,1874,1883,53.85,-2.4667
+1880s spike,END,Stornoway,WMO-3026,Stornoway,p,CRU,https://sites.uea.ac.uk/cru/,1872,1881,58.22,-6.32
+1880s spike,END,Stornoway,STORNOWAY,STORNOWAY,p,EMULATE,DOI 10.5281/zenodo.5940391,1872,1881,58.2000,-6.3000
+1880s spike,END,Stornoway,DWRUK_STORNOWAY,Stornoway,Tn,DWR_UKMO,DOI 10.5281/zenodo.5940391,1873,1875,58.21,-6.39
+1880s spike,END,Stornoway,DWRUK_STORNOWAY,Stornoway,Tx,DWR_UKMO,DOI 10.5281/zenodo.5940391,1873,1875,58.21,-6.39
+1880s spike,END,Stornoway,DWRUK_STORNOWAY,Stornoway,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1873,1875,58.21,-6.39
+1880s spike,END,Stornoway,DWRUK_STORNOWAY,Stornoway,rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1873,1875,58.21,-6.39
+1880s spike,END,Stornoway,DWRUK_STORNOWAY,Stornoway,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1873,1875,58.21,-6.39
+1880s spike,END,Stornoway,DWRUK_STORNOWAY,Stornoway,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1873,1875,58.21,-6.39
+1880s spike,START,Stromsfoss,NOE00109858,STROMSFOSS SLUSE,rr,GHCN-D,NA,1883,2019,59.3006,11.6606
+1880s spike,END,Sumburgh,DWRUK_SUMBURGH,Sumburgh Head (Dunrossness),Tn,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,59.93410,-1.29033
+1880s spike,END,Sumburgh,DWRUK_SUMBURGH,Sumburgh Head (Dunrossness),Tx,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,59.93410,-1.29033
+1880s spike,END,Sumburgh,DWRUK_SUMBURGH,Sumburgh Head (Dunrossness),p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,59.93410,-1.29033
+1880s spike,END,Sumburgh,DWRUK_SUMBURGH,Sumburgh Head (Dunrossness),rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,59.93410,-1.29033
+1880s spike,END,Sumburgh,DWRUK_SUMBURGH,Sumburgh Head (Dunrossness),ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,59.93410,-1.29033
+1880s spike,END,Sumburgh,DWRUK_SUMBURGH,Sumburgh Head (Dunrossness),ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,59.93410,-1.29033
+1880s spike,START,Surgut,RSM00023849,SURGUT,rr,GHCN-D,NA,1884,1984,61.25,73.5
+1880s spike,START,Syktyvkar,RSM00023804,SYKTYVKAR,rr,GHCN-D,NA,1888,2019,61.6667,50.8667
+1880s spike,START,Tashkent,UZM00038457,TASHKENT,rr,GHCN-D,NA,1881,2006,41.27,69.2694
+1880s spike,START,Tbilisi,GG000037545,TBILISI,rr,GHCN-D,NA,1881,1992,41.68,44.95
+1880s spike,START,Tbilisi,GG000037545,Tbilisi,ta,GHCNd,ncei.noaa.gov/products/land-based-station/global-historical-climatology-network-daily,1881,2024,41.68,44.95
+1880s spike,START,Tebessa,60475,Tebessa,rr,Medare,https://www.idare-portal.org/data/medare,1879,1938,35.420000,8.120000
+1880s spike,START,Tebessa,60475,Tebessa,p,Medare,https://www.idare-portal.org/data/medare,1879,1938,35.42,8.12
+1880s spike,END,Thurso,DWRUK_THURSO,Thurso,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1870,1875,58.59,-3.52
+1880s spike,END,Thurso,DWRUK_THURSO,Thurso,rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1870,1875,58.59,-3.52
+1880s spike,END,Thurso,DWRUK_THURSO,Thurso,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1870,1875,58.59,-3.52
+1880s spike,END,Thurso,DWRUK_THURSO,Thurso,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,58.59,-3.52
+1880s spike,END,Thurso,DWRUK_THURSO,Thurso,Tn,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,58.59,-3.52
+1880s spike,END,Thurso,DWRUK_THURSO,Thurso,Tx,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,58.59,-3.52
+1880s spike,START,TiziOuzou,60395,Tizi_Ouzou,rr,Medare,https://www.idare-portal.org/data/medare,1879,1938,36.720000,4.050000
+1880s spike,START,TiziOuzou,60395,Tizi_Ouzou,p,Medare,https://www.idare-portal.org/data/medare,1879,1938,36.72,4.05
+1880s spike,START,TiziOuzou,ALG0060395,TiziOuzou,dd,Ashcroft,doi.org/10.5194/essd-10-1613-2018-supplement,1879,1938,36.720000,4.050000
+1880s spike,START,TiziOuzou,ALG0060395,TiziOuzou,ta,Ashcroft,doi.org/10.5194/essd-10-1613-2018-supplement,1879,1938,36.720000,4.050000
+1880s spike,START,TiziOuzou,ALG0060395,TiziOuzou,w,Ashcroft,doi.org/10.5194/essd-10-1613-2018-supplement,1879,1938,36.720000,4.050000
+1880s spike,START,Tobolsk,RSM00028275,TOBOLSK,rr,GHCN-D,NA,1884,2013,58.15,68.25
+1880s spike,START,Totma,RSM00027051,TOT-MA,rr,GHCN-D,NA,1883,2013,59.97,42.75
+1880s spike,END,Toulon,TOULON,TOULON,p,EMULATE,DOI 10.5281/zenodo.5940391,1868,1881,43.1200,5.9300
+1880s spike,END,Toulon,DWRUK_TOULON,Toulon,rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1868,1875,43.05253,5.85574
+1880s spike,END,Toulon,DWRUK_TOULON,Toulon,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1868,1875,43.05240,5.85483
+1880s spike,END,Toulon,DWRUK_TOULON,Toulon,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1868,1875,43.05240,5.85483
+1880s spike,END,Toulon,DWRUK_TOULON,Toulon,Tn,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,43.05240,5.85483
+1880s spike,END,Toulon,DWRUK_TOULON,Toulon,Tx,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,43.05240,5.85483
+1880s spike,END,Toulon,DWRUK_TOULON,Toulon,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,43.05240,5.85483
+1880s spike,START,TroitskoPechorsk,RSM00023711,TROICKO-PECHERSKOE,rr,GHCN-D,NA,1888,2019,62.7,56.2
+1880s spike,START,Tromso,Tromsø,Tromsø,p,frost.met.no,DOI 10.5281/zenodo.5940391,1875,1926,69.6520,18.9500
+1880s spike,START,Tunis,60715,Tunis,rr,Medare,https://www.idare-portal.org/data/medare,1886,1938,36.800000,10.170000
+1880s spike,START,Turkestan,KZ000038198,TURKESTAN,rr,GHCN-D,NA,1882,2005,43.27,68.22
+1880s spike,START,Tuttlingen,GME00129502,TUTTLINGEN,rr,GHCN-D,NA,1888,2017,48.0092,8.8189
+1880s spike,START,Uccle,BE000006447,UCCLE,rr,GHCN-D,NA,1880,2016,50.8,4.35
+1880s spike,START,Uman,UPM00033587,UMAN,rr,GHCN-D,NA,1885,2012,48.77,30.23
+1880s spike,START,Urjupinsk,RSM00034240,URJUPINSK,rr,GHCN-D,NA,1881,2019,50.8,42
+1880s spike,START,Valdesevilla,BAVALD1,Extremadura-Valdesevilla,dd,"Vaquero, José Manuel; Bravo-Paredes, Nieves; Obregón, María Angeles; Sánchez-Carrasco, Víctor Manuel; Valente, Maria Antónia; Trigo, Ricardo M; Domínguez-Castro, Fernando; Montero-Martín, Javier; Vaquero-Martínez, Javier; Antón, Manuel; García, José Agustín; Gallego, María Cruz (2020): Early meteorological records from BAALAN1 (1866). PANGAEA.",https://doi.pangaea.de/10.1594/PANGAEA.925805,1880,1883,37.871581,-6.522527
+1880s spike,END,Valdesevilla,BAVALD1,Extremadura-Valdesevilla,dd,"Vaquero, José Manuel; Bravo-Paredes, Nieves; Obregón, María Angeles; Sánchez-Carrasco, Víctor Manuel; Valente, Maria Antónia; Trigo, Ricardo M; Domínguez-Castro, Fernando; Montero-Martín, Javier; Vaquero-Martínez, Javier; Antón, Manuel; García, José Agustín; Gallego, María Cruz (2020): Early meteorological records from BAALAN1 (1866). PANGAEA.",https://doi.pangaea.de/10.1594/PANGAEA.925805,1880,1883,37.871581,-6.522527
+1880s spike,START,Valdesevilla,BAVALD1,Extremadura-Valdesevilla,p,"Vaquero, José Manuel; Bravo-Paredes, Nieves; Obregón, María Angeles; Sánchez-Carrasco, Víctor Manuel; Valente, Maria Antónia; Trigo, Ricardo M; Domínguez-Castro, Fernando; Montero-Martín, Javier; Vaquero-Martínez, Javier; Antón, Manuel; García, José Agustín; Gallego, María Cruz (2020): Early meteorological records from BAALAN1 (1866). PANGAEA.",https://doi.pangaea.de/10.1594/PANGAEA.925805,1880,1883,37.871581,-6.522527
+1880s spike,END,Valdesevilla,BAVALD1,Extremadura-Valdesevilla,p,"Vaquero, José Manuel; Bravo-Paredes, Nieves; Obregón, María Angeles; Sánchez-Carrasco, Víctor Manuel; Valente, Maria Antónia; Trigo, Ricardo M; Domínguez-Castro, Fernando; Montero-Martín, Javier; Vaquero-Martínez, Javier; Antón, Manuel; García, José Agustín; Gallego, María Cruz (2020): Early meteorological records from BAALAN1 (1866). PANGAEA.",https://doi.pangaea.de/10.1594/PANGAEA.925805,1880,1883,37.871581,-6.522527
+1880s spike,START,Valdesevilla,BAVALD1,Extremadura-Valdesevilla,ta,"Vaquero, José Manuel; Bravo-Paredes, Nieves; Obregón, María Angeles; Sánchez-Carrasco, Víctor Manuel; Valente, Maria Antónia; Trigo, Ricardo M; Domínguez-Castro, Fernando; Montero-Martín, Javier; Vaquero-Martínez, Javier; Antón, Manuel; García, José Agustín; Gallego, María Cruz (2020): Early meteorological records from BAALAN1 (1866). PANGAEA.",https://doi.pangaea.de/10.1594/PANGAEA.925805,1880,1883,37.871581,-6.522527
+1880s spike,END,Valdesevilla,BAVALD1,Extremadura-Valdesevilla,ta,"Vaquero, José Manuel; Bravo-Paredes, Nieves; Obregón, María Angeles; Sánchez-Carrasco, Víctor Manuel; Valente, Maria Antónia; Trigo, Ricardo M; Domínguez-Castro, Fernando; Montero-Martín, Javier; Vaquero-Martínez, Javier; Antón, Manuel; García, José Agustín; Gallego, María Cruz (2020): Early meteorological records from BAALAN1 (1866). PANGAEA.",https://doi.pangaea.de/10.1594/PANGAEA.925805,1880,1883,37.871581,-6.522527
+1880s spike,START,ValenciaDelVentoso,BAVVEN1,Extremadura-Valencia_del_Ventoso,Tn,"Vaquero, José Manuel; Bravo-Paredes, Nieves; Obregón, María Angeles; Sánchez-Carrasco, Víctor Manuel; Valente, Maria Antónia; Trigo, Ricardo M; Domínguez-Castro, Fernando; Montero-Martín, Javier; Vaquero-Martínez, Javier; Antón, Manuel; García, José Agustín; Gallego, María Cruz (2020): Early meteorological records from BAALAN1 (1866). PANGAEA.",https://doi.pangaea.de/10.1594/PANGAEA.925805,1882,1883,38.265278,-6.474444
+1880s spike,END,ValenciaDelVentoso,BAVVEN1,Extremadura-Valencia_del_Ventoso,Tn,"Vaquero, José Manuel; Bravo-Paredes, Nieves; Obregón, María Angeles; Sánchez-Carrasco, Víctor Manuel; Valente, Maria Antónia; Trigo, Ricardo M; Domínguez-Castro, Fernando; Montero-Martín, Javier; Vaquero-Martínez, Javier; Antón, Manuel; García, José Agustín; Gallego, María Cruz (2020): Early meteorological records from BAALAN1 (1866). PANGAEA.",https://doi.pangaea.de/10.1594/PANGAEA.925805,1882,1883,38.265278,-6.474444
+1880s spike,START,ValenciaDelVentoso,BAVVEN1,Extremadura-Valencia_del_Ventoso,Tx,"Vaquero, José Manuel; Bravo-Paredes, Nieves; Obregón, María Angeles; Sánchez-Carrasco, Víctor Manuel; Valente, Maria Antónia; Trigo, Ricardo M; Domínguez-Castro, Fernando; Montero-Martín, Javier; Vaquero-Martínez, Javier; Antón, Manuel; García, José Agustín; Gallego, María Cruz (2020): Early meteorological records from BAALAN1 (1866). PANGAEA.",https://doi.pangaea.de/10.1594/PANGAEA.925805,1882,1883,38.265278,-6.474444
+1880s spike,END,ValenciaDelVentoso,BAVVEN1,Extremadura-Valencia_del_Ventoso,Tx,"Vaquero, José Manuel; Bravo-Paredes, Nieves; Obregón, María Angeles; Sánchez-Carrasco, Víctor Manuel; Valente, Maria Antónia; Trigo, Ricardo M; Domínguez-Castro, Fernando; Montero-Martín, Javier; Vaquero-Martínez, Javier; Antón, Manuel; García, José Agustín; Gallego, María Cruz (2020): Early meteorological records from BAALAN1 (1866). PANGAEA.",https://doi.pangaea.de/10.1594/PANGAEA.925805,1882,1883,38.265278,-6.474444
+1880s spike,START,ValenciaDelVentoso,BAVVEN1,Extremadura-Valencia_del_Ventoso,dd,"Vaquero, José Manuel; Bravo-Paredes, Nieves; Obregón, María Angeles; Sánchez-Carrasco, Víctor Manuel; Valente, Maria Antónia; Trigo, Ricardo M; Domínguez-Castro, Fernando; Montero-Martín, Javier; Vaquero-Martínez, Javier; Antón, Manuel; García, José Agustín; Gallego, María Cruz (2020): Early meteorological records from BAALAN1 (1866). PANGAEA.",https://doi.pangaea.de/10.1594/PANGAEA.925805,1882,1883,38.265278,-6.474444
+1880s spike,END,ValenciaDelVentoso,BAVVEN1,Extremadura-Valencia_del_Ventoso,dd,"Vaquero, José Manuel; Bravo-Paredes, Nieves; Obregón, María Angeles; Sánchez-Carrasco, Víctor Manuel; Valente, Maria Antónia; Trigo, Ricardo M; Domínguez-Castro, Fernando; Montero-Martín, Javier; Vaquero-Martínez, Javier; Antón, Manuel; García, José Agustín; Gallego, María Cruz (2020): Early meteorological records from BAALAN1 (1866). PANGAEA.",https://doi.pangaea.de/10.1594/PANGAEA.925805,1882,1883,38.265278,-6.474444
+1880s spike,START,ValenciaDelVentoso,BAVVEN1,Extremadura-Valencia_del_Ventoso,p,"Vaquero, José Manuel; Bravo-Paredes, Nieves; Obregón, María Angeles; Sánchez-Carrasco, Víctor Manuel; Valente, Maria Antónia; Trigo, Ricardo M; Domínguez-Castro, Fernando; Montero-Martín, Javier; Vaquero-Martínez, Javier; Antón, Manuel; García, José Agustín; Gallego, María Cruz (2020): Early meteorological records from BAALAN1 (1866). PANGAEA.",https://doi.pangaea.de/10.1594/PANGAEA.925805,1882,1883,38.265278,-6.474444
+1880s spike,END,ValenciaDelVentoso,BAVVEN1,Extremadura-Valencia_del_Ventoso,p,"Vaquero, José Manuel; Bravo-Paredes, Nieves; Obregón, María Angeles; Sánchez-Carrasco, Víctor Manuel; Valente, Maria Antónia; Trigo, Ricardo M; Domínguez-Castro, Fernando; Montero-Martín, Javier; Vaquero-Martínez, Javier; Antón, Manuel; García, José Agustín; Gallego, María Cruz (2020): Early meteorological records from BAALAN1 (1866). PANGAEA.",https://doi.pangaea.de/10.1594/PANGAEA.925805,1882,1883,38.265278,-6.474444
+1880s spike,START,ValenciaDelVentoso,BAVVEN1,Extremadura-Valencia_del_Ventoso,rr,"Vaquero, José Manuel; Bravo-Paredes, Nieves; Obregón, María Angeles; Sánchez-Carrasco, Víctor Manuel; Valente, Maria Antónia; Trigo, Ricardo M; Domínguez-Castro, Fernando; Montero-Martín, Javier; Vaquero-Martínez, Javier; Antón, Manuel; García, José Agustín; Gallego, María Cruz (2020): Early meteorological records from BAALAN1 (1866). PANGAEA.",https://doi.pangaea.de/10.1594/PANGAEA.925805,1882,1883,38.265278,-6.474444
+1880s spike,END,ValenciaDelVentoso,BAVVEN1,Extremadura-Valencia_del_Ventoso,rr,"Vaquero, José Manuel; Bravo-Paredes, Nieves; Obregón, María Angeles; Sánchez-Carrasco, Víctor Manuel; Valente, Maria Antónia; Trigo, Ricardo M; Domínguez-Castro, Fernando; Montero-Martín, Javier; Vaquero-Martínez, Javier; Antón, Manuel; García, José Agustín; Gallego, María Cruz (2020): Early meteorological records from BAALAN1 (1866). PANGAEA.",https://doi.pangaea.de/10.1594/PANGAEA.925805,1882,1883,38.265278,-6.474444
+1880s spike,END,Valentia,WMO-3953,Valentia,p,CRU,https://sites.uea.ac.uk/cru/,1861,1892,51.93,-10.25
+1880s spike,START,Valentia,ILMMT-Valentia_Caherciveen,Valentia_Caherciveen,Tn,"Mateus, C., Potito, A., & Curley, M. (2020). Reconstruction of a long‐term historical daily maximum and minimum air temperature network dataset for Ireland (1831‐1968). Geoscience Data Journal, 7(2), 102-115.",https://www.edepositireland.ie/entities/publication/7271837d-dbe6-463f-b103-422f42a15446,1892,1920,51.939,-10.244
+1880s spike,START,Valentia,ILMMT-Valentia_Caherciveen,Valentia_Caherciveen,Tx,"Mateus, C., Potito, A., & Curley, M. (2020). Reconstruction of a long‐term historical daily maximum and minimum air temperature network dataset for Ireland (1831‐1968). Geoscience Data Journal, 7(2), 102-115.",https://www.edepositireland.ie/entities/publication/7271837d-dbe6-463f-b103-422f42a15446,1892,1920,51.939,-10.244
+1880s spike,END,Valentia,ILMMT-Valentia_Island,Valentia_Island,Tn,"Mateus, C., Potito, A., & Curley, M. (2020). Reconstruction of a long‐term historical daily maximum and minimum air temperature network dataset for Ireland (1831‐1968). Geoscience Data Journal, 7(2), 102-115.",https://www.edepositireland.ie/entities/publication/7271837d-dbe6-463f-b103-422f42a15446,1850,1892,51.925,-10.285
+1880s spike,END,Valentia,ILMMT-Valentia_Island,Valentia_Island,Tx,"Mateus, C., Potito, A., & Curley, M. (2020). Reconstruction of a long‐term historical daily maximum and minimum air temperature network dataset for Ireland (1831‐1968). Geoscience Data Journal, 7(2), 102-115.",https://www.edepositireland.ie/entities/publication/7271837d-dbe6-463f-b103-422f42a15446,1850,1892,51.925,-10.285
+1880s spike,END,Valentia,DWRUK_VALENTIA,Valentia Observatory,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,51.938331,-10.241007
+1880s spike,END,Valentia,DWRUK_VALENTIA,Valentia Observatory,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,51.938331,-10.241007
+1880s spike,END,Valentia,DWRUK_VALENTIA,Valentia Observatory,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,51.938331,-10.241007
+1880s spike,END,Valentia,DWRUK_VALENTIA,Valentia Observatory,rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1862,1875,51.938331,-10.241007
+1880s spike,END,Valentia,DWRUK_VALENTIA,Valentia,Tn,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,51.938331,-10.241007
+1880s spike,END,Valentia,DWRUK_VALENTIA,Valentia,Tx,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,51.938331,-10.241007
+1880s spike,END,Valentia,VALENTIA,Valencia Observatory,p,UK-HOURLY-BOOKS,https://github.com/ed-hawkins/weather-rescue-data/tree/master/hourly_uk,1874,1886,51.9167,-10.3
+1880s spike,START,Vasilevici,BOM00033038,VASILEVICI,rr,GHCN-D,NA,1881,2009,52.25,29.8331
+1880s spike,START,Vasilevici,BOM00033038,Vasilevici,ta,GHCNd,ncei.noaa.gov/products/land-based-station/global-historical-climatology-network-daily,1881,2024,52.25,29.8331
+1880s spike,START,VelikieLuki,RSM00026477,VELIKIE LUKI,rr,GHCN-D,NA,1881,2019,56.35,30.6167
+1880s spike,END,Vendome,VENDOME,VENDOME,p,Meteo-France,DOI 10.5281/zenodo.5940391,1856,1876,47.8267,1.0543
+1880s spike,START,Ventspils,LG000026314,VENTSPILS,rr,GHCN-D,NA,1881,1999,57.4,21.533
+1880s spike,START,Vilnius,LH000026730,VILNIUS,rr,GHCN-D,NA,1881,1999,54.6331,25.1
+1880s spike,END,Vilnius,Vilnius,Przybylak_Vilnius,ta,"Wahlen E., 1887, Wahre Tagesmittel und Tagliche Variation der Temperatur, an 18 Stationen des Russischen Reiches, Dritter Supplementband zum Repertorium für Meteorologie, Kaiserliche Academie der Wissenschaften, St. Petersburg.",,1777,1883,54.69,25.28
+1880s spike,END,Visby,DWRUK_WISBY,Wisby,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1873,1875,57.63341,18.283333
+1880s spike,END,Visby,DWRUK_WISBY,Wisby,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1873,1875,57.63341,18.283333
+1880s spike,END,Visby,DWRUK_WISBY,Wisby,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1873,1875,57.63341,18.283333
+1880s spike,START,Vladikavkaz,RSM00037228,VLADIKAVKAZ,rr,GHCN-D,NA,1881,2017,43.05,44.65
+1880s spike,START,Vytegra,RSM00022837,VYTEGRA,rr,GHCN-D,NA,1881,2018,61.0167,36.45
+1880s spike,START,Wangerooge,GME00129874,WANGEROOGE,rr,GHCN-D,NA,1885,2019,53.7883,7.9075
+1880s spike,START,Waren,Waren-Muritz,Waren-Muritz,p,DWD,DOI 10.5281/zenodo.5940391,1889,1923,53.5212,12.6816
+1880s spike,END,Warsaw,Warsaw,Przybylak_Warsaw,ta,"Wahlen E., 1887, Wahre Tagesmittel und Tagliche Variation der Temperatur, an 18 Stationen des Russischen Reiches, Dritter Supplementband zum Repertorium für Meteorologie, Kaiserliche Academie der Wissenschaften, St. Petersburg.",,1760,1882,52.23,21
+1880s spike,START,Weissenburg,Weissenburg-Emetzheim,Weissenburg-Emetzheim,p,DWD,DOI 10.5281/zenodo.5940391,1879,1920,49.0290,10.9741
+1880s spike,START,West-Terschelling,NLE00100496,WEST TERSCHELLING,rr,GHCN-D,NA,1876,2019,53.3667,5.2167
+1880s spike,END,Wick,DWRUK_WICK,Wick,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1870,1875,58.442519,-3.090779
+1880s spike,END,Wick,DWRUK_WICK,Wick,rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1870,1875,58.442519,-3.090779
+1880s spike,END,Wick,DWRUK_WICK,Wick,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1870,1875,58.442519,-3.090779
+1880s spike,END,Wick,DWRUK_WICK,Wick,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,58.442519,-3.090779
+1880s spike,END,Wick,DWRUK_WICK,Wick,Tn,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,58.442519,-3.090779
+1880s spike,END,Wick,DWRUK_WICK,Wick,Tx,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,58.442519,-3.090779
+1880s spike,START,Winterswijk,NLE00100505,WINTERSWIJK,rr,GHCN-D,NA,1880,2019,51.9831,6.7
+1880s spike,START,Wrixum,GME00130630,WRIXUM/FOHR,rr,GHCN-D,NA,1887,2019,54.6942,8.5281
+1880s spike,START,Wuerzburg,Wurzburg-Physikalisches-Inst,Wurzburg-Physikalisches-Inst,p,DWD,DOI 10.5281/zenodo.5940391,1880,1953,49.7995,9.9280
+1880s spike,START,Yalta,UPM00033990,YALTA,rr,GHCN-D,NA,1881,1999,44.483,34.167
+1880s spike,END,Yarmouth,DWRUK_YARMOUTH,Yarmouth,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,52.603617,1.736098
+1880s spike,END,Yarmouth,DWRUK_YARMOUTH,Yarmouth,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,52.603617,1.736098
+1880s spike,END,Yarmouth,DWRUK_YARMOUTH,Yarmouth,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,52.603617,1.736098
+1880s spike,END,Yarmouth,DWRUK_YARMOUTH,Yarmouth,rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1861,1875,52.603617,1.736098
+1880s spike,END,Yarmouth,DWRUK_YARMOUTH,Yarmouth,Tn,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,52.603617,1.736098
+1880s spike,END,Yarmouth,DWRUK_YARMOUTH,Yarmouth,Tx,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,52.603617,1.736098
+1880s spike,START,Yekaterinburg,RSM00028440,EKATERINBURG,rr,GHCN-D,NA,1881,2019,56.8331,60.6331
+1880s spike,START,Yelatma,RSM00027648,ELATMA,rr,GHCN-D,NA,1886,2018,54.95,41.7667
+1880s spike,START,Yerevan,AM000037789,Yerevan,ta,GHCNd,ncei.noaa.gov/products/land-based-station/global-historical-climatology-network-daily,1885,2003,40.2,44.5
+1880s spike,START,Yerevan,AM000037789,YEREVAN,rr,GHCN-D,NA,1885,2005,40.2,44.5
+1880s spike,END,York,DWRUK_YORK,York,Tn,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,53.96118,-1.08768
+1880s spike,END,York,DWRUK_YORK,York,Tx,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,53.96118,-1.08768
+1880s spike,END,York,DWRUK_YORK,York,p,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,53.96118,-1.08768
+1880s spike,END,York,DWRUK_YORK,York,rr,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,53.96118,-1.08768
+1880s spike,END,York,DWRUK_YORK,York,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,53.96118,-1.08768
+1880s spike,END,York,DWRUK_YORK,York,ta,DWR_UKMO,DOI 10.5281/zenodo.5940391,1872,1875,53.96118,-1.08768
+1880s spike,START,Zemetchino,RSM00027857,ZAMETCHINO,rr,GHCN-D,NA,1881,2019,53.5,42.62

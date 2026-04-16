@@ -1,0 +1,1060 @@
+SEF Spike Detective
+============================================================
+Database: /scratch3/PALAEO-RA/daily_data/final
+Scanning for SEF files...
+
+Found 482 station folders
+  Scanning station 100/482: Courtown
+  Scanning station 200/482: Ismailia
+  Scanning station 300/482: Nuernberg
+  Scanning station 400/482: Tegerfelden
+
+Scanned 1796 files (4 with errors)
+Valid series with data: 1792
+
+============================================================
+ACTIVE SERIES COUNT PER YEAR
+============================================================
+
+Variables found: {'Tn': 107, 'Tx': 103, 'dd': 113, 'eee': 8, 'fs': 2, 'p': 553, 'rh': 19, 'rr': 289, 'rrt': 6, 'ta': 561, 'w': 31}
+
+============================================================
+YEAR-OVER-YEAR SPIKES (threshold: 5+ series change)
+============================================================
+
+
+--- Variable: Tn (107 total series) ---
+  1849 -> 1850:   16 ->   28  (change: +12 UP)
+  1850 -> 1851:   28 ->   33  (change: +5 UP)
+  1852 -> 1853:   29 ->   16  (change: -13 DOWN)
+  1871 -> 1872:   12 ->   50  (change: +38 UP)
+  1875 -> 1876:   52 ->   16  (change: -36 DOWN)
+  1920 -> 1921:   18 ->   13  (change: -5 DOWN)
+
+--- Variable: Tx (103 total series) ---
+  1849 -> 1850:   15 ->   27  (change: +12 UP)
+  1850 -> 1851:   27 ->   32  (change: +5 UP)
+  1851 -> 1852:   32 ->   25  (change: -7 DOWN)
+  1852 -> 1853:   25 ->   15  (change: -10 DOWN)
+  1871 -> 1872:   12 ->   50  (change: +38 UP)
+  1875 -> 1876:   52 ->   16  (change: -36 DOWN)
+  1920 -> 1921:   18 ->   13  (change: -5 DOWN)
+
+--- Variable: dd (113 total series) ---
+  1780 -> 1781:    6 ->   22  (change: +16 UP)
+  1781 -> 1782:   22 ->   31  (change: +9 UP)
+  1784 -> 1785:   33 ->   27  (change: -6 DOWN)
+  1788 -> 1789:   23 ->   16  (change: -7 DOWN)
+  1792 -> 1793:   16 ->    5  (change: -11 DOWN)
+
+--- Variable: eee (8 total series) ---
+  No spikes above threshold found.
+
+--- Variable: fs (2 total series) ---
+  No spikes above threshold found.
+
+--- Variable: p (553 total series) ---
+  1754 -> 1755:   14 ->   19  (change: +5 UP)
+  1780 -> 1781:   30 ->   51  (change: +21 UP)
+  1781 -> 1782:   51 ->   64  (change: +13 UP)
+  1786 -> 1787:   59 ->   40  (change: -19 DOWN)
+  1787 -> 1788:   40 ->   69  (change: +29 UP)
+  1789 -> 1790:   68 ->   45  (change: -23 DOWN)
+  1792 -> 1793:   41 ->   26  (change: -15 DOWN)
+  1815 -> 1816:   43 ->   48  (change: +5 UP)
+  1819 -> 1820:   41 ->   46  (change: +5 UP)
+  1830 -> 1831:   53 ->   48  (change: -5 DOWN)
+  1831 -> 1832:   48 ->   42  (change: -6 DOWN)
+  1849 -> 1850:   42 ->   65  (change: +23 UP)
+  1854 -> 1855:   71 ->   66  (change: -5 DOWN)
+  1855 -> 1856:   66 ->   71  (change: +5 UP)
+  1859 -> 1860:   73 ->   80  (change: +7 UP)
+  1860 -> 1861:   80 ->  114  (change: +34 UP)
+  1861 -> 1862:  114 ->  122  (change: +8 UP)
+  1863 -> 1864:  120 ->  109  (change: -11 DOWN)
+  1867 -> 1868:  107 ->  120  (change: +13 UP)
+  1868 -> 1869:  120 ->  125  (change: +5 UP)
+  1872 -> 1873:  134 ->  143  (change: +9 UP)
+  1873 -> 1874:  143 ->  151  (change: +8 UP)
+  1875 -> 1876:  153 ->  105  (change: -48 DOWN)
+  1879 -> 1880:  110 ->  115  (change: +5 UP)
+  1880 -> 1881:  115 ->   99  (change: -16 DOWN)
+  1881 -> 1882:   99 ->   87  (change: -12 DOWN)
+  1890 -> 1891:   84 ->   72  (change: -12 DOWN)
+  1891 -> 1892:   72 ->   85  (change: +13 UP)
+  1893 -> 1894:   83 ->   71  (change: -12 DOWN)
+  1894 -> 1895:   71 ->   80  (change: +9 UP)
+  1895 -> 1896:   80 ->   73  (change: -7 DOWN)
+  1896 -> 1897:   73 ->   81  (change: +8 UP)
+  1917 -> 1918:   74 ->   68  (change: -6 DOWN)
+  1938 -> 1939:   65 ->   54  (change: -11 DOWN)
+  1990 -> 1991:   44 ->   39  (change: -5 DOWN)
+  2002 -> 2003:   27 ->   15  (change: -12 DOWN)
+
+--- Variable: rh (19 total series) ---
+  1905 -> 1906:    6 ->    1  (change: -5 DOWN)
+
+--- Variable: rr (289 total series) ---
+  1780 -> 1781:    4 ->   13  (change: +9 UP)
+  1786 -> 1787:   19 ->    3  (change: -16 DOWN)
+  1788 -> 1789:    5 ->   11  (change: +6 UP)
+  1792 -> 1793:    8 ->    2  (change: -6 DOWN)
+  1860 -> 1861:   24 ->   35  (change: +11 UP)
+  1861 -> 1862:   35 ->   53  (change: +18 UP)
+  1862 -> 1863:   53 ->   58  (change: +5 UP)
+  1863 -> 1864:   58 ->   53  (change: -5 DOWN)
+  1871 -> 1872:   60 ->   71  (change: +11 UP)
+  1873 -> 1874:   71 ->   78  (change: +7 UP)
+  1875 -> 1876:   82 ->   48  (change: -34 DOWN)
+  1877 -> 1878:   51 ->   57  (change: +6 UP)
+  1878 -> 1879:   57 ->   69  (change: +12 UP)
+  1879 -> 1880:   69 ->   78  (change: +9 UP)
+  1880 -> 1881:   78 ->  116  (change: +38 UP)
+  1881 -> 1882:  116 ->  127  (change: +11 UP)
+  1882 -> 1883:  127 ->  134  (change: +7 UP)
+  1883 -> 1884:  134 ->  142  (change: +8 UP)
+  1885 -> 1886:  146 ->  154  (change: +8 UP)
+  1887 -> 1888:  157 ->  169  (change: +12 UP)
+  1890 -> 1891:  170 ->  164  (change: -6 DOWN)
+  1891 -> 1892:  164 ->  169  (change: +5 UP)
+  1900 -> 1901:  169 ->  174  (change: +5 UP)
+  1905 -> 1906:  172 ->  164  (change: -8 DOWN)
+  1914 -> 1915:  171 ->  165  (change: -6 DOWN)
+  1915 -> 1916:  165 ->  155  (change: -10 DOWN)
+  1917 -> 1918:  152 ->  144  (change: -8 DOWN)
+  1920 -> 1921:  139 ->  144  (change: +5 UP)
+  1923 -> 1924:  151 ->  158  (change: +7 UP)
+  1925 -> 1926:  159 ->  165  (change: +6 UP)
+  1938 -> 1939:  164 ->  148  (change: -16 DOWN)
+  1939 -> 1940:  148 ->  155  (change: +7 UP)
+  1941 -> 1942:  153 ->  144  (change: -9 DOWN)
+  1944 -> 1945:  145 ->  152  (change: +7 UP)
+  1991 -> 1992:  140 ->  135  (change: -5 DOWN)
+  1999 -> 2000:  130 ->  125  (change: -5 DOWN)
+  2001 -> 2002:  125 ->  120  (change: -5 DOWN)
+  2005 -> 2006:  114 ->  104  (change: -10 DOWN)
+  2008 -> 2009:  100 ->   94  (change: -6 DOWN)
+  2013 -> 2014:   89 ->   76  (change: -13 DOWN)
+  2014 -> 2015:   76 ->   83  (change: +7 UP)
+  2017 -> 2018:   80 ->   69  (change: -11 DOWN)
+  2018 -> 2019:   69 ->   59  (change: -10 DOWN)
+  2019 -> 2020:   59 ->    1  (change: -58 DOWN)
+
+--- Variable: rrt (6 total series) ---
+  No spikes above threshold found.
+
+--- Variable: ta (561 total series) ---
+  1708 -> 1709:    3 ->   18  (change: +15 UP)
+  1709 -> 1710:   18 ->    5  (change: -13 DOWN)
+  1780 -> 1781:   29 ->   47  (change: +18 UP)
+  1781 -> 1782:   47 ->   59  (change: +12 UP)
+  1786 -> 1787:   60 ->   46  (change: -14 DOWN)
+  1787 -> 1788:   46 ->   79  (change: +33 UP)
+  1788 -> 1789:   79 ->   74  (change: -5 DOWN)
+  1789 -> 1790:   74 ->   52  (change: -22 DOWN)
+  1791 -> 1792:   52 ->   47  (change: -5 DOWN)
+  1792 -> 1793:   47 ->   31  (change: -16 DOWN)
+  1800 -> 1801:   40 ->   35  (change: -5 DOWN)
+  1840 -> 1841:   54 ->   48  (change: -6 DOWN)
+  1846 -> 1847:   49 ->   44  (change: -5 DOWN)
+  1857 -> 1858:   50 ->   56  (change: +6 UP)
+  1859 -> 1860:   55 ->   63  (change: +8 UP)
+  1860 -> 1861:   63 ->  109  (change: +46 UP)
+  1861 -> 1862:  109 ->  123  (change: +14 UP)
+  1863 -> 1864:  119 ->   79  (change: -40 DOWN)
+  1867 -> 1868:   73 ->   80  (change: +7 UP)
+  1871 -> 1872:   78 ->  133  (change: +55 UP)
+  1872 -> 1873:  133 ->  144  (change: +11 UP)
+  1875 -> 1876:  146 ->   49  (change: -97 DOWN)
+  1941 -> 1942:   59 ->   52  (change: -7 DOWN)
+  2024 -> 2025:   27 ->    1  (change: -26 DOWN)
+
+--- Variable: w (31 total series) ---
+  1781 -> 1782:   11 ->   17  (change: +6 UP)
+
+
+============================================================
+SPIKE WINDOW INVESTIGATION
+============================================================
+
+────────────────────────────────────────────────────────────
+Window: 1860s spike (1855-1870)
+────────────────────────────────────────────────────────────
+
+  Variable: Tn
+    Series STARTING in 1855-1870: 8
+      Source: CHIMES (3 series)
+        - Einsiedeln (1857-1857) [Einsiedeln]
+        - Gais (1861-1864) [Gais]
+        - Winterthur (1861-1864) [Winterthur]
+      Source: GCOS (2 series)
+        - Bern (1863-1863) [Bern]
+        - Zürich (1860-1861) [Zurich]
+      Source: Mateus, C., Potito, A., & Curley, M. (2020). Reconstruction of a long‐term historical daily maximum and minimum air temperature network dataset for Ireland (1831‐1968). Geoscience Data Journal, 7(2), 102-115. (2 series)
+        - Glendooen (1865-1870) [Glendooen]
+        - Kilkenny (1862-1864) [Kilkenny]
+      Source: SMI (1 series)
+        - Turin (1857-2009) [Turin]
+    Series ENDING in 1855-1870: 14
+      Source: Mateus, C., Potito, A., & Curley, M. (2020). Reconstruction of a long‐term historical daily maximum and minimum air temperature network dataset for Ireland (1831‐1968). Geoscience Data Journal, 7(2), 102-115. (5 series)
+        - Dublin (1849-1858) [Dublin]
+        - Glendooen (1865-1870) [Glendooen]
+        - Kilkenny (1862-1864) [Kilkenny]
+        - Portarlington (1845-1864) [Portarlington]
+      Source: GCOS (4 series)
+        - Basel (1828-1863) [Basel]
+        - Bern (1863-1863) [Bern]
+        - Küsnacht (1852-1856) [Kuesnacht]
+        - Zürich (1860-1861) [Zurich]
+      Source: CHIMES (4 series)
+        - Einsiedeln (1857-1857) [Einsiedeln]
+        - Gais (1861-1864) [Gais]
+        - Uetliberg (1852-1863) [Uetliberg]
+        - Winterthur (1861-1864) [Winterthur]
+      Source: DIGIHOM (1 series)
+        - Grand St. Bernard (1825-1863) [GrandStBernard]
+
+  Variable: Tx
+    Series STARTING in 1855-1870: 7
+      Source: CHIMES (3 series)
+        - Einsiedeln (1857-1857) [Einsiedeln]
+        - Gais (1861-1864) [Gais]
+        - Winterthur (1861-1864) [Winterthur]
+      Source: GCOS (2 series)
+        - Bern (1863-1863) [Bern]
+        - Zürich (1860-1861) [Zurich]
+      Source: Mateus, C., Potito, A., & Curley, M. (2020). Reconstruction of a long‐term historical daily maximum and minimum air temperature network dataset for Ireland (1831‐1968). Geoscience Data Journal, 7(2), 102-115. (1 series)
+        - Kilkenny (1862-1864) [Kilkenny]
+      Source: SMI (1 series)
+        - Turin (1857-2009) [Turin]
+    Series ENDING in 1855-1870: 12
+      Source: GCOS (4 series)
+        - Basel (1828-1863) [Basel]
+        - Bern (1863-1863) [Bern]
+        - Küsnacht (1852-1856) [Kuesnacht]
+        - Zürich (1860-1861) [Zurich]
+      Source: Mateus, C., Potito, A., & Curley, M. (2020). Reconstruction of a long‐term historical daily maximum and minimum air temperature network dataset for Ireland (1831‐1968). Geoscience Data Journal, 7(2), 102-115. (4 series)
+        - Dublin (1849-1858) [Dublin]
+        - Kilkenny (1862-1864) [Kilkenny]
+        - Portarlington (1845-1864) [Portarlington]
+      Source: CHIMES (3 series)
+        - Einsiedeln (1857-1857) [Einsiedeln]
+        - Gais (1861-1864) [Gais]
+        - Winterthur (1861-1864) [Winterthur]
+      Source: DIGIHOM (1 series)
+        - Grand St. Bernard (1826-1863) [GrandStBernard]
+
+  Variable: dd
+    Series STARTING in 1855-1870: 1
+      Source: GCOS (1 series)
+        - Winterthur (1857-1866) [Winterthur]
+    Series ENDING in 1855-1870: 4
+      Source: CHIMES (1 series)
+        - Küsnacht (1852-1856) [Kuesnacht]
+      Source: Dominguez_Castro_2014 (1 series)
+        - DominguezCastro_Valencia (1790-1861) [Valencia]
+      Source: GCOS (1 series)
+        - Winterthur (1857-1866) [Winterthur]
+      Source: KNMI (1 series)
+        - Zwanenburg (1738-1860) [Zwanenburg]
+
+  Variable: p
+    Series STARTING in 1855-1870: 127
+      Source: DWR_UKMO (50 series)
+        - Aberdeen Observatory (1861-1875) [Aberdeen]
+        - Ardrossan (1861-1875) [Ardrossan]
+        - Bayonne (1861-1863) [Bayonne]
+        - Berwick (1861-1862) [Berwick]
+        - Biarritz (1868-1875) [Biarritz]
+        - Bidston Observatory (1861-1875) [Liverpool]
+        - Brest (St. Mathieu) (1861-1875) [Brest]
+        - Brussels (1868-1875) [Brussels]
+        - Cap Gris Nez (1868-1875) [CapGrisNez]
+        - Cape Clear (1863-1870) [CapeClear]
+        ... and 40 more
+      Source: EMULATE (22 series)
+        - ABERDEEN (1861-1877) [Aberdeen]
+        - BAGHDAD (1869-1876) [Baghdad]
+        - BASRA (1869-1879) [Bassora]
+        - BEIRUT (1869-1876) [Beirut]
+        - BREST (1861-1881) [Brest]
+        - DIYARBAKIR (1869-1874) [Diyarbakir]
+        - GALWAY (1861-1864) [Galway]
+        - GREENCASTLE (1863-1875) [Greencastle]
+        - HOLYHEAD (1868-1871) [Holyhead]
+        - LISBON (1869-1881) [Lisbon]
+        ... and 12 more
+      Source: CRU (13 series)
+        - Aberdeen (1861-1995) [Aberdeen]
+        - Beirut (1869-1881) [Beirut]
+        - Biarritz (1860-1880) [Biarritz]
+        - Bodo (1868-1994) [Bodoe]
+        - Goteborg (1860-2002) [Gothenburg]
+        - Haparanda (1860-2002) [Haparanda]
+        - Kem (1866-1880) [Kem]
+        - Lacoruna (1865-2002) [LaCorunna]
+        - Lesina (1869-1881) [Lesina]
+        - Oksoy_Fyr (1870-2002) [Oksoy]
+        ... and 3 more
+      Source: UA-UHMI (11 series)
+        - Dnipro (1865-1865) [Dnipro]
+        - Kamianets-Podilskyi (1865-1866) [Kamianets]
+        - Kyiv (1856-1869) [Kiev]
+        - Kyiv, arboretum (1861-1862) [Kiev]
+        - Luhansk (1870-1880) [Luhansk]
+        - Odesa (1859-1869) [Odesa]
+        - Odesa, horticulture (1856-1856) [Odesa]
+        - Odesa, lighthouse (1867-1871) [Odesa]
+      Source: CHIMES (8 series)
+        - Beatenberg (1860-1863) [Beatenberg]
+        - Bever (1857-1858) [Bevers]
+        - Chur (1862-1864) [Chur]
+        - Disentis (1858-1859) [Disentis]
+        - Saanen (1860-1862) [Saanen]
+        - Winterthur (1857-1867) [Winterthur]
+        - Zürich (1860-1863) [Zurich]
+      Source: GCOS (5 series)
+        - Basel (1862-1863) [Basel]
+        - Bern (1855-1860) [Bern]
+        - Burgdorf (1857-1864) [Burgdorf]
+      Source: frost.met.no (3 series)
+        - Trondheim (1870-1927) [Trondheim]
+        - Vardø radio (1867-1966) [Vardo]
+        - Ålesund (1864-1866) [Aalesund]
+      Source: Meteo-France (3 series)
+        - VENDOME (1856-1876) [Vendome]
+        - VERDUN (1864-1869) [Verdun]
+        - VERSAILLES_EN (1865-1933) [Versailles]
+      Source: Vaquero, José Manuel; Bravo-Paredes, Nieves; Obregón, María Angeles; Sánchez-Carrasco, Víctor Manuel; Valente, Maria Antónia; Trigo, Ricardo M; Domínguez-Castro, Fernando; Montero-Martín, Javier; Vaquero-Martínez, Javier; Antón, Manuel; García, José Agustín; Gallego, María Cruz (2020): Early meteorological records from BAALAN1 (1866). PANGAEA. (2 series)
+        - Extremadura-Alange (1866-1866) [Alange]
+      Source: PUBLISHED IN JERSEY TIMES, TRANSCRIBED BY FRANK LE BLANCQ (2 series)
+        - JERSEY-CHANNEL-ISLAND (1864-1864) [ChannelIslands]
+        - JERSEY-CHANNEL-ISLAND-LANGLOIS (1865-1875) [ChannelIslands]
+      Source: Cornes (2 series)
+        - DWR (1861-1902) [London]
+        - Royal Observatory Greenwich - Upper magnet room (Missing Fill) (1857-1906) [London]
+      Source: Pfister, L., Wilhelm, L., Brugnara, Y., Imfeld, N., & Brönnimann, S. (2024). Weather type reconstruction using machine learning approaches. EGUsphere, 2024, 1-33. (2 series)
+        - Lugano (1864-2020) [Lugano]
+        - Zagreb (1861-2021) [Zagreb]
+      Source: DIGIHOM (1 series)
+        - Grand St. Bernard (1862-1863) [GrandStBernard]
+      Source: KNMI (1 series)
+        - Maastricht (1865-1904) [Maastricht]
+      Source: PALAEO-RA (1 series)
+        - Rovereto (1860-1868) [Rovereto]
+      Source: DWD (1 series)
+        - Wertheim-Eichel (1868-1964) [Wertheim]
+    Series ENDING in 1855-1870: 68
+      Source: DWR_UKMO (18 series)
+        - Bayonne (1861-1863) [Bayonne]
+        - Berwick (1861-1862) [Berwick]
+        - Cape Clear (1863-1870) [CapeClear]
+        - Copenhagen (1861-1863) [Copenhagen]
+        - Galway (1861-1864) [Galway]
+        - Greencastle (1863-1870) [Greencastle]
+        - Heart's Content (1868-1870) [HeartsContent]
+        - Heligoland (1862-1867) [Heligoland]
+        - Hull (1861-1861) [Hull]
+        - Jersey (1861-1863) [Jersey]
+        ... and 8 more
+      Source: CHIMES (17 series)
+        - Aarau (1807-1865) [Aarau]
+        - Beatenberg (1860-1863) [Beatenberg]
+        - Bever (1857-1858) [Bevers]
+        - Chur (1852-1865) [Chur]
+        - Disentis (1858-1859) [Disentis]
+        - Einsiedeln (1840-1864) [Einsiedeln]
+        - Fontaines (1843-1862) [Fontaines]
+        - Küsnacht (1852-1856) [Kuesnacht]
+        - Luzern (1844-1864) [Luzern]
+        - Saanen (1860-1862) [Saanen]
+        ... and 4 more
+      Source: UA-UHMI (10 series)
+        - Dnipro (1865-1865) [Dnipro]
+        - Kamianets-Podilskyi (1865-1866) [Kamianets]
+        - Kyiv (1856-1869) [Kiev]
+        - Kyiv, arboretum (1861-1862) [Kiev]
+        - Luhansk (1840-1869) [Luhansk]
+        - Odesa (1859-1869) [Odesa]
+        - Odesa, horticulture (1856-1856) [Odesa]
+        - Poltava (1847-1865) [Poltava]
+      Source: GCOS (7 series)
+        - Basel (1862-1863) [Basel]
+        - Bern (1855-1860) [Bern]
+        - Burgdorf (1857-1864) [Burgdorf]
+      Source: Vaquero, José Manuel; Bravo-Paredes, Nieves; Obregón, María Angeles; Sánchez-Carrasco, Víctor Manuel; Valente, Maria Antónia; Trigo, Ricardo M; Domínguez-Castro, Fernando; Montero-Martín, Javier; Vaquero-Martínez, Javier; Antón, Manuel; García, José Agustín; Gallego, María Cruz (2020): Early meteorological records from BAALAN1 (1866). PANGAEA. (2 series)
+        - Extremadura-Alange (1866-1866) [Alange]
+      Source: EMULATE (2 series)
+        - GALWAY (1861-1864) [Galway]
+        - TENERIFE (1856-1857) [Tenerife]
+      Source: IMPROVE (2 series)
+        - Milan (1763-1862) [Milan]
+        - Uppsala (1722-1870) [Uppsala]
+      Source: Meteo-France (2 series)
+        - VENDOME_BG1 (1851-1859) [Vendome]
+        - VERDUN (1864-1869) [Verdun]
+      Source: frost.met.no (1 series)
+        - Ålesund (1864-1866) [Aalesund]
+      Source: PUBLISHED IN JERSEY TIMES, TRANSCRIBED BY FRANK LE BLANCQ (1 series)
+        - JERSEY-CHANNEL-ISLAND (1864-1864) [ChannelIslands]
+      Source: DIGIHOM (1 series)
+        - Grand St. Bernard (1862-1863) [GrandStBernard]
+      Source: KIT (1 series)
+        - Karlsruhe (1778-1868) [Karlsruhe]
+      Source: Cornes (1 series)
+        - The Gentleman's Magazine (Cary et al.) (1824-1865) [London]
+      Source: PALAEO-RA (1 series)
+        - Rovereto (1860-1868) [Rovereto]
+      Source: Dominguez_Castro_2014 (1 series)
+        - DominguezCastro_Valencia (1790-1861) [Valencia]
+      Source: KNMI (1 series)
+        - Zwanenburg (1738-1860) [Zwanenburg]
+
+  Variable: rh
+    Series STARTING in 1855-1870: 2
+      Source: Vaquero, José Manuel; Bravo-Paredes, Nieves; Obregón, María Angeles; Sánchez-Carrasco, Víctor Manuel; Valente, Maria Antónia; Trigo, Ricardo M; Domínguez-Castro, Fernando; Montero-Martín, Javier; Vaquero-Martínez, Javier; Antón, Manuel; García, José Agustín; Gallego, María Cruz (2020): Early meteorological records from BAALAN1 (1866). PANGAEA. (2 series)
+        - Extremadura-Alange (1866-1866) [Alange]
+    Series ENDING in 1855-1870: 4
+      Source: Vaquero, José Manuel; Bravo-Paredes, Nieves; Obregón, María Angeles; Sánchez-Carrasco, Víctor Manuel; Valente, Maria Antónia; Trigo, Ricardo M; Domínguez-Castro, Fernando; Montero-Martín, Javier; Vaquero-Martínez, Javier; Antón, Manuel; García, José Agustín; Gallego, María Cruz (2020): Early meteorological records from BAALAN1 (1866). PANGAEA. (2 series)
+        - Extremadura-Alange (1866-1866) [Alange]
+      Source: DIGIHOM; PALAEO-RA (1 series)
+        - Grand St. Bernard (1817-1856) [GrandStBernard]
+      Source: CHIMES (1 series)
+        - Küsnacht (1852-1856) [Kuesnacht]
+
+  Variable: rr
+    Series STARTING in 1855-1870: 59
+      Source: DWR_UKMO (37 series)
+        - Aberdeen Observatory (1861-1875) [Aberdeen]
+        - Ardrossan (1861-1875) [Ardrossan]
+        - Berwick (1862-1862) [Berwick]
+        - Biarritz (1868-1875) [Biarritz]
+        - Bidston Observatory (1861-1875) [Liverpool]
+        - Brest (St. Mathieu) (1862-1875) [Brest]
+        - Cap Gris Nez (1868-1875) [CapGrisNez]
+        - Cape Clear (1863-1870) [CapeClear]
+        - Dover (1861-1875) [Dover]
+        - Galway (1862-1864) [Galway]
+        ... and 27 more
+      Source: GHCN-D (15 series)
+        - DUBLIN PHOENIX PARK (1867-2019) [Dublin]
+        - FALUN (1860-2019) [Falun]
+        - FRANKFURT/MAIN (FELDBERGSTR.) (1870-1961) [Frankfurt]
+        - GALWAY (1861-2002) [Galway]
+        - HELMOND (1869-2019) [Helmond]
+        - HOOFDDORP (1867-2019) [Hoofddorp]
+        - HVAR (1858-2018) [Hvar]
+        - LEIPZIG-HOLZHAUSEN (1863-2019) [Leipzig]
+        - MILAN (1858-2008) [Milan]
+        - PUTTEN (GLD) (1867-2019) [Putten]
+        ... and 5 more
+      Source: CHIMES (5 series)
+        - Aarau (1857-1865) [Aarau]
+        - Bern (1863-1863) [Bern]
+        - Chur (1862-1864) [Chur]
+        - Einsiedeln (1864-1864) [Einsiedeln]
+        - Uetliberg (1863-1863) [Uetliberg]
+      Source: GCOS (1 series)
+        - Bern (1861-1863) [Bern]
+      Source: KNMI (1 series)
+        - Vlissingen2 (1855-1905) [Vlissingen]
+    Series ENDING in 1855-1870: 20
+      Source: DWR_UKMO (12 series)
+        - Berwick (1862-1862) [Berwick]
+        - Cape Clear (1863-1870) [CapeClear]
+        - Galway (1862-1864) [Galway]
+        - Greencastle (1863-1870) [Greencastle]
+        - Heart's Content (1868-1870) [HeartsContent]
+        - Heligoland (1862-1867) [Heligoland]
+        - Jersey (1862-1863) [Jersey]
+        - Milford Haven (1862-1862) [MilfordHaven]
+        - Portland Bill (1861-1862) [Portland]
+        - Portrush (1862-1863) [Portrush]
+        ... and 2 more
+      Source: CHIMES (5 series)
+        - Aarau (1857-1865) [Aarau]
+        - Bern (1863-1863) [Bern]
+        - Chur (1862-1864) [Chur]
+        - Einsiedeln (1864-1864) [Einsiedeln]
+        - Uetliberg (1863-1863) [Uetliberg]
+      Source: GCOS (1 series)
+        - Bern (1861-1863) [Bern]
+      Source: DIGIHOM (1 series)
+        - Grand St. Bernard (1819-1863) [GrandStBernard]
+      Source: KNMI (1 series)
+        - Zwanenburg (1738-1860) [Zwanenburg]
+
+  Variable: ta
+    Series STARTING in 1855-1870: 127
+      Source: DWR_UKMO (83 series)
+        - Aberdeen Observatory (1861-1875) [Aberdeen]
+        - Ardrossan (1861-1875) [Ardrossan]
+        - Bayonne (1861-1863) [Bayonne]
+        - Berwick (1861-1862) [Berwick]
+        - Biarritz (1868-1875) [Biarritz]
+        - Bidston Observatory (1861-1875) [Liverpool]
+        - Brest (St. Mathieu) (1861-1875) [Brest]
+        - Brussels (1868-1875) [Brussels]
+        - Cap Gris Nez (1868-1875) [CapGrisNez]
+        - Cape Clear (1863-1863) [CapeClear]
+        ... and 41 more
+      Source: UA-UHMI (13 series)
+        - Dnipro (1855-1855) [Dnipro]
+        - Kamianets-Podilskyi (1865-1866) [Kamianets]
+        - Kyiv (1856-1869) [Kiev]
+        - Kyiv, arboretum (1858-1862) [Kiev]
+        - Luhansk (1870-1880) [Luhansk]
+        - Odesa (1859-1869) [Odesa]
+        - Odesa, horticulture (1856-1856) [Odesa]
+        - Odesa, lighthouse (1865-1871) [Odesa]
+      Source: ECA&D (12 series)
+        - Andenes (1867-1972) [Andenes]
+        - Falun (1860-2024) [Falun]
+        - Haparanda (1859-2012) [Haparanda]
+        - Harnosand (1858-2024) [Hernosand]
+        - Jokkmokk (1860-2018) [Jokkmokk]
+        - Karlstad (1858-2008) [Karlstad]
+        - Osijek (1858-2021) [Osijek]
+        - Pitea (1859-2024) [Pitea]
+        - Stensele (1860-2004) [Stensele]
+        - Umea (1858-1979) [Umea]
+        ... and 2 more
+      Source: CHIMES (9 series)
+        - Beatenberg (1860-1863) [Beatenberg]
+        - Bever (1857-1858) [Bevers]
+        - Chur (1860-1865) [Chur]
+        - Disentis (1858-1859) [Disentis]
+        - Gais (1861-1865) [Gais]
+        - Saanen (1860-1862) [Saanen]
+        - Schloss Marschlins (1864-1871) [Marschlins]
+      Source: GCOS (6 series)
+        - Basel (1862-1863) [Basel]
+        - Bern (1855-1858) [Bern]
+        - Winterthur (1857-1867) [Winterthur]
+        - Zürich (1860-1866) [Zurich]
+      Source: Vaquero, José Manuel; Bravo-Paredes, Nieves; Obregón, María Angeles; Sánchez-Carrasco, Víctor Manuel; Valente, Maria Antónia; Trigo, Ricardo M; Domínguez-Castro, Fernando; Montero-Martín, Javier; Vaquero-Martínez, Javier; Antón, Manuel; García, José Agustín; Gallego, María Cruz (2020): Early meteorological records from BAALAN1 (1866). PANGAEA. (2 series)
+        - Extremadura-Alange (1866-1866) [Alange]
+      Source: DIGIHOM (1 series)
+        - Grand St. Bernard (1862-1863) [GrandStBernard]
+      Source: PALAEO-RA (1 series)
+        - Rovereto (1860-1868) [Rovereto]
+    Series ENDING in 1855-1870: 82
+      Source: DWR_UKMO (35 series)
+        - Bayonne (1861-1863) [Bayonne]
+        - Berwick (1861-1862) [Berwick]
+        - Cape Clear (1863-1863) [CapeClear]
+        - Copenhagen (1861-1863) [Copenhagen]
+        - Galway (1861-1863) [Galway]
+        - Greencastle (1863-1863) [Greencastle]
+        - Heart's Content (1868-1870) [HeartsContent]
+        - Heligoland (1862-1863) [Heligoland]
+        - Hull (1861-1861) [Hull]
+        - Jersey (1861-1863) [Jersey]
+        ... and 12 more
+      Source: CHIMES (15 series)
+        - Aarau (1807-1865) [Aarau]
+        - Beatenberg (1860-1863) [Beatenberg]
+        - Bever (1857-1858) [Bevers]
+        - Chur (1860-1865) [Chur]
+        - Disentis (1858-1859) [Disentis]
+        - Einsiedeln (1818-1864) [Einsiedeln]
+        - Fontaines (1843-1862) [Fontaines]
+        - Gais (1861-1865) [Gais]
+        - Luzern (1844-1864) [Luzern]
+        - Saanen (1860-1862) [Saanen]
+        ... and 1 more
+      Source: UA-UHMI (11 series)
+        - Dnipro (1855-1855) [Dnipro]
+        - Kamianets-Podilskyi (1865-1866) [Kamianets]
+        - Kyiv (1856-1869) [Kiev]
+        - Kyiv, arboretum (1858-1862) [Kiev]
+        - Luhansk (1840-1869) [Luhansk]
+        - Odesa (1859-1869) [Odesa]
+        - Odesa, horticulture (1856-1856) [Odesa]
+        - Poltava (1847-1865) [Poltava]
+      Source: GCOS (10 series)
+        - Basel (1862-1863) [Basel]
+        - Bern (1855-1858) [Bern]
+        - Burgdorf (1851-1864) [Burgdorf]
+        - Küsnacht (1852-1856) [Kuesnacht]
+        - Winterthur (1857-1867) [Winterthur]
+        - Zürich (1860-1866) [Zurich]
+      Source: Vaquero, José Manuel; Bravo-Paredes, Nieves; Obregón, María Angeles; Sánchez-Carrasco, Víctor Manuel; Valente, Maria Antónia; Trigo, Ricardo M; Domínguez-Castro, Fernando; Montero-Martín, Javier; Vaquero-Martínez, Javier; Antón, Manuel; García, José Agustín; Gallego, María Cruz (2020): Early meteorological records from BAALAN1 (1866). PANGAEA. (2 series)
+        - Extremadura-Alange (1866-1866) [Alange]
+      Source: IMPROVE (2 series)
+        - Milan (1763-1862) [Milan]
+        - Uppsala (1722-1870) [Uppsala]
+      Source: DigiHom (1 series)
+        - Genf (1798-1860) [Geneva]
+      Source: DIGIHOM (1 series)
+        - Grand St. Bernard (1862-1863) [GrandStBernard]
+      Source: DIGIHOM; PALAEO-RA (1 series)
+        - Grand St. Bernard (1817-1861) [GrandStBernard]
+      Source: PALAEO-RA (1 series)
+        - Rovereto (1860-1868) [Rovereto]
+      Source: SMI (1 series)
+        - Turin (1753-1865) [Turin]
+      Source: Dominguez_Castro_2014 (1 series)
+        - DominguezCastro_Valencia (1790-1861) [Valencia]
+      Source: KNMI (1 series)
+        - Zwanenburg (1738-1860) [Zwanenburg]
+
+────────────────────────────────────────────────────────────
+Window: 1880s spike (1875-1895)
+────────────────────────────────────────────────────────────
+
+  Variable: Tn
+    Series STARTING in 1875-1895: 12
+      Source: Mateus, C., Potito, A., & Curley, M. (2020). Reconstruction of a long‐term historical daily maximum and minimum air temperature network dataset for Ireland (1831‐1968). Geoscience Data Journal, 7(2), 102-115. (8 series)
+        - Belmullet (1884-1920) [Belmullet]
+        - BirrCastle (1880-1920) [BirrCastle]
+        - Blackrock (1881-1890) [Blackrock]
+        - Dublin (1880-1880) [Dublin]
+        - Killarney (1881-1933) [Killarney]
+        - MalinHead (1885-1920) [MalinHead]
+        - Valentia_Caherciveen (1892-1920) [Valentia]
+      Source: Vaquero, José Manuel; Bravo-Paredes, Nieves; Obregón, María Angeles; Sánchez-Carrasco, Víctor Manuel; Valente, Maria Antónia; Trigo, Ricardo M; Domínguez-Castro, Fernando; Montero-Martín, Javier; Vaquero-Martínez, Javier; Antón, Manuel; García, José Agustín; Gallego, María Cruz (2020): Early meteorological records from BAALAN1 (1866). PANGAEA. (2 series)
+        - Extremadura-Cabeza_la_Vaca (1882-1883) [CabezaLaVaca]
+        - Extremadura-Valencia_del_Ventoso (1882-1883) [ValenciaDelVentoso]
+      Source: Ed Hawkins. (2024). ed-hawkins/weather-rescue-data: Weather Rescue Data v2.2 (v2.2). Zenodo. (1 series)
+        - Weather-Rescue-Data-v2-2_Ben-Nevis (1883-1904) [BenNevis]
+      Source: KNMI (1 series)
+        - Groningen (1892-1905) [Groningen]
+    Series ENDING in 1875-1895: 40
+      Source: DWR_UKMO (35 series)
+        - Aberdeen Observatory (1872-1875) [Aberdeen]
+        - Ardrossan (1872-1875) [Ardrossan]
+        - Biarritz (1872-1875) [Biarritz]
+        - Bidston Observatory (1872-1875) [Liverpool]
+        - Brest (St. Mathieu) (1872-1875) [Brest]
+        - Cambridge Observatory (1872-1875) [Cambridge]
+        - Cap Gris Nez (1872-1875) [CapGrisNez]
+        - Donaghadee (1872-1875) [Donaghadee]
+        - Dover (1872-1875) [Dover]
+        - Holyhead (1872-1875) [Holyhead]
+        ... and 25 more
+      Source: Mateus, C., Potito, A., & Curley, M. (2020). Reconstruction of a long‐term historical daily maximum and minimum air temperature network dataset for Ireland (1831‐1968). Geoscience Data Journal, 7(2), 102-115. (3 series)
+        - Blackrock (1881-1890) [Blackrock]
+        - Dublin (1880-1880) [Dublin]
+        - Valentia_Island (1850-1892) [Valentia]
+      Source: Vaquero, José Manuel; Bravo-Paredes, Nieves; Obregón, María Angeles; Sánchez-Carrasco, Víctor Manuel; Valente, Maria Antónia; Trigo, Ricardo M; Domínguez-Castro, Fernando; Montero-Martín, Javier; Vaquero-Martínez, Javier; Antón, Manuel; García, José Agustín; Gallego, María Cruz (2020): Early meteorological records from BAALAN1 (1866). PANGAEA. (2 series)
+        - Extremadura-Cabeza_la_Vaca (1882-1883) [CabezaLaVaca]
+        - Extremadura-Valencia_del_Ventoso (1882-1883) [ValenciaDelVentoso]
+
+  Variable: Tx
+    Series STARTING in 1875-1895: 12
+      Source: Mateus, C., Potito, A., & Curley, M. (2020). Reconstruction of a long‐term historical daily maximum and minimum air temperature network dataset for Ireland (1831‐1968). Geoscience Data Journal, 7(2), 102-115. (8 series)
+        - Belmullet (1884-1920) [Belmullet]
+        - BirrCastle (1880-1920) [BirrCastle]
+        - Blackrock (1881-1890) [Blackrock]
+        - Dublin (1880-1880) [Dublin]
+        - Killarney (1881-1932) [Killarney]
+        - MalinHead (1885-1920) [MalinHead]
+        - Valentia_Caherciveen (1892-1920) [Valentia]
+      Source: Vaquero, José Manuel; Bravo-Paredes, Nieves; Obregón, María Angeles; Sánchez-Carrasco, Víctor Manuel; Valente, Maria Antónia; Trigo, Ricardo M; Domínguez-Castro, Fernando; Montero-Martín, Javier; Vaquero-Martínez, Javier; Antón, Manuel; García, José Agustín; Gallego, María Cruz (2020): Early meteorological records from BAALAN1 (1866). PANGAEA. (2 series)
+        - Extremadura-Cabeza_la_Vaca (1882-1883) [CabezaLaVaca]
+        - Extremadura-Valencia_del_Ventoso (1882-1883) [ValenciaDelVentoso]
+      Source: Ed Hawkins. (2024). ed-hawkins/weather-rescue-data: Weather Rescue Data v2.2 (v2.2). Zenodo. (1 series)
+        - Weather-Rescue-Data-v2-2_Ben-Nevis (1883-1904) [BenNevis]
+      Source: KNMI (1 series)
+        - Groningen (1892-1905) [Groningen]
+    Series ENDING in 1875-1895: 40
+      Source: DWR_UKMO (35 series)
+        - Aberdeen Observatory (1872-1875) [Aberdeen]
+        - Ardrossan (1872-1875) [Ardrossan]
+        - Biarritz (1872-1875) [Biarritz]
+        - Bidston Observatory (1872-1875) [Liverpool]
+        - Brest (St. Mathieu) (1872-1875) [Brest]
+        - Cambridge Observatory (1872-1875) [Cambridge]
+        - Cap Gris Nez (1872-1875) [CapGrisNez]
+        - Donaghadee (1872-1875) [Donaghadee]
+        - Dover (1872-1875) [Dover]
+        - Holyhead (1872-1875) [Holyhead]
+        ... and 25 more
+      Source: Mateus, C., Potito, A., & Curley, M. (2020). Reconstruction of a long‐term historical daily maximum and minimum air temperature network dataset for Ireland (1831‐1968). Geoscience Data Journal, 7(2), 102-115. (3 series)
+        - Blackrock (1881-1890) [Blackrock]
+        - Dublin (1880-1880) [Dublin]
+        - Valentia_Island (1850-1892) [Valentia]
+      Source: Vaquero, José Manuel; Bravo-Paredes, Nieves; Obregón, María Angeles; Sánchez-Carrasco, Víctor Manuel; Valente, Maria Antónia; Trigo, Ricardo M; Domínguez-Castro, Fernando; Montero-Martín, Javier; Vaquero-Martínez, Javier; Antón, Manuel; García, José Agustín; Gallego, María Cruz (2020): Early meteorological records from BAALAN1 (1866). PANGAEA. (2 series)
+        - Extremadura-Cabeza_la_Vaca (1882-1883) [CabezaLaVaca]
+        - Extremadura-Valencia_del_Ventoso (1882-1883) [ValenciaDelVentoso]
+
+  Variable: dd
+    Series STARTING in 1875-1895: 8
+      Source: Vaquero, José Manuel; Bravo-Paredes, Nieves; Obregón, María Angeles; Sánchez-Carrasco, Víctor Manuel; Valente, Maria Antónia; Trigo, Ricardo M; Domínguez-Castro, Fernando; Montero-Martín, Javier; Vaquero-Martínez, Javier; Antón, Manuel; García, José Agustín; Gallego, María Cruz (2020): Early meteorological records from BAALAN1 (1866). PANGAEA. (7 series)
+        - Extremadura-Alange (1882-1884) [Alange]
+        - Extremadura-Badajoz (1880-1889) [Badajoz]
+        - Extremadura-Cabeza_la_Vaca (1882-1883) [CabezaLaVaca]
+        - Extremadura-Caceres (1880-1889) [Caceres]
+        - Extremadura-Valdesevilla (1880-1883) [Valdesevilla]
+        - Extremadura-Valencia_del_Ventoso (1882-1883) [ValenciaDelVentoso]
+      Source: Ashcroft (1 series)
+        - TiziOuzou (1879-1938) [TiziOuzou]
+    Series ENDING in 1875-1895: 7
+      Source: Vaquero, José Manuel; Bravo-Paredes, Nieves; Obregón, María Angeles; Sánchez-Carrasco, Víctor Manuel; Valente, Maria Antónia; Trigo, Ricardo M; Domínguez-Castro, Fernando; Montero-Martín, Javier; Vaquero-Martínez, Javier; Antón, Manuel; García, José Agustín; Gallego, María Cruz (2020): Early meteorological records from BAALAN1 (1866). PANGAEA. (7 series)
+        - Extremadura-Alange (1882-1884) [Alange]
+        - Extremadura-Badajoz (1880-1889) [Badajoz]
+        - Extremadura-Cabeza_la_Vaca (1882-1883) [CabezaLaVaca]
+        - Extremadura-Caceres (1880-1889) [Caceres]
+        - Extremadura-Valdesevilla (1880-1883) [Valdesevilla]
+        - Extremadura-Valencia_del_Ventoso (1882-1883) [ValenciaDelVentoso]
+
+  Variable: p
+    Series STARTING in 1875-1895: 36
+      Source: Medare (14 series)
+        - Algiers-Ville-Universite (1877-1938) [Algiers]
+        - Biskra (1884-1938) [Biskra]
+        - Constantine (1880-1938) [Constantine]
+        - Fort_National (1887-1938) [FortNational]
+        - Ismailia (1884-1956) [Ismailia]
+        - La_Calle_El_Kala (1877-1938) [ElKala]
+        - Nemours_Ghazaouet (1887-1938) [Ghazaouet]
+        - Nicosia (1881-1922) [Nicosia]
+        - Orleansville_Chlef (1879-1938) [Chlef]
+        - Port_Said (1884-1957) [PortSaid]
+        ... and 4 more
+      Source: Vaquero, José Manuel; Bravo-Paredes, Nieves; Obregón, María Angeles; Sánchez-Carrasco, Víctor Manuel; Valente, Maria Antónia; Trigo, Ricardo M; Domínguez-Castro, Fernando; Montero-Martín, Javier; Vaquero-Martínez, Javier; Antón, Manuel; García, José Agustín; Gallego, María Cruz (2020): Early meteorological records from BAALAN1 (1866). PANGAEA. (6 series)
+        - Extremadura-Alange (1889-1893) [Alange]
+        - Extremadura-Badajoz (1880-1889) [Badajoz]
+        - Extremadura-Cabeza_la_Vaca (1882-1883) [CabezaLaVaca]
+        - Extremadura-Caceres (1880-1889) [Caceres]
+        - Extremadura-Valdesevilla (1880-1883) [Valdesevilla]
+        - Extremadura-Valencia_del_Ventoso (1882-1883) [ValenciaDelVentoso]
+      Source: UKMO MIDAS (4 series)
+        - EASTBOURNE (1887-1910) [Eastbourne]
+        - SHEFFIELD (1882-1918) [Sheffield]
+        - STONYHURST (1884-1958) [Stonyhurst]
+      Source: EMULATE (3 series)
+        - ALEXANDRIA (1876-1881) [Alexandria]
+        - BISKRA (1878-1881) [Biskra]
+        - SIBIU (1878-1881) [Sibiu]
+      Source: DWD (3 series)
+        - Waren-Muritz (1889-1923) [Waren]
+        - Weissenburg-Emetzheim (1879-1920) [Weissenburg]
+        - Wurzburg-Physikalisches-Inst (1880-1953) [Wuerzburg]
+      Source: frost.met.no (2 series)
+        - Tromsø (1875-1926) [Tromso]
+        - Ås (NMBU) (1885-1966) [Aas]
+      Source: Ed Hawkins. (2024). ed-hawkins/weather-rescue-data: Weather Rescue Data v2.2 (v2.2). Zenodo. (1 series)
+        - Weather-Rescue-Data-v2-2_Ben-Nevis (1883-1904) [BenNevis]
+      Source: PUBLISHED IN JERSEY TIMES, TRANSCRIBED BY FRANK LE BLANCQ (1 series)
+        - JERSEY-CHANNEL-ISLAND-VIBERT (1876-1886) [ChannelIslands]
+      Source: UA-UHMI (1 series)
+        - Kharkiv, university (1877-1880) [Kharkiv]
+      Source: CRU (1 series)
+        - Godt_Haab (1875-1880) [Nuuk]
+    Series ENDING in 1875-1895: 108
+      Source: DWR_UKMO (48 series)
+        - Aberdeen Observatory (1861-1875) [Aberdeen]
+        - Ardrossan (1861-1875) [Ardrossan]
+        - Biarritz (1868-1875) [Biarritz]
+        - Bidston Observatory (1861-1875) [Liverpool]
+        - Brest (St. Mathieu) (1861-1875) [Brest]
+        - Brussels (1868-1875) [Brussels]
+        - Cambridge Observatory (1872-1875) [Cambridge]
+        - Cap Gris Nez (1868-1875) [CapGrisNez]
+        - Charleville (1872-1875) [Charleville]
+        - Christiansund (1870-1875) [Kristiansund]
+        ... and 38 more
+      Source: EMULATE (20 series)
+        - ABERDEEN (1861-1877) [Aberdeen]
+        - ALEXANDRIA (1876-1881) [Alexandria]
+        - ALGIERS (1872-1881) [Algiers]
+        - ANGRA (1871-1878) [Angra]
+        - BAGHDAD (1869-1876) [Baghdad]
+        - BASRA (1869-1879) [Bassora]
+        - BEIRUT (1869-1876) [Beirut]
+        - BISKRA (1878-1881) [Biskra]
+        - BREST (1861-1881) [Brest]
+        - FUNCHAL (1871-1881) [Funchal]
+        ... and 10 more
+      Source: CRU (17 series)
+        - Athens (1853-1882) [Athens]
+        - Beirut (1869-1881) [Beirut]
+        - Biarritz (1860-1880) [Biarritz]
+        - Corfu (1852-1880) [Corfu]
+        - Godt_Haab (1875-1880) [Nuuk]
+        - Kem (1866-1880) [Kem]
+        - Kostroma (1850-1880) [Kostroma]
+        - Lesina (1869-1881) [Lesina]
+        - Lugansk (1850-1880) [Luhansk]
+        - Malta (1852-1880) [Malta]
+        ... and 7 more
+      Source: UK-HOURLY-BOOKS (6 series)
+        - Aberdeen (1874-1886) [Aberdeen]
+        - Armagh (1874-1883) [Armagh]
+        - Glasgow (1874-1883) [Glasgow]
+        - Kew Observatory (1874-1886) [Kew]
+        - Stonyhurst Observatory (1874-1883) [Stonyhurst]
+        - Valencia Observatory (1874-1886) [Valentia]
+      Source: Vaquero, José Manuel; Bravo-Paredes, Nieves; Obregón, María Angeles; Sánchez-Carrasco, Víctor Manuel; Valente, Maria Antónia; Trigo, Ricardo M; Domínguez-Castro, Fernando; Montero-Martín, Javier; Vaquero-Martínez, Javier; Antón, Manuel; García, José Agustín; Gallego, María Cruz (2020): Early meteorological records from BAALAN1 (1866). PANGAEA. (6 series)
+        - Extremadura-Alange (1889-1893) [Alange]
+        - Extremadura-Badajoz (1880-1889) [Badajoz]
+        - Extremadura-Cabeza_la_Vaca (1882-1883) [CabezaLaVaca]
+        - Extremadura-Caceres (1880-1889) [Caceres]
+        - Extremadura-Valdesevilla (1880-1883) [Valdesevilla]
+        - Extremadura-Valencia_del_Ventoso (1882-1883) [ValenciaDelVentoso]
+      Source: UA-UHMI (6 series)
+        - Kharkiv, university (1877-1880) [Kharkiv]
+        - Kyiv (1870-1880) [Kiev]
+        - Luhansk (1870-1880) [Luhansk]
+        - Odesa (1871-1880) [Odesa]
+        - Odesa, Vorontsov lighthouse (1874-1880) [Odesa]
+        - Odesa, lighthouse (1872-1881) [Odesa]
+      Source: PUBLISHED IN JERSEY TIMES, TRANSCRIBED BY FRANK LE BLANCQ (2 series)
+        - JERSEY-CHANNEL-ISLAND-LANGLOIS (1865-1875) [ChannelIslands]
+        - JERSEY-CHANNEL-ISLAND-VIBERT (1876-1886) [ChannelIslands]
+      Source: C3S-DRS (1 series)
+        - Falmouth (1874-1886) [Falmouth]
+      Source: IMPROVE (1 series)
+        - Stockholm (1756-1880) [Stockholm]
+      Source: Meteo-France (1 series)
+        - VENDOME (1856-1876) [Vendome]
+
+  Variable: rh
+    Series STARTING in 1875-1895: 1
+      Source: Ed Hawkins. (2024). ed-hawkins/weather-rescue-data: Weather Rescue Data v2.2 (v2.2). Zenodo. (1 series)
+        - Weather-Rescue-Data-v2-2_Ben-Nevis (1883-1904) [BenNevis]
+
+  Variable: rr
+    Series STARTING in 1875-1895: 138
+      Source: GHCN-D (115 series)
+        - ARAD (1880-2016) [Arad]
+        - ARHANGELSK (1881-2018) [Arkhangelsk]
+        - ASTANA (1881-2005) [Astana]
+        - ASTRAKAN (1881-2017) [Astrakan]
+        - ATYRAU (1881-2005) [Atyrau]
+        - BAD MUSKAU (1887-2019) [BadMuskau]
+        - BAJRAMALY (1891-1998) [Bajramaly]
+        - BAKU (1881-1992) [Baku]
+        - BAMBERG (1879-2019) [Bamberg]
+        - BAMBERG (STERNWARTE) (1879-1958) [Bamberg]
+        ... and 105 more
+      Source: Medare (19 series)
+        - Algiers-Cap_Caxine (1878-1879) [Algiers]
+        - Algiers-Ville-Universite (1877-1938) [Algiers]
+        - Biskra (1880-1938) [Biskra]
+        - Constantine (1880-1938) [Constantine]
+        - Fort_National (1884-1938) [FortNational]
+        - Gabes (1887-1957) [Gabes]
+        - Geryville_El-Bayadh (1888-1938) [ElBayadh]
+        - Ismailia (1884-1956) [Ismailia]
+        - Laghouat (1888-1938) [Laghouat]
+        - Nemours_Ghazaouet (1878-1938) [Ghazaouet]
+        ... and 9 more
+      Source: Ed Hawkins. (2024). ed-hawkins/weather-rescue-data: Weather Rescue Data v2.2 (v2.2). Zenodo. (2 series)
+        - Weather-Rescue-Data-v2-2_Ben-Nevis (1884-1904) [BenNevis]
+      Source: Vaquero, José Manuel; Bravo-Paredes, Nieves; Obregón, María Angeles; Sánchez-Carrasco, Víctor Manuel; Valente, Maria Antónia; Trigo, Ricardo M; Domínguez-Castro, Fernando; Montero-Martín, Javier; Vaquero-Martínez, Javier; Antón, Manuel; García, José Agustín; Gallego, María Cruz (2020): Early meteorological records from BAALAN1 (1866). PANGAEA. (2 series)
+        - Extremadura-Cabeza_la_Vaca (1882-1883) [CabezaLaVaca]
+        - Extremadura-Valencia_del_Ventoso (1882-1883) [ValenciaDelVentoso]
+    Series ENDING in 1875-1895: 40
+      Source: DWR_UKMO (37 series)
+        - Aberdeen Observatory (1861-1875) [Aberdeen]
+        - Ardrossan (1861-1875) [Ardrossan]
+        - Biarritz (1868-1875) [Biarritz]
+        - Bidston Observatory (1861-1875) [Liverpool]
+        - Brest (St. Mathieu) (1862-1875) [Brest]
+        - Cambridge Observatory (1872-1875) [Cambridge]
+        - Cap Gris Nez (1868-1875) [CapGrisNez]
+        - Cuxhaven (1872-1875) [Cuxhaven]
+        - Donaghadee (1872-1875) [Donaghadee]
+        - Dover (1861-1875) [Dover]
+        ... and 27 more
+      Source: Vaquero, José Manuel; Bravo-Paredes, Nieves; Obregón, María Angeles; Sánchez-Carrasco, Víctor Manuel; Valente, Maria Antónia; Trigo, Ricardo M; Domínguez-Castro, Fernando; Montero-Martín, Javier; Vaquero-Martínez, Javier; Antón, Manuel; García, José Agustín; Gallego, María Cruz (2020): Early meteorological records from BAALAN1 (1866). PANGAEA. (2 series)
+        - Extremadura-Cabeza_la_Vaca (1882-1883) [CabezaLaVaca]
+        - Extremadura-Valencia_del_Ventoso (1882-1883) [ValenciaDelVentoso]
+      Source: Medare (1 series)
+        - Algiers-Cap_Caxine (1878-1879) [Algiers]
+
+  Variable: ta
+    Series STARTING in 1875-1895: 44
+      Source: ECA&D (22 series)
+        - Aachen (1891-2011) [Aachen]
+        - AiPetri (1895-2012) [AiPetri]
+        - Bjuraker (1879-1966) [Bjuraker]
+        - Bjuroklubb (1879-1997) [Bjuroklubb]
+        - Bremen (1890-2024) [Bremen]
+        - Buxton (1875-2024) [Buxton]
+        - Delsbo (1878-1995) [Delsbo]
+        - Fichtelberg (1890-2024) [Fichtelberg]
+        - Gallivare (1888-2024) [Gallivare]
+        - Geisenheim (1884-2024) [Geisenheim]
+        ... and 12 more
+      Source: GHCNd (11 series)
+        - Gumri (1895-1992) [Gumri]
+        - Henichesk (1883-2022) [Henichesk]
+        - Izmail (1886-2022) [Izmail]
+        - Kisinev (1886-2024) [Kisinev]
+        - Minsk (1891-2024) [Minsk]
+        - Odesa (1894-2024) [Odesa]
+        - Simferopol (1886-2024) [Simferopol]
+        - StPetersburg (1881-2024) [StPetersburg]
+        - Tbilisi (1881-2024) [Tbilisi]
+        - Vasilevici (1881-2024) [Vasilevici]
+        ... and 1 more
+      Source: Vaquero, José Manuel; Bravo-Paredes, Nieves; Obregón, María Angeles; Sánchez-Carrasco, Víctor Manuel; Valente, Maria Antónia; Trigo, Ricardo M; Domínguez-Castro, Fernando; Montero-Martín, Javier; Vaquero-Martínez, Javier; Antón, Manuel; García, José Agustín; Gallego, María Cruz (2020): Early meteorological records from BAALAN1 (1866). PANGAEA. (6 series)
+        - Extremadura-Alange (1877-1877) [Alange]
+        - Extremadura-Badajoz (1880-1889) [Badajoz]
+        - Extremadura-Baños_de_Montemayor (1883-1887) [BannosDeMontemayor]
+        - Extremadura-Caceres (1880-1889) [Caceres]
+        - Extremadura-Valdesevilla (1880-1883) [Valdesevilla]
+      Source: Ashcroft (3 series)
+        - ElKala (1877-1922) [ElKala]
+        - Nicosia (1881-1922) [Nicosia]
+        - TiziOuzou (1879-1938) [TiziOuzou]
+      Source: Ed Hawkins. (2024). ed-hawkins/weather-rescue-data: Weather Rescue Data v2.2 (v2.2). Zenodo. (1 series)
+        - Weather-Rescue-Data-v2-2_Ben-Nevis (1883-1904) [BenNevis]
+      Source: UA-UHMI (1 series)
+        - Kharkiv, university (1877-1880) [Kharkiv]
+    Series ENDING in 1875-1895: 113
+      Source: DWR_UKMO (96 series)
+        - Aberdeen Observatory (1861-1875) [Aberdeen]
+        - Ardrossan (1861-1875) [Ardrossan]
+        - Biarritz (1868-1875) [Biarritz]
+        - Bidston Observatory (1861-1875) [Liverpool]
+        - Brest (St. Mathieu) (1861-1875) [Brest]
+        - Brussels (1868-1875) [Brussels]
+        - Cambridge Observatory (1872-1875) [Cambridge]
+        - Cap Gris Nez (1868-1875) [CapGrisNez]
+        - Charleville (1872-1875) [Charleville]
+        - Christiansund (1870-1875) [Kristiansund]
+        ... and 41 more
+      Source: Vaquero, José Manuel; Bravo-Paredes, Nieves; Obregón, María Angeles; Sánchez-Carrasco, Víctor Manuel; Valente, Maria Antónia; Trigo, Ricardo M; Domínguez-Castro, Fernando; Montero-Martín, Javier; Vaquero-Martínez, Javier; Antón, Manuel; García, José Agustín; Gallego, María Cruz (2020): Early meteorological records from BAALAN1 (1866). PANGAEA. (6 series)
+        - Extremadura-Alange (1877-1877) [Alange]
+        - Extremadura-Badajoz (1880-1889) [Badajoz]
+        - Extremadura-Baños_de_Montemayor (1883-1887) [BannosDeMontemayor]
+        - Extremadura-Caceres (1880-1889) [Caceres]
+        - Extremadura-Valdesevilla (1880-1883) [Valdesevilla]
+      Source: UA-UHMI (6 series)
+        - Kharkiv, university (1877-1880) [Kharkiv]
+        - Kyiv (1870-1880) [Kiev]
+        - Luhansk (1870-1880) [Luhansk]
+        - Odesa (1870-1880) [Odesa]
+        - Odesa, Vorontsov lighthouse (1874-1880) [Odesa]
+        - Odesa, lighthouse (1872-1881) [Odesa]
+      Source: IMPROVE (2 series)
+        - St Petersburg (1743-1879) [StPetersburg]
+        - Stockholm (1756-1880) [Stockholm]
+      Source: Wahlen E., 1887, Wahre Tagesmittel und Tagliche Variation der Temperatur, an 18 Stationen des Russischen Reiches, Dritter Supplementband zum Repertorium für Meteorologie, Kaiserliche Academie der Wissenschaften, St. Petersburg. (2 series)
+        - Przybylak_Vilnius (1777-1883) [Vilnius]
+        - Przybylak_Warsaw (1760-1882) [Warsaw]
+      Source: Programm der Königlichen Gymnasien zu Ratibor für die Zeit von Ostern 1879 bis dahin 1880, Ratibor 1880; Die meteorologischen Verhältnisse von Ratibor, auf Grund der Monatstabellen der meteorologischen (1 series)
+        - Przybylak_Raciborz (1848-1879) [Raciborz]
+
+  Variable: w
+    Series STARTING in 1875-1895: 2
+      Source: Ed Hawkins. (2024). ed-hawkins/weather-rescue-data: Weather Rescue Data v2.2 (v2.2). Zenodo. (1 series)
+        - Weather-Rescue-Data-v2-2_Ben-Nevis (1884-1904) [BenNevis]
+      Source: Ashcroft (1 series)
+        - TiziOuzou (1879-1938) [TiziOuzou]
+
+
+============================================================
+SOURCE SUMMARY (all variables)
+============================================================
+
+Source                          #Series  #Stations           Years Variables
+──────────────────────────────────────────────────────────────────────────────────────────
+DWR_UKMO                            329         75   1861-1875    Tn,Tx,p,rr,ta
+PALAEO-RA                           321         66   1666-1868    Tn,Tx,dd,eee,fs,p,rh,rr,rrt,ta,w
+GHCN-D                              156        156   1781-2019    rr
+CHIMES                              141         40   1708-1873    Tn,Tx,dd,p,rh,rr,ta
+GCOS                                104         10   1708-1867    Tn,Tx,dd,p,rh,rr,ta
+KNMI                                 87         22    190-1905    Tn,Tx,dd,p,rh,rr,ta
+UA-UHMI                              81         12   1808-1881    p,ta
+Mateus, C., Potito, A., & Curley, M. (2020). Reconstruction of a long‐term historical daily maximum and minimum air temperature network dataset for Ireland (1831‐1968). Geoscience Data Journal, 7(2), 102-115.       73         27   1831-1968    Tn,Tx
+ECA&D                                46         46   1756-2024    ta
+CRU                                  45         45   1850-2002    p
+WeaR                                 41         25   1788-1789    p,ta
+Vaquero, José Manuel; Bravo-Paredes, Nieves; Obregón, María Angeles; Sánchez-Carrasco, Víctor Manuel; Valente, Maria Antónia; Trigo, Ricardo M; Domínguez-Castro, Fernando; Montero-Martín, Javier; Vaquero-Martínez, Javier; Antón, Manuel; García, José Agustín; Gallego, María Cruz (2020): Early meteorological records from BAALAN1 (1866). PANGAEA.       38          9   1826-1939    Tn,Tx,dd,p,rh,rr,ta
+Medare                               35         21   1852-1966    p,rr
+EMULATE                              32         32   1856-1881    p
+Cornes                               26         24   1672-1917    dd,p,ta
+Untersuchung der ältesten Temperaturmessungen mit Hilfe des strengen Winters 1708-1709, Walter Lenke       14         14   1708-1709    dd,ta
+GHCNd                                11         11   1881-2024    ta
+Pfister, L., Wilhelm, L., Brugnara, Y., Imfeld, N., & Brönnimann, S. (2024). Weather type reconstruction using machine learning approaches. EGUsphere, 2024, 1-33.       10         10   1720-2023    p
+IMPROVE                               9          5   1722-1997    p,ta
+Ed Hawkins. (2024). ed-hawkins/weather-rescue-data: Weather Rescue Data v2.2 (v2.2). Zenodo.        8          1   1883-1904    Tn,Tx,p,rh,rr,ta,w
+Aréjula, J.M. 1806. Breve descripción de la fiebre amarilla padecida en Cádiz. Biblioteca de Andalucía ANT-XIX-614 http://www.biblitecavirtualdeandalucia.es        8          1   1799-1803    dd,p,ta
+DWD                                   8          5   1781-1964    p,ta
+UK-HOURLY-BOOKS                       6          6   1874-1886    p
+Diario Comercial de Cádiz (1802-1830), Cádiz Library, sgn: FL-PP-Est.59. http://www.bibliotecavirtualdeandalucia.es        6          1   1802-1830    dd,p,ta
+SMI                                   6          1   1753-2009    Tn,Tx,p,rr,ta
+frost.met.no                          5          5   1864-1966    p
+UKMO MIDAS                            5          4   1882-1958    p
+Ashcroft                              5          3   1877-1938    dd,ta,w
+DIGIHOM                               5          1   1819-1863    Tn,Tx,p,rr,ta
+Yilmaz                                5          1   1896-1917    Tn,Tx,p,rh,w
+Meteo-France                          5          5   1846-1933    p
+Barriendos, Mariano et al. “DAILY METEOROLOGICAL OBSERVATIONS IN CADIZ­ SAN FERNANDO. ANALYSIS OF THE DOCUMENTARY SOURCES AND THE INSTRUMENTAL DATA CONTENT (1786-1996).” Climatic Change 53 (2002): 151-170.        4          1   1786-1949    Tn,Tx,p,ta
+Pérez-Laso, FJ. (ed.), 1820-1822, 1824. Periódico de la Sociedad Médico-Quirúrgica de Cádiz. Biblioteca Universidad Complutense BH Rev 63-1, 63-2, 63-3, 63-4 (http://www.books.google.com)        4          1   1820-1822    dd,p,rr,ta
+Maugeri, Maurizio et al. “Daily Milan temperature and pressure series (1763-1998): Completing and homogenising the data.” Climatic Change 53 (2002): 119-149.        4          1   1763-1949    Tn,Tx,p,ta
+Mature, J. (ed.). 1803-1807. El Correo Literario y Económico de Sevilla. Biblioteca de la Universidad de Sevilla, A059/042-051 (http://fondosdigitales.us.es)        4          1   1803-1806    Tn,Tx,dd,p
+Helama, S., Holopainen, J., Timonen, M., Ogurtsov, M. G., Lindholm, M., Meriläinen, J., Eronen, M. (2004). Comparison of living-tree and subfossil ringwidths with summer temperatures        4          1   1800-7821    dd,p,rr,ta
+Trausti Jónsson                       3          2   1820-1854    p
+Brugnara, Y., Auchmann, R., Brönnimann, S., Allan, R. J., Auer, I., Barriendos, M., Bergström, H., Bhend, J., Brázdil, R., Compo, G. P., Cornes, R. C., Dominguez-Castro, F., van Engelen, A. F. V., Filipiak, J., Holopainen, J., Jourdain, S., Kunz, M., Luterbacher, J., Maugeri, M., Mercalli, L., Moberg, A., Mock, C. J., Pichard, G., Řezníčková, L., van der Schrier, G., Slonosky, V., Ustrnul, Z., Valente, M. A., Wypych, A., and Yin, X.: A collection of sub-daily pressure and temperature observations for the early instrumental period with a focus on the `year without a summer` 1816, Clim. Past, 11, 1027–1047, 2015.        3          2   1816-1820    p,ta
+González, PM. 1801. Disertación médica sobre la calentura maligna contagiosa que reynó en Cádiz en el año de 1800. Biblioteca Universidad Complutense BH FG 1272        3          1   1800-1800    dd,ta
+Diario de Cartagena. 1804-1807. Archivo Municipal de Murcia, 1-G-13/14, (http://archivodemurcia.es).        3          1   1804-1807    dd,p,ta
+Demarée, Gaston R. et al. “The Long-Term Daily Central Belgium Temperature (CBT) Series (1767–1998) and Early Instrumental Meteorological Observations in Belgium.” Climatic Change 53 (2002): 269-293.        3          1   1767-1899    Tn,Tx,ta
+PUBLISHED IN JERSEY TIMES, TRANSCRIBED BY FRANK LE BLANCQ        3          3   1864-1886    p
+Collegio Alberoni --  Società Meteorologica Italiana        3          2   1871-2022    rr,ta
+DigiHom                               3          2   1794-1860    p,ta
+El Mensagero Económico y Erudito de Granada. Universidad de Granada FLA F-9-9-3 http://www.bibliotecavirtualdeandalucia.es        3          1   1796-1797    dd,p,ta
+Diario Constitucional de Granada. 1820. Biblioteca de Andalucia http://www.bibliotecavirtualdeandalucia.es        3          1   1820-1820    dd,p,ta
+PALAEO-RA, Ephemeris Barometrico Meteorologica        3          1   1700-1700    dd,p,ta
+Stefanini, Claudio; Becherini, Francesca; della Valle, Antonio; Camuffo, Dario (2024). Padua daily temperature 1725-2023. figshare. Dataset.        3          1   1725-1997    Tn,Tx,ta
+Cornes, R.C., Jones, P., Brandsma, T., Cendrier, D., & Jourdain, S. (2023). The London, Paris and De Bilt sub‐daily pressure series. Geoscience Data Journal, 11, 330 - 341.        3          3   1747-2011    p
+Rousseau                              3          1   1658-2023    Tn,Tx,ta
+Diario del Gobierno de Sevilla/Diario de Sevilla/Diario de Sevilla de Comercio, Artes y Literatura. 1812, 1813, 1829, 1830. Biblioteca Nacional de España, R60042(11), (http://www.hemerotecadigital.bne.es).        3          1   1812-1830    dd,p,ta
+Dominguez_Castro_2014                 3          1   1790-1861    dd,p,ta
+Butler, C. J., García Suárez, A. M., Coughlin, A. D. S., & Morrell, C. (2005). Air temperatures at Armagh observatory, northern Ireland, from 1796 to 2002. International Journal of Climatology: A Journal of the Royal Meteorological Society, 25(8), 1055-1079.        2          1   1815-1818    p,ta
+Guérin, J. (1839). Observations météorologiques faites à Avignon; suivies d'un tableau monographique des taches du soleil. Imprimerie de Jacquet et Joudou. Archives nationales, Observations climatologiques et pluviométriques des postes climatologiques bénévoles, classés par département : Seine à Yonne (Cote: 19820184/73/2).        2          1   1816-1816    p,ta
+Camuffo                               2          2   1715-1815    ta
+RAJMUND Przybylak                     2          1   1807-1807    p,ta
+DIGIHOM; PALAEO-RA                    2          1   1817-1861    rh,ta
+unknown                               2          1   1709-1709    p,ta
+Jefferson weather records             2          1   1785-1789    rh,ta
+Pliemon, T., Foelsche, U., Rohr, C., & Pfister, C. (2023). Precipitation reconstructions for Paris based on the observations by Louis Morin, 1665–1713 CE [Data set].        2          2   1665-1713    rr,ta
+Ukrainian early (pre-1850) historical weather observations, Skrynk et al.        2          1   1824-1851    p,ta
+DWD / philosophical transactions of the royal society (Klima vor dem 18. Jahrhundert.) / PALAEO-RA        2          1   1697-1697    p,rr
+Camuffo, D., della Valle, A., & Becherini, F. (2025). Temperature and Pressure Observations by Tommaso Temanza from 1751 to 1769 in Venice, Italy. Climate, 13(10), 217.        2          1   1751-1769    p,ta
+Wahlen E., 1887, Wahre Tagesmittel und Tagliche Variation der Temperatur, an 18 Stationen des Russischen Reiches, Dritter Supplementband zum Repertorium für Meteorologie, Kaiserliche Academie der Wissenschaften, St. Petersburg.        2          2   1760-1883    ta
+Bolzern                               2          1   1803-1822    ta
+Yuri Brugnara                         2          1   1790-1818    p,ta
+Rodríguez, R., et al. `Long pressure series for Barcelona (Spain). Daily reconstruction and monthly homogenization.` International Journal of Climatology: A Journal of the Royal Meteorological Society 21.13 (2001): 1693-1704.        1          1   1811-1820    p
+Bolzern, M. Der sommer des jahres ohne sommer in verschiedenen städten europas (2015). Frühlingssemester 2015.220. Leitung: Stefan Brönnimann; Betreuung: Renate Auchmann. Abgabe: 2015-08-21        1          1   1800-1825    ta
+ACRE                                  1          1   1749-1751    p
+Przybylak R., Pospieszyñska A., Oliñski P., Air temperature changes in Wroc³aw (SW Poland) in 1773-1781 based on a newly discovered series of meteorological measurements, Climate of the Past.        1          1   1773-1781    ta
+Galle J.G., 1857, Grundzüge der Schlesischen Klimatologie, Josef Max & Komp., Breslau, XXIII+128 pp.        1          1   1791-1854    ta
+Ureña, M. 1804. Observaciones meteorológicas hechas en la Isla de León en 1803. Anales de Ciencias Naturales. Biblioteca Universidad Complutense BH Rev 55 (5-11) http://www.books.google.es        1          1   1803-1803    ta
+Sanchez-Rodrigo                       1          1   1816-1830    p
+Parker, D.E., T.P. Legg, and C.K. Folland. 1992. A new daily Central England Temperature Series, 1772-1991. Int. J. Clim., Vol 12, pp 317-342        1          1   1772-2025    ta
+Burt, S. D. (2023). A twice‐daily barometric pressure record from Durham Observatory in north‐east England, 1843–1960.        1          1   1843-1948    p
+C3S-DRS                               1          1   1874-1886    p
+Sánchez Rodrigo, Fernando. “The climate of Granada (southern Spain) during the first third of the 18th century (1706–1730) according to documentary sources.” Climate of the Past (2019).        1          1   1728-1730    ta
+Diario de Granada: El Publicista. 1812-1813. Biblioteca de Andalucia http://www.bibliotecavirtualdeandalucia.es        1          1   1813-1813    ta
+KIT                                   1          1   1778-1868    p
+Cornes, R. C., Jones, P. D., Briffa, K. R. and Osborn, T. J. (2012) A daily series of mean sea-level pressure for London, 1692-2007. International Journal of Climatology 32, 641-656. doi: 10.1002/joc.2301        1          1   1692-2007    p
+Boyle, General history of the air, London, 1692, pag. 104        1          1   1666-1683    ta
+Camuffo, D., della Valle, A., Becherini, F. et al. Three centuries of daily precipitation in Padua, Italy, 1713–2018: history, relocations, gaps, homogeneity and raw data. Climatic Change 162, 923–942 (2020).        1          1   1727-2018    rr
+Cornes, R. C., Jones, P. D., Briffa, K. R. and Osborn, T. J. (2012) A daily series of mean sea-level pressure for Paris, 1670-2007. International Journal of Climatology 32, 1135-1150. doi: 10.1002/joc.2349        1          1   1670-2007    p
+Schwander                             1          1   1775-2014    ta
+Kiss                                  1          1   1717-1720    p
+Programm der Königlichen Gymnasien zu Ratibor für die Zeit von Ostern 1879 bis dahin 1880, Ratibor 1880; Die meteorologischen Verhältnisse von Ratibor, auf Grund der Monatstabellen der meteorologischen        1          1   1848-1879    ta
+DWR_UKMO; Edward Hanna                1          1   1871-1909    p
+https://doi.pangaea.de/10.1594/PANGAEA.948258        1          1   1785-1802    ta
+Raicich, Fabio; Colucci, Renato R (2021): Daily mean-sea-level atmospheric pressure from 1841 to 2018 at Trieste, Italy [dataset]        1          1   1841-2018    p
+Cornes, R. C., Jones, P. D., Brandsma, T., Cendrier, D., & Jourdain, S. (2024). The London, Paris and De Bilt sub‐daily pressure series. Geoscience Data Journal, 11(3), 330-341.        1          1   1851-1896    p
+DeBilt                                1          1   1743-1850    p
+
+
+Full metadata exported to: excel_files/all_series_metadata.csv
+Yearly counts exported to: excel_files/yearly_series_counts.csv
+Spike window details exported to: excel_files/spike_window_series.csv
+
+============================================================
+
+============================================================
+DONE! Check the excel_files/ folder for CSV exports.
+Full report saved to: excel_files/spike_detective_report.txt
+============================================================
