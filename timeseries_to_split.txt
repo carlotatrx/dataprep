@@ -1,0 +1,1504 @@
+# Time-series split plan
+# generated: 2026-06-05 15:01:46
+# mode: DRY RUN (no changes written)
+# data dir: /scratch3/PALAEO-RA/daily_data/final/
+# gap threshold: 366 days | last 19th-c. start year: 1899
+
+[DRY] SPLIT WRDv2-2_Aberdeen_18610301-18750331_ta_barometer_subdaily.tsv -> 2 series
+   1861-03-01 -> 1863-12-31     850 rows  WRDv2-2_Aberdeen_18610301-18631231_ta_barometer_subdaily.tsv
+   1872-01-04 -> 1875-03-31    1171 rows  WRDv2-2_Aberdeen_18720104-18750331_ta_barometer_subdaily.tsv
+   [DRY] would delete original: WRDv2-2_Aberdeen_18610301-18750331_ta_barometer_subdaily.tsv
+[DRY] SPLIT EMOSSv2_Alange_18820624-18930930_ta_subdaily_qc.tsv -> 2 series
+   1882-06-24 -> 1887-09-30    1192 rows  EMOSSv2_Alange_18820624-18870930_ta_subdaily_qc.tsv
+   1889-06-24 -> 1893-09-30     928 rows  EMOSSv2_Alange_18890624-18930930_ta_subdaily_qc.tsv
+   [DRY] would delete original: EMOSSv2_Alange_18820624-18930930_ta_subdaily_qc.tsv
+[DRY] SPLIT EMOSSv2_Alange_18850624-18930930_dd_subdaily_qc.tsv -> 2 series
+   1885-06-24 -> 1887-09-30     589 rows  EMOSSv2_Alange_18850624-18870930_dd_subdaily_qc.tsv
+   1889-06-24 -> 1893-09-30     897 rows  EMOSSv2_Alange_18890624-18930930_dd_subdaily_qc.tsv
+   [DRY] would delete original: EMOSSv2_Alange_18850624-18930930_dd_subdaily_qc.tsv
+[DRY] SPLIT EMULATE_Algiers_18720303-18811231_p_subdaily.tsv -> 2 series
+   1872-03-03 -> 1875-12-29    1031 rows  EMULATE_Algiers_18720303-18751229_p_subdaily.tsv
+   1877-01-01 -> 1881-12-31    1701 rows  EMULATE_Algiers_18770101-18811231_p_subdaily.tsv
+   [DRY] would delete original: EMULATE_Algiers_18720303-18811231_p_subdaily.tsv
+[DRY] SPLIT MEDARE_Algiers-Ville-Universite_18770408-19381230_p_daily.tsv -> 2 series
+   1877-04-08 -> 1895-12-31    5925 rows  MEDARE_Algiers-Ville-Universite_18770408-18951231_p_daily.tsv
+   1897-01-01 -> 1938-12-30   13377 rows  MEDARE_Algiers-Ville-Universite_18970101-19381230_p_daily.tsv  (+20th-c. tail)
+   [DRY] would delete original: MEDARE_Algiers-Ville-Universite_18770408-19381230_p_daily.tsv
+[DRY] SPLIT KNMI_Amsterdam_17620101-17781231_dd_subdaily_qc.tsv -> 2 series
+   1762-01-01 -> 1764-12-31    3260 rows  KNMI_Amsterdam_17620101-17641231_dd_subdaily_qc.tsv
+   1768-01-01 -> 1778-12-31   12049 rows  KNMI_Amsterdam_17680101-17781231_dd_subdaily_qc.tsv
+   [DRY] would delete original: KNMI_Amsterdam_17620101-17781231_dd_subdaily_qc.tsv
+[DRY] SPLIT KNMI_Amsterdam_17620101-17781231_p_subdaily_qc.tsv -> 2 series
+   1762-01-01 -> 1764-12-31    3276 rows  KNMI_Amsterdam_17620101-17641231_p_subdaily_qc.tsv
+   1768-01-01 -> 1778-12-31   12052 rows  KNMI_Amsterdam_17680101-17781231_p_subdaily_qc.tsv
+   [DRY] would delete original: KNMI_Amsterdam_17620101-17781231_p_subdaily_qc.tsv
+[DRY] SPLIT KNMI_Amsterdam_17620101-17781231_ta_subdaily_qc.tsv -> 2 series
+   1762-01-01 -> 1764-12-31    3288 rows  KNMI_Amsterdam_17620101-17641231_ta_subdaily_qc.tsv
+   1768-01-01 -> 1778-12-31   12054 rows  KNMI_Amsterdam_17680101-17781231_ta_subdaily_qc.tsv
+   [DRY] would delete original: KNMI_Amsterdam_17620101-17781231_ta_subdaily_qc.tsv
+[DRY] SPLIT PALAEO-RA_Andechs_17810101-17921231_dd_subdaily_qc.tsv -> 2 series
+   1781-01-01 -> 1788-12-31    8766 rows  PALAEO-RA_Andechs_17810101-17881231_dd_subdaily_qc.tsv
+   1792-01-01 -> 1792-12-31    1098 rows  PALAEO-RA_Andechs_17920101-17921231_dd_subdaily_qc.tsv
+   [DRY] would delete original: PALAEO-RA_Andechs_17810101-17921231_dd_subdaily_qc.tsv
+[DRY] SPLIT PALAEO-RA_Andechs_17810101-17921231_p_subdaily_qc.tsv -> 2 series
+   1781-01-01 -> 1786-12-31    6573 rows  PALAEO-RA_Andechs_17810101-17861231_p_subdaily_qc.tsv
+   1792-01-01 -> 1792-12-31    1098 rows  PALAEO-RA_Andechs_17920101-17921231_p_subdaily_qc.tsv
+   [DRY] would delete original: PALAEO-RA_Andechs_17810101-17921231_p_subdaily_qc.tsv
+[DRY] SPLIT PALAEO-RA_Andechs_17810101-17921231_w_subdaily.tsv -> 2 series
+   1781-01-01 -> 1788-12-31    6825 rows  PALAEO-RA_Andechs_17810101-17881231_w_subdaily.tsv
+   1792-01-01 -> 1792-12-31     887 rows  PALAEO-RA_Andechs_17920101-17921231_w_subdaily.tsv
+   [DRY] would delete original: PALAEO-RA_Andechs_17810101-17921231_w_subdaily.tsv
+[DRY] SPLIT PALAEO-RA_Andechs_17810213-17921231_ta_subdaily_qc.tsv -> 2 series
+   1781-02-13 -> 1786-12-31    6428 rows  PALAEO-RA_Andechs_17810213-17861231_ta_subdaily_qc.tsv
+   1792-01-01 -> 1792-12-31    1098 rows  PALAEO-RA_Andechs_17920101-17921231_ta_subdaily_qc.tsv
+   [DRY] would delete original: PALAEO-RA_Andechs_17810213-17921231_ta_subdaily_qc.tsv
+[DRY] SPLIT EMULATE_Angra_18710901-18780331_p_subdaily.tsv -> 2 series
+   1871-09-01 -> 1871-10-31      61 rows  EMULATE_Angra_18710901-18711031_p_subdaily.tsv
+   1873-04-01 -> 1878-03-31    1730 rows  EMULATE_Angra_18730401-18780331_p_subdaily.tsv
+   [DRY] would delete original: EMULATE_Angra_18710901-18780331_p_subdaily.tsv
+[DRY] SPLIT WDRv2.2_Ardrossan_18610301-18750331_ta_barometer_subdaily.tsv -> 2 series
+   1861-03-01 -> 1863-12-31     690 rows  WDRv2.2_Ardrossan_18610301-18631231_ta_barometer_subdaily.tsv
+   1872-01-04 -> 1875-03-31    1169 rows  WDRv2.2_Ardrossan_18720104-18750331_ta_barometer_subdaily.tsv
+   [DRY] would delete original: WDRv2.2_Ardrossan_18610301-18750331_ta_barometer_subdaily.tsv
+[DRY] SPLIT GHCNd_Astana_18810101-20051231_rr_daily.tsv -> 2 series
+   1881-01-01 -> 1885-12-31    1795 rows  GHCNd_Astana_18810101-18851231_rr_daily.tsv
+   1891-03-01 -> 2005-12-31   40504 rows  GHCNd_Astana_18910301-20051231_rr_daily.tsv  (+20th-c. tail)
+   [DRY] would delete original: GHCNd_Astana_18810101-20051231_rr_daily.tsv
+[DRY] SPLIT GHCNd_Atyrau_18810101-20051231_rr_daily.tsv -> 2 series
+   1881-01-01 -> 1888-11-30    2495 rows  GHCNd_Atyrau_18810101-18881130_rr_daily.tsv
+   1890-01-01 -> 2005-12-31   38929 rows  GHCNd_Atyrau_18900101-20051231_rr_daily.tsv  (+20th-c. tail)
+   [DRY] would delete original: GHCNd_Atyrau_18810101-20051231_rr_daily.tsv
+[DRY] SPLIT EMOSSv2_Baños-de-Montemayor_18830601-18870930_ta_subdaily_qc.tsv -> 2 series
+   1883-06-01 -> 1885-10-15    1080 rows  EMOSSv2_Baños-de-Montemayor_18830601-18851015_ta_subdaily_qc.tsv
+   1887-06-01 -> 1887-09-30     365 rows  EMOSSv2_Baños-de-Montemayor_18870601-18870930_ta_subdaily_qc.tsv
+   [DRY] would delete original: EMOSSv2_Baños-de-Montemayor_18830601-18870930_ta_subdaily_qc.tsv
+[DRY] SPLIT GCOS_Basel_Fuerstenberger_18260401-18321228_p_subdaily_qc.tsv -> 2 series
+   1826-04-01 -> 1830-09-10    3290 rows  GCOS_Basel_Fuerstenberger_18260401-18300910_p_subdaily_qc.tsv
+   1832-09-01 -> 1832-12-28     128 rows  GCOS_Basel_Fuerstenberger_18320901-18321228_p_subdaily_qc.tsv
+   [DRY] would delete original: GCOS_Basel_Fuerstenberger_18260401-18321228_p_subdaily_qc.tsv
+[DRY] SPLIT GCOS_Basel_Fuerstenberger_18260401-18321228_ta_subdaily_qc.tsv -> 2 series
+   1826-04-01 -> 1830-09-10    3290 rows  GCOS_Basel_Fuerstenberger_18260401-18300910_ta_subdaily_qc.tsv
+   1832-09-01 -> 1832-12-28     128 rows  GCOS_Basel_Fuerstenberger_18320901-18321228_ta_subdaily_qc.tsv
+   [DRY] would delete original: GCOS_Basel_Fuerstenberger_18260401-18321228_ta_subdaily_qc.tsv
+[DRY] SPLIT GCOS_Basel_Merian_18281024-18631231_Tn_daily_qc.tsv -> 3 series
+   1828-10-24 -> 1841-12-31    4606 rows  GCOS_Basel_Merian_18281024-18411231_Tn_daily_qc.tsv
+   1845-01-01 -> 1851-12-31    2341 rows  GCOS_Basel_Merian_18450101-18511231_Tn_daily_qc.tsv
+   1857-01-01 -> 1863-12-31    2305 rows  GCOS_Basel_Merian_18570101-18631231_Tn_daily_qc.tsv
+   [DRY] would delete original: GCOS_Basel_Merian_18281024-18631231_Tn_daily_qc.tsv
+[DRY] SPLIT GCOS_Basel_Merian_18281024-18631231_Tx_daily_qc.tsv -> 3 series
+   1828-10-24 -> 1841-12-31    4602 rows  GCOS_Basel_Merian_18281024-18411231_Tx_daily_qc.tsv
+   1845-01-01 -> 1851-12-31    2556 rows  GCOS_Basel_Merian_18450101-18511231_Tx_daily_qc.tsv
+   1857-01-01 -> 1863-12-31    2513 rows  GCOS_Basel_Merian_18570101-18631231_Tx_daily_qc.tsv
+   [DRY] would delete original: GCOS_Basel_Merian_18281024-18631231_Tx_daily_qc.tsv
+[DRY] SPLIT GCOS_Basel_Ryhiner_17660101-17721231_p_subdaily_qc.tsv -> 2 series
+   1766-01-01 -> 1767-12-31    2190 rows  GCOS_Basel_Ryhiner_17660101-17671231_p_subdaily_qc.tsv
+   1769-01-01 -> 1772-12-31    4383 rows  GCOS_Basel_Ryhiner_17690101-17721231_p_subdaily_qc.tsv
+   [DRY] would delete original: GCOS_Basel_Ryhiner_17660101-17721231_p_subdaily_qc.tsv
+[DRY] SPLIT GCOS_Basel_Ryhiner_17660101-17721231_ta_subdaily_qc.tsv -> 2 series
+   1766-01-01 -> 1767-12-31    1967 rows  GCOS_Basel_Ryhiner_17660101-17671231_ta_subdaily_qc.tsv
+   1769-01-01 -> 1772-12-31    3978 rows  GCOS_Basel_Ryhiner_17690101-17721231_ta_subdaily_qc.tsv
+   [DRY] would delete original: GCOS_Basel_Ryhiner_17660101-17721231_ta_subdaily_qc.tsv
+[DRY] SPLIT EMULATE_Bassora_18690901-18790630_p_subdaily.tsv -> 2 series
+   1869-09-01 -> 1877-07-30    2236 rows  EMULATE_Bassora_18690901-18770730_p_subdaily.tsv
+   1879-03-01 -> 1879-06-30     115 rows  EMULATE_Bassora_18790301-18790630_p_subdaily.tsv
+   [DRY] would delete original: EMULATE_Bassora_18690901-18790630_p_subdaily.tsv
+[DRY] SPLIT EMULATE_Beirut_18690901-18761231_p_subdaily.tsv -> 2 series
+   1869-09-01 -> 1871-06-29     654 rows  EMULATE_Beirut_18690901-18710629_p_subdaily.tsv
+   1874-06-01 -> 1876-12-31     907 rows  EMULATE_Beirut_18740601-18761231_p_subdaily.tsv
+   [DRY] would delete original: EMULATE_Beirut_18690901-18761231_p_subdaily.tsv
+[DRY] SPLIT WRDv2-2_Ben-Nevis_18841006-19040930_w_subdaily.tsv -> 4 series
+   1884-10-06 -> 1884-10-06       1 rows  WRDv2-2_Ben-Nevis_18841006-18841006_w_subdaily.tsv
+   1885-11-18 -> 1886-03-12       9 rows  WRDv2-2_Ben-Nevis_18851118-18860312_w_subdaily.tsv
+   1887-11-10 -> 1890-02-25      17 rows  WRDv2-2_Ben-Nevis_18871110-18900225_w_subdaily.tsv
+   1892-09-22 -> 1904-09-30  103035 rows  WRDv2-2_Ben-Nevis_18920922-19040930_w_subdaily.tsv  (+20th-c. tail)
+   [DRY] would delete original: WRDv2-2_Ben-Nevis_18841006-19040930_w_subdaily.tsv
+[DRY] SPLIT PALAEO-RA_Berlin_17210123-17701231_p_subdaily_qc.tsv -> 3 series
+   1721-01-23 -> 1721-12-31    1191 rows  PALAEO-RA_Berlin_17210123-17211231_p_subdaily_qc.tsv
+   1728-01-01 -> 1753-02-20   24273 rows  PALAEO-RA_Berlin_17280101-17530220_p_subdaily_qc.tsv
+   1755-07-13 -> 1770-12-31   16601 rows  PALAEO-RA_Berlin_17550713-17701231_p_subdaily_qc.tsv
+   [DRY] would delete original: PALAEO-RA_Berlin_17210123-17701231_p_subdaily_qc.tsv
+[DRY] SPLIT PALAEO-RA_Berlin_Kirch_17200101-17740430_ta_subdaily_qc.tsv -> 5 series
+   1720-01-01 -> 1721-12-31    2207 rows  PALAEO-RA_Berlin_Kirch_17200101-17211231_ta_subdaily_qc.tsv
+   1728-01-01 -> 1753-02-20   23318 rows  PALAEO-RA_Berlin_Kirch_17280101-17530220_ta_subdaily_qc.tsv
+   1755-06-15 -> 1763-06-30    6328 rows  PALAEO-RA_Berlin_Kirch_17550615-17630630_ta_subdaily_qc.tsv
+   1764-07-01 -> 1770-12-31    7297 rows  PALAEO-RA_Berlin_Kirch_17640701-17701231_ta_subdaily_qc.tsv
+   1774-01-01 -> 1774-04-30     288 rows  PALAEO-RA_Berlin_Kirch_17740101-17740430_ta_subdaily_qc.tsv
+   [DRY] would delete original: PALAEO-RA_Berlin_Kirch_17200101-17740430_ta_subdaily_qc.tsv
+[DRY] SPLIT PALAEO-RA_Berlin_Kirch_17210123-17701231_p_subdaily_qc.tsv -> 3 series
+   1721-01-23 -> 1721-12-31    1191 rows  PALAEO-RA_Berlin_Kirch_17210123-17211231_p_subdaily_qc.tsv
+   1728-01-01 -> 1753-02-20   24273 rows  PALAEO-RA_Berlin_Kirch_17280101-17530220_p_subdaily_qc.tsv
+   1755-07-13 -> 1770-12-31   16601 rows  PALAEO-RA_Berlin_Kirch_17550713-17701231_p_subdaily_qc.tsv
+   [DRY] would delete original: PALAEO-RA_Berlin_Kirch_17210123-17701231_p_subdaily_qc.tsv
+[DRY] SPLIT PALAEO-RA_Berlin_Kirch_17210217-17341227_dd_subdaily_qc.tsv -> 4 series
+   1721-02-17 -> 1721-12-31     199 rows  PALAEO-RA_Berlin_Kirch_17210217-17211231_dd_subdaily_qc.tsv
+   1728-01-15 -> 1728-11-19      27 rows  PALAEO-RA_Berlin_Kirch_17280115-17281119_dd_subdaily_qc.tsv
+   1730-01-04 -> 1732-04-13     216 rows  PALAEO-RA_Berlin_Kirch_17300104-17320413_dd_subdaily_qc.tsv
+   1733-11-07 -> 1734-12-27      12 rows  PALAEO-RA_Berlin_Kirch_17331107-17341227_dd_subdaily_qc.tsv
+   [DRY] would delete original: PALAEO-RA_Berlin_Kirch_17210217-17341227_dd_subdaily_qc.tsv
+[DRY] SPLIT GCOS_Bern_Studer_17791220-17891130_p_bis_subdaily_qc.tsv -> 2 series
+   1779-12-20 -> 1780-04-30     399 rows  GCOS_Bern_Studer_17791220-17800430_p_bis_subdaily_qc.tsv
+   1781-09-25 -> 1789-11-30    8191 rows  GCOS_Bern_Studer_17810925-17891130_p_bis_subdaily_qc.tsv
+   [DRY] would delete original: GCOS_Bern_Studer_17791220-17891130_p_bis_subdaily_qc.tsv
+[DRY] SPLIT GCOS_Bern_Studer_17791220-18270709_ta_subdaily_qc.tsv -> 2 series
+   1779-12-20 -> 1789-11-30    9273 rows  GCOS_Bern_Studer_17791220-17891130_ta_subdaily_qc.tsv
+   1801-11-14 -> 1827-07-09   24992 rows  GCOS_Bern_Studer_18011114-18270709_ta_subdaily_qc.tsv
+   [DRY] would delete original: GCOS_Bern_Studer_17791220-18270709_ta_subdaily_qc.tsv
+[DRY] SPLIT MEDARE_Biskra_18840101-19381230_p_daily.tsv -> 3 series
+   1884-01-01 -> 1885-01-31     369 rows  MEDARE_Biskra_18840101-18850131_p_daily.tsv
+   1890-11-20 -> 1893-06-09     424 rows  MEDARE_Biskra_18901120-18930609_p_daily.tsv
+   1897-01-02 -> 1938-12-30   11145 rows  MEDARE_Biskra_18970102-19381230_p_daily.tsv  (+20th-c. tail)
+   [DRY] would delete original: MEDARE_Biskra_18840101-19381230_p_daily.tsv
+[DRY] SPLIT Camuffo_Bologna_17150101-18151231_ta_daily_qc.tsv -> 2 series
+   1715-01-01 -> 1774-12-31   21328 rows  Camuffo_Bologna_17150101-17741231_ta_daily_qc.tsv
+   1782-01-14 -> 1815-12-31   12390 rows  Camuffo_Bologna_17820114-18151231_ta_daily_qc.tsv
+   [DRY] would delete original: Camuffo_Bologna_17150101-18151231_ta_daily_qc.tsv
+[DRY] SPLIT PALAEO-RA_Bologna_17820101-17911231_rr_subdaily_qc.tsv -> 2 series
+   1782-01-01 -> 1784-12-31    1096 rows  PALAEO-RA_Bologna_17820101-17841231_rr_subdaily_qc.tsv
+   1791-01-01 -> 1791-12-31     365 rows  PALAEO-RA_Bologna_17910101-17911231_rr_subdaily_qc.tsv
+   [DRY] would delete original: PALAEO-RA_Bologna_17820101-17911231_rr_subdaily_qc.tsv
+[DRY] SPLIT PALAEO-RA_Bologna_17820101-17921231_dd_subdaily_qc.tsv -> 3 series
+   1782-01-01 -> 1784-12-31    3126 rows  PALAEO-RA_Bologna_17820101-17841231_dd_subdaily_qc.tsv
+   1787-01-01 -> 1788-12-31    2189 rows  PALAEO-RA_Bologna_17870101-17881231_dd_subdaily_qc.tsv
+   1791-01-01 -> 1792-12-31    2183 rows  PALAEO-RA_Bologna_17910101-17921231_dd_subdaily_qc.tsv
+   [DRY] would delete original: PALAEO-RA_Bologna_17820101-17921231_dd_subdaily_qc.tsv
+[DRY] SPLIT PALAEO-RA_Bologna_17820114-17921231_p_subdaily_qc.tsv -> 2 series
+   1782-01-14 -> 1784-12-31    2702 rows  PALAEO-RA_Bologna_17820114-17841231_p_subdaily_qc.tsv
+   1791-01-01 -> 1792-12-31    1355 rows  PALAEO-RA_Bologna_17910101-17921231_p_subdaily_qc.tsv
+   [DRY] would delete original: PALAEO-RA_Bologna_17820114-17921231_p_subdaily_qc.tsv
+[DRY] SPLIT PALAEO-RA_Bologna_17820114-17921231_ta_subdaily_qc.tsv -> 2 series
+   1782-01-14 -> 1784-12-31    2822 rows  PALAEO-RA_Bologna_17820114-17841231_ta_subdaily_qc.tsv
+   1791-01-01 -> 1792-12-31    1354 rows  PALAEO-RA_Bologna_17910101-17921231_ta_subdaily_qc.tsv
+   [DRY] would delete original: PALAEO-RA_Bologna_17820114-17921231_ta_subdaily_qc.tsv
+[DRY] SPLIT KNMI_Breda2_17780901-17811231_dd_subdaily_qc.tsv -> 2 series
+   1778-09-01 -> 1779-12-31    1455 rows  KNMI_Breda2_17780901-17791231_dd_subdaily_qc.tsv
+   1781-03-01 -> 1781-12-31     902 rows  KNMI_Breda2_17810301-17811231_dd_subdaily_qc.tsv
+   [DRY] would delete original: KNMI_Breda2_17780901-17811231_dd_subdaily_qc.tsv
+[DRY] SPLIT KNMI_Breda2_17780901-17811231_p_subdaily_qc.tsv -> 2 series
+   1778-09-01 -> 1779-12-31    1461 rows  KNMI_Breda2_17780901-17791231_p_subdaily_qc.tsv
+   1781-03-01 -> 1781-12-31     918 rows  KNMI_Breda2_17810301-17811231_p_subdaily_qc.tsv
+   [DRY] would delete original: KNMI_Breda2_17780901-17811231_p_subdaily_qc.tsv
+[DRY] SPLIT KNMI_Breda2_17780901-17811231_rr_subdaily.tsv -> 2 series
+   1778-09-01 -> 1779-12-31     293 rows  KNMI_Breda2_17780901-17791231_rr_subdaily.tsv
+   1781-03-01 -> 1781-12-31     166 rows  KNMI_Breda2_17810301-17811231_rr_subdaily.tsv
+   [DRY] would delete original: KNMI_Breda2_17780901-17811231_rr_subdaily.tsv
+[DRY] SPLIT KNMI_Breda2_17780901-17811231_ta_subdaily_qc.tsv -> 2 series
+   1778-09-01 -> 1779-12-31    1461 rows  KNMI_Breda2_17780901-17791231_ta_subdaily_qc.tsv
+   1781-03-01 -> 1781-12-31     918 rows  KNMI_Breda2_17810301-17811231_ta_subdaily_qc.tsv
+   [DRY] would delete original: KNMI_Breda2_17780901-17811231_ta_subdaily_qc.tsv
+[DRY] SPLIT KNMI_Breda_17780901-17811231_p_subdaily_qc.tsv -> 2 series
+   1778-09-01 -> 1779-12-31    1461 rows  KNMI_Breda_17780901-17791231_p_subdaily_qc.tsv
+   1781-03-01 -> 1781-12-31     918 rows  KNMI_Breda_17810301-17811231_p_subdaily_qc.tsv
+   [DRY] would delete original: KNMI_Breda_17780901-17811231_p_subdaily_qc.tsv
+[DRY] SPLIT PALAEO-RA_Breslau-Wroclaw_17170701-17261231_dd_subdaily.tsv -> 2 series
+   1717-07-01 -> 1724-09-01   10049 rows  PALAEO-RA_Breslau-Wroclaw_17170701-17240901_dd_subdaily.tsv
+   1726-09-01 -> 1726-12-31     363 rows  PALAEO-RA_Breslau-Wroclaw_17260901-17261231_dd_subdaily.tsv
+   [DRY] would delete original: PALAEO-RA_Breslau-Wroclaw_17170701-17261231_dd_subdaily.tsv
+[DRY] SPLIT PALAEO-RA_Breslau-Wroclaw_17170701-17261231_ta_subdaily.tsv -> 2 series
+   1717-07-01 -> 1724-09-30    8926 rows  PALAEO-RA_Breslau-Wroclaw_17170701-17240930_ta_subdaily.tsv
+   1726-10-01 -> 1726-12-31     265 rows  PALAEO-RA_Breslau-Wroclaw_17261001-17261231_ta_subdaily.tsv
+   [DRY] would delete original: PALAEO-RA_Breslau-Wroclaw_17170701-17261231_ta_subdaily.tsv
+[DRY] SPLIT PALAEO-RA_Breslau-Wroclaw_17171003-17261231_rr_subdaily.tsv -> 2 series
+   1717-10-03 -> 1717-05-22     124 rows  PALAEO-RA_Breslau-Wroclaw_17171003-17170522_rr_subdaily.tsv
+   1718-06-03 -> 1726-12-31    1485 rows  PALAEO-RA_Breslau-Wroclaw_17180603-17261231_rr_subdaily.tsv
+   [DRY] would delete original: PALAEO-RA_Breslau-Wroclaw_17171003-17261231_rr_subdaily.tsv
+[DRY] SPLIT WRDv2-2_Brest_18621217-18750331_ta_barometer_subdaily.tsv -> 2 series
+   1862-12-17 -> 1863-12-31     312 rows  WRDv2-2_Brest_18621217-18631231_ta_barometer_subdaily.tsv
+   1872-01-04 -> 1875-03-31    1110 rows  WRDv2-2_Brest_18720104-18750331_ta_barometer_subdaily.tsv
+   [DRY] would delete original: WRDv2-2_Brest_18621217-18750331_ta_barometer_subdaily.tsv
+[DRY] SPLIT PALAEO-RA_Brussels_17820101-17921231_p_subdaily_qc.tsv -> 2 series
+   1782-01-01 -> 1786-12-31    4927 rows  PALAEO-RA_Brussels_17820101-17861231_p_subdaily_qc.tsv
+   1789-01-01 -> 1792-12-31    4383 rows  PALAEO-RA_Brussels_17890101-17921231_p_subdaily_qc.tsv
+   [DRY] would delete original: PALAEO-RA_Brussels_17820101-17921231_p_subdaily_qc.tsv
+[DRY] SPLIT PALAEO-RA_Brussels_17820101-17921231_ta_subdaily_qc.tsv -> 2 series
+   1782-01-01 -> 1786-12-31    4935 rows  PALAEO-RA_Brussels_17820101-17861231_ta_subdaily_qc.tsv
+   1789-01-01 -> 1792-12-31    4374 rows  PALAEO-RA_Brussels_17890101-17921231_ta_subdaily_qc.tsv
+   [DRY] would delete original: PALAEO-RA_Brussels_17820101-17921231_ta_subdaily_qc.tsv
+[DRY] SPLIT PALAEO-RA_Brussels_17820102-17921231_w_subdaily.tsv -> 2 series
+   1782-01-02 -> 1786-12-31    2856 rows  PALAEO-RA_Brussels_17820102-17861231_w_subdaily.tsv
+   1789-01-01 -> 1792-12-31    4349 rows  PALAEO-RA_Brussels_17890101-17921231_w_subdaily.tsv
+   [DRY] would delete original: PALAEO-RA_Brussels_17820102-17921231_w_subdaily.tsv
+[DRY] SPLIT PALAEO-RA_Brussels_17860101-17901231_rr_daily_qc.tsv -> 2 series
+   1786-01-01 -> 1786-12-31     365 rows  PALAEO-RA_Brussels_17860101-17861231_rr_daily_qc.tsv
+   1789-01-01 -> 1790-12-31     730 rows  PALAEO-RA_Brussels_17890101-17901231_rr_daily_qc.tsv
+   [DRY] would delete original: PALAEO-RA_Brussels_17860101-17901231_rr_daily_qc.tsv
+[DRY] SPLIT WRDv2-2_Brussels_18680102-18750331_p_daily.tsv -> 2 series
+   1868-01-02 -> 1870-09-14     469 rows  WRDv2-2_Brussels_18680102-18700914_p_daily.tsv
+   1872-01-15 -> 1875-03-31    1112 rows  WRDv2-2_Brussels_18720115-18750331_p_daily.tsv
+   [DRY] would delete original: WRDv2-2_Brussels_18680102-18750331_p_daily.tsv
+[DRY] SPLIT WRDv2-2_Brussels_18680102-18750331_ta_daily.tsv -> 2 series
+   1868-01-02 -> 1870-09-14     470 rows  WRDv2-2_Brussels_18680102-18700914_ta_daily.tsv
+   1872-01-15 -> 1875-03-31    1118 rows  WRDv2-2_Brussels_18720115-18750331_ta_daily.tsv
+   [DRY] would delete original: WRDv2-2_Brussels_18680102-18750331_ta_daily.tsv
+[DRY] SPLIT PALAEO-RA_Budapest_17811108-17921231_dd_subdaily_qc.tsv -> 2 series
+   1781-11-08 -> 1786-12-31    5640 rows  PALAEO-RA_Budapest_17811108-17861231_dd_subdaily_qc.tsv
+   1789-01-01 -> 1792-12-31    4383 rows  PALAEO-RA_Budapest_17890101-17921231_dd_subdaily_qc.tsv
+   [DRY] would delete original: PALAEO-RA_Budapest_17811108-17921231_dd_subdaily_qc.tsv
+[DRY] SPLIT PALAEO-RA_Budapest_17811108-17921231_p_subdaily_qc.tsv -> 2 series
+   1781-11-08 -> 1786-12-31    5640 rows  PALAEO-RA_Budapest_17811108-17861231_p_subdaily_qc.tsv
+   1789-01-01 -> 1792-12-31    4383 rows  PALAEO-RA_Budapest_17890101-17921231_p_subdaily_qc.tsv
+   [DRY] would delete original: PALAEO-RA_Budapest_17811108-17921231_p_subdaily_qc.tsv
+[DRY] SPLIT PALAEO-RA_Budapest_17811108-17921231_ta_subdaily_qc.tsv -> 2 series
+   1781-11-08 -> 1786-12-31    5640 rows  PALAEO-RA_Budapest_17811108-17861231_ta_subdaily_qc.tsv
+   1789-01-01 -> 1792-12-31    4383 rows  PALAEO-RA_Budapest_17890101-17921231_ta_subdaily_qc.tsv
+   [DRY] would delete original: PALAEO-RA_Budapest_17811108-17921231_ta_subdaily_qc.tsv
+[DRY] SPLIT PALAEO-RA_Budapest_17811108-17921231_w_subdaily.tsv -> 2 series
+   1781-11-08 -> 1786-12-31    5408 rows  PALAEO-RA_Budapest_17811108-17861231_w_subdaily.tsv
+   1789-01-01 -> 1792-12-31    4023 rows  PALAEO-RA_Budapest_17890101-17921231_w_subdaily.tsv
+   [DRY] would delete original: PALAEO-RA_Budapest_17811108-17921231_w_subdaily.tsv
+[DRY] SPLIT GCOS_Burgdorf_18510501-18641231_ta_subdaily_qc.tsv -> 2 series
+   1851-05-01 -> 1853-12-31    2771 rows  GCOS_Burgdorf_18510501-18531231_ta_subdaily_qc.tsv
+   1857-01-01 -> 1864-12-31    8710 rows  GCOS_Burgdorf_18570101-18641231_ta_subdaily_qc.tsv
+   [DRY] would delete original: GCOS_Burgdorf_18510501-18641231_ta_subdaily_qc.tsv
+[DRY] SPLIT ECA&D_Buxton_18750102-20241231_ta_daily_qc.tsv -> 3 series
+   1875-01-02 -> 1875-12-31     364 rows  ECA&D_Buxton_18750102-18751231_ta_daily_qc.tsv
+   1889-01-02 -> 1890-12-30     727 rows  ECA&D_Buxton_18890102-18901230_ta_daily_qc.tsv
+   1892-01-02 -> 2024-12-31   37851 rows  ECA&D_Buxton_18920102-20241231_ta_daily_qc.tsv  (+20th-c. tail)
+   [DRY] would delete original: ECA&D_Buxton_18750102-20241231_ta_daily_qc.tsv
+[DRY] SPLIT GHCNd_Buxton_18750101-20171231_rr_daily.tsv -> 3 series
+   1875-01-01 -> 1875-12-31     365 rows  GHCNd_Buxton_18750101-18751231_rr_daily.tsv
+   1889-02-01 -> 1890-11-30     668 rows  GHCNd_Buxton_18890201-18901130_rr_daily.tsv
+   1892-05-01 -> 2017-12-31   35697 rows  GHCNd_Buxton_18920501-20171231_rr_daily.tsv  (+20th-c. tail)
+   [DRY] would delete original: GHCNd_Buxton_18750101-20171231_rr_daily.tsv
+[DRY] SPLIT EMOSSv2_Cabeza-la-Vaca_18820106-18831231_Tn_daily.tsv -> 2 series
+   1882-01-06 -> 1882-01-28      23 rows  EMOSSv2_Cabeza-la-Vaca_18820106-18820128_Tn_daily.tsv
+   1883-06-01 -> 1883-12-31     151 rows  EMOSSv2_Cabeza-la-Vaca_18830601-18831231_Tn_daily.tsv
+   [DRY] would delete original: EMOSSv2_Cabeza-la-Vaca_18820106-18831231_Tn_daily.tsv
+[DRY] SPLIT EMOSSv2_Caceres_18801025-18890708_p_daily_qc.tsv -> 2 series
+   1880-10-25 -> 1882-03-13     385 rows  EMOSSv2_Caceres_18801025-18820313_p_daily_qc.tsv
+   1884-03-01 -> 1889-07-08    1451 rows  EMOSSv2_Caceres_18840301-18890708_p_daily_qc.tsv
+   [DRY] would delete original: EMOSSv2_Caceres_18801025-18890708_p_daily_qc.tsv
+[DRY] SPLIT Barriendos_Cadiz_17860801-19491231_Tn_daily_qc.tsv -> 9 series
+   1786-08-01 -> 1787-08-31     252 rows  Barriendos_Cadiz_17860801-17870831_Tn_daily_qc.tsv
+   1788-10-12 -> 1795-06-18    1997 rows  Barriendos_Cadiz_17881012-17950618_Tn_daily_qc.tsv
+   1799-01-01 -> 1787-08-31     860 rows  Barriendos_Cadiz_17990101-17870831_Tn_daily_qc.tsv
+   1788-10-12 -> 1795-06-18    1997 rows  Barriendos_Cadiz_17881012-17950618_Tn_daily_qc.tsv
+   1799-01-01 -> 1809-12-31    3151 rows  Barriendos_Cadiz_17990101-18091231_Tn_daily_qc.tsv
+   1811-06-01 -> 1814-02-22     713 rows  Barriendos_Cadiz_18110601-18140222_Tn_daily_qc.tsv
+   1816-08-30 -> 1809-12-31   25663 rows  Barriendos_Cadiz_18160830-18091231_Tn_daily_qc.tsv
+   1811-06-01 -> 1814-02-22     713 rows  Barriendos_Cadiz_18110601-18140222_Tn_daily_qc.tsv
+   1816-08-30 -> 1949-12-31   73889 rows  Barriendos_Cadiz_18160830-19491231_Tn_daily_qc.tsv  (+20th-c. tail)
+   [DRY] would delete original: Barriendos_Cadiz_17860801-19491231_Tn_daily_qc.tsv
+[DRY] SPLIT Barriendos_Cadiz_17860801-19491231_Tx_daily_qc.tsv -> 9 series
+   1786-08-01 -> 1787-08-31     252 rows  Barriendos_Cadiz_17860801-17870831_Tx_daily_qc.tsv
+   1788-10-12 -> 1795-06-18    1997 rows  Barriendos_Cadiz_17881012-17950618_Tx_daily_qc.tsv
+   1799-01-01 -> 1787-08-31     860 rows  Barriendos_Cadiz_17990101-17870831_Tx_daily_qc.tsv
+   1788-10-12 -> 1795-06-18    1997 rows  Barriendos_Cadiz_17881012-17950618_Tx_daily_qc.tsv
+   1799-01-01 -> 1809-12-31    3151 rows  Barriendos_Cadiz_17990101-18091231_Tx_daily_qc.tsv
+   1811-06-01 -> 1814-02-22     713 rows  Barriendos_Cadiz_18110601-18140222_Tx_daily_qc.tsv
+   1816-08-30 -> 1809-12-31   25665 rows  Barriendos_Cadiz_18160830-18091231_Tx_daily_qc.tsv
+   1811-06-01 -> 1814-02-22     713 rows  Barriendos_Cadiz_18110601-18140222_Tx_daily_qc.tsv
+   1816-08-30 -> 1949-12-31   73891 rows  Barriendos_Cadiz_18160830-19491231_Tx_daily_qc.tsv  (+20th-c. tail)
+   [DRY] would delete original: Barriendos_Cadiz_17860801-19491231_Tx_daily_qc.tsv
+[DRY] SPLIT EMOSSv2_Cadiz_17860801-19491231_ta_daily_qc.tsv -> 9 series
+   1786-08-01 -> 1787-08-31     252 rows  EMOSSv2_Cadiz_17860801-17870831_ta_daily_qc.tsv
+   1788-10-12 -> 1795-06-18    1997 rows  EMOSSv2_Cadiz_17881012-17950618_ta_daily_qc.tsv
+   1799-01-01 -> 1787-08-31     860 rows  EMOSSv2_Cadiz_17990101-17870831_ta_daily_qc.tsv
+   1788-10-12 -> 1795-06-18    1997 rows  EMOSSv2_Cadiz_17881012-17950618_ta_daily_qc.tsv
+   1799-01-01 -> 1809-12-31    3151 rows  EMOSSv2_Cadiz_17990101-18091231_ta_daily_qc.tsv
+   1811-06-01 -> 1814-02-22     713 rows  EMOSSv2_Cadiz_18110601-18140222_ta_daily_qc.tsv
+   1816-08-30 -> 1809-12-31   25661 rows  EMOSSv2_Cadiz_18160830-18091231_ta_daily_qc.tsv
+   1811-06-01 -> 1814-02-22     713 rows  EMOSSv2_Cadiz_18110601-18140222_ta_daily_qc.tsv
+   1816-08-30 -> 1949-12-31   73887 rows  EMOSSv2_Cadiz_18160830-19491231_ta_daily_qc.tsv  (+20th-c. tail)
+   [DRY] would delete original: EMOSSv2_Cadiz_17860801-19491231_ta_daily_qc.tsv
+[DRY] SPLIT EMOSSv2_Cartagena_18040813-18071229_dd_subdaily_qc.tsv -> 2 series
+   1804-08-13 -> 1804-08-13       2 rows  EMOSSv2_Cartagena_18040813-18040813_dd_subdaily_qc.tsv
+   1805-11-30 -> 1807-12-29     999 rows  EMOSSv2_Cartagena_18051130-18071229_dd_subdaily_qc.tsv
+   [DRY] would delete original: EMOSSv2_Cartagena_18040813-18071229_dd_subdaily_qc.tsv
+[DRY] SPLIT EMOSSv2_Cartagena_18040813-18071229_p_subdaily_qc.tsv -> 2 series
+   1804-08-13 -> 1804-08-13       3 rows  EMOSSv2_Cartagena_18040813-18040813_p_subdaily_qc.tsv
+   1805-11-30 -> 1807-12-29     999 rows  EMOSSv2_Cartagena_18051130-18071229_p_subdaily_qc.tsv
+   [DRY] would delete original: EMOSSv2_Cartagena_18040813-18071229_p_subdaily_qc.tsv
+[DRY] SPLIT EMOSSv2_Cartagena_18040813-18071229_ta_subdaily_qc.tsv -> 2 series
+   1804-08-13 -> 1804-08-13       3 rows  EMOSSv2_Cartagena_18040813-18040813_ta_subdaily_qc.tsv
+   1805-11-30 -> 1807-12-29     999 rows  EMOSSv2_Cartagena_18051130-18071229_ta_subdaily_qc.tsv
+   [DRY] would delete original: EMOSSv2_Cartagena_18040813-18071229_ta_subdaily_qc.tsv
+[DRY] SPLIT GHCNd_Orleansville-Chlef_18790101-19380831_rr_daily.tsv -> 6 series
+   1879-01-01 -> 1886-01-31    1364 rows  GHCNd_Orleansville-Chlef_18790101-18860131_rr_daily.tsv
+   1887-11-01 -> 1888-12-30     151 rows  GHCNd_Orleansville-Chlef_18871101-18881230_rr_daily.tsv
+   1890-01-01 -> 1890-07-31      90 rows  GHCNd_Orleansville-Chlef_18900101-18900731_rr_daily.tsv
+   1892-03-01 -> 1893-09-30     181 rows  GHCNd_Orleansville-Chlef_18920301-18930930_rr_daily.tsv
+   1895-06-01 -> 1895-12-30      90 rows  GHCNd_Orleansville-Chlef_18950601-18951230_rr_daily.tsv
+   1897-02-01 -> 1938-08-31    6185 rows  GHCNd_Orleansville-Chlef_18970201-19380831_rr_daily.tsv  (+20th-c. tail)
+   [DRY] would delete original: GHCNd_Orleansville-Chlef_18790101-19380831_rr_daily.tsv
+[DRY] SPLIT MEDARE_Orleansville-Chlef_60425_18790101-19381229_p_daily.tsv -> 3 series
+   1879-01-01 -> 1893-12-31    4434 rows  MEDARE_Orleansville-Chlef_60425_18790101-18931231_p_daily.tsv
+   1895-01-03 -> 1895-12-31     318 rows  MEDARE_Orleansville-Chlef_60425_18950103-18951231_p_daily.tsv
+   1897-01-01 -> 1938-12-29   12576 rows  MEDARE_Orleansville-Chlef_60425_18970101-19381229_p_daily.tsv  (+20th-c. tail)
+   [DRY] would delete original: MEDARE_Orleansville-Chlef_60425_18790101-19381229_p_daily.tsv
+[DRY] SPLIT CHIMES_Chur_Salis-Marschlins_17850301-17900520_ta_subdaily_qc.tsv -> 2 series
+   1785-03-01 -> 1787-12-31    1167 rows  CHIMES_Chur_Salis-Marschlins_17850301-17871231_ta_subdaily_qc.tsv
+   1789-05-03 -> 1790-05-20     815 rows  CHIMES_Chur_Salis-Marschlins_17890503-17900520_ta_subdaily_qc.tsv
+   [DRY] would delete original: CHIMES_Chur_Salis-Marschlins_17850301-17900520_ta_subdaily_qc.tsv
+[DRY] SPLIT CHIMES_Chur_Salis-Marschlins_17850322-17900609_p_subdaily_qc.tsv -> 2 series
+   1785-03-22 -> 1787-12-31    1264 rows  CHIMES_Chur_Salis-Marschlins_17850322-17871231_p_subdaily_qc.tsv
+   1789-05-03 -> 1790-06-09     861 rows  CHIMES_Chur_Salis-Marschlins_17890503-17900609_p_subdaily_qc.tsv
+   [DRY] would delete original: CHIMES_Chur_Salis-Marschlins_17850322-17900609_p_subdaily_qc.tsv
+[DRY] SPLIT CHIMES_Chur_Unknown_18540901-18580430_p_subdaily_qc.tsv -> 3 series
+   1854-09-01 -> 1854-11-30     153 rows  CHIMES_Chur_Unknown_18540901-18541130_p_subdaily_qc.tsv
+   1856-02-01 -> 1856-05-30     160 rows  CHIMES_Chur_Unknown_18560201-18560530_p_subdaily_qc.tsv
+   1858-02-01 -> 1858-04-30     261 rows  CHIMES_Chur_Unknown_18580201-18580430_p_subdaily_qc.tsv
+   [DRY] would delete original: CHIMES_Chur_Unknown_18540901-18580430_p_subdaily_qc.tsv
+[DRY] SPLIT CHIMES_Chur_Unknown_18540901-18580430_ta_subdaily_qc.tsv -> 2 series
+   1854-09-01 -> 1854-11-30     173 rows  CHIMES_Chur_Unknown_18540901-18541130_ta_subdaily_qc.tsv
+   1856-02-01 -> 1858-04-30    1526 rows  CHIMES_Chur_Unknown_18560201-18580430_ta_subdaily_qc.tsv
+   [DRY] would delete original: CHIMES_Chur_Unknown_18540901-18580430_ta_subdaily_qc.tsv
+[DRY] SPLIT MEDARE_Constantine_18800519-19381230_p_daily.tsv -> 2 series
+   1880-05-19 -> 1895-12-31    4716 rows  MEDARE_Constantine_18800519-18951231_p_daily.tsv
+   1897-01-02 -> 1938-12-30   10076 rows  MEDARE_Constantine_18970102-19381230_p_daily.tsv  (+20th-c. tail)
+   [DRY] would delete original: MEDARE_Constantine_18800519-19381230_p_daily.tsv
+[DRY] SPLIT GHCNd_Cottbus_18870101-20190730_rr_daily.tsv -> 2 series
+   1887-01-01 -> 1887-10-31     304 rows  GHCNd_Cottbus_18870101-18871031_rr_daily.tsv
+   1888-11-01 -> 2019-07-30   44737 rows  GHCNd_Cottbus_18881101-20190730_rr_daily.tsv  (+20th-c. tail)
+   [DRY] would delete original: GHCNd_Cottbus_18870101-20190730_rr_daily.tsv
+[DRY] SPLIT Pfister_DeBilt_17380101-20210831_p_daily.tsv -> 2 series
+   1738-01-01 -> 1738-12-31     365 rows  Pfister_DeBilt_17380101-17381231_p_daily.tsv
+   1743-01-01 -> 2021-08-31  101459 rows  Pfister_DeBilt_17430101-20210831_p_daily.tsv  (+20th-c. tail)
+   [DRY] would delete original: Pfister_DeBilt_17380101-20210831_p_daily.tsv
+[DRY] SPLIT KNMI_Delft_17771122-17951231_ta_subdaily_qc.tsv -> 2 series
+   1777-11-22 -> 1793-08-31   15405 rows  KNMI_Delft_17771122-17930831_ta_subdaily_qc.tsv
+   1795-01-01 -> 1795-12-31    1089 rows  KNMI_Delft_17950101-17951231_ta_subdaily_qc.tsv
+   [DRY] would delete original: KNMI_Delft_17771122-17951231_ta_subdaily_qc.tsv
+[DRY] SPLIT KNMI_Delft_18010901-18181014_ta_subdaily_qc.tsv -> 2 series
+   1801-09-01 -> 1801-12-31     360 rows  KNMI_Delft_18010901-18011231_ta_subdaily_qc.tsv
+   1803-01-09 -> 1818-10-14   16204 rows  KNMI_Delft_18030109-18181014_ta_subdaily_qc.tsv
+   [DRY] would delete original: KNMI_Delft_18010901-18181014_ta_subdaily_qc.tsv
+[DRY] SPLIT KNMI_Delft_Rijnsburg_17060101-17341231_ta_subdaily_qc.tsv -> 2 series
+   1706-01-01 -> 1727-12-31    7797 rows  KNMI_Delft_Rijnsburg_17060101-17271231_ta_subdaily_qc.tsv
+   1729-01-01 -> 1734-12-31    5973 rows  KNMI_Delft_Rijnsburg_17290101-17341231_ta_subdaily_qc.tsv
+   [DRY] would delete original: KNMI_Delft_Rijnsburg_17060101-17341231_ta_subdaily_qc.tsv
+[DRY] SPLIT KNMI_DenHelder_18501201-19031231_p_subdaily.tsv -> 2 series
+   1850-12-01 -> 1851-12-01    1098 rows  KNMI_DenHelder_18501201-18511201_p_subdaily.tsv
+   1889-01-01 -> 1903-12-31   16431 rows  KNMI_DenHelder_18890101-19031231_p_subdaily.tsv  (+20th-c. tail)
+   [DRY] would delete original: KNMI_DenHelder_18501201-19031231_p_subdaily.tsv
+[DRY] SPLIT KNMI_DenHelder_18501201-19051231_rr_subdaily.tsv -> 2 series
+   1850-12-01 -> 1886-03-31   10720 rows  KNMI_DenHelder_18501201-18860331_rr_subdaily.tsv
+   1892-01-01 -> 1905-12-31    5113 rows  KNMI_DenHelder_18920101-19051231_rr_subdaily.tsv  (+20th-c. tail)
+   [DRY] would delete original: KNMI_DenHelder_18501201-19051231_rr_subdaily.tsv
+[DRY] SPLIT WRDv2-2_DenHelder_18610830-18750331_p_subdaily.tsv -> 2 series
+   1861-08-30 -> 1863-07-29     575 rows  WRDv2-2_DenHelder_18610830-18630729_p_subdaily.tsv
+   1866-01-01 -> 1875-03-31    2617 rows  WRDv2-2_DenHelder_18660101-18750331_p_subdaily.tsv
+   [DRY] would delete original: WRDv2-2_DenHelder_18610830-18750331_p_subdaily.tsv
+[DRY] SPLIT WRDv2-2_DenHelder_18610830-18750331_ta_subdaily.tsv -> 2 series
+   1861-08-30 -> 1863-07-29     569 rows  WRDv2-2_DenHelder_18610830-18630729_ta_subdaily.tsv
+   1866-01-01 -> 1875-03-31    2609 rows  WRDv2-2_DenHelder_18660101-18750331_ta_subdaily.tsv
+   [DRY] would delete original: WRDv2-2_DenHelder_18610830-18750331_ta_subdaily.tsv
+[DRY] SPLIT WRDv2-2_Dover_18610301-18750331_ta_barometer_subdaily.tsv -> 2 series
+   1861-03-01 -> 1863-12-31     722 rows  WRDv2-2_Dover_18610301-18631231_ta_barometer_subdaily.tsv
+   1872-01-04 -> 1875-03-31    1168 rows  WRDv2-2_Dover_18720104-18750331_ta_barometer_subdaily.tsv
+   [DRY] would delete original: WRDv2-2_Dover_18610301-18750331_ta_barometer_subdaily.tsv
+[DRY] SPLIT WRDv2-2_Dover_18610301-18750331_ta_subdaily.tsv -> 2 series
+   1861-03-01 -> 1864-12-22    1044 rows  WRDv2-2_Dover_18610301-18641222_ta_subdaily.tsv
+   1871-01-01 -> 1875-03-31    1543 rows  WRDv2-2_Dover_18710101-18750331_ta_subdaily.tsv
+   [DRY] would delete original: WRDv2-2_Dover_18610301-18750331_ta_subdaily.tsv
+[DRY] SPLIT WRDv2-2_Dover_18610302-18750331_p_subdaily.tsv -> 2 series
+   1861-03-02 -> 1864-12-22    1104 rows  WRDv2-2_Dover_18610302-18641222_p_subdaily.tsv
+   1871-01-01 -> 1875-03-31    1531 rows  WRDv2-2_Dover_18710101-18750331_p_subdaily.tsv
+   [DRY] would delete original: WRDv2-2_Dover_18610302-18750331_p_subdaily.tsv
+[DRY] SPLIT WRDv2-2_Dover_18611219-18750331_rr_daily.tsv -> 2 series
+   1861-12-19 -> 1864-12-22     818 rows  WRDv2-2_Dover_18611219-18641222_rr_daily.tsv
+   1871-01-01 -> 1875-03-31    1542 rows  WRDv2-2_Dover_18710101-18750331_rr_daily.tsv
+   [DRY] would delete original: WRDv2-2_Dover_18611219-18750331_rr_daily.tsv
+[DRY] SPLIT ILMMT_Dublin-BotanicGardens_18340101-19581231_Tn_daily_qc.tsv -> 3 series
+   1834-01-01 -> 1834-03-31      90 rows  ILMMT_Dublin-BotanicGardens_18340101-18340331_Tn_daily_qc.tsv
+   1847-07-01 -> 1849-12-31     733 rows  ILMMT_Dublin-BotanicGardens_18470701-18491231_Tn_daily_qc.tsv
+   1852-01-01 -> 1958-12-31   38976 rows  ILMMT_Dublin-BotanicGardens_18520101-19581231_Tn_daily_qc.tsv  (+20th-c. tail)
+   [DRY] would delete original: ILMMT_Dublin-BotanicGardens_18340101-19581231_Tn_daily_qc.tsv
+[DRY] SPLIT ILMMT_Dublin-BotanicGardens_18340101-19581231_Tx_daily_qc.tsv -> 3 series
+   1834-01-01 -> 1834-03-31      90 rows  ILMMT_Dublin-BotanicGardens_18340101-18340331_Tx_daily_qc.tsv
+   1847-07-01 -> 1849-12-31     733 rows  ILMMT_Dublin-BotanicGardens_18470701-18491231_Tx_daily_qc.tsv
+   1852-01-01 -> 1958-12-31   38978 rows  ILMMT_Dublin-BotanicGardens_18520101-19581231_Tx_daily_qc.tsv  (+20th-c. tail)
+   [DRY] would delete original: ILMMT_Dublin-BotanicGardens_18340101-19581231_Tx_daily_qc.tsv
+[DRY] SPLIT ILMMT_Dublin-PhoenixPark_18310118-19581231_Tn_daily_qc.tsv -> 2 series
+   1831-01-18 -> 1852-12-31    7915 rows  ILMMT_Dublin-PhoenixPark_18310118-18521231_Tn_daily_qc.tsv
+   1855-02-01 -> 1958-12-31   37952 rows  ILMMT_Dublin-PhoenixPark_18550201-19581231_Tn_daily_qc.tsv  (+20th-c. tail)
+   [DRY] would delete original: ILMMT_Dublin-PhoenixPark_18310118-19581231_Tn_daily_qc.tsv
+[DRY] SPLIT ILMMT_Dublin-PhoenixPark_18310118-19581231_Tx_daily_qc.tsv -> 2 series
+   1831-01-18 -> 1852-12-31    7915 rows  ILMMT_Dublin-PhoenixPark_18310118-18521231_Tx_daily_qc.tsv
+   1855-02-01 -> 1958-12-31   37952 rows  ILMMT_Dublin-PhoenixPark_18550201-19581231_Tx_daily_qc.tsv  (+20th-c. tail)
+   [DRY] would delete original: ILMMT_Dublin-PhoenixPark_18310118-19581231_Tx_daily_qc.tsv
+[DRY] SPLIT ILMMT_Dublin-RCS_Evans_18411226-18571219_Tn_daily.tsv -> 2 series
+   1841-12-26 -> 1842-12-24     364 rows  ILMMT_Dublin-RCS_Evans_18411226-18421224_Tn_daily.tsv
+   1845-12-21 -> 1857-12-19    3985 rows  ILMMT_Dublin-RCS_Evans_18451221-18571219_Tn_daily.tsv
+   [DRY] would delete original: ILMMT_Dublin-RCS_Evans_18411226-18571219_Tn_daily.tsv
+[DRY] SPLIT ILMMT_Dublin-RCS_Evans_18411226-18571219_Tx_daily_qc.tsv -> 2 series
+   1841-12-26 -> 1842-12-24     364 rows  ILMMT_Dublin-RCS_Evans_18411226-18421224_Tx_daily_qc.tsv
+   1845-12-21 -> 1857-12-19    3983 rows  ILMMT_Dublin-RCS_Evans_18451221-18571219_Tx_daily_qc.tsv
+   [DRY] would delete original: ILMMT_Dublin-RCS_Evans_18411226-18571219_Tx_daily_qc.tsv
+[DRY] SPLIT ILMMT_Dublin-TrinityCollege_18400501-19591231_Tn_daily_qc.tsv -> 2 series
+   1840-05-01 -> 1851-12-31    4157 rows  ILMMT_Dublin-TrinityCollege_18400501-18511231_Tn_daily_qc.tsv
+   1855-01-01 -> 1959-12-31   20739 rows  ILMMT_Dublin-TrinityCollege_18550101-19591231_Tn_daily_qc.tsv  (+20th-c. tail)
+   [DRY] would delete original: ILMMT_Dublin-TrinityCollege_18400501-19591231_Tn_daily_qc.tsv
+[DRY] SPLIT ILMMT_Dublin-TrinityCollege_18410522-19591231_Tx_daily_qc.tsv -> 2 series
+   1841-05-22 -> 1851-12-31    3822 rows  ILMMT_Dublin-TrinityCollege_18410522-18511231_Tx_daily_qc.tsv
+   1855-01-01 -> 1959-12-31   20741 rows  ILMMT_Dublin-TrinityCollege_18550101-19591231_Tx_daily_qc.tsv  (+20th-c. tail)
+   [DRY] would delete original: ILMMT_Dublin-TrinityCollege_18410522-19591231_Tx_daily_qc.tsv
+[DRY] SPLIT CHIMES_Einsiedeln_18181217-18641231_ta_subdaily_qc.tsv -> 3 series
+   1818-12-17 -> 1851-05-09   18030 rows  CHIMES_Einsiedeln_18181217-18510509_ta_subdaily_qc.tsv
+   1857-07-01 -> 1858-06-30    1093 rows  CHIMES_Einsiedeln_18570701-18580630_ta_subdaily_qc.tsv
+   1864-01-01 -> 1864-12-31    1095 rows  CHIMES_Einsiedeln_18640101-18641231_ta_subdaily_qc.tsv
+   [DRY] would delete original: CHIMES_Einsiedeln_18181217-18641231_ta_subdaily_qc.tsv
+[DRY] SPLIT CHIMES_Einsiedeln_18400101-18641231_p_subdaily_qc.tsv -> 3 series
+   1840-01-01 -> 1842-12-11    2137 rows  CHIMES_Einsiedeln_18400101-18421211_p_subdaily_qc.tsv
+   1857-07-01 -> 1858-06-30    1095 rows  CHIMES_Einsiedeln_18570701-18580630_p_subdaily_qc.tsv
+   1864-01-01 -> 1864-12-31    1098 rows  CHIMES_Einsiedeln_18640101-18641231_p_subdaily_qc.tsv
+   [DRY] would delete original: CHIMES_Einsiedeln_18400101-18641231_p_subdaily_qc.tsv
+[DRY] SPLIT Aschcroft_ElKala_18770408-19221231_ta_subdaily_qc.tsv -> 3 series
+   1877-04-08 -> 1890-12-31    4454 rows  Aschcroft_ElKala_18770408-18901231_ta_subdaily_qc.tsv
+   1892-01-02 -> 1893-12-31     619 rows  Aschcroft_ElKala_18920102-18931231_ta_subdaily_qc.tsv
+   1897-01-01 -> 1922-12-31    4034 rows  Aschcroft_ElKala_18970101-19221231_ta_subdaily_qc.tsv  (+20th-c. tail)
+   [DRY] would delete original: Aschcroft_ElKala_18770408-19221231_ta_subdaily_qc.tsv
+[DRY] SPLIT MEDARE_ElKala_18770408-19381230_p_daily.tsv -> 3 series
+   1877-04-08 -> 1890-12-31    4498 rows  MEDARE_ElKala_18770408-18901231_p_daily.tsv
+   1892-01-02 -> 1893-12-31     628 rows  MEDARE_ElKala_18920102-18931231_p_daily.tsv
+   1897-01-01 -> 1938-12-30    7477 rows  MEDARE_ElKala_18970101-19381230_p_daily.tsv  (+20th-c. tail)
+   [DRY] would delete original: MEDARE_ElKala_18770408-19381230_p_daily.tsv
+[DRY] SPLIT EMULATE_Essaouira_18731001-18791231_p_subdaily.tsv -> 2 series
+   1873-10-01 -> 1874-10-31     396 rows  EMULATE_Essaouira_18731001-18741031_p_subdaily.tsv
+   1879-01-01 -> 1879-12-31     365 rows  EMULATE_Essaouira_18790101-18791231_p_subdaily.tsv
+   [DRY] would delete original: EMULATE_Essaouira_18731001-18791231_p_subdaily.tsv
+[DRY] SPLIT GHCNd_Feodosiia_18810101-20051231_rr_daily.tsv -> 2 series
+   1881-01-01 -> 1886-05-31    1977 rows  GHCNd_Feodosiia_18810101-18860531_rr_daily.tsv
+   1896-11-01 -> 2005-12-31   38409 rows  GHCNd_Feodosiia_18961101-20051231_rr_daily.tsv  (+20th-c. tail)
+   [DRY] would delete original: GHCNd_Feodosiia_18810101-20051231_rr_daily.tsv
+[DRY] SPLIT GHCNd_Fergana_18810401-20061231_rr_daily.tsv -> 2 series
+   1881-04-01 -> 1884-12-31    1371 rows  GHCNd_Fergana_18810401-18841231_rr_daily.tsv
+   1888-01-01 -> 2006-12-31   41242 rows  GHCNd_Fergana_18880101-20061231_rr_daily.tsv  (+20th-c. tail)
+   [DRY] would delete original: GHCNd_Fergana_18810401-20061231_rr_daily.tsv
+[DRY] SPLIT GHCNd_Ferrara_18790101-20071231_rr_daily.tsv -> 2 series
+   1879-01-01 -> 1885-12-31    2557 rows  GHCNd_Ferrara_18790101-18851231_rr_daily.tsv
+   1894-01-01 -> 2007-12-31   39448 rows  GHCNd_Ferrara_18940101-20071231_rr_daily.tsv  (+20th-c. tail)
+   [DRY] would delete original: GHCNd_Ferrara_18790101-20071231_rr_daily.tsv
+[DRY] SPLIT GHCNd_Fort-National_18790301-19381228_rr_daily.tsv -> 4 series
+   1879-03-01 -> 1890-12-30    2858 rows  GHCNd_Fort-National_18790301-18901230_rr_daily.tsv
+   1892-02-01 -> 1893-12-30     605 rows  GHCNd_Fort-National_18920201-18931230_rr_daily.tsv
+   1895-03-01 -> 1895-12-30     305 rows  GHCNd_Fort-National_18950301-18951230_rr_daily.tsv
+   1897-02-01 -> 1938-12-28    9659 rows  GHCNd_Fort-National_18970201-19381228_rr_daily.tsv  (+20th-c. tail)
+   [DRY] would delete original: GHCNd_Fort-National_18790301-19381228_rr_daily.tsv
+[DRY] SPLIT MEDARE_Fort-National_18840101-19381228_rr_daily.tsv -> 3 series
+   1884-01-01 -> 1893-12-30    2947 rows  MEDARE_Fort-National_18840101-18931230_rr_daily.tsv
+   1895-01-02 -> 1895-12-30     311 rows  MEDARE_Fort-National_18950102-18951230_rr_daily.tsv
+   1896-12-31 -> 1938-12-28   12755 rows  MEDARE_Fort-National_18961231-19381228_rr_daily.tsv  (+20th-c. tail)
+   [DRY] would delete original: MEDARE_Fort-National_18840101-19381228_rr_daily.tsv
+[DRY] SPLIT MEDARE_Fort-National_18870101-19381230_p_daily.tsv -> 3 series
+   1887-01-01 -> 1893-12-31    2107 rows  MEDARE_Fort-National_18870101-18931231_p_daily.tsv
+   1895-01-03 -> 1895-12-31     349 rows  MEDARE_Fort-National_18950103-18951231_p_daily.tsv
+   1897-01-01 -> 1938-12-30   12278 rows  MEDARE_Fort-National_18970101-19381230_p_daily.tsv  (+20th-c. tail)
+   [DRY] would delete original: MEDARE_Fort-National_18870101-19381230_p_daily.tsv
+[DRY] SPLIT CHIMES_Fribourg_18290101-18470929_Tx_daily_qc.tsv -> 2 series
+   1829-01-01 -> 1842-10-31    4842 rows  CHIMES_Fribourg_18290101-18421031_Tx_daily_qc.tsv
+   1844-11-01 -> 1847-09-29     911 rows  CHIMES_Fribourg_18441101-18470929_Tx_daily_qc.tsv
+   [DRY] would delete original: CHIMES_Fribourg_18290101-18470929_Tx_daily_qc.tsv
+[DRY] SPLIT EMULATE_Funchal_18710601-18811231_p_subdaily.tsv -> 2 series
+   1871-06-01 -> 1871-10-31      91 rows  EMULATE_Funchal_18710601-18711031_p_subdaily.tsv
+   1873-04-01 -> 1881-12-31    2942 rows  EMULATE_Funchal_18730401-18811231_p_subdaily.tsv
+   [DRY] would delete original: EMULATE_Funchal_18710601-18811231_p_subdaily.tsv
+[DRY] SPLIT ECA&D_Gallivare_18881101-20241231_ta_daily_qc.tsv -> 3 series
+   1888-11-01 -> 1893-03-31    1318 rows  ECA&D_Gallivare_18881101-18930331_ta_daily_qc.tsv
+   1894-08-25 -> 1895-01-31     154 rows  ECA&D_Gallivare_18940825-18950131_ta_daily_qc.tsv
+   1897-07-13 -> 2024-12-31   34841 rows  ECA&D_Gallivare_18970713-20241231_ta_daily_qc.tsv  (+20th-c. tail)
+   [DRY] would delete original: ECA&D_Gallivare_18881101-20241231_ta_daily_qc.tsv
+[DRY] SPLIT GHCNd_Galway_18610201-20021231_rr_daily_qc.tsv -> 3 series
+   1861-02-01 -> 1861-12-31     334 rows  GHCNd_Galway_18610201-18611231_rr_daily_qc.tsv
+   1863-02-01 -> 1871-04-30    2980 rows  GHCNd_Galway_18630201-18710430_rr_daily_qc.tsv
+   1880-01-01 -> 2002-12-31   27842 rows  GHCNd_Galway_18800101-20021231_rr_daily_qc.tsv  (+20th-c. tail)
+   [DRY] would delete original: GHCNd_Galway_18610201-20021231_rr_daily_qc.tsv
+[DRY] SPLIT ILMMT_Galway_18501001-19681231_Tn_daily_qc.tsv -> 3 series
+   1850-10-01 -> 1852-02-29     507 rows  ILMMT_Galway_18501001-18520229_Tn_daily_qc.tsv
+   1855-03-01 -> 1856-02-17     321 rows  ILMMT_Galway_18550301-18560217_Tn_daily_qc.tsv
+   1874-11-01 -> 1968-12-31   34358 rows  ILMMT_Galway_18741101-19681231_Tn_daily_qc.tsv  (+20th-c. tail)
+   [DRY] would delete original: ILMMT_Galway_18501001-19681231_Tn_daily_qc.tsv
+[DRY] SPLIT ILMMT_Galway_18501001-19681231_Tx_daily_qc.tsv -> 3 series
+   1850-10-01 -> 1852-02-29     507 rows  ILMMT_Galway_18501001-18520229_Tx_daily_qc.tsv
+   1855-03-01 -> 1856-02-17     329 rows  ILMMT_Galway_18550301-18560217_Tx_daily_qc.tsv
+   1874-11-01 -> 1968-12-31   34359 rows  ILMMT_Galway_18741101-19681231_Tx_daily_qc.tsv  (+20th-c. tail)
+   [DRY] would delete original: ILMMT_Galway_18501001-19681231_Tx_daily_qc.tsv
+[DRY] SPLIT GHCNd_Ganca_18820101-20181231_rr_daily.tsv -> 3 series
+   1882-01-01 -> 1884-05-31     882 rows  GHCNd_Ganca_18820101-18840531_rr_daily.tsv
+   1885-11-01 -> 1890-12-31    1674 rows  GHCNd_Ganca_18851101-18901231_rr_daily.tsv
+   1893-01-01 -> 2018-12-31   31228 rows  GHCNd_Ganca_18930101-20181231_rr_daily.tsv  (+20th-c. tail)
+   [DRY] would delete original: GHCNd_Ganca_18820101-20181231_rr_daily.tsv
+[DRY] SPLIT CHIMES_Geneva_17820101-17891231_p_subdaily_qc.tsv -> 2 series
+   1782-01-01 -> 1786-12-31    5467 rows  CHIMES_Geneva_17820101-17861231_p_subdaily_qc.tsv
+   1789-01-01 -> 1789-12-31    1095 rows  CHIMES_Geneva_17890101-17891231_p_subdaily_qc.tsv
+   [DRY] would delete original: CHIMES_Geneva_17820101-17891231_p_subdaily_qc.tsv
+[DRY] SPLIT CHIMES_Geneva_17820101-17891231_rr_subdaily.tsv -> 2 series
+   1782-01-01 -> 1786-12-31    5382 rows  CHIMES_Geneva_17820101-17861231_rr_subdaily.tsv
+   1789-01-01 -> 1789-12-31    1035 rows  CHIMES_Geneva_17890101-17891231_rr_subdaily.tsv
+   [DRY] would delete original: CHIMES_Geneva_17820101-17891231_rr_subdaily.tsv
+[DRY] SPLIT CHIMES_Geneva_17820101-17891231_ta_subdaily_qc.tsv -> 2 series
+   1782-01-01 -> 1786-12-31    5372 rows  CHIMES_Geneva_17820101-17861231_ta_subdaily_qc.tsv
+   1789-01-01 -> 1789-12-31    1095 rows  CHIMES_Geneva_17890101-17891231_ta_subdaily_qc.tsv
+   [DRY] would delete original: CHIMES_Geneva_17820101-17891231_ta_subdaily_qc.tsv
+[DRY] SPLIT Pfister_Geneva_17820101-20201231_p_daily.tsv -> 4 series
+   1782-01-01 -> 1786-12-31    1823 rows  Pfister_Geneva_17820101-17861231_p_daily.tsv
+   1789-01-01 -> 1789-12-31     365 rows  Pfister_Geneva_17890101-17891231_p_daily.tsv
+   1796-01-01 -> 1863-11-30   24147 rows  Pfister_Geneva_17960101-18631130_p_daily.tsv
+   1866-12-01 -> 2020-12-31   56274 rows  Pfister_Geneva_18661201-20201231_p_daily.tsv  (+20th-c. tail)
+   [DRY] would delete original: Pfister_Geneva_17820101-20201231_p_daily.tsv
+[DRY] SPLIT MEDARE_Ghazaouet_18870101-19381230_p_daily.tsv -> 2 series
+   1887-01-01 -> 1895-12-31    2503 rows  MEDARE_Ghazaouet_18870101-18951231_p_daily.tsv
+   1897-01-01 -> 1938-12-30   12980 rows  MEDARE_Ghazaouet_18970101-19381230_p_daily.tsv  (+20th-c. tail)
+   [DRY] would delete original: MEDARE_Ghazaouet_18870101-19381230_p_daily.tsv
+[DRY] SPLIT GHCNd_Gospic_18721001-20181231_rr_daily.tsv -> 2 series
+   1872-10-01 -> 1890-11-30    6574 rows  GHCNd_Gospic_18721001-18901130_rr_daily.tsv
+   1892-01-01 -> 2018-12-31   43122 rows  GHCNd_Gospic_18920101-20181231_rr_daily.tsv  (+20th-c. tail)
+   [DRY] would delete original: GHCNd_Gospic_18721001-20181231_rr_daily.tsv
+[DRY] SPLIT CHIMES_Gotthard_17290101-17921231_p_subdaily_qc.tsv -> 2 series
+   1729-01-01 -> 1731-01-31    1127 rows  CHIMES_Gotthard_17290101-17310131_p_subdaily_qc.tsv
+   1781-06-01 -> 1792-12-31   11590 rows  CHIMES_Gotthard_17810601-17921231_p_subdaily_qc.tsv
+   [DRY] would delete original: CHIMES_Gotthard_17290101-17921231_p_subdaily_qc.tsv
+[DRY] SPLIT DIGIHOM_GrandStBernard_18250213-18631130_Tn_daily_qc.tsv -> 2 series
+   1825-02-13 -> 1860-03-15   12207 rows  DIGIHOM_GrandStBernard_18250213-18600315_Tn_daily_qc.tsv
+   1861-09-01 -> 1863-11-30     821 rows  DIGIHOM_GrandStBernard_18610901-18631130_Tn_daily_qc.tsv
+   [DRY] would delete original: DIGIHOM_GrandStBernard_18250213-18631130_Tn_daily_qc.tsv
+[DRY] SPLIT DIGIHOM_GrandStBernard_18260104-18631130_Tx_daily_qc.tsv -> 4 series
+   1826-01-04 -> 1846-05-02    6819 rows  DIGIHOM_GrandStBernard_18260104-18460502_Tx_daily_qc.tsv
+   1847-08-23 -> 1847-12-31      47 rows  DIGIHOM_GrandStBernard_18470823-18471231_Tx_daily_qc.tsv
+   1852-09-01 -> 1853-10-31     399 rows  DIGIHOM_GrandStBernard_18520901-18531031_Tx_daily_qc.tsv
+   1855-10-01 -> 1863-11-30    2435 rows  DIGIHOM_GrandStBernard_18551001-18631130_Tx_daily_qc.tsv
+   [DRY] would delete original: DIGIHOM_GrandStBernard_18260104-18631130_Tx_daily_qc.tsv
+[DRY] SPLIT KNMI_Groningen_18481201-19051231_dd_subdaily_qc.tsv -> 2 series
+   1848-12-01 -> 1885-12-31   47551 rows  KNMI_Groningen_18481201-18851231_dd_subdaily_qc.tsv
+   1892-01-01 -> 1905-12-31   15046 rows  KNMI_Groningen_18920101-19051231_dd_subdaily_qc.tsv  (+20th-c. tail)
+   [DRY] would delete original: KNMI_Groningen_18481201-19051231_dd_subdaily_qc.tsv
+[DRY] SPLIT KNMI_Groningen_18501201-19031231_p_subdaily_qc.tsv -> 2 series
+   1850-12-01 -> 1851-12-01    1098 rows  KNMI_Groningen_18501201-18511201_p_subdaily_qc.tsv
+   1889-01-01 -> 1903-12-31   16404 rows  KNMI_Groningen_18890101-19031231_p_subdaily_qc.tsv  (+20th-c. tail)
+   [DRY] would delete original: KNMI_Groningen_18501201-19031231_p_subdaily_qc.tsv
+[DRY] SPLIT KNMI_Groningen_18501201-19051231_rh_subdaily_qc.tsv -> 2 series
+   1850-12-01 -> 1885-12-31   35825 rows  KNMI_Groningen_18501201-18851231_rh_subdaily_qc.tsv
+   1892-01-01 -> 1905-12-31   14929 rows  KNMI_Groningen_18920101-19051231_rh_subdaily_qc.tsv  (+20th-c. tail)
+   [DRY] would delete original: KNMI_Groningen_18501201-19051231_rh_subdaily_qc.tsv
+[DRY] SPLIT GHCNd_Gyzylarbat_18850101-19981231_rr_daily.tsv -> 2 series
+   1885-01-01 -> 1886-12-31     730 rows  GHCNd_Gyzylarbat_18850101-18861231_rr_daily.tsv
+   1888-04-01 -> 1998-12-31   36674 rows  GHCNd_Gyzylarbat_18880401-19981231_rr_daily.tsv  (+20th-c. tail)
+   [DRY] would delete original: GHCNd_Gyzylarbat_18850101-19981231_rr_daily.tsv
+[DRY] SPLIT KNMI_Haarlem_17350101-18401231_dd_subdaily_qc.tsv -> 2 series
+   1735-01-01 -> 1742-12-31    8647 rows  KNMI_Haarlem_17350101-17421231_dd_subdaily_qc.tsv
+   1788-11-01 -> 1840-12-31   57136 rows  KNMI_Haarlem_17881101-18401231_dd_subdaily_qc.tsv
+   [DRY] would delete original: KNMI_Haarlem_17350101-18401231_dd_subdaily_qc.tsv
+[DRY] SPLIT KNMI_Haarlem_17350101-18401231_p_subdaily_qc.tsv -> 2 series
+   1735-01-01 -> 1742-12-31    8626 rows  KNMI_Haarlem_17350101-17421231_p_subdaily_qc.tsv
+   1788-11-01 -> 1840-12-31   57125 rows  KNMI_Haarlem_17881101-18401231_p_subdaily_qc.tsv
+   [DRY] would delete original: KNMI_Haarlem_17350101-18401231_p_subdaily_qc.tsv
+[DRY] SPLIT KNMI_Haarlem_17350101-18401231_ta_subdaily_qc.tsv -> 2 series
+   1735-01-01 -> 1742-12-31    8632 rows  KNMI_Haarlem_17350101-17421231_ta_subdaily_qc.tsv
+   1788-11-01 -> 1840-12-31   57155 rows  KNMI_Haarlem_17881101-18401231_ta_subdaily_qc.tsv
+   [DRY] would delete original: KNMI_Haarlem_17350101-18401231_ta_subdaily_qc.tsv
+[DRY] SPLIT WRDv2-2_Heligoland_18620210-18671130_p_subdaily.tsv -> 2 series
+   1862-02-10 -> 1865-12-19     980 rows  WRDv2-2_Heligoland_18620210-18651219_p_subdaily.tsv
+   1866-12-31 -> 1867-11-30     319 rows  WRDv2-2_Heligoland_18661231-18671130_p_subdaily.tsv
+   [DRY] would delete original: WRDv2-2_Heligoland_18620210-18671130_p_subdaily.tsv
+[DRY] SPLIT WRDv2-2_Heligoland_18620210-18671130_ta_subdaily.tsv -> 2 series
+   1862-02-10 -> 1865-12-19     979 rows  WRDv2-2_Heligoland_18620210-18651219_ta_subdaily.tsv
+   1866-12-31 -> 1867-11-30     320 rows  WRDv2-2_Heligoland_18661231-18671130_ta_subdaily.tsv
+   [DRY] would delete original: WRDv2-2_Heligoland_18620210-18671130_ta_subdaily.tsv
+[DRY] SPLIT WRDv2-2_Heligoland_18620211-18671130_rr_daily.tsv -> 2 series
+   1862-02-11 -> 1865-12-19     975 rows  WRDv2-2_Heligoland_18620211-18651219_rr_daily.tsv
+   1866-12-31 -> 1867-11-30     321 rows  WRDv2-2_Heligoland_18661231-18671130_rr_daily.tsv
+   [DRY] would delete original: WRDv2-2_Heligoland_18620211-18671130_rr_daily.tsv
+[DRY] SPLIT GHCNd_Helmond_18690101-20190630_rr_daily.tsv -> 2 series
+   1869-01-01 -> 1872-07-30    1307 rows  GHCNd_Helmond_18690101-18720730_rr_daily.tsv
+   1880-03-01 -> 2019-06-30   50890 rows  GHCNd_Helmond_18800301-20190630_rr_daily.tsv  (+20th-c. tail)
+   [DRY] would delete original: GHCNd_Helmond_18690101-20190630_rr_daily.tsv
+[DRY] SPLIT CHIMES_Herisau_Nef_18220101-18440127_p_subdaily_qc.tsv -> 2 series
+   1822-01-01 -> 1841-12-31   21857 rows  CHIMES_Herisau_Nef_18220101-18411231_p_subdaily_qc.tsv
+   1843-01-12 -> 1844-01-27     255 rows  CHIMES_Herisau_Nef_18430112-18440127_p_subdaily_qc.tsv
+   [DRY] would delete original: CHIMES_Herisau_Nef_18220101-18440127_p_subdaily_qc.tsv
+[DRY] SPLIT DWD_Hohenpeissenberg_17810101-17921231_p_subdaily_qc.tsv -> 2 series
+   1781-01-01 -> 1786-12-31    6573 rows  DWD_Hohenpeissenberg_17810101-17861231_p_subdaily_qc.tsv
+   1789-01-01 -> 1792-12-31    4335 rows  DWD_Hohenpeissenberg_17890101-17921231_p_subdaily_qc.tsv
+   [DRY] would delete original: DWD_Hohenpeissenberg_17810101-17921231_p_subdaily_qc.tsv
+[DRY] SPLIT DWD_Hohenpeissenberg_17810101-17921231_ta_subdaily_qc.tsv -> 2 series
+   1781-01-01 -> 1786-12-31    6573 rows  DWD_Hohenpeissenberg_17810101-17861231_ta_subdaily_qc.tsv
+   1789-01-01 -> 1792-12-31    4335 rows  DWD_Hohenpeissenberg_17890101-17921231_ta_subdaily_qc.tsv
+   [DRY] would delete original: DWD_Hohenpeissenberg_17810101-17921231_ta_subdaily_qc.tsv
+[DRY] SPLIT GHCNd_Hohenpeissenberg_17810101-20190730_rr_daily.tsv -> 3 series
+   1781-01-01 -> 1786-12-31    2191 rows  GHCNd_Hohenpeissenberg_17810101-17861231_rr_daily.tsv
+   1789-01-01 -> 1810-12-31    6697 rows  GHCNd_Hohenpeissenberg_17890101-18101231_rr_daily.tsv
+   1879-01-01 -> 2019-07-30   51345 rows  GHCNd_Hohenpeissenberg_18790101-20190730_rr_daily.tsv  (+20th-c. tail)
+   [DRY] would delete original: GHCNd_Hohenpeissenberg_17810101-20190730_rr_daily.tsv
+[DRY] SPLIT Pfister_Hohenpeissenberg_17810101-20221231_p_daily.tsv -> 3 series
+   1781-01-01 -> 1786-12-31    2190 rows  Pfister_Hohenpeissenberg_17810101-17861231_p_daily.tsv
+   1789-01-01 -> 1810-12-31    7273 rows  Pfister_Hohenpeissenberg_17890101-18101231_p_daily.tsv
+   1813-01-01 -> 2022-12-31   76669 rows  Pfister_Hohenpeissenberg_18130101-20221231_p_daily.tsv  (+20th-c. tail)
+   [DRY] would delete original: Pfister_Hohenpeissenberg_17810101-20221231_p_daily.tsv
+[DRY] SPLIT WRDv2-2_Holyhead_18620701-18750331_ta_barometer_subdaily.tsv -> 2 series
+   1862-07-01 -> 1863-12-31     465 rows  WRDv2-2_Holyhead_18620701-18631231_ta_barometer_subdaily.tsv
+   1872-01-04 -> 1875-03-31    2080 rows  WRDv2-2_Holyhead_18720104-18750331_ta_barometer_subdaily.tsv
+   [DRY] would delete original: WRDv2-2_Holyhead_18620701-18750331_ta_barometer_subdaily.tsv
+[DRY] SPLIT WRDv2-2_Ile-d-Aix_18621216-18750331_ta_barometer_subdaily.tsv -> 2 series
+   1862-12-16 -> 1863-12-31     313 rows  WRDv2-2_Ile-d-Aix_18621216-18631231_ta_barometer_subdaily.tsv
+   1872-01-04 -> 1875-03-31    2103 rows  WRDv2-2_Ile-d-Aix_18720104-18750331_ta_barometer_subdaily.tsv
+   [DRY] would delete original: WRDv2-2_Ile-d-Aix_18621216-18750331_ta_barometer_subdaily.tsv
+[DRY] SPLIT ECA&D_Jena_18240101-20241231_ta_daily.tsv -> 2 series
+   1824-01-01 -> 1875-05-17   18352 rows  ECA&D_Jena_18240101-18750517_ta_daily.tsv
+   1878-07-01 -> 2024-12-31   53448 rows  ECA&D_Jena_18780701-20241231_ta_daily.tsv  (+20th-c. tail)
+   [DRY] would delete original: ECA&D_Jena_18240101-20241231_ta_daily.tsv
+[DRY] SPLIT GHCNd_Jena-Sternwarte_18261201-20190730_rr_daily.tsv -> 2 series
+   1826-12-01 -> 1869-12-31   15675 rows  GHCNd_Jena-Sternwarte_18261201-18691231_rr_daily.tsv
+   1878-07-01 -> 2019-07-30   51462 rows  GHCNd_Jena-Sternwarte_18780701-20190730_rr_daily.tsv  (+20th-c. tail)
+   [DRY] would delete original: GHCNd_Jena-Sternwarte_18261201-20190730_rr_daily.tsv
+[DRY] SPLIT KIT_Karlsruhe_17780421-18681231_p_daily_qc.tsv -> 3 series
+   1778-04-21 -> 1786-12-31    3089 rows  KIT_Karlsruhe_17780421-17861231_p_daily_qc.tsv
+   1789-01-01 -> 1789-12-31     365 rows  KIT_Karlsruhe_17890101-17891231_p_daily_qc.tsv
+   1800-01-01 -> 1868-12-31   24961 rows  KIT_Karlsruhe_18000101-18681231_p_daily_qc.tsv
+   [DRY] would delete original: KIT_Karlsruhe_17780421-18681231_p_daily_qc.tsv
+[DRY] SPLIT Pfister_Karlsruhe_17780421-20201231_p_daily.tsv -> 4 series
+   1778-04-21 -> 1786-12-31    3089 rows  Pfister_Karlsruhe_17780421-17861231_p_daily.tsv
+   1789-01-01 -> 1789-12-31     365 rows  Pfister_Karlsruhe_17890101-17891231_p_daily.tsv
+   1800-01-01 -> 1868-12-31   24963 rows  Pfister_Karlsruhe_18000101-18681231_p_daily.tsv
+   1876-01-01 -> 2020-12-31   52627 rows  Pfister_Karlsruhe_18760101-20201231_p_daily.tsv  (+20th-c. tail)
+   [DRY] would delete original: Pfister_Karlsruhe_17780421-20201231_p_daily.tsv
+[DRY] SPLIT ECA&D_Karlstad_18581201-20080930_ta_daily.tsv -> 2 series
+   1858-12-01 -> 1865-06-30    2330 rows  ECA&D_Karlstad_18581201-18650630_ta_daily.tsv
+   1866-11-01 -> 2008-09-30   33841 rows  ECA&D_Karlstad_18661101-20080930_ta_daily.tsv  (+20th-c. tail)
+   [DRY] would delete original: ECA&D_Karlstad_18581201-20080930_ta_daily.tsv
+[DRY] SPLIT UA-UHMI_Kherson_18081113-18250312_p_subdaily.tsv -> 3 series
+   1808-11-13 -> 1815-12-12    6695 rows  UA-UHMI_Kherson_18081113-18151212_p_subdaily.tsv
+   1817-04-13 -> 1818-03-12    1002 rows  UA-UHMI_Kherson_18170413-18180312_p_subdaily.tsv
+   1823-08-13 -> 1825-03-12     819 rows  UA-UHMI_Kherson_18230813-18250312_p_subdaily.tsv
+   [DRY] would delete original: UA-UHMI_Kherson_18081113-18250312_p_subdaily.tsv
+[DRY] SPLIT UA-UHMI_Kherson_18081113-18250312_ta_subdaily.tsv -> 3 series
+   1808-11-13 -> 1815-12-12    6696 rows  UA-UHMI_Kherson_18081113-18151212_ta_subdaily.tsv
+   1817-04-13 -> 1818-03-12    1000 rows  UA-UHMI_Kherson_18170413-18180312_ta_subdaily.tsv
+   1823-08-13 -> 1825-03-12     818 rows  UA-UHMI_Kherson_18230813-18250312_ta_subdaily.tsv
+   [DRY] would delete original: UA-UHMI_Kherson_18081113-18250312_ta_subdaily.tsv
+[DRY] SPLIT UA-UHMI_Kyiv_18120129-18251212_ta_subdaily.tsv -> 2 series
+   1812-01-29 -> 1819-12-12    8552 rows  UA-UHMI_Kyiv_18120129-18191212_ta_subdaily.tsv
+   1823-12-13 -> 1825-12-12    2193 rows  UA-UHMI_Kyiv_18231213-18251212_ta_subdaily.tsv
+   [DRY] would delete original: UA-UHMI_Kyiv_18120129-18251212_ta_subdaily.tsv
+[DRY] SPLIT ILMMT_Killough_18510101-18540731_Tn_daily.tsv -> 2 series
+   1851-01-01 -> 1852-04-30     486 rows  ILMMT_Killough_18510101-18520430_Tn_daily.tsv
+   1854-07-01 -> 1854-07-31      31 rows  ILMMT_Killough_18540701-18540731_Tn_daily.tsv
+   [DRY] would delete original: ILMMT_Killough_18510101-18540731_Tn_daily.tsv
+[DRY] SPLIT ILMMT_Killough_18510101-18540731_Tx_daily.tsv -> 2 series
+   1851-01-01 -> 1852-04-30     486 rows  ILMMT_Killough_18510101-18520430_Tx_daily.tsv
+   1854-07-01 -> 1854-07-31      31 rows  ILMMT_Killough_18540701-18540731_Tx_daily.tsv
+   [DRY] would delete original: ILMMT_Killough_18510101-18540731_Tx_daily.tsv
+[DRY] SPLIT ECA&D_Kursk_18910101-20190630_ta_daily.tsv -> 2 series
+   1891-01-01 -> 1892-05-31     517 rows  ECA&D_Kursk_18910101-18920531_ta_daily.tsv
+   1896-01-01 -> 2019-06-30   44280 rows  ECA&D_Kursk_18960101-20190630_ta_daily.tsv  (+20th-c. tail)
+   [DRY] would delete original: ECA&D_Kursk_18910101-20190630_ta_daily.tsv
+[DRY] SPLIT ECA&D_KvikkjokkArrenjarka_18870901-20130331_ta_daily.tsv -> 2 series
+   1887-09-01 -> 1887-10-31      61 rows  ECA&D_KvikkjokkArrenjarka_18870901-18871031_ta_daily.tsv
+   1888-12-22 -> 2013-03-31   45213 rows  ECA&D_KvikkjokkArrenjarka_18881222-20130331_ta_daily.tsv  (+20th-c. tail)
+   [DRY] would delete original: ECA&D_KvikkjokkArrenjarka_18870901-20130331_ta_daily.tsv
+[DRY] SPLIT WRDv2-2_La-Corunna_18660116-18750328_p_subdaily.tsv -> 3 series
+   1866-01-16 -> 1867-12-30     440 rows  WRDv2-2_La-Corunna_18660116-18671230_p_subdaily.tsv
+   1869-01-10 -> 1870-09-12     151 rows  WRDv2-2_La-Corunna_18690110-18700912_p_subdaily.tsv
+   1872-01-15 -> 1875-03-28     179 rows  WRDv2-2_La-Corunna_18720115-18750328_p_subdaily.tsv
+   [DRY] would delete original: WRDv2-2_La-Corunna_18660116-18750328_p_subdaily.tsv
+[DRY] SPLIT WRDv2-2_La-Corunna_18660116-18750328_ta_subdaily.tsv -> 3 series
+   1866-01-16 -> 1867-12-30     440 rows  WRDv2-2_La-Corunna_18660116-18671230_ta_subdaily.tsv
+   1869-01-10 -> 1870-09-12     150 rows  WRDv2-2_La-Corunna_18690110-18700912_ta_subdaily.tsv
+   1872-01-15 -> 1875-03-28     182 rows  WRDv2-2_La-Corunna_18720115-18750328_ta_subdaily.tsv
+   [DRY] would delete original: WRDv2-2_La-Corunna_18660116-18750328_ta_subdaily.tsv
+[DRY] SPLIT PALAEO-RA_LaRochelle_17820101-17901231_p_subdaily_qc.tsv -> 2 series
+   1782-01-01 -> 1786-12-31    5478 rows  PALAEO-RA_LaRochelle_17820101-17861231_p_subdaily_qc.tsv
+   1789-01-01 -> 1790-12-31    2190 rows  PALAEO-RA_LaRochelle_17890101-17901231_p_subdaily_qc.tsv
+   [DRY] would delete original: PALAEO-RA_LaRochelle_17820101-17901231_p_subdaily_qc.tsv
+[DRY] SPLIT PALAEO-RA_LaRochelle_17820101-17901231_ta_subdaily_qc.tsv -> 2 series
+   1782-01-01 -> 1786-12-31    5472 rows  PALAEO-RA_LaRochelle_17820101-17861231_ta_subdaily_qc.tsv
+   1789-01-01 -> 1790-12-31    2190 rows  PALAEO-RA_LaRochelle_17890101-17901231_ta_subdaily_qc.tsv
+   [DRY] would delete original: PALAEO-RA_LaRochelle_17820101-17901231_ta_subdaily_qc.tsv
+[DRY] SPLIT KNMI_Leiden_17400101-17921231_ta_subdaily_qc.tsv -> 2 series
+   1740-01-01 -> 1758-12-31   20820 rows  KNMI_Leiden_17400101-17581231_ta_subdaily_qc.tsv
+   1776-01-20 -> 1792-12-31   17372 rows  KNMI_Leiden_17760120-17921231_ta_subdaily_qc.tsv
+   [DRY] would delete original: KNMI_Leiden_17400101-17921231_ta_subdaily_qc.tsv
+[DRY] SPLIT WRDv2-2_Leith_18610301-18750331_ta_barometer_subdaily.tsv -> 2 series
+   1861-03-01 -> 1863-12-31     853 rows  WRDv2-2_Leith_18610301-18631231_ta_barometer_subdaily.tsv
+   1872-01-04 -> 1875-03-31    1172 rows  WRDv2-2_Leith_18720104-18750331_ta_barometer_subdaily.tsv
+   [DRY] would delete original: WRDv2-2_Leith_18610301-18750331_ta_barometer_subdaily.tsv
+[DRY] SPLIT GHCNd_Liepaja_18810101-19990630_rr_daily.tsv -> 2 series
+   1881-01-01 -> 1886-07-31    1456 rows  GHCNd_Liepaja_18810101-18860731_rr_daily.tsv
+   1895-10-01 -> 1999-06-30   32509 rows  GHCNd_Liepaja_18951001-19990630_rr_daily.tsv  (+20th-c. tail)
+   [DRY] would delete original: GHCNd_Liepaja_18810101-19990630_rr_daily.tsv
+[DRY] SPLIT WRDv2-2_Liverpool_18610301-18750331_ta_barometer_subdaily.tsv -> 2 series
+   1861-03-01 -> 1863-12-31     869 rows  WRDv2-2_Liverpool_18610301-18631231_ta_barometer_subdaily.tsv
+   1872-01-04 -> 1875-03-31    1149 rows  WRDv2-2_Liverpool_18720104-18750331_ta_barometer_subdaily.tsv
+   [DRY] would delete original: WRDv2-2_Liverpool_18610301-18750331_ta_barometer_subdaily.tsv
+[DRY] SPLIT Cornes_London_18610720-19021019_p_subdaily_qc.tsv -> 9 series
+   1861-07-20 -> 1864-11-29      74 rows  Cornes_London_18610720-18641129_p_subdaily_qc.tsv
+   1867-07-15 -> 1868-05-08      60 rows  Cornes_London_18670715-18680508_p_subdaily_qc.tsv
+   1870-02-08 -> 1870-04-10      10 rows  Cornes_London_18700208-18700410_p_subdaily_qc.tsv
+   1871-05-28 -> 1872-08-26       4 rows  Cornes_London_18710528-18720826_p_subdaily_qc.tsv
+   1873-11-25 -> 1873-11-25       2 rows  Cornes_London_18731125-18731125_p_subdaily_qc.tsv
+   1878-12-29 -> 1878-12-29       1 rows  Cornes_London_18781229-18781229_p_subdaily_qc.tsv
+   1882-08-20 -> 1882-08-27       2 rows  Cornes_London_18820820-18820827_p_subdaily_qc.tsv
+   1885-03-08 -> 1885-03-08       1 rows  Cornes_London_18850308-18850308_p_subdaily_qc.tsv
+   1896-12-20 -> 1902-10-19       3 rows  Cornes_London_18961220-19021019_p_subdaily_qc.tsv  (+20th-c. tail)
+   [DRY] would delete original: Cornes_London_18610720-19021019_p_subdaily_qc.tsv
+[DRY] SPLIT Cornes_London_Gentlemans-Magazine_18240315-18650219_p_subdaily_qc.tsv -> 5 series
+   1824-03-15 -> 1824-03-15       1 rows  Cornes_London_Gentlemans-Magazine_18240315-18240315_p_subdaily_qc.tsv
+   1825-03-18 -> 1826-09-24      30 rows  Cornes_London_Gentlemans-Magazine_18250318-18260924_p_subdaily_qc.tsv
+   1830-11-12 -> 1831-10-08       2 rows  Cornes_London_Gentlemans-Magazine_18301112-18311008_p_subdaily_qc.tsv
+   1855-05-11 -> 1860-06-28     125 rows  Cornes_London_Gentlemans-Magazine_18550511-18600628_p_subdaily_qc.tsv
+   1861-07-14 -> 1865-02-19      25 rows  Cornes_London_Gentlemans-Magazine_18610714-18650219_p_subdaily_qc.tsv
+   [DRY] would delete original: Cornes_London_Gentlemans-Magazine_18240315-18650219_p_subdaily_qc.tsv
+[DRY] SPLIT Cornes_London_Greenwich_18570204-19060706_p_subdaily_qc.tsv -> 13 series
+   1857-02-04 -> 1857-02-05       6 rows  Cornes_London_Greenwich_18570204-18570205_p_subdaily_qc.tsv
+   1861-07-13 -> 1865-07-19     120 rows  Cornes_London_Greenwich_18610713-18650719_p_subdaily_qc.tsv
+   1866-10-27 -> 1868-08-18      19 rows  Cornes_London_Greenwich_18661027-18680818_p_subdaily_qc.tsv
+   1871-06-21 -> 1872-08-25       6 rows  Cornes_London_Greenwich_18710621-18720825_p_subdaily_qc.tsv
+   1873-10-24 -> 1873-11-13       9 rows  Cornes_London_Greenwich_18731024-18731113_p_subdaily_qc.tsv
+   1876-06-19 -> 1876-07-08      57 rows  Cornes_London_Greenwich_18760619-18760708_p_subdaily_qc.tsv
+   1878-12-04 -> 1879-01-04      28 rows  Cornes_London_Greenwich_18781204-18790104_p_subdaily_qc.tsv
+   1882-08-18 -> 1886-01-14     137 rows  Cornes_London_Greenwich_18820818-18860114_p_subdaily_qc.tsv
+   1887-03-17 -> 1887-04-15      12 rows  Cornes_London_Greenwich_18870317-18870415_p_subdaily_qc.tsv
+   1892-12-07 -> 1893-03-03      15 rows  Cornes_London_Greenwich_18921207-18930303_p_subdaily_qc.tsv
+   1895-02-06 -> 1895-02-07       6 rows  Cornes_London_Greenwich_18950206-18950207_p_subdaily_qc.tsv
+   1896-02-26 -> 1897-09-10      19 rows  Cornes_London_Greenwich_18960226-18970910_p_subdaily_qc.tsv
+   1899-06-20 -> 1906-07-06      32 rows  Cornes_London_Greenwich_18990620-19060706_p_subdaily_qc.tsv  (+20th-c. tail)
+   [DRY] would delete original: Cornes_London_Greenwich_18570204-19060706_p_subdaily_qc.tsv
+[DRY] SPLIT Cornes_London_Rogerson_18411213-18450331_p_subdaily_qc.tsv -> 3 series
+   1841-12-13 -> 1841-12-13       1 rows  Cornes_London_Rogerson_18411213-18411213_p_subdaily_qc.tsv
+   1843-12-31 -> 1843-12-31       2 rows  Cornes_London_Rogerson_18431231-18431231_p_subdaily_qc.tsv
+   1845-03-01 -> 1845-03-31      62 rows  Cornes_London_Rogerson_18450301-18450331_p_subdaily_qc.tsv
+   [DRY] would delete original: Cornes_London_Rogerson_18411213-18450331_p_subdaily_qc.tsv
+[DRY] SPLIT WRDv2-2_Lorient_18621222-18750331_ta_barometer_subdaily.tsv -> 2 series
+   1862-12-22 -> 1863-12-31     314 rows  WRDv2-2_Lorient_18621222-18631231_ta_barometer_subdaily.tsv
+   1872-01-04 -> 1875-03-31    1124 rows  WRDv2-2_Lorient_18720104-18750331_ta_barometer_subdaily.tsv
+   [DRY] would delete original: WRDv2-2_Lorient_18621222-18750331_ta_barometer_subdaily.tsv
+[DRY] SPLIT GHCNd_Lowestoft_18890201-20041231_rr_daily.tsv -> 2 series
+   1889-02-01 -> 1890-12-30     697 rows  GHCNd_Lowestoft_18890201-18901230_rr_daily.tsv
+   1892-02-01 -> 2004-12-31   36575 rows  GHCNd_Lowestoft_18920201-20041231_rr_daily.tsv  (+20th-c. tail)
+   [DRY] would delete original: GHCNd_Lowestoft_18890201-20041231_rr_daily.tsv
+[DRY] SPLIT GHCNd_Lugansk_18810101-20121231_rr_daily.tsv -> 2 series
+   1881-01-01 -> 1894-12-31    4718 rows  GHCNd_Lugansk_18810101-18941231_rr_daily.tsv
+   1898-01-01 -> 2012-12-31   41452 rows  GHCNd_Lugansk_18980101-20121231_rr_daily.tsv  (+20th-c. tail)
+   [DRY] would delete original: GHCNd_Lugansk_18810101-20121231_rr_daily.tsv
+[DRY] SPLIT UA-UHMI_Luhansk_18400101-18691231_p_subdaily.tsv -> 2 series
+   1840-01-01 -> 1855-12-31   46907 rows  UA-UHMI_Luhansk_18400101-18551231_p_subdaily.tsv
+   1860-01-01 -> 1869-12-31   31529 rows  UA-UHMI_Luhansk_18600101-18691231_p_subdaily.tsv
+   [DRY] would delete original: UA-UHMI_Luhansk_18400101-18691231_p_subdaily.tsv
+[DRY] SPLIT UA-UHMI_Luhansk_18400101-18691231_ta_subdaily.tsv -> 2 series
+   1840-01-01 -> 1855-12-31   46570 rows  UA-UHMI_Luhansk_18400101-18551231_ta_subdaily.tsv
+   1860-01-01 -> 1869-12-31   32816 rows  UA-UHMI_Luhansk_18600101-18691231_ta_subdaily.tsv
+   [DRY] would delete original: UA-UHMI_Luhansk_18400101-18691231_ta_subdaily.tsv
+[DRY] SPLIT UA-UHMI_Luhansk_18700101-18801231_p_subdaily.tsv -> 2 series
+   1870-01-01 -> 1876-01-31    6531 rows  UA-UHMI_Luhansk_18700101-18760131_p_subdaily.tsv
+   1877-03-01 -> 1880-12-31    4206 rows  UA-UHMI_Luhansk_18770301-18801231_p_subdaily.tsv
+   [DRY] would delete original: UA-UHMI_Luhansk_18700101-18801231_p_subdaily.tsv
+[DRY] SPLIT ECA&D_Lund_17840121-20241231_ta_daily.tsv -> 14 series
+   1784-01-21 -> 1784-12-06       2 rows  ECA&D_Lund_17840121-17841206_ta_daily.tsv
+   1786-01-07 -> 1801-11-21     385 rows  ECA&D_Lund_17860107-18011121_ta_daily.tsv
+   1802-11-30 -> 1802-11-30       1 rows  ECA&D_Lund_18021130-18021130_ta_daily.tsv
+   1803-12-24 -> 1815-03-19     706 rows  ECA&D_Lund_18031224-18150319_ta_daily.tsv
+   1818-12-26 -> 1820-02-15      69 rows  ECA&D_Lund_18181226-18200215_ta_daily.tsv
+   1821-05-05 -> 1821-05-05       1 rows  ECA&D_Lund_18210505-18210505_ta_daily.tsv
+   1822-05-18 -> 1822-12-31       2 rows  ECA&D_Lund_18220518-18221231_ta_daily.tsv
+   1824-03-23 -> 1825-06-22       5 rows  ECA&D_Lund_18240323-18250622_ta_daily.tsv
+   1828-02-20 -> 1833-02-28     487 rows  ECA&D_Lund_18280220-18330228_ta_daily.tsv
+   1835-01-23 -> 1836-11-23      37 rows  ECA&D_Lund_18350123-18361123_ta_daily.tsv
+   1839-01-25 -> 1840-01-20       5 rows  ECA&D_Lund_18390125-18400120_ta_daily.tsv
+   1842-03-06 -> 1842-03-06       1 rows  ECA&D_Lund_18420306-18420306_ta_daily.tsv
+   1846-07-08 -> 1846-10-01       2 rows  ECA&D_Lund_18460708-18461001_ta_daily.tsv
+   1858-07-01 -> 2024-12-31   59311 rows  ECA&D_Lund_18580701-20241231_ta_daily.tsv  (+20th-c. tail)
+   [DRY] would delete original: ECA&D_Lund_17840121-20241231_ta_daily.tsv
+[DRY] SPLIT CHIMES_Luzern_Ineichen_18260401-18320430_p_subdaily_qc.tsv -> 2 series
+   1826-04-01 -> 1830-01-31    3469 rows  CHIMES_Luzern_Ineichen_18260401-18300131_p_subdaily_qc.tsv
+   1831-09-01 -> 1832-04-30     728 rows  CHIMES_Luzern_Ineichen_18310901-18320430_p_subdaily_qc.tsv
+   [DRY] would delete original: CHIMES_Luzern_Ineichen_18260401-18320430_p_subdaily_qc.tsv
+[DRY] SPLIT CHIMES_Luzern_Ineichen_18260401-18320430_ta_subdaily_qc.tsv -> 2 series
+   1826-04-01 -> 1830-01-31    3473 rows  CHIMES_Luzern_Ineichen_18260401-18300131_ta_subdaily_qc.tsv
+   1831-09-01 -> 1832-04-30     729 rows  CHIMES_Luzern_Ineichen_18310901-18320430_ta_subdaily_qc.tsv
+   [DRY] would delete original: CHIMES_Luzern_Ineichen_18260401-18320430_ta_subdaily_qc.tsv
+[DRY] SPLIT CHIMES_Luzern_Schwytzer_18440101-18641231_p_subdaily_qc.tsv -> 2 series
+   1844-01-01 -> 1845-03-29     445 rows  CHIMES_Luzern_Schwytzer_18440101-18450329_p_subdaily_qc.tsv
+   1850-02-05 -> 1864-12-31    8152 rows  CHIMES_Luzern_Schwytzer_18500205-18641231_p_subdaily_qc.tsv
+   [DRY] would delete original: CHIMES_Luzern_Schwytzer_18440101-18641231_p_subdaily_qc.tsv
+[DRY] SPLIT CHIMES_Luzern_Schwytzer_18440101-18641231_ta_subdaily_qc.tsv -> 2 series
+   1844-01-01 -> 1845-03-29     424 rows  CHIMES_Luzern_Schwytzer_18440101-18450329_ta_subdaily_qc.tsv
+   1850-02-05 -> 1864-12-31    7986 rows  CHIMES_Luzern_Schwytzer_18500205-18641231_ta_subdaily_qc.tsv
+   [DRY] would delete original: CHIMES_Luzern_Schwytzer_18440101-18641231_ta_subdaily_qc.tsv
+[DRY] SPLIT WRDv2-2_Lyon_18680103-18730904_p_subdaily.tsv -> 2 series
+   1868-01-03 -> 1870-09-14     462 rows  WRDv2-2_Lyon_18680103-18700914_p_subdaily.tsv
+   1872-01-15 -> 1873-09-04     516 rows  WRDv2-2_Lyon_18720115-18730904_p_subdaily.tsv
+   [DRY] would delete original: WRDv2-2_Lyon_18680103-18730904_p_subdaily.tsv
+[DRY] SPLIT WRDv2-2_Lyon_18680103-18750331_ta_subdaily.tsv -> 2 series
+   1868-01-03 -> 1870-09-14     471 rows  WRDv2-2_Lyon_18680103-18700914_ta_subdaily.tsv
+   1872-01-15 -> 1875-03-31    1131 rows  WRDv2-2_Lyon_18720115-18750331_ta_subdaily.tsv
+   [DRY] would delete original: WRDv2-2_Lyon_18680103-18750331_ta_subdaily.tsv
+[DRY] SPLIT KNMI_Maastricht_18520101-19051231_Tn_daily_qc.tsv -> 2 series
+   1852-01-01 -> 1875-12-31    8733 rows  KNMI_Maastricht_18520101-18751231_Tn_daily_qc.tsv
+   1881-01-01 -> 1905-12-31    9114 rows  KNMI_Maastricht_18810101-19051231_Tn_daily_qc.tsv  (+20th-c. tail)
+   [DRY] would delete original: KNMI_Maastricht_18520101-19051231_Tn_daily_qc.tsv
+[DRY] SPLIT KNMI_Maastricht_18520101-19051231_Tx_daily_qc.tsv -> 2 series
+   1852-01-01 -> 1875-12-31    8691 rows  KNMI_Maastricht_18520101-18751231_Tx_daily_qc.tsv
+   1881-01-01 -> 1905-12-31    9137 rows  KNMI_Maastricht_18810101-19051231_Tx_daily_qc.tsv  (+20th-c. tail)
+   [DRY] would delete original: KNMI_Maastricht_18520101-19051231_Tx_daily_qc.tsv
+[DRY] SPLIT KNMI_Maastricht_18520101-19051231_rh_subdaily_qc.tsv -> 2 series
+   1852-01-01 -> 1875-12-31   26089 rows  KNMI_Maastricht_18520101-18751231_rh_subdaily_qc.tsv
+   1881-01-01 -> 1905-12-31   27373 rows  KNMI_Maastricht_18810101-19051231_rh_subdaily_qc.tsv  (+20th-c. tail)
+   [DRY] would delete original: KNMI_Maastricht_18520101-19051231_rh_subdaily_qc.tsv
+[DRY] SPLIT GHCNd_Maly-Uzen_18820101-19640731_rr_daily.tsv -> 3 series
+   1882-01-01 -> 1889-12-31    1399 rows  GHCNd_Maly-Uzen_18820101-18891231_rr_daily.tsv
+   1893-08-01 -> 1893-08-30      30 rows  GHCNd_Maly-Uzen_18930801-18930830_rr_daily.tsv
+   1895-01-01 -> 1964-07-31    9661 rows  GHCNd_Maly-Uzen_18950101-19640731_rr_daily.tsv  (+20th-c. tail)
+   [DRY] would delete original: GHCNd_Maly-Uzen_18820101-19640731_rr_daily.tsv
+[DRY] SPLIT PALAEO-RA_Mannheim_17810101-17911231_eee_daily_qc.tsv -> 2 series
+   1781-01-01 -> 1786-12-31    2191 rows  PALAEO-RA_Mannheim_17810101-17861231_eee_daily_qc.tsv
+   1789-01-01 -> 1791-12-31    1095 rows  PALAEO-RA_Mannheim_17890101-17911231_eee_daily_qc.tsv
+   [DRY] would delete original: PALAEO-RA_Mannheim_17810101-17911231_eee_daily_qc.tsv
+[DRY] SPLIT PALAEO-RA_Mannheim_17810101-17921231_p_subdaily_qc.tsv -> 2 series
+   1781-01-01 -> 1786-12-31    6573 rows  PALAEO-RA_Mannheim_17810101-17861231_p_subdaily_qc.tsv
+   1789-01-01 -> 1792-12-31    4383 rows  PALAEO-RA_Mannheim_17890101-17921231_p_subdaily_qc.tsv
+   [DRY] would delete original: PALAEO-RA_Mannheim_17810101-17921231_p_subdaily_qc.tsv
+[DRY] SPLIT PALAEO-RA_Mannheim_17810101-17921231_rr_daily_qc.tsv -> 2 series
+   1781-01-01 -> 1786-12-31    2191 rows  PALAEO-RA_Mannheim_17810101-17861231_rr_daily_qc.tsv
+   1789-01-01 -> 1792-12-31    1461 rows  PALAEO-RA_Mannheim_17890101-17921231_rr_daily_qc.tsv
+   [DRY] would delete original: PALAEO-RA_Mannheim_17810101-17921231_rr_daily_qc.tsv
+[DRY] SPLIT PALAEO-RA_Mannheim_17810101-17921231_ta_subdaily_qc.tsv -> 2 series
+   1781-01-01 -> 1786-12-31    6573 rows  PALAEO-RA_Mannheim_17810101-17861231_ta_subdaily_qc.tsv
+   1789-01-01 -> 1792-12-31    4383 rows  PALAEO-RA_Mannheim_17890101-17921231_ta_subdaily_qc.tsv
+   [DRY] would delete original: PALAEO-RA_Mannheim_17810101-17921231_ta_subdaily_qc.tsv
+[DRY] SPLIT GHCNd_Mantova_18400401-20081231_rr_daily.tsv -> 3 series
+   1840-04-01 -> 1848-03-31    2922 rows  GHCNd_Mantova_18400401-18480331_rr_daily.tsv
+   1851-01-01 -> 1856-12-31    2192 rows  GHCNd_Mantova_18510101-18561231_rr_daily.tsv
+   1863-09-01 -> 2008-12-31   52964 rows  GHCNd_Mantova_18630901-20081231_rr_daily.tsv  (+20th-c. tail)
+   [DRY] would delete original: GHCNd_Mantova_18400401-20081231_rr_daily.tsv
+[DRY] SPLIT ILMMT_Markree_18501001-19681231_Tn_daily_qc.tsv -> 3 series
+   1850-10-01 -> 1852-02-29     507 rows  ILMMT_Markree_18501001-18520229_Tn_daily_qc.tsv
+   1855-03-01 -> 1856-02-17     321 rows  ILMMT_Markree_18550301-18560217_Tn_daily_qc.tsv
+   1874-11-01 -> 1968-12-31   34358 rows  ILMMT_Markree_18741101-19681231_Tn_daily_qc.tsv  (+20th-c. tail)
+   [DRY] would delete original: ILMMT_Markree_18501001-19681231_Tn_daily_qc.tsv
+[DRY] SPLIT ILMMT_Markree_18501001-19681231_Tx_daily_qc.tsv -> 3 series
+   1850-10-01 -> 1852-02-29     507 rows  ILMMT_Markree_18501001-18520229_Tx_daily_qc.tsv
+   1855-03-01 -> 1856-02-17     329 rows  ILMMT_Markree_18550301-18560217_Tx_daily_qc.tsv
+   1874-11-01 -> 1968-12-31   34359 rows  ILMMT_Markree_18741101-19681231_Tx_daily_qc.tsv  (+20th-c. tail)
+   [DRY] would delete original: ILMMT_Markree_18501001-19681231_Tx_daily_qc.tsv
+[DRY] SPLIT CHIMES_Marschlins_17820101-18651021_p_subdaily_qc.tsv -> 9 series
+   1782-01-01 -> 1786-07-26    1615 rows  CHIMES_Marschlins_17820101-17860726_p_subdaily_qc.tsv
+   1790-06-11 -> 1800-07-12    8116 rows  CHIMES_Marschlins_17900611-18000712_p_subdaily_qc.tsv
+   1802-02-01 -> 1809-11-30    7027 rows  CHIMES_Marschlins_18020201-18091130_p_subdaily_qc.tsv
+   1811-09-01 -> 1816-11-30    4819 rows  CHIMES_Marschlins_18110901-18161130_p_subdaily_qc.tsv
+   1818-04-01 -> 1818-04-30      90 rows  CHIMES_Marschlins_18180401-18180430_p_subdaily_qc.tsv
+   1822-04-01 -> 1823-10-11     488 rows  CHIMES_Marschlins_18220401-18231011_p_subdaily_qc.tsv
+   1831-08-18 -> 1831-09-17      48 rows  CHIMES_Marschlins_18310818-18310917_p_subdaily_qc.tsv
+   1833-02-01 -> 1836-09-30     418 rows  CHIMES_Marschlins_18330201-18360930_p_subdaily_qc.tsv
+   1839-02-01 -> 1865-10-21   21219 rows  CHIMES_Marschlins_18390201-18651021_p_subdaily_qc.tsv
+   [DRY] would delete original: CHIMES_Marschlins_17820101-18651021_p_subdaily_qc.tsv
+[DRY] SPLIT CHIMES_Marschlins_17820101-18710731_ta_subdaily_qc.tsv -> 7 series
+   1782-01-01 -> 1786-07-30    1697 rows  CHIMES_Marschlins_17820101-17860730_ta_subdaily_qc.tsv
+   1790-05-26 -> 1800-07-12    8023 rows  CHIMES_Marschlins_17900526-18000712_ta_subdaily_qc.tsv
+   1802-02-01 -> 1809-11-30    6874 rows  CHIMES_Marschlins_18020201-18091130_ta_subdaily_qc.tsv
+   1812-02-01 -> 1816-11-30    4514 rows  CHIMES_Marschlins_18120201-18161130_ta_subdaily_qc.tsv
+   1818-02-01 -> 1820-11-30    2612 rows  CHIMES_Marschlins_18180201-18201130_ta_subdaily_qc.tsv
+   1822-04-01 -> 1825-09-30    3223 rows  CHIMES_Marschlins_18220401-18250930_ta_subdaily_qc.tsv
+   1833-02-01 -> 1871-07-31   28710 rows  CHIMES_Marschlins_18330201-18710731_ta_subdaily_qc.tsv
+   [DRY] would delete original: CHIMES_Marschlins_17820101-18710731_ta_subdaily_qc.tsv
+[DRY] SPLIT CHIMES_Marschlins_18440201-18710731_p_bis_subdaily_qc.tsv -> 2 series
+   1844-02-01 -> 1844-03-31     108 rows  CHIMES_Marschlins_18440201-18440331_p_bis_subdaily_qc.tsv
+   1863-07-01 -> 1871-07-31    6459 rows  CHIMES_Marschlins_18630701-18710731_p_bis_subdaily_qc.tsv
+   [DRY] would delete original: CHIMES_Marschlins_18440201-18710731_p_bis_subdaily_qc.tsv
+[DRY] SPLIT PALAEO-RA_Montpellier_17050203-17480624_dd_subdaily_qc.tsv -> 13 series
+   1705-02-03 -> 1705-02-03      99 rows  PALAEO-RA_Montpellier_17050203-17050203_dd_subdaily_qc.tsv
+   1737-01-03 -> 1738-12-09     121 rows  PALAEO-RA_Montpellier_17370103-17381209_dd_subdaily_qc.tsv
+   1748-07-28 -> 1737-07-21      71 rows  PALAEO-RA_Montpellier_17480728-17370721_dd_subdaily_qc.tsv
+   1739-07-20 -> 1740-07-18       3 rows  PALAEO-RA_Montpellier_17390720-17400718_dd_subdaily_qc.tsv
+   1741-08-12 -> 1741-08-12       1 rows  PALAEO-RA_Montpellier_17410812-17410812_dd_subdaily_qc.tsv
+   1744-08-10 -> 1746-07-29       3 rows  PALAEO-RA_Montpellier_17440810-17460729_dd_subdaily_qc.tsv
+   1748-07-20 -> 1739-01-05       3 rows  PALAEO-RA_Montpellier_17480720-17390105_dd_subdaily_qc.tsv
+   1740-02-20 -> 1741-01-26       2 rows  PALAEO-RA_Montpellier_17400220-17410126_dd_subdaily_qc.tsv
+   1742-02-12 -> 1743-02-25       3 rows  PALAEO-RA_Montpellier_17420212-17430225_dd_subdaily_qc.tsv
+   1745-01-20 -> 1745-01-20       1 rows  PALAEO-RA_Montpellier_17450120-17450120_dd_subdaily_qc.tsv
+   1746-03-13 -> 1747-01-13       2 rows  PALAEO-RA_Montpellier_17460313-17470113_dd_subdaily_qc.tsv
+   1748-01-15 -> 1705-07-31       3 rows  PALAEO-RA_Montpellier_17480115-17050731_dd_subdaily_qc.tsv
+   1745-06-27 -> 1748-06-24    1531 rows  PALAEO-RA_Montpellier_17450627-17480624_dd_subdaily_qc.tsv
+   [DRY] would delete original: PALAEO-RA_Montpellier_17050203-17480624_dd_subdaily_qc.tsv
+[DRY] SPLIT PALAEO-RA_Montpellier_17050203-17481228_p_subdaily_qc.tsv -> 3 series
+   1705-02-03 -> 1705-02-03      92 rows  PALAEO-RA_Montpellier_17050203-17050203_p_subdaily_qc.tsv
+   1737-01-30 -> 1738-12-09     123 rows  PALAEO-RA_Montpellier_17370130-17381209_p_subdaily_qc.tsv
+   1748-01-14 -> 1748-12-28    1022 rows  PALAEO-RA_Montpellier_17480114-17481228_p_subdaily_qc.tsv
+   [DRY] would delete original: PALAEO-RA_Montpellier_17050203-17481228_p_subdaily_qc.tsv
+[DRY] SPLIT PALAEO-RA_Montpellier_17370103-17480624_ta_subdaily_qc.tsv -> 11 series
+   1737-01-03 -> 1738-12-09     129 rows  PALAEO-RA_Montpellier_17370103-17381209_ta_subdaily_qc.tsv
+   1748-07-28 -> 1737-07-21      36 rows  PALAEO-RA_Montpellier_17480728-17370721_ta_subdaily_qc.tsv
+   1738-08-14 -> 1740-07-18       5 rows  PALAEO-RA_Montpellier_17380814-17400718_ta_subdaily_qc.tsv
+   1741-08-12 -> 1743-07-03       3 rows  PALAEO-RA_Montpellier_17410812-17430703_ta_subdaily_qc.tsv
+   1744-08-10 -> 1746-07-29       3 rows  PALAEO-RA_Montpellier_17440810-17460729_ta_subdaily_qc.tsv
+   1747-08-01 -> 1737-01-26       3 rows  PALAEO-RA_Montpellier_17470801-17370126_ta_subdaily_qc.tsv
+   1738-02-22 -> 1739-01-05       2 rows  PALAEO-RA_Montpellier_17380222-17390105_ta_subdaily_qc.tsv
+   1740-02-20 -> 1741-01-26       2 rows  PALAEO-RA_Montpellier_17400220-17410126_ta_subdaily_qc.tsv
+   1742-02-12 -> 1745-01-20       5 rows  PALAEO-RA_Montpellier_17420212-17450120_ta_subdaily_qc.tsv
+   1746-03-13 -> 1747-01-13       2 rows  PALAEO-RA_Montpellier_17460313-17470113_ta_subdaily_qc.tsv
+   1748-01-15 -> 1748-06-24    1979 rows  PALAEO-RA_Montpellier_17480115-17480624_ta_subdaily_qc.tsv
+   [DRY] would delete original: PALAEO-RA_Montpellier_17370103-17480624_ta_subdaily_qc.tsv
+[DRY] SPLIT PALAEO-RA_Moscow_17850321-17921231_dd_subdaily_qc.tsv -> 2 series
+   1785-03-21 -> 1789-12-20    5208 rows  PALAEO-RA_Moscow_17850321-17891220_dd_subdaily_qc.tsv
+   1791-01-01 -> 1792-12-31    2193 rows  PALAEO-RA_Moscow_17910101-17921231_dd_subdaily_qc.tsv
+   [DRY] would delete original: PALAEO-RA_Moscow_17850321-17921231_dd_subdaily_qc.tsv
+[DRY] SPLIT PALAEO-RA_Moscow_17850321-17921231_p_subdaily_qc.tsv -> 2 series
+   1785-03-21 -> 1789-12-20    4108 rows  PALAEO-RA_Moscow_17850321-17891220_p_subdaily_qc.tsv
+   1791-01-01 -> 1792-12-31    2193 rows  PALAEO-RA_Moscow_17910101-17921231_p_subdaily_qc.tsv
+   [DRY] would delete original: PALAEO-RA_Moscow_17850321-17921231_p_subdaily_qc.tsv
+[DRY] SPLIT PALAEO-RA_Moscow_17850321-17921231_ta_subdaily_qc.tsv -> 2 series
+   1785-03-21 -> 1789-12-20    4108 rows  PALAEO-RA_Moscow_17850321-17891220_ta_subdaily_qc.tsv
+   1791-01-01 -> 1792-12-31    2193 rows  PALAEO-RA_Moscow_17910101-17921231_ta_subdaily_qc.tsv
+   [DRY] would delete original: PALAEO-RA_Moscow_17850321-17921231_ta_subdaily_qc.tsv
+[DRY] SPLIT WRDv2-2_Nairn_18610301-18750331_ta_barometer_subdaily.tsv -> 2 series
+   1861-03-01 -> 1863-12-30     839 rows  WRDv2-2_Nairn_18610301-18631230_ta_barometer_subdaily.tsv
+   1872-01-04 -> 1875-03-31    1157 rows  WRDv2-2_Nairn_18720104-18750331_ta_barometer_subdaily.tsv
+   [DRY] would delete original: WRDv2-2_Nairn_18610301-18750331_ta_barometer_subdaily.tsv
+[DRY] SPLIT MEDARE_Nicosia_17607_18810801-19221231_p_daily.tsv -> 2 series
+   1881-08-01 -> 1885-08-21    1402 rows  MEDARE_Nicosia_17607_18810801-18850821_p_daily.tsv
+   1887-08-01 -> 1922-12-31   10511 rows  MEDARE_Nicosia_17607_18870801-19221231_p_daily.tsv  (+20th-c. tail)
+   [DRY] would delete original: MEDARE_Nicosia_17607_18810801-19221231_p_daily.tsv
+[DRY] SPLIT UERRA_Nicosia_18810801-19221231_ta_subdaily.tsv -> 2 series
+   1881-08-01 -> 1891-01-16    6690 rows  UERRA_Nicosia_18810801-18910116_ta_subdaily.tsv
+   1892-01-24 -> 1922-12-31   22523 rows  UERRA_Nicosia_18920124-19221231_ta_subdaily.tsv  (+20th-c. tail)
+   [DRY] would delete original: UERRA_Nicosia_18810801-19221231_ta_subdaily.tsv
+[DRY] SPLIT GHCNd_Novorossijsk_18810101-19960630_rr_daily.tsv -> 2 series
+   1881-01-01 -> 1886-01-31    1857 rows  GHCNd_Novorossijsk_18810101-18860131_rr_daily.tsv
+   1888-01-01 -> 1996-06-30   38016 rows  GHCNd_Novorossijsk_18880101-19960630_rr_daily.tsv  (+20th-c. tail)
+   [DRY] would delete original: GHCNd_Novorossijsk_18810101-19960630_rr_daily.tsv
+[DRY] SPLIT UA-UHMI_Odesa_18591101-18691231_p_subdaily.tsv -> 2 series
+   1859-11-01 -> 1862-07-31    2997 rows  UA-UHMI_Odesa_18591101-18620731_p_subdaily.tsv
+   1865-11-01 -> 1869-12-31    4536 rows  UA-UHMI_Odesa_18651101-18691231_p_subdaily.tsv
+   [DRY] would delete original: UA-UHMI_Odesa_18591101-18691231_p_subdaily.tsv
+[DRY] SPLIT UA-UHMI_Odesa_18591101-18691231_ta_subdaily.tsv -> 2 series
+   1859-11-01 -> 1862-07-31    2997 rows  UA-UHMI_Odesa_18591101-18620731_ta_subdaily.tsv
+   1865-11-01 -> 1869-12-31    4536 rows  UA-UHMI_Odesa_18651101-18691231_ta_subdaily.tsv
+   [DRY] would delete original: UA-UHMI_Odesa_18591101-18691231_ta_subdaily.tsv
+[DRY] SPLIT UA-UHMI_Odesa_Vorontsov-lighthouse_18740720-18801012_p_subdaily.tsv -> 2 series
+   1874-07-20 -> 1878-01-12    5091 rows  UA-UHMI_Odesa_Vorontsov-lighthouse_18740720-18780112_p_subdaily.tsv
+   1880-09-13 -> 1880-10-12     120 rows  UA-UHMI_Odesa_Vorontsov-lighthouse_18800913-18801012_p_subdaily.tsv
+   [DRY] would delete original: UA-UHMI_Odesa_Vorontsov-lighthouse_18740720-18801012_p_subdaily.tsv
+[DRY] SPLIT UA-UHMI_Odesa_Vorontsov-lighthouse_18740720-18801012_ta_subdaily.tsv -> 2 series
+   1874-07-20 -> 1878-01-12    4420 rows  UA-UHMI_Odesa_Vorontsov-lighthouse_18740720-18780112_ta_subdaily.tsv
+   1880-09-13 -> 1880-10-12     120 rows  UA-UHMI_Odesa_Vorontsov-lighthouse_18800913-18801012_ta_subdaily.tsv
+   [DRY] would delete original: UA-UHMI_Odesa_Vorontsov-lighthouse_18740720-18801012_ta_subdaily.tsv
+[DRY] SPLIT UA-UHMI_Odesa_horticulture_18411013-18530630_p_subdaily.tsv -> 2 series
+   1841-10-13 -> 1849-12-31    8075 rows  UA-UHMI_Odesa_horticulture_18411013-18491231_p_subdaily.tsv
+   1853-01-01 -> 1853-06-30     536 rows  UA-UHMI_Odesa_horticulture_18530101-18530630_p_subdaily.tsv
+   [DRY] would delete original: UA-UHMI_Odesa_horticulture_18411013-18530630_p_subdaily.tsv
+[DRY] SPLIT UA-UHMI_Odesa_horticulture_18411013-18530630_ta_subdaily.tsv -> 2 series
+   1841-10-13 -> 1849-12-31    8080 rows  UA-UHMI_Odesa_horticulture_18411013-18491231_ta_subdaily.tsv
+   1853-01-01 -> 1853-06-30     521 rows  UA-UHMI_Odesa_horticulture_18530101-18530630_ta_subdaily.tsv
+   [DRY] would delete original: UA-UHMI_Odesa_horticulture_18411013-18530630_ta_subdaily.tsv
+[DRY] SPLIT UA-UHMI_Odesa_lighthouse_18671016-18710612_p_subdaily.tsv -> 2 series
+   1867-10-16 -> 1868-06-22     642 rows  UA-UHMI_Odesa_lighthouse_18671016-18680622_p_subdaily.tsv
+   1869-11-20 -> 1871-06-12    1618 rows  UA-UHMI_Odesa_lighthouse_18691120-18710612_p_subdaily.tsv
+   [DRY] would delete original: UA-UHMI_Odesa_lighthouse_18671016-18710612_p_subdaily.tsv
+[DRY] SPLIT MEDARE_Oran_60461_18520101-19661231_p_daily.tsv -> 5 series
+   1852-01-01 -> 1853-12-31     617 rows  MEDARE_Oran_60461_18520101-18531231_p_daily.tsv
+   1856-12-01 -> 1860-11-30    1227 rows  MEDARE_Oran_60461_18561201-18601130_p_daily.tsv
+   1862-12-01 -> 1867-12-31    1532 rows  MEDARE_Oran_60461_18621201-18671231_p_daily.tsv
+   1880-03-14 -> 1895-12-31    4975 rows  MEDARE_Oran_60461_18800314-18951231_p_daily.tsv
+   1897-01-01 -> 1966-12-31   16121 rows  MEDARE_Oran_60461_18970101-19661231_p_daily.tsv  (+20th-c. tail)
+   [DRY] would delete original: MEDARE_Oran_60461_18520101-19661231_p_daily.tsv
+[DRY] SPLIT ECA&D_Osijek_18580301-20211231_ta_daily.tsv -> 2 series
+   1858-03-01 -> 1876-05-08    6047 rows  ECA&D_Osijek_18580301-18760508_ta_daily.tsv
+   1899-03-01 -> 2021-12-31   44692 rows  ECA&D_Osijek_18990301-20211231_ta_daily.tsv  (+20th-c. tail)
+   [DRY] would delete original: ECA&D_Osijek_18580301-20211231_ta_daily.tsv
+[DRY] SPLIT Camuffo_Padua_17270101-20181231_rr_daily_qc.tsv -> 2 series
+   1727-01-01 -> 1764-03-31   13605 rows  Camuffo_Padua_17270101-17640331_rr_daily_qc.tsv
+   1768-01-01 -> 2018-12-31   74380 rows  Camuffo_Padua_17680101-20181231_rr_daily_qc.tsv  (+20th-c. tail)
+   [DRY] would delete original: Camuffo_Padua_17270101-20181231_rr_daily_qc.tsv
+[DRY] SPLIT IMPROVE_Padua_17250112-19970531_ta_daily_qc.tsv -> 2 series
+   1725-01-12 -> 1764-12-31   14524 rows  IMPROVE_Padua_17250112-17641231_ta_daily_qc.tsv
+   1810-01-01 -> 1997-05-31   67843 rows  IMPROVE_Padua_18100101-19970531_ta_daily_qc.tsv  (+20th-c. tail)
+   [DRY] would delete original: IMPROVE_Padua_17250112-19970531_ta_daily_qc.tsv
+[DRY] SPLIT PALAEO-RA_Padua_17810101-17921231_p_subdaily_qc.tsv -> 2 series
+   1781-01-01 -> 1786-12-31    6571 rows  PALAEO-RA_Padua_17810101-17861231_p_subdaily_qc.tsv
+   1789-01-01 -> 1792-12-31    4362 rows  PALAEO-RA_Padua_17890101-17921231_p_subdaily_qc.tsv
+   [DRY] would delete original: PALAEO-RA_Padua_17810101-17921231_p_subdaily_qc.tsv
+[DRY] SPLIT PALAEO-RA_Padua_17810101-17921231_rr_subdaily_qc.tsv -> 2 series
+   1781-01-01 -> 1786-12-31    6573 rows  PALAEO-RA_Padua_17810101-17861231_rr_subdaily_qc.tsv
+   1789-01-01 -> 1792-12-31    4383 rows  PALAEO-RA_Padua_17890101-17921231_rr_subdaily_qc.tsv
+   [DRY] would delete original: PALAEO-RA_Padua_17810101-17921231_rr_subdaily_qc.tsv
+[DRY] SPLIT PALAEO-RA_Padua_17810101-17921231_ta_subdaily_qc.tsv -> 2 series
+   1781-01-01 -> 1786-12-31    6565 rows  PALAEO-RA_Padua_17810101-17861231_ta_subdaily_qc.tsv
+   1789-01-01 -> 1792-12-31    4362 rows  PALAEO-RA_Padua_17890101-17921231_ta_subdaily_qc.tsv
+   [DRY] would delete original: PALAEO-RA_Padua_17810101-17921231_ta_subdaily_qc.tsv
+[DRY] SPLIT GHCNd_Palermo_17970101-20081231_rr_daily.tsv -> 5 series
+   1797-01-01 -> 1798-12-31     730 rows  GHCNd_Palermo_17970101-17981231_rr_daily.tsv
+   1802-01-01 -> 1802-12-31     365 rows  GHCNd_Palermo_18020101-18021231_rr_daily.tsv
+   1811-01-01 -> 1812-12-31     731 rows  GHCNd_Palermo_18110101-18121231_rr_daily.tsv
+   1822-01-01 -> 1839-01-31    5905 rows  GHCNd_Palermo_18220101-18390131_rr_daily.tsv
+   1853-01-01 -> 2008-12-31   56396 rows  GHCNd_Palermo_18530101-20081231_rr_daily.tsv  (+20th-c. tail)
+   [DRY] would delete original: GHCNd_Palermo_17970101-20081231_rr_daily.tsv
+[DRY] SPLIT Cornes_Paris_16700301-20071231_p_daily_qc.tsv -> 2 series
+   1677-09-22 -> 1725-12-31   19155 rows  Cornes_Paris_16770922-17251231_p_daily_qc.tsv
+   1748-01-01 -> 2007-12-31   94160 rows  Cornes_Paris_17480101-20071231_p_daily_qc.tsv  (+20th-c. tail)
+   [DRY] would delete original: Cornes_Paris_16700301-20071231_p_daily_qc.tsv
+[DRY] SPLIT Pfister_Paris_17200102-20210831_p_daily.tsv -> 2 series
+   1720-01-02 -> 1725-12-31    1639 rows  Pfister_Paris_17200102-17251231_p_daily.tsv
+   1748-01-01 -> 2021-08-31   99545 rows  Pfister_Paris_17480101-20210831_p_daily.tsv  (+20th-c. tail)
+   [DRY] would delete original: Pfister_Paris_17200102-20210831_p_daily.tsv
+[DRY] SPLIT Rousseau_Paris_16751201-20231231_Tn_daily.tsv -> 3 series
+   1677-09-22 -> 1713-07-05   13723 rows  Rousseau_Paris_16770922-17130705_Tn_daily.tsv
+   1719-07-14 -> 1725-01-20    1825 rows  Rousseau_Paris_17190714-17250120_Tn_daily.tsv
+   1732-01-03 -> 2023-12-31  106239 rows  Rousseau_Paris_17320103-20231231_Tn_daily.tsv  (+20th-c. tail)
+   [DRY] would delete original: Rousseau_Paris_16751201-20231231_Tn_daily.tsv
+[DRY] SPLIT WRDv2-2_Paris_18680102-18750331_ta_subdaily.tsv -> 2 series
+   1868-01-02 -> 1870-09-14     466 rows  WRDv2-2_Paris_18680102-18700914_ta_subdaily.tsv
+   1872-01-15 -> 1875-03-31    1096 rows  WRDv2-2_Paris_18720115-18750331_ta_subdaily.tsv
+   [DRY] would delete original: WRDv2-2_Paris_18680102-18750331_ta_subdaily.tsv
+[DRY] SPLIT GHCNd_Parnu_18780101-20151230_rr_daily.tsv -> 2 series
+   1878-01-01 -> 1882-12-30    1825 rows  GHCNd_Parnu_18780101-18821230_rr_daily.tsv
+   1887-01-01 -> 2015-12-30   45741 rows  GHCNd_Parnu_18870101-20151230_rr_daily.tsv  (+20th-c. tail)
+   [DRY] would delete original: GHCNd_Parnu_18780101-20151230_rr_daily.tsv
+[DRY] SPLIT WRDv2-2_Pembroke_18620725-18750331_p_subdaily.tsv -> 2 series
+   1862-07-25 -> 1865-01-13     759 rows  WRDv2-2_Pembroke_18620725-18650113_p_subdaily.tsv
+   1869-03-01 -> 1875-03-31    2189 rows  WRDv2-2_Pembroke_18690301-18750331_p_subdaily.tsv
+   [DRY] would delete original: WRDv2-2_Pembroke_18620725-18750331_p_subdaily.tsv
+[DRY] SPLIT WRDv2-2_Pembroke_18620725-18750331_rr_daily.tsv -> 2 series
+   1862-07-25 -> 1865-01-13     756 rows  WRDv2-2_Pembroke_18620725-18650113_rr_daily.tsv
+   1869-03-01 -> 1875-03-31    2201 rows  WRDv2-2_Pembroke_18690301-18750331_rr_daily.tsv
+   [DRY] would delete original: WRDv2-2_Pembroke_18620725-18750331_rr_daily.tsv
+[DRY] SPLIT WRDv2-2_Pembroke_18620725-18750331_ta_barometer_subdaily.tsv -> 2 series
+   1862-07-25 -> 1863-12-31     438 rows  WRDv2-2_Pembroke_18620725-18631231_ta_barometer_subdaily.tsv
+   1872-01-08 -> 1875-03-31    1165 rows  WRDv2-2_Pembroke_18720108-18750331_ta_barometer_subdaily.tsv
+   [DRY] would delete original: WRDv2-2_Pembroke_18620725-18750331_ta_barometer_subdaily.tsv
+[DRY] SPLIT WRDv2-2_Pembroke_18620725-18750331_ta_subdaily.tsv -> 2 series
+   1862-07-25 -> 1865-01-13     757 rows  WRDv2-2_Pembroke_18620725-18650113_ta_subdaily.tsv
+   1869-03-01 -> 1875-03-31    2196 rows  WRDv2-2_Pembroke_18690301-18750331_ta_subdaily.tsv
+   [DRY] would delete original: WRDv2-2_Pembroke_18620725-18750331_ta_subdaily.tsv
+[DRY] SPLIT UA-UHMI-v1_Poltava_18240101-18510112_ta_subdaily_qc.tsv -> 3 series
+   1824-01-01 -> 1831-12-31    8763 rows  UA-UHMI-v1_Poltava_18240101-18311231_ta_subdaily_qc.tsv
+   1836-01-01 -> 1844-01-12    8673 rows  UA-UHMI-v1_Poltava_18360101-18440112_ta_subdaily_qc.tsv
+   1845-01-13 -> 1851-01-12    6570 rows  UA-UHMI-v1_Poltava_18450113-18510112_ta_subdaily_qc.tsv
+   [DRY] would delete original: UA-UHMI-v1_Poltava_18240101-18510112_ta_subdaily_qc.tsv
+[DRY] SPLIT UA-UHMI-v1_Poltava_18360101-18510112_p_subdaily_qc.tsv -> 2 series
+   1836-01-01 -> 1844-01-12    8673 rows  UA-UHMI-v1_Poltava_18360101-18440112_p_subdaily_qc.tsv
+   1845-01-13 -> 1851-01-12    6570 rows  UA-UHMI-v1_Poltava_18450113-18510112_p_subdaily_qc.tsv
+   [DRY] would delete original: UA-UHMI-v1_Poltava_18360101-18510112_p_subdaily_qc.tsv
+[DRY] SPLIT PALAEO-RA_Prague_17810801-17911128_w_subdaily.tsv -> 3 series
+   1781-08-01 -> 1787-12-06    3108 rows  PALAEO-RA_Prague_17810801-17871206_w_subdaily.tsv
+   1790-02-07 -> 1790-02-07       1 rows  PALAEO-RA_Prague_17900207-17900207_w_subdaily.tsv
+   1791-03-22 -> 1791-11-28       6 rows  PALAEO-RA_Prague_17910322-17911128_w_subdaily.tsv
+   [DRY] would delete original: PALAEO-RA_Prague_17810801-17911128_w_subdaily.tsv
+[DRY] SPLIT PALAEO-RA_Prague_17810801-17911231_dd_subdaily_qc.tsv -> 2 series
+   1781-08-01 -> 1787-12-31    7032 rows  PALAEO-RA_Prague_17810801-17871231_dd_subdaily_qc.tsv
+   1790-01-01 -> 1791-12-31    2190 rows  PALAEO-RA_Prague_17900101-17911231_dd_subdaily_qc.tsv
+   [DRY] would delete original: PALAEO-RA_Prague_17810801-17911231_dd_subdaily_qc.tsv
+[DRY] SPLIT PALAEO-RA_Prague_17810801-17911231_p_subdaily_qc.tsv -> 2 series
+   1781-08-01 -> 1786-12-31    5921 rows  PALAEO-RA_Prague_17810801-17861231_p_subdaily_qc.tsv
+   1790-01-01 -> 1791-12-31    2190 rows  PALAEO-RA_Prague_17900101-17911231_p_subdaily_qc.tsv
+   [DRY] would delete original: PALAEO-RA_Prague_17810801-17911231_p_subdaily_qc.tsv
+[DRY] SPLIT PALAEO-RA_Prague_17810801-17911231_ta_subdaily_qc.tsv -> 2 series
+   1781-08-01 -> 1786-12-31    5921 rows  PALAEO-RA_Prague_17810801-17861231_ta_subdaily_qc.tsv
+   1790-01-01 -> 1791-12-31    2190 rows  PALAEO-RA_Prague_17900101-17911231_ta_subdaily_qc.tsv
+   [DRY] would delete original: PALAEO-RA_Prague_17810801-17911231_ta_subdaily_qc.tsv
+[DRY] SPLIT PALAEO-RA_Regensburg_17810101-17911231_p_subdaily_qc.tsv -> 2 series
+   1781-01-01 -> 1786-12-31    6573 rows  PALAEO-RA_Regensburg_17810101-17861231_p_subdaily_qc.tsv
+   1789-01-01 -> 1791-12-31    3285 rows  PALAEO-RA_Regensburg_17890101-17911231_p_subdaily_qc.tsv
+   [DRY] would delete original: PALAEO-RA_Regensburg_17810101-17911231_p_subdaily_qc.tsv
+[DRY] SPLIT PALAEO-RA_Regensburg_17810101-17911231_ta_subdaily_qc.tsv -> 2 series
+   1781-01-01 -> 1786-12-31    6569 rows  PALAEO-RA_Regensburg_17810101-17861231_ta_subdaily_qc.tsv
+   1789-01-01 -> 1791-12-31    3285 rows  PALAEO-RA_Regensburg_17890101-17911231_ta_subdaily_qc.tsv
+   [DRY] would delete original: PALAEO-RA_Regensburg_17810101-17911231_ta_subdaily_qc.tsv
+[DRY] SPLIT PALAEO-RA_Rome_17820101-17921231_eee_subdaily_qc.tsv -> 2 series
+   1782-01-01 -> 1786-12-31    1826 rows  PALAEO-RA_Rome_17820101-17861231_eee_subdaily_qc.tsv
+   1789-01-01 -> 1792-12-31    1461 rows  PALAEO-RA_Rome_17890101-17921231_eee_subdaily_qc.tsv
+   [DRY] would delete original: PALAEO-RA_Rome_17820101-17921231_eee_subdaily_qc.tsv
+[DRY] SPLIT PALAEO-RA_Rome_17820101-17921231_p_subdaily_qc.tsv -> 2 series
+   1782-01-01 -> 1786-12-31    5478 rows  PALAEO-RA_Rome_17820101-17861231_p_subdaily_qc.tsv
+   1789-01-01 -> 1792-12-31    4383 rows  PALAEO-RA_Rome_17890101-17921231_p_subdaily_qc.tsv
+   [DRY] would delete original: PALAEO-RA_Rome_17820101-17921231_p_subdaily_qc.tsv
+[DRY] SPLIT PALAEO-RA_Rome_17820101-17921231_rr_subdaily_qc.tsv -> 2 series
+   1782-01-01 -> 1786-12-31    1826 rows  PALAEO-RA_Rome_17820101-17861231_rr_subdaily_qc.tsv
+   1789-01-01 -> 1792-12-31    1461 rows  PALAEO-RA_Rome_17890101-17921231_rr_subdaily_qc.tsv
+   [DRY] would delete original: PALAEO-RA_Rome_17820101-17921231_rr_subdaily_qc.tsv
+[DRY] SPLIT PALAEO-RA_Rome_17820101-17921231_ta_subdaily_qc.tsv -> 2 series
+   1782-01-01 -> 1786-12-31    5478 rows  PALAEO-RA_Rome_17820101-17861231_ta_subdaily_qc.tsv
+   1789-01-01 -> 1792-12-31    4383 rows  PALAEO-RA_Rome_17890101-17921231_ta_subdaily_qc.tsv
+   [DRY] would delete original: PALAEO-RA_Rome_17820101-17921231_ta_subdaily_qc.tsv
+[DRY] SPLIT PALAEO-RA_Rovereto_Bonfioli_17820214-18390827_ta_subdaily_qc.tsv -> 5 series
+   1782-02-14 -> 1782-02-22       9 rows  PALAEO-RA_Rovereto_Bonfioli_17820214-17820222_ta_subdaily_qc.tsv
+   1790-11-27 -> 1791-12-08       3 rows  PALAEO-RA_Rovereto_Bonfioli_17901127-17911208_ta_subdaily_qc.tsv
+   1795-01-04 -> 1795-02-03      31 rows  PALAEO-RA_Rovereto_Bonfioli_17950104-17950203_ta_subdaily_qc.tsv
+   1797-08-18 -> 1797-08-19       2 rows  PALAEO-RA_Rovereto_Bonfioli_17970818-17970819_ta_subdaily_qc.tsv
+   1798-12-11 -> 1839-08-27   23196 rows  PALAEO-RA_Rovereto_Bonfioli_17981211-18390827_ta_subdaily_qc.tsv
+   [DRY] would delete original: PALAEO-RA_Rovereto_Bonfioli_17820214-18390827_ta_subdaily_qc.tsv
+[DRY] SPLIT PALAEO-RA_Rovereto_Bonfioli_17820324-18390826_p_subdaily_qc.tsv -> 3 series
+   1782-03-24 -> 1782-03-24       1 rows  PALAEO-RA_Rovereto_Bonfioli_17820324-17820324_p_subdaily_qc.tsv
+   1795-01-14 -> 1795-01-14       1 rows  PALAEO-RA_Rovereto_Bonfioli_17950114-17950114_p_subdaily_qc.tsv
+   1799-02-06 -> 1839-08-26   14402 rows  PALAEO-RA_Rovereto_Bonfioli_17990206-18390826_p_subdaily_qc.tsv
+   [DRY] would delete original: PALAEO-RA_Rovereto_Bonfioli_17820324-18390826_p_subdaily_qc.tsv
+[DRY] SPLIT WRDv2-2_Scarborough_18610301-18750331_ta_barometer_subdaily.tsv -> 2 series
+   1861-03-01 -> 1863-12-31     869 rows  WRDv2-2_Scarborough_18610301-18631231_ta_barometer_subdaily.tsv
+   1872-01-04 -> 1875-03-31    2089 rows  WRDv2-2_Scarborough_18720104-18750331_ta_barometer_subdaily.tsv
+   [DRY] would delete original: WRDv2-2_Scarborough_18610301-18750331_ta_barometer_subdaily.tsv
+[DRY] SPLIT CHIMES_Schaffhausen_17940101-18451028_dd_subdaily.tsv -> 2 series
+   1794-01-01 -> 1832-11-26   44460 rows  CHIMES_Schaffhausen_17940101-18321126_dd_subdaily.tsv
+   1835-01-01 -> 1845-10-28   14693 rows  CHIMES_Schaffhausen_18350101-18451028_dd_subdaily.tsv
+   [DRY] would delete original: CHIMES_Schaffhausen_17940101-18451028_dd_subdaily.tsv
+[DRY] SPLIT MEDARE_Setif_18850101-19381230_p_daily.tsv -> 2 series
+   1885-01-01 -> 1893-12-31    2707 rows  MEDARE_Setif_18850101-18931231_p_daily.tsv
+   1895-01-10 -> 1938-12-30    8402 rows  MEDARE_Setif_18950110-19381230_p_daily.tsv  (+20th-c. tail)
+   [DRY] would delete original: MEDARE_Setif_18850101-19381230_p_daily.tsv
+[DRY] SPLIT EMOSSv2_Sevilla_18120920-18300123_p_subdaily_qc.tsv -> 3 series
+   1812-09-20 -> 1813-09-12      12 rows  EMOSSv2_Sevilla_18120920-18130912_p_subdaily_qc.tsv
+   1821-01-05 -> 1821-01-05       3 rows  EMOSSv2_Sevilla_18210105-18210105_p_subdaily_qc.tsv
+   1829-04-12 -> 1830-01-23       8 rows  EMOSSv2_Sevilla_18290412-18300123_p_subdaily_qc.tsv
+   [DRY] would delete original: EMOSSv2_Sevilla_18120920-18300123_p_subdaily_qc.tsv
+[DRY] SPLIT EMOSSv2_Sevilla_18120920-18300123_ta_subdaily_qc.tsv -> 3 series
+   1812-09-20 -> 1813-09-12      12 rows  EMOSSv2_Sevilla_18120920-18130912_ta_subdaily_qc.tsv
+   1821-01-05 -> 1821-01-05       3 rows  EMOSSv2_Sevilla_18210105-18210105_ta_subdaily_qc.tsv
+   1829-04-12 -> 1830-01-23       8 rows  EMOSSv2_Sevilla_18290412-18300123_ta_subdaily_qc.tsv
+   [DRY] would delete original: EMOSSv2_Sevilla_18120920-18300123_ta_subdaily_qc.tsv
+[DRY] SPLIT EMOSSv2_Sevilla_18130512-18300123_dd_subdaily_qc.tsv -> 3 series
+   1813-05-12 -> 1813-09-12       7 rows  EMOSSv2_Sevilla_18130512-18130912_dd_subdaily_qc.tsv
+   1821-01-05 -> 1821-01-05       3 rows  EMOSSv2_Sevilla_18210105-18210105_dd_subdaily_qc.tsv
+   1829-04-12 -> 1830-01-23       8 rows  EMOSSv2_Sevilla_18290412-18300123_dd_subdaily_qc.tsv
+   [DRY] would delete original: EMOSSv2_Sevilla_18130512-18300123_dd_subdaily_qc.tsv
+[DRY] SPLIT MEDARE_Sfax_60750_18870101-19570531_p_daily.tsv -> 3 series
+   1887-01-01 -> 1890-12-31    1314 rows  MEDARE_Sfax_60750_18870101-18901231_p_daily.tsv
+   1893-03-02 -> 1895-12-31     638 rows  MEDARE_Sfax_60750_18930302-18951231_p_daily.tsv
+   1897-01-01 -> 1957-05-31   16348 rows  MEDARE_Sfax_60750_18970101-19570531_p_daily.tsv  (+20th-c. tail)
+   [DRY] would delete original: MEDARE_Sfax_60750_18870101-19570531_p_daily.tsv
+[DRY] SPLIT WRDv2-2_Shields_18610301-18750331_ta_barometer_subdaily.tsv -> 2 series
+   1861-03-01 -> 1863-12-31     865 rows  WRDv2-2_Shields_18610301-18631231_ta_barometer_subdaily.tsv
+   1872-01-04 -> 1875-03-31    1165 rows  WRDv2-2_Shields_18720104-18750331_ta_barometer_subdaily.tsv
+   [DRY] would delete original: WRDv2-2_Shields_18610301-18750331_ta_barometer_subdaily.tsv
+[DRY] SPLIT GHCNd_Simferopol_18860701-20190831_rr_daily.tsv -> 5 series
+   1886-07-01 -> 1886-07-31      31 rows  GHCNd_Simferopol_18860701-18860731_rr_daily.tsv
+   1887-11-01 -> 1891-05-31     363 rows  GHCNd_Simferopol_18871101-18910531_rr_daily.tsv
+   1893-11-01 -> 1893-11-29      29 rows  GHCNd_Simferopol_18931101-18931129_rr_daily.tsv
+   1895-03-01 -> 1895-03-31      31 rows  GHCNd_Simferopol_18950301-18950331_rr_daily.tsv
+   1897-05-01 -> 2019-08-31   26963 rows  GHCNd_Simferopol_18970501-20190831_rr_daily.tsv  (+20th-c. tail)
+   [DRY] would delete original: GHCNd_Simferopol_18860701-20190831_rr_daily.tsv
+[DRY] SPLIT IMPROVE_StPetersburg_17430304-18791231_ta_daily_qc.tsv -> 4 series
+   1743-03-04 -> 1745-04-30     636 rows  IMPROVE_StPetersburg_17430304-17450430_ta_daily_qc.tsv
+   1751-10-01 -> 1794-12-31   14907 rows  IMPROVE_StPetersburg_17511001-17941231_ta_daily_qc.tsv
+   1798-01-01 -> 1800-12-31     902 rows  IMPROVE_StPetersburg_17980101-18001231_ta_daily_qc.tsv
+   1805-01-10 -> 1879-12-31   27368 rows  IMPROVE_StPetersburg_18050110-18791231_ta_daily_qc.tsv
+   [DRY] would delete original: IMPROVE_StPetersburg_17430304-18791231_ta_daily_qc.tsv
+[DRY] SPLIT GHCNd_Syktyvkar_18880401-20190430_rr_daily.tsv -> 2 series
+   1888-04-01 -> 1893-06-30    1855 rows  GHCNd_Syktyvkar_18880401-18930630_rr_daily.tsv
+   1894-09-01 -> 2019-04-30   44633 rows  GHCNd_Syktyvkar_18940901-20190430_rr_daily.tsv  (+20th-c. tail)
+   [DRY] would delete original: GHCNd_Syktyvkar_18880401-20190430_rr_daily.tsv
+[DRY] SPLIT GHCNd_Tallinn_18700701-20151230_rr_daily.tsv -> 2 series
+   1870-07-01 -> 1880-12-30    3804 rows  GHCNd_Tallinn_18700701-18801230_rr_daily.tsv
+   1883-01-01 -> 2015-12-30   47629 rows  GHCNd_Tallinn_18830101-20151230_rr_daily.tsv  (+20th-c. tail)
+   [DRY] would delete original: GHCNd_Tallinn_18700701-20151230_rr_daily.tsv
+[DRY] SPLIT GHCNd_Tashkent_18810101-20061231_rr_daily.tsv -> 2 series
+   1881-01-01 -> 1884-12-31    1461 rows  GHCNd_Tashkent_18810101-18841231_rr_daily.tsv
+   1887-01-01 -> 2006-12-31   43097 rows  GHCNd_Tashkent_18870101-20061231_rr_daily.tsv  (+20th-c. tail)
+   [DRY] would delete original: GHCNd_Tashkent_18810101-20061231_rr_daily.tsv
+[DRY] SPLIT GHCNd_Tbilisi_18810101-19921231_rr_daily.tsv -> 3 series
+   1881-01-01 -> 1890-12-31    3652 rows  GHCNd_Tbilisi_18810101-18901231_rr_daily.tsv
+   1894-01-01 -> 1894-10-31     304 rows  GHCNd_Tbilisi_18940101-18941031_rr_daily.tsv
+   1896-01-01 -> 1992-12-31   35366 rows  GHCNd_Tbilisi_18960101-19921231_rr_daily.tsv  (+20th-c. tail)
+   [DRY] would delete original: GHCNd_Tbilisi_18810101-19921231_rr_daily.tsv
+[DRY] SPLIT GHCNd_Tbilisi_18810101-20241231_ta_daily.tsv -> 3 series
+   1881-01-01 -> 1890-12-31    3652 rows  GHCNd_Tbilisi_18810101-18901231_ta_daily.tsv
+   1894-01-01 -> 1894-11-30     334 rows  GHCNd_Tbilisi_18940101-18941130_ta_daily.tsv
+   1896-01-01 -> 2024-12-31   46166 rows  GHCNd_Tbilisi_18960101-20241231_ta_daily.tsv  (+20th-c. tail)
+   [DRY] would delete original: GHCNd_Tbilisi_18810101-20241231_ta_daily.tsv
+[DRY] SPLIT CHIMES_Tegerfelden_18430101-18531231_ta_subdaily_qc.tsv -> 2 series
+   1843-01-01 -> 1843-12-31    1089 rows  CHIMES_Tegerfelden_18430101-18431231_ta_subdaily_qc.tsv
+   1845-01-01 -> 1853-12-31    9831 rows  CHIMES_Tegerfelden_18450101-18531231_ta_subdaily_qc.tsv
+   [DRY] would delete original: CHIMES_Tegerfelden_18430101-18531231_ta_subdaily_qc.tsv
+[DRY] SPLIT MEDARE_TiziOuzou_60395_18790101-19381230_p_daily.tsv -> 2 series
+   1879-01-01 -> 1895-12-31    5311 rows  MEDARE_TiziOuzou_60395_18790101-18951231_p_daily.tsv
+   1897-01-01 -> 1938-12-30   11302 rows  MEDARE_TiziOuzou_60395_18970101-19381230_p_daily.tsv  (+20th-c. tail)
+   [DRY] would delete original: MEDARE_TiziOuzou_60395_18790101-19381230_p_daily.tsv
+[DRY] SPLIT UERRA_TiziOuzou_18790101-19381229_dd_subdaily.tsv -> 2 series
+   1879-01-01 -> 1895-12-31    5289 rows  UERRA_TiziOuzou_18790101-18951231_dd_subdaily.tsv
+   1897-01-01 -> 1938-12-29    5430 rows  UERRA_TiziOuzou_18970101-19381229_dd_subdaily.tsv  (+20th-c. tail)
+   [DRY] would delete original: UERRA_TiziOuzou_18790101-19381229_dd_subdaily.tsv
+[DRY] SPLIT UERRA_TiziOuzou_18790101-19381229_ta_subdaily.tsv -> 2 series
+   1879-01-01 -> 1895-12-31    5289 rows  UERRA_TiziOuzou_18790101-18951231_ta_subdaily.tsv
+   1897-01-01 -> 1938-12-29    5430 rows  UERRA_TiziOuzou_18970101-19381229_ta_subdaily.tsv  (+20th-c. tail)
+   [DRY] would delete original: UERRA_TiziOuzou_18790101-19381229_ta_subdaily.tsv
+[DRY] SPLIT UERRA_TiziOuzou_18790101-19381229_w_subdaily.tsv -> 2 series
+   1879-01-01 -> 1895-12-31    5289 rows  UERRA_TiziOuzou_18790101-18951231_w_subdaily.tsv
+   1897-01-01 -> 1938-12-29    5430 rows  UERRA_TiziOuzou_18970101-19381229_w_subdaily.tsv  (+20th-c. tail)
+   [DRY] would delete original: UERRA_TiziOuzou_18790101-19381229_w_subdaily.tsv
+[DRY] SPLIT WRDv2-2_Toulon_18680417-18750331_rr_daily.tsv -> 2 series
+   1868-04-17 -> 1870-09-29     793 rows  WRDv2-2_Toulon_18680417-18700929_rr_daily.tsv
+   1872-01-15 -> 1875-03-31    1066 rows  WRDv2-2_Toulon_18720115-18750331_rr_daily.tsv
+   [DRY] would delete original: WRDv2-2_Toulon_18680417-18750331_rr_daily.tsv
+[DRY] SPLIT WRDv2-2_Toulon_18680417-18750331_ta_subdaily.tsv -> 2 series
+   1868-04-17 -> 1870-09-29     802 rows  WRDv2-2_Toulon_18680417-18700929_ta_subdaily.tsv
+   1872-01-15 -> 1875-03-31    1054 rows  WRDv2-2_Toulon_18720115-18750331_ta_subdaily.tsv
+   [DRY] would delete original: WRDv2-2_Toulon_18680417-18750331_ta_subdaily.tsv
+[DRY] SPLIT WRDv2-2_Toulon_18680503-18750331_p_subdaily.tsv -> 2 series
+   1868-05-03 -> 1870-09-29     784 rows  WRDv2-2_Toulon_18680503-18700929_p_subdaily.tsv
+   1872-01-15 -> 1875-03-31    1040 rows  WRDv2-2_Toulon_18720115-18750331_p_subdaily.tsv
+   [DRY] would delete original: WRDv2-2_Toulon_18680503-18750331_p_subdaily.tsv
+[DRY] SPLIT METNO_Trondheim_18700601-19270330_p_subdaily.tsv -> 2 series
+   1870-06-01 -> 1875-11-30    5623 rows  METNO_Trondheim_18700601-18751130_p_subdaily.tsv
+   1877-09-17 -> 1927-03-30   52350 rows  METNO_Trondheim_18770917-19270330_p_subdaily.tsv  (+20th-c. tail)
+   [DRY] would delete original: METNO_Trondheim_18700601-19270330_p_subdaily.tsv
+[DRY] SPLIT SMI_Turin_17530101-18651130_ta_subdaily_qc.tsv -> 2 series
+   1753-01-01 -> 1857-12-31   99917 rows  SMI_Turin_17530101-18571231_ta_subdaily_qc.tsv
+   1865-07-01 -> 1865-11-30     305 rows  SMI_Turin_18650701-18651130_ta_subdaily_qc.tsv
+   [DRY] would delete original: SMI_Turin_17530101-18651130_ta_subdaily_qc.tsv
+[DRY] SPLIT CHIMES_Uetliberg_18410801-18631130_p_subdaily_qc.tsv -> 2 series
+   1841-08-01 -> 1843-10-27    3098 rows  CHIMES_Uetliberg_18410801-18431027_p_subdaily_qc.tsv
+   1846-01-15 -> 1863-11-30   26001 rows  CHIMES_Uetliberg_18460115-18631130_p_subdaily_qc.tsv
+   [DRY] would delete original: CHIMES_Uetliberg_18410801-18631130_p_subdaily_qc.tsv
+[DRY] SPLIT CHIMES_Uetliberg_18410801-18631130_ta_subdaily_qc.tsv -> 2 series
+   1841-08-01 -> 1843-10-27    3087 rows  CHIMES_Uetliberg_18410801-18431027_ta_subdaily_qc.tsv
+   1846-01-15 -> 1863-11-30   25993 rows  CHIMES_Uetliberg_18460115-18631130_ta_subdaily_qc.tsv
+   [DRY] would delete original: CHIMES_Uetliberg_18410801-18631130_ta_subdaily_qc.tsv
+[DRY] SPLIT KNMI_Utrecht155_18501201-18961231_p_subdaily_qc.tsv -> 3 series
+   1850-12-01 -> 1851-12-01    1098 rows  KNMI_Utrecht155_18501201-18511201_p_subdaily_qc.tsv
+   1857-12-01 -> 1870-12-31   12478 rows  KNMI_Utrecht155_18571201-18701231_p_subdaily_qc.tsv
+   1873-01-01 -> 1896-12-31   25203 rows  KNMI_Utrecht155_18730101-18961231_p_subdaily_qc.tsv
+   [DRY] would delete original: KNMI_Utrecht155_18501201-18961231_p_subdaily_qc.tsv
+[DRY] SPLIT DominguezCastro_Valencia_17900629-18611230_dd_subdaily_qc.tsv -> 5 series
+   1790-06-29 -> 1791-04-30    1010 rows  DominguezCastro_Valencia_17900629-17910430_dd_subdaily_qc.tsv
+   1804-01-03 -> 1808-07-08    4947 rows  DominguezCastro_Valencia_18040103-18080708_dd_subdaily_qc.tsv
+   1809-10-06 -> 1813-12-31    4647 rows  DominguezCastro_Valencia_18091006-18131231_dd_subdaily_qc.tsv
+   1815-07-01 -> 1834-08-10   21046 rows  DominguezCastro_Valencia_18150701-18340810_dd_subdaily_qc.tsv
+   1837-01-01 -> 1861-12-30   27008 rows  DominguezCastro_Valencia_18370101-18611230_dd_subdaily_qc.tsv
+   [DRY] would delete original: DominguezCastro_Valencia_17900629-18611230_dd_subdaily_qc.tsv
+[DRY] SPLIT DominguezCastro_Valencia_17900629-18611230_p_subdaily_qc.tsv -> 4 series
+   1790-06-29 -> 1791-04-30    1010 rows  DominguezCastro_Valencia_17900629-17910430_p_subdaily_qc.tsv
+   1804-01-03 -> 1808-07-08    4947 rows  DominguezCastro_Valencia_18040103-18080708_p_subdaily_qc.tsv
+   1812-07-01 -> 1813-12-31    1647 rows  DominguezCastro_Valencia_18120701-18131231_p_subdaily_qc.tsv
+   1815-07-01 -> 1861-12-30   50673 rows  DominguezCastro_Valencia_18150701-18611230_p_subdaily_qc.tsv
+   [DRY] would delete original: DominguezCastro_Valencia_17900629-18611230_p_subdaily_qc.tsv
+[DRY] SPLIT DominguezCastro_Valencia_17900629-18611230_ta_subdaily_qc.tsv -> 4 series
+   1790-06-29 -> 1791-04-30    1010 rows  DominguezCastro_Valencia_17900629-17910430_ta_subdaily_qc.tsv
+   1804-01-03 -> 1808-07-08    4947 rows  DominguezCastro_Valencia_18040103-18080708_ta_subdaily_qc.tsv
+   1812-07-01 -> 1813-12-31    1647 rows  DominguezCastro_Valencia_18120701-18131231_ta_subdaily_qc.tsv
+   1815-07-01 -> 1861-12-30   50673 rows  DominguezCastro_Valencia_18150701-18611230_ta_subdaily_qc.tsv
+   [DRY] would delete original: DominguezCastro_Valencia_17900629-18611230_ta_subdaily_qc.tsv
+[DRY] SPLIT ILMMT_Valentia_Island_18501019-18920311_Tn_daily_qc.tsv -> 2 series
+   1850-10-19 -> 1851-12-31     436 rows  ILMMT_Valentia_Island_18501019-18511231_Tn_daily_qc.tsv
+   1872-01-13 -> 1892-03-11    7364 rows  ILMMT_Valentia_Island_18720113-18920311_Tn_daily_qc.tsv
+   [DRY] would delete original: ILMMT_Valentia_Island_18501019-18920311_Tn_daily_qc.tsv
+[DRY] SPLIT ILMMT_Valentia_Island_18501019-18920311_Tx_daily_qc.tsv -> 2 series
+   1850-10-19 -> 1851-12-31     436 rows  ILMMT_Valentia_Island_18501019-18511231_Tx_daily_qc.tsv
+   1872-01-13 -> 1892-03-11    7364 rows  ILMMT_Valentia_Island_18720113-18920311_Tx_daily_qc.tsv
+   [DRY] would delete original: ILMMT_Valentia_Island_18501019-18920311_Tx_daily_qc.tsv
+[DRY] SPLIT WRDv2-2_Valentia_18610301-18750331_ta_barometer_subdaily.tsv -> 2 series
+   1861-03-01 -> 1863-12-31     808 rows  WRDv2-2_Valentia_18610301-18631231_ta_barometer_subdaily.tsv
+   1872-01-04 -> 1875-03-31    2098 rows  WRDv2-2_Valentia_18720104-18750331_ta_barometer_subdaily.tsv
+   [DRY] would delete original: WRDv2-2_Valentia_18610301-18750331_ta_barometer_subdaily.tsv
+[DRY] SPLIT Camuffo_Venezia_17510101-17691231_ta_noon_qc.tsv -> 3 series
+   1751-01-01 -> 1759-04-30    3042 rows  Camuffo_Venezia_17510101-17590430_ta_noon_qc.tsv
+   1761-01-01 -> 1762-04-29     484 rows  Camuffo_Venezia_17610101-17620429_ta_noon_qc.tsv
+   1768-01-01 -> 1769-12-31     523 rows  Camuffo_Venezia_17680101-17691231_ta_noon_qc.tsv
+   [DRY] would delete original: Camuffo_Venezia_17510101-17691231_ta_noon_qc.tsv
+[DRY] SPLIT MeteoFrance_Versailles_18650801-19330409_p_subdaily.tsv -> 6 series
+   1865-08-01 -> 1869-07-31    6957 rows  MeteoFrance_Versailles_18650801-18690731_p_subdaily.tsv
+   1871-05-01 -> 1871-05-31     185 rows  MeteoFrance_Versailles_18710501-18710531_p_subdaily.tsv
+   1879-12-01 -> 1881-03-12    2355 rows  MeteoFrance_Versailles_18791201-18810312_p_subdaily.tsv
+   1884-03-03 -> 1886-03-03    4088 rows  MeteoFrance_Versailles_18840303-18860303_p_subdaily.tsv
+   1888-07-13 -> 1889-10-15    2748 rows  MeteoFrance_Versailles_18880713-18891015_p_subdaily.tsv
+   1892-04-14 -> 1933-04-09   13019 rows  MeteoFrance_Versailles_18920414-19330409_p_subdaily.tsv  (+20th-c. tail)
+   [DRY] would delete original: MeteoFrance_Versailles_18650801-19330409_p_subdaily.tsv
+[DRY] SPLIT PALAEO-RA_Vienna_17090321-17170320_p_daily_qc.tsv -> 2 series
+   1709-03-21 -> 1710-05-30     472 rows  PALAEO-RA_Vienna_17090321-17100530_p_daily_qc.tsv
+   1711-06-29 -> 1717-03-20    3076 rows  PALAEO-RA_Vienna_17110629-17170320_p_daily_qc.tsv
+   [DRY] would delete original: PALAEO-RA_Vienna_17090321-17170320_p_daily_qc.tsv
+[DRY] SPLIT PALAEO-RA_Vienna_17090321-17170420_ta_subdaily.tsv -> 2 series
+   1709-03-21 -> 1710-05-31     490 rows  PALAEO-RA_Vienna_17090321-17100531_ta_subdaily.tsv
+   1711-06-29 -> 1717-04-20    6369 rows  PALAEO-RA_Vienna_17110629-17170420_ta_subdaily.tsv
+   [DRY] would delete original: PALAEO-RA_Vienna_17090321-17170420_ta_subdaily.tsv
+[DRY] SPLIT Pfister_Vienna_18150101-20231230_p_daily.tsv -> 2 series
+   1815-01-01 -> 1817-12-31    1096 rows  Pfister_Vienna_18150101-18171231_p_daily.tsv
+   1852-09-01 -> 2023-12-30   62480 rows  Pfister_Vienna_18520901-20231230_p_daily.tsv  (+20th-c. tail)
+   [DRY] would delete original: Pfister_Vienna_18150101-20231230_p_daily.tsv
+[DRY] SPLIT GHCNd_Vilnius_18810101-19990831_rr_daily.tsv -> 2 series
+   1881-01-01 -> 1883-02-28     789 rows  GHCNd_Vilnius_18810101-18830228_rr_daily.tsv
+   1884-04-01 -> 1999-08-31   38742 rows  GHCNd_Vilnius_18840401-19990831_rr_daily.tsv  (+20th-c. tail)
+   [DRY] would delete original: GHCNd_Vilnius_18810101-19990831_rr_daily.tsv
+[DRY] SPLIT GHCNd_Vladikavkaz_18810101-20171231_rr_daily.tsv -> 2 series
+   1881-01-01 -> 1886-12-31    1571 rows  GHCNd_Vladikavkaz_18810101-18861231_rr_daily.tsv
+   1888-05-01 -> 2017-12-31   16062 rows  GHCNd_Vladikavkaz_18880501-20171231_rr_daily.tsv  (+20th-c. tail)
+   [DRY] would delete original: GHCNd_Vladikavkaz_18810101-20171231_rr_daily.tsv
+[DRY] SPLIT PALAEO-RA_Waldenburg_17760101-17900831_p_subdaily_qc.tsv -> 2 series
+   1776-01-01 -> 1786-08-31    7383 rows  PALAEO-RA_Waldenburg_17760101-17860831_p_subdaily_qc.tsv
+   1787-11-01 -> 1790-08-31    1194 rows  PALAEO-RA_Waldenburg_17871101-17900831_p_subdaily_qc.tsv
+   [DRY] would delete original: PALAEO-RA_Waldenburg_17760101-17900831_p_subdaily_qc.tsv
+[DRY] SPLIT PALAEO-RA_Waldenburg_17760101-17900831_ta_subdaily_qc.tsv -> 2 series
+   1776-01-01 -> 1786-08-31    7383 rows  PALAEO-RA_Waldenburg_17760101-17860831_ta_subdaily_qc.tsv
+   1787-11-01 -> 1790-08-31    1194 rows  PALAEO-RA_Waldenburg_17871101-17900831_ta_subdaily_qc.tsv
+   [DRY] would delete original: PALAEO-RA_Waldenburg_17760101-17900831_ta_subdaily_qc.tsv
+[DRY] SPLIT Przybylak_Warsaw_17600701-18821231_ta_daily_qc.tsv -> 3 series
+   1760-07-01 -> 1763-03-31    1004 rows  Przybylak_Warsaw_17600701-17630331_ta_daily_qc.tsv
+   1779-01-01 -> 1799-12-31    7670 rows  Przybylak_Warsaw_17790101-17991231_ta_daily_qc.tsv
+   1803-01-01 -> 1882-12-31   29220 rows  Przybylak_Warsaw_18030101-18821231_ta_daily_qc.tsv
+   [DRY] would delete original: Przybylak_Warsaw_17600701-18821231_ta_daily_qc.tsv
+[DRY] SPLIT DWD_Wertheim_18681020-19641231_p_subdaily.tsv -> 2 series
+   1868-10-20 -> 1870-05-31    1674 rows  DWD_Wertheim_18681020-18700531_p_subdaily.tsv
+   1871-09-13 -> 1964-12-31   74532 rows  DWD_Wertheim_18710913-19641231_p_subdaily.tsv  (+20th-c. tail)
+   [DRY] would delete original: DWD_Wertheim_18681020-19641231_p_subdaily.tsv
+[DRY] SPLIT WRDv2-2_Yarmouth_18610301-18750331_ta_barometer_subdaily.tsv -> 2 series
+   1861-03-01 -> 1863-12-31     868 rows  WRDv2-2_Yarmouth_18610301-18631231_ta_barometer_subdaily.tsv
+   1872-01-04 -> 1875-03-31    1170 rows  WRDv2-2_Yarmouth_18720104-18750331_ta_barometer_subdaily.tsv
+   [DRY] would delete original: WRDv2-2_Yarmouth_18610301-18750331_ta_barometer_subdaily.tsv
+[DRY] SPLIT Helama-et-al_Ylitornio_18001001-18251231_p_subdaily.tsv -> 6 series
+   1800-10-01 -> 1801-06-08     343 rows  Helama-et-al_Ylitornio_18001001-18010608_p_subdaily.tsv
+   1803-04-01 -> 1800-07-23    6687 rows  Helama-et-al_Ylitornio_18030401-18000723_p_subdaily.tsv
+   1809-07-24 -> 1800-12-06     408 rows  Helama-et-al_Ylitornio_18090724-18001206_p_subdaily.tsv
+   1809-12-07 -> 1810-12-06   10875 rows  Helama-et-al_Ylitornio_18091207-18101206_p_subdaily.tsv
+   1819-12-07 -> 1822-12-31    3312 rows  Helama-et-al_Ylitornio_18191207-18221231_p_subdaily.tsv
+   1825-01-01 -> 1825-12-31    1094 rows  Helama-et-al_Ylitornio_18250101-18251231_p_subdaily.tsv
+   [DRY] would delete original: Helama-et-al_Ylitornio_18001001-18251231_p_subdaily.tsv
+[DRY] SPLIT Helama-et-al_Ylitornio_18001001-18381231_rr_daily.tsv -> 2 series
+   1800-10-01 -> 1822-12-17    2742 rows  Helama-et-al_Ylitornio_18001001-18221217_rr_daily.tsv
+   1825-01-02 -> 1838-12-31    1363 rows  Helama-et-al_Ylitornio_18250102-18381231_rr_daily.tsv
+   [DRY] would delete original: Helama-et-al_Ylitornio_18001001-18381231_rr_daily.tsv
+[DRY] SPLIT Helama-et-al_Ylitornio_18001001-18381231_ta_subdaily_qc.tsv -> 5 series
+   1800-10-01 -> 1800-07-23    8528 rows  Helama-et-al_Ylitornio_18001001-18000723_ta_subdaily_qc.tsv
+   1809-07-24 -> 1800-12-06     408 rows  Helama-et-al_Ylitornio_18090724-18001206_ta_subdaily_qc.tsv
+   1809-12-07 -> 1810-12-06   10911 rows  Helama-et-al_Ylitornio_18091207-18101206_ta_subdaily_qc.tsv
+   1819-12-07 -> 1822-12-31    3312 rows  Helama-et-al_Ylitornio_18191207-18221231_ta_subdaily_qc.tsv
+   1825-01-01 -> 1838-12-31   15291 rows  Helama-et-al_Ylitornio_18250101-18381231_ta_subdaily_qc.tsv
+   [DRY] would delete original: Helama-et-al_Ylitornio_18001001-18381231_ta_subdaily_qc.tsv
+[DRY] SPLIT Helama-et-al_Ylitornio_18020103-18381231_dd_subdaily_qc.tsv -> 2 series
+   1802-01-03 -> 1810-12-06   19635 rows  Helama-et-al_Ylitornio_18020103-18101206_dd_subdaily_qc.tsv
+   1819-12-07 -> 1838-12-31   20895 rows  Helama-et-al_Ylitornio_18191207-18381231_dd_subdaily_qc.tsv
+   [DRY] would delete original: Helama-et-al_Ylitornio_18020103-18381231_dd_subdaily_qc.tsv
+[DRY] SPLIT Brug_Zitenice_17900101-18181231_ta_subdaily_qc.tsv -> 2 series
+   1790-01-01 -> 1790-12-31    1094 rows  Brug_Zitenice_17900101-17901231_ta_subdaily_qc.tsv
+   1800-11-01 -> 1818-12-31   19904 rows  Brug_Zitenice_18001101-18181231_ta_subdaily_qc.tsv
+   [DRY] would delete original: Brug_Zitenice_17900101-18181231_ta_subdaily_qc.tsv
+[DRY] SPLIT CHIMES_Zurich_Meyer_17590601-17650331_p_daily_qc.tsv -> 2 series
+   1759-06-01 -> 1761-06-30     761 rows  CHIMES_Zurich_Meyer_17590601-17610630_p_daily_qc.tsv
+   1763-07-01 -> 1765-03-31     640 rows  CHIMES_Zurich_Meyer_17630701-17650331_p_daily_qc.tsv
+   [DRY] would delete original: CHIMES_Zurich_Meyer_17590601-17650331_p_daily_qc.tsv
+[DRY] SPLIT CHIMES_Zurich_Ott_17560713-17691006_p_subdaily_qc.tsv -> 2 series
+   1756-07-13 -> 1762-02-21    4827 rows  CHIMES_Zurich_Ott_17560713-17620221_p_subdaily_qc.tsv
+   1764-04-17 -> 1769-10-06    1426 rows  CHIMES_Zurich_Ott_17640417-17691006_p_subdaily_qc.tsv
+   [DRY] would delete original: CHIMES_Zurich_Ott_17560713-17691006_p_subdaily_qc.tsv
+[DRY] SPLIT CHIMES_Zurich_Scheuchzer_17080101-17300630_rr_subdaily_qc.tsv -> 2 series
+   1708-01-01 -> 1708-12-31     365 rows  CHIMES_Zurich_Scheuchzer_17080101-17081231_rr_subdaily_qc.tsv
+   1718-01-01 -> 1730-06-30    7732 rows  CHIMES_Zurich_Scheuchzer_17180101-17300630_rr_subdaily_qc.tsv
+   [DRY] would delete original: CHIMES_Zurich_Scheuchzer_17080101-17300630_rr_subdaily_qc.tsv
+[DRY] SPLIT CHIMES_Zurich_Scheuchzer_17180101-17281231_dd_subdaily_qc.tsv -> 2 series
+   1718-01-01 -> 1720-12-31    4897 rows  CHIMES_Zurich_Scheuchzer_17180101-17201231_dd_subdaily_qc.tsv
+   1726-06-01 -> 1728-12-31    1353 rows  CHIMES_Zurich_Scheuchzer_17260601-17281231_dd_subdaily_qc.tsv
+   [DRY] would delete original: CHIMES_Zurich_Scheuchzer_17180101-17281231_dd_subdaily_qc.tsv
+[DRY] SPLIT CHIMES_Zurich_Scheuchzer_17180101-17300630_ta_subdaily.tsv -> 2 series
+   1718-01-01 -> 1720-12-31    5059 rows  CHIMES_Zurich_Scheuchzer_17180101-17201231_ta_subdaily.tsv
+   1726-06-01 -> 1730-06-30    2729 rows  CHIMES_Zurich_Scheuchzer_17260601-17300630_ta_subdaily.tsv
+   [DRY] would delete original: CHIMES_Zurich_Scheuchzer_17180101-17300630_ta_subdaily.tsv
+[DRY] SPLIT CHIMES_Zurich_Ulrich_18360101-18521231_Tn_daily_qc.tsv -> 2 series
+   1836-01-01 -> 1848-12-31    4490 rows  CHIMES_Zurich_Ulrich_18360101-18481231_Tn_daily_qc.tsv
+   1852-01-01 -> 1852-12-31     366 rows  CHIMES_Zurich_Ulrich_18520101-18521231_Tn_daily_qc.tsv
+   [DRY] would delete original: CHIMES_Zurich_Ulrich_18360101-18521231_Tn_daily_qc.tsv
+[DRY] SPLIT CHIMES_Zurich_Ulrich_18360101-18521231_p_subdaily_qc.tsv -> 2 series
+   1836-01-01 -> 1848-12-31   18942 rows  CHIMES_Zurich_Ulrich_18360101-18481231_p_subdaily_qc.tsv
+   1852-01-01 -> 1852-12-31    1460 rows  CHIMES_Zurich_Ulrich_18520101-18521231_p_subdaily_qc.tsv
+   [DRY] would delete original: CHIMES_Zurich_Ulrich_18360101-18521231_p_subdaily_qc.tsv
+[DRY] SPLIT CHIMES_Zurich_Ulrich_18360101-18521231_rr_daily.tsv -> 2 series
+   1836-01-01 -> 1848-12-31    4749 rows  CHIMES_Zurich_Ulrich_18360101-18481231_rr_daily.tsv
+   1852-01-01 -> 1852-12-31     366 rows  CHIMES_Zurich_Ulrich_18520101-18521231_rr_daily.tsv
+   [DRY] would delete original: CHIMES_Zurich_Ulrich_18360101-18521231_rr_daily.tsv
+[DRY] SPLIT CHIMES_Zurich_Ulrich_18360101-18521231_ta_subdaily_qc.tsv -> 2 series
+   1836-01-01 -> 1848-12-31   18944 rows  CHIMES_Zurich_Ulrich_18360101-18481231_ta_subdaily_qc.tsv
+   1852-01-01 -> 1852-12-31    1455 rows  CHIMES_Zurich_Ulrich_18520101-18521231_ta_subdaily_qc.tsv
+   [DRY] would delete original: CHIMES_Zurich_Ulrich_18360101-18521231_ta_subdaily_qc.tsv
+[DRY] SPLIT GCOS_Zurich_Bruegger_18600701-18660414_ta_subdaily_qc.tsv -> 3 series
+   1860-07-01 -> 1860-09-30     171 rows  GCOS_Zurich_Bruegger_18600701-18600930_ta_subdaily_qc.tsv
+   1862-02-05 -> 1863-04-27     111 rows  GCOS_Zurich_Bruegger_18620205-18630427_ta_subdaily_qc.tsv
+   1864-12-04 -> 1866-04-14     481 rows  GCOS_Zurich_Bruegger_18641204-18660414_ta_subdaily_qc.tsv
+   [DRY] would delete original: GCOS_Zurich_Bruegger_18600701-18660414_ta_subdaily_qc.tsv
+[DRY] SPLIT GCOS_Zurich_Hirzel_17610101-17861231_ta_subdaily_qc.tsv -> 2 series
+   1761-01-01 -> 1762-12-31    2105 rows  GCOS_Zurich_Hirzel_17610101-17621231_ta_subdaily_qc.tsv
+   1767-04-11 -> 1786-12-31   13781 rows  GCOS_Zurich_Hirzel_17670411-17861231_ta_subdaily_qc.tsv
+   [DRY] would delete original: GCOS_Zurich_Hirzel_17610101-17861231_ta_subdaily_qc.tsv
+[DRY] SPLIT GCOS_Zurich_Meyer_17590601-17641231_ta_daily_qc.tsv -> 2 series
+   1759-06-01 -> 1761-05-31     731 rows  GCOS_Zurich_Meyer_17590601-17610531_ta_daily_qc.tsv
+   1763-07-01 -> 1764-12-31     550 rows  GCOS_Zurich_Meyer_17630701-17641231_ta_daily_qc.tsv
+   [DRY] would delete original: GCOS_Zurich_Meyer_17590601-17641231_ta_daily_qc.tsv
+[DRY] SPLIT GCOS_Zurich_Ott_17560713-17690620_ta_subdaily_qc.tsv -> 2 series
+   1756-07-13 -> 1766-07-31   13319 rows  GCOS_Zurich_Ott_17560713-17660731_ta_subdaily_qc.tsv
+   1768-03-01 -> 1769-06-20     194 rows  GCOS_Zurich_Ott_17680301-17690620_ta_subdaily_qc.tsv
+   [DRY] would delete original: GCOS_Zurich_Ott_17560713-17690620_ta_subdaily_qc.tsv
+[DRY] SPLIT GCOS_Zurich_Scheuchzer_17080101-17301231_p_subdaily_qc.tsv -> 2 series
+   1708-01-01 -> 1708-12-31     303 rows  GCOS_Zurich_Scheuchzer_17080101-17081231_p_subdaily_qc.tsv
+   1718-01-01 -> 1730-12-31    8099 rows  GCOS_Zurich_Scheuchzer_17180101-17301231_p_subdaily_qc.tsv
+   [DRY] would delete original: GCOS_Zurich_Scheuchzer_17080101-17301231_p_subdaily_qc.tsv
+[DRY] SPLIT GCOS_Zurich_Weiss_18231201-18350818_p_subdaily_qc.tsv -> 2 series
+   1823-12-01 -> 1824-06-30     965 rows  GCOS_Zurich_Weiss_18231201-18240630_p_subdaily_qc.tsv
+   1835-07-12 -> 1835-08-18     229 rows  GCOS_Zurich_Weiss_18350712-18350818_p_subdaily_qc.tsv
+   [DRY] would delete original: GCOS_Zurich_Weiss_18231201-18350818_p_subdaily_qc.tsv
+[DRY] SPLIT GCOS_Zurich_Weiss_18231201-18350818_ta_subdaily_qc.tsv -> 2 series
+   1823-12-01 -> 1824-06-30     964 rows  GCOS_Zurich_Weiss_18231201-18240630_ta_subdaily_qc.tsv
+   1835-07-12 -> 1835-08-18     228 rows  GCOS_Zurich_Weiss_18350712-18350818_ta_subdaily_qc.tsv
+   [DRY] would delete original: GCOS_Zurich_Weiss_18231201-18350818_ta_subdaily_qc.tsv
+[DRY] SPLIT PALAEO-RA_Zurich_Hofmeister_18340910-18411231_p_subdaily_qc.tsv -> 2 series
+   1834-09-10 -> 1834-12-31     412 rows  PALAEO-RA_Zurich_Hofmeister_18340910-18341231_p_subdaily_qc.tsv
+   1838-01-01 -> 1841-12-31    4083 rows  PALAEO-RA_Zurich_Hofmeister_18380101-18411231_p_subdaily_qc.tsv
+   [DRY] would delete original: PALAEO-RA_Zurich_Hofmeister_18340910-18411231_p_subdaily_qc.tsv
+[DRY] SPLIT PALAEO-RA_Zurich_Horner_18120204-18250724_p_bis_subdaily_qc.tsv -> 2 series
+   1812-02-04 -> 1813-05-04     186 rows  PALAEO-RA_Zurich_Horner_18120204-18130504_p_bis_subdaily_qc.tsv
+   1825-06-25 -> 1825-07-24     156 rows  PALAEO-RA_Zurich_Horner_18250625-18250724_p_bis_subdaily_qc.tsv
+   [DRY] would delete original: PALAEO-RA_Zurich_Horner_18120204-18250724_p_bis_subdaily_qc.tsv
+[DRY] SPLIT PALAEO-RA_Zurich_Horner_18120204-18350818_ta_subdaily_qc.tsv -> 7 series
+   1812-02-04 -> 1815-08-28    2359 rows  PALAEO-RA_Zurich_Horner_18120204-18150828_ta_subdaily_qc.tsv
+   1817-02-26 -> 1817-06-22     239 rows  PALAEO-RA_Zurich_Horner_18170226-18170622_ta_subdaily_qc.tsv
+   1819-09-01 -> 1819-09-17      57 rows  PALAEO-RA_Zurich_Horner_18190901-18190917_ta_subdaily_qc.tsv
+   1820-11-01 -> 1821-02-16     297 rows  PALAEO-RA_Zurich_Horner_18201101-18210216_ta_subdaily_qc.tsv
+   1823-06-27 -> 1823-10-01     322 rows  PALAEO-RA_Zurich_Horner_18230627-18231001_ta_subdaily_qc.tsv
+   1825-06-25 -> 1825-08-08     282 rows  PALAEO-RA_Zurich_Horner_18250625-18250808_ta_subdaily_qc.tsv
+   1827-01-01 -> 1835-08-18    5958 rows  PALAEO-RA_Zurich_Horner_18270101-18350818_ta_subdaily_qc.tsv
+   [DRY] would delete original: PALAEO-RA_Zurich_Horner_18120204-18350818_ta_subdaily_qc.tsv
+[DRY] SPLIT PALAEO-RA_Zurich_Horner_18120610-18350818_p_subdaily_qc.tsv -> 7 series
+   1812-06-10 -> 1815-08-28    2311 rows  PALAEO-RA_Zurich_Horner_18120610-18150828_p_subdaily_qc.tsv
+   1817-02-26 -> 1817-06-22     231 rows  PALAEO-RA_Zurich_Horner_18170226-18170622_p_subdaily_qc.tsv
+   1819-09-01 -> 1819-09-17      55 rows  PALAEO-RA_Zurich_Horner_18190901-18190917_p_subdaily_qc.tsv
+   1820-11-01 -> 1821-02-16     293 rows  PALAEO-RA_Zurich_Horner_18201101-18210216_p_subdaily_qc.tsv
+   1823-06-27 -> 1823-10-01     321 rows  PALAEO-RA_Zurich_Horner_18230627-18231001_p_subdaily_qc.tsv
+   1825-07-25 -> 1825-08-08     126 rows  PALAEO-RA_Zurich_Horner_18250725-18250808_p_subdaily_qc.tsv
+   1827-01-01 -> 1835-08-18    5970 rows  PALAEO-RA_Zurich_Horner_18270101-18350818_p_subdaily_qc.tsv
+   [DRY] would delete original: PALAEO-RA_Zurich_Horner_18120610-18350818_p_subdaily_qc.tsv
+[DRY] SPLIT PALAEO-RA_Zurich_Horner_18170301-18330809_dd_subdaily_qc.tsv -> 6 series
+   1817-03-01 -> 1817-06-22     253 rows  PALAEO-RA_Zurich_Horner_18170301-18170622_dd_subdaily_qc.tsv
+   1819-09-01 -> 1819-09-17      57 rows  PALAEO-RA_Zurich_Horner_18190901-18190917_dd_subdaily_qc.tsv
+   1820-11-01 -> 1821-02-16     298 rows  PALAEO-RA_Zurich_Horner_18201101-18210216_dd_subdaily_qc.tsv
+   1823-06-27 -> 1823-10-01     326 rows  PALAEO-RA_Zurich_Horner_18230627-18231001_dd_subdaily_qc.tsv
+   1825-06-25 -> 1825-08-08     283 rows  PALAEO-RA_Zurich_Horner_18250625-18250808_dd_subdaily_qc.tsv
+   1827-01-01 -> 1833-08-09    5880 rows  PALAEO-RA_Zurich_Horner_18270101-18330809_dd_subdaily_qc.tsv
+   [DRY] would delete original: PALAEO-RA_Zurich_Horner_18170301-18330809_dd_subdaily_qc.tsv
+[DRY] SPLIT PALAEO-RA_Zurich_Horner_18250626-18311102_rh_subdaily_qc.tsv -> 2 series
+   1825-06-26 -> 1825-08-08     281 rows  PALAEO-RA_Zurich_Horner_18250626-18250808_rh_subdaily_qc.tsv
+   1829-09-01 -> 1831-11-02    1487 rows  PALAEO-RA_Zurich_Horner_18290901-18311102_rh_subdaily_qc.tsv
+   [DRY] would delete original: PALAEO-RA_Zurich_Horner_18250626-18311102_rh_subdaily_qc.tsv
+[DRY] SPLIT PALAEO-RA_Zurich_Muralt_17600101-17930413_dd_subdaily_qc.tsv -> 2 series
+   1760-01-01 -> 1769-12-31    2487 rows  PALAEO-RA_Zurich_Muralt_17600101-17691231_dd_subdaily_qc.tsv
+   1787-01-01 -> 1793-04-13    2844 rows  PALAEO-RA_Zurich_Muralt_17870101-17930413_dd_subdaily_qc.tsv
+   [DRY] would delete original: PALAEO-RA_Zurich_Muralt_17600101-17930413_dd_subdaily_qc.tsv
+[DRY] SPLIT PALAEO-RA_Zurich_Muralt_17600101-17930413_p_subdaily_qc.tsv -> 2 series
+   1760-01-01 -> 1769-12-31    7206 rows  PALAEO-RA_Zurich_Muralt_17600101-17691231_p_subdaily_qc.tsv
+   1781-01-01 -> 1793-04-13   12364 rows  PALAEO-RA_Zurich_Muralt_17810101-17930413_p_subdaily_qc.tsv
+   [DRY] would delete original: PALAEO-RA_Zurich_Muralt_17600101-17930413_p_subdaily_qc.tsv
+[DRY] SPLIT PALAEO-RA_Zurich_Muralt_17600101-17930413_ta_subdaily_qc.tsv -> 2 series
+   1760-01-01 -> 1779-04-30    8769 rows  PALAEO-RA_Zurich_Muralt_17600101-17790430_ta_subdaily_qc.tsv
+   1781-04-01 -> 1793-04-13   11453 rows  PALAEO-RA_Zurich_Muralt_17810401-17930413_ta_subdaily_qc.tsv
+   [DRY] would delete original: PALAEO-RA_Zurich_Muralt_17600101-17930413_ta_subdaily_qc.tsv
+[DRY] SPLIT PALAEO-RA_Zurich_Muralt_17810103-17930408_rrt_subdaily.tsv -> 2 series
+   1781-01-03 -> 1785-12-31    1211 rows  PALAEO-RA_Zurich_Muralt_17810103-17851231_rrt_subdaily.tsv
+   1787-01-06 -> 1793-04-08    1291 rows  PALAEO-RA_Zurich_Muralt_17870106-17930408_rrt_subdaily.tsv
+   [DRY] would delete original: PALAEO-RA_Zurich_Muralt_17810103-17930408_rrt_subdaily.tsv
+[DRY] SPLIT Pfister_Zurich_SMA_17630101-20201231_p_daily.tsv -> 4 series
+   1763-01-01 -> 1793-03-31    9619 rows  Pfister_Zurich_SMA_17630101-17930331_p_daily.tsv
+   1807-01-01 -> 1832-08-30    7456 rows  Pfister_Zurich_SMA_18070101-18320830_p_daily.tsv
+   1835-01-01 -> 1843-10-27    3139 rows  Pfister_Zurich_SMA_18350101-18431027_p_daily.tsv
+   1846-02-01 -> 2020-12-31   63834 rows  Pfister_Zurich_SMA_18460201-20201231_p_daily.tsv  (+20th-c. tail)
+   [DRY] would delete original: Pfister_Zurich_SMA_17630101-20201231_p_daily.tsv
+[DRY] SPLIT KNMI_Zwanenburg_17380101-18601231_dd_subdaily_qc.tsv -> 3 series
+   1738-01-01 -> 1738-12-31    1094 rows  KNMI_Zwanenburg_17380101-17381231_dd_subdaily_qc.tsv
+   1743-01-01 -> 1830-07-31   93458 rows  KNMI_Zwanenburg_17430101-18300731_dd_subdaily_qc.tsv
+   1835-01-01 -> 1860-12-31   26756 rows  KNMI_Zwanenburg_18350101-18601231_dd_subdaily_qc.tsv
+   [DRY] would delete original: KNMI_Zwanenburg_17380101-18601231_dd_subdaily_qc.tsv
+[DRY] SPLIT KNMI_Zwanenburg_17380101-18601231_p_subdaily_qc.tsv -> 3 series
+   1738-01-01 -> 1738-12-31    1092 rows  KNMI_Zwanenburg_17380101-17381231_p_subdaily_qc.tsv
+   1743-01-01 -> 1830-07-31   94427 rows  KNMI_Zwanenburg_17430101-18300731_p_subdaily_qc.tsv
+   1835-01-01 -> 1860-12-31   26757 rows  KNMI_Zwanenburg_18350101-18601231_p_subdaily_qc.tsv
+   [DRY] would delete original: KNMI_Zwanenburg_17380101-18601231_p_subdaily_qc.tsv
+[DRY] SPLIT KNMI_Zwanenburg_17380101-18601231_ta_subdaily_qc.tsv -> 3 series
+   1738-01-01 -> 1738-12-31    1092 rows  KNMI_Zwanenburg_17380101-17381231_ta_subdaily_qc.tsv
+   1743-01-01 -> 1830-07-31   94449 rows  KNMI_Zwanenburg_17430101-18300731_ta_subdaily_qc.tsv
+   1835-01-01 -> 1860-12-31   26757 rows  KNMI_Zwanenburg_18350101-18601231_ta_subdaily_qc.tsv
+   [DRY] would delete original: KNMI_Zwanenburg_17380101-18601231_ta_subdaily_qc.tsv
+[DRY] SPLIT KNMI_Zwanenburg_17380114-18601130_rr_subdaily_qc.tsv -> 4 series
+   1738-01-14 -> 1738-12-31     131 rows  KNMI_Zwanenburg_17380114-17381231_rr_subdaily_qc.tsv
+   1743-01-08 -> 1850-12-31   11141 rows  KNMI_Zwanenburg_17430108-18501231_rr_subdaily_qc.tsv
+   1853-01-31 -> 1856-11-30      37 rows  KNMI_Zwanenburg_18530131-18561130_rr_subdaily_qc.tsv
+   1860-03-31 -> 1860-11-30       9 rows  KNMI_Zwanenburg_18600331-18601130_rr_subdaily_qc.tsv
+   [DRY] would delete original: KNMI_Zwanenburg_17380114-18601130_rr_subdaily_qc.tsv
+
+[DRY] 322 files split -> 852 series

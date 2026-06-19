@@ -30,7 +30,7 @@ messages for that file are suppressed (they are unreliable once the date
 sequence is broken). The unparseable dates themselves are always reported.
 
 Usage:
-    python reconstruct_dates.py <root_directory> [--apply]
+    python3 reconstruct_dates.py /scratch3/PALAEO-RA/daily_data/final/ [--apply]
 
 Without --apply it is a DRY RUN: reports what would change, writes nothing.
 """
