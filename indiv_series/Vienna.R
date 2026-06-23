@@ -66,18 +66,6 @@ metaHead <- "Observer=Beintema van Peima"
 file <- "/scratch3/PALAEO-RA/daily_data/original/Vienna/Europe_T3_AT_Vienna_1709-1715_subdaily.xls"
 raw <- read_excel(file, sheet=3, skip=6)
 
-get_date_range <- function(df) {
-  start.date <- paste0(df$Year[1],
-                       sprintf("%02d", df$Month[1]),
-                       sprintf("%02d", df$Day[1]))
-  n <- nrow(df)
-  end.date   <- paste0(df$Year[n],
-                       sprintf("%02d", df$Month[n]),
-                       sprintf("%02d", df$Day[n]))
-  paste0(start.date, "-", end.date)
-}
-
-
 # sheet number 3 ----------------------------------------------------------
 
 # Keep only the first columns and rename
