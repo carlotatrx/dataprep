@@ -35,9 +35,10 @@ done | awk '{t+=$1; f+=$2} END {
   printf "Total non-NA values:   %d\nFlagged values:         %d\nPercentage:             %.2f%%\n", t, f, (f/t)*100
 }'
 
-# Total non-NA values:   28077006
-# Flagged values:         82771
+# Total non-NA values:   28364352
+# Flagged values:         83186
 # Percentage:             0.29%
+
 
 # Per-variable totals and flagged counts
 find /scratch3/PALAEO-RA/daily_data/final -type f -name "*.tsv" | while read f; do
@@ -60,14 +61,14 @@ done | awk '{
 # w              254066           2745      1.08%
 # eee             16236            111      0.68%
 # dd            1191400          38148      3.20%
-# ta            7403947          19816      0.27%
+# ta            7408323          19816      0.27%
 # rrt              7448              0      0.00%
-# rr            7998148           2389      0.03%
-# p             8639984          13400      0.16%
+# rr            8013790           2432      0.03%
+# p             8726116          13400      0.15%
 # fs              13951             28      0.20%
-# Tx             983528           3271      0.33%
+# Tx            1074126           3435      0.32%
 # rh             561889            472      0.08%
-# Tn            1006409           2391      0.24%
+# Tn            1097007           2599      0.24%
 
 
 # Flagged and own-digitized (Source contains WeaR or PALAEO) breakdown
@@ -94,10 +95,12 @@ done | awk '{t+=$1; ot+=$2; f+=$3; of+=$4} END {
   printf "Flagged from own-digitized:         %d (%.2f%% of flagged)\n", of, (of/f)*100
 }'
 
-# Total non-NA values:                28077006
-# Own-digitized non-NA values:        1724444 (6.14%)
-# Flagged values:                     82771 (0.29%)
-# Flagged from own-digitized:         11832 (14.29% of flagged)
+# Total non-NA values:                28364352
+# Own-digitized non-NA values:        1724444 (6.08%)
+# Flagged values:                     83186 (0.29%)
+# Flagged from own-digitized:         11832 (14.22% of flagged)
+
+
 
 # Frequency table of real flag types across the whole dataset
 find /scratch3/PALAEO-RA/daily_data/final -type f -name "*.tsv" | while read f; do
@@ -118,14 +121,14 @@ find /scratch3/PALAEO-RA/daily_data/final -type f -name "*.tsv" | while read f; 
 done | sort | uniq -c | sort -rn
 
 
-  # 37379 duplicate_columns
+  # 37384 duplicate_columns
   # 34898 subdaily_repetition
   # 10287 wmo_time_consistency
   # 10001 duplicate_times
-  #  8452 daily_repetition
-  #  3493 climatic_outliers
+  #  8810 daily_repetition
+  #  3543 climatic_outliers
   #  1229 wmo_gross_errors
-  #   405 duplicate_dates
+  #   407 duplicate_dates
   #   278 plot_subdaily
   #   258 subdaily_out_of_range
   #   144 Tn>Tx
@@ -138,3 +141,4 @@ done | sort | uniq -c | sort -rn
   #    17 temporal_coherence
   #     2 time_uncertain
   #     2 spatially_inconsistent
+
