@@ -1,7 +1,7 @@
 # count number of flagged values
 
 find /scratch3/PALAEO-RA/daily_data/final -type f -name "*.tsv" | while read f; do
-  awk 'NR>1 && /^[0-9]/ && $7!="NA" {
+  awk -F'\t' 'NR>1 && /^[0-9]/ && $7!="NA" {
     total++
     meta=$NF
     # extract qc value
@@ -48,6 +48,7 @@ find /scratch3/PALAEO-RA/daily_data/final -type f -name "*.tsv" | while read f; 
     }
     FNR>1 && /^[0-9]/ && $7!="NA" {
       total++
+      if (is_own) own_total++
       meta=$NF
       if (match(meta, /qc=([^[:space:]]+)/, arr)) {
         qc=arr[1]
@@ -57,14 +58,15 @@ find /scratch3/PALAEO-RA/daily_data/final -type f -name "*.tsv" | while read f; 
         }
       }
     }
-    END {print total+0, flagged+0, own_flagged+0}
+    END {print total+0, flagged+0, own_flagged+0, own_total+0}
   ' "$f"
-done | awk '{t+=$1; f+=$2; o+=$3} END {
+done | awk '{t+=$1; f+=$2; o+=$3; ot+=$4} END {
   printf "Total non-NA values:                 %d\n", t
   printf "Flagged values:                      %d\n", f
   printf "Flagged values from own-digitized:   %d\n", o
   printf "Own-digitized share of flagged:      %.2f%%\n", (o/f)*100
-  printf "Own-digitized share of all values:   %.2f%%\n", (o/t)*100
+  printf "Own-digitized share of all values:   %.2f%%\n", (ot/t)*100
+  printf "Own-digitized %% of values flagged:  %.2f%%\n", (o/ot)*100
 }'
 
 # find total number of NA values

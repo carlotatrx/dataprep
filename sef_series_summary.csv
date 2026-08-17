@@ -7,6 +7,12 @@ Barriendos_Cadiz,p,Cadiz,1820-01-01,1949-12-31,47482,130.00,47482,1,1,0,1820-01-
 Bolzern_Barcelona,ta,Barcelona,1800-01-01,1825-12-31,9496,26.00,9496,1,1,0,1800-01-01..1825-12-31,/scratch3/PALAEO-RA/daily_data/final/Barcelona/Bolzern_Barcelona_18000101-18251231_ta_subdaily_qc.tsv
 Bolzern_Ylitornio,ta,Ylitornio,1803-05-08,1822-12-31,7178,19.65,7178,2,1,0,1803-05-08..1822-12-31,/scratch3/PALAEO-RA/daily_data/final/Ylitornio/Bolzern_Ylitornio_18030508-18221231_ta_noon_qc.tsv|/scratch3/PALAEO-RA/daily_data/final/Ylitornio/Bolzern_Ylitornio_18070101-18071231_ta_daily_qc.tsv
 Boyle_Oxford_Locke,ta,Oxford,1666-07-04,1683-07-10,6216,17.02,6216,1,1,0,1666-07-04..1683-07-10,/scratch3/PALAEO-RA/daily_data/final/Oxford/Boyle_Oxford_Locke_16660704-16830710_ta_subdaily.tsv
+Broennimann_Berlin,p,Berlin,1720-01-01,2023-12-31,111034,304.00,111034,1,1,0,1720-01-01..2023-12-31,/scratch3/PALAEO-RA/daily_data/final/Berlin/Broennimann_Berlin_17200101-20231231_p_daily_qc.tsv
+Broennimann_DeBilt,p,DeBilt,1738-01-01,2023-09-30,104367,285.75,104367,1,1,0,1738-01-01..2023-09-30,/scratch3/PALAEO-RA/daily_data/final/DeBilt/Broennimann_DeBilt_17380101-20230930_p_daily_qc.tsv
+Broennimann_Montpellier,p,Montpellier,1706-01-22,1748-12-28,15682,42.94,15682,1,1,0,1706-01-22..1748-12-28,/scratch3/PALAEO-RA/daily_data/final/Montpellier/Broennimann_Montpellier_17060122-17481228_p_daily_qc.tsv
+Broennimann_Neuchatel,p,Neuchatel,1753-01-01,1782-11-30,10926,29.91,10926,1,1,0,1753-01-01..1782-11-30,/scratch3/PALAEO-RA/daily_data/final/Neuchatel/Broennimann_Neuchatel_17530101-17821130_p_daily_qc.tsv
+Broennimann_Stockholm,p,Stockholm,1756-01-01,2012-12-31,93868,257.00,93868,1,1,0,1756-01-01..2012-12-31,/scratch3/PALAEO-RA/daily_data/final/Stockholm/Broennimann_Stockholm_17560101-20121231_p_daily_qc.tsv
+Broennimann_Zurich,p,Zurich,1708-01-01,1733-06-20,9303,25.47,9303,1,1,0,1708-01-01..1733-06-20,/scratch3/PALAEO-RA/daily_data/final/Zurich/Broennimann_Zurich_17080101-17330620_p_daily_qc.tsv
 Brugnara_Althorp,p,Althorp,1816-01-01,1817-11-30,700,1.92,700,1,1,0,1816-01-01..1817-11-30,/scratch3/PALAEO-RA/daily_data/final/Althorp/Brugnara_Althorp_18160101-18171130_p_subdaily.tsv
 Brugnara_Althorp,ta,Althorp,1816-01-01,1817-11-30,700,1.92,700,1,1,0,1816-01-01..1817-11-30,/scratch3/PALAEO-RA/daily_data/final/Althorp/Brugnara_Althorp_18160101-18171130_ta_subdaily.tsv
 Brugnara_Armagh,p,Armagh,1815-01-01,1818-02-28,1155,3.16,1155,1,1,0,1815-01-01..1818-02-28,/scratch3/PALAEO-RA/daily_data/final/Armagh/Brugnara_Armagh_18150101-18180228_p_subdaily_qc.tsv
@@ -16,16 +22,16 @@ Brugnara_Avignon,ta,Avignon,1816-01-01,1816-12-31,366,1.00,366,1,1,0,1816-01-01.
 Brugnara_Nuuk,p,Nuuk,1816-01-01,1820-12-31,1827,5.00,1827,1,1,0,1816-01-01..1820-12-31,/scratch3/PALAEO-RA/daily_data/final/Nuuk/Brugnara_Nuuk_18160101-18201231_p_subdaily_qc.tsv
 Brugnara_Zitenice,p,Zitenice,1801-06-25,1818-12-31,6399,17.52,6399,1,1,0,1801-06-25..1818-12-31,/scratch3/PALAEO-RA/daily_data/final/Zitenice/Brugnara_Zitenice_18010625-18181231_p_subdaily_qc.tsv
 Brugnara_Zitenice,ta,Zitenice,1790-01-01,1818-12-31,10591,29.00,10591,1,1,0,1790-01-01..1818-12-31,/scratch3/PALAEO-RA/daily_data/final/Zitenice/Brugnara_Zitenice_17900101-18181231_ta_subdaily_qc.tsv
-CAP9WT_Cadiz,p,Cadiz,1816-08-30,2021-08-31,74877,205.01,74877,1,1,0,1816-08-30..2021-08-31,/scratch3/PALAEO-RA/daily_data/final/Cadiz/CAP9WT_Cadiz_18160830-20210831_p_daily.tsv
-CAP9WT_DeBilt,p,DeBilt,1738-01-01,2021-08-31,103607,283.67,103607,1,1,0,1738-01-01..2021-08-31,/scratch3/PALAEO-RA/daily_data/final/DeBilt/CAP9WT_DeBilt_17380101-20210831_p_daily.tsv
-CAP9WT_Geneva,p,Geneva,1782-01-01,2020-12-31,87293,239.00,87293,1,1,0,1782-01-01..2020-12-31,/scratch3/PALAEO-RA/daily_data/final/Geneva/CAP9WT_Geneva_17820101-20201231_p_daily.tsv
-CAP9WT_Hohenpeissenberg,p,Hohenpeissenberg,1781-01-01,2022-12-31,88388,242.00,88388,1,1,0,1781-01-01..2022-12-31,/scratch3/PALAEO-RA/daily_data/final/Hohenpeissenberg/CAP9WT_Hohenpeissenberg_17810101-20221231_p_daily.tsv
-CAP9WT_Karlsruhe,p,Karlsruhe,1778-04-21,2020-12-31,88644,242.70,88644,1,1,0,1778-04-21..2020-12-31,/scratch3/PALAEO-RA/daily_data/final/Karlsruhe/CAP9WT_Karlsruhe_17780421-20201231_p_daily.tsv
-CAP9WT_Lugano,p,Lugano,1864-01-01,2020-12-31,57344,157.00,57344,1,1,0,1864-01-01..2020-12-31,/scratch3/PALAEO-RA/daily_data/final/Lugano/CAP9WT_Lugano_18640101-20201231_p_daily.tsv
-CAP9WT_Paris,p,Paris,1720-01-02,2021-08-31,110181,301.67,110181,1,1,0,1720-01-02..2021-08-31,/scratch3/PALAEO-RA/daily_data/final/Paris/CAP9WT_Paris_17200102-20210831_p_daily.tsv
-CAP9WT_Vienna,p,Vienna,1815-01-01,2023-12-30,76335,209.00,76335,1,1,0,1815-01-01..2023-12-30,/scratch3/PALAEO-RA/daily_data/final/Vienna/CAP9WT_Vienna_18150101-20231230_p_daily.tsv
-CAP9WT_Zagreb,p,Zagreb,1861-12-01,2021-08-31,58348,159.75,58348,1,1,0,1861-12-01..2021-08-31,/scratch3/PALAEO-RA/daily_data/final/Zagreb/CAP9WT_Zagreb_18611201-20210831_p_daily.tsv
-CAP9WT_Zurich_SMA,p,Zurich,1763-01-01,2020-12-31,94233,258.00,94233,1,1,0,1763-01-01..2020-12-31,/scratch3/PALAEO-RA/daily_data/final/Zurich/CAP9WT_Zurich_SMA_17630101-20201231_p_daily.tsv
+CAP9WT_Cadiz,p,Cadiz,1816-08-30,2021-08-31,74877,205.01,74877,1,1,0,1816-08-30..2021-08-31,/scratch3/PALAEO-RA/daily_data/final/Cadiz/CAP9WT_Cadiz_18160830-20210831_p_daily_qc.tsv
+CAP9WT_DeBilt,p,DeBilt,1738-01-01,2021-08-31,103607,283.67,103607,1,1,0,1738-01-01..2021-08-31,/scratch3/PALAEO-RA/daily_data/final/DeBilt/CAP9WT_DeBilt_17380101-20210831_p_daily_qc.tsv
+CAP9WT_Geneva,p,Geneva,1782-01-01,2020-12-31,87293,239.00,87293,1,1,0,1782-01-01..2020-12-31,/scratch3/PALAEO-RA/daily_data/final/Geneva/CAP9WT_Geneva_17820101-20201231_p_daily_qc.tsv
+CAP9WT_Hohenpeissenberg,p,Hohenpeissenberg,1781-01-01,2022-12-31,88388,242.00,88388,1,1,0,1781-01-01..2022-12-31,/scratch3/PALAEO-RA/daily_data/final/Hohenpeissenberg/CAP9WT_Hohenpeissenberg_17810101-20221231_p_daily_qc.tsv
+CAP9WT_Karlsruhe,p,Karlsruhe,1778-04-21,2020-12-31,88644,242.70,88644,1,1,0,1778-04-21..2020-12-31,/scratch3/PALAEO-RA/daily_data/final/Karlsruhe/CAP9WT_Karlsruhe_17780421-20201231_p_daily_qc.tsv
+CAP9WT_Lugano,p,Lugano,1864-01-01,2020-12-31,57344,157.00,57344,1,1,0,1864-01-01..2020-12-31,/scratch3/PALAEO-RA/daily_data/final/Lugano/CAP9WT_Lugano_18640101-20201231_p_daily_qc.tsv
+CAP9WT_Paris,p,Paris,1720-01-02,2021-08-31,110181,301.67,110181,1,1,0,1720-01-02..2021-08-31,/scratch3/PALAEO-RA/daily_data/final/Paris/CAP9WT_Paris_17200102-20210831_p_daily_qc.tsv
+CAP9WT_Vienna,p,Vienna,1815-01-01,2023-12-30,76335,209.00,76335,1,1,0,1815-01-01..2023-12-30,/scratch3/PALAEO-RA/daily_data/final/Vienna/CAP9WT_Vienna_18150101-20231230_p_daily_qc.tsv
+CAP9WT_Zagreb,p,Zagreb,1861-12-01,2021-08-31,58348,159.75,58348,1,1,0,1861-12-01..2021-08-31,/scratch3/PALAEO-RA/daily_data/final/Zagreb/CAP9WT_Zagreb_18611201-20210831_p_daily_qc.tsv
+CAP9WT_Zurich_SMA,p,Zurich,1763-01-01,2020-12-31,94233,258.00,94233,1,1,0,1763-01-01..2020-12-31,/scratch3/PALAEO-RA/daily_data/final/Zurich/CAP9WT_Zurich_SMA_17630101-20201231_p_daily_qc.tsv
 CHIMES_Aarau_Bronner,p,Aarau,1826-04-01,1830-12-31,1736,4.75,1736,1,1,0,1826-04-01..1830-12-31,/scratch3/PALAEO-RA/daily_data/final/Aarau/CHIMES_Aarau_Bronner_18260401-18301231_p_subdaily_qc.tsv
 CHIMES_Aarau_Bronner,ta,Aarau,1826-04-01,1830-12-31,1736,4.75,1736,1,1,0,1826-04-01..1830-12-31,/scratch3/PALAEO-RA/daily_data/final/Aarau/CHIMES_Aarau_Bronner_18260401-18301231_ta_subdaily_qc.tsv
 CHIMES_Aarau_Zschogge,p,Aarau,1807-01-01,1865-12-31,21550,59.00,21550,1,1,0,1807-01-01..1865-12-31,/scratch3/PALAEO-RA/daily_data/final/Aarau/CHIMES_Aarau_Zschogge_18070101-18651231_p_subdaily_qc.tsv
@@ -490,7 +496,7 @@ GHCNd_Bajramaly,rr,Bajramaly,1891-02-01,1998-12-31,39415,107.91,39415,1,1,0,1891
 GHCNd_Baku,rr,Baku,1881-08-01,1992-01-31,40360,110.50,40360,1,1,0,1881-08-01..1992-01-31,/scratch3/PALAEO-RA/daily_data/final/Baku/GHCNd_Baku_18810801-19920131_rr_daily.tsv
 GHCNd_Bamberg,rr,Bamberg,1879-02-01,2019-07-30,51314,140.49,51314,1,1,0,1879-02-01..2019-07-30,/scratch3/PALAEO-RA/daily_data/final/Bamberg/GHCNd_Bamberg_18790201-20190730_rr_daily.tsv
 GHCNd_Bamberg-Sternwarte,rr,Bamberg,1879-01-01,1958-12-30,29218,80.00,29218,1,1,0,1879-01-01..1958-12-30,/scratch3/PALAEO-RA/daily_data/final/Bamberg/GHCNd_Bamberg-Sternwarte_18790101-19581230_rr_daily.tsv
-GHCNd_Berlin-Dahlem-Lfag,rr,Berlin,1876-01-01,1962-12-31,31776,87.00,31776,1,1,0,1876-01-01..1962-12-31,/scratch3/PALAEO-RA/daily_data/final/Berlin/GHCNd_Berlin-Dahlem-Lfag_18760101-19621231_rr_daily.tsv
+GHCNd_Berlin,rr,Berlin,1876-01-01,1962-12-31,31776,87.00,31776,1,1,0,1876-01-01..1962-12-31,/scratch3/PALAEO-RA/daily_data/final/Berlin/GHCNd_Berlin_18760101-19621231_rr_daily.tsv
 GHCNd_Biser,rr,Biser,1888-07-01,2018-05-31,47451,129.92,47451,1,1,0,1888-07-01..2018-05-31,/scratch3/PALAEO-RA/daily_data/final/Biser/GHCNd_Biser_18880701-20180531_rr_daily.tsv
 GHCNd_Bjornholt,rr,Bjornholt,1883-01-01,2019-07-30,49884,136.58,49884,1,1,0,1883-01-01..2019-07-30,/scratch3/PALAEO-RA/daily_data/final/Bjornholt/GHCNd_Bjornholt_18830101-20190730_rr_daily.tsv
 GHCNd_Bogoroditskoye-Fenino,rr,Bogoroditsk,1889-08-01,2019-08-31,47512,130.08,47512,1,1,0,1889-08-01..2019-08-31,/scratch3/PALAEO-RA/daily_data/final/Bogoroditsk/GHCNd_Bogoroditskoye-Fenino_18890801-20190831_rr_daily.tsv
@@ -882,6 +888,7 @@ PALAEO-RA_Bergen,dd,Bergen,1741-09-01,1746-05-31,1734,4.75,1734,1,1,0,1741-09-01
 PALAEO-RA_Bergen,rr,Bergen,1741-09-04,1746-05-18,1718,4.70,1718,1,1,0,1741-09-04..1746-05-18,/scratch3/PALAEO-RA/daily_data/final/Bergen/PALAEO-RA_Bergen_17410904-17460518_rr_subdaily_qc.tsv
 PALAEO-RA_Bergen,ta,Bergen,1741-09-01,1746-05-31,1734,4.75,1734,1,1,0,1741-09-01..1746-05-31,/scratch3/PALAEO-RA/daily_data/final/Bergen/PALAEO-RA_Bergen_17410901-17460531_ta_subdaily_qc.tsv
 PALAEO-RA_Berlin,p,Berlin,1721-01-23,1770-12-31,18240,49.94,18240,1,1,0,1721-01-23..1770-12-31,/scratch3/PALAEO-RA/daily_data/final/Berlin/PALAEO-RA_Berlin_17210123-17701231_p_subdaily_qc.tsv
+PALAEO-RA_Berlin,ta,Berlin,1709-01-01,1709-04-30,120,0.33,120,1,1,0,1709-01-01..1709-04-30,/scratch3/PALAEO-RA/daily_data/final/Berlin/PALAEO-RA_Berlin_17090101-17090430_ta_daily.tsv
 PALAEO-RA_Berlin_Achard,p,Berlin,1788-01-01,1788-12-31,366,1.00,366,1,1,0,1788-01-01..1788-12-31,/scratch3/PALAEO-RA/daily_data/final/Berlin/PALAEO-RA_Berlin_Achard_17880101-17881231_p_daily_qc.tsv
 PALAEO-RA_Berlin_Achard,ta,Berlin,1788-01-01,1788-12-31,366,1.00,366,1,1,0,1788-01-01..1788-12-31,/scratch3/PALAEO-RA/daily_data/final/Berlin/PALAEO-RA_Berlin_Achard_17880101-17881231_ta_daily_qc.tsv
 PALAEO-RA_Berlin_Beguelin-Achard,dd,Berlin,1781-07-01,1788-12-31,2741,7.50,2741,1,1,0,1781-07-01..1788-12-31,/scratch3/PALAEO-RA/daily_data/final/Berlin/PALAEO-RA_Berlin_Beguelin-Achard_17810701-17881231_dd_subdaily_qc.tsv
@@ -897,7 +904,6 @@ PALAEO-RA_Berlin_Kirch,p,Berlin,1721-01-23,1770-12-31,18240,49.94,18240,1,1,0,17
 PALAEO-RA_Berlin_Kirch,ta,Berlin,1720-01-01,1774-04-30,19844,54.33,19844,1,1,0,1720-01-01..1774-04-30,/scratch3/PALAEO-RA/daily_data/final/Berlin/PALAEO-RA_Berlin_Kirch_17200101-17740430_ta_subdaily_qc.tsv
 PALAEO-RA_Berlin_Lambert,p,Berlin,1769-12-16,1777-09-25,2841,7.78,2841,1,1,0,1769-12-16..1777-09-25,/scratch3/PALAEO-RA/daily_data/final/Berlin/PALAEO-RA_Berlin_Lambert_17691216-17770925_p_subdaily_qc.tsv
 PALAEO-RA_Berlin_Lambert,ta,Berlin,1769-12-16,1777-09-25,2841,7.78,2841,1,1,0,1769-12-16..1777-09-25,/scratch3/PALAEO-RA/daily_data/final/Berlin/PALAEO-RA_Berlin_Lambert_17691216-17770925_ta_subdaily_qc.tsv
-PALAEO-RA_Berlin_Lenke,ta,Berlin,1709-01-01,1709-04-30,120,0.33,120,1,1,0,1709-01-01..1709-04-30,/scratch3/PALAEO-RA/daily_data/final/Berlin/PALAEO-RA_Berlin_Lenke_17090101-17090430_ta_daily.tsv
 PALAEO-RA_Boehringen,dd,Boehringen,1763-01-01,1782-05-12,7072,19.36,7072,1,1,0,1763-01-01..1782-05-12,/scratch3/PALAEO-RA/daily_data/final/Boehringen/PALAEO-RA_Boehringen_17630101-17820512_dd_daily_qc.tsv
 PALAEO-RA_Boehringen,p,Boehringen,1763-01-01,1782-05-12,7072,19.36,7072,1,1,0,1763-01-01..1782-05-12,/scratch3/PALAEO-RA/daily_data/final/Boehringen/PALAEO-RA_Boehringen_17630101-17820512_p_daily_qc.tsv
 PALAEO-RA_Boehringen,ta,Boehringen,1770-01-01,1782-05-12,4515,12.36,4515,1,1,0,1770-01-01..1782-05-12,/scratch3/PALAEO-RA/daily_data/final/Boehringen/PALAEO-RA_Boehringen_17700101-17820512_ta_daily_qc.tsv
@@ -926,17 +932,14 @@ PALAEO-RA_Copenhagen,dd,Copenhagen,1782-01-01,1787-09-02,2071,5.67,2071,1,1,0,17
 PALAEO-RA_Copenhagen,eee,Copenhagen,1782-01-01,1786-12-31,1826,5.00,1826,1,1,0,1782-01-01..1786-12-31,/scratch3/PALAEO-RA/daily_data/final/Copenhagen/PALAEO-RA_Copenhagen_17820101-17861231_eee_daily.tsv
 PALAEO-RA_Copenhagen,p,Copenhagen,1782-01-01,1788-12-31,2557,7.00,2557,2,1,0,1782-01-01..1788-12-31,/scratch3/PALAEO-RA/daily_data/final/Copenhagen/PALAEO-RA_Copenhagen_17820101-17861231_p_subdaily_qc.tsv|/scratch3/PALAEO-RA/daily_data/final/Copenhagen/PALAEO-RA_Copenhagen_17870101-17881231_p_daily_qc.tsv
 PALAEO-RA_Copenhagen,rr,Copenhagen,1782-01-01,1786-12-31,1826,5.00,1826,1,1,0,1782-01-01..1786-12-31,/scratch3/PALAEO-RA/daily_data/final/Copenhagen/PALAEO-RA_Copenhagen_17820101-17861231_rr_daily_qc.tsv
-PALAEO-RA_Copenhagen,ta,Copenhagen,1782-01-01,1788-12-31,2557,7.00,2557,2,1,0,1782-01-01..1788-12-31,/scratch3/PALAEO-RA/daily_data/final/Copenhagen/PALAEO-RA_Copenhagen_17820101-17861231_ta_subdaily_qc.tsv|/scratch3/PALAEO-RA/daily_data/final/Copenhagen/PALAEO-RA_Copenhagen_17870101-17881231_ta_daily_qc.tsv
+PALAEO-RA_Copenhagen,ta,Copenhagen,1709-01-01,1788-12-31,29220,80.00,2653,3,2,26567,1709-01-01..1709-04-06; 1782-01-01..1788-12-31,/scratch3/PALAEO-RA/daily_data/final/Copenhagen/PALAEO-RA_Copenhagen_17090101-17090406_ta_daily.tsv|/scratch3/PALAEO-RA/daily_data/final/Copenhagen/PALAEO-RA_Copenhagen_17820101-17861231_ta_subdaily_qc.tsv|/scratch3/PALAEO-RA/daily_data/final/Copenhagen/PALAEO-RA_Copenhagen_17870101-17881231_ta_daily_qc.tsv
 PALAEO-RA_Copenhagen,w,Copenhagen,1782-01-01,1788-12-30,2556,7.00,2556,1,1,0,1782-01-01..1788-12-30,/scratch3/PALAEO-RA/daily_data/final/Copenhagen/PALAEO-RA_Copenhagen_17820101-17881230_w_subdaily.tsv
-PALAEO-RA_Copenhagen_Lenke,ta,Copenhagen,1709-01-01,1709-04-06,96,0.26,96,1,1,0,1709-01-01..1709-04-06,/scratch3/PALAEO-RA/daily_data/final/Copenhagen/PALAEO-RA_Copenhagen_Lenke_17090101-17090406_ta_daily.tsv
-PALAEO-RA_Delft,dd,Delft,1784-01-17,1786-12-31,1080,2.96,1080,1,1,0,1784-01-17..1786-12-31,/scratch3/PALAEO-RA/daily_data/final/Delft/PALAEO-RA_Delft_17840117-17861231_dd_subdaily_qc.tsv
+PALAEO-RA_Delft,dd,Delft,1708-10-01,1786-12-31,28581,78.25,1172,2,2,27409,1708-10-01..1708-12-31; 1784-01-17..1786-12-31,/scratch3/PALAEO-RA/daily_data/final/Delft/PALAEO-RA_Delft_17081001-17081231_dd_daily.tsv|/scratch3/PALAEO-RA/daily_data/final/Delft/PALAEO-RA_Delft_17840117-17861231_dd_subdaily_qc.tsv
 PALAEO-RA_Delft,eee,Delft,1784-01-17,1786-12-31,1080,2.96,1080,1,1,0,1784-01-17..1786-12-31,/scratch3/PALAEO-RA/daily_data/final/Delft/PALAEO-RA_Delft_17840117-17861231_eee_daily.tsv
 PALAEO-RA_Delft,p,Delft,1784-01-17,1786-12-31,1080,2.96,1080,1,1,0,1784-01-17..1786-12-31,/scratch3/PALAEO-RA/daily_data/final/Delft/PALAEO-RA_Delft_17840117-17861231_p_subdaily_qc.tsv
 PALAEO-RA_Delft,rr,Delft,1784-01-17,1786-12-31,1080,2.96,1080,1,1,0,1784-01-17..1786-12-31,/scratch3/PALAEO-RA/daily_data/final/Delft/PALAEO-RA_Delft_17840117-17861231_rr_daily_qc.tsv
-PALAEO-RA_Delft,ta,Delft,1784-01-17,1786-12-31,1080,2.96,1080,1,1,0,1784-01-17..1786-12-31,/scratch3/PALAEO-RA/daily_data/final/Delft/PALAEO-RA_Delft_17840117-17861231_ta_subdaily_qc.tsv
+PALAEO-RA_Delft,ta,Delft,1709-01-01,1786-12-31,28489,78.00,1200,2,2,27289,1709-01-01..1709-04-30; 1784-01-17..1786-12-31,/scratch3/PALAEO-RA/daily_data/final/Delft/PALAEO-RA_Delft_17090101-17090430_ta_daily.tsv|/scratch3/PALAEO-RA/daily_data/final/Delft/PALAEO-RA_Delft_17840117-17861231_ta_subdaily_qc.tsv
 PALAEO-RA_Delft,w,Delft,1784-02-27,1786-12-13,1021,2.80,1021,1,1,0,1784-02-27..1786-12-13,/scratch3/PALAEO-RA/daily_data/final/Delft/PALAEO-RA_Delft_17840227-17861213_w_subdaily.tsv
-PALAEO-RA_Delft_Lenke,dd,Delft,1708-10-01,1708-12-31,92,0.25,92,1,1,0,1708-10-01..1708-12-31,/scratch3/PALAEO-RA/daily_data/final/Delft/PALAEO-RA_Delft_Lenke_17081001-17081231_dd_daily.tsv
-PALAEO-RA_Delft_Lenke,ta,Delft,1709-01-01,1709-04-30,120,0.33,120,1,1,0,1709-01-01..1709-04-30,/scratch3/PALAEO-RA/daily_data/final/Delft/PALAEO-RA_Delft_Lenke_17090101-17090430_ta_daily.tsv
 PALAEO-RA_Den-Haag,dd,DenHaag,1782-09-01,1783-04-30,242,0.66,242,1,1,0,1782-09-01..1783-04-30,/scratch3/PALAEO-RA/daily_data/final/DenHaag/PALAEO-RA_Den-Haag_17820901-17830430_dd_subdaily_qc.tsv
 PALAEO-RA_Den-Haag,p,DenHaag,1782-09-01,1783-04-30,242,0.66,242,1,1,0,1782-09-01..1783-04-30,/scratch3/PALAEO-RA/daily_data/final/DenHaag/PALAEO-RA_Den-Haag_17820901-17830430_p_subdaily_qc.tsv
 PALAEO-RA_Den-Haag,ta,DenHaag,1782-09-01,1783-04-30,242,0.66,242,1,1,0,1782-09-01..1783-04-30,/scratch3/PALAEO-RA/daily_data/final/DenHaag/PALAEO-RA_Den-Haag_17820901-17830430_ta_subdaily_qc.tsv
@@ -963,7 +966,7 @@ PALAEO-RA_Florence,ta,Florence,1785-01-05,1788-12-30,1456,3.99,1456,1,1,0,1785-0
 PALAEO-RA_Frankfurt,dd,Frankfurt,1749-01-01,1755-11-10,2505,6.86,2505,1,1,0,1749-01-01..1755-11-10,/scratch3/PALAEO-RA/daily_data/final/Frankfurt/PALAEO-RA_Frankfurt_17490101-17551110_dd_subdaily_qc.tsv
 PALAEO-RA_Frankfurt,p,Frankfurt,1749-01-01,1755-12-31,2556,7.00,2556,1,1,0,1749-01-01..1755-12-31,/scratch3/PALAEO-RA/daily_data/final/Frankfurt/PALAEO-RA_Frankfurt_17490101-17551231_p_subdaily_qc.tsv
 PALAEO-RA_Frankfurt,ta,Frankfurt,1749-01-01,1755-12-31,2556,7.00,2556,1,1,0,1749-01-01..1755-12-31,/scratch3/PALAEO-RA/daily_data/final/Frankfurt/PALAEO-RA_Frankfurt_17490101-17551231_ta_subdaily_qc.tsv
-PALAEO-RA_Gdansk_Lenke,ta,Gdansk,1709-01-01,1709-04-22,112,0.31,112,1,1,0,1709-01-01..1709-04-22,/scratch3/PALAEO-RA/daily_data/final/Gdansk/PALAEO-RA_Gdansk_Lenke_17090101-17090422_ta_daily.tsv
+PALAEO-RA_Gdansk,ta,Gdansk,1709-01-01,1709-04-22,112,0.31,112,1,1,0,1709-01-01..1709-04-22,/scratch3/PALAEO-RA/daily_data/final/Gdansk/PALAEO-RA_Gdansk_17090101-17090422_ta_daily.tsv
 PALAEO-RA_Godthaab,dd,Nuuk,1786-10-01,1787-07-01,274,0.75,274,1,1,0,1786-10-01..1787-07-01,/scratch3/PALAEO-RA/daily_data/final/Nuuk/PALAEO-RA_Godthaab_17861001-17870701_dd_subdaily_qc.tsv
 PALAEO-RA_Godthaab,p,Nuuk,1787-01-01,1787-06-30,181,0.50,181,1,1,0,1787-01-01..1787-06-30,/scratch3/PALAEO-RA/daily_data/final/Nuuk/PALAEO-RA_Godthaab_17870101-17870630_p_subdaily_qc.tsv
 PALAEO-RA_Godthaab,ta,Nuuk,1787-01-01,1787-06-30,181,0.50,181,1,1,0,1787-01-01..1787-06-30,/scratch3/PALAEO-RA/daily_data/final/Nuuk/PALAEO-RA_Godthaab_17870101-17870630_ta_subdaily_qc.tsv
@@ -979,9 +982,8 @@ PALAEO-RA_Gurzelen,p,Gurzelen,1768-09-01,1784-12-31,5966,16.33,5966,1,1,0,1768-0
 PALAEO-RA_Gurzelen,ta,Gurzelen,1766-02-01,1784-12-31,6909,18.92,6909,1,1,0,1766-02-01..1784-12-31,/scratch3/PALAEO-RA/daily_data/final/Gurzelen/PALAEO-RA_Gurzelen_17660201-17841231_ta_subdaily_qc.tsv
 PALAEO-RA_Halle,dd,Halle,1700-01-01,1700-12-31,365,1.00,365,1,1,0,1700-01-01..1700-12-31,/scratch3/PALAEO-RA/daily_data/final/Halle/PALAEO-RA_Halle_17000101-17001231_dd_subdaily_qc.tsv
 PALAEO-RA_Halle,p,Halle,1700-01-01,1700-12-31,365,1.00,365,1,1,0,1700-01-01..1700-12-31,/scratch3/PALAEO-RA/daily_data/final/Halle/PALAEO-RA_Halle_17000101-17001231_p_subdaily.tsv
-PALAEO-RA_Halle,ta,Halle,1700-01-01,1700-12-31,365,1.00,365,1,1,0,1700-01-01..1700-12-31,/scratch3/PALAEO-RA/daily_data/final/Halle/PALAEO-RA_Halle_17000101-17001231_ta_subdaily.tsv
-PALAEO-RA_Halle_Lenke,ta,Halle,1709-01-01,1709-03-14,73,0.20,73,1,1,0,1709-01-01..1709-03-14,/scratch3/PALAEO-RA/daily_data/final/Halle/PALAEO-RA_Halle_Lenke_17090101-17090314_ta_daily.tsv
-PALAEO-RA_Hamburg_Lenke,ta,Hamburg,1709-01-01,1709-01-31,31,0.08,31,1,1,0,1709-01-01..1709-01-31,/scratch3/PALAEO-RA/daily_data/final/Hamburg/PALAEO-RA_Hamburg_Lenke_17090101-17090131_ta_daily.tsv
+PALAEO-RA_Halle,ta,Halle,1700-01-01,1709-03-14,3360,9.20,438,2,2,2922,1700-01-01..1700-12-31; 1709-01-01..1709-03-14,/scratch3/PALAEO-RA/daily_data/final/Halle/PALAEO-RA_Halle_17000101-17001231_ta_subdaily.tsv|/scratch3/PALAEO-RA/daily_data/final/Halle/PALAEO-RA_Halle_17090101-17090314_ta_daily.tsv
+PALAEO-RA_Hamburg,ta,Hamburg,1709-01-01,1709-01-31,31,0.08,31,1,1,0,1709-01-01..1709-01-31,/scratch3/PALAEO-RA/daily_data/final/Hamburg/PALAEO-RA_Hamburg_17090101-17090131_ta_daily.tsv
 PALAEO-RA_Ingolstadt,dd,Ingolstadt,1781-01-01,1782-12-31,730,2.00,730,1,1,0,1781-01-01..1782-12-31,/scratch3/PALAEO-RA/daily_data/final/Ingolstadt/PALAEO-RA_Ingolstadt_17810101-17821231_dd_subdaily_qc.tsv
 PALAEO-RA_Ingolstadt,p,Ingolstadt,1781-01-01,1782-12-31,730,2.00,730,1,1,0,1781-01-01..1782-12-31,/scratch3/PALAEO-RA/daily_data/final/Ingolstadt/PALAEO-RA_Ingolstadt_17810101-17821231_p_subdaily_qc.tsv
 PALAEO-RA_Ingolstadt,rr,Ingolstadt,1781-01-01,1782-12-31,730,2.00,730,1,1,0,1781-01-01..1782-12-31,/scratch3/PALAEO-RA/daily_data/final/Ingolstadt/PALAEO-RA_Ingolstadt_17810101-17821231_rr_subdaily_qc.tsv
@@ -989,15 +991,13 @@ PALAEO-RA_Ingolstadt,ta,Ingolstadt,1781-01-01,1782-12-31,730,2.00,730,1,1,0,1781
 PALAEO-RA_Ingolstadt,w,Ingolstadt,1781-01-01,1782-12-31,730,2.00,730,1,1,0,1781-01-01..1782-12-31,/scratch3/PALAEO-RA/daily_data/final/Ingolstadt/PALAEO-RA_Ingolstadt_17810101-17821231_w_subdaily.tsv
 PALAEO-RA_Jena,dd,Jena,1702-01-01,1702-12-31,365,1.00,365,1,1,0,1702-01-01..1702-12-31,/scratch3/PALAEO-RA/daily_data/final/Jena/PALAEO-RA_Jena_17020101-17021231_dd_subdaily_qc.tsv
 PALAEO-RA_Jena,p,Jena,1702-01-01,1702-12-31,365,1.00,365,1,1,0,1702-01-01..1702-12-31,/scratch3/PALAEO-RA/daily_data/final/Jena/PALAEO-RA_Jena_17020101-17021231_p_subdaily_qc.tsv
-PALAEO-RA_Jena_Lenke,ta,Jena,1709-01-05,1709-02-06,33,0.09,33,1,1,0,1709-01-05..1709-02-06,/scratch3/PALAEO-RA/daily_data/final/Jena/PALAEO-RA_Jena_Lenke_17090105-17090206_ta_daily.tsv
+PALAEO-RA_Jena,ta,Jena,1709-01-05,1709-02-06,33,0.09,33,1,1,0,1709-01-05..1709-02-06,/scratch3/PALAEO-RA/daily_data/final/Jena/PALAEO-RA_Jena_17090105-17090206_ta_daily.tsv
 PALAEO-RA_Kaliningrad,dd,Kaliningrad,1702-01-01,1702-12-31,365,1.00,365,1,1,0,1702-01-01..1702-12-31,/scratch3/PALAEO-RA/daily_data/final/Kaliningrad/PALAEO-RA_Kaliningrad_17020101-17021231_dd_subdaily_qc.tsv
 PALAEO-RA_Kaliningrad,p,Kaliningrad,1702-01-01,1702-12-31,365,1.00,365,1,1,0,1702-01-01..1702-12-31,/scratch3/PALAEO-RA/daily_data/final/Kaliningrad/PALAEO-RA_Kaliningrad_17020101-17021231_p_subdaily_qc.tsv
-PALAEO-RA_Kaliningrad,ta,Kaliningrad,1702-01-01,1702-12-31,365,1.00,365,1,1,0,1702-01-01..1702-12-31,/scratch3/PALAEO-RA/daily_data/final/Kaliningrad/PALAEO-RA_Kaliningrad_17020101-17021231_ta_subdaily.tsv
-PALAEO-RA_Kaliningrad_Lenke,ta,Kaliningrad,1709-01-01,1709-02-28,59,0.16,59,1,1,0,1709-01-01..1709-02-28,/scratch3/PALAEO-RA/daily_data/final/Kaliningrad/PALAEO-RA_Kaliningrad_Lenke_17090101-17090228_ta_daily.tsv
+PALAEO-RA_Kaliningrad,ta,Kaliningrad,1702-01-01,1709-02-28,2616,7.16,424,2,2,2192,1702-01-01..1702-12-31; 1709-01-01..1709-02-28,/scratch3/PALAEO-RA/daily_data/final/Kaliningrad/PALAEO-RA_Kaliningrad_17020101-17021231_ta_subdaily.tsv|/scratch3/PALAEO-RA/daily_data/final/Kaliningrad/PALAEO-RA_Kaliningrad_17090101-17090228_ta_daily.tsv
 PALAEO-RA_Kiel,dd,Kiel,1767-01-01,1768-12-31,731,2.00,731,1,1,0,1767-01-01..1768-12-31,/scratch3/PALAEO-RA/daily_data/final/Kiel/PALAEO-RA_Kiel_17670101-17681231_dd_subdaily_qc.tsv
 PALAEO-RA_Kiel,p,Kiel,1767-01-01,1768-12-31,731,2.00,731,1,1,0,1767-01-01..1768-12-31,/scratch3/PALAEO-RA/daily_data/final/Kiel/PALAEO-RA_Kiel_17670101-17681231_p_subdaily_qc.tsv
-PALAEO-RA_Kiel,ta,Kiel,1767-01-01,1768-12-31,731,2.00,731,1,1,0,1767-01-01..1768-12-31,/scratch3/PALAEO-RA/daily_data/final/Kiel/PALAEO-RA_Kiel_17670101-17681231_ta_subdaily_qc.tsv
-PALAEO-RA_Kiel_Lenke,ta,Kiel,1709-01-11,1709-03-29,78,0.21,78,1,1,0,1709-01-11..1709-03-29,/scratch3/PALAEO-RA/daily_data/final/Kiel/PALAEO-RA_Kiel_Lenke_17090111-17090329_ta_daily.tsv
+PALAEO-RA_Kiel,ta,Kiel,1709-01-11,1768-12-31,21905,59.97,809,2,2,21096,1709-01-11..1709-03-29; 1767-01-01..1768-12-31,/scratch3/PALAEO-RA/daily_data/final/Kiel/PALAEO-RA_Kiel_17090111-17090329_ta_daily.tsv|/scratch3/PALAEO-RA/daily_data/final/Kiel/PALAEO-RA_Kiel_17670101-17681231_ta_subdaily_qc.tsv
 PALAEO-RA_LaRochelle,dd,LaRochelle,1782-01-01,1790-12-31,3287,9.00,3287,1,1,0,1782-01-01..1790-12-31,/scratch3/PALAEO-RA/daily_data/final/LaRochelle/PALAEO-RA_LaRochelle_17820101-17901231_dd_subdaily_qc.tsv
 PALAEO-RA_LaRochelle,p,LaRochelle,1782-01-01,1790-12-31,3287,9.00,3287,2,1,0,1782-01-01..1790-12-31,/scratch3/PALAEO-RA/daily_data/final/LaRochelle/PALAEO-RA_LaRochelle_17820101-17901231_p_subdaily_qc.tsv|/scratch3/PALAEO-RA/daily_data/final/LaRochelle/PALAEO-RA_LaRochelle_17870101-17881231_p_daily_qc.tsv
 PALAEO-RA_LaRochelle,rr,LaRochelle,1783-01-01,1786-12-31,1461,4.00,1461,1,1,0,1783-01-01..1786-12-31,/scratch3/PALAEO-RA/daily_data/final/LaRochelle/PALAEO-RA_LaRochelle_17830101-17861231_rr_daily_qc.tsv
@@ -1024,8 +1024,7 @@ PALAEO-RA_Middelburg,ta,Middelburg,1782-07-04,1788-12-31,2373,6.50,2373,2,1,0,17
 PALAEO-RA_Middelburg,w,Middelburg,1782-07-04,1788-12-31,2373,6.50,2373,1,1,0,1782-07-04..1788-12-31,/scratch3/PALAEO-RA/daily_data/final/Middelburg/PALAEO-RA_Middelburg_17820704-17881231_w_subdaily.tsv
 PALAEO-RA_Montpellier,dd,Montpellier,1705-02-03,1748-06-24,15848,43.39,15848,1,1,0,1705-02-03..1748-06-24,/scratch3/PALAEO-RA/daily_data/final/Montpellier/PALAEO-RA_Montpellier_17050203-17480624_dd_subdaily_qc.tsv
 PALAEO-RA_Montpellier,p,Montpellier,1705-02-03,1748-12-28,16035,43.90,16035,1,1,0,1705-02-03..1748-12-28,/scratch3/PALAEO-RA/daily_data/final/Montpellier/PALAEO-RA_Montpellier_17050203-17481228_p_subdaily_qc.tsv
-PALAEO-RA_Montpellier,ta,Montpellier,1737-01-03,1748-06-24,4191,11.47,4191,1,1,0,1737-01-03..1748-06-24,/scratch3/PALAEO-RA/daily_data/final/Montpellier/PALAEO-RA_Montpellier_17370103-17480624_ta_subdaily_qc.tsv
-PALAEO-RA_Montpellier_Lenke,ta,Montpellier,1709-01-01,1709-02-28,59,0.16,59,1,1,0,1709-01-01..1709-02-28,/scratch3/PALAEO-RA/daily_data/final/Montpellier/PALAEO-RA_Montpellier_Lenke_17090101-17090228_ta_daily.tsv
+PALAEO-RA_Montpellier,ta,Montpellier,1709-01-01,1748-06-24,14420,39.48,4250,2,2,10170,1709-01-01..1709-02-28; 1737-01-03..1748-06-24,/scratch3/PALAEO-RA/daily_data/final/Montpellier/PALAEO-RA_Montpellier_17090101-17090228_ta_daily.tsv|/scratch3/PALAEO-RA/daily_data/final/Montpellier/PALAEO-RA_Montpellier_17370103-17480624_ta_subdaily_qc.tsv
 PALAEO-RA_Moscow,dd,Moscow,1785-03-21,1792-12-31,2843,7.78,2843,1,1,0,1785-03-21..1792-12-31,/scratch3/PALAEO-RA/daily_data/final/Moscow/PALAEO-RA_Moscow_17850321-17921231_dd_subdaily_qc.tsv
 PALAEO-RA_Moscow,p,Moscow,1785-03-21,1792-12-31,2843,7.78,2843,1,1,0,1785-03-21..1792-12-31,/scratch3/PALAEO-RA/daily_data/final/Moscow/PALAEO-RA_Moscow_17850321-17921231_p_subdaily_qc.tsv
 PALAEO-RA_Moscow,ta,Moscow,1785-03-21,1792-12-31,2843,7.78,2843,1,1,0,1785-03-21..1792-12-31,/scratch3/PALAEO-RA/daily_data/final/Moscow/PALAEO-RA_Moscow_17850321-17921231_ta_subdaily_qc.tsv
@@ -1044,7 +1043,7 @@ PALAEO-RA_Padua,dd,Padua,1781-01-01,1792-12-31,4383,12.00,4383,1,1,0,1781-01-01.
 PALAEO-RA_Padua,p,Padua,1781-01-01,1792-12-31,4383,12.00,4383,1,1,0,1781-01-01..1792-12-31,/scratch3/PALAEO-RA/daily_data/final/Padua/PALAEO-RA_Padua_17810101-17921231_p_subdaily_qc.tsv
 PALAEO-RA_Padua,rr,Padua,1781-01-01,1792-12-31,4383,12.00,4383,1,1,0,1781-01-01..1792-12-31,/scratch3/PALAEO-RA/daily_data/final/Padua/PALAEO-RA_Padua_17810101-17921231_rr_subdaily_qc.tsv
 PALAEO-RA_Padua,ta,Padua,1781-01-01,1792-12-31,4383,12.00,4383,2,1,0,1781-01-01..1792-12-31,/scratch3/PALAEO-RA/daily_data/final/Padua/PALAEO-RA_Padua_17810101-17921231_ta_subdaily_qc.tsv|/scratch3/PALAEO-RA/daily_data/final/Padua/PALAEO-RA_Padua_17870101-17881231_ta_daily_qc.tsv
-PALAEO-RA_Paris_Lenke,ta,Paris,1709-01-05,1709-01-21,17,0.05,17,1,1,0,1709-01-05..1709-01-21,/scratch3/PALAEO-RA/daily_data/final/Paris/PALAEO-RA_Paris_Lenke_17090105-17090121_ta_daily.tsv
+PALAEO-RA_Paris,ta,Paris,1709-01-05,1709-01-21,17,0.05,17,1,1,0,1709-01-05..1709-01-21,/scratch3/PALAEO-RA/daily_data/final/Paris/PALAEO-RA_Paris_17090105-17090121_ta_daily.tsv
 PALAEO-RA_Prague,dd,Prague,1781-08-01,1791-12-31,3805,10.42,3805,1,1,0,1781-08-01..1791-12-31,/scratch3/PALAEO-RA/daily_data/final/Prague/PALAEO-RA_Prague_17810801-17911231_dd_subdaily_qc.tsv
 PALAEO-RA_Prague,p,Prague,1781-08-01,1791-12-31,3805,10.42,3805,2,1,0,1781-08-01..1791-12-31,/scratch3/PALAEO-RA/daily_data/final/Prague/PALAEO-RA_Prague_17810801-17911231_p_subdaily_qc.tsv|/scratch3/PALAEO-RA/daily_data/final/Prague/PALAEO-RA_Prague_17870101-17871231_p_daily_qc.tsv
 PALAEO-RA_Prague,rr,Prague,1781-08-01,1786-07-31,1826,5.00,1826,1,1,0,1781-08-01..1786-07-31,/scratch3/PALAEO-RA/daily_data/final/Prague/PALAEO-RA_Prague_17810801-17860731_rr_daily_qc.tsv
@@ -1099,7 +1098,7 @@ PALAEO-RA_Ulm,rr,Ulm,1715-03-24,1721-03-05,2174,5.95,2174,1,1,0,1715-03-24..1721
 PALAEO-RA_Ulm,ta,Ulm,1710-09-23,1714-03-20,1275,3.49,1275,1,1,0,1710-09-23..1714-03-20,/scratch3/PALAEO-RA/daily_data/final/Ulm/PALAEO-RA_Ulm_17100923-17140320_ta_daily_qc.tsv
 PALAEO-RA_Upminster,p,Upminster,1697-07-01,1709-01-10,4211,11.53,550,2,2,3661,1697-07-01..1697-12-31; 1708-01-11..1709-01-10,/scratch3/PALAEO-RA/daily_data/final/Upminster/PALAEO-RA_Upminster_16970701-16971231_p_subdaily.tsv|/scratch3/PALAEO-RA/daily_data/final/Upminster/PALAEO-RA_Upminster_17080111-17090110_p_subdaily_qc.tsv
 PALAEO-RA_Upminster,rr,Upminster,1697-07-01,1709-01-10,4211,11.53,550,2,2,3661,1697-07-01..1697-12-31; 1708-01-11..1709-01-10,/scratch3/PALAEO-RA/daily_data/final/Upminster/PALAEO-RA_Upminster_16970701-16971231_rr_subdaily.tsv|/scratch3/PALAEO-RA/daily_data/final/Upminster/PALAEO-RA_Upminster_17080111-17090110_rr_daily_qc.tsv
-PALAEO-RA_Upminster_Lenke,ta,Upminster,1709-01-08,1709-01-15,8,0.02,8,1,1,0,1709-01-08..1709-01-15,/scratch3/PALAEO-RA/daily_data/final/Upminster/PALAEO-RA_Upminster_Lenke_17090108-17090115_ta_daily.tsv
+PALAEO-RA_Upminster,ta,Upminster,1709-01-08,1709-01-15,8,0.02,8,1,1,0,1709-01-08..1709-01-15,/scratch3/PALAEO-RA/daily_data/final/Upminster/PALAEO-RA_Upminster_17090108-17090115_ta_daily.tsv
 PALAEO-RA_Vienna,p,Vienna,1709-03-21,1717-03-20,2922,8.00,2922,1,1,0,1709-03-21..1717-03-20,/scratch3/PALAEO-RA/daily_data/final/Vienna/PALAEO-RA_Vienna_17090321-17170320_p_daily_qc.tsv
 PALAEO-RA_Vienna,ta,Vienna,1709-03-21,1717-04-20,2953,8.09,2953,1,1,0,1709-03-21..1717-04-20,/scratch3/PALAEO-RA/daily_data/final/Vienna/PALAEO-RA_Vienna_17090321-17170420_ta_subdaily.tsv
 PALAEO-RA_Waldenburg,p,Waldenburg,1776-01-01,1790-08-31,5357,14.67,5357,1,1,0,1776-01-01..1790-08-31,/scratch3/PALAEO-RA/daily_data/final/Waldenburg/PALAEO-RA_Waldenburg_17760101-17900831_p_subdaily_qc.tsv
@@ -1120,7 +1119,7 @@ PALAEO-RA_Zagan,p,Zagan,1781-01-01,1792-12-31,4383,12.00,4383,1,1,0,1781-01-01..
 PALAEO-RA_Zagan,rr,Zagan,1781-01-01,1792-12-31,4383,12.00,4383,1,1,0,1781-01-01..1792-12-31,/scratch3/PALAEO-RA/daily_data/final/Zagan/PALAEO-RA_Zagan_17810101-17921231_rr_subdaily_qc.tsv
 PALAEO-RA_Zagan,ta,Zagan,1781-01-01,1792-12-31,4383,12.00,4383,1,1,0,1781-01-01..1792-12-31,/scratch3/PALAEO-RA/daily_data/final/Zagan/PALAEO-RA_Zagan_17810101-17921231_ta_subdaily_qc.tsv
 PALAEO-RA_Zagan,w,Zagan,1781-01-01,1792-12-31,4383,12.00,4383,1,1,0,1781-01-01..1792-12-31,/scratch3/PALAEO-RA/daily_data/final/Zagan/PALAEO-RA_Zagan_17810101-17921231_w_subdaily.tsv
-PALAEO-RA_Zeitz_Lenke,ta,Zeitz,1709-01-01,1709-03-14,73,0.20,73,1,1,0,1709-01-01..1709-03-14,/scratch3/PALAEO-RA/daily_data/final/Zeitz/PALAEO-RA_Zeitz_Lenke_17090101-17090314_ta_daily.tsv
+PALAEO-RA_Zeitz,ta,Zeitz,1709-01-01,1709-03-14,73,0.20,73,1,1,0,1709-01-01..1709-03-14,/scratch3/PALAEO-RA/daily_data/final/Zeitz/PALAEO-RA_Zeitz_17090101-17090314_ta_daily.tsv
 PALAEO-RA_Zurich_Escher,dd,Zurich,1816-06-01,1816-12-31,214,0.59,214,1,1,0,1816-06-01..1816-12-31,/scratch3/PALAEO-RA/daily_data/final/Zurich/PALAEO-RA_Zurich_Escher_18160601-18161231_dd_subdaily_qc.tsv
 PALAEO-RA_Zurich_Escher,p,Zurich,1816-06-01,1816-12-31,214,0.59,214,1,1,0,1816-06-01..1816-12-31,/scratch3/PALAEO-RA/daily_data/final/Zurich/PALAEO-RA_Zurich_Escher_18160601-18161231_p_subdaily_qc.tsv
 PALAEO-RA_Zurich_Escher,rh,Zurich,1816-06-01,1816-12-31,214,0.59,214,1,1,0,1816-06-01..1816-12-31,/scratch3/PALAEO-RA/daily_data/final/Zurich/PALAEO-RA_Zurich_Escher_18160601-18161231_rh_subdaily_qc.tsv
