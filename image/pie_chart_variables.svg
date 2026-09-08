@@ -6,7 +6,7 @@
   <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2026-08-17T14:12:35.683906</dc:date>
+    <dc:date>2026-09-08T17:51:22.497614</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -102,7 +102,7 @@ C 207.957101 226.242395 193.212229 261.839663 193.212229 298.951958
 C 193.212229 336.064254 207.957101 371.661521 234.199456 397.903877 
 C 260.441812 424.146233 296.03908 438.891104 333.151375 438.891104 
 z
-" clip-path="url(#p314b5d2c7f)" style="fill: #ffffff; stroke: #ffffff; stroke-linejoin: miter"/>
+" clip-path="url(#p1eebc93bb3)" style="fill: #ffffff; stroke: #ffffff; stroke-linejoin: miter"/>
    </g>
    <g id="text_1">
     <!-- Temperature -->
@@ -1555,7 +1555,7 @@ z
   </g>
  </g>
  <defs>
-  <clipPath id="p314b5d2c7f">
+  <clipPath id="p1eebc93bb3">
    <rect x="40.364564" y="42.396875" width="585.573751" height="513.109825"/>
   </clipPath>
  </defs>
