@@ -5,7 +5,8 @@
       "Bash(MPLBACKEND=Agg python3 ta_startyearplot.py)",
       "Bash(pdftoppm -png -r 100 image/station_map_start_year_ta_horizontal.pdf /tmp/claude-1439802984/-scratch2-ccorbella-code-dataprep/f5a61790-1cc1-48b4-82ee-6c8f7decabbf/scratchpad/preview)",
       "Bash(MPLBACKEND=Agg python3 -c ' *)",
-      "Bash(jupyter nbconvert *)"
+      "Bash(jupyter nbconvert *)",
+      "Bash(MPLBACKEND=Agg python3 /tmp/claude-1439802984/-scratch2-ccorbella-code-dataprep/1522870e-0dac-4d35-81c7-bfaec0d7ef7b/scratchpad/test_presentation_cell2.py)"
     ]
   }
 }
