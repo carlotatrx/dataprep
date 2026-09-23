@@ -4,7 +4,7 @@ first and last observation dates in the file, and flags files where
 the first or last data row has a NA value.
 
 Usage:
-    python check_filename_dates.py /scratch3/PALAEO-RA/daily_data/final/
+    python check_filename_dates.py /scratch3/PALAEO-RA/daily_data/SEF/
 """
 
 import os

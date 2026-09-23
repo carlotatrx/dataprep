@@ -5,7 +5,7 @@ library(readr)   # for read_lines()
 # -----------------------------
 # PATHS
 # -----------------------------
-orig_root <- "/scratch3/PALAEO-RA/daily_data/final"
+orig_root <- "/scratch3/PALAEO-RA/daily_data/SEF"
 qc_root   <- "/scratch3/PALAEO-RA/daily_data/tmp/sef_tests"
 
 # -----------------------------

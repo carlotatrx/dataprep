@@ -1,6 +1,6 @@
 # count number of flagged values
 
-find /scratch3/PALAEO-RA/daily_data/final -type f -name "*.tsv" | while read f; do
+find /scratch3/PALAEO-RA/daily_data/SEF -type f -name "*.tsv" | while read f; do
   awk -F'\t' 'NR>1 && /^[0-9]/ && $7!="NA" {
     total++
     meta=$NF
@@ -19,7 +19,7 @@ done | awk '{t+=$1; f+=$2} END {
 }'
 
 # show wrongly flagged values:
-find /scratch3/PALAEO-RA/daily_data/final -type f -name "*.tsv" | while read f; do
+find /scratch3/PALAEO-RA/daily_data/SEF -type f -name "*.tsv" | while read f; do
   result=$(awk 'NR>1 && /^[0-9]/ {print $NF}' "$f" | \
     grep -oP 'qc=[^[:space:]]+' | \
     sed 's/qc=//' | \
@@ -31,7 +31,7 @@ done
 
 # see what different types of qc there are:
 # This is wrong because it only captures the first QC and doesn't filter NA values
-find /scratch3/PALAEO-RA/daily_data/final -type f -name "*.tsv" | while read f; do
+find /scratch3/PALAEO-RA/daily_data/SEF -type f -name "*.tsv" | while read f; do
   awk 'NR>1 && /^[0-9]/ {print $NF}' "$f"
 done | \
 grep -oP 'qc=[^[:space:]]+' | \
@@ -40,7 +40,7 @@ tr ';' '\n' | \
 sort | uniq -c | sort -rn
 
 # find total number of flagged values
-find /scratch3/PALAEO-RA/daily_data/final -type f -name "*.tsv" | while read f; do
+find /scratch3/PALAEO-RA/daily_data/SEF -type f -name "*.tsv" | while read f; do
   awk -F'\t' '
     /^Source\t/ {
       src = tolower($2)
@@ -70,19 +70,19 @@ done | awk '{t+=$1; f+=$2; o+=$3; ot+=$4} END {
 }'
 
 # find total number of NA values
-find /scratch3/PALAEO-RA/daily_data/final -type f -name "*.tsv" | while read f; do
+find /scratch3/PALAEO-RA/daily_data/SEF -type f -name "*.tsv" | while read f; do
   awk 'NR>1 && /^[0-9]/ && $7=="NA" {count++} END {print count+0}' "$f"
 done | awk '{sum+=$1} END {print "NA values: " sum}'
 
 # find total number of values
-find /scratch3/PALAEO-RA/daily_data/final -type f -name "*.tsv" | while read f; do
+find /scratch3/PALAEO-RA/daily_data/SEF -type f -name "*.tsv" | while read f; do
   awk 'NR>1 && /^[0-9]/ {print $7}' "$f"
 done | awk '{total++; if($1=="NA") na++} END {
   printf "Total values:    %d\nNA values:       %d\nNon-NA values:   %d\n", total, na, total-na
 }'
 
 # find number of flagged values per variable
-find /scratch3/PALAEO-RA/daily_data/final -type f -name "*.tsv" | while read f; do
+find /scratch3/PALAEO-RA/daily_data/SEF -type f -name "*.tsv" | while read f; do
   awk -F'\t' '
     /^Vbl\t/ { vbl = $2; gsub(/\r$/, "", vbl) }
     FNR>1 && /^[0-9]/ && $7!="NA" {
@@ -109,7 +109,7 @@ done | awk '{
 
 # Per variable, shows what share of all non-NA values (not just flagged ones) come from own-digitized series
 
-find /scratch3/PALAEO-RA/daily_data/final -type f -name "*.tsv" | while read f; do
+find /scratch3/PALAEO-RA/daily_data/SEF -type f -name "*.tsv" | while read f; do
   awk -F'\t' '
     /^Vbl\t/ { vbl = $2; gsub(/\r$/, "", vbl) }
     /^Source\t/ {
@@ -134,7 +134,7 @@ done | awk '{
 
 # Counts occurrences of each qc flag type across the whole dataset
 
-find /scratch3/PALAEO-RA/daily_data/final -type f -name "*.tsv" | while read f; do
+find /scratch3/PALAEO-RA/daily_data/SEF -type f -name "*.tsv" | while read f; do
   awk -F'\t' '
     FNR>1 && /^[0-9]/ && $7!="NA" {
       meta=$NF
@@ -153,7 +153,7 @@ done | sort | uniq -c | sort -rn
 # Finds qc-test/variable combinations that fall outside each test's documented scope
 # (climatic_outliers, wmo_gross_errors, wmo_time_consistency, internal_consistency, temporal_coherence)
 
-find /scratch3/PALAEO-RA/daily_data/final -type f -name "*.tsv" | while read f; do
+find /scratch3/PALAEO-RA/daily_data/SEF -type f -name "*.tsv" | while read f; do
   awk -F'\t' -v fname="$f" '
     BEGIN {
       valid_for["climatic_outliers"]    = "ta,Tx,Tn,rr,snow,p,eee"
@@ -188,7 +188,7 @@ find /scratch3/PALAEO-RA/daily_data/final -type f -name "*.tsv" | while read f; 
 done
 
 # Finds files where climatic_outliers is flagged on a variable outside its intended scope (ta/rr/fs/p/Tx/Tn)
-find /scratch3/PALAEO-RA/daily_data/final -type f -name "*.tsv" | while read f; do
+find /scratch3/PALAEO-RA/daily_data/SEF -type f -name "*.tsv" | while read f; do
   awk -F'\t' -v fname="$f" '
     /^Vbl\t/ { vbl = $2; gsub(/\r$/, "", vbl) }
     FNR>1 && /^[0-9]/ && $7!="NA" {
@@ -240,7 +240,7 @@ END {
 
 
 # find daily and subdaily files, and count how many of each there are, and how many non-conforming files there are. Non-conforming files are those that do not have "_daily_" or "_subdaily_" in their filename, or do not end with ".tsv".
-DATA_DIR="/scratch3/PALAEO-RA/daily_data/final"
+DATA_DIR="/scratch3/PALAEO-RA/daily_data/SEF"
 
 daily_count=0
 subdaily_count=0

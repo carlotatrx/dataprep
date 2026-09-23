@@ -10,7 +10,7 @@ source('/scratch2/ccorbella/code/dataprep/helpfun.R')
 
 # --------- user inputs ----------
 infile  <- "/scratch3/PALAEO-RA/daily_data/original/Schaffhausen/SH01_Schaffhausen.tsv"
-outdir <- "/scratch3/PALAEO-RA/daily_data/final/Schaffhausen/"
+outdir <- "/scratch3/PALAEO-RA/daily_data/SEF/Schaffhausen/"
 
 code <- "Schaffhausen"
 name  <- "CHIMES_Schaffhausen"

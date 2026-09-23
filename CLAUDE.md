@@ -8,7 +8,7 @@ Data preparation pipeline for the **PALAEO-RA** project: processing ~100 histori
 
 ## Key external data paths
 
-- `/scratch3/PALAEO-RA/daily_data/final/<StationName>/` — output SEF `.tsv` files (one per station/variable)
+- `/scratch3/PALAEO-RA/daily_data/SEF/<StationName>/` — output SEF `.tsv` files (one per station/variable)
 - `/scratch3/PALAEO-RA/daily_data/original/<StationName>/` — raw input data
 - `/home/ccorbella/scratch2_symboliclink/files/1807_USBstick/` — WeaR and other pre-processed series
 - `/home/ccorbella/scratch2_symboliclink/files/station_timeseries_preprocessed/` — intermediate preprocessed files
@@ -22,7 +22,7 @@ No build system. Scripts are run individually:
 Rscript 02_dataprep_timeseries2tsv.R
 Rscript 04_dataprep_tsv_obs.R
 python3 05A_dataprep_ta_obs_anomalies.py
-python3 merge_wrdv2.py /scratch3/PALAEO-RA/daily_data/final/StationName
+python3 merge_wrdv2.py /scratch3/PALAEO-RA/daily_data/SEF/StationName
 python3 merge_wrdv2.py /path/to/dir --dry-run   # preview without writing
 jupyter notebook plots4paper.ipynb
 ```

@@ -6,7 +6,7 @@ library(dplyr)
 library(lubridate)
 source('/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/helpfun.R')
 
-outdir <- "/scratch3/PALAEO-RA/daily_data/final/Southern_Spain"
+outdir <- "/scratch3/PALAEO-RA/daily_data/SEF/Southern_Spain"
 source <- "Rodrigo, Fernando S.. “Early Meteorological Observations in Southern Spain Version 2.” (2019)."
 link   <- "http://hdl.handle.net/10835/6806"
 
@@ -59,7 +59,7 @@ for (var in vars) {
   write_sef_f(
     dat,
     outfile = outfile.name(name, var, df, FALSE, obs_name="_JMChacon_"),
-    outpath = '/scratch3/PALAEO-RA/daily_data/final/Cadiz',
+    outpath = '/scratch3/PALAEO-RA/daily_data/SEF/Cadiz',
     cod     = code,
     lat     = lat,
     lon     = lon,
@@ -118,7 +118,7 @@ for (var in vars) {
   write_sef_f(
     dat,
     outfile = outfile.name(name, var, df, TRUE, obs_name="_PMGonzalez_"),
-    outpath = '/scratch3/PALAEO-RA/daily_data/final/Cadiz',
+    outpath = '/scratch3/PALAEO-RA/daily_data/SEF/Cadiz',
     cod     = code,
     lat     = lat,
     lon     = lon,
@@ -186,7 +186,7 @@ var <- "dd"
 write_sef_f(
   as.data.frame(df.final),
   outfile = outfile.name(name, var, df.final, TRUE, obs_name="_PMGonzalez_"),
-  outpath = '/scratch3/PALAEO-RA/daily_data/final/Cadiz',
+  outpath = '/scratch3/PALAEO-RA/daily_data/SEF/Cadiz',
   cod     = code,
   lat     = lat,
   lon     = lon,
@@ -248,7 +248,7 @@ for (var in vars) {
   write_sef_f(
     dat,
     outfile = outfile.name(name, var, df, TRUE),
-    outpath = '/scratch3/PALAEO-RA/daily_data/final/Cadiz',
+    outpath = '/scratch3/PALAEO-RA/daily_data/SEF/Cadiz',
     cod     = code,
     lat     = lat,
     lon     = lon,
@@ -315,7 +315,7 @@ for (var in vars) {
   write_sef_f(
     dat,
     outfile = outfile.name(name, var, df, TRUE, "_JMdeArejula_"),
-    outpath = '/scratch3/PALAEO-RA/daily_data/final/Cadiz',
+    outpath = '/scratch3/PALAEO-RA/daily_data/SEF/Cadiz',
     cod     = code,
     lat     = lat,
     lon     = lon,
@@ -364,7 +364,7 @@ var <- "ta"
 write_sef_f(
   as.data.frame(df),
   outfile = outfile.name(name, var, df, TRUE, "_deMolina-deUrena_"),
-  outpath = '/scratch3/PALAEO-RA/daily_data/final/Cadiz',
+  outpath = '/scratch3/PALAEO-RA/daily_data/SEF/Cadiz',
   cod     = code,
   lat     = lat,
   lon     = lon,
@@ -452,7 +452,7 @@ for (var in vars) {
   write_sef_f(
     dat,
     outfile = outfile.name(name, var, dat, TRUE, obs_name="_PerezLasso_"),
-    outpath = '/scratch3/PALAEO-RA/daily_data/final/Cadiz',
+    outpath = '/scratch3/PALAEO-RA/daily_data/SEF/Cadiz',
     cod     = code,
     lat     = lat,
     lon     = lon,
@@ -504,7 +504,7 @@ var <- "dd"
 write_sef_f(
   as.data.frame(df.dd),
   outfile = outfile.name(name, var, df.dd, TRUE, obs_name="_PerezLasso_"),
-  outpath = '/scratch3/PALAEO-RA/daily_data/final/Cadiz',
+  outpath = '/scratch3/PALAEO-RA/daily_data/SEF/Cadiz',
   cod     = code,
   lat     = lat,
   lon     = lon,
@@ -560,7 +560,7 @@ for (var in vars) {
   write_sef_f(
     dat,
     outfile = outfile.name(name, var, df, TRUE),
-    outpath = '/scratch3/PALAEO-RA/daily_data/final/Cadiz',
+    outpath = '/scratch3/PALAEO-RA/daily_data/SEF/Cadiz',
     cod     = code,
     lat     = lat,
     lon     = lon,

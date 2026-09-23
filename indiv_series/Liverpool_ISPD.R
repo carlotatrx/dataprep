@@ -2,7 +2,7 @@ rm(list=ls())
 library(dplyr)
 source('/scratch2/ccorbella/code/dataprep/helpfun.R')
 
-outdir <- "/scratch3/PALAEO-RA/daily_data/final/Liverpool"
+outdir <- "/scratch3/PALAEO-RA/daily_data/SEF/Liverpool"
 
 lat  <- 53.4
 lon  <- -2.99

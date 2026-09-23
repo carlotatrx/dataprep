@@ -78,7 +78,7 @@ set -euo pipefail
 TMP="/scratch3/PALAEO-RA/daily_data/tmp/GHCNdRR"
 ORIGTMP="/scratch3/PALAEO-RA/daily_data/tmp/GHCNdRR/original_GHCNdRR"
 
-FINAL_BASE="/scratch3/PALAEO-RA/daily_data/final"
+FINAL_BASE="/scratch3/PALAEO-RA/daily_data/SEF"
 ORIGINAL_BASE="/scratch3/PALAEO-RA/daily_data/original"
 
 while IFS= read -r station; do
@@ -142,7 +142,7 @@ set -euo pipefail
 TMP="/scratch3/PALAEO-RA/daily_data/tmp/GHCNdRR"
 ORIGTMP="/scratch3/PALAEO-RA/daily_data/tmp/GHCNdRR/original_GHCNdRR"
 
-FINAL_BASE="/scratch3/PALAEO-RA/daily_data/final"
+FINAL_BASE="/scratch3/PALAEO-RA/daily_data/SEF"
 ORIGINAL_BASE="/scratch3/PALAEO-RA/daily_data/original"
 
 resolve_target_station() {
@@ -220,7 +220,7 @@ set -euo pipefail
 TMP="/scratch3/PALAEO-RA/daily_data/tmp/GHCNdRR"
 ORIGTMP="/scratch3/PALAEO-RA/daily_data/tmp/GHCNdRR/original_GHCNdRR"
 
-FINAL_BASE="/scratch3/PALAEO-RA/daily_data/final"
+FINAL_BASE="/scratch3/PALAEO-RA/daily_data/SEF"
 ORIGINAL_BASE="/scratch3/PALAEO-RA/daily_data/original"
 
 STATIONS_OUT="all_stations.txt"

@@ -1,7 +1,7 @@
 import os
 import pandas as pd
 
-DATA_DIR = "/scratch3/PALAEO-RA/daily_data/final/"
+DATA_DIR = "/scratch3/PALAEO-RA/daily_data/SEF/"
 GAP_THRESHOLD = 366  # days
 
 for station in os.listdir(DATA_DIR):

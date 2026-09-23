@@ -6,7 +6,7 @@ library(lubridate)
 library(dplyr)
 
 source('/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/helpfun.R')
-outdir <- "/scratch3/PALAEO-RA/daily_data/final"
+outdir <- "/scratch3/PALAEO-RA/daily_data/SEF"
   
 code <-	"CBT"
 name <-	"Central Belgium Temperature"

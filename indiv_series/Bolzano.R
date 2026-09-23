@@ -8,7 +8,7 @@ library(tibble)
 library(stringr)
 source('/scratch2/ccorbella/code/dataprep/helpfun.R')
 
-outdir <- "/scratch3/PALAEO-RA/daily_data/final/Bolzano"
+outdir <- "/scratch3/PALAEO-RA/daily_data/SEF/Bolzano"
 
 # -------------------------------------------------------------------------
 lat <- 46.493

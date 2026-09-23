@@ -13,7 +13,7 @@ source('/home/ccorbella/scratch2_symboliclink/code/dataprep/helpfun.R')
 name <- "Paris"
 code <-"PAR"
 
-outdir <- paste0("/scratch3/PALAEO-RA/daily_data/final/", name)
+outdir <- paste0("/scratch3/PALAEO-RA/daily_data/SEF/", name)
 
 raw <- read.csv(paste0("/scratch3/PALAEO-RA/daily_data/original/", name, "/", code,"_SLP.csv"), na=c("","NA"))
 
@@ -81,7 +81,7 @@ df <- raw %>%
 
 write_sef_f(as.data.frame(df),
             outfile=paste0('Paris_Cornes_', get_date_range(df), "_p_daily.tsv"),
-            outpath="/scratch3/PALAEO-RA/daily_data/final/Paris/",
+            outpath="/scratch3/PALAEO-RA/daily_data/SEF/Paris/",
             variable = "p",
             cod = "Paris_Morin",
             nam = "Paris",
@@ -151,7 +151,7 @@ df <- raw %>%
 head(df)
 write_sef_f(as.data.frame(df),
             outfile=paste0('Paris_', get_date_range(df), "_rr_daily.tsv"),
-            outpath="/scratch3/PALAEO-RA/daily_data/final/Paris/",
+            outpath="/scratch3/PALAEO-RA/daily_data/SEF/Paris/",
             variable = "rr",
             cod = "Paris_Morin",
             nam = "Paris",

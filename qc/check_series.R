@@ -7,7 +7,7 @@ library(glue)
 # bash script to change filenames
 # for file in *_corrected.tsv; do [ -e "$file" ] || continue; new_name="${file/_corrected.tsv/.tsv}"; mv "$file" "$new_name"; done
 
-indir <- '/scratch3/PALAEO-RA/daily_data/final/'
+indir <- '/scratch3/PALAEO-RA/daily_data/SEF/'
 
 ### quick one
 dirname <- "Luhansk/"

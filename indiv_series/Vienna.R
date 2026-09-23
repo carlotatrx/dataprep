@@ -11,7 +11,7 @@ source('/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/help
 name <- "Vienna"
 code <-"WIE"
 
-outdir <- paste0("/scratch3/PALAEO-RA/daily_data/final/", name)
+outdir <- paste0("/scratch3/PALAEO-RA/daily_data/SEF/", name)
 
 raw <- read.csv(paste0("/scratch3/PALAEO-RA/daily_data/original/", name, "/", code,"_SFP.csv"), na=c("","NA"))
 

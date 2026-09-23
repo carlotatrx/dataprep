@@ -15,7 +15,7 @@ library(ls)
 
 # Bologna PALAEO-RA 1787-1788 daily ---------------------------------------
 
-outdir <- "/scratch3/PALAEO-RA/daily_data/final/Bologna"
+outdir <- "/scratch3/PALAEO-RA/daily_data/SEF/Bologna"
 
 
 lat <- 44.4967

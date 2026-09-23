@@ -6,7 +6,7 @@ library(dplyr)
 library(lubridate)
 source('/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/helpfun.R')
 
-outdir <- "/scratch3/PALAEO-RA/daily_data/final/Granada"
+outdir <- "/scratch3/PALAEO-RA/daily_data/SEF/Granada"
 name <- "Granada"
 code <- "Gr1728-1730"
 lat	<- 37.166519
@@ -73,7 +73,7 @@ code <- "Gr1796-1797"
 metaHead <- "Observer=Francisco Dalmau"
 source   <- "El Mensagero Económico y Erudito de Granada. Universidad de Granada FLA F-9-9-3 http://www.bibliotecavirtualdeandalucia.es"
 file <- list.files("/scratch3/PALAEO-RA/daily_data/original/Southern_Spain", full.names=TRUE)
-outdir <- "/scratch3/PALAEO-RA/daily_data/final/Granada"
+outdir <- "/scratch3/PALAEO-RA/daily_data/SEF/Granada"
 
 raw <- read_excel(file, sheet=code, skip=8)
 

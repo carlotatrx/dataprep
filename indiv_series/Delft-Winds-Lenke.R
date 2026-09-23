@@ -9,7 +9,7 @@ library(stringr)
 library(readr)
 source('/scratch2/ccorbella/code/dataprep/helpfun.R')
 
-outdir <- "/scratch3/PALAEO-RA/daily_data/final/Delft"
+outdir <- "/scratch3/PALAEO-RA/daily_data/SEF/Delft"
 infile <- "/scratch3/PALAEO-RA/daily_data/original/Berlin/Lenke_Tab4_1708_1709.xlsx"
 
 name <- "Lenke_Delft"

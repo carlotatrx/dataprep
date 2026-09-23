@@ -503,7 +503,7 @@ write_sef_f(Data=df.p.Upp, outfile="Uppsala_p.tsv",
 # VALÈNCIA ----------------------------------------------------------------
 source('/scratch2/ccorbella/code/dataprep/helpfun.R')
 
-outdir <- '/scratch3/PALAEO-RA/daily_data/final/Valencia/'
+outdir <- '/scratch3/PALAEO-RA/daily_data/SEF/Valencia/'
 
   
 df <- read.csv('/home/ccorbella/scratch2_symboliclink/files/station_timeseries_orig/Valencia/Valencia_concatenated.csv',

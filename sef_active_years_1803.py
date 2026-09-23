@@ -19,7 +19,7 @@ import pandas as pd
 
 from sef_series_length_v2 import read_active_years
 
-ROOT = "/scratch3/PALAEO-RA/daily_data/final"
+ROOT = "/scratch3/PALAEO-RA/daily_data/SEF"
 METADATA_CSV = "metadata_summary_names.csv"
 OUTPUT_CSV = "sef_active_years_1803.csv"
 

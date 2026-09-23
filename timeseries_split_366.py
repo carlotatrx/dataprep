@@ -68,7 +68,7 @@ import datetime
 import pandas as pd
 
 # ----------------------------- configuration -----------------------------
-DATA_DIR = "/scratch3/PALAEO-RA/daily_data/final/"
+DATA_DIR = "/scratch3/PALAEO-RA/daily_data/SEF/"
 REPORT_FILE = "timeseries_to_split.txt"   # detailed plan / log
 GAP_THRESHOLD = 366                       # days; gaps longer than this break a series
 LAST_19C_YEAR = 1899                      # a gap opening a series in a later year merges the tail

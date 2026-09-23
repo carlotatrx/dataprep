@@ -8,7 +8,7 @@ raw <- read.delim('/scratch3/PALAEO-RA/daily_data/original/Marseille/marseille.t
                   sep="\t")
 raw
 
-outdir <- '/scratch3/PALAEO-RA/daily_data/final/Marseille/'
+outdir <- '/scratch3/PALAEO-RA/daily_data/SEF/Marseille/'
 
 lat	<- 43.2965
 lon <- 5.36978

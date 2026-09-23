@@ -8,7 +8,7 @@ library(tibble)
 library(stringr)
 source('/scratch2/ccorbella/code/dataprep/helpfun.R')
 
-outdir <- "/scratch3/PALAEO-RA/daily_data/final/Waldenburg"
+outdir <- "/scratch3/PALAEO-RA/daily_data/SEF/Waldenburg"
 name <- "Waldenburg"
 code <- "GCOS_Waldenburg"
 lat	<- 47.385911

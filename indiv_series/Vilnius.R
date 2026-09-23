@@ -7,7 +7,7 @@ library(dplyr)
 library(stringr)
 source('/scratch2/ccorbella/code/dataprep/helpfun.R')
 
-outdir <- "/scratch3/PALAEO-RA/daily_data/final/Vilnius"
+outdir <- "/scratch3/PALAEO-RA/daily_data/SEF/Vilnius"
 
 name <- "Przybylak_Vilnius"
 code <- "Vilnius"

@@ -4,7 +4,7 @@ library(readxl)
 library(dplyr)
 source('/scratch2/ccorbella/code/dataprep/helpfun.R')
 
-outdir <- "/scratch3/PALAEO-RA/daily_data/final/Ben_Nevis"
+outdir <- "/scratch3/PALAEO-RA/daily_data/SEF/Ben_Nevis"
 
 name <- "Weather-Rescue-Data-v2-2_Ben-Nevis"
 code <- "BEN NEVIS SUMMIT OBSERVATORY"
@@ -26,7 +26,7 @@ p_to_slp <- function(p_hpa, z_m, T_C, lapse_K_per_m = 0.0065) {
 
 # for the qcs
 
-indir <- '/scratch3/PALAEO-RA/daily_data/final/'
+indir <- '/scratch3/PALAEO-RA/daily_data/SEF/'
 dirname <- "Ben_Nevis/"
 
 # hourly-file -------------------------------------------------------------

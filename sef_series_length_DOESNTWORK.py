@@ -24,10 +24,10 @@ Unified SEF Series Processor
 - Mode 2 (Clustered): Splits station/variable into new rows if gaps exceed a threshold.
 
 To get 1-row-per-station summary (equivalent to sef_series_length_v1.py):
-python sef_series_length.py /scracth3/PALAEO-RA/daily_data/final/ -o summary.csv --mode summary
+python sef_series_length.py /scracth3/PALAEO-RA/daily_data/SEF/ -o summary.csv --mode summary
 
 To get the continuous series, splitting by gaps (equivalent to sef_series_length_v2.py with 365-day threshold):
-python sef_series_length.py /scracth3/PALAEO-RA/daily_data/final/ -o split.csv --mode split --threshold 365
+python sef_series_length.py /scracth3/PALAEO-RA/daily_data/SEF/ -o split.csv --mode split --threshold 365
 """
 
 from __future__ import annotations

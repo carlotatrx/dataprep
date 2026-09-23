@@ -27,7 +27,7 @@ These lists contain paths relative to `root`.
 """
 
 
-root = "/scratch3/PALAEO-RA/daily_data/final/"  # change this
+root = "/scratch3/PALAEO-RA/daily_data/SEF/"  # change this
 valid_vbls = {"Tn", "Tx", "ta", "tb", "p", "dd", "rr", "w", "fs", "rh", "eee"}
 
 files_no_qc  = []

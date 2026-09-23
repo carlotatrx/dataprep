@@ -5,7 +5,7 @@ library(purrr)
 library(tidyr)
 source('/scratch2/ccorbella/code/dataprep/helpfun.R')
 
-outdir <- "/scratch3/PALAEO-RA/daily_data/final/GrandStBernard"
+outdir <- "/scratch3/PALAEO-RA/daily_data/SEF/GrandStBernard"
 
 raw <- read.csv("/scratch3/PALAEO-RA/daily_data/tmp/GCOS_GrandStBernard_18170914-18251231_p_subdailyNO.tsv",
                 skip=12, sep="\t")

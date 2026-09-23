@@ -4,7 +4,7 @@ library(dataresqc)
 source("/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/helpfun.R")
 
 # Define paths
-indir <- "/scratch3/PALAEO-RA/daily_data/final"
+indir <- "/scratch3/PALAEO-RA/daily_data/SEF"
 outdir <- "/scratch3/PALAEO-RA/daily_data/tmp/sef_tests"
 
 # Read file list

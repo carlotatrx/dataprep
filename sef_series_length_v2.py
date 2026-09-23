@@ -12,7 +12,7 @@ Example:
   gap between end and next start > max_gap_days  => new series (new row)
 
 Usage:
-  python sef_series_length_v2.py /scratch3/PALAEO-RA/daily_data/final -o sef_series_summary_v2.csv --max-gap-days 367
+  python sef_series_length_v2.py /scratch3/PALAEO-RA/daily_data/SEF -o sef_series_summary_v2.csv --max-gap-days 367
 """
 
 from __future__ import annotations

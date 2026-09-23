@@ -19,7 +19,7 @@ source("/scratch2/ccorbella/code/dataprep/helpfun.R")
 
 # ---- user inputs ----
 infile <- "/scratch3/PALAEO-RA/daily_data/original/Zitenice/Žitenice (Kreybich)_original od PZ.xls"
-outdir <- "/scratch3/PALAEO-RA/daily_data/final/Zitenice/"
+outdir <- "/scratch3/PALAEO-RA/daily_data/SEF/Zitenice/"
 
 code <- "Zitenice"
 name <- "Brug_Zitenice"
@@ -189,7 +189,7 @@ df_p  <- bind_rows(map(df_list,"p")) %>%
 
 dfs <- list(ta=df_ta, p=df_p)
 
-indir <- '/scratch3/PALAEO-RA/daily_data/final/'
+indir <- '/scratch3/PALAEO-RA/daily_data/SEF/'
 
 ### quick one
 dirname <- "Zitenice/"

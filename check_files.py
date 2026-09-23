@@ -1,8 +1,8 @@
 import os
 
-root = "/scratch3/PALAEO-RA/daily_data/final/"
+root = "/scratch3/PALAEO-RA/daily_data/SEF/"
 
-log = open("/scratch3/PALAEO-RA/daily_data/final/filename_warnings.txt", "w", encoding="utf-8")
+log = open("/scratch3/PALAEO-RA/daily_data/SEF/filename_warnings.txt", "w", encoding="utf-8")
 
 for dirpath, _, filenames in os.walk(root):
     for fn in filenames:

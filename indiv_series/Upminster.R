@@ -5,7 +5,7 @@ library(purrr)
 library(tidyr)
 source('/scratch2/ccorbella/code/dataprep/helpfun.R')
 
-outdir <- "/scratch3/PALAEO-RA/daily_data/final/Upminster"
+outdir <- "/scratch3/PALAEO-RA/daily_data/SEF/Upminster"
 
 raw <- read_excel("/scratch3/PALAEO-RA/daily_data/original/Upminster/Upminster_1697.xlsx", skip=2,
                   na=c("","NA"))

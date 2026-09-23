@@ -88,7 +88,7 @@ var <- "rr"
 write_sef_f(
   as.data.frame(df.rr),
   outfile = outfile.name(name, var, df.rr, FALSE),
-  outpath = '/scratch3/PALAEO-RA/daily_data/final/Ylitornio',
+  outpath = '/scratch3/PALAEO-RA/daily_data/SEF/Ylitornio',
   cod     = code,
   lat     = lat,
   lon     = lon,
@@ -114,7 +114,7 @@ df.dd <- df.dd[df.dd$Year >= 1802, ]
 write_sef_f(
   as.data.frame(df.dd),
   outfile = outfile.name(name, var, df.dd, TRUE),
-  outpath = '/scratch3/PALAEO-RA/daily_data/final/Ylitornio',
+  outpath = '/scratch3/PALAEO-RA/daily_data/SEF/Ylitornio',
   cod     = code,
   lat     = lat,
   lon     = lon,
@@ -137,7 +137,7 @@ for (var in c("p", "ta")) {
   write_sef_f(
     dat,
     outfile = outfile.name(name, var, dat, TRUE),
-    outpath = '/scratch3/PALAEO-RA/daily_data/final/Ylitornio',
+    outpath = '/scratch3/PALAEO-RA/daily_data/SEF/Ylitornio',
     cod     = code,
     lat     = lat,
     lon     = lon,

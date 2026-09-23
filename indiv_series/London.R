@@ -33,7 +33,7 @@ df <- raw %>%
 
 write_sef_f(as.data.frame(df),
             outfile=paste0('London_Cornes_', get_date_range(df), "_p_daily.tsv"),
-            outpath="/scratch3/PALAEO-RA/daily_data/final/London/",
+            outpath="/scratch3/PALAEO-RA/daily_data/SEF/London/",
             variable = "p",
             cod = "London",
             nam = "London",
@@ -49,11 +49,11 @@ write_sef_f(as.data.frame(df),
 
 
 ## qc
-qc("/scratch3/PALAEO-RA/daily_data/final/London/London_Cornes_16920101-20071231_p_daily.tsv",
-   outpath="/scratch3/PALAEO-RA/daily_data/final/London/")
-write_flags_f(infile="/scratch3/PALAEO-RA/daily_data/final/London/London_Cornes_16920101-20071231_p_daily.tsv",
-              qcfile="/scratch3/PALAEO-RA/daily_data/final/London/qc_London_p_daily.txt", 
-              outpath="/scratch3/PALAEO-RA/daily_data/final/London/",
+qc("/scratch3/PALAEO-RA/daily_data/SEF/London/London_Cornes_16920101-20071231_p_daily.tsv",
+   outpath="/scratch3/PALAEO-RA/daily_data/SEF/London/")
+write_flags_f(infile="/scratch3/PALAEO-RA/daily_data/SEF/London/London_Cornes_16920101-20071231_p_daily.tsv",
+              qcfile="/scratch3/PALAEO-RA/daily_data/SEF/London/qc_London_p_daily.txt", 
+              outpath="/scratch3/PALAEO-RA/daily_data/SEF/London/",
               match=FALSE)
 
 # earliest: Locke 1669-1675 -----------------------------------------------
@@ -84,7 +84,7 @@ df <- raw %>%
 
 write_sef_f(as.data.frame(df),
             outfile="London_Locke_16720131-16750613_dd_subdaily.tsv",
-            outpath="/scratch3/PALAEO-RA/daily_data/final/London/",
+            outpath="/scratch3/PALAEO-RA/daily_data/SEF/London/",
             variable = "dd",
             cod = "London_Locke",
             nam = "London",

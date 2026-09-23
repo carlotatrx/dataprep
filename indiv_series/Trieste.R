@@ -34,7 +34,7 @@ df <- raw %>%
 
 write_sef_f(as.data.frame(df),
             outfile=paste0('Trieste_', get_date_range(df), "_p_daily.tsv"),
-            outpath="/scratch3/PALAEO-RA/daily_data/final/Trieste/",
+            outpath="/scratch3/PALAEO-RA/daily_data/SEF/Trieste/",
             variable = "p",
             cod = "Trieste",
             nam = "Trieste",

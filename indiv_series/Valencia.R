@@ -8,7 +8,7 @@ library(purrr)
 library(stringr)
 library(lubridate)
 
-outdir <- '/scratch3/PALAEO-RA/daily_data/final/Valencia'
+outdir <- '/scratch3/PALAEO-RA/daily_data/SEF/Valencia'
 indir <- '/scratch3/PALAEO-RA/daily_data/original/Valencia/'
 
 files <- list.files(indir, pattern = "\\.xlsx?$|\\.xls$", full.names = TRUE)

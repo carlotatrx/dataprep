@@ -60,7 +60,7 @@ var <- "dd"
 write_sef_f(
   as.data.frame(df),
   outfile = outfile.name(name, var, df, TRUE),
-  outpath = '/scratch3/PALAEO-RA/daily_data/final/Gotthard',
+  outpath = '/scratch3/PALAEO-RA/daily_data/SEF/Gotthard',
   cod     = code,
   lat     = lat,
   lon     = lon,

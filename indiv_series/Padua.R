@@ -172,7 +172,7 @@ read_padua <- function(file) {
 
 
 indir <- '/scratch3/PALAEO-RA/daily_data/original/Padua'
-outdir <- '/scratch3/PALAEO-RA/daily_data/final'
+outdir <- '/scratch3/PALAEO-RA/daily_data/SEF'
 files <- list.files(indir, pattern="^PD_PT.*\\.txt$", full.names=T)
 files  
 

@@ -6,7 +6,7 @@ library(dplyr)
 library(lubridate)
 source('/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/helpfun.R')
 
-outdir <- "/scratch3/PALAEO-RA/daily_data/final/Sevilla"
+outdir <- "/scratch3/PALAEO-RA/daily_data/SEF/Sevilla"
 source <- "Rodrigo, Fernando S.. “Early Meteorological Observations in Southern Spain Version 2.” (2019)."
 link   <- "http://hdl.handle.net/10835/6806"
 

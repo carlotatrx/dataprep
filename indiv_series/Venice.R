@@ -7,7 +7,7 @@ library(lubridate)
 library(tibble)
 source('/scratch2/ccorbella/code/dataprep/helpfun.R')
 
-outdir <- "/scratch3/PALAEO-RA/daily_data/final/Venice"
+outdir <- "/scratch3/PALAEO-RA/daily_data/SEF/Venice"
 name <- "Venice"
 code <- "Venezia"
 lat	<- 45.44

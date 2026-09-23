@@ -6,7 +6,7 @@ library(tidyr)
 library(dataresqc)
 source('/scratch2/ccorbella/code/dataprep/helpfun.R')
 
-outdir <- "/scratch3/PALAEO-RA/daily_data/final/Armagh"
+outdir <- "/scratch3/PALAEO-RA/daily_data/SEF/Armagh"
 
 
 lat <- round(54+21.2/60, 4)

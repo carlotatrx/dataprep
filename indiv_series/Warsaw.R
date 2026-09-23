@@ -8,7 +8,7 @@ source('/scratch2/ccorbella/code/dataprep/helpfun.R')
 
 # Warsaw-from-Rajmund -----------------------------------------------------
 
-outdir <- "/scratch3/PALAEO-RA/daily_data/final/Warsaw"
+outdir <- "/scratch3/PALAEO-RA/daily_data/SEF/Warsaw"
 
 name <- "Przybylak_Warsaw"
 code <- "Warsaw"

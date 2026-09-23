@@ -16,7 +16,7 @@ For each file:
     3. Record each processed file and its QC status ("yesQC" or "noQC") in qc_overview.csv.
 """
 
-root = "/scratch3/PALAEO-RA/daily_data/final/"
+root = "/scratch3/PALAEO-RA/daily_data/SEF/"
 qc_string = "QC software=dataresqc"
 outfile = "qc_overview.csv"
 

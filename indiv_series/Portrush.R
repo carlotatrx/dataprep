@@ -9,7 +9,7 @@ source('/scratch2/ccorbella/code/dataprep/helpfun.R')
 indir <- "/scratch3/PALAEO-RA/daily_data/original/"
 name <- "Portrush"
 
-outdir <- paste0("/scratch3/PALAEO-RA/daily_data/final/",name)
+outdir <- paste0("/scratch3/PALAEO-RA/daily_data/SEF/",name)
 
 source <- "Mateus, C., Potito, A., & Curley, M. (2020). Reconstruction of a long‐term historical daily maximum and minimum air temperature network dataset for Ireland (1831‐1968). Geoscience Data Journal, 7(2), 102-115."
 link   <- "https://www.edepositireland.ie/entities/publication/7271837d-dbe6-463f-b103-422f42a15446"
@@ -97,7 +97,7 @@ write_sef_f(
   keep_na=TRUE
 )
 
-indir <- '/scratch3/PALAEO-RA/daily_data/final/'
+indir <- '/scratch3/PALAEO-RA/daily_data/SEF/'
 files <- list.files(paste0(indir, name), pattern = "daily\\.tsv$", full.names = TRUE)
 files
 

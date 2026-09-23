@@ -180,7 +180,7 @@ for (station in station_names) {
   write_sef_f(
     as.data.frame(df),
     outfile = outfile.name(dirname, var, df, subdaily=FALSE),
-    outpath = file.path("/scratch3/PALAEO-RA/daily_data/final", dirname),
+    outpath = file.path("/scratch3/PALAEO-RA/daily_data/SEF", dirname),
     cod     = station,
     lat     = lat,
     lon     = lon,

@@ -209,7 +209,7 @@ for (var in vars) {
   write_sef_f(
     dat,
     outfile = outfile.name(name, var, dat, FALSE),
-    outpath = paste0('/scratch3/PALAEO-RA/daily_data/final/', name),
+    outpath = paste0('/scratch3/PALAEO-RA/daily_data/SEF/', name),
     cod     = code,
     lat     = lat,
     lon     = lon,
@@ -302,7 +302,7 @@ for (var in vars) {
   write_sef_f(
     dat,
     outfile = outfile.name(name, var, dat, TRUE),
-    outpath = paste0('/scratch3/PALAEO-RA/daily_data/final/', name),
+    outpath = paste0('/scratch3/PALAEO-RA/daily_data/SEF/', name),
     cod     = code,
     lat     = lat,
     lon     = lon,
@@ -396,7 +396,7 @@ for (var in vars) {
   write_sef_f(
     dat,
     outfile = outfile.name(name, var, dat, TRUE),
-    outpath = paste0('/scratch3/PALAEO-RA/daily_data/final/', name),
+    outpath = paste0('/scratch3/PALAEO-RA/daily_data/SEF/', name),
     cod     = code,
     lat     = lat,
     lon     = lon,
@@ -508,7 +508,7 @@ for (var in vars) {
   write_sef_f(
     dat,
     outfile = outfile.name(name, var, dat, TRUE),
-    outpath = paste0('/scratch3/PALAEO-RA/daily_data/final/', name),
+    outpath = paste0('/scratch3/PALAEO-RA/daily_data/SEF/', name),
     cod     = code,
     lat     = lat,
     lon     = lon,
@@ -612,7 +612,7 @@ for (var in vars) {
   write_sef_f(
     dat,
     outfile = outfile.name(name, var, dat, TRUE),
-    outpath = paste0('/scratch3/PALAEO-RA/daily_data/final/', name),
+    outpath = paste0('/scratch3/PALAEO-RA/daily_data/SEF/', name),
     cod     = code,
     lat     = lat,
     lon     = lon,
@@ -718,7 +718,7 @@ for (var in vars) {
   write_sef_f(
     dat,
     outfile = outfile.name(name, var, dat, TRUE),
-    outpath = '/scratch3/PALAEO-RA/daily_data/final/Haarlem',
+    outpath = '/scratch3/PALAEO-RA/daily_data/SEF/Haarlem',
     cod     = code,
     lat     = lat,
     lon     = lon,
@@ -822,7 +822,7 @@ for (var in vars){
   write_sef_f(
     dat,
     outfile = outfile.name(name, var, dat, TRUE),
-    outpath = paste0("/scratch3/PALAEO-RA/daily_data/final/", name),
+    outpath = paste0("/scratch3/PALAEO-RA/daily_data/SEF/", name),
     cod     = code,
     lat     = lat,
     lon     = lon,
@@ -907,7 +907,7 @@ for (var in vars){
   write_sef_f(
     dat,
     outfile = outfile.name(name, var, dat, TRUE),
-    outpath = paste0('/scratch3/PALAEO-RA/daily_data/final/', name),
+    outpath = paste0('/scratch3/PALAEO-RA/daily_data/SEF/', name),
     cod     = code,
     lat     = lat,
     lon     = lon,
@@ -995,7 +995,7 @@ for (var in vars) {
   write_sef_f(
     dat,
     outfile = outfile.name(name, var, dat, TRUE),
-    outpath = paste0('/scratch3/PALAEO-RA/daily_data/final/', name),
+    outpath = paste0('/scratch3/PALAEO-RA/daily_data/SEF/', name),
     cod     = code,
     lat     = lat,
     lon     = lon,
@@ -1031,7 +1031,7 @@ for (var in c("tmax", "tmin")) {
   write_sef_f(
     dat,
     outfile = outfile.name(name, var, dat, FALSE),
-    outpath = '/scratch3/PALAEO-RA/daily_data/final/Utrecht',
+    outpath = '/scratch3/PALAEO-RA/daily_data/SEF/Utrecht',
     cod     = code,
     lat     = lat,
     lon     = lon,
@@ -1104,7 +1104,7 @@ for (var in c("dd", "p")){
   write_sef_f(
     dat,
     outfile = outfile.name(name, var, dat, TRUE),
-    outpath = '/scratch3/PALAEO-RA/daily_data/final/Breda',
+    outpath = '/scratch3/PALAEO-RA/daily_data/SEF/Breda',
     cod     = code,
     lat     = lat,
     lon     = lon,
@@ -1182,7 +1182,7 @@ for (var in vars) {
   write_sef_f(
     dat <- cbind(base_cols, setNames(df[var], var)),
     outfile = outfile.name(name, var, dat, TRUE),
-    outpath = '/scratch3/PALAEO-RA/daily_data/final/Breda',
+    outpath = '/scratch3/PALAEO-RA/daily_data/SEF/Breda',
     cod     = code,
     lat     = lat,
     lon     = lon,

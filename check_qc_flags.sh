@@ -23,7 +23,7 @@ AWK_FLAG_LOGIC='
 '
 
 # Total non-NA values and flagged values across the whole dataset
-find /scratch3/PALAEO-RA/daily_data/final -type f -name "*.tsv" | while read f; do
+find /scratch3/PALAEO-RA/daily_data/SEF -type f -name "*.tsv" | while read f; do
   awk -F'\t' "$AWK_FLAG_LOGIC"'
     FNR>1 && /^[0-9]/ && $7!="NA" {
       total++
@@ -41,7 +41,7 @@ done | awk '{t+=$1; f+=$2} END {
 
 
 # Per-variable totals and flagged counts
-find /scratch3/PALAEO-RA/daily_data/final -type f -name "*.tsv" | while read f; do
+find /scratch3/PALAEO-RA/daily_data/SEF -type f -name "*.tsv" | while read f; do
   awk -F'\t' "$AWK_FLAG_LOGIC"'
     /^Vbl\t/ { vbl = $2; gsub(/\r$/, "", vbl) }
     FNR>1 && /^[0-9]/ && $7!="NA" {
@@ -72,7 +72,7 @@ done | awk '{
 
 
 # Flagged and own-digitized (Source contains WeaR or PALAEO) breakdown
-find /scratch3/PALAEO-RA/daily_data/final -type f -name "*.tsv" | while read f; do
+find /scratch3/PALAEO-RA/daily_data/SEF -type f -name "*.tsv" | while read f; do
   awk -F'\t' "$AWK_FLAG_LOGIC"'
     /^Source\t/ {
       src = tolower($2)
@@ -103,7 +103,7 @@ done | awk '{t+=$1; ot+=$2; f+=$3; of+=$4} END {
 
 
 # Frequency table of real flag types across the whole dataset
-find /scratch3/PALAEO-RA/daily_data/final -type f -name "*.tsv" | while read f; do
+find /scratch3/PALAEO-RA/daily_data/SEF -type f -name "*.tsv" | while read f; do
   awk -F'\t' "$AWK_FLAG_LOGIC"'
     FNR>1 && /^[0-9]/ && $7!="NA" {
       meta=$NF

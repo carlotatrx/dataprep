@@ -54,7 +54,7 @@ var <- "dd"
 write_sef_f(
   dat,
   outfile = outfile.name(name, var, dat, TRUE),
-  outpath = '/scratch3/PALAEO-RA/daily_data/final/Kuesnacht',
+  outpath = '/scratch3/PALAEO-RA/daily_data/SEF/Kuesnacht',
   cod     = code,
   lat     = lat,
   lon     = lon,
@@ -76,7 +76,7 @@ var <- "rh"
 write_sef_f(
   dat,
   outfile = outfile.name(name, var, dat, TRUE),
-  outpath = '/scratch3/PALAEO-RA/daily_data/final/Kuesnacht',
+  outpath = '/scratch3/PALAEO-RA/daily_data/SEF/Kuesnacht',
   cod     = code,
   lat     = lat,
   lon     = lon,

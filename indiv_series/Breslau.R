@@ -8,7 +8,7 @@ library(tibble)
 library(stringr)
 source('/scratch2/ccorbella/code/dataprep/helpfun.R')
 
-outdir <- "/scratch3/PALAEO-RA/daily_data/final/Breslau"
+outdir <- "/scratch3/PALAEO-RA/daily_data/SEF/Breslau"
 
 
 # new data from Rajmund email ---------------------------------------------
@@ -332,7 +332,7 @@ var<-"rr"
 write_sef_f(
   as.data.frame(df.rr),
   outfile = outfile.name(name, var, df.rr, subdaily=FALSE),
-  outpath = '/scratch3/PALAEO-RA/daily_data/final/Breslau',
+  outpath = '/scratch3/PALAEO-RA/daily_data/SEF/Breslau',
   cod     = code,
   lat     = lat,
   lon     = lon,
@@ -371,7 +371,7 @@ for (var in c("p", "ta")){
   write_sef_f(
     as.data.frame(dat),
     outfile = outfile.name(name, var, dat, TRUE),
-    outpath = '/scratch3/PALAEO-RA/daily_data/final/Breslau',
+    outpath = '/scratch3/PALAEO-RA/daily_data/SEF/Breslau',
     cod     = code,
     lat     = lat,
     lon     = lon,

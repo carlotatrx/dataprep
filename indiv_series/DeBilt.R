@@ -6,7 +6,7 @@ library(tidyr)
 library(lubridate)
 source('/scratch2/ccorbella/code/dataprep/helpfun.R')
 
-outdir <- "/scratch3/PALAEO-RA/daily_data/final/DeBilt"
+outdir <- "/scratch3/PALAEO-RA/daily_data/SEF/DeBilt"
 
 raw <- read.csv("/scratch3/PALAEO-RA/daily_data/original/DeBilt/DBL_SFP.csv", na=c("","NA"))
 

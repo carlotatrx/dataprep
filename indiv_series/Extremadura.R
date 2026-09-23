@@ -157,7 +157,7 @@ for (var in c("p", "ta", "dd")) {
   write_sef_f(
     dat,
     outfile = outfile.name(name, var, dat, TRUE),
-    outpath = '/scratch3/PALAEO-RA/daily_data/final/Extremadura',
+    outpath = '/scratch3/PALAEO-RA/daily_data/SEF/Extremadura',
     cod     = code,
     lat     = lat,
     lon     = lon,
@@ -228,7 +228,7 @@ var <- "ta"
 write_sef_f(
   as.data.frame(df.ta),
   outfile = outfile.name(name, var, df.ta, TRUE),
-  outpath = '/scratch3/PALAEO-RA/daily_data/final/Extremadura',
+  outpath = '/scratch3/PALAEO-RA/daily_data/SEF/Extremadura',
   cod     = code,
   lat     = lat,
   lon     = lon,
@@ -300,7 +300,7 @@ for (var in c("dd", "p", "ta")){
   write_sef_f(
     as.data.frame(dat),
     outfile = outfile.name(name, var, dat, FALSE),
-    outpath = '/scratch3/PALAEO-RA/daily_data/final/Extremadura',
+    outpath = '/scratch3/PALAEO-RA/daily_data/SEF/Extremadura',
     cod     = code,
     lat     = lat,
     lon     = lon,
@@ -371,7 +371,7 @@ var <- "ta"
 write_sef_f(
   as.data.frame(df.ta),
   outfile = outfile.name(name, var, df.ta, TRUE),
-  outpath = '/scratch3/PALAEO-RA/daily_data/final/Extremadura',
+  outpath = '/scratch3/PALAEO-RA/daily_data/SEF/Extremadura',
   cod     = code,
   lat     = lat,
   lon     = lon,
@@ -457,7 +457,7 @@ for (var in c("dd", "p")){
   write_sef_f(
     as.data.frame(dat),
     outfile = outfile.name(name, var, dat, TRUE),
-    outpath = '/scratch3/PALAEO-RA/daily_data/final/Extremadura',
+    outpath = '/scratch3/PALAEO-RA/daily_data/SEF/Extremadura',
     cod     = code,
     lat     = lat,
     lon     = lon,
@@ -489,7 +489,7 @@ for (var in c("tmin", "tmax")) {
   write_sef_f(
     dat,
     outfile = outfile.name(name, var, dat, FALSE),
-    outpath = '/scratch3/PALAEO-RA/daily_data/final/Extremadura',
+    outpath = '/scratch3/PALAEO-RA/daily_data/SEF/Extremadura',
     cod     = code,
     lat     = lat,
     lon     = lon,
@@ -517,7 +517,7 @@ var <- "rr"
 write_sef_f(
   as.data.frame(df.rr),
   outfile = outfile.name(name, var, df.rr, FALSE),
-  outpath = '/scratch3/PALAEO-RA/daily_data/final/Extremadura',
+  outpath = '/scratch3/PALAEO-RA/daily_data/SEF/Extremadura',
   cod     = code,
   lat     = lat,
   lon     = lon,
@@ -581,7 +581,7 @@ for (var in c("ta", "p", "dd")) {
   write_sef_f(
     dat,
     outfile = outfile.name(name, var, dat, FALSE),
-    outpath = '/scratch3/PALAEO-RA/daily_data/final/Extremadura',
+    outpath = '/scratch3/PALAEO-RA/daily_data/SEF/Extremadura',
     cod     = code,
     lat     = lat,
     lon     = lon,
@@ -713,7 +713,7 @@ var <- "dd"
 write_sef_f(
   as.data.frame(df.dd[, c("Year", "Month", "Day", "Hour", "Minute", "Value")]),
   outfile = outfile.name(name, var, df.dd, TRUE),
-  outpath = '/scratch3/PALAEO-RA/daily_data/final/Extremadura',
+  outpath = '/scratch3/PALAEO-RA/daily_data/SEF/Extremadura',
   cod     = code,
   lat     = lat,
   lon     = lon,
@@ -734,7 +734,7 @@ var <- 'rr'
 write_sef_f(
   as.data.frame(df.rr[, c("Year", "Month", "Day", "Hour", "Minute", "Value")]),
   outfile = outfile.name(name, var, df.rr, FALSE),
-  outpath = '/scratch3/PALAEO-RA/daily_data/final/Extremadura',
+  outpath = '/scratch3/PALAEO-RA/daily_data/SEF/Extremadura',
   cod     = code,
   lat     = lat,
   lon     = lon,
@@ -754,7 +754,7 @@ var <- "p"
 write_sef_f(
   as.data.frame(df.p[, c("Year", "Month", "Day", "Hour", "Minute", "Value")]),
   outfile = outfile.name(name, var, df.p, TRUE),
-  outpath = '/scratch3/PALAEO-RA/daily_data/final/Extremadura',
+  outpath = '/scratch3/PALAEO-RA/daily_data/SEF/Extremadura',
   cod     = code,
   lat     = lat,
   lon     = lon,
@@ -776,7 +776,7 @@ var <- "Tx"
 write_sef_f(
   as.data.frame(df.ta[, c("Year", "Month", "Day", "Hour", "Minute", "tmaxC")]),
   outfile = outfile.name(name, var, df.ta, FALSE),
-  outpath = '/scratch3/PALAEO-RA/daily_data/final/Extremadura',
+  outpath = '/scratch3/PALAEO-RA/daily_data/SEF/Extremadura',
   cod     = code,
   lat     = lat,
   lon     = lon,
@@ -796,7 +796,7 @@ var <- "Tn"
 write_sef_f(
   as.data.frame(df.ta[, c("Year", "Month", "Day", "Hour", "Minute", "tminC")]),
   outfile = outfile.name(name, var, df.ta, FALSE),
-  outpath = '/scratch3/PALAEO-RA/daily_data/final/Extremadura',
+  outpath = '/scratch3/PALAEO-RA/daily_data/SEF/Extremadura',
   cod     = code,
   lat     = lat,
   lon     = lon,
@@ -864,7 +864,7 @@ for (var in names(value_map)) {
   write_sef_f(
     dat,
     outfile = outfile.name(name, var, df, F),
-    outpath = '/scratch3/PALAEO-RA/daily_data/final/Extremadura',
+    outpath = '/scratch3/PALAEO-RA/daily_data/SEF/Extremadura',
     cod     = code,
     lat     = lat,
     lon     = lon,
@@ -1014,7 +1014,7 @@ for (var in names(dfs)) {
   write_sef_f(
     as.data.frame(dat),
     outfile = outfile.name(name, var, dfs[[var]], TRUE),
-    outpath = '/scratch3/PALAEO-RA/daily_data/final/Extremadura',
+    outpath = '/scratch3/PALAEO-RA/daily_data/SEF/Extremadura',
     cod     = code,
     lat     = lat,
     lon     = lon,
@@ -1073,7 +1073,7 @@ var <- "ta"
 write_sef_f(
   as.data.frame(df[, c("Year", "Month", "Day", "Hour", "Minute", "ta.orig")]),
   outfile = outfile.name(name, var, df, T),
-  outpath = '/scratch3/PALAEO-RA/daily_data/final/Extremadura',
+  outpath = '/scratch3/PALAEO-RA/daily_data/SEF/Extremadura',
   cod     = code,
   lat     = lat,
   lon     = lon,
@@ -1095,7 +1095,7 @@ var <- "p"
 write_sef_f(
   as.data.frame(df[, c("Year", "Month", "Day", "Hour", "Minute", "p")]),
   outfile = outfile.name(name, var, df, T),
-  outpath = '/scratch3/PALAEO-RA/daily_data/final/Extremadura',
+  outpath = '/scratch3/PALAEO-RA/daily_data/SEF/Extremadura',
   cod     = code,
   lat     = lat,
   lon     = lon,
@@ -1118,7 +1118,7 @@ units.rh <- ifelse(code=="BAALAN1", "relative units", "%")
 write_sef_f(
   as.data.frame(df[, c("Year", "Month", "Day", "Hour", "Minute", "rh")]),
   outfile = outfile.name(name, var, df, T),
-  outpath = '/scratch3/PALAEO-RA/daily_data/final/Extremadura',
+  outpath = '/scratch3/PALAEO-RA/daily_data/SEF/Extremadura',
   cod     = code,
   lat     = lat,
   lon     = lon,
@@ -1176,7 +1176,7 @@ var <- "ta"
 write_sef_f(
   as.data.frame(df[, c("Year", "Month", "Day", "Hour", "Minute", "ta")]),
   outfile = outfile.name(name, var, df, F),
-  outpath = '/scratch3/PALAEO-RA/daily_data/final/Extremadura',
+  outpath = '/scratch3/PALAEO-RA/daily_data/SEF/Extremadura',
   cod     = code,
   lat     = lat,
   lon     = lon,
@@ -1198,7 +1198,7 @@ var <- "p"
 write_sef_f(
   as.data.frame(df[, c("Year", "Month", "Day", "Hour", "Minute", "p")]),
   outfile = outfile.name(name, var, df, F),
-  outpath = '/scratch3/PALAEO-RA/daily_data/final/Extremadura',
+  outpath = '/scratch3/PALAEO-RA/daily_data/SEF/Extremadura',
   cod     = code,
   lat     = lat,
   lon     = lon,
@@ -1287,7 +1287,7 @@ var <- "dd"
 write_sef_f(
   as.data.frame(df.dd.daily[, c("Year", "Month", "Day", "Hour", "Minute", "Value")]),
   outfile = outfile.name(name, var, df.dd.daily, F),
-  outpath = '/scratch3/PALAEO-RA/daily_data/final/Extremadura',
+  outpath = '/scratch3/PALAEO-RA/daily_data/SEF/Extremadura',
   cod     = code,
   lat     = lat,
   lon     = lon,
@@ -1306,7 +1306,7 @@ write_sef_f(
 write_sef_f(
   as.data.frame(df.dd.subdaily[, c("Year", "Month", "Day", "Hour", "Minute", "Value")]),
   outfile = outfile.name(name, var, df.dd.subdaily, T),
-  outpath = '/scratch3/PALAEO-RA/daily_data/final/Extremadura',
+  outpath = '/scratch3/PALAEO-RA/daily_data/SEF/Extremadura',
   cod     = code,
   lat     = lat,
   lon     = lon,
@@ -1345,7 +1345,7 @@ var <- "ta"
 write_sef_f(
   as.data.frame(df.ta[, c("Year", "Month", "Day", "Hour", "Minute", "Value")]),
   outfile = outfile.name(name, var, df.ta, T),
-  outpath = '/scratch3/PALAEO-RA/daily_data/final/Extremadura',
+  outpath = '/scratch3/PALAEO-RA/daily_data/SEF/Extremadura',
   cod     = code,
   lat     = lat,
   lon     = lon,
@@ -1386,7 +1386,7 @@ var <- "p"
 write_sef_f(
   as.data.frame(df.p[, c("Year", "Month", "Day", "Hour", "Minute", "Value")]),
   outfile = outfile.name(name, var, df.p, T),
-  outpath = '/scratch3/PALAEO-RA/daily_data/final/Extremadura',
+  outpath = '/scratch3/PALAEO-RA/daily_data/SEF/Extremadura',
   cod     = code,
   lat     = lat,
   lon     = lon,

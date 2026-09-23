@@ -30,7 +30,7 @@ library(dataresqc)
 
 MODE <- "apply"  # "report" or "apply"
 
-inpath <- "/scratch3/PALAEO-RA/daily_data/final/Turin/"
+inpath <- "/scratch3/PALAEO-RA/daily_data/SEF/Turin/"
 files <- list.files(inpath, pattern="_ta_subdaily_qc\\.tsv$", full.names=TRUE)
 
 outpath <- "/scratch3/PALAEO-RA/DataRescue/Scripts/"

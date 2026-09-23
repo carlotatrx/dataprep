@@ -26,4 +26,4 @@ header == 1 {
 ' "$infile" > "$outfile"
 
 # example usage:
-# bash /scratch2/ccorbella/code/dataprep/scale_rr_KNMI.sh /scratch3/PALAEO-RA/daily_data/final/Bergen/Bergen_17410904-17460518_rr_subdaily_qc.tsv /scratch3/PALAEO-RA/daily_data/final/Bergen/Bergen_17410904-17460518_rr_subdaily.tsv
+# bash /scratch2/ccorbella/code/dataprep/scale_rr_KNMI.sh /scratch3/PALAEO-RA/daily_data/SEF/Bergen/Bergen_17410904-17460518_rr_subdaily_qc.tsv /scratch3/PALAEO-RA/daily_data/SEF/Bergen/Bergen_17410904-17460518_rr_subdaily.tsv

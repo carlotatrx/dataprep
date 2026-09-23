@@ -6,7 +6,7 @@ library(lubridate)
 library(dplyr)
 
 source('/home/ccorbella/scratch2_symboliclink/code/dataprep/helpfun.R')
-outdir <- "/scratch3/PALAEO-RA/daily_data/final/Cadiz"
+outdir <- "/scratch3/PALAEO-RA/daily_data/SEF/Cadiz"
 
 
 # Cadiz from Lucas --------------------------------------------------------

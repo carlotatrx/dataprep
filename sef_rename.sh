@@ -2,7 +2,7 @@
 
 # --- CONFIGURACIÓ ---
 # Ruta absoluta on hi ha les dades
-TARGET_DIR="/scratch3/PALAEO-RA/daily_data/final"
+TARGET_DIR="/scratch3/PALAEO-RA/daily_data/SEF"
 # Fitxer on guardarem el registre (es crearà on executis l'script)
 LOG_FILE="output.txt"
 

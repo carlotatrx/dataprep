@@ -58,7 +58,7 @@ target_files = [
     'Bologna/Camuffo_Bologna_17150101-18151231_ta_daily_qc.tsv',
     'Padua/IMPROVE_Padua_17250112-19970531_ta_daily_qc.tsv',
 ]
-files = [Path('/scratch3/PALAEO-RA/daily_data/final/') / f for f in target_files]
+files = [Path('/scratch3/PALAEO-RA/daily_data/SEF/') / f for f in target_files]
 stations = {}
 for f in files:
     try:

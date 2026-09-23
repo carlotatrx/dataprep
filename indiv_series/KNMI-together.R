@@ -41,7 +41,7 @@
 #    – Raw KNMI text files in /scratch3/PALAEO-RA/daily_data/original/<station>
 #
 #  Outputs:
-#    – SEF 1.0.0 files in OUTDIR (/scratch3/PALAEO-RA/daily_data/final/)
+#    – SEF 1.0.0 files in OUTDIR (/scratch3/PALAEO-RA/daily_data/SEF/)
 #      organized by station and variable, e.g.:
 #         KNMI2/Leiden/Leiden_1740-1742_ta_subdaily.sef
 #         KNMI2/Haarlem/Haarlem_1735-1742_p_subdaily.sef
@@ -71,7 +71,7 @@ source <- "KNMI"
 link   <- "https://www.knmi.nl/nederland-nu/klimatologie/daggegevens/antieke-waarnemingen"
 
 STATION_NAME <- "DenHelder" # in case you only want to process 1 station
-OUTDIR <- "/scratch3/PALAEO-RA/daily_data/final/"
+OUTDIR <- "/scratch3/PALAEO-RA/daily_data/SEF/"
 
 time.offset <- function(lon) {as.numeric(lon)*12/180}
 

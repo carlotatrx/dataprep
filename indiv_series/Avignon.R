@@ -6,7 +6,7 @@ library(tidyr)
 library(dataresqc)
 source('/scratch2/ccorbella/code/dataprep/helpfun.R')
 
-outdir <- "/scratch3/PALAEO-RA/daily_data/final/Avignon"
+outdir <- "/scratch3/PALAEO-RA/daily_data/SEF/Avignon"
 
 
 lat <- 43.949

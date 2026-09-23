@@ -22,7 +22,7 @@ Then it:
   5. Exports a CSV of all series metadata for further analysis
 
 Usage:
-    python filename.py /scratch3/PALAEO-RA/daily_data/final/
+    python filename.py /scratch3/PALAEO-RA/daily_data/SEF/
 
     Or edit the CONFIG section below.
 """
@@ -56,7 +56,7 @@ class Tee:
 # ============================================================
 
 # Path to the root of your SEF database
-DATABASE_ROOT = sys.argv[1] if len(sys.argv) > 1 else "/scratch3/PALAEO-RA/daily_data/final/"
+DATABASE_ROOT = sys.argv[1] if len(sys.argv) > 1 else "/scratch3/PALAEO-RA/daily_data/SEF/"
 
 # Variables to investigate (SEF Vbl codes for temperature)
 # Common SEF variable codes:
@@ -170,7 +170,7 @@ def main():
     
     if not root.exists():
         print(f"ERROR: Database root not found: {root}")
-        print(f"\nUsage: python {sys.argv[0]}  /scratch3/PALAEO-RA/daily_data/final/")
+        print(f"\nUsage: python {sys.argv[0]}  /scratch3/PALAEO-RA/daily_data/SEF/")
         sys.exit(1)
     
     os.makedirs(OUTPUT_DIR, exist_ok=True)

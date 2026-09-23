@@ -4,7 +4,7 @@ library(purrr)
 library(tidyr)
 source('/scratch2/ccorbella/code/dataprep/helpfun.R')
 
-outdir <- "/scratch3/PALAEO-RA/daily_data/final/Barcelona"
+outdir <- "/scratch3/PALAEO-RA/daily_data/SEF/Barcelona"
 
 
 lat <- 41.382751

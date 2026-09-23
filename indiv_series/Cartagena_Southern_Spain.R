@@ -6,7 +6,7 @@ library(dplyr)
 library(lubridate)
 source('/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/helpfun.R')
 
-outdir <- "/scratch3/PALAEO-RA/daily_data/final/Cartagena_Southern_Spain"
+outdir <- "/scratch3/PALAEO-RA/daily_data/SEF/Cartagena_Southern_Spain"
 name <- "Cartagena"
 code <- "Car1804-1807"
 lat	<- round(37+36/60,4)

@@ -12,7 +12,7 @@ Directory layout (non-dry-run):
   TMP_DIR   = /scratch3/PALAEO-RA/daily_data/tmp/merge_WRDv2-2/
                 All original input files are copied here under their original
                 names, then removed from WORK_DIR.
-  FINAL_DIR = /scratch3/PALAEO-RA/daily_data/final/<station>/
+  FINAL_DIR = /scratch3/PALAEO-RA/daily_data/SEF/<station>/
                 Only the merged output file is written here.
   LOG_FILE  = /scratch2/ccorbella/code/dataprep/changes_log.txt
                 Merge actions (not single-file skips) are appended here,
@@ -51,7 +51,7 @@ DRY_RUN = '--dry-run' in sys.argv
 # ---------------------------------------------------------------------------
 
 TMP_DIR    = '/scratch3/PALAEO-RA/daily_data/tmp/merge_WRDv2-2'
-FINAL_BASE = '/scratch3/PALAEO-RA/daily_data/final'
+FINAL_BASE = '/scratch3/PALAEO-RA/daily_data/SEF'
 LOG_FILE   = '/scratch2/ccorbella/code/dataprep/changes_log.txt'
 
 # ---------------------------------------------------------------------------
