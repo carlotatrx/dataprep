@@ -12,7 +12,7 @@ Example:
   gap between end and next start > max_gap_days  => new series (new row)
 
 Usage:
-  python sef_series_length_v2.py /scratch3/PALAEO-RA/daily_data/SEF -o sef_series_summary_v2.csv --max-gap-days 367
+  python sef_series_length_v2.py /scratch3/PALAEO-RA/daily_data/SEF -o sef_series_summary_v2.csv --max-gap-days 367 --max-start-year 1900
 """
 
 from __future__ import annotations
@@ -191,12 +191,17 @@ def main() -> None:
     ap.add_argument("--write-file-list", action="store_true",
                     help="Include a 'file_list' column (can be very large).")
     ap.add_argument("--active-years-output", default="sef_active_years.csv", help="Output CSV for active years.")
+    ap.add_argument("--max-start-year", type=int, default=None,
+                    help="Exclude files whose filename start date falls on/after this year "
+                         "(e.g. 1900, to drop modern reference series like GHCNd). "
+                         "Applies to both the series summary and the active-years output.")
     args = ap.parse_args()
 
     # Group raw segments by base key (station_source, variable) + optional folder
     groups: Dict[Tuple[str, str, Optional[str]], List[Segment]] = {}
     active_years_rows: List[Dict] = []
     skipped = 0
+    excluded_by_year = 0
 
     for path in iter_tsv_files(args.root):
         fn = os.path.basename(path)
@@ -207,6 +212,11 @@ def main() -> None:
             continue
 
         station_source, start_dt, end_dt, var = parsed
+
+        if args.max_start_year is not None and start_dt.year >= args.max_start_year:
+            excluded_by_year += 1
+            continue
+
         folder = os.path.basename(os.path.dirname(path)) if args.include_folder else None
 
         # AFTER
@@ -306,6 +316,8 @@ def main() -> None:
     print(f"Wrote active years:    {args.active_years_output}")
     if skipped:
         print(f"Skipped (unparseable) files: {skipped}")
+    if excluded_by_year:
+        print(f"Excluded (start year >= {args.max_start_year}) files: {excluded_by_year}")
     print(f"Base groups (station_source+variable): {len(groups)}")
     print(f"Max gap days threshold: {args.max_gap_days}")
 

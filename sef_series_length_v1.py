@@ -19,7 +19,7 @@ Outputs:
 
 Usage:
     python sef_series_length_v1.py /scratch3/PALAEO-RA/daily_data/SEF \
-  -o sef_series_summary.csv --gap 1 --include-folder --write-file-list
+  -o sef_series_summary.csv --gap 1 --include-folder --write-file-list --max-start-year 1900
 
 """
 
@@ -155,10 +155,14 @@ def main() -> None:
                     help="Include the immediate parent folder name as a column (useful if folder=station)")
     ap.add_argument("--write-file-list", action="store_true",
                     help="Include a 'file_list' column (can be very large).")
+    ap.add_argument("--max-start-year", type=int, default=None,
+                    help="Exclude files whose filename start date falls on/after this year "
+                         "(e.g. 1900, to drop modern reference series like GHCNd).")
     args = ap.parse_args()
 
     groups: Dict[Tuple[str, str, Optional[str]], List[Segment]] = {}
     skipped = 0
+    excluded_by_year = 0
 
     for path in iter_tsv_files(args.root):
         fn = os.path.basename(path)
@@ -169,6 +173,11 @@ def main() -> None:
             continue
 
         station_source, start_dt, end_dt, var = parsed
+
+        if args.max_start_year is not None and start_dt.year >= args.max_start_year:
+            excluded_by_year += 1
+            continue
+
         folder = os.path.basename(os.path.dirname(path)) if args.include_folder else None
 
         key = (station_source, var, folder)
@@ -230,6 +239,8 @@ def main() -> None:
     print(f"Wrote: {args.output}")
     if skipped:
         print(f"Skipped (unparseable) files: {skipped}")
+    if excluded_by_year:
+        print(f"Excluded (start year >= {args.max_start_year}) files: {excluded_by_year}")
     print(f"Parsed series: {len(groups)}")
 
 
