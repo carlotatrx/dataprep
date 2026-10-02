@@ -35,9 +35,9 @@ done | awk '{t+=$1; f+=$2} END {
   printf "Total non-NA values:   %d\nFlagged values:         %d\nPercentage:             %.2f%%\n", t, f, (f/t)*100
 }'
 
-# Total non-NA values:   28364352
-# Flagged values:         83186
-# Percentage:             0.29%
+# Total non-NA values:   28426779
+# Flagged values:         88815
+# Percentage:             0.31%
 
 
 # Per-variable totals and flagged counts
@@ -60,15 +60,15 @@ done | awk '{
 # Var             Total        Flagged        Pct
 # w              254066           2745      1.08%
 # eee             16236            111      0.68%
-# dd            1191400          38148      3.20%
-# ta            7408323          19816      0.27%
+# dd            1191400          38149      3.20%
+# ta            7403947          21222      0.29%
 # rrt              7448              0      0.00%
-# rr            8013790           2432      0.03%
-# p             8726116          13400      0.15%
+# rr            7836657           2552      0.03%
+# p             8970052          17481      0.19%
 # fs              13951             28      0.20%
-# Tx            1074126           3435      0.32%
+# Tx            1074126           3440      0.32%
 # rh             561889            472      0.08%
-# Tn            1097007           2599      0.24%
+# Tn            1097007           2615      0.24%
 
 
 # Flagged and own-digitized (Source contains WeaR or PALAEO) breakdown
@@ -95,11 +95,10 @@ done | awk '{t+=$1; ot+=$2; f+=$3; of+=$4} END {
   printf "Flagged from own-digitized:         %d (%.2f%% of flagged)\n", of, (of/f)*100
 }'
 
-# Total non-NA values:                28364352
-# Own-digitized non-NA values:        1724444 (6.08%)
-# Flagged values:                     83186 (0.29%)
-# Flagged from own-digitized:         11832 (14.22% of flagged)
-
+# Total non-NA values:                28426779
+# Own-digitized non-NA values:        1724444 (6.07%)
+# Flagged values:                     88815 (0.31%)
+# Flagged from own-digitized:         11832 (13.32% of flagged)
 
 
 # Frequency table of real flag types across the whole dataset
@@ -121,24 +120,28 @@ find /scratch3/PALAEO-RA/daily_data/SEF -type f -name "*.tsv" | while read f; do
 done | sort | uniq -c | sort -rn
 
 
-  # 37384 duplicate_columns
-  # 34898 subdaily_repetition
-  # 10287 wmo_time_consistency
-  # 10001 duplicate_times
-  #  8810 daily_repetition
-  #  3543 climatic_outliers
-  #  1229 wmo_gross_errors
+  # 40322 duplicate_columns
+  # 36408 subdaily_repetition
+  # 11980 wmo_time_consistency
+  # 10091 duplicate_times
+  #  8896 daily_repetition
+  #  3760 climatic_outliers
+  #  1234 wmo_gross_errors
   #   407 duplicate_dates
   #   278 plot_subdaily
-  #   258 subdaily_out_of_range
+  #   261 subdaily_out_of_range
   #   144 Tn>Tx
   #    65 impossible_values
   #    56 outlier
   #    50 in_sunlight
+  #    49 invalid_date
   #    39 internal_consistency
   #    22 inconsistent_with_2nd_thermometer
   #    18 date-time_doubtful
   #    17 temporal_coherence
+  #     5 diurnal_warming_reversal
   #     2 time_uncertain
   #     2 spatially_inconsistent
+  #     1 suspect_manual
+
 
