@@ -10,9 +10,9 @@ outdir <- "/scratch3/PALAEO-RA/daily_data/SEF/Armagh"
 
 
 lat <- round(54+21.2/60, 4)
-lon <- round(6+38.9/60,4)
+lon <- -round(6+38.9/60,4)
 alt <- 64
-name <- "Yuri_Armagh"
+name <- "Brugnara_Armagh"
 code <- "Armagh"
 source <- "Butler, C. J., García Suárez, A. M., Coughlin, A. D. S., & Morrell, C. (2005). Air temperatures at Armagh observatory, northern Ireland, from 1796 to 2002. International Journal of Climatology: A Journal of the Royal Meteorological Society, 25(8), 1055-1079."
 link   <- "DOI: 10.1002/joc.1148"
@@ -28,10 +28,10 @@ df <- raw %>%
     Hour=ifelse(is.na(notes), as.integer(Hour), 14L),
     Minute = 0L,
 
-  p = round(convert_pressure(porig, f=27.07, lat=lat, alt=alt, atb=(taborig-32)/1.8),2),
+  p = round(convert_pressure(porig, f=25.4, lat=lat, alt=alt, atb=(taborig-32)/1.8),2),
   ta = round((taorig- 32) / 1.8,2),
   
-  meta.p = paste0(meta_time(Hour, Minute), " | orig=",porig,"in | atb=", taborig, "F"),
+  meta.p = paste0(meta_time(Hour, Minute), " | orig=",porig,"English-in | atb=", taborig, "F"),
   meta.ta = paste0(meta_time(Hour, Minute), " | orig=",taorig, "F"),
   ) %>% select(Year, Month, Day, Hour, Minute, p, ta, meta.ta, meta.p)
 

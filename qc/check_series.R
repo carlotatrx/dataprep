@@ -11,11 +11,11 @@ indir <- '/scratch3/PALAEO-RA/daily_data/SEF/'
 
 ### quick one
 dirname <- "Luhansk/"
-filename <- "UA-UHMI_Luhansk_18290913-18370412_p_subdaily.tsv"
+filename <- "CHIMES_ZH09_Marthalen_Toggenburger_17730525-17770822_p_bis.tsv"
 
 # qc(glue(indir,dirname,filename), outpath=glue(indir, dirname))
 
-qcfilename <- "qc_Luhansk_p_subdaily.txt"
+qcfilename <- "qc_ZH09_Marthalen_p_subdaily.txt"
 write_flags_f(infile=glue(indir,dirname,filename),
               qcfile=glue(indir,dirname, qcfilename),
               outpath=glue(indir,dirname),

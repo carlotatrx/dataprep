@@ -7,7 +7,7 @@ library(dataresqc)
 library(readxl)
 library(XLConnect)
 
-source("/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/helpfun.R")
+source("/home/ccorbella/scratch2_symboliclink/code/dataprep/helpfun.R")
 
 file <- list.files("/scratch3/PALAEO-RA/daily_data/original/Ylitornio",
                    full.names = TRUE)
@@ -49,7 +49,8 @@ df <- raw %>%
   mutate(
     Minute = if_else(is.na(Hour), NA_integer_, 0L),
     
-    # p = round(convert_pressure(Air.pressure, f=27.07, lat=lat, alt=alt, atb=Temperature),1),
+    # Swedish decimal inches (1 in = 29.69 mm), assumed from the Turku-Academy-like barometer
+    p = round(convert_pressure(Air.pressure, f=29.69, lat=lat, alt=alt, atb=Temperature),1),
     ddorig = recode(as.character(Wind.Direction), !!!wind_dir_map),
     # keep only the first wind direction
     ddnorm = dd_normalize(sub("/.*", "", ddorig)),
@@ -63,7 +64,7 @@ df <- raw %>%
   ) %>% select(Year, Month, Day, Hour, Minute,
                rr = "Precipitation",
                dd, meta.dd,
-               p  = "Air.pressure", meta.p,
+               p, meta.p,
                ta = "Temperature", meta.ta)
 
 head(df)
@@ -84,6 +85,7 @@ df.rr <- df %>%
 
 
 # save files --------------------------------------------------------------
+if (FALSE) {
 var <- "rr"
 write_sef_f(
   as.data.frame(df.rr),
@@ -102,12 +104,14 @@ write_sef_f(
   units   = "unknown",
   keep_na = FALSE
 )
+}
 
 
 
 base_cols <- df[c("Year","Month","Day","Hour","Minute")]
 meta.list <- list(dd=df$meta.dd, p=df$meta.p, ta=df$meta.ta, rr="")
 
+if (FALSE) {
 var <- "dd"
 df.dd <- df[c("Year", "Month", "Day", "Hour", "Minute", "dd", "meta.dd")]
 df.dd <- df.dd[df.dd$Year >= 1802, ]
@@ -130,13 +134,18 @@ write_sef_f(
   time_offset = time.offset(lon),
   keep_na = TRUE
 )
+}
 
-for (var in c("p", "ta")) {
+# only pressure (converted to hPa) is written -> _p_subdaily2.tsv
+for (var in c("p")) {
   
   dat <- cbind(base_cols, setNames(df[var], var))
+  # the existing pressure series covers 1800-1825 only
+  keep <- df$Year <= 1825
+  dat <- dat[keep, ]
   write_sef_f(
     dat,
-    outfile = outfile.name(name, var, dat, TRUE),
+    outfile = outfile.name("Helama-et-al_Ylitornio", var, dat, "subdaily2"),
     outpath = '/scratch3/PALAEO-RA/daily_data/SEF/Ylitornio',
     cod     = code,
     lat     = lat,
@@ -147,10 +156,10 @@ for (var in c("p", "ta")) {
     nam     = name,
     var     = var,
     stat    = "point",
-    units   = ifelse(var=="p", "unknown mercury inches", units(var)),
-    meta    = meta.list[[var]],
+    units   = units(var),
+    meta    = meta.list[[var]][keep],
     metaHead = ifelse(var=="p",
-                      paste0(metaHead, " | Instrumet=unknown barometer similar to Academyof Turku"),
+                      paste0(metaHead, " | Instrumet=unknown barometer similar to Academyof Turku | Converted from Swedish decimal inches (29.69 mm) | MSLP=N"),
                       metaHead),
     time_offset = time.offset(lon),
     keep_na = FALSE
