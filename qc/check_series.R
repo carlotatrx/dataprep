@@ -4,6 +4,16 @@ library(hclim)
 source('/home/ccorbella/scratch2_symboliclink/code/dataprep/helpfun.R')
 library(glue)
 
+## qc for single file
+filename <- '/scratch3/PALAEO-RA/daily_data/HIST-DAILY_v2/fixes/KNMI_Zwanenburg_17380101-18601231_p_subdaily.tsv'
+qc(filename, outpath = '/scratch3/PALAEO-RA/daily_data/HIST-DAILY_v2/fixes/')
+qcfilename <- '/scratch3/PALAEO-RA/daily_data/HIST-DAILY_v2/fixes/qc_KNMI-Zwanenburg_p_subdaily.txt'
+
+write_flags_f(infile=filename,
+              qcfile=qcfilename,
+              outpath='/scratch3/PALAEO-RA/daily_data/HIST-DAILY_v2/fixes/',
+              match=FALSE)
+
 # bash script to change filenames
 # for file in *_corrected.tsv; do [ -e "$file" ] || continue; new_name="${file/_corrected.tsv/.tsv}"; mv "$file" "$new_name"; done
 

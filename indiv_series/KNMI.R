@@ -705,15 +705,31 @@ df <- raw %>% mutate(
   ii  = as.numeric(substr(s, 1, 2)),
   ll  = as.numeric(substr(s, 3, 4)),
   q   = as.numeric(substr(s, 5, 5)),
-  pinch = ii + ll/12 + q/48,
+
+  # scale in use: station 48 (1735-42) Rhineland 12 lines; 1788-11 to 1793-10-22 English12 lines;
+  # from 1793-10-23 English with decimal lines (10 per inch)
+  scl = case_when(
+    Date <  ymd("1788-11-01") ~ "rhine12",
+    Date <  ymd("1793-10-23") ~ "eng12",
+    TRUE                      ~ "eng10"),
+  pinch = case_when(          
+    scl == "eng10" & ll >= 10 ~ NA_real_,          # impossible with decimal lines: digitization error
+    scl == "eng10"            ~ ii + ll/10 + q/40,
+    TRUE                      ~ ii + ll/12 + q/48),
+  inch_mm = if_else(scl == "rhine12", 26.2, 25.4),
+  
   ta  = round((taorig/10-32)*(5/9),1),
-  p   = round(convert_pressure(pinch, f=26.2, lat=lat, alt=alt, atb=ta),1),
+  p   = round(convert_pressure(pinch, f=inch_mm, lat=lat, alt=alt, atb=ta),1),
   rr  = round(rrorig*2.2, 1),
   
   meta.ta = paste0(meta.time, " | orig.ta=", taorig/10, "F"),
   meta.dd = paste0(meta.time, " | orig.dd=", ddorig),
   meta.rr = paste0(meta.time, " | orig.rr=", rrorig, "l"),
-  meta.p  = paste0(meta.time, " | orig.p=", ii, ".", ll, ".", q, " Rijnlandse inch.line.quarter | atb=", ta, "C")
+  meta.p = paste0(meta.time, " | orig.p=", ii, ".", ll, ".", q, " ",
+                  case_when(scl == "rhine12" ~ "Rijnlandse_inch.line.quarter",
+                            scl == "eng12"   ~ "English_inch.line.quarter",
+                            TRUE             ~ "English_inch.decimalline.quarter"),
+                  " | atb=", ta, "C")   
   
 ) %>% select(Year, Month, Day, Hour, Minute, p, ta, dd, rr, meta.rr, meta.p, meta.dd, meta.ta)
 
@@ -722,6 +738,9 @@ head(df)
 base_cols <- df[c("Year","Month","Day","Hour","Minute")]
 meta.list <- list(dd=df$meta.dd, p=df$meta.p,
                   rr=df$meta.rr, ta=df$meta.ta)
+
+# check: should be roughly 950-1050hPa
+range(df$p, na.rm=TRUE)
 
 vars <- c("dd", "p", "ta", "rr")
 
@@ -742,12 +761,44 @@ for (var in vars) {
     stat    = "point",
     units   = units(var),
     meta    = meta.list[[var]],
-    metaHead = ifelse(var=="p", "PTC=Y | PGC=Y | alt.1735-1742=2m", "alt.1735-1742=2m"),
+    metaHead = ifelse(var=="p",
+                      paste0("PTC=Y | PGC=Y | MSLP=N | alt.=2m (1735-1742) | units=Rhineland inch with 12 lines ",
+                             "(1735-01-01--1742-12-31); English inch with 12 lines (1788-11-01--1793-10-22); English ",
+                             "inch with decimal lines (1793-10-23--1841-12-31) | Instrument=Barometer with English ",
+                             "scale (1788-11--1793-10); barometer by Van Marum, ivory English scale with decimal lines (1794-04--1841)"),
+                      ""),
     keep_na = FALSE
   )
 }
 
 
+
+for (var in vars[2]) {
+  dat <- cbind(base_cols, setNames(df[var], var))
+  write_sef_f(
+    dat,
+    outfile = outfile.name(name, var, dat, TRUE),
+    outpath = '/scratch3/PALAEO-RA/daily_data/HIST-DAILY_v2/fixes/',
+    cod     = code,
+    lat     = lat,
+    lon     = lon,
+    alt     = alt,
+    sou     = source,
+    link    = link,
+    nam     = name,
+    var     = var,
+    stat    = "point",
+    units   = units(var),
+    meta    = meta.list[[var]],
+    metaHead = ifelse(var=="p",
+                      paste0("PTC=Y | PGC=Y | MSLP=N | alt.=2m (1735-1742) | units=Rhineland inch with 12 lines ",
+                      "(1735-01-01--1742-12-31); English inch with 12 lines (1788-11-01--1793-10-22); English ",
+                      "inch with decimal lines (1793-10-23--1841-12-31) | Instrument=Barometer with English ",
+                      "scale (1788-11--1793-10); barometer by Van Marum, ivory English scale with decimal lines (1794-04--1841)"),
+                      ""),
+    keep_na = FALSE
+  )
+}
 #############################################################################
 # Utrecht -------------------------------------------------------------------
 #############################################################################
