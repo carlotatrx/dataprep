@@ -5,7 +5,7 @@ library(readr)
 library(tidyr)
 library(dataresqc)
 library(purrr)
-source("/home/ccorbella/scratch2_symboliclink/code/KF_assimilation/dataprep/helpfun.R")
+source("/scratch2/ccorbella/code/dataprep/helpfun.R")
 
 source <- "KNMI"
 link   <- "https://www.knmi.nl/nederland-nu/klimatologie/daggegevens/antieke-waarnemingen"
@@ -534,7 +534,8 @@ code <- paste0("KNMI-", name)
 lat	 <- 52.32
 lon	 <- 4.74
 alt	 <- 1
-files <- list.files(paste0("/scratch3/PALAEO-RA/daily_data/original/", name), full.names = TRUE)
+files <- list.files(paste0("/scratch3/PALAEO-RA/daily_data/original/", name),
+                    pattern = "^his_42-.*\\.dat$", full.names = TRUE)
 
 raw_list <- lapply(files, function(f)
   read.csv(
@@ -560,8 +561,6 @@ raw_list <- lapply(files, function(f)
 
 raw <- bind_rows(raw_list)
 head(raw)
-
-stopifnot(all(df$Date==sort(df$Date)))
 
 df <- raw %>% mutate(
   Date = ymd(Date),
@@ -589,17 +588,23 @@ df <- raw %>% mutate(
   pinch = ii + ll/12 + q/48,
   ta  = round((taorig/10-32)*(5/9),1),
   
-  p   = round(convert_pressure(pinch, f=26.2, lat=lat, alt=alt, atb=ta),1),
+  inch_mm = if_else(Date < ymd("1809-05-01"), 25.4, 26.2),
+  p   = round(convert_pressure(pinch, f=inch_mm, lat=lat, alt=alt, atb=ta),1),
   rr  = rrorig/10,
   
   meta.ta = paste0(meta.time, " | orig.ta=", taorig/10, "F"),
   meta.dd = paste0(meta.time, " | orig.dd=", ddorig),
   meta.rr = paste0(meta.time, " | orig.rr=", rrorig, "l"),
-  meta.p  = paste0(meta.time, " | orig.p=", ii, ".", ll, ".", q, " Rijnlandse_inch.line.quarter | atb=", ta, "C")
+  meta.p = paste0(meta.time, " | orig.p=", ii, ".", ll, ".", q, " ",
+                  if_else(Date < ymd("1809-05-01"), "English_inch.line.quarter",
+                          "Rijnlandse_inch.line.quarter"),
+                  " | atb=", ta, "C")
   
 ) %>% select(Year, Month, Day, Hour, Minute, p, ta, dd, rr, meta.rr, meta.p, meta.dd, meta.ta)
 
 head(df)
+
+stopifnot(all(df$Date==sort(df$Date)))
 
 base_cols <- df[c("Year","Month","Day","Hour","Minute")]
 meta.list <- list(dd=df$meta.dd,
@@ -624,11 +629,18 @@ for (var in vars) {
     stat    = "point",
     units   = units(var),
     meta    = meta.list[[var]],
-    metaHead = ifelse(var=="p", "PTC=Y | PGC=Y", ""),
+    metaHead = ifelse(var == "p",
+                      paste0(
+                        "PTC=Y | PGC=Y | MSLP=N | ",
+                        "units=English inch (1738-01-01--1809-04-30); ",
+                        "Rhineland inch (1809-05-01--1860-12-31) | ",
+                        "Instrument=Prins barometer with unboiled mercury, English scale (1735--1809); ",
+                        "Solari & Butti barometer, Rhineland scale (from 1809-04)"
+                      ),
+                      ""),
     keep_na = FALSE
   )
 }
-
 
 #############################################################################
 # Haarlem -------------------------------------------------------------------
